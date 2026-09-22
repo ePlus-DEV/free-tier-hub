@@ -8,6 +8,7 @@ CATEGORIES = (
     "static-hosting", "app-hosting", "serverless", "cloud-vps",
     "databases", "storage", "developer-tools", "auth-security",
     "observability", "analytics", "dns-cdn", "ai-ml",
+    "queues-jobs", "search", "feature-flags",
 )
 PLANS = {
     "ongoing": "Ongoing free allowance",

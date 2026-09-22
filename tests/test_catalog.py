@@ -40,6 +40,16 @@ class MarkdownTests(unittest.TestCase):
         _, errors = check_markdown.scan_tables(text, "docs/databases.md")
         self.assertTrue(any("orphan" in e for e in errors), errors)
 
+    def test_new_developer_categories_exist(self):
+        for category in ("queues-jobs", "search", "feature-flags"):
+            self.assertIn(category, check_markdown.CATEGORIES)
+            self.assertIn(category, self.pages)
+
+    def test_new_queue_table_cannot_be_split(self):
+        text = self.pages["queues-jobs"].replace("\n| [Upstash QStash Free]", "\n\n| [Upstash QStash Free]", 1)
+        _, errors = check_markdown.scan_tables(text, "docs/queues-jobs.md")
+        self.assertTrue(any("orphan" in item for item in errors), errors)
+
     def test_bad_column_count(self):
         _, errors = check_markdown.scan_tables("| a | b |\n| --- | --- |\n| only-one |\n", "test.md")
         self.assertTrue(any("width" in e for e in errors))
@@ -53,7 +63,7 @@ class MarkdownTests(unittest.TestCase):
         self.assertEqual(errors, [])
 
     def test_bad_count_badge(self):
-        bad = self.readme.replace("services-45-brightgreen", "services-44-brightgreen", 1)
+        bad = self.readme.replace("services-57-brightgreen", "services-56-brightgreen", 1)
         errors = check_markdown.validate_documents(ROOT, self.data, bad, self.pages)
         self.assertTrue(any("badge" in e for e in errors), errors)
 

@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-45-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-57-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -21,6 +21,9 @@
 | Product analytics | 1 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 2 | [Browse](docs/ai-ml.md) |
+| Queues, workflows & scheduling | 5 | [Browse](docs/queues-jobs.md) |
+| Hosted search | 2 | [Browse](docs/search.md) |
+| Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
 
 ## At a glance
 
@@ -73,6 +76,18 @@
 | [Cloudflare DNS & CDN Free](https://www.cloudflare.com/plans/) | Ongoing free allowance | Free authoritative DNS, CDN, universal SSL and DDoS protection | Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting. |
 | [Hugging Face Static Spaces](https://huggingface.co/docs/hub/spaces-overview) | Ongoing free allowance | Free static Spaces for ML demo frontends and project showcases | Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute. |
 | [Google Gemini Developer API Free](https://ai.google.dev/gemini-api/docs/pricing) | Ongoing free allowance | Free input and output tokens for eligible Gemini models; Google AI Studio access | Free API eligibility and rate limits vary by model and region; free-tier content can be used to improve Google products. |
+| [Aiven Free PostgreSQL](https://aiven.io/docs/products/postgresql/concepts/pg-free-tier) | Ongoing free allowance | One PostgreSQL service: 1 vCPU, 1 GB RAM, 1 GB disk | No VPC, static IP, pooling or SLA; 20 max connections; inactive services can be powered off. |
+| [Appwrite Cloud Free](https://appwrite.io/pricing) | Ongoing free allowance | 2 projects; 5 GB monthly bandwidth; 2 GB storage; 750K executions/month; 75K MAU | Free projects pause after one week of inactivity; 1 database, 1 bucket and 2 functions per project. |
+| [GitLab CI/CD Free](https://docs.gitlab.com/ci/pipelines/compute_minutes/) | Ongoing free allowance | 400 compute minutes/month per GitLab.com Free namespace on hosted instance runners | Runner cost factors vary; quota is shared across the namespace; extra compute minutes may need purchase. |
+| [Cloudflare Queues Free](https://developers.cloudflare.com/queues/platform/pricing/) | Ongoing free allowance | 10,000 read/write/delete operations/day on Workers Free; 24-hour retention | Typical delivery uses three operations per message; retries add reads and Free retention is fixed. |
+| [Upstash QStash Free](https://upstash.com/pricing/qstash) | Ongoing free allowance | 1,000 message delivery attempts/day; 50 GB monthly bandwidth; 10 schedules | Retries and topic subscribers count as additional deliveries; 1 MB message size and seven-day max delay. |
+| [Upstash Workflow Free](https://upstash.com/pricing/workflow) | Ongoing free allowance | 1,000 workflow steps/day; 50 GB monthly bandwidth; up to 10 concurrent steps | Retries consume extra steps; 1 MB message size and seven-day maximum sleep. |
+| [cron-job.org Free](https://cron-job.org/en/faq/) | Ongoing free allowance | Free scheduled HTTP requests as frequently as every minute; no fixed job-count limit under fair use | Fair-use requirements apply; REST API is limited to 100 calls/day by default and jobs call public URLs. |
+| [Cloudflare Workflows Free](https://developers.cloudflare.com/workflows/reference/pricing/) | Ongoing free allowance | 3,000 workflow steps/day and 1 GB-month state storage; request quota shared with Workers Free | 10 ms CPU per invocation on Free; default instance-state retention is three days. |
+| [Algolia Free Search](https://www.algolia.com/pricing/free-plan) | Ongoing free allowance | 10K searches/month; 50K records; 5K recommendation requests and 5K crawls/month | Higher usage and advanced search require paid plans; track record and request quotas separately. |
+| [Upstash Search Free](https://upstash.com/pricing/search) | Ongoing free allowance | One free search database; 20K monthly queries; maximum 200K documents | Query and indexed-document caps apply independently; higher volumes need a paid usage plan. |
+| [Flagsmith Free](https://www.flagsmith.com/pricing) | Ongoing free allowance | 50,000 flag API requests/month; one team member and one project; unlimited feature flags | Fair-use limits apply; multi-user administration, advanced scheduling and experimentation need paid plans. |
+| [LaunchDarkly Developer](https://launchdarkly.com/pricing/) | Ongoing free allowance | Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month | Client MAU and service connections have separate caps; higher-scale rollout capabilities use paid plans. |
 
 ## How to choose
 
@@ -85,6 +100,14 @@
 - **Observability and product insights:** see [monitoring](docs/observability.md) and [analytics](docs/analytics.md).
 - **Domains and acceleration:** see [DNS & CDN](docs/dns-cdn.md). DNS/CDN is not the same as full web hosting.
 - **ML demos or free model APIs:** see [AI & ML](docs/ai-ml.md). Some free API requests permit provider training on submitted content.
+- **Background jobs and scheduled endpoints:** see [queues & scheduling](docs/queues-jobs.md). Compare retries, retention and step/operation limits.
+- **Managed full-text search:** see [hosted search](docs/search.md). Separate request quotas from indexed-record quotas.
+- **Gradual releases:** see [feature flags](docs/feature-flags.md). Compare per-request, user and team-seat limits.
+
+## Developer playbooks
+
+- [Choose a free-tier stack](docs/use-cases.md) — examples for frontend, API, background jobs, search and feature flags.
+- [Avoid unexpected charges and data loss](docs/cost-safety.md) — card requirements, inactivity, quotas, backups and production considerations.
 
 ## Data and maintenance
 
