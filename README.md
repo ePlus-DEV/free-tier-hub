@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-57-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-59-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -13,8 +13,8 @@
 | Backend & app hosting | 5 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 2 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 10 | [Browse](docs/databases.md) |
-| Object storage | 3 | [Browse](docs/storage.md) |
+| Databases & caching | 11 | [Browse](docs/databases.md) |
+| Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 8 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 3 | [Browse](docs/observability.md) |
@@ -88,6 +88,8 @@
 | [Upstash Search Free](https://upstash.com/pricing/search) | Ongoing free allowance | One free search database; 20K monthly queries; maximum 200K documents | Query and indexed-document caps apply independently; higher volumes need a paid usage plan. |
 | [Flagsmith Free](https://www.flagsmith.com/pricing) | Ongoing free allowance | 50,000 flag API requests/month; one team member and one project; unlimited feature flags | Fair-use limits apply; multi-user administration, advanced scheduling and experimentation need paid plans. |
 | [LaunchDarkly Developer](https://launchdarkly.com/pricing/) | Ongoing free allowance | Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month | Client MAU and service connections have separate caps; higher-scale rollout capabilities use paid plans. |
+| [Upstash Blob Free](https://upstash.com/pricing/blob) | Ongoing free allowance | 1 GB average storage/month; 10 GB bandwidth, 10,000 simple and 2,000 advanced operations/month | Free bucket stops serving requests when any quota is exhausted until its 30-day window resets; multipart uploads count as advanced operations. |
+| [Weaviate Cloud Free](https://weaviate.io/pricing) | Ongoing free allowance | One cluster/user; 100,000 objects, 1 GB RAM, 10 GB disk; 2,000 embedding requests/day and 1,000 Query Agent requests/month | One collection and up to three tenants; limited AWS regions, no backups or HA, best-effort availability. |
 
 ## How to choose
 

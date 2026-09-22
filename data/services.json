@@ -682,5 +682,29 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "upstash-blob",
+    "name": "Upstash Blob Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "1 GB average storage/month; 10 GB bandwidth, 10,000 simple and 2,000 advanced operations/month",
+    "watch_out": "Free bucket stops serving requests when any quota is exhausted until its 30-day window resets; multipart uploads count as advanced operations.",
+    "pricing_url": "https://upstash.com/pricing/blob",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-22"
+  },
+  {
+    "id": "weaviate-cloud-free",
+    "name": "Weaviate Cloud Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One cluster/user; 100,000 objects, 1 GB RAM, 10 GB disk; 2,000 embedding requests/day and 1,000 Query Agent requests/month",
+    "watch_out": "One collection and up to three tenants; limited AWS regions, no backups or HA, best-effort availability.",
+    "pricing_url": "https://weaviate.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-22"
   }
 ]
