@@ -2,7 +2,7 @@
 
 SQL, NoSQL and managed cache. [← Back to directory](../README.md)
 
-**Editorial review:** 2026-09-22 (UTC). Provider prices and limits may change; open each official source for the current terms.
+**Editorial review:** 2026-09-23 (UTC). Provider prices and limits may change; open each official source for the current terms.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
@@ -16,5 +16,6 @@ SQL, NoSQL and managed cache. [← Back to directory](../README.md)
 | [Neon Free Postgres](https://neon.com/pricing) | Ongoing free allowance | 100 projects; 100 CU-hours/project/month; 0.5 GB storage/project | Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility. | Not required | Check provider |
 | [Cloudflare Workers KV Free](https://developers.cloudflare.com/kv/platform/pricing/) | Ongoing free allowance | 1 GB storage; 100k key reads/day; 1k key writes/day | Writes, deletes and list requests each have a 1k/day cap; operations fail when daily quota is exhausted. | Not required | Check provider |
 | [Aiven Free PostgreSQL](https://aiven.io/docs/products/postgresql/concepts/pg-free-tier) | Ongoing free allowance | One PostgreSQL service: 1 vCPU, 1 GB RAM, 1 GB disk | No VPC, static IP, pooling or SLA; 20 max connections; inactive services can be powered off. | Not required | Allowed |
+| [Weaviate Cloud Free](https://weaviate.io/pricing) | Ongoing free allowance | One cluster/user; 100,000 objects, 1 GB RAM, 10 GB disk; 2,000 embedding requests/day and 1,000 Query Agent requests/month | One collection and up to three tenants; limited AWS regions, no backups or HA, best-effort availability. | Not required | Check provider |
 
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.
