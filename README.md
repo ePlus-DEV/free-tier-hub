@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-29-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![License](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-45-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![License](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -13,9 +13,14 @@
 | Backend & app hosting | 4 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 2 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 7 | [Browse](docs/databases.md) |
-| Object storage & CDN | 3 | [Browse](docs/storage.md) |
-| APIs & developer tools | 3 | [Browse](docs/developer-tools.md) |
+| Databases & caching | 9 | [Browse](docs/databases.md) |
+| Object storage | 3 | [Browse](docs/storage.md) |
+| APIs & developer tools | 7 | [Browse](docs/developer-tools.md) |
+| Authentication & security | 3 | [Browse](docs/auth-security.md) |
+| Monitoring & observability | 3 | [Browse](docs/observability.md) |
+| Product analytics | 1 | [Browse](docs/analytics.md) |
+| DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
+| AI & ML platforms | 2 | [Browse](docs/ai-ml.md) |
 
 ## At a glance
 
@@ -53,6 +58,23 @@
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. |
 
+| [Neon Free Postgres](https://neon.com/pricing) | Ongoing free allowance | 100 projects; 100 CU-hours/project/month; 0.5 GB storage/project | Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility. |
+| [Cloudflare Workers KV Free](https://developers.cloudflare.com/kv/platform/pricing/) | Ongoing free allowance | 1 GB storage; 100k key reads/day; 1k key writes/day | Writes, deletes and list requests each have a 1k/day cap; operations fail when daily quota is exhausted. |
+| [Brevo Free](https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan) | Ongoing free allowance | 300 email sends/day; up to 100k contacts | Daily unused sends do not roll over; free emails carry Brevo branding; queues and transactional limits apply. |
+| [GitHub Codespaces (personal Free)](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces) | Ongoing free allowance | 120 core-hours/month and 15 GB-month storage for GitHub Free personal accounts | Organizations have no included Codespaces quota; 2-core machines use two core-hours per elapsed hour. |
+| [Cloudflare Email Routing](https://developers.cloudflare.com/email-service/) | Ongoing free allowance | Free inbound custom-domain email forwarding and routing on Free/Paid plans | Not a free outbound transactional email API; Email Sending requires Workers Paid. Domain must use Cloudflare email routing. |
+| [GitHub Packages](https://docs.github.com/en/billing/concepts/product-billing/github-packages) | Ongoing free allowance | Public packages are free; GitHub Free includes 500 MB private storage and 1 GB monthly transfer | Private quotas share storage with Actions artifacts; over-quota usage may be blocked or billed. |
+| [Auth0 Free](https://auth0.com/pricing) | Ongoing free allowance | Up to 25,000 monthly active users; one custom domain and five organizations | Credit card not required to sign up; custom-domain feature requires card verification; tenant and connection limits apply. |
+| [Clerk Hobby](https://clerk.com/pricing) | Ongoing free allowance | 50,000 monthly retained users per app; unlimited applications | MRU is not equivalent to monthly active users; free plan has limited dashboard seats and short log retention. |
+| [Cloudflare Turnstile Free](https://developers.cloudflare.com/turnstile/plans/) | Ongoing free allowance | Up to 20 widgets/account; unlimited challenges; 10 hostnames/widget | Free tier has 7-day analytics lookback; remove-branding and advanced controls are Enterprise-only. |
+| [UptimeRobot Free](https://uptimerobot.com/pricing/) | Ongoing free allowance | 50 monitors with 5-minute checks and basic status pages | Longer monitoring intervals and limited alert integrations; faster 60-second checks require paid plan. |
+| [Grafana Cloud Free](https://grafana.com/pricing/) | Ongoing free allowance | 10k active metric series and 50 GB logs ingested/month; 14-day retention | Free quotas are separate for logs, metrics, traces and users; limited retention and community support. |
+| [Sentry Developer](https://sentry.io/pricing/) | Ongoing free allowance | One user; 5,000 errors/month; 50 replays and 1 uptime monitor | Free plan is single-user; profiling, advanced integrations and additional event volumes require payment. |
+| [PostHog Free](https://posthog.com/pricing) | Ongoing free allowance | 1M product analytics events/month; 5k session recordings/month; 1M feature flag requests | Free without a card for one project; usage stops at limits unless billing is enabled. |
+| [Cloudflare DNS & CDN Free](https://www.cloudflare.com/plans/) | Ongoing free allowance | Free authoritative DNS, CDN, universal SSL and DDoS protection | Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting. |
+| [Hugging Face Static Spaces](https://huggingface.co/docs/hub/spaces-overview) | Ongoing free allowance | Free static Spaces for ML demo frontends and project showcases | Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute. |
+| [Google Gemini Developer API Free](https://ai.google.dev/gemini-api/docs/pricing) | Ongoing free allowance | Free input and output tokens for eligible Gemini models; Google AI Studio access | Free API eligibility and rate limits vary by model and region; free-tier content can be used to improve Google products. |
+
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
@@ -60,6 +82,10 @@
 - **Long-lived data:** see [databases](docs/databases.md). A free trial or a database that expires in 30 days is **not** suitable for important production data without migration and backups.
 - **Free VM:** see [cloud compute & VPS](docs/cloud-vps.md). Look closely at the eligible region, included network traffic and payment verification.
 - **Images, files and backups:** see [storage](docs/storage.md). Compare storage *and* API operations/egress.
+- **Auth and abuse protection:** see [authentication & security](docs/auth-security.md).
+- **Observability and product insights:** see [monitoring](docs/observability.md) and [analytics](docs/analytics.md).
+- **Domains and acceleration:** see [DNS & CDN](docs/dns-cdn.md). DNS/CDN is not the same as full web hosting.
+- **ML demos or free model APIs:** see [AI & ML](docs/ai-ml.md). Some free API requests permit provider training on submitted content.
 
 ## Data and maintenance
 

@@ -4,7 +4,7 @@ Thanks for helping maintain an accurate directory. **Provider documentation is t
 
 ## Add or update an entry
 
-1. Open `data/services.json`. Add an entry with a stable lowercase kebab-case `id`, one of the existing categories, and an official pricing/documentation URL.
+1. Open `data/services.json`. Add an entry with a stable lowercase kebab-case `id`, one of the supported categories, and an official pricing/documentation URL.
 2. Read the provider's official free-plan page **on the date of the contribution**. Describe included units and reset period, whether a payment card is required, the commercial-use policy, expiration/sleep rules, region restrictions and likely chargeable extras.
 3. Choose one plan type: `ongoing`, `monthly-credit`, `limited-duration`, or `temporary-resource`. A 30-day free database is a **temporary resource**, not a permanent free database.
 4. Set `last_checked` to the actual verification date, not the date you opened the PR. Use `check` for billing or commercial fields that you cannot verify.
