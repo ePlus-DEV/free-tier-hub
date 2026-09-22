@@ -10,12 +10,12 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 7 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 4 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 5 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 2 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 9 | [Browse](docs/databases.md) |
+| Databases & caching | 10 | [Browse](docs/databases.md) |
 | Object storage | 3 | [Browse](docs/storage.md) |
-| APIs & developer tools | 7 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 8 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 3 | [Browse](docs/observability.md) |
 | Product analytics | 1 | [Browse](docs/analytics.md) |
