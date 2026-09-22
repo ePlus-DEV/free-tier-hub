@@ -63,7 +63,7 @@ class MarkdownTests(unittest.TestCase):
         self.assertEqual(errors, [])
 
     def test_bad_count_badge(self):
-        bad = self.readme.replace("services-57-brightgreen", "services-56-brightgreen", 1)
+        bad = self.readme.replace(f"services-{len(self.data)}-brightgreen", f"services-{len(self.data) - 1}-brightgreen", 1)
         errors = check_markdown.validate_documents(ROOT, self.data, bad, self.pages)
         self.assertTrue(any("badge" in e for e in errors), errors)
 
