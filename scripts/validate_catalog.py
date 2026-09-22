@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = {
     "static-hosting", "app-hosting", "serverless", "cloud-vps",
     "databases", "storage", "developer-tools",
+    "auth-security", "observability", "analytics", "dns-cdn", "ai-ml",
 }
 PLANS = {"ongoing", "monthly-credit", "limited-duration", "temporary-resource"}
 TRI = {"yes", "no", "check"}
