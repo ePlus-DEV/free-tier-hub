@@ -78,6 +78,9 @@ def main():
             if other_cat != category and link in page:
                 errors.append(f"{sid}: listed in wrong page docs/{other_cat}.md")
     if not errors:
+        from check_markdown import validate_documents
+        errors.extend(validate_documents(ROOT, data, readme, pages))
+    if not errors:
         print(f"PASS: {len(data)} unique service entries across {len(CATEGORIES)} categories, with matching README and docs.")
         return 0
     for error in errors:
