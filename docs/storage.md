@@ -2,7 +2,7 @@
 
 File and object storage. [← Back to directory](../README.md)
 
-**Editorial review:** 2026-09-23 (UTC). Provider prices and limits may change; open each official source for the current terms.
+**Editorial review:** 2026-09-22 (UTC). Provider prices and limits may change; open each official source for the current terms.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
