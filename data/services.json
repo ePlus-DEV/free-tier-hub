@@ -706,5 +706,41 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "inngest-hobby",
+    "name": "Inngest Hobby",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "50,000 executions and 500,000 events/month; 5 concurrent steps; 3 users and 3 workers",
+    "watch_out": "An execution counts each function run plus its steps; free execution pauses on quota exhaustion; 24-hour trace retention and 7-day maximum sleep.",
+    "pricing_url": "https://www.inngest.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-22"
+  },
+  {
+    "id": "trigger-dev-free",
+    "name": "Trigger.dev Free",
+    "category": "queues-jobs",
+    "plan": "monthly-credit",
+    "free_limit": "$5 recurring monthly compute/run credits; 20 concurrent runs; unlimited tasks; 10 schedules",
+    "watch_out": "Free credit covers metered compute and run invocation; execution stops or queues after credits run out until upgrade; 1-day log retention.",
+    "pricing_url": "https://trigger.dev/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-09-22"
+  },
+  {
+    "id": "qdrant-cloud-free",
+    "name": "Qdrant Cloud Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One single-node cluster with 0.5 vCPU, 1 GB RAM and 4 GB disk",
+    "watch_out": "For testing and prototypes; limited regions, no high availability; suspends after 1 week of inactivity and deletes after 4 weeks unless reactivated.",
+    "pricing_url": "https://qdrant.tech/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-22"
   }
 ]
