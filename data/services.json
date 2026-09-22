@@ -693,7 +693,7 @@
     "pricing_url": "https://upstash.com/pricing/blob",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23"
+    "last_checked": "2026-09-22"
   },
   {
     "id": "weaviate-cloud-free",
@@ -705,6 +705,6 @@
     "pricing_url": "https://weaviate.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23"
+    "last_checked": "2026-09-22"
   }
 ]
