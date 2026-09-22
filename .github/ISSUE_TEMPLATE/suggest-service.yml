@@ -1,0 +1,36 @@
+name: Suggest a free-tier service
+description: Suggest a new service or report a changed free plan
+title: "[Catalog] "
+labels: ["documentation"]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Provider and product
+      placeholder: "Example: ExampleHost Free"
+    validations:
+      required: true
+  - type: input
+    id: official
+    attributes:
+      label: Official pricing or documentation URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Request
+      options:
+        - Add new service
+        - Update limits or terms
+        - Remove discontinued free tier
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Evidence and important restrictions
+      description: Include free allowance, expiry, card, commercial use, and the date you verified it.
+    validations:
+      required: true
