@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-45-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![License](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-45-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -57,7 +57,6 @@
 | [Resend Free](https://resend.com/pricing) | Ongoing free allowance | 3,000 transactional emails/month; 100/day; up to 3 domains | Daily sending cap and deliverability/domain-verification requirements apply. |
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. |
-
 | [Neon Free Postgres](https://neon.com/pricing) | Ongoing free allowance | 100 projects; 100 CU-hours/project/month; 0.5 GB storage/project | Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility. |
 | [Cloudflare Workers KV Free](https://developers.cloudflare.com/kv/platform/pricing/) | Ongoing free allowance | 1 GB storage; 100k key reads/day; 1k key writes/day | Writes, deletes and list requests each have a 1k/day cap; operations fail when daily quota is exhausted. |
 | [Brevo Free](https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan) | Ongoing free allowance | 300 email sends/day; up to 100k contacts | Daily unused sends do not roll over; free emails carry Brevo branding; queues and transactional limits apply. |
@@ -93,7 +92,7 @@
 - [Contribution guide](CONTRIBUTING.md) — how to add entries and document evidence.
 - [Validation script](scripts/validate_catalog.py) — checks required fields, unique IDs, official URLs and category page coverage.
 - [Catalog validation workflow](.github/workflows/validate-catalog.yml) — runs on changes to catalog and documentation.
-- [Request a provider / report outdated information](../../issues/new/choose).
+- [Request a provider / report outdated information](https://github.com/ePlus-DEV/free-tier-hub/issues/new/choose).
 
 ### What “free” means here
 
