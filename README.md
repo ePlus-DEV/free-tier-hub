@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-59-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-62-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -13,7 +13,7 @@
 | Backend & app hosting | 5 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 2 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 11 | [Browse](docs/databases.md) |
+| Databases & caching | 12 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 8 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
@@ -21,7 +21,7 @@
 | Product analytics | 1 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 2 | [Browse](docs/ai-ml.md) |
-| Queues, workflows & scheduling | 5 | [Browse](docs/queues-jobs.md) |
+| Queues, workflows & scheduling | 7 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 2 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
 
@@ -90,6 +90,9 @@
 | [LaunchDarkly Developer](https://launchdarkly.com/pricing/) | Ongoing free allowance | Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month | Client MAU and service connections have separate caps; higher-scale rollout capabilities use paid plans. |
 | [Upstash Blob Free](https://upstash.com/pricing/blob) | Ongoing free allowance | 1 GB average storage/month; 10 GB bandwidth, 10,000 simple and 2,000 advanced operations/month | Free bucket stops serving requests when any quota is exhausted until its 30-day window resets; multipart uploads count as advanced operations. |
 | [Weaviate Cloud Free](https://weaviate.io/pricing) | Ongoing free allowance | One cluster/user; 100,000 objects, 1 GB RAM, 10 GB disk; 2,000 embedding requests/day and 1,000 Query Agent requests/month | One collection and up to three tenants; limited AWS regions, no backups or HA, best-effort availability. |
+| [Inngest Hobby](https://www.inngest.com/pricing) | Ongoing free allowance | 50,000 executions and 500,000 events/month; 5 concurrent steps; 3 users and 3 workers | An execution counts each function run plus its steps; free execution pauses on quota exhaustion; 24-hour trace retention and 7-day maximum sleep. |
+| [Trigger.dev Free](https://trigger.dev/pricing) | Recurring free credit | $5 recurring monthly compute/run credits; 20 concurrent runs; unlimited tasks; 10 schedules | Free credit covers metered compute and run invocation; execution stops or queues after credits run out until upgrade; 1-day log retention. |
+| [Qdrant Cloud Free](https://qdrant.tech/pricing/) | Ongoing free allowance | One single-node cluster with 0.5 vCPU, 1 GB RAM and 4 GB disk | For testing and prototypes; limited regions, no high availability; suspends after 1 week of inactivity and deletes after 4 weeks unless reactivated. |
 
 ## How to choose
 
@@ -128,3 +131,4 @@ We **separate** ongoing free allowances, monthly credits, time-limited offers an
 Found a new free tier or an outdated quota? Read [CONTRIBUTING.md](CONTRIBUTING.md) and submit a PR with an official pricing/documentation URL and the date verified. Please avoid referral links, scraped pricing and unverified claims.
 
 Maintained by [ePlus-DEV](https://github.com/ePlus-DEV). Community contributions welcome.
+

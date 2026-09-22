@@ -10,7 +10,7 @@ on:
       - tests/**
       - .github/workflows/validate-catalog.yml
   push:
-    branches: [main]
+    branches: [main, 'catalog/**']
     paths:
       - README.md
       - data/**
