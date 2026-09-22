@@ -1,0 +1,35 @@
+name: Validate free tier catalog
+on:
+  pull_request:
+    paths:
+      - README.md
+      - CONTRIBUTING.md
+      - data/**
+      - docs/**
+      - scripts/**
+      - .github/workflows/validate-catalog.yml
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - data/**
+      - docs/**
+      - scripts/**
+      - .github/workflows/validate-catalog.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: free-tier-catalog-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate catalog
+        run: python3 scripts/validate_catalog.py
