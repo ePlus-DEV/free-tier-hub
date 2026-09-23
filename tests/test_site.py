@@ -65,6 +65,15 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("gtag('js',new Date())", html)
                 self.assertLess(html.index('googletagmanager.com/gtag/js'), html.index('</head>'))
 
+    def test_brand_assets_and_header_identity(self):
+        html = self.text("index.html")
+        icon = self.text("assets/icon.svg")
+        self.assertIn('class="brand-mark"><img src="' + CANONICAL + 'assets/icon.svg"', html)
+        self.assertIn('<small>by ePlus-DEV</small>', html)
+        self.assertIn('id="blue"', icon)
+        self.assertIn('id="green"', icon)
+        self.assertIn('Free Tier Hub', icon)
+
     def test_every_page_has_absolute_self_canonical(self):
         for url in self.result["urls"]:
             path = url.removeprefix(CANONICAL)
