@@ -64,16 +64,16 @@ def render(root):
         parts = [part.strip() for part in line.strip().strip("|").split("|")]
         if len(parts) != 3:
             raise ValueError("Malformed README navigation row")
-        match = re.fullmatch(r"\\[Browse\\]\\(docs/([a-z-]+)\\.md\\)", parts[2])
+        match = re.fullmatch(r"\[Browse\]\(docs/([a-z-]+)\.md\)", parts[2])
         if not match:
             raise ValueError("Unexpected navigation link")
         nav_rows.append([parts[0], counts[match.group(1)], parts[2]])
-    if len(nav_rows) != len(CATEGORIES) or {re.search(r"docs/([a-z-]+)\\.md", r[2]).group(1) for r in nav_rows} != set(CATEGORIES):
+    if len(nav_rows) != len(CATEGORIES) or {re.search(r"docs/([a-z-]+)\.md", r[2]).group(1) for r in nav_rows} != set(CATEGORIES):
         raise ValueError("Navigation categories differ from catalog")
     readme = replace_table(readme, NAV, nav_rows, "README.md")
     overview = [[f"[{item['name']}]({item['pricing_url']})", PLANS[item["plan"]], item["free_limit"], item["watch_out"]] for item in data]
     readme = replace_table(readme, OVERVIEW, overview, "README.md")
-    readme, badges = re.subn(r"services-\\d+-brightgreen", f"services-{len(data)}-brightgreen", readme)
+    readme, badges = re.subn(r"services-\d+-brightgreen", f"services-{len(data)}-brightgreen", readme)
     if badges != 1:
         raise ValueError("README service badge missing or ambiguous")
     results = {readme_path: readme}
