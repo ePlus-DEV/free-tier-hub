@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-68-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-70-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -15,14 +15,14 @@
 | Backend & app hosting | 6 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 14 | [Browse](docs/databases.md) |
+| Databases & caching | 15 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 9 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 4 | [Browse](docs/observability.md) |
 | Product analytics | 1 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
-| AI & ML platforms | 2 | [Browse](docs/ai-ml.md) |
+| AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 7 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 2 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
@@ -56,6 +56,7 @@
 | [Upstash Vector Free](https://upstash.com/pricing/vector) | Ongoing free allowance | One free index; 10,000 queries and 10,000 updates/day; 1 GB data; up to 1,536 dimensions | No uptime SLA; maximum 100 namespaces; daily query/update quotas apply. |
 | [Cloudflare D1 Free](https://developers.cloudflare.com/d1/platform/pricing/) | Ongoing free allowance | 5 GB total storage; 5M rows read/day; 100k rows written/day | Daily limits stop queries on exhaustion; associated Workers usage has its own quota. |
 | [Cloudflare Hyperdrive Free](https://developers.cloudflare.com/hyperdrive/platform/pricing/) | Ongoing free allowance | 100,000 database queries/day; up to 10 configured databases | Requires a separate PostgreSQL/MySQL origin and Workers; query quota resets at 00:00 UTC and excess queries fail; origin hosting may cost extra. |
+| [Cloudflare Vectorize Free](https://developers.cloudflare.com/vectorize/platform/pricing/) | Ongoing free allowance | 30M queried vector dimensions/month; 5M stored vector dimensions; up to 100 indexes | Free plan queries and storage are dimension-based, not a fixed request count; up to 1,536 dimensions/vector and 1,000 namespaces/index. Workers usage has separate limits. |
 | [Render Free Postgres](https://render.com/docs/free) | Temporary resource | 1 GB database, one free instance/workspace | Database EXPIRES after 30 days; not suitable for durable production data. |
 | [Firebase Realtime Database (Spark)](https://firebase.google.com/pricing) | Ongoing free allowance | 1 GB stored; ~10 GB/month downloaded; 100 concurrent connections | Spark limits and feature eligibility vary; avoid assuming unlimited usage. |
 | [Cloudflare R2 Standard](https://developers.cloudflare.com/r2/pricing/) | Ongoing free allowance | 10 GB-month storage; 1M Class A + 10M Class B operations/month | Free allowance covers Standard class only; operations beyond limits incur charges. |
@@ -81,6 +82,7 @@
 | [Cloudflare DNS & CDN Free](https://www.cloudflare.com/plans/) | Ongoing free allowance | Free authoritative DNS, CDN, universal SSL and DDoS protection | Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting. |
 | [Hugging Face Static Spaces](https://huggingface.co/docs/hub/spaces-overview) | Ongoing free allowance | Free static Spaces for ML demo frontends and project showcases | Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute. |
 | [Google Gemini Developer API Free](https://ai.google.dev/gemini-api/docs/pricing) | Ongoing free allowance | Free input and output tokens for eligible Gemini models; Google AI Studio access | Free API eligibility and rate limits vary by model and region; free-tier content can be used to improve Google products. |
+| [Cloudflare Workers AI Free](https://developers.cloudflare.com/workers-ai/platform/pricing/) | Ongoing free allowance | 10,000 Neurons/day across eligible inference models; resets at 00:00 UTC | Neuron consumption varies by model; selected models require Workers Paid or prepaid credits. Free allocation stops when exhausted; Workers limits apply separately. |
 | [Aiven Free PostgreSQL](https://aiven.io/docs/products/postgresql/concepts/pg-free-tier) | Ongoing free allowance | One PostgreSQL service: 1 vCPU, 1 GB RAM, 1 GB disk | No VPC, static IP, pooling or SLA; 20 max connections; inactive services can be powered off. |
 | [Appwrite Cloud Free](https://appwrite.io/pricing) | Ongoing free allowance | 2 projects; 5 GB monthly bandwidth; 2 GB storage; 750K executions/month; 75K MAU | Free projects pause after one week of inactivity; 1 database, 1 bucket and 2 functions per project. |
 | [GitLab CI/CD Free](https://docs.gitlab.com/ci/pipelines/compute_minutes/) | Ongoing free allowance | 400 compute minutes/month per GitLab.com Free namespace on hosted instance runners | Runner cost factors vary; quota is shared across the namespace; extra compute minutes may need purchase. |
