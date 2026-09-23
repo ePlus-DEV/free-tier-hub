@@ -96,6 +96,7 @@ SERVICE_LOGOS = {
     "github-pages": "github",
     "firebase-hosting": "firebase",
     "azure-static-web-apps": "microsoftazure",
+    "koyeb": "koyeb",
     "render-static": "render",
     "render-web": "render",
     "railway": "railway",
