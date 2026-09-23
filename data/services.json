@@ -276,6 +276,18 @@
     "last_checked": "2026-09-23"
   },
   {
+    "id": "cloudflare-vectorize",
+    "name": "Cloudflare Vectorize Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "30M queried vector dimensions/month; 5M stored vector dimensions; up to 100 indexes",
+    "watch_out": "Free plan queries and storage are dimension-based, not a fixed request count; up to 1,536 dimensions/vector and 1,000 namespaces/index. Workers usage has separate limits.",
+    "pricing_url": "https://developers.cloudflare.com/vectorize/platform/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "render-postgres",
     "name": "Render Free Postgres",
     "category": "databases",
@@ -574,6 +586,18 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "cloudflare-workers-ai",
+    "name": "Cloudflare Workers AI Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "10,000 Neurons/day across eligible inference models; resets at 00:00 UTC",
+    "watch_out": "Neuron consumption varies by model; selected models require Workers Paid or prepaid credits. Free allocation stops when exhausted; Workers limits apply separately.",
+    "pricing_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   },
   {
     "id": "aiven-postgres",

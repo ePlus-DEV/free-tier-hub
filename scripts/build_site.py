@@ -113,6 +113,8 @@ SERVICE_LOGOS = {
     "upstash-vector": "upstash",
     "cloudflare-d1": "cloudflare",
     "cloudflare-hyperdrive": "cloudflare",
+    "cloudflare-vectorize": "cloudflare",
+    "cloudflare-workers-ai": "cloudflare",
     "render-postgres": "render",
     "firebase-rtdb": "firebase",
     "cloudflare-r2": "cloudflare",

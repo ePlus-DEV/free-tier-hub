@@ -79,6 +79,16 @@ class SiteTests(unittest.TestCase):
         self.assertIn("origin", entry["watch_out"])
         self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/cloudflare-hyperdrive/index.html"))
 
+    def test_new_cloudflare_ai_and_vector_services(self):
+        for service_id, category in [("cloudflare-vectorize", "databases"), ("cloudflare-workers-ai", "ai-ml")]:
+            with self.subTest(service=service_id):
+                entry = next(item for item in self.data if item["id"] == service_id)
+                self.assertEqual(entry["category"], category)
+                self.assertEqual(entry["credit_card"], "no")
+                self.assertEqual(entry["commercial_use"], "check")
+                self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/" + service_id + "/index.html"))
+        self.assertEqual(len(self.data), 70)
+
     def test_service_logos_have_fallback_and_use_curated_slugs(self):
         html = self.text("index.html")
         detail = self.text("service/vercel/index.html")
