@@ -143,6 +143,44 @@ class SiteTests(unittest.TestCase):
                           (out / "robots.txt").read_text(encoding="utf-8"))
             self.assertIn("Allow: /", (out / "robots.txt").read_text(encoding="utf-8"))
 
+    def test_redesigned_directory_has_real_filters_and_pagination(self):
+        home = self.text("index.html")
+        self.assertIn('class="hero-panel"', home)
+        self.assertIn('class="catalog-layout"', home)
+        self.assertIn('class="catalog-sidebar"', home)
+        self.assertIn('id="theme-toggle"', home)
+        self.assertIn('id="category-filter"', home)
+        self.assertIn('id="sort"', home)
+        self.assertIn('id="load-more"', home)
+        self.assertEqual(home.count('class="service-card"'), len(self.data))
+        self.assertEqual(home.count('data-filter-category='), len(build_site.CATEGORIES) + 1)
+
+    def test_all_categories_are_linked_from_home(self):
+        home = self.text("index.html")
+        for category in build_site.CATEGORIES:
+            self.assertIn('href="' + CANONICAL + 'category/' + category + '/"', home)
+
+    def test_new_details_expose_full_restrictions_and_official_source(self):
+        for item in self.data:
+            page = self.text("service/" + item["id"] + "/index.html")
+            self.assertIn('class="detail-layout"', page)
+            self.assertIn('class="detail-highlight"', page)
+            self.assertIn('class="detail-warning"', page)
+            self.assertIn('class="detail-aside"', page)
+            self.assertIn('href="' + item["pricing_url"].replace("&", "&amp;") + '"', page)
+            self.assertIn(item["watch_out"].replace("&", "&amp;").replace("<", "&lt;"), page)
+
+    def test_progressive_enhancement_and_dark_theme_code_exist(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('id="service-grid"', html)
+        self.assertIn('data-paged-hidden', script)
+        self.assertIn('data-theme', script)
+        self.assertIn('prefers-reduced-motion', css)
+        self.assertIn('.category-service-grid', css)
+        self.assertIn('localStorage', script)
+
     def test_invalid_base_url_rejected(self):
         for url in ("http://example.com", "ftp://example.com", "https://example.com/?q=x"):
             with self.assertRaises(ValueError):
