@@ -754,5 +754,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "circleci-free",
+    "name": "CircleCI Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage",
+    "watch_out": "Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero.",
+    "pricing_url": "https://circleci.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   }
 ]
