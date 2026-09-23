@@ -1,0 +1,65 @@
+name: Clean merged PR branches and previews
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: merged-pr-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete only branches belonging to merged PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const { data: repository } = await github.rest.repos.get({ owner, repo });
+            const protectedBranches = new Set([repository.default_branch]);
+            const open = await github.paginate(github.rest.pulls.list, {
+              owner, repo, state: 'open', per_page: 100
+            });
+            const active = new Set(open.map(pr => pr.head.ref));
+            for (const pr of open) active.add('pr-preview-' + pr.number);
+            const merged = await github.paginate(github.rest.pulls.list, {
+              owner, repo, state: 'closed', per_page: 100
+            });
+            const candidates = new Set();
+            for (const pr of merged) {
+              if (!pr.merged_at) continue;
+              candidates.add('pr-preview-' + pr.number);
+              if (pr.head.repo?.full_name === repository.full_name) {
+                candidates.add(pr.head.ref);
+              }
+            }
+            const branches = await github.paginate(github.rest.repos.listBranches, {
+              owner, repo, per_page: 100
+            });
+            const existing = new Map(branches.map(b => [b.name, b]));
+            for (const name of [...candidates].sort()) {
+              const branch = existing.get(name);
+              if (!branch || branch.protected || protectedBranches.has(name) || active.has(name)) continue;
+              // Never touch an arbitrary branch without a verified merged PR.
+              if (!/^pr-preview-\d+$/.test(name) &&
+                  !merged.some(pr => pr.merged_at &&
+                    pr.head.repo?.full_name === repository.full_name &&
+                    pr.head.ref === name)) continue;
+              try {
+                await github.rest.git.deleteRef({
+                  owner, repo, ref: 'heads/' + name
+                });
+                core.info('Deleted merged PR branch: ' + name);
+              } catch (error) {
+                core.warning('Could not delete ' + name + ': ' + error.message);
+              }
+            }
+            core.info('Kept default/protected branches, active PR branches and unrelated work branches.');
