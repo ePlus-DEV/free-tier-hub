@@ -276,7 +276,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<small>by ePlus-DEV</small></span></a>'
             '<nav class="primary-nav" aria-label="Main navigation">'
             '<a href="' + tag(absolute()) + '">Directory</a>'
-            '<a href="' + tag(absolute("#categories")) + '">Categories</a>'
+            '<a href="' + tag(absolute("#explore")) + '">Categories</a>'
             '<a href="' + tag(absolute("llms.txt")) + '">For agents</a></nav>'
             '<div class="header-actions">'
             '<button class="theme-toggle" id="theme-toggle" type="button" '
@@ -291,7 +291,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             'free tiers, practical limitations and official pricing sources.</p></div>'
             '<div><h3>Explore</h3>'
             '<a href="' + tag(absolute()) + '">All services</a>'
-            '<a href="' + tag(absolute("#categories")) + '">Categories</a>'
+            '<a href="' + tag(absolute("#explore")) + '">Categories</a>'
             '<a href="' + tag(absolute("catalog.json")) + '">Catalog JSON</a>'
             '<a href="' + tag(absolute("sitemap.xml")) + '">Sitemap</a></div>'
             '<div><h3>Developers</h3>'
@@ -299,7 +299,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<a href="' + tag(absolute("agents.md")) + '">agents.md</a>'
             '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") + '">Cost safety</a>'
             '<a href="' + tag(REPOSITORY + "/blob/main/CONTRIBUTING.md") + '">Contribute</a></div>'
-            '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
+            '</div><nav class="footer-category-links" aria-label="Category pages">' +
+            ' '.join('<a href="' + tag(absolute("category/" + category + "/")) + '">' +
+                     tag(CATEGORY_NAMES[category]) + '</a>' for category in CATEGORIES) +
+            '</nav><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
             '<span>Independent catalog · Verify every provider before enabling billing.</span>'
             '</div></div></footer>'
             '<button class="back-to-top" id="back-to-top" type="button" '
@@ -402,17 +405,6 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<div class="stat"><span class="stat-icon">' + glyph("clock") +
         '</span><div><strong>' + tag(latest) + '</strong>'
         '<span>Latest provider check in catalog</span></div></div></div>'
-        '<section id="categories" class="section">'
-        '<div class="section-heading"><div><span class="heading-label">EXPLORE BY WORKLOAD</span>'
-        '<h2>Everything you need to build</h2>'
-        '<p>From your first deploy to background jobs. Start with a category.</p></div>'
-        '<a class="text-link" href="#explore" data-focus-search>Browse all services ' +
-        glyph("arrow") + '</a></div>'
-        '<div class="category-grid">' + "".join(category_link(c) for c in featured) +
-        '</div><details class="more-categories"><summary>Explore the remaining ' +
-        str(len(extras)) + ' categories ' + glyph("chevron") + '</summary>'
-        '<div class="category-grid">' + "".join(category_link(c) for c in extras) +
-        '</div></details></section>'
         '<section id="explore" class="section catalog-section">'
         '<div class="section-heading"><div>'
         '<span class="heading-label">THE SERVICE DIRECTORY</span>'

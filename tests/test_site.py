@@ -221,6 +221,14 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(home.count('class="service-card"'), len(self.data))
         self.assertEqual(home.count('data-filter-category='), len(build_site.CATEGORIES) + 1)
 
+    def test_directory_replaces_redundant_workload_section(self):
+        home = self.text("index.html")
+        self.assertNotIn('id="categories"', home)
+        self.assertNotIn('EXPLORE BY WORKLOAD', home)
+        self.assertIn('id="explore"', home)
+        self.assertIn('class="footer-category-links"', home)
+        self.assertIn('href="' + CANONICAL + '#explore"', home)
+
     def test_all_categories_are_linked_from_home(self):
         home = self.text("index.html")
         for category in build_site.CATEGORIES:
