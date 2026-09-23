@@ -18,6 +18,9 @@ class SyncCatalogTests(unittest.TestCase):
         root = Path(directory)
         (root / "data").mkdir()
         (root / "docs").mkdir()
+        shutil.copytree(ROOT / ".github", root / ".github")
+        shutil.copytree(ROOT / "scripts", root / "scripts")
+        shutil.copy2(ROOT / "CONTRIBUTING.md", root / "CONTRIBUTING.md")
         for source in [ROOT / "README.md", ROOT / "data/services.json"]:
             shutil.copy2(source, root / source.relative_to(ROOT))
         for source in (ROOT / "docs").glob("*.md"):
