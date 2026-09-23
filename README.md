@@ -1,11 +1,11 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-65-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-66-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
-> **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
+> **Last editorial review: 2026-09-23 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
 
@@ -15,7 +15,7 @@
 | Backend & app hosting | 6 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 12 | [Browse](docs/databases.md) |
+| Databases & caching | 13 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 9 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
@@ -53,6 +53,7 @@
 | [Turso Free](https://turso.tech/pricing) | Ongoing free allowance | 100 databases; 5 GB storage; 500M rows read and 10M rows written/month | Read/write usage and sync limits apply; re-check pricing before production use. |
 | [MongoDB Atlas Free Cluster](https://www.mongodb.com/pricing) | Ongoing free allowance | 512 MB storage; one Free cluster per project | Limited regions, throughput and cluster capabilities; designed for development. |
 | [Upstash Redis Free](https://upstash.com/pricing/redis) | Ongoing free allowance | 256 MB data; 500,000 commands/month; 10 GB monthly bandwidth | One Free database; claim temporary instant-created databases to prevent expiry. |
+| [Upstash Vector Free](https://upstash.com/pricing/vector) | Ongoing free allowance | One free index; 10,000 queries and 10,000 updates/day; 1 GB data; up to 1,536 dimensions | No uptime SLA; maximum 100 namespaces; daily query/update quotas apply. |
 | [Cloudflare D1 Free](https://developers.cloudflare.com/d1/platform/pricing/) | Ongoing free allowance | 5 GB total storage; 5M rows read/day; 100k rows written/day | Daily limits stop queries on exhaustion; associated Workers usage has its own quota. |
 | [Render Free Postgres](https://render.com/docs/free) | Temporary resource | 1 GB database, one free instance/workspace | Database EXPIRES after 30 days; not suitable for durable production data. |
 | [Firebase Realtime Database (Spark)](https://firebase.google.com/pricing) | Ongoing free allowance | 1 GB stored; ~10 GB/month downloaded; 100 concurrent connections | Spark limits and feature eligibility vary; avoid assuming unlimited usage. |
