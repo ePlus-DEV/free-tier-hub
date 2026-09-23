@@ -754,5 +754,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "val-town-free",
+    "name": "Val Town Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "100,000 runs/day; unlimited public vals; 2,500 vals; cron schedules as often as every 15 minutes",
+    "watch_out": "New vals on Free are public; no custom domains; 1-minute execution timeout and 3-day log retention.",
+    "pricing_url": "https://www.val.town/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   }
 ]

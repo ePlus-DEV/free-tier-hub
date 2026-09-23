@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-63-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-64-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
@@ -10,7 +10,7 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 7 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 5 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 6 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 12 | [Browse](docs/databases.md) |
@@ -94,6 +94,7 @@
 | [Trigger.dev Free](https://trigger.dev/pricing) | Recurring free credit | $5 recurring monthly compute/run credits; 20 concurrent runs; unlimited tasks; 10 schedules | Free credit covers metered compute and run invocation; execution stops or queues after credits run out until upgrade; 1-day log retention. |
 | [Qdrant Cloud Free](https://qdrant.tech/pricing/) | Ongoing free allowance | One single-node cluster with 0.5 vCPU, 1 GB RAM and 4 GB disk | For testing and prototypes; limited regions, no high availability; suspends after 1 week of inactivity and deletes after 4 weeks unless reactivated. |
 | [Cloudflare Durable Objects Free](https://developers.cloudflare.com/durable-objects/platform/pricing/) | Ongoing free allowance | 100,000 Durable Object requests/day; 13,000 GB-s compute/day; up to 5 GB SQLite-backed storage/account | Workers Free supports only SQLite-backed objects; operations fail when daily quotas are exceeded; Workers request limits apply separately. |
+| [Val Town Free](https://www.val.town/pricing) | Ongoing free allowance | 100,000 runs/day; unlimited public vals; 2,500 vals; cron schedules as often as every 15 minutes | New vals on Free are public; no custom domains; 1-minute execution timeout and 3-day log retention. |
 
 ## How to choose
 
