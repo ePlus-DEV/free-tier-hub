@@ -6,6 +6,7 @@ SQL, NoSQL and managed cache. [← Back to directory](../README.md)
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
+| [Convex Free](https://www.convex.dev/pricing) | Ongoing free allowance | 0.5 GB database storage; 1M function calls/month; 1 GB file storage | Separate database I/O, action compute, search and egress caps apply. | Check provider | Check provider |
 | [Supabase Free](https://supabase.com/pricing) | Ongoing free allowance | 500 MB Postgres database/project; 2 active projects; 1 GB file storage | Free projects pause after one week of inactivity; restore/backups are limited. | Not required | Check provider |
 | [Turso Free](https://turso.tech/pricing) | Ongoing free allowance | 100 databases; 5 GB storage; 500M rows read and 10M rows written/month | Read/write usage and sync limits apply; re-check pricing before production use. | Not required | Check provider |
 | [MongoDB Atlas Free Cluster](https://www.mongodb.com/pricing) | Ongoing free allowance | 512 MB storage; one Free cluster per project | Limited regions, throughput and cluster capabilities; designed for development. | Not required | Check provider |

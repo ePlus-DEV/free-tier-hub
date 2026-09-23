@@ -161,7 +161,13 @@ SERVICE_LOGOS = {
     "qdrant-cloud-free": "qdrant",
     "cloudflare-durable-objects": "cloudflare",
     "circleci-free": "circleci",
-    "val-town-free": "valtown"
+    "val-town-free": "valtown",
+    "convex-free": "convex",
+    "doppler-developer": "doppler",
+    "estuary-developer": "estuary",
+    "deplexo-free": None,
+    "pr-quorum-free": None,
+    "tinyfish-search-fetch": None
 }
 
 

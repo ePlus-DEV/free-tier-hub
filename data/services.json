@@ -84,6 +84,18 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "deplexo-free",
+    "name": "Deplexo Free Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 always-on app; 0.25 CPU; 128 MB RAM; 250 MB disk",
+    "watch_out": "Provider advertises no sleep; long-term reliability has not been independently verified.",
+    "pricing_url": "https://deplexo.com/free-hosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "render-web",
     "name": "Render Free Web Services",
     "category": "app-hosting",
@@ -190,6 +202,18 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "convex-free",
+    "name": "Convex Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "0.5 GB database storage; 1M function calls/month; 1 GB file storage",
+    "watch_out": "Separate database I/O, action compute, search and egress caps apply.",
+    "pricing_url": "https://www.convex.dev/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   },
   {
     "id": "supabase",
@@ -348,6 +372,30 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "pr-quorum-free",
+    "name": "PR Quorum Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "50 AI code reviews/month across 2 repositories; max 3 inline comments/review",
+    "watch_out": "Default three-reviewer panel only; excess reviews are skipped until reset or upgrade.",
+    "pricing_url": "https://prquorum.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
+    "id": "estuary-developer",
+    "name": "Estuary Developer",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10 GB data movement/month; 2 concurrent connector instances",
+    "watch_out": "Exceeding free quotas automatically starts a 30-day Cloud trial.",
+    "pricing_url": "https://estuary.dev/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "resend",
     "name": "Resend Free",
     "category": "developer-tools",
@@ -454,6 +502,18 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "doppler-developer",
+    "name": "Doppler Developer",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "3 users free; 5 config syncs; 3 days of activity logs",
+    "watch_out": "Additional users cost $8/month; advanced SSO and audit retention require paid plans.",
+    "pricing_url": "https://www.doppler.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   },
   {
     "id": "auth0",
@@ -718,6 +778,18 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "tinyfish-search-fetch",
+    "name": "TinyFish Search & Fetch",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Search: 30 requests/min and 500/hour; Fetch: 150 URLs/min and 1,000/day",
+    "watch_out": "Agent and Browser are separately metered; Search/Fetch stay free with $0 Wallet.",
+    "pricing_url": "https://future.tinyfish.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   },
   {
     "id": "algolia-free",

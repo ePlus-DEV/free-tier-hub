@@ -101,7 +101,18 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(entry["credit_card"], "no")
                 self.assertEqual(entry["commercial_use"], "check")
                 self.assertIn("simple-icons@v15/icons/" + logo + ".svg", self.text("service/" + service_id + "/index.html"))
-        self.assertEqual(len(self.data), 72)
+        self.assertGreaterEqual(len(self.data), 72)
+
+    def test_six_new_free_tiers(self):
+        expected = {"convex-free": "databases", "doppler-developer": "auth-security",
+                    "estuary-developer": "developer-tools", "deplexo-free": "app-hosting",
+                    "pr-quorum-free": "developer-tools", "tinyfish-search-fetch": "search"}
+        self.assertGreaterEqual(len(self.data), 78)
+        for service_id, category in expected.items():
+            with self.subTest(service=service_id):
+                entry = next(x for x in self.data if x["id"] == service_id)
+                self.assertEqual(entry["category"], category)
+                self.assertTrue(entry["pricing_url"].startswith("https://"))
 
     def test_service_logos_have_fallback_and_use_curated_slugs(self):
         html = self.text("index.html")

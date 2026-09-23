@@ -6,6 +6,8 @@ Transactional email, monitoring and CI/CD. [← Back to directory](../README.md)
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
+| [PR Quorum Free](https://prquorum.com/pricing) | Ongoing free allowance | 50 AI code reviews/month across 2 repositories; max 3 inline comments/review | Default three-reviewer panel only; excess reviews are skipped until reset or upgrade. | Not required | Check provider |
+| [Estuary Developer](https://estuary.dev/pricing/) | Ongoing free allowance | 10 GB data movement/month; 2 concurrent connector instances | Exceeding free quotas automatically starts a 30-day Cloud trial. | Not required | Check provider |
 | [Resend Free](https://resend.com/pricing) | Ongoing free allowance | 3,000 transactional emails/month; 100/day; up to 3 domains | Daily sending cap and deliverability/domain-verification requirements apply. | Not required | Check provider |
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. | Check provider | Check provider |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. | Not required | Check provider |
