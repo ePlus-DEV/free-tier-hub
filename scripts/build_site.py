@@ -299,10 +299,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<a href="' + tag(absolute("agents.md")) + '">agents.md</a>'
             '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") + '">Cost safety</a>'
             '<a href="' + tag(REPOSITORY + "/blob/main/CONTRIBUTING.md") + '">Contribute</a></div>'
-            '</div><nav class="footer-category-links" aria-label="Category pages">' +
-            ' '.join('<a href="' + tag(absolute("category/" + category + "/")) + '">' +
-                     tag(CATEGORY_NAMES[category]) + '</a>' for category in CATEGORIES) +
-            '</nav><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
+            '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
             '<span>Independent catalog · Verify every provider before enabling billing.</span>'
             '</div></div></footer>'
             '<button class="back-to-top" id="back-to-top" type="button" '

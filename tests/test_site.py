@@ -226,13 +226,12 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn('id="categories"', home)
         self.assertNotIn('EXPLORE BY WORKLOAD', home)
         self.assertIn('id="explore"', home)
-        self.assertIn('class="footer-category-links"', home)
         self.assertIn('href="' + CANONICAL + '#explore"', home)
 
-    def test_all_categories_are_linked_from_home(self):
-        home = self.text("index.html")
+    def test_all_categories_are_linked_from_sitemap(self):
+        sitemap = self.text("sitemap.xml")
         for category in build_site.CATEGORIES:
-            self.assertIn('href="' + CANONICAL + 'category/' + category + '/"', home)
+            self.assertIn(CANONICAL + 'category/' + category + '/', sitemap)
 
     def test_new_details_expose_full_restrictions_and_official_source(self):
         for item in self.data:
