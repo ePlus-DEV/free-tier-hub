@@ -21,7 +21,10 @@ def prepare(site, base_url):
                 target += "index.html"
             relative = os.path.relpath(root / target, page.parent).replace(os.sep, "/")
             return prefix + relative + fragment + suffix
+        canonical = re.search(r'<link rel="canonical" href="([^"]+)">', content)
         content = re.sub(r'((?:href|src)=")' + re.escape(base_url) + r'([^"]*)(")', localize, content)
+        if canonical:
+            content = re.sub(r'<link rel="canonical" href="[^"]+">', '<link rel="canonical" href="' + canonical.group(1) + '">', content, count=1)
         content = re.sub(r'<script async src="https://www.googletagmanager.com/gtag/js\?id=G-9YPGG0XEZV"></script>', '', content)
         content = re.sub(r'<script>window.dataLayer=window.dataLayer\|\|\[\];.*?gtag\(' + "'config','G-9YPGG0XEZV'" + r'\);</script>', '', content)
         page.write_text(content, encoding="utf-8")
