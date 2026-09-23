@@ -72,6 +72,13 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("gtag('js',new Date())", html)
                 self.assertLess(html.index('googletagmanager.com/gtag/js'), html.index('</head>'))
 
+    def test_cloudflare_hyperdrive_official_listing(self):
+        entry = next(x for x in self.data if x["id"] == "cloudflare-hyperdrive")
+        self.assertEqual(entry["pricing_url"], "https://developers.cloudflare.com/hyperdrive/platform/pricing/")
+        self.assertIn("100,000", entry["free_limit"])
+        self.assertIn("origin", entry["watch_out"])
+        self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/cloudflare-hyperdrive/index.html"))
+
     def test_service_logos_have_fallback_and_use_curated_slugs(self):
         html = self.text("index.html")
         detail = self.text("service/vercel/index.html")

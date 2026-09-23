@@ -264,6 +264,18 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "cloudflare-hyperdrive",
+    "name": "Cloudflare Hyperdrive Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "100,000 database queries/day; up to 10 configured databases",
+    "watch_out": "Requires a separate PostgreSQL/MySQL origin and Workers; query quota resets at 00:00 UTC and excess queries fail; origin hosting may cost extra.",
+    "pricing_url": "https://developers.cloudflare.com/hyperdrive/platform/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "render-postgres",
     "name": "Render Free Postgres",
     "category": "databases",
