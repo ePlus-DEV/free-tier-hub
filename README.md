@@ -115,6 +115,22 @@
 - [Choose a free-tier stack](docs/use-cases.md) — examples for frontend, API, background jobs, search and feature flags.
 - [Avoid unexpected charges and data loss](docs/cost-safety.md) — card requirements, inactivity, quotas, backups and production considerations.
 
+## Website and GitHub Pages
+
+**Public site:** [https://eplus-dev.github.io/free-tier-hub/](https://eplus-dev.github.io/free-tier-hub/) (after the GitHub Pages Actions source is enabled and the first deployment succeeds).
+
+The [Pages workflow](.github/workflows/pages.yml) builds **pre-rendered HTML** directly from `data/services.json`: one crawlable page per service and per category, responsive search on the index, canonical URLs, meta descriptions, Open Graph tags, breadcrumbs and schema.org JSON-LD. Its output includes `sitemap.xml`, `robots.txt`, `llms.txt`, `agents.md` and `catalog.json`.
+
+**One-time setup:** In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The workflow deploys automatically from `main`; pull requests run the full build and tests without publishing. For a custom domain, configure it in Pages settings and set the repository Actions variable `SITE_URL` to its full HTTPS URL (with trailing slash) so canonical links and the sitemap use the same domain. On a project Pages URL, `robots.txt` under `/free-tier-hub/` is informational; crawler-wide robots rules can only be controlled by the origin's root `/robots.txt`.
+
+Run locally (Python 3.12; no third-party runtime dependencies):
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/validate_catalog.py
+python3 scripts/build_site.py --site-url https://eplus-dev.github.io/free-tier-hub/ --output dist
+```
+
 ## Data and maintenance
 
 - [Machine-readable catalog](data/services.json) — each entry has a source, plan type, free allowance, important restrictions and review date.
