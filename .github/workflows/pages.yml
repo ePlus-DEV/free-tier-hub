@@ -1,0 +1,85 @@
+name: Build and deploy GitHub Pages
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - 'site/**'
+      - 'tests/**'
+      - 'README.md'
+      - '.github/workflows/pages.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - 'site/**'
+      - 'tests/**'
+      - 'README.md'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Test and build static site
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit and integration tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate source catalog and Markdown
+        run: python3 scripts/validate_catalog.py
+      - name: Build HTML, sitemap and agent discovery
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://eplus-dev.github.io/free-tier-hub/' }}
+        run: python3 scripts/build_site.py --output dist
+      - name: Verify generated site assets
+        run: |
+          test -s dist/index.html
+          test -s dist/sitemap.xml
+          test -s dist/llms.txt
+          test -s dist/agents.md
+          test -s dist/catalog.json
+          test -f dist/.nojekyll
+      - name: Configure GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
