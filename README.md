@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-70-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-72-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -19,8 +19,8 @@
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 9 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 4 | [Browse](docs/observability.md) |
-| Product analytics | 1 | [Browse](docs/analytics.md) |
+| Monitoring & observability | 5 | [Browse](docs/observability.md) |
+| Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 7 | [Browse](docs/queues-jobs.md) |
@@ -74,10 +74,12 @@
 | [Auth0 Free](https://auth0.com/pricing) | Ongoing free allowance | Up to 25,000 monthly active users; one custom domain and five organizations | Credit card not required to sign up; custom-domain feature requires card verification; tenant and connection limits apply. |
 | [Clerk Hobby](https://clerk.com/pricing) | Ongoing free allowance | 50,000 monthly retained users per app; unlimited applications | MRU is not equivalent to monthly active users; free plan has limited dashboard seats and short log retention. |
 | [Cloudflare Turnstile Free](https://developers.cloudflare.com/turnstile/plans/) | Ongoing free allowance | Up to 20 widgets/account; unlimited challenges; 10 hostnames/widget | Free tier has 7-day analytics lookback; remove-branding and advanced controls are Enterprise-only. |
+| [New Relic Free](https://newrelic.com/pricing) | Ongoing free allowance | 100 GB data ingest/month; 1 full-platform user; unlimited basic users; 500 synthetic checks; at least 8 days default retention | When the 100 GB monthly free ingest allowance is exceeded, ingest and platform access stop until upgrade or next month; retention varies by data type. |
 | [UptimeRobot Free](https://uptimerobot.com/pricing/) | Ongoing free allowance | 50 monitors with 5-minute checks and basic status pages | Longer monitoring intervals and limited alert integrations; faster 60-second checks require paid plan. |
 | [Grafana Cloud Free](https://grafana.com/pricing/) | Ongoing free allowance | 10k active metric series and 50 GB logs ingested/month; 14-day retention | Free quotas are separate for logs, metrics, traces and users; limited retention and community support. |
 | [Sentry Developer](https://sentry.io/pricing/) | Ongoing free allowance | One user; 5,000 errors/month; 50 replays and 1 uptime monitor | Free plan is single-user; profiling, advanced integrations and additional event volumes require payment. |
 | [Splunk Observability Cloud Free Edition](https://www.splunk.com/en_us/products/pricing/observability.html) | Ongoing free allowance | Up to 15 hosts with all Observability Cloud platform features; no time limit | May be throttled and accounts inactive for 30+ days can be deactivated; use is limited to internal business purposes and not service-bureau processing for third parties. |
+| [Tinybird Free](https://www.tinybird.co/docs/forward/pricing/free) | Ongoing free allowance | 10 GB storage; 1,000 requests/day per organization; 0.25 vCPU (up to 3x burst); 1 query thread | Shared infrastructure; CPU bursts beyond capacity return HTTP 429; Free queries have a 10-second execution limit; $25 LLM credits per billing cycle are separate. |
 | [PostHog Free](https://posthog.com/pricing) | Ongoing free allowance | 1M product analytics events/month; 5k session recordings/month; 1M feature flag requests | Free without a card for one project; usage stops at limits unless billing is enabled. |
 | [Cloudflare DNS & CDN Free](https://www.cloudflare.com/plans/) | Ongoing free allowance | Free authoritative DNS, CDN, universal SSL and DDoS protection | Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting. |
 | [Hugging Face Static Spaces](https://huggingface.co/docs/hub/spaces-overview) | Ongoing free allowance | Free static Spaces for ML demo frontends and project showcases | Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute. |

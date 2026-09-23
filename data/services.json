@@ -492,6 +492,18 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "new-relic-free",
+    "name": "New Relic Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "100 GB data ingest/month; 1 full-platform user; unlimited basic users; 500 synthetic checks; at least 8 days default retention",
+    "watch_out": "When the 100 GB monthly free ingest allowance is exceeded, ingest and platform access stop until upgrade or next month; retention varies by data type.",
+    "pricing_url": "https://newrelic.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "uptimerobot",
     "name": "UptimeRobot Free",
     "category": "observability",
@@ -537,6 +549,18 @@
     "pricing_url": "https://www.splunk.com/en_us/products/pricing/observability.html",
     "credit_card": "no",
     "commercial_use": "yes",
+    "last_checked": "2026-09-23"
+  },
+  {
+    "id": "tinybird-free",
+    "name": "Tinybird Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "10 GB storage; 1,000 requests/day per organization; 0.25 vCPU (up to 3x burst); 1 query thread",
+    "watch_out": "Shared infrastructure; CPU bursts beyond capacity return HTTP 429; Free queries have a 10-second execution limit; $25 LLM credits per billing cycle are separate.",
+    "pricing_url": "https://www.tinybird.co/docs/forward/pricing/free",
+    "credit_card": "no",
+    "commercial_use": "check",
     "last_checked": "2026-09-23"
   },
   {
