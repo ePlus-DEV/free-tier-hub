@@ -2,7 +2,7 @@
 
 Secure tunnels and public development endpoints. [← Back to directory](../README.md)
 
-**Editorial review:** 2026-09-24 (UTC). Quotas, eligibility and pricing may change; consult the official provider links before use.
+**Editorial review:** 2026-09-23 (UTC). Quotas, eligibility and pricing may change; consult the official provider links before use.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
