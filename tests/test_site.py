@@ -65,6 +65,36 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("gtag('js',new Date())", html)
                 self.assertLess(html.index('googletagmanager.com/gtag/js'), html.index('</head>'))
 
+    def test_service_logos_have_fallback_and_use_curated_slugs(self):
+        html = self.text("index.html")
+        detail = self.text("service/vercel/index.html")
+        self.assertIn("simple-icons@v15/icons/vercel.svg", html)
+        self.assertIn('class="service-monogram" hidden', html)
+        self.assertIn("simple-icons@v15/icons/vercel.svg", detail)
+        self.assertIn("this.nextElementSibling.hidden=false", detail)
+        self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
+
+    def test_back_to_top_is_on_every_page_and_respects_motion_preference(self):
+        for page in self.output.rglob("*.html"):
+            html = page.read_text(encoding="utf-8")
+            self.assertIn('id="back-to-top"', html, str(page))
+            self.assertIn('aria-label="Back to top"', html, str(page))
+        js = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('window.scrollY < 360', js)
+        self.assertIn('window.scrollTo({ top: 0', js)
+        self.assertIn('prefers-reduced-motion: reduce', js)
+        self.assertIn('.back-to-top[hidden]', css)
+
+    def test_brand_assets_and_header_identity(self):
+        html = self.text("index.html")
+        icon = self.text("assets/icon.svg")
+        self.assertIn('class="brand-mark"><img src="' + CANONICAL + 'assets/icon.svg"', html)
+        self.assertIn('<small>by ePlus-DEV</small>', html)
+        self.assertIn('id="blue"', icon)
+        self.assertIn('id="green"', icon)
+        self.assertIn('Free Tier Hub', icon)
+
     def test_every_page_has_absolute_self_canonical(self):
         for url in self.result["urls"]:
             path = url.removeprefix(CANONICAL)

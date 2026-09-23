@@ -32,6 +32,20 @@
     });
   }
 
+  // Works on every page, including detail and 404 pages without a search grid.
+  var backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    var updateBackToTop = function () {
+      backToTop.hidden = window.scrollY < 360;
+    };
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop();
+    backToTop.addEventListener("click", function () {
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduced ? "instant" : "smooth" });
+    });
+  }
+
   var search = document.getElementById("search");
   var mobileCategory = document.getElementById("category-filter");
   var sort = document.getElementById("sort");
