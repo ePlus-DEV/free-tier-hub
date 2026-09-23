@@ -46,6 +46,48 @@ COMMERCIAL_NAMES = {
     "no": "Restricted / personal use",
     "check": "Check provider",
 }
+# Decorative SVG symbols are inlined to avoid a runtime icon dependency.
+ICON_PATHS = {
+    "layers": '<path d="m12 2-9 5 9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>',
+    "grid": '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+    "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>',
+    "server": '<rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 8h.01M7 17h.01M11 8h6M11 17h6"/>',
+    "cloud": '<path d="M20 17.5a4.5 4.5 0 0 0-2.3-8.35A6.5 6.5 0 0 0 5 10.5a3.6 3.6 0 0 0 0 7h15Z"/>',
+    "database": '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>',
+    "code": '<path d="m8 8-4 4 4 4m8-8 4 4-4 4m-3-12-2 16"/>',
+    "zap": '<path d="m13 2-9 11h7l-1 9 10-12h-7V2Z"/>',
+    "shield": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>',
+    "activity": '<path d="M3 12h4l3-7 4 14 3-7h4"/>',
+    "chart": '<path d="M3 3v18h18"/><path d="m7 16 4-5 4 3 5-8"/>',
+    "network": '<circle cx="12" cy="4" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 6v5M5 17l7-6 7 6"/>',
+    "sparkles": '<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/>',
+    "queue": '<path d="M4 6h14M4 12h14M4 18h9"/><path d="m17 15 3 3-3 3"/>',
+    "search": '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
+    "flag": '<path d="M5 22V4m0 1c5-4 8 4 15 0v11c-7 4-10-4-15 0"/>',
+    "arrow": '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+    "chevron": '<path d="m6 9 6 6 6-6"/>',
+    "check": '<path d="m5 12 5 5L20 7"/>',
+    "moon": '<path d="M20 15a8 8 0 0 1-11-11A8 8 0 1 0 20 15Z"/>',
+    "alert": '<path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/>',
+    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>',
+}
+CATEGORY_ICONS = {
+    "static-hosting": "globe", "app-hosting": "server", "serverless": "zap",
+    "cloud-vps": "cloud", "databases": "database", "storage": "layers",
+    "developer-tools": "code", "auth-security": "shield", "observability": "activity",
+    "analytics": "chart", "dns-cdn": "network", "ai-ml": "sparkles",
+    "queues-jobs": "queue", "search": "search", "feature-flags": "flag",
+}
+
+
+def glyph(name):
+    """Trusted SVG; all catalog-provided strings use tag() escaping."""
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+            'fill="none" stroke="currentColor" stroke-width="1.8" '
+            'stroke-linecap="round" stroke-linejoin="round" '
+            'aria-hidden="true" focusable="false">' + ICON_PATHS[name] + '</svg>')
+
+
 assert set(CATEGORY_NAMES) == set(CATEGORIES)
 
 
@@ -131,6 +173,9 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<meta property="og:url" content="' + tag(canonical) + '">'
             '<meta name="twitter:card" content="summary">'
             '<link rel="icon" type="image/svg+xml" href="' + tag(absolute("assets/icon.svg")) + '">'
+            '<link rel="preconnect" href="https://fonts.googleapis.com">'
+            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+            '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">'
             '<link rel="stylesheet" href="' + tag(absolute("assets/site.css")) + '">'
             '<link rel="alternate" type="text/plain" title="LLM overview" href="' + tag(absolute("llms.txt")) + '">'
             '<link rel="alternate" type="text/markdown" title="Agent discovery" href="' + tag(absolute("agents.md")) + '">'
@@ -139,19 +184,37 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '</head><body><a class="skip-link" href="#main">Skip to content</a>'
             '<header class="site-header"><div class="container header-inner">'
             '<a class="brand" href="' + tag(absolute()) + '" aria-label="Free Tier Hub home">'
-            '<span class="brand-mark">F</span><span>Free Tier Hub</span></a>'
-            '<nav aria-label="Main navigation"><a href="' + tag(absolute()) + '">Explore</a>'
+            '<span class="brand-mark">' + glyph("layers") + '</span>'
+            '<span class="brand-wordmark">Free Tier <strong>Hub</strong>'
+            '<small>Developer resources, simplified</small></span></a>'
+            '<nav class="primary-nav" aria-label="Main navigation">'
+            '<a href="' + tag(absolute()) + '">Directory</a>'
             '<a href="' + tag(absolute("#categories")) + '">Categories</a>'
-            '<a href="' + tag(REPOSITORY) + '" rel="noopener">GitHub</a></nav>'
+            '<a href="' + tag(absolute("llms.txt")) + '">For agents</a></nav>'
+            '<div class="header-actions">'
+            '<button class="theme-toggle" id="theme-toggle" type="button" '
+            'aria-label="Switch to dark appearance" aria-pressed="false" title="Dark mode">'
+            + glyph("moon") + '</button>'
+            '<a class="github-button" href="' + tag(REPOSITORY) + '" '
+            'rel="noopener noreferrer">' + glyph("code") + 'GitHub</a></div>'
             '</div></header><main id="main" class="container">' + content +
             '</main><footer class="site-footer"><div class="container">'
-            '<p>Free Tier Hub is an independent community-maintained directory. '
-            'Plans change: confirm limits and terms with each provider.</p>'
-            '<p><a href="' + tag(absolute("llms.txt")) + '">LLM overview</a> · '
-            '<a href="' + tag(absolute("agents.md")) + '">Agent discovery</a> · '
-            '<a href="' + tag(absolute("sitemap.xml")) + '">Sitemap</a> · '
-            '<a href="' + tag(REPOSITORY + "/blob/main/CONTRIBUTING.md") + '">Contribute</a></p>'
-            '</div></footer></body></html>'
+            '<div class="footer-grid"><div><div class="footer-brand">Free Tier Hub</div>'
+            '<p>An independent, open-source directory for developers comparing '
+            'free tiers, practical limitations and official pricing sources.</p></div>'
+            '<div><h3>Explore</h3>'
+            '<a href="' + tag(absolute()) + '">All services</a>'
+            '<a href="' + tag(absolute("#categories")) + '">Categories</a>'
+            '<a href="' + tag(absolute("catalog.json")) + '">Catalog JSON</a>'
+            '<a href="' + tag(absolute("sitemap.xml")) + '">Sitemap</a></div>'
+            '<div><h3>Developers</h3>'
+            '<a href="' + tag(absolute("llms.txt")) + '">llms.txt</a>'
+            '<a href="' + tag(absolute("agents.md")) + '">agents.md</a>'
+            '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") + '">Cost safety</a>'
+            '<a href="' + tag(REPOSITORY + "/blob/main/CONTRIBUTING.md") + '">Contribute</a></div>'
+            '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
+            '<span>Independent catalog · Verify every provider before enabling billing.</span>'
+            '</div></div></footer></body></html>'
         )
         return head
 
