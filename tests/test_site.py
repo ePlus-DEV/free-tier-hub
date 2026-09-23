@@ -52,6 +52,19 @@ class SiteTests(unittest.TestCase):
         self.assertIn('name="twitter:card"', html)
         self.assertIn('id="search"', html)
 
+    def test_ga4_tracking_is_present_once_on_every_html_page(self):
+        """All generated pages, including category/detail, carry the same GA4 ID."""
+        pages = list(self.output.rglob("*.html"))
+        self.assertEqual(len(pages), self.result["page_count"] + 1)  # Includes 404.html
+        for page in pages:
+            with self.subTest(page=str(page.relative_to(self.output))):
+                html = page.read_text(encoding="utf-8")
+                self.assertEqual(html.count('https://www.googletagmanager.com/gtag/js?id=G-9YPGG0XEZV'), 1)
+                self.assertEqual(html.count("gtag('config','G-9YPGG0XEZV')"), 1)
+                self.assertIn('window.dataLayer=window.dataLayer||[]', html)
+                self.assertIn("gtag('js',new Date())", html)
+                self.assertLess(html.index('googletagmanager.com/gtag/js'), html.index('</head>'))
+
     def test_every_page_has_absolute_self_canonical(self):
         for url in self.result["urls"]:
             path = url.removeprefix(CANONICAL)
