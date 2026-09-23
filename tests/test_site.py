@@ -147,7 +147,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn('rel="canonical" href="' + CANONICAL + '"', self.text("index.html"))
         self.assertIn('<loc>' + CANONICAL + '</loc>', self.text("sitemap.xml"))
         self.assertIn("Sitemap: " + CANONICAL + "sitemap.xml", self.text("robots.txt"))
-        self.assertIn("Allow: /\\n", self.text("robots.txt"))
+        self.assertIn("Allow: /\n", self.text("robots.txt"))
 
     def test_custom_domain_switches_all_canonicals(self):
         with tempfile.TemporaryDirectory() as temp:
