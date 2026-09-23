@@ -34,6 +34,7 @@ CATEGORY_NAMES = {
     "search": "Hosted search",
     "feature-flags": "Feature flags & gradual rollout",
     "tunneling-networking": "Tunneling & networking",
+    "webhooks-events": "Webhooks & event delivery",
 }
 PLAN_NAMES = {
     "ongoing": "Ongoing free allowance",
@@ -78,7 +79,7 @@ CATEGORY_ICONS = {
     "developer-tools": "code", "auth-security": "shield", "observability": "activity",
     "analytics": "chart", "dns-cdn": "network", "ai-ml": "sparkles",
     "queues-jobs": "queue", "search": "search", "feature-flags": "flag",
-    "tunneling-networking": "network",
+    "tunneling-networking": "network", "webhooks-events": "queue",
 }
 
 
@@ -173,6 +174,9 @@ SERVICE_LOGOS = {
     "ngrok-free": "ngrok",
     "windmill-cloud-free": None,
     "axiom-personal": None,
+    "hookdeck-developer": None,
+    "svix-free": None,
+    "tailscale-personal": "tailscale",
     "tinyfish-search-fetch": None
 }
 
