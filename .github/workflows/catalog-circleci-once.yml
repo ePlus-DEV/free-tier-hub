@@ -23,21 +23,12 @@ jobs:
           p=Path('data/services.json')
           data=json.loads(p.read_text())
           assert len(data)==63 and not any(x['id']=='circleci-free' for x in data)
-          item={
-            'id':'circleci-free','name':'CircleCI Free','category':'developer-tools','plan':'ongoing',
-            'free_limit':'30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage',
-            'watch_out':'Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero.',
-            'pricing_url':'https://circleci.com/pricing/','credit_card':'no','commercial_use':'check','last_checked':'2026-09-23'
-          }
-          data.append(item)
-          p.write_text(json.dumps(data,indent=2)+'\n')
-          readme=Path('README.md')
-          s=readme.read_text()
-          s=s.replace('services-63-brightgreen','services-64-brightgreen').replace('| APIs & developer tools | 8 |','| APIs & developer tools | 9 |')
+          item={'id':'circleci-free','name':'CircleCI Free','category':'developer-tools','plan':'ongoing','free_limit':'30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage','watch_out':'Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero.','pricing_url':'https://circleci.com/pricing/','credit_card':'no','commercial_use':'check','last_checked':'2026-09-23'}
+          data.append(item); p.write_text(json.dumps(data,indent=2)+'\n')
+          readme=Path('README.md'); s=readme.read_text(); s=s.replace('services-63-brightgreen','services-64-brightgreen').replace('| APIs & developer tools | 8 |','| APIs & developer tools | 9 |')
           row='| [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. |'
           lines=s.splitlines(); idx=max(i for i,x in enumerate(lines) if x.startswith('| [')); lines.insert(idx+1,row); readme.write_text('\n'.join(lines)+'\n')
-          doc=Path('docs/developer-tools.md'); s=doc.read_text(); marker='\n> **Important:**'
-          row='| [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. | Not required | Check provider |\n'
+          doc=Path('docs/developer-tools.md'); s=doc.read_text(); marker='\n\n> **Important:**'; row='| [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. | Not required | Check provider |'
           assert marker in s; doc.write_text(s.replace(marker,'\n'+row+marker,1))
           PY
           python3 -m unittest discover -s tests -v
