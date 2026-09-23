@@ -993,7 +993,7 @@
     "pricing_url": "https://hookdeck.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-09-23"
   },
   {
     "id": "svix-free",
@@ -1005,7 +1005,7 @@
     "pricing_url": "https://www.svix.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-09-23"
   },
   {
     "id": "tailscale-personal",
@@ -1017,6 +1017,6 @@
     "pricing_url": "https://tailscale.com/pricing",
     "credit_card": "check",
     "commercial_use": "no",
-    "last_checked": "2026-09-24"
+    "last_checked": "2026-09-23"
   }
 ]
