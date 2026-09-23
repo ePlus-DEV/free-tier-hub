@@ -398,7 +398,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<section class="page-intro"><p class="kicker">CATEGORY · ' + str(len(subset)) +
             ' SERVICES</p><h1>' + tag(name) + '</h1>'
             '<p>Compare included quotas, restrictions and official provider documentation.</p></section>'
-            '<div class="service-grid">' + "".join(card(item) for item in subset) + '</div>'
+            '<div class="service-grid category-service-grid">' + "".join(card(item) for item in subset) + '</div>'
             '<p class="back-link"><a href="' + tag(absolute()) + '">← All categories and services</a></p>'
         )
         schema = {"@context": "https://schema.org", "@graph": [
@@ -423,31 +423,52 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         relative = "service/" + item["id"] + "/"
         category_url = absolute("category/" + item["category"] + "/")
         crumbs = [("Home", site_url), (category, category_url), (name, absolute(relative))]
+        monogram = "".join(word[0] for word in
+                           re.findall(r"[A-Za-z0-9]+", name)[:2]).upper() or "FT"
         fields = [
-            ("Plan", PLAN_NAMES[item["plan"]]), ("Free allowance", item["free_limit"]),
-            ("Important restrictions", item["watch_out"]),
+            ("Plan", PLAN_NAMES[item["plan"]]),
             ("Credit card", CARD_NAMES[item["credit_card"]]),
             ("Commercial use", COMMERCIAL_NAMES[item["commercial_use"]]),
-            ("Reviewed", item["last_checked"]),
+            ("Last checked", item["last_checked"]),
         ]
         specs = "".join(
             '<div class="spec"><dt>' + tag(k) + '</dt><dd>' + tag(v) + '</dd></div>'
             for k, v in fields
         )
+        external_link = tag(item["pricing_url"])
         content = (
             '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="' + tag(site_url) +
             '">Home</a><span aria-hidden="true">/</span><a href="' + tag(category_url) +
             '">' + tag(category) + '</a><span aria-hidden="true">/</span><span>' + tag(name) +
-            '</span></nav><article class="detail"><p class="kicker">' + tag(category) +
-            '</p><h1>' + tag(name) + '</h1>'
-            '<p class="detail-lead">Free-tier allowances and critical restrictions at a glance.</p>'
-            '<dl class="spec-list">' + specs + '</dl>'
-            '<a class="button primary" href="' + tag(item["pricing_url"]) +
-            '" target="_blank" rel="noopener noreferrer">Official pricing & documentation ↗</a>'
-            '<p class="disclaimer">Independent listing, not affiliated with the provider. '
-            'Usage caps and terms can change. Check the official source before enabling billing.</p>'
-            '</article><p class="back-link"><a href="' + tag(category_url) +
-            '">← More ' + tag(category) + ' services</a></p>'
+            '</span></nav><div class="detail-layout"><article class="detail">'
+            '<div class="detail-head"><span class="detail-icon" aria-hidden="true">' +
+            tag(monogram) + '</span><span class="badge" data-plan="' +
+            tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
+            '<p class="kicker">' + tag(category) + '</p><h1>' + tag(name) + '</h1>'
+            '<p class="detail-lead">Explore this developer service’s free allowance, '
+            'critical restrictions and official documentation before deploying.</p>'
+            '<div class="detail-highlight">' + glyph("layers") +
+            '<div><strong>INCLUDED FREE ALLOWANCE</strong><p>' +
+            tag(item["free_limit"]) + '</p></div></div>'
+            '<h2>Plan details</h2><dl class="spec-list">' + specs + '</dl>'
+            '<h2>Important restrictions</h2><div class="detail-warning">' +
+            glyph("alert") + '<p>' + tag(item["watch_out"]) + '</p></div>'
+            '<div class="detail-action"><a class="button primary" href="' + external_link +
+            '" target="_blank" rel="noopener noreferrer">View official documentation ' +
+            glyph("arrow") + '</a></div>'
+            '<p class="disclaimer">Independent community listing, not affiliated with the provider. '
+            'Always check the latest billing policy and quotas before enabling paid usage.</p>'
+            '</article><aside class="detail-aside"><p class="kicker">SOURCE OF TRUTH</p>'
+            '<h2>Verify current pricing</h2><p>Provider plans can change at any time. '
+            'Check the latest limits, billing rules and eligibility directly with the source.</p>'
+            '<a class="button secondary" href="' + external_link +
+            '" target="_blank" rel="noopener noreferrer">Official pricing ' +
+            glyph("arrow") + '</a><hr><h2>More in this category</h2>'
+            '<p>Explore other ' + tag(category.lower()) + ' services with their free allowances.</p>'
+            '<a class="text-link" href="' + tag(category_url) +
+            '">Browse category ' + glyph("arrow") + '</a></aside></div>'
+            '<p class="back-link"><a href="' + tag(category_url) +
+            '">← Back to ' + tag(category) + '</a></p>'
         )
         schema = {"@context": "https://schema.org", "@graph": [
             {"@type": "WebPage", "name": name + " Free Tier",
