@@ -137,6 +137,8 @@ SERVICE_LOGOS = {
     "sentry": "sentry",
     "splunk-observability-free": "splunk",
     "posthog": "posthog",
+    "tinybird-free": "tinybird",
+    "new-relic-free": "newrelic",
     "cloudflare-dns": "cloudflare",
     "hf-static-spaces": "huggingface",
     "gemini-api": "googlegemini",

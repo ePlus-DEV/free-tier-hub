@@ -87,7 +87,21 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(entry["credit_card"], "no")
                 self.assertEqual(entry["commercial_use"], "check")
                 self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/" + service_id + "/index.html"))
-        self.assertEqual(len(self.data), 70)
+        self.assertGreaterEqual(len(self.data), 70)
+
+    def test_new_analytics_and_observability_services(self):
+        expected = {
+            "tinybird-free": ("analytics", "tinybird"),
+            "new-relic-free": ("observability", "newrelic"),
+        }
+        for service_id, (category, logo) in expected.items():
+            with self.subTest(service=service_id):
+                entry = next(item for item in self.data if item["id"] == service_id)
+                self.assertEqual(entry["category"], category)
+                self.assertEqual(entry["credit_card"], "no")
+                self.assertEqual(entry["commercial_use"], "check")
+                self.assertIn("simple-icons@v15/icons/" + logo + ".svg", self.text("service/" + service_id + "/index.html"))
+        self.assertEqual(len(self.data), 72)
 
     def test_service_logos_have_fallback_and_use_curated_slugs(self):
         html = self.text("index.html")
