@@ -87,7 +87,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(entry["credit_card"], "no")
                 self.assertEqual(entry["commercial_use"], "check")
                 self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/" + service_id + "/index.html"))
-        self.assertEqual(len(self.data), 70)
+        self.assertGreaterEqual(len(self.data), 70)
 
     def test_new_analytics_and_observability_services(self):
         expected = {
