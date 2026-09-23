@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-78-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-79-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -23,7 +23,7 @@
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
-| Queues, workflows & scheduling | 7 | [Browse](docs/queues-jobs.md) |
+| Queues, workflows & scheduling | 8 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
 
@@ -111,6 +111,7 @@
 | [Cloudflare Durable Objects Free](https://developers.cloudflare.com/durable-objects/platform/pricing/) | Ongoing free allowance | 100,000 Durable Object requests/day; 13,000 GB-s compute/day; up to 5 GB SQLite-backed storage/account | Workers Free supports only SQLite-backed objects; operations fail when daily quotas are exceeded; Workers request limits apply separately. |
 | [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. |
 | [Val Town Free](https://www.val.town/pricing) | Ongoing free allowance | 100,000 runs/day; unlimited public vals; 2,500 vals; cron schedules as often as every 15 minutes | New vals on Free are public; no custom domains; 1-minute execution timeout and 3-day log retention. |
+| [SimpleQ Free](https://simpleq.io/pricing) | Ongoing free allowance | 30,000 outbound webhook attempts/month; 5 queues; up to 5 attempts/job; 3-day job retention | Each dispatched webhook POST, including retries and backpressure responses, counts as an attempt; backpressure waiting is free. Commercial-use terms need confirmation. |
 
 ## How to choose
 

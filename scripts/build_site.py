@@ -167,6 +167,7 @@ SERVICE_LOGOS = {
     "estuary-developer": "estuary",
     "deplexo-free": None,
     "pr-quorum-free": None,
+    "simpleq": None,
     "tinyfish-search-fetch": None
 }
 
