@@ -74,6 +74,18 @@ class SiteTests(unittest.TestCase):
         self.assertIn("this.nextElementSibling.hidden=false", detail)
         self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
 
+    def test_back_to_top_is_on_every_page_and_respects_motion_preference(self):
+        for page in self.output.rglob("*.html"):
+            html = page.read_text(encoding="utf-8")
+            self.assertIn('id="back-to-top"', html, str(page))
+            self.assertIn('aria-label="Back to top"', html, str(page))
+        js = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('window.scrollY < 360', js)
+        self.assertIn('window.scrollTo({ top: 0', js)
+        self.assertIn('prefers-reduced-motion: reduce', js)
+        self.assertIn('.back-to-top[hidden]', css)
+
     def test_brand_assets_and_header_identity(self):
         html = self.text("index.html")
         icon = self.text("assets/icon.svg")

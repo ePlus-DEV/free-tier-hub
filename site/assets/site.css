@@ -477,3 +477,12 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 .service-card .service-icon:has(.service-logo),.detail-icon:has(.service-logo){background:#fff;border:1px solid #e5eaf2}
 :root[data-theme="dark"] .service-card .service-icon:has(.service-logo),:root[data-theme="dark"] .detail-icon:has(.service-logo){background:#fff}
 :root[data-theme="dark"] .service-logo{filter:none}
+
+/* Accessible, responsive back-to-top control; hidden until scrolling. */
+.back-to-top{position:fixed;right:clamp(16px,2.5vw,36px);bottom:clamp(18px,2.5vw,34px);z-index:40;display:grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid #b9cff3;border-radius:14px;background:#2065e9;color:#fff;box-shadow:0 8px 26px rgba(25,72,145,.22);transition:transform .2s,box-shadow .2s,background .2s}
+.back-to-top:hover{transform:translateY(-3px);background:#1756d0;box-shadow:0 12px 32px rgba(25,72,145,.28)}
+.back-to-top svg{width:22px;height:22px}
+.back-to-top[hidden]{display:none!important}
+:root[data-theme="dark"] .back-to-top{background:#2e6de1;border-color:#7095d9}
+@media(max-width:680px){.back-to-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:13px}}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}.back-to-top:hover{transform:none}}

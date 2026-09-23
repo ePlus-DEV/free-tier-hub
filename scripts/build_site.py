@@ -301,7 +301,14 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<a href="' + tag(REPOSITORY + "/blob/main/CONTRIBUTING.md") + '">Contribute</a></div>'
             '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>'
             '<span>Independent catalog · Verify every provider before enabling billing.</span>'
-            '</div></div></footer></body></html>'
+            '</div></div></footer>'
+            '<button class="back-to-top" id="back-to-top" type="button" '
+            'aria-label="Back to top" title="Back to top" hidden>'
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" '
+            'fill="none" stroke="currentColor" stroke-width="2" '
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+            '<path d="m6 14 6-6 6 6"/><path d="M12 8v12"/></svg>'
+            '</button></body></html>'
         )
         return head
 
