@@ -430,3 +430,9 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* Category results have the full-width grid rather than the sidebar layout. */
+.category-service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.category-arrow svg{width:18px;height:18px}
+@media(max-width:960px){.category-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.category-service-grid{grid-template-columns:1fr}}

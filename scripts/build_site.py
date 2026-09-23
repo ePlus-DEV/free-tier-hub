@@ -185,7 +185,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<header class="site-header"><div class="container header-inner">'
             '<a class="brand" href="' + tag(absolute()) + '" aria-label="Free Tier Hub home">'
             '<span class="brand-mark">' + glyph("layers") + '</span>'
-            '<span class="brand-wordmark">Free Tier <strong>Hub</strong>'
+            '<span class="brand-wordmark"><span>Free Tier <strong>Hub</strong></span>'
             '<small>Developer resources, simplified</small></span></a>'
             '<nav class="primary-nav" aria-label="Main navigation">'
             '<a href="' + tag(absolute()) + '">Directory</a>'
