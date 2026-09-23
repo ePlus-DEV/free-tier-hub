@@ -45,7 +45,7 @@ class SyncCatalogTests(unittest.TestCase):
             self.assertEqual(sync_catalog.main(["--check", "--root", str(root)]), 0)
             self.assertEqual(json.loads(source.read_text())[:20] + json.loads(source.read_text())[21:], original)
             after = (root / "README.md").read_text()
-            self.assertEqual(before.split("## Quick navigation")[0].replace("services-65-", "services-66-"), after.split("## Quick navigation")[0])
+            self.assertEqual(before.split("## Quick navigation")[0].replace(f"services-{len(original)}-", f"services-{len(data)}-"), after.split("## Quick navigation")[0])
             pages = {p.stem: p.read_text() for p in (root / "docs").glob("*.md")}
             self.assertEqual(check_markdown.validate_documents(root, data, after, pages), [])
             self.assertEqual(sync_catalog.main(["--root", str(root)]), 0)
