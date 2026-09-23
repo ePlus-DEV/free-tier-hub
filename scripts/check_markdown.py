@@ -9,6 +9,7 @@ CATEGORIES = (
     "databases", "storage", "developer-tools", "auth-security",
     "observability", "analytics", "dns-cdn", "ai-ml",
     "queues-jobs", "search", "feature-flags", "tunneling-networking",
+    "webhooks-events",
 )
 PLANS = {
     "ongoing": "Ongoing free allowance",

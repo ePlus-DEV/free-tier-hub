@@ -12,7 +12,7 @@ CATEGORIES = {
     "static-hosting", "app-hosting", "serverless", "cloud-vps",
     "databases", "storage", "developer-tools",
     "auth-security", "observability", "analytics", "dns-cdn", "ai-ml",
-    "queues-jobs", "search", "feature-flags", "tunneling-networking",
+    "queues-jobs", "search", "feature-flags", "tunneling-networking", "webhooks-events",
 }
 PLANS = {"ongoing", "monthly-credit", "limited-duration", "temporary-resource"}
 TRI = {"yes", "no", "check"}
