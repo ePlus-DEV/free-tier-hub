@@ -221,59 +221,150 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
     def card(item):
         dest = absolute("service/" + item["id"] + "/")
         group = CATEGORY_NAMES[item["category"]]
-        search = " ".join((item["name"], group, item["free_limit"], item["watch_out"])).lower()
+        searchable = " ".join(
+            (item["name"], group, item["free_limit"], item["watch_out"])
+        ).lower()
+        monogram = "".join(word[0] for word in
+                           re.findall(r"[A-Za-z0-9]+", item["name"])[:2]).upper() or "FT"
         return (
             '<article class="service-card" data-service-id="' + tag(item["id"]) +
             '" data-category="' + tag(item["category"]) +
-            '" data-search="' + tag(search) + '">'
-            '<div class="card-top"><span class="eyebrow">' + tag(group) + '</span>'
-            '<span class="badge">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
+            '" data-search="' + tag(searchable) + '">'
+            '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
+            tag(monogram) + '</span><span class="badge" data-plan="' +
+            tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
+            '<span class="eyebrow">' + tag(group) + '</span>'
             '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
             '<p class="allowance">' + tag(item["free_limit"]) + '</p>'
             '<p class="restriction">' + tag(item["watch_out"]) + '</p>'
-            '<div class="card-bottom"><span>Card: ' + tag(CARD_NAMES[item["credit_card"]]) +
-            '</span><a href="' + tag(dest) + '" aria-label="View ' + tag(item["name"]) +
-            ' details">Details <span aria-hidden="true">→</span></a></div></article>'
+            '<div class="card-bottom"><span>Card: ' +
+            tag(CARD_NAMES[item["credit_card"]]) + '</span>'
+            '<a href="' + tag(dest) + '" aria-label="View ' + tag(item["name"]) +
+            ' details">View details ' + glyph("arrow") + '</a></div></article>'
         )
 
-    category_links = "".join(
-        '<a class="category-link" href="' + tag(absolute("category/" + category + "/")) +
-        '"><span>' + tag(CATEGORY_NAMES[category]) + '</span>'
-        '<strong>' + str(counts[category]) + '</strong></a>'
-        for category in CATEGORIES
-    )
+    def category_link(category):
+        return (
+            '<a class="category-link" data-category="' + tag(category) + '" href="' +
+            tag(absolute("category/" + category + "/")) + '">'
+            '<span class="category-icon">' + glyph(CATEGORY_ICONS[category]) + '</span>'
+            '<span class="category-copy"><span>' + tag(CATEGORY_NAMES[category]) +
+            '</span><small>' + str(counts[category]) + ' services</small></span>' +
+            '<span class="category-arrow" aria-hidden="true">' + glyph("arrow") + '</span></a>'
+        )
+
+    featured = ("static-hosting", "app-hosting", "databases", "developer-tools",
+                "queues-jobs", "ai-ml")
+    extras = [category for category in CATEGORIES if category not in featured]
     cards = "".join(card(item) for item in items)
     options = "".join(
         '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>'
         for category in CATEGORIES
     )
+    sidebar = "".join(
+        '<button type="button" class="sidebar-category" data-filter-category="' +
+        tag(category) + '" aria-pressed="false">' + glyph(CATEGORY_ICONS[category]) +
+        '<span class="sidebar-label">' + tag(CATEGORY_NAMES[category]) + '</span>'
+        '<span class="sidebar-count">' + str(counts[category]) + '</span></button>'
+        for category in CATEGORIES
+    )
     home = (
-        '<section class="hero"><div class="hero-copy"><p class="kicker">BUILD MORE · SPEND LESS</p>'
+        '<section class="hero"><div class="hero-copy">'
+        '<p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>'
+        'THE OPEN DEVELOPER DIRECTORY</p>'
         '<h1>Discover developer-friendly free tiers.</h1>'
-        '<p>Explore ' + str(len(items)) + ' free-tier services across ' +
-        str(len(CATEGORIES)) + ' categories. Compare real allowances, card requirements, '
-        'expiry rules and the hidden catches before you deploy.</p>'
-        '<div class="hero-actions"><a class="button primary" href="#explore">Explore services</a>'
-        '<a class="button secondary" href="' + tag(REPOSITORY) + '">Contribute on GitHub</a></div>'
-        '</div><div class="hero-stat"><strong>' + str(len(items)) +
-        '</strong><span>curated services</span><strong>' + str(len(CATEGORIES)) +
-        '</strong><span>developer categories</span></div></section>'
-        '<section id="categories" class="section"><div class="section-heading"><h2>Browse by category</h2>'
-        '<p>Quickly narrow down providers by workload.</p></div>'
-        '<div class="category-grid">' + category_links + '</div></section>'
-        '<section id="explore" class="section"><div class="section-heading"><h2>All free-tier services</h2>'
-        '<p>Use search and category filters; every result also has its own indexable page.</p></div>'
-        '<div class="filters"><label for="search">Search providers and features'
-        '<input id="search" type="search" autocomplete="off" placeholder="Try PostgreSQL, queue, deploy…"></label>'
-        '<label for="category-filter">Category<select id="category-filter">'
-        '<option value="">All categories</option>' + options + '</select></label></div>'
-        '<p class="result-count" id="results-count" aria-live="polite">Showing ' + str(len(items)) +
-        ' services</p><div class="service-grid" id="service-grid">' + cards + '</div>'
-        '<p class="no-results" id="no-results" hidden>No matching services. Try a different search.</p>'
-        '</section><aside class="notice"><strong>Free does not mean risk-free.</strong> '
-        'Usage thresholds, commercial restrictions and regional availability can change. '
+        '<p>Find useful tools, compare their real free allowances, and understand '
+        'billing caveats before you build. A practical reference for developers, '
+        'created to make the free tier less confusing.</p>'
+        '<div class="hero-actions">'
+        '<a class="button primary" href="#explore" data-focus-search>'
+        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a>'
+        '<a class="button secondary" href="' + tag(REPOSITORY) +
+        '" rel="noopener noreferrer">' + glyph("code") + ' Open on GitHub</a></div>'
+        '<div class="hero-trust">' + glyph("check") +
+        '<span>Independent listings · Official provider links · No referral ranking</span></div>'
+        '</div><div class="hero-panel" aria-label="Catalog preview">'
+        '<div class="hero-panel-top"><span>EXPLORE THE CATALOG</span>'
+        '<span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>'
+        '<p class="hero-panel-title">Find the right building blocks</p>'
+        '<div class="hero-panel-row">' + glyph("globe") +
+        '<span>Frontend & static hosting</span><strong>' +
+        str(counts["static-hosting"]) + ' tools</strong></div>'
+        '<div class="hero-panel-row">' + glyph("database") +
+        '<span>Managed databases</span><strong>' +
+        str(counts["databases"]) + ' tools</strong></div>'
+        '<div class="hero-panel-row">' + glyph("queue") +
+        '<span>Queues & background jobs</span><strong>' +
+        str(counts["queues-jobs"]) + ' tools</strong></div>'
+        '<div class="hero-panel-footer"><span>Built for developers</span>'
+        '<span>Explore by category ↗</span></div></div></section>'
+        '<div class="stats-strip" aria-label="Catalog statistics">'
+        '<div class="stat"><span class="stat-icon">' + glyph("layers") +
+        '</span><div><strong>' + str(len(items)) + ' services</strong>'
+        '<span>Curated free-tier listings</span></div></div>'
+        '<div class="stat"><span class="stat-icon">' + glyph("grid") +
+        '</span><div><strong>' + str(len(CATEGORIES)) + ' categories</strong>'
+        '<span>From deployment to AI</span></div></div>'
+        '<div class="stat"><span class="stat-icon">' + glyph("clock") +
+        '</span><div><strong>' + tag(latest) + '</strong>'
+        '<span>Latest provider check in catalog</span></div></div></div>'
+        '<section id="categories" class="section">'
+        '<div class="section-heading"><div><span class="heading-label">EXPLORE BY WORKLOAD</span>'
+        '<h2>Everything you need to build</h2>'
+        '<p>From your first deploy to background jobs. Start with a category.</p></div>'
+        '<a class="text-link" href="#explore" data-focus-search>Browse all services ' +
+        glyph("arrow") + '</a></div>'
+        '<div class="category-grid">' + "".join(category_link(c) for c in featured) +
+        '</div><details class="more-categories"><summary>Explore the remaining ' +
+        str(len(extras)) + ' categories ' + glyph("chevron") + '</summary>'
+        '<div class="category-grid">' + "".join(category_link(c) for c in extras) +
+        '</div></details></section>'
+        '<section id="explore" class="section catalog-section">'
+        '<div class="section-heading"><div>'
+        '<span class="heading-label">THE SERVICE DIRECTORY</span>'
+        '<h2>Find your next developer tool</h2>'
+        '<p>Filter by workload, compare free limits and open official documentation.</p>'
+        '</div></div><div class="catalog-layout"><aside class="catalog-sidebar">'
+        '<div class="sidebar-title"><span>Filter categories</span>' +
+        glyph("grid") + '</div><div class="sidebar-categories">'
+        '<button type="button" class="sidebar-category" data-filter-category="" '
+        'aria-pressed="true">' + glyph("layers") +
+        '<span class="sidebar-label">All services</span><span class="sidebar-count">' +
+        str(len(items)) + '</span></button>' + sidebar + '</div>'
+        '<div class="sidebar-bottom"><p>Need to confirm billing or usage rules? '
+        'Read the cost-safety guide.</p>'
         '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
-        '">Review the cost and data-safety checklist</a>.</aside>'
+        '">Read the guide ↗</a></div></aside>'
+        '<div class="catalog-main"><div class="filters">'
+        '<label class="search-field" for="search">Search tools'
+        '<span class="input-wrap">' + glyph("search") +
+        '<input id="search" type="search" autocomplete="off" '
+        'placeholder="Search services, quotas, features..." aria-controls="service-grid">'
+        '<span class="search-shortcut" aria-hidden="true">/</span></span></label>'
+        '<label class="mobile-category" for="category-filter">Category'
+        '<select id="category-filter"><option value="">All categories</option>' +
+        options + '</select></label>'
+        '<label class="sort-field" for="sort">Sort by<select id="sort">'
+        '<option value="default">Catalog order</option>'
+        '<option value="name">Name A–Z</option>'
+        '<option value="category">Category</option></select></label>'
+        '</div><div class="results-meta">'
+        '<p class="result-count" id="results-count" aria-live="polite">Showing ' +
+        str(len(items)) + ' services</p>'
+        '<button id="clear-filters" class="clear-filters" type="button" hidden>'
+        'Clear filters</button></div>'
+        '<div class="service-grid" id="service-grid">' + cards + '</div>'
+        '<div class="load-more-wrap" id="load-more-wrap" hidden>'
+        '<button class="load-more" type="button" id="load-more">Show more services</button>'
+        '<span class="load-more-hint">Browse all matching services</span></div>'
+        '<div class="no-results" id="no-results" hidden>' + glyph("search") +
+        '<h3>No matching services</h3><p>Try a broader search or clear your filters.</p></div>'
+        '</div></div></section>'
+        '<aside class="notice"><span class="notice-icon">' + glyph("shield") +
+        '</span><div><strong>Know the limits before you build.</strong>'
+        '<p>Free allowances, billing requirements and regional eligibility can change. '
+        '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
+        '">Review the cost and data-safety checklist ↗</a></p></div></aside>'
     )
     home_schema = {
         "@context": "https://schema.org",
