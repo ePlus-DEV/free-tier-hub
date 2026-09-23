@@ -946,5 +946,41 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-23"
+  },
+  {
+    "id": "ngrok-free",
+    "name": "ngrok Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "3 online endpoints; 1 GB transfer and 20,000 HTTP/S requests/month; 5,000 TCP/TLS connections/month",
+    "watch_out": "HTTP/S interstitial; $5 one-time usage credit expires after one year; no usage beyond credit; custom domains require paid plan.",
+    "pricing_url": "https://ngrok.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
+    "id": "windmill-cloud-free",
+    "name": "Windmill Cloud Community",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "1,000 cloud executions/month; no credit card required",
+    "watch_out": "Cloud hosted in US; self-hosted Community Edition is a separate option; commercial-use conditions need confirmation.",
+    "pricing_url": "https://www.windmill.dev/docs/getting_started/how_to_use_windmill",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
+  },
+  {
+    "id": "axiom-personal",
+    "name": "Axiom Personal",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention",
+    "watch_out": "Intended for individuals and small projects; soft dataset, field and query-concurrency limits; commercial use unconfirmed.",
+    "pricing_url": "https://axiom.co/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-23"
   }
 ]
