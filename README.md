@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-79-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-82-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -19,13 +19,14 @@
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 11 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 5 | [Browse](docs/observability.md) |
+| Monitoring & observability | 6 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
-| Queues, workflows & scheduling | 8 | [Browse](docs/queues-jobs.md) |
+| Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
+| Tunneling & networking | 1 | [Browse](docs/tunneling-networking.md) |
 
 ## At a glance
 
@@ -112,6 +113,9 @@
 | [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. |
 | [Val Town Free](https://www.val.town/pricing) | Ongoing free allowance | 100,000 runs/day; unlimited public vals; 2,500 vals; cron schedules as often as every 15 minutes | New vals on Free are public; no custom domains; 1-minute execution timeout and 3-day log retention. |
 | [SimpleQ Free](https://simpleq.io/pricing) | Ongoing free allowance | 30,000 outbound webhook attempts/month; 5 queues; up to 5 attempts/job; 3-day job retention | Each dispatched webhook POST, including retries and backpressure responses, counts as an attempt; backpressure waiting is free. Commercial-use terms need confirmation. |
+| [ngrok Free](https://ngrok.com/pricing) | Ongoing free allowance | 3 online endpoints; 1 GB transfer and 20,000 HTTP/S requests/month; 5,000 TCP/TLS connections/month | HTTP/S interstitial; $5 one-time usage credit expires after one year; no usage beyond credit; custom domains require paid plan. |
+| [Windmill Cloud Community](https://www.windmill.dev/docs/getting_started/how_to_use_windmill) | Ongoing free allowance | 1,000 cloud executions/month; no credit card required | Cloud hosted in US; self-hosted Community Edition is a separate option; commercial-use conditions need confirmation. |
+| [Axiom Personal](https://axiom.co/pricing) | Ongoing free allowance | 500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention | Intended for individuals and small projects; soft dataset, field and query-concurrency limits; commercial use unconfirmed. |
 
 ## How to choose
 
