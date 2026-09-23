@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_site
 
-CANONICAL = "https://eplus-dev.github.io/free-tier-hub/"
+CANONICAL = "https://free-tier.eplus.dev/"
 NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
 
@@ -96,7 +96,7 @@ class SiteTests(unittest.TestCase):
 
     def test_robots_mentions_project_path_and_sitemap(self):
         content = self.text("robots.txt")
-        self.assertIn("Allow: /free-tier-hub/", content)
+        self.assertIn("User-agent: *\nAllow: /\n", content)
         self.assertIn("Sitemap: " + CANONICAL + "sitemap.xml", content)
 
     def test_static_assets_and_nojekyll_exist(self):
@@ -112,7 +112,7 @@ class SiteTests(unittest.TestCase):
             for target in re.findall(r'(?:href|src)="([^"]+)"', html):
                 if not target.startswith(CANONICAL):
                     continue
-                relative = urlsplit(target).path.removeprefix("/free-tier-hub/")
+                relative = urlsplit(target).path.lstrip("/")
                 if not relative or relative.endswith("/"):
                     relative += "index.html"
                 self.assertTrue((self.output / relative).is_file(), target)
@@ -132,6 +132,22 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('<script>alert("x")</script>', page)
             self.assertNotIn("<img src=x onerror=alert(1)>", page)
             self.assertIn("&lt;script&gt;", page)
+
+    def test_production_root_domain_is_consistent_everywhere(self):
+        self.assertEqual(build_site.DEFAULT_URL, CANONICAL)
+        self.assertEqual(self.result["site_url"], CANONICAL)
+        for url in self.result["urls"]:
+            parsed = urlsplit(url)
+            self.assertEqual(parsed.scheme, "https")
+            self.assertEqual(parsed.netloc, "free-tier.eplus.dev")
+            self.assertNotIn("/free-tier-hub/", parsed.path)
+        for name in ("index.html", "sitemap.xml", "robots.txt", "llms.txt", "agents.md"):
+            content = self.text(name)
+            self.assertNotIn("eplus-dev.github.io", content)
+        self.assertIn('rel="canonical" href="' + CANONICAL + '"', self.text("index.html"))
+        self.assertIn('<loc>' + CANONICAL + '</loc>', self.text("sitemap.xml"))
+        self.assertIn("Sitemap: " + CANONICAL + "sitemap.xml", self.text("robots.txt"))
+        self.assertIn("Allow: /\n", self.text("robots.txt"))
 
     def test_custom_domain_switches_all_canonicals(self):
         with tempfile.TemporaryDirectory() as temp:

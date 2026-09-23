@@ -49,7 +49,7 @@ jobs:
         run: python3 scripts/validate_catalog.py
       - name: Build HTML, sitemap and agent discovery
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://eplus-dev.github.io/free-tier-hub/' }}
+          SITE_URL: https://free-tier.eplus.dev/
         run: python3 scripts/build_site.py --output dist
       - name: Verify generated site assets
         run: |
@@ -59,6 +59,13 @@ jobs:
           test -s dist/agents.md
           test -s dist/catalog.json
           test -f dist/.nojekyll
+      - name: Verify public-domain SEO URLs
+        run: |
+          grep -Fq 'rel="canonical" href="https://free-tier.eplus.dev/"' dist/index.html
+          grep -Fq '<loc>https://free-tier.eplus.dev/' dist/sitemap.xml
+          grep -Fq 'Sitemap: https://free-tier.eplus.dev/sitemap.xml' dist/robots.txt
+          grep -Fq 'https://free-tier.eplus.dev/catalog.json' dist/llms.txt
+          grep -Fq 'https://free-tier.eplus.dev/catalog.json' dist/agents.md
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/configure-pages@v5

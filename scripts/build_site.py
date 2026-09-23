@@ -15,7 +15,7 @@ from xml.sax.saxutils import escape as xml_escape
 from check_markdown import CATEGORIES
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_URL = "https://eplus-dev.github.io/free-tier-hub/"
+DEFAULT_URL = "https://free-tier.eplus.dev/"
 REPOSITORY = "https://github.com/ePlus-DEV/free-tier-hub"
 CATEGORY_NAMES = {
     "static-hosting": "Static & frontend hosting",
@@ -489,7 +489,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         xml += '  <url><loc>' + xml_escape(absolute(path)) + '</loc><lastmod>' + modified + '</lastmod></url>\n'
     xml += '</urlset>\n'
     write_file(output, "sitemap.xml", xml)
-    # For project Pages, only origin-root /robots.txt is authoritative to crawlers.
+    # On the custom domain, the generated /robots.txt is authoritative at the origin root.
     write_file(output, "robots.txt",
                "User-agent: *\nAllow: " + url_path + "\nSitemap: " + absolute("sitemap.xml") + "\n")
     llms = [
