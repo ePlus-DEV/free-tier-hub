@@ -46,30 +46,30 @@ COMMERCIAL_NAMES = {
     "no": "Restricted / personal use",
     "check": "Check provider",
 }
-# Decorative SVG symbols are inlined to avoid a runtime icon dependency.
+# Consistent Lucide-style outline iconography; inlined SVG, no icon font or runtime dependency.
 ICON_PATHS = {
-    "layers": '<path d="m12 2-9 5 9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>',
-    "grid": '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
-    "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>',
-    "server": '<rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 8h.01M7 17h.01M11 8h6M11 17h6"/>',
-    "cloud": '<path d="M20 17.5a4.5 4.5 0 0 0-2.3-8.35A6.5 6.5 0 0 0 5 10.5a3.6 3.6 0 0 0 0 7h15Z"/>',
-    "database": '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>',
-    "code": '<path d="m8 8-4 4 4 4m8-8 4 4-4 4m-3-12-2 16"/>',
-    "zap": '<path d="m13 2-9 11h7l-1 9 10-12h-7V2Z"/>',
-    "shield": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>',
-    "activity": '<path d="M3 12h4l3-7 4 14 3-7h4"/>',
-    "chart": '<path d="M3 3v18h18"/><path d="m7 16 4-5 4 3 5-8"/>',
-    "network": '<circle cx="12" cy="4" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 6v5M5 17l7-6 7 6"/>',
-    "sparkles": '<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/>',
-    "queue": '<path d="M4 6h14M4 12h14M4 18h9"/><path d="m17 15 3 3-3 3"/>',
-    "search": '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
-    "flag": '<path d="M5 22V4m0 1c5-4 8 4 15 0v11c-7 4-10-4-15 0"/>',
-    "arrow": '<path d="M4 12h16m-6-6 6 6-6 6"/>',
-    "chevron": '<path d="m6 9 6 6 6-6"/>',
-    "check": '<path d="m5 12 5 5L20 7"/>',
-    "moon": '<path d="M20 15a8 8 0 0 1-11-11A8 8 0 1 0 20 15Z"/>',
-    "alert": '<path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/>',
-    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>',
+    "layers": "<path d=\"m12 2 9 5-9 5-9-5 9-5Z\"/><path d=\"m3 12 9 5 9-5M3 17l9 5 9-5\"/>",
+    "grid": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/>",
+    "globe": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20\"/><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z\"/>",
+    "server": "<rect width=\"20\" height=\"8\" x=\"2\" y=\"2\" rx=\"2\"/><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\"/><path d=\"M6 6h.01M6 18h.01\"/>",
+    "cloud": "<path d=\"M20 16.6A4.5 4.5 0 0 0 17.5 8 6 6 0 0 0 6 9.2 4 4 0 0 0 6 17h13\"/>",
+    "database": "<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0\"/>",
+    "code": "<path d=\"m16 18 6-6-6-6M8 6l-6 6 6 6m6.5-16-5 20\"/>",
+    "zap": "<path d=\"m13 2-3 8H5l9 12 2-8h5L13 2Z\"/>",
+    "shield": "<path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z\"/><path d=\"m9 12 2 2 4-4\"/>",
+    "activity": "<path d=\"M22 12h-4l-3 9L9 3l-3 9H2\"/>",
+    "chart": "<path d=\"M3 3v18h18M7 16l4-5 4 3 5-8\"/>",
+    "network": "<rect x=\"2\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"16\" y=\"2\" width=\"6\" height=\"6\" rx=\"1\"/><rect x=\"9\" y=\"16\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M5 8v4h14V8M12 12v4\"/>",
+    "sparkles": "<path d=\"m12 3 1.9 6.1L20 11l-6.1 1.9L12 19l-1.9-6.1L4 11l6.1-1.9L12 3ZM19 19l.8 2.2L22 22l-2.2.8L19 25l-.8-2.2L16 22l2.2-.8L19 19Z\"/>",
+    "queue": "<path d=\"M4 6h16M4 12h16M4 18h10\"/><path d=\"m17 15 3 3-3 3\"/>",
+    "search": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.35-4.35\"/>",
+    "flag": "<path d=\"M4 22V4m0 1c5-4 8 4 16 0v11c-8 4-11-4-16 0\"/>",
+    "arrow": "<path d=\"M5 12h14m-6-6 6 6-6 6\"/>",
+    "chevron": "<path d=\"m6 9 6 6 6-6\"/>",
+    "check": "<path d=\"m5 12 4 4L19 6\"/>",
+    "moon": "<path d=\"M20.985 12.486A9 9 0 0 1 11.514 3.015a9 9 0 1 0 9.47 9.47Z\"/>",
+    "alert": "<path d=\"m10.3 3.86-8.4 14.5A2 2 0 0 0 3.63 21h16.74a2 2 0 0 0 1.73-3l-8.4-14.14a2 2 0 0 0-3.4 0ZM12 9v4m0 4h.01\"/>",
+    "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/>",
 }
 CATEGORY_ICONS = {
     "static-hosting": "globe", "app-hosting": "server", "serverless": "zap",
@@ -87,6 +87,88 @@ def glyph(name):
             'stroke-linecap="round" stroke-linejoin="round" '
             'aria-hidden="true" focusable="false">' + ICON_PATHS[name] + '</svg>')
 
+
+# Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
+SERVICE_LOGOS = {
+    "vercel": "vercel",
+    "netlify": "netlify",
+    "cloudflare-pages": "cloudflare",
+    "github-pages": "github",
+    "firebase-hosting": "firebase",
+    "azure-static-web-apps": "microsoftazure",
+    "render-static": "render",
+    "render-web": "render",
+    "railway": "railway",
+    "deno-deploy": "deno",
+    "cloudflare-workers": "cloudflareworkers",
+    "google-cloud-run": "googlecloud",
+    "oracle-cloud": "oracle",
+    "gce-e2-micro": "googlecloud",
+    "aws-free-plan": "amazonaws",
+    "supabase": "supabase",
+    "turso": "turso",
+    "mongodb-atlas": "mongodb",
+    "upstash-redis": "upstash",
+    "upstash-vector": "upstash",
+    "cloudflare-d1": "cloudflare",
+    "render-postgres": "render",
+    "firebase-rtdb": "firebase",
+    "cloudflare-r2": "cloudflare",
+    "gcs": "googlecloudstorage",
+    "oracle-object-storage": "oracle",
+    "resend": "resend",
+    "better-stack": "betterstack",
+    "github-actions": "githubactions",
+    "neon": "neon",
+    "cloudflare-kv": "cloudflare",
+    "brevo": "brevo",
+    "github-codespaces": "github",
+    "cloudflare-email-routing": "cloudflare",
+    "github-packages": "github",
+    "auth0": "auth0",
+    "clerk": "clerk",
+    "cloudflare-turnstile": "cloudflare",
+    "uptimerobot": "uptimerobot",
+    "grafana-cloud": "grafana",
+    "sentry": "sentry",
+    "splunk-observability-free": "splunk",
+    "posthog": "posthog",
+    "cloudflare-dns": "cloudflare",
+    "hf-static-spaces": "huggingface",
+    "gemini-api": "googlegemini",
+    "aiven-postgres": "aiven",
+    "appwrite-cloud": "appwrite",
+    "gitlab-ci": "gitlab",
+    "cloudflare-queues": "cloudflare",
+    "upstash-qstash": "upstash",
+    "upstash-workflow": "upstash",
+    "cron-job-org": "cronjob",
+    "cloudflare-workflows": "cloudflare",
+    "algolia-free": "algolia",
+    "upstash-search": "upstash",
+    "flagsmith": "flagsmith",
+    "launchdarkly-developer": "launchdarkly",
+    "upstash-blob": "upstash",
+    "weaviate-cloud-free": "weaviate",
+    "inngest-hobby": "inngest",
+    "trigger-dev-free": "triggerdotdev",
+    "qdrant-cloud-free": "qdrant",
+    "cloudflare-durable-objects": "cloudflare",
+    "circleci-free": "circleci",
+    "val-town-free": "valtown"
+}
+
+
+def service_logo(item, monogram):
+    slug = SERVICE_LOGOS.get(item["id"])
+    fallback = '<span class="service-monogram">' + tag(monogram) + '</span>'
+    if not slug:
+        return fallback
+    url = "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/" + slug + ".svg"
+    return ('<img class="service-logo" src="' + tag(url) + '" alt="" loading="lazy" '
+            'decoding="async" referrerpolicy="no-referrer" '
+            'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
+            '<span class="service-monogram" hidden>' + tag(monogram) + '</span>')
 
 assert set(CATEGORY_NAMES) == set(CATEGORIES)
 
@@ -235,7 +317,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '" data-category="' + tag(item["category"]) +
             '" data-search="' + tag(searchable) + '">'
             '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
-            tag(monogram) + '</span><span class="badge" data-plan="' +
+            service_logo(item, monogram) + '</span><span class="badge" data-plan="' +
             tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
             '<span class="eyebrow">' + tag(group) + '</span>'
             '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
@@ -446,7 +528,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '">' + tag(category) + '</a><span aria-hidden="true">/</span><span>' + tag(name) +
             '</span></nav><div class="detail-layout"><article class="detail">'
             '<div class="detail-head"><span class="detail-icon" aria-hidden="true">' +
-            tag(monogram) + '</span><span class="badge" data-plan="' +
+            service_logo(item, monogram) + '</span><span class="badge" data-plan="' +
             tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
             '<p class="kicker">' + tag(category) + '</p><h1>' + tag(name) + '</h1>'
             '<p class="detail-lead">Explore this developer service’s free allowance, '

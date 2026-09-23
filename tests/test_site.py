@@ -65,6 +65,15 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("gtag('js',new Date())", html)
                 self.assertLess(html.index('googletagmanager.com/gtag/js'), html.index('</head>'))
 
+    def test_service_logos_have_fallback_and_use_curated_slugs(self):
+        html = self.text("index.html")
+        detail = self.text("service/vercel/index.html")
+        self.assertIn("simple-icons@v15/icons/vercel.svg", html)
+        self.assertIn('class="service-monogram" hidden', html)
+        self.assertIn("simple-icons@v15/icons/vercel.svg", detail)
+        self.assertIn("this.nextElementSibling.hidden=false", detail)
+        self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
+
     def test_brand_assets_and_header_identity(self):
         html = self.text("index.html")
         icon = self.text("assets/icon.svg")
