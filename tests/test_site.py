@@ -55,7 +55,7 @@ class SiteTests(unittest.TestCase):
     def test_ga4_tracking_is_present_once_on_every_html_page(self):
         """All generated pages, including category/detail, carry the same GA4 ID."""
         pages = list(self.output.rglob("*.html"))
-        self.assertEqual(len(pages), self.result["page_count"])
+        self.assertEqual(len(pages), self.result["page_count"] + 1)  # Includes 404.html
         for page in pages:
             with self.subTest(page=str(page.relative_to(self.output))):
                 html = page.read_text(encoding="utf-8")
