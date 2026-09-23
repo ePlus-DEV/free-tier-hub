@@ -180,6 +180,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<link rel="alternate" type="text/plain" title="LLM overview" href="' + tag(absolute("llms.txt")) + '">'
             '<link rel="alternate" type="text/markdown" title="Agent discovery" href="' + tag(absolute("agents.md")) + '">'
             '<script type="application/ld+json">' + safe_json(structured_data) + '</script>'
+            '<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YPGG0XEZV"></script>'
+            '<script>window.dataLayer=window.dataLayer||[];'
+            'function gtag(){dataLayer.push(arguments);}'
+            "gtag('js',new Date());gtag('config','G-9YPGG0XEZV');</script>"
             '<script src="' + tag(absolute("assets/site.js")) + '" defer></script>'
             '</head><body><a class="skip-link" href="#main">Skip to content</a>'
             '<header class="site-header"><div class="container header-inner">'
