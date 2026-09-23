@@ -982,5 +982,41 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-23"
+  },
+  {
+    "id": "hookdeck-developer",
+    "name": "Hookdeck Developer",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 events/month; 100,000 discarded requests/month; 5 events/second per destination; 3-day event retention",
+    "watch_out": "One user; retries included. After 10,000 events, dashboard locks until next billing period or upgrade; excessive overages may stop processing.",
+    "pricing_url": "https://hookdeck.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
+  },
+  {
+    "id": "svix-free",
+    "name": "Svix Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Up to 50,000 messages/month; 50 messages/second; 7-day payload retention",
+    "watch_out": "Free plan targets developers testing or setting up first webhooks; retries and filtered messages do not count; no stated uptime SLA.",
+    "pricing_url": "https://www.svix.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
+  },
+  {
+    "id": "tailscale-personal",
+    "name": "Tailscale Personal",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month",
+    "watch_out": "Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid.",
+    "pricing_url": "https://tailscale.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-09-24"
   }
 ]
