@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-66-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-67-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -19,7 +19,7 @@
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 9 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 3 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 3 | [Browse](docs/observability.md) |
+| Monitoring & observability | 4 | [Browse](docs/observability.md) |
 | Product analytics | 1 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 2 | [Browse](docs/ai-ml.md) |
@@ -75,6 +75,7 @@
 | [UptimeRobot Free](https://uptimerobot.com/pricing/) | Ongoing free allowance | 50 monitors with 5-minute checks and basic status pages | Longer monitoring intervals and limited alert integrations; faster 60-second checks require paid plan. |
 | [Grafana Cloud Free](https://grafana.com/pricing/) | Ongoing free allowance | 10k active metric series and 50 GB logs ingested/month; 14-day retention | Free quotas are separate for logs, metrics, traces and users; limited retention and community support. |
 | [Sentry Developer](https://sentry.io/pricing/) | Ongoing free allowance | One user; 5,000 errors/month; 50 replays and 1 uptime monitor | Free plan is single-user; profiling, advanced integrations and additional event volumes require payment. |
+| [Splunk Observability Cloud Free Edition](https://www.splunk.com/en_us/products/pricing/observability.html) | Ongoing free allowance | Up to 15 hosts with all Observability Cloud platform features; no time limit | May be throttled and accounts inactive for 30+ days can be deactivated; use is limited to internal business purposes and not service-bureau processing for third parties. |
 | [PostHog Free](https://posthog.com/pricing) | Ongoing free allowance | 1M product analytics events/month; 5k session recordings/month; 1M feature flag requests | Free without a card for one project; usage stops at limits unless billing is enabled. |
 | [Cloudflare DNS & CDN Free](https://www.cloudflare.com/plans/) | Ongoing free allowance | Free authoritative DNS, CDN, universal SSL and DDoS protection | Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting. |
 | [Hugging Face Static Spaces](https://huggingface.co/docs/hub/spaces-overview) | Ongoing free allowance | Free static Spaces for ML demo frontends and project showcases | Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute. |

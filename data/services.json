@@ -504,6 +504,18 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "splunk-observability-free",
+    "name": "Splunk Observability Cloud Free Edition",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Up to 15 hosts with all Observability Cloud platform features; no time limit",
+    "watch_out": "May be throttled and accounts inactive for 30+ days can be deactivated; use is limited to internal business purposes and not service-bureau processing for third parties.",
+    "pricing_url": "https://www.splunk.com/en_us/products/pricing/observability.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-09-23"
+  },
+  {
     "id": "posthog",
     "name": "PostHog Free",
     "category": "analytics",
