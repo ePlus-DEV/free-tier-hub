@@ -3,6 +3,8 @@
 
 ![Catalog](https://img.shields.io/badge/services-65-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
+**Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
+
 > **Last editorial review: 2026-09-22 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
@@ -117,20 +119,28 @@
 - [Choose a free-tier stack](docs/use-cases.md) — examples for frontend, API, background jobs, search and feature flags.
 - [Avoid unexpected charges and data loss](docs/cost-safety.md) — card requirements, inactivity, quotas, backups and production considerations.
 
-## Website and GitHub Pages
+## Website, custom domain and discovery
 
-**Public site:** [https://eplus-dev.github.io/free-tier-hub/](https://eplus-dev.github.io/free-tier-hub/) (after the GitHub Pages Actions source is enabled and the first deployment succeeds).
+**Canonical website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Browse the catalog](https://free-tier.eplus.dev/catalog.json) · [Sitemap](https://free-tier.eplus.dev/sitemap.xml) · [llms.txt](https://free-tier.eplus.dev/llms.txt) · [agents.md](https://free-tier.eplus.dev/agents.md)
 
-The [Pages workflow](.github/workflows/pages.yml) builds **pre-rendered HTML** directly from `data/services.json`: one crawlable page per service and per category, responsive search on the index, canonical URLs, meta descriptions, Open Graph tags, breadcrumbs and schema.org JSON-LD. Its output includes `sitemap.xml`, `robots.txt`, `llms.txt`, `agents.md` and `catalog.json`.
+The [GitHub Pages workflow](.github/workflows/pages.yml) pre-renders a crawlable HTML page for each service and category from `data/services.json`. The site has responsive search, canonical URLs, meta descriptions, Open Graph metadata, breadcrumbs and schema.org JSON-LD. It publishes these discovery resources directly at the **custom-domain root**: `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/agents.md` and `/catalog.json`.
 
-**One-time setup:** In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The workflow deploys automatically from `main`; pull requests run the full build and tests without publishing. For a custom domain, configure it in Pages settings and set the repository Actions variable `SITE_URL` to its full HTTPS URL (with trailing slash) so canonical links and the sitemap use the same domain. On a project Pages URL, `robots.txt` under `/free-tier-hub/` is informational; crawler-wide robots rules can only be controlled by the origin's root `/robots.txt`.
+### GitHub Pages custom-domain setup
 
-Run locally (Python 3.12; no third-party runtime dependencies):
+This project uses **GitHub Actions** to deploy, with `https://free-tier.eplus.dev/` pinned as the public site URL in both the builder and Pages workflow. To route traffic correctly, configure the same host in [Settings → Pages](https://github.com/ePlus-DEV/free-tier-hub/settings/pages):
+
+1. **Build and deployment → Source:** GitHub Actions.
+2. **Custom domain:** `free-tier.eplus.dev` (no scheme or trailing slash); save the setting.
+3. At the DNS provider, create a CNAME record for the `free-tier` subdomain pointing to `eplus-dev.github.io` (**DNS hostname only**, without `https://` or `/free-tier-hub/`). Check DNS propagation and enable **Enforce HTTPS** when available.
+
+For GitHub Actions deployments, GitHub stores the custom domain in Pages settings; adding a repository `CNAME` file does **not** configure it. The domain and certificate must be correctly configured in Pages and DNS; building canonical links alone cannot change the live hostname. The Pages workflow's `SITE_URL` setting is pinned to this domain, so any old repository-level `SITE_URL` Actions variable is ignored. If you intentionally move the site again, update both `DEFAULT_URL` in `scripts/build_site.py` and the workflow, then rerun the tests and rebuild.
+
+Local verification (Python 3.12, no third-party runtime dependencies):
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 scripts/validate_catalog.py
-python3 scripts/build_site.py --site-url https://eplus-dev.github.io/free-tier-hub/ --output dist
+python3 scripts/build_site.py --site-url https://free-tier.eplus.dev/ --output dist
 ```
 
 ## Data and maintenance
