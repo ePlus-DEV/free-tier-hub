@@ -1,11 +1,11 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-82-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-85-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
-> **Last editorial review: 2026-09-23 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
+> **Last editorial review: 2026-09-24 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
 
@@ -26,7 +26,8 @@
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
-| Tunneling & networking | 1 | [Browse](docs/tunneling-networking.md) |
+| Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
+| Webhooks & event delivery | 2 | [Browse](docs/webhooks-events.md) |
 
 ## At a glance
 
@@ -116,6 +117,9 @@
 | [ngrok Free](https://ngrok.com/pricing) | Ongoing free allowance | 3 online endpoints; 1 GB transfer and 20,000 HTTP/S requests/month; 5,000 TCP/TLS connections/month | HTTP/S interstitial; $5 one-time usage credit expires after one year; no usage beyond credit; custom domains require paid plan. |
 | [Windmill Cloud Community](https://www.windmill.dev/docs/getting_started/how_to_use_windmill) | Ongoing free allowance | 1,000 cloud executions/month; no credit card required | Cloud hosted in US; self-hosted Community Edition is a separate option; commercial-use conditions need confirmation. |
 | [Axiom Personal](https://axiom.co/pricing) | Ongoing free allowance | 500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention | Intended for individuals and small projects; soft dataset, field and query-concurrency limits; commercial use unconfirmed. |
+| [Hookdeck Developer](https://hookdeck.com/pricing) | Ongoing free allowance | 10,000 events/month; 100,000 discarded requests/month; 5 events/second per destination; 3-day event retention | One user; retries included. After 10,000 events, dashboard locks until next billing period or upgrade; excessive overages may stop processing. |
+| [Svix Free](https://www.svix.com/pricing/) | Ongoing free allowance | Up to 50,000 messages/month; 50 messages/second; 7-day payload retention | Free plan targets developers testing or setting up first webhooks; retries and filtered messages do not count; no stated uptime SLA. |
+| [Tailscale Personal](https://tailscale.com/pricing) | Ongoing free allowance | Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month | Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid. |
 
 ## How to choose
 
