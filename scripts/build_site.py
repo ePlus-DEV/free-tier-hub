@@ -164,7 +164,10 @@ SERVICE_LOGOS = {
     "val-town-free": "valtown",
     "convex-free": "convex",
     "doppler-developer": "doppler",
-    "estuary-developer": "estuary"
+    "estuary-developer": "estuary",
+    "deplexo-free": None,
+    "pr-quorum-free": None,
+    "tinyfish-search-fetch": None
 }
 
 
