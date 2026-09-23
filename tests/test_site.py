@@ -42,6 +42,13 @@ class SiteTests(unittest.TestCase):
         for service in self.data:
             self.assertTrue((self.output / "service" / service["id"] / "index.html").is_file())
 
+    def test_mobile_header_remains_sticky(self):
+        css = self.text("assets/site.css")
+        mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
+        self.assertIn(".site-header{position:sticky;", mobile)
+        self.assertNotIn(".site-header{position:relative}", mobile)
+        self.assertIn("safe-area-inset-top", mobile)
+
     def test_home_crawlable_without_javascript(self):
         html = self.text("index.html")
         self.assertIn('<h1>Discover developer-friendly free tiers.</h1>', html)

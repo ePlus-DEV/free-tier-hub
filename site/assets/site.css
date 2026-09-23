@@ -371,7 +371,8 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 @media(max-width:680px){
   html{scroll-padding-top:110px}
   .container{width:calc(100% - 28px)}
-  .site-header{position:relative}
+  /* Keep the complete mobile header (brand, actions and navigation) visible on scroll. */
+  .site-header{position:sticky;top:0;top:env(safe-area-inset-top,0px)}
   .header-inner{min-height:69px;gap:9px;flex-wrap:wrap;padding:12px 0}
   .brand-mark{width:37px;height:37px}
   .brand-wordmark{font-size:14px}
