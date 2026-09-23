@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-72-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-78-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -12,19 +12,19 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 7 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 6 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 7 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 15 | [Browse](docs/databases.md) |
+| Databases & caching | 16 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 9 | [Browse](docs/developer-tools.md) |
-| Authentication & security | 3 | [Browse](docs/auth-security.md) |
+| APIs & developer tools | 11 | [Browse](docs/developer-tools.md) |
+| Authentication & security | 4 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 5 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 7 | [Browse](docs/queues-jobs.md) |
-| Hosted search | 2 | [Browse](docs/search.md) |
+| Hosted search | 3 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
 
 ## At a glance
@@ -40,6 +40,7 @@
 | [Firebase Hosting (Spark)](https://firebase.google.com/pricing) | Ongoing free allowance | 10 GB stored; 360 MB/day transferred; custom domain and SSL | Firebase App Hosting is a different product and is not available on Spark. |
 | [Azure Static Web Apps Free](https://azure.microsoft.com/en-us/pricing/details/app-service/static/) | Ongoing free allowance | 100 GB bandwidth per subscription; 2 custom domains/app | Intended for hobby/personal apps; site becomes unavailable after exceeding bandwidth quota. |
 | [Render Static Sites](https://render.com/docs/free) | Ongoing free allowance | Free static-site deployments with automatic TLS | Outbound bandwidth and build minutes share workspace quotas; excess usage may be billable. |
+| [Deplexo Free Hosting](https://deplexo.com/free-hosting) | Ongoing free allowance | 1 always-on app; 0.25 CPU; 128 MB RAM; 250 MB disk | Provider advertises no sleep; long-term reliability has not been independently verified. |
 | [Render Free Web Services](https://render.com/docs/free) | Ongoing free allowance | 750 shared free instance hours/workspace/month | Services sleep after inactivity; no persistent local disk. Not recommended for production. |
 | [Koyeb Free Web Instance](https://www.koyeb.com/docs/reference/instances) | Ongoing free allowance | One Free instance: 512 MB RAM, 0.1 vCPU, 2 GB SSD | Limited regions; sleeps after an hour without traffic; no persistent volumes. |
 | [Railway Free](https://docs.railway.com/pricing/free-trial) | Recurring free credit | $1 monthly credit after an initial up-to-30-day $5 trial | Usage beyond recurring free credit requires checking billing and available resources. |
@@ -49,6 +50,7 @@
 | [Oracle Cloud Always Free Compute](https://www.oracle.com/cloud/free/) | Ongoing free allowance | Eligible AMD and Arm Ampere A1 compute resources | Requires a valid payment card for identity verification; region capacity and inactivity policies apply. |
 | [Google Compute Engine Free Tier](https://docs.cloud.google.com/free/docs/free-cloud-features) | Ongoing free allowance | One eligible e2-micro VM/month; 30 GB standard disk; 1 GB eligible egress | Only selected US regions qualify; billing account required; other usage can be charged. |
 | [AWS Free Plan](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-FAQ.html) | Time-limited | Eligible new accounts: up to six months or until Free Tier credits run out | NOT an indefinite free VPS; different AWS offers have separate eligibility and limits. |
+| [Convex Free](https://www.convex.dev/pricing) | Ongoing free allowance | 0.5 GB database storage; 1M function calls/month; 1 GB file storage | Separate database I/O, action compute, search and egress caps apply. |
 | [Supabase Free](https://supabase.com/pricing) | Ongoing free allowance | 500 MB Postgres database/project; 2 active projects; 1 GB file storage | Free projects pause after one week of inactivity; restore/backups are limited. |
 | [Turso Free](https://turso.tech/pricing) | Ongoing free allowance | 100 databases; 5 GB storage; 500M rows read and 10M rows written/month | Read/write usage and sync limits apply; re-check pricing before production use. |
 | [MongoDB Atlas Free Cluster](https://www.mongodb.com/pricing) | Ongoing free allowance | 512 MB storage; one Free cluster per project | Limited regions, throughput and cluster capabilities; designed for development. |
@@ -62,6 +64,8 @@
 | [Cloudflare R2 Standard](https://developers.cloudflare.com/r2/pricing/) | Ongoing free allowance | 10 GB-month storage; 1M Class A + 10M Class B operations/month | Free allowance covers Standard class only; operations beyond limits incur charges. |
 | [Google Cloud Storage Free Tier](https://docs.cloud.google.com/free/docs/free-cloud-features) | Ongoing free allowance | 5 GB-months in eligible US regions; 5,000 Class A and 50,000 Class B operations | Eligible regions only; Cloud Billing required; egress rules are destination-dependent. |
 | [Oracle Object Storage Always Free](https://www.oracle.com/cloud/free/) | Ongoing free allowance | Always Free object-storage allowance on eligible OCI accounts | Card verification required; quotas and capacity can vary by service and region. |
+| [Estuary Developer](https://estuary.dev/pricing/) | Ongoing free allowance | 10 GB data movement/month; 2 concurrent connector instances | Exceeding free quotas automatically starts a 30-day Cloud trial. |
+| [PR Quorum Free](https://prquorum.com/pricing) | Ongoing free allowance | 50 AI code reviews/month across 2 repositories; max 3 inline comments/review | Default three-reviewer panel only; excess reviews are skipped until reset or upgrade. |
 | [Resend Free](https://resend.com/pricing) | Ongoing free allowance | 3,000 transactional emails/month; 100/day; up to 3 domains | Daily sending cap and deliverability/domain-verification requirements apply. |
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. |
@@ -71,6 +75,7 @@
 | [GitHub Codespaces (personal Free)](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces) | Ongoing free allowance | 120 core-hours/month and 15 GB-month storage for GitHub Free personal accounts | Organizations have no included Codespaces quota; 2-core machines use two core-hours per elapsed hour. |
 | [Cloudflare Email Routing](https://developers.cloudflare.com/email-service/) | Ongoing free allowance | Free inbound custom-domain email forwarding and routing on Free/Paid plans | Not a free outbound transactional email API; Email Sending requires Workers Paid. Domain must use Cloudflare email routing. |
 | [GitHub Packages](https://docs.github.com/en/billing/concepts/product-billing/github-packages) | Ongoing free allowance | Public packages are free; GitHub Free includes 500 MB private storage and 1 GB monthly transfer | Private quotas share storage with Actions artifacts; over-quota usage may be blocked or billed. |
+| [Doppler Developer](https://www.doppler.com/pricing) | Ongoing free allowance | 3 users free; 5 config syncs; 3 days of activity logs | Additional users cost $8/month; advanced SSO and audit retention require paid plans. |
 | [Auth0 Free](https://auth0.com/pricing) | Ongoing free allowance | Up to 25,000 monthly active users; one custom domain and five organizations | Credit card not required to sign up; custom-domain feature requires card verification; tenant and connection limits apply. |
 | [Clerk Hobby](https://clerk.com/pricing) | Ongoing free allowance | 50,000 monthly retained users per app; unlimited applications | MRU is not equivalent to monthly active users; free plan has limited dashboard seats and short log retention. |
 | [Cloudflare Turnstile Free](https://developers.cloudflare.com/turnstile/plans/) | Ongoing free allowance | Up to 20 widgets/account; unlimited challenges; 10 hostnames/widget | Free tier has 7-day analytics lookback; remove-branding and advanced controls are Enterprise-only. |
@@ -93,6 +98,7 @@
 | [Upstash Workflow Free](https://upstash.com/pricing/workflow) | Ongoing free allowance | 1,000 workflow steps/day; 50 GB monthly bandwidth; up to 10 concurrent steps | Retries consume extra steps; 1 MB message size and seven-day maximum sleep. |
 | [cron-job.org Free](https://cron-job.org/en/faq/) | Ongoing free allowance | Free scheduled HTTP requests as frequently as every minute; no fixed job-count limit under fair use | Fair-use requirements apply; REST API is limited to 100 calls/day by default and jobs call public URLs. |
 | [Cloudflare Workflows Free](https://developers.cloudflare.com/workflows/reference/pricing/) | Ongoing free allowance | 3,000 workflow steps/day and 1 GB-month state storage; request quota shared with Workers Free | 10 ms CPU per invocation on Free; default instance-state retention is three days. |
+| [TinyFish Search & Fetch](https://future.tinyfish.io/pricing) | Ongoing free allowance | Search: 30 requests/min and 500/hour; Fetch: 150 URLs/min and 1,000/day | Agent and Browser are separately metered; Search/Fetch stay free with $0 Wallet. |
 | [Algolia Free Search](https://www.algolia.com/pricing/free-plan) | Ongoing free allowance | 10K searches/month; 50K records; 5K recommendation requests and 5K crawls/month | Higher usage and advanced search require paid plans; track record and request quotas separately. |
 | [Upstash Search Free](https://upstash.com/pricing/search) | Ongoing free allowance | One free search database; 20K monthly queries; maximum 200K documents | Query and indexed-document caps apply independently; higher volumes need a paid usage plan. |
 | [Flagsmith Free](https://www.flagsmith.com/pricing) | Ongoing free allowance | 50,000 flag API requests/month; one team member and one project; unlimited feature flags | Fair-use limits apply; multi-user administration, advanced scheduling and experimentation need paid plans. |

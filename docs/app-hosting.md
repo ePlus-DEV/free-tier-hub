@@ -6,6 +6,7 @@ Applications, APIs and deployable containers. [← Back to directory](../README.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
+| [Deplexo Free Hosting](https://deplexo.com/free-hosting) | Ongoing free allowance | 1 always-on app; 0.25 CPU; 128 MB RAM; 250 MB disk | Provider advertises no sleep; long-term reliability has not been independently verified. | Not required | Check provider |
 | [Render Free Web Services](https://render.com/docs/free) | Ongoing free allowance | 750 shared free instance hours/workspace/month | Services sleep after inactivity; no persistent local disk. Not recommended for production. | Check provider | Check provider |
 | [Koyeb Free Web Instance](https://www.koyeb.com/docs/reference/instances) | Ongoing free allowance | One Free instance: 512 MB RAM, 0.1 vCPU, 2 GB SSD | Limited regions; sleeps after an hour without traffic; no persistent volumes. | Check provider | Check provider |
 | [Railway Free](https://docs.railway.com/pricing/free-trial) | Recurring free credit | $1 monthly credit after an initial up-to-30-day $5 trial | Usage beyond recurring free credit requires checking billing and available resources. | Check provider | Check provider |
