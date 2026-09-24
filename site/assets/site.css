@@ -552,3 +552,9 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 .header-search-inner:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-tint)}
 .header-search-inner kbd{padding:3px 6px;border:1px solid var(--line-strong);border-radius:5px;color:var(--muted);font-size:11px}
 @media(max-width:680px){.header-search-toggle{width:36px;height:36px}.header-search-panel{padding:10px 0 13px}.header-search-inner{min-height:45px}.header-search-inner input{min-height:43px;font-size:13px}}
+
+/* Single-search hierarchy: hero links to the catalog; header search opens on demand. */
+.hero .hero-actions{display:flex;justify-content:center;margin:24px 0 0;gap:10px}
+.hero .hero-actions .button.primary{min-height:44px;padding:11px 19px;border-radius:10px}
+.hero .hero-trust{margin-top:16px}
+@media(max-width:680px){.hero .hero-actions{margin-top:20px}}
