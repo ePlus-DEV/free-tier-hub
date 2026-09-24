@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-90-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-91-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -11,7 +11,7 @@
 
 | Category | Services | Browse |
 | --- | ---: | --- |
-| Static & frontend hosting | 7 | [Browse](docs/static-hosting.md) |
+| Static & frontend hosting | 8 | [Browse](docs/static-hosting.md) |
 | Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
@@ -125,6 +125,7 @@
 | [Openstatus Hobby](https://www.openstatus.dev/pricing) | Ongoing free allowance | 1 uptime monitor; 1 status page with 3 components; checks every 10 minutes | Free plan is limited to one monitor and one status page; faster checks and larger monitoring quotas require a paid plan. |
 | [Cloudflare Browser Run Free](https://developers.cloudflare.com/browser-run/pricing/) | Ongoing free allowance | 10 minutes of browser time/day; up to 3 concurrent browser sessions | Workers Free plan required; browser time resets daily, session timeout is 60 seconds and new sessions are rate-limited. |
 | [Kinsta WordPress First Month](https://kinsta.com/pricing/) | Time-limited | First month free for eligible new customers on select managed WordPress plans; Single 20GB includes 1 WordPress install, 20 GB server bandwidth/month, 10 GB storage and 125 GB CDN bandwidth/month. | Not an ongoing free tier. Selected plans only; Single 20GB renews at $35/month on monthly billing after the first month, excluding taxes. Confirm eligibility, payment requirements and cancellation terms before signing up. |
+| [Sevalla Static Site Hosting](https://sevalla.com/pricing/) | Ongoing free allowance | 100 static sites/account; 600 build minutes/month; 100 GB bandwidth/month/account; 1 GB/site size limit | Fair-use limits apply; usage beyond free allowances may incur charges. Confirm card requirements and commercial-use terms with provider. |
 
 ## How to choose
 

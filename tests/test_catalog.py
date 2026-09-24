@@ -68,7 +68,12 @@ class MarkdownTests(unittest.TestCase):
         self.assertTrue(any("badge" in e for e in errors), errors)
 
     def test_wrong_category_total(self):
-        bad = self.readme.replace("Static & frontend hosting | 7", "Static & frontend hosting | 70", 1)
+        static_count = sum(item["category"] == "static-hosting" for item in self.data)
+        bad = self.readme.replace(
+            f"Static & frontend hosting | {static_count}",
+            f"Static & frontend hosting | {static_count + 63}",
+            1,
+        )
         errors = check_markdown.validate_documents(ROOT, self.data, bad, self.pages)
         self.assertTrue(any("navigation" in e for e in errors), errors)
 

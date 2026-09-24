@@ -2,7 +2,7 @@
 
 Websites, SPAs and frontend projects. [← Back to directory](../README.md)
 
-**Editorial review:** 2026-09-22 (UTC). Provider prices and limits may change; open each official source for the current terms.
+**Editorial review:** 2026-09-24 (UTC). Provider prices and limits may change; open each official source for the current terms.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
@@ -13,5 +13,6 @@ Websites, SPAs and frontend projects. [← Back to directory](../README.md)
 | [Firebase Hosting (Spark)](https://firebase.google.com/pricing) | Ongoing free allowance | 10 GB stored; 360 MB/day transferred; custom domain and SSL | Firebase App Hosting is a different product and is not available on Spark. | Not required | Check provider |
 | [Azure Static Web Apps Free](https://azure.microsoft.com/en-us/pricing/details/app-service/static/) | Ongoing free allowance | 100 GB bandwidth per subscription; 2 custom domains/app | Intended for hobby/personal apps; site becomes unavailable after exceeding bandwidth quota. | Check provider | Restricted / personal use |
 | [Render Static Sites](https://render.com/docs/free) | Ongoing free allowance | Free static-site deployments with automatic TLS | Outbound bandwidth and build minutes share workspace quotas; excess usage may be billable. | Check provider | Check provider |
+| [Sevalla Static Site Hosting](https://sevalla.com/pricing/) | Ongoing free allowance | 100 static sites/account; 600 build minutes/month; 100 GB bandwidth/month/account; 1 GB/site size limit | Fair-use limits apply; usage beyond free allowances may incur charges. Confirm card requirements and commercial-use terms with provider. | Check provider | Check provider |
 
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.
