@@ -694,3 +694,33 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
   .catalog-main>.filters>.search-field{grid-column:1;grid-row:1}
   .catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1}
 }
+
+/* Mobile search redesign: full-width bottom sheet instead of an anchored popover. */
+@media(max-width:680px){
+  .catalog-main>.filters{grid-template-columns:minmax(0,1fr) 44px;gap:8px;padding:7px 8px;margin:0 0 10px;border-radius:11px;top:var(--site-header-height,76px);z-index:30}
+  .catalog-main>.filters>.search-field{grid-column:1;grid-row:1;min-width:0;margin:0;gap:0;font-size:0}
+  .catalog-main>.filters>.search-field>.input-wrap{width:100%;min-width:0;min-height:44px;height:44px}
+  .catalog-main>.filters>.search-field input{min-width:0;width:100%;min-height:42px;font-size:13px;text-overflow:ellipsis}
+  .catalog-main>.filters>.sort-field,.catalog-main>.filters>.mobile-category{display:none}
+  .catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1;align-self:center;position:static}
+  .catalog-main>.filters .advanced-filter-toggle{width:44px;min-width:44px;height:44px;min-height:44px;padding:0;border-radius:10px}
+  .catalog-main>.filters .filter-checks{
+    position:fixed;inset:auto 0 0;top:auto;right:0;left:0;z-index:101;
+    width:100%;max-width:none;max-height:min(85dvh,680px);margin:0;
+    padding:0 16px calc(16px + env(safe-area-inset-bottom));gap:0;
+    overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line-strong);
+    border-radius:20px 20px 0 0;background:var(--surface);
+    box-shadow:0 -14px 60px rgba(10,24,48,.22)
+  }
+  .catalog-main>.filters .filter-checks[hidden]{display:none!important}
+  .filter-popover-heading{position:sticky;top:0;z-index:1;flex-direction:row;align-items:center;justify-content:space-between;min-height:62px;margin:0 0 12px;padding:12px 0;background:var(--surface)}
+  .filter-popover-heading>span{display:none}
+  .filter-sheet-close{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);font-size:22px;cursor:pointer}
+  .catalog-main>.filters .filter-checks>.mobile-category,.catalog-main>.filters .filter-checks>.sort-field{display:flex;flex-direction:column;gap:6px;width:100%;min-width:0;margin:0 0 14px;font-size:12px;font-weight:750;color:var(--ink-soft)}
+  .catalog-main>.filters .filter-checks select{width:100%;min-height:44px;height:44px;font-size:13px}
+  .catalog-main>.filters .filter-checks label:has(input[type=checkbox]){min-height:57px}
+  .filter-sheet-backdrop{position:fixed;inset:0;z-index:100;background:rgba(9,20,40,.46)}
+  .filter-sheet-backdrop[hidden]{display:none!important}
+  body.filter-sheet-open{overflow:hidden}
+}
+@media(max-width:390px){.catalog-main>.filters{grid-template-columns:minmax(0,1fr) 44px}.catalog-main>.filters>.search-field{grid-column:1;grid-row:1}.catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1}}
