@@ -2,7 +2,7 @@
 
 Uptime, logs, metrics, and error monitoring for applications. [← Back to directory](../README.md)
 
-**Editorial review:** 2026-09-22 (UTC). Always check the provider's official terms and available regions before relying on a free tier.
+**Editorial review:** 2026-09-24 (UTC). Always check the provider's official terms and available regions before relying on a free tier.
 
 | Service | Plan | Free allowance | Important caveat | Card | Commercial use |
 | --- | --- | --- | --- | --- | --- |
@@ -12,5 +12,7 @@ Uptime, logs, metrics, and error monitoring for applications. [← Back to direc
 | [Sentry Developer](https://sentry.io/pricing/) | Ongoing free allowance | One user; 5,000 errors/month; 50 replays and 1 uptime monitor | Free plan is single-user; profiling, advanced integrations and additional event volumes require payment. | Check provider | Check provider |
 | [Splunk Observability Cloud Free Edition](https://www.splunk.com/en_us/products/pricing/observability.html) | Ongoing free allowance | Up to 15 hosts with all Observability Cloud platform features; no time limit | May be throttled and accounts inactive for 30+ days can be deactivated; use is limited to internal business purposes and not service-bureau processing for third parties. | Not required | Allowed |
 | [Axiom Personal](https://axiom.co/pricing) | Ongoing free allowance | 500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention | Intended for individuals and small projects; soft dataset, field and query-concurrency limits; commercial use unconfirmed. | Not required | Check provider |
+
+| [Openstatus Hobby](https://www.openstatus.dev/pricing) | Ongoing free allowance | 1 uptime monitor; 1 status page with 3 components; checks every 10 minutes | Free plan is limited to one monitor and one status page; faster checks and larger monitoring quotas require a paid plan. | Not required | Check provider |
 
 > **Important:** “Check provider” indicates that the catalog does not independently confirm that term; do not assume a feature or quota is unrestricted.
