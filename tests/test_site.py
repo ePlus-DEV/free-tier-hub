@@ -68,6 +68,18 @@ class SiteTests(unittest.TestCase):
         self.assertIn(".hero-search:focus-within", css)
         self.assertIn("@media(max-width:680px){.hero", css)
 
+    def test_header_search_on_demand(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('id="header-search-toggle"', html)
+        self.assertIn('id="header-search-panel" hidden', html)
+        self.assertIn('id="header-search"', html)
+        self.assertIn('aria-controls="header-search-panel"', html)
+        self.assertIn('getElementById("header-search-toggle")', script)
+        self.assertIn('headerSearch.addEventListener("input"', script)
+        self.assertIn(".header-search-panel{", css)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
