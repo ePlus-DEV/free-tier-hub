@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "pinecone-starter": None,
     "vercel": "vercel",
     "netlify": "netlify",
     "cloudflare-pages": "cloudflare",
