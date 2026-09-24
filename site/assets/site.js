@@ -240,25 +240,64 @@
     else mobileLayout.addListener(placeMobileControls);
   }
   if (filterToggle && advancedFilters) {
+    var sheetHeading = advancedFilters.querySelector(".filter-popover-heading");
+    var closeSheetButton = document.createElement("button");
+    closeSheetButton.type = "button";
+    closeSheetButton.className = "filter-sheet-close";
+    closeSheetButton.setAttribute("aria-label", "Close filters");
+    closeSheetButton.textContent = "×";
+    if (sheetHeading) sheetHeading.appendChild(closeSheetButton);
+    var sheetBackdrop = document.createElement("div");
+    sheetBackdrop.className = "filter-sheet-backdrop";
+    sheetBackdrop.hidden = true;
+    document.body.appendChild(sheetBackdrop);
+    function closeFilters(restoreFocus) {
+      advancedFilters.hidden = true;
+      filterToggle.setAttribute("aria-expanded", "false");
+      sheetBackdrop.hidden = true;
+      document.body.classList.remove("filter-sheet-open");
+      if (restoreFocus) filterToggle.focus();
+    }
+    function openFilters() {
+      advancedFilters.hidden = false;
+      filterToggle.setAttribute("aria-expanded", "true");
+      if (window.matchMedia("(max-width: 680px)").matches) {
+        sheetBackdrop.hidden = false;
+        document.body.classList.add("filter-sheet-open");
+        closeSheetButton.focus();
+      }
+    }
+    closeSheetButton.addEventListener("click", function () { closeFilters(true); });
+    sheetBackdrop.addEventListener("click", function () { closeFilters(true); });
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && !advancedFilters.hidden) {
-        advancedFilters.hidden = true;
-        filterToggle.setAttribute("aria-expanded", "false");
-        filterToggle.focus();
+        event.preventDefault(); closeFilters(true);
       }
     });
     document.addEventListener("click", function (event) {
       if (!advancedFilters.hidden && !advancedFilters.contains(event.target) &&
-          !filterToggle.contains(event.target)) {
-        advancedFilters.hidden = true;
-        filterToggle.setAttribute("aria-expanded", "false");
+          !filterToggle.contains(event.target) && !sheetBackdrop.contains(event.target)) {
+        closeFilters(false);
       }
     });
     filterToggle.addEventListener("click", function () {
-    var opening = advancedFilters.hidden;
-    advancedFilters.hidden = !opening;
-    filterToggle.setAttribute("aria-expanded", String(opening));
+      if (advancedFilters.hidden) openFilters();
+      else closeFilters(false);
     });
+    if (window.matchMedia) {
+      var sheetMedia = window.matchMedia("(max-width: 680px)");
+      var syncSheet = function () {
+        if (!sheetMedia.matches) {
+          sheetBackdrop.hidden = true;
+          document.body.classList.remove("filter-sheet-open");
+        } else if (!advancedFilters.hidden) {
+          sheetBackdrop.hidden = false;
+          document.body.classList.add("filter-sheet-open");
+        }
+      };
+      if (sheetMedia.addEventListener) sheetMedia.addEventListener("change", syncSheet);
+      else sheetMedia.addListener(syncSheet);
+    }
   }
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
