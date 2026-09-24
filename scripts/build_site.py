@@ -405,11 +405,8 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<p>Find useful tools, compare their real free allowances, and understand '
         'billing caveats before you build. A practical reference for developers, '
         'created to make the free tier less confusing.</p>'
-        '<div class="hero-search">' + glyph("search") +
-        '<label for="hero-search" class="sr-only">Search developer tools</label>'
-        '<input id="hero-search" type="search" placeholder="Search ' + str(len(items)) +
-        ' developer tools..." autocomplete="off" aria-controls="service-grid">'
-        '<span class="hero-search-hint" aria-hidden="true">/</span></div>'
+        '<div class="hero-actions"><a class="button primary" href="#explore" data-focus-search>'
+        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a></div>'
         '<div class="hero-trust">' + glyph("check") +
         '<span>Independent listings · Official provider links · No referral ranking</span></div>'
         '</div></section>'
