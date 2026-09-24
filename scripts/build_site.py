@@ -346,6 +346,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         return (
             '<article class="service-card" data-service-id="' + tag(item["id"]) +
             '" data-category="' + tag(item["category"]) +
+            '" data-added-at="' + tag(item.get("added_at", "")) +
+            '" data-last-checked="' + tag(item["last_checked"]) +
+            '" data-credit-card="' + tag(item["credit_card"]) +
+            '" data-commercial-use="' + tag(item["commercial_use"]) +
             '" data-search="' + tag(searchable) + '">'
             '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
             service_logo(item, monogram) + '</span><span class="badge" data-plan="' +
@@ -452,8 +456,16 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         options + '</select></label>'
         '<label class="sort-field" for="sort">Sort by<select id="sort">'
         '<option value="default">Catalog order</option>'
+        '<option value="newest">Newest added</option>'
+        '<option value="oldest">Oldest added</option>'
+        '<option value="verified">Recently verified</option>'
         '<option value="name">Name A–Z</option>'
+        '<option value="name-desc">Name Z–A</option>'
         '<option value="category">Category</option></select></label>'
+        '<div class="filter-checks" role="group" aria-label="Additional filters">'
+        '<label><input id="filter-no-card" type="checkbox"> No credit card required</label>'
+        '<label><input id="filter-commercial" type="checkbox"> Commercial use allowed</label>'
+        '</div>'
         '</div><div class="results-meta">'
         '<p class="result-count" id="results-count" aria-live="polite">Showing ' +
         str(len(items)) + ' services</p>'

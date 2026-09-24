@@ -49,6 +49,8 @@
   var search = document.getElementById("search");
   var mobileCategory = document.getElementById("category-filter");
   var sort = document.getElementById("sort");
+  var noCard = document.getElementById("filter-no-card");
+  var commercial = document.getElementById("filter-commercial");
   var grid = document.getElementById("service-grid");
   var count = document.getElementById("results-count");
   var empty = document.getElementById("no-results");
@@ -77,6 +79,23 @@
         return a.querySelector("h3").textContent.localeCompare(
           b.querySelector("h3").textContent, "en");
       });
+    } else if (mode === "newest" || mode === "oldest") {
+      matched.sort(function (a, b) {
+        var ad = a.getAttribute("data-added-at") || "";
+        var bd = b.getAttribute("data-added-at") || "";
+        // Unknown historical dates retain catalog insertion order.
+        return (mode === "newest" ? bd.localeCompare(ad) : ad.localeCompare(bd)) ||
+          (mode === "newest" ? cards.indexOf(b) - cards.indexOf(a) : cards.indexOf(a) - cards.indexOf(b));
+      });
+    } else if (mode === "verified") {
+      matched.sort(function (a, b) {
+        return b.getAttribute("data-last-checked").localeCompare(a.getAttribute("data-last-checked")) ||
+          cards.indexOf(a) - cards.indexOf(b);
+      });
+    } else if (mode === "name-desc") {
+      matched.sort(function (a, b) {
+        return b.querySelector("h3").textContent.localeCompare(a.querySelector("h3").textContent, "en");
+      });
     } else if (mode === "category") {
       matched.sort(function (a, b) {
         return a.getAttribute("data-category").localeCompare(
@@ -94,7 +113,9 @@
     var matched = cards.filter(function (card) {
       var words = normalize(card.getAttribute("data-search"));
       return (!term || words.indexOf(term) !== -1) &&
-        (!category || card.getAttribute("data-category") === category);
+        (!category || card.getAttribute("data-category") === category) &&
+        (!noCard || !noCard.checked || card.getAttribute("data-credit-card") === "no") &&
+        (!commercial || !commercial.checked || card.getAttribute("data-commercial-use") === "yes");
     });
     cards.forEach(function (card) {
       card.hidden = matched.indexOf(card) === -1;
@@ -111,7 +132,8 @@
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
-    if (clear) clear.hidden = !term && !category && (!sort || sort.value === "default");
+    if (clear) clear.hidden = !term && !category && (!sort || sort.value === "default") &&
+      (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
       var isActive = button.getAttribute("data-filter-category") === category;
@@ -138,10 +160,15 @@
     });
   });
   if (sort) sort.addEventListener("change", function () { visible = pageSize; render(); });
+  [noCard, commercial].forEach(function (filter) {
+    if (filter) filter.addEventListener("change", function () { visible = pageSize; render(); });
+  });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
     search.value = "";
     if (sort) sort.value = "default";
+    if (noCard) noCard.checked = false;
+    if (commercial) commercial.checked = false;
     changeCategory("");
     search.focus();
   });
