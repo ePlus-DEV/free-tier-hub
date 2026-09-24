@@ -442,7 +442,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<option value="name">Name A–Z</option>'
         '<option value="name-desc">Name Z–A</option>'
         '<option value="category">Category</option></select></label>'
-        '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" aria-expanded="false" aria-controls="advanced-filters">' + glyph("filter") + ' Filters</button>'
+        '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" aria-expanded="false" aria-controls="advanced-filters">' + glyph("grid") + ' Filters</button>'
         '<div class="filter-checks" id="advanced-filters" role="group" aria-label="Additional filters" hidden>'
         '<label><input id="filter-no-card" type="checkbox"> No credit card required</label>'
         '<label><input id="filter-commercial" type="checkbox"> Commercial use allowed</label>'
