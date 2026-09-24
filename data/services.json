@@ -1018,5 +1018,17 @@
     "credit_card": "check",
     "commercial_use": "no",
     "last_checked": "2026-09-23"
+  },
+  {
+    "id": "pinecone-starter",
+    "name": "Pinecone Starter",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "2 GB vector storage; 2M write units and 1M read units/month; up to 5 indexes",
+    "watch_out": "AWS us-east-1 only; 1 GB egress/month; 1 project and up to 2 users; no uptime SLA. Monthly read/write quotas reset each month.",
+    "pricing_url": "https://www.pinecone.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
   }
 ]
