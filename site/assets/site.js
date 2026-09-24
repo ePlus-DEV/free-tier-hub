@@ -90,6 +90,13 @@
   var heroSearch = document.getElementById("hero-search");
   var filterToggle = document.getElementById("advanced-filter-toggle");
   var advancedFilters = document.getElementById("advanced-filters");
+  var filterCount = document.getElementById("active-filter-count");
+  function updateFilterCount() {
+    if (!filterCount) return;
+    var count = Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked));
+    filterCount.textContent = String(count);
+    filterCount.hidden = count === 0;
+  }
   var mobileCategory = document.getElementById("category-filter");
   var sort = document.getElementById("sort");
   var noCard = document.getElementById("filter-no-card");
@@ -206,11 +213,27 @@
     if (headerSearch) headerSearch.value = heroSearch.value;
     visible = pageSize; render();
   });
-  if (filterToggle && advancedFilters) filterToggle.addEventListener("click", function () {
+  if (filterToggle && advancedFilters) {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !advancedFilters.hidden) {
+        advancedFilters.hidden = true;
+        filterToggle.setAttribute("aria-expanded", "false");
+        filterToggle.focus();
+      }
+    });
+    document.addEventListener("click", function (event) {
+      if (!advancedFilters.hidden && !advancedFilters.contains(event.target) &&
+          !filterToggle.contains(event.target)) {
+        advancedFilters.hidden = true;
+        filterToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+    filterToggle.addEventListener("click", function () {
     var opening = advancedFilters.hidden;
     advancedFilters.hidden = !opening;
     filterToggle.setAttribute("aria-expanded", String(opening));
-  });
+    });
+  }
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
       changeCategory(mobileCategory.value);
@@ -223,7 +246,7 @@
   });
   if (sort) sort.addEventListener("change", function () { visible = pageSize; render(); });
   [noCard, commercial].forEach(function (filter) {
-    if (filter) filter.addEventListener("change", function () { visible = pageSize; render(); });
+    if (filter) filter.addEventListener("change", function () { visible = pageSize; updateFilterCount(); render(); });
   });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
@@ -233,6 +256,7 @@
     if (sort) sort.value = "default";
     if (noCard) noCard.checked = false;
     if (commercial) commercial.checked = false;
+    updateFilterCount();
     changeCategory("");
     search.focus();
   });
