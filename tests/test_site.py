@@ -55,6 +55,51 @@ class SiteTests(unittest.TestCase):
         self.assertIn('data-credit-card="', html)
         self.assertIn('data-commercial-use="', html)
 
+    def test_compact_search_first_directory(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertNotIn('id="hero-search"', html)
+        self.assertIn('href="#explore" data-focus-search', html)
+        self.assertIn('id="advanced-filter-toggle"', html)
+        self.assertIn('id="advanced-filters"', html)
+        self.assertIn('aria-controls="advanced-filters"', html)
+        self.assertIn('getElementById("search")', script)
+        self.assertIn('getElementById("advanced-filter-toggle")', script)
+        self.assertIn(".catalog-main>.filters", css)
+        self.assertIn("@media(max-width:680px){.hero", css)
+
+    def test_header_search_on_demand(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('id="header-search-toggle"', html)
+        self.assertIn('id="header-search-panel" hidden', html)
+        self.assertIn('id="header-search"', html)
+        self.assertIn('aria-controls="header-search-panel"', html)
+        self.assertIn('getElementById("header-search-toggle")', script)
+        self.assertIn('headerSearch.addEventListener("input"', script)
+        self.assertIn(".header-search-panel{", css)
+
+    def test_catalog_search_toolbar_sticks_below_header(self):
+        css = self.text("assets/site.css")
+        script = self.text("assets/site.js")
+        self.assertIn(".catalog-main>.filters{position:sticky;top:calc(var(--site-header-height", css)
+        self.assertIn("syncHeaderHeight", script)
+        self.assertIn("ResizeObserver(syncHeaderHeight)", script)
+        self.assertIn(".filter-checks[hidden]{display:none}", css)
+
+    def test_compact_advanced_filter_popover(self):
+        html = self.text("index.html")
+        css = self.text("assets/site.css")
+        script = self.text("assets/site.js")
+        self.assertIn('class="filter-popover-wrap"', html)
+        self.assertIn('id="active-filter-count"', html)
+        self.assertIn('class="filter-popover-heading"', html)
+        self.assertIn(".catalog-main>.filters .filter-checks[hidden]{display:none!important}", css)
+        self.assertIn("updateFilterCount()", script)
+        self.assertIn("advancedFilters.contains(event.target)", script)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
@@ -266,7 +311,9 @@ class SiteTests(unittest.TestCase):
 
     def test_redesigned_directory_has_real_filters_and_pagination(self):
         home = self.text("index.html")
-        self.assertIn('class="hero-panel"', home)
+        self.assertNotIn('id="hero-search"', home)
+        self.assertIn('id="search"', home)
+        self.assertIn('id="header-search-toggle"', home)
         self.assertIn('class="catalog-layout"', home)
         self.assertIn('class="catalog-sidebar"', home)
         self.assertIn('id="theme-toggle"', home)
