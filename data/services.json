@@ -1042,5 +1042,29 @@
     "credit_card": "no",
     "commercial_use": "no",
     "last_checked": "2026-09-24"
+  },
+  {
+    "id": "openstatus-hobby",
+    "name": "Openstatus Hobby",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "1 uptime monitor; 1 status page with 3 components; checks every 10 minutes",
+    "watch_out": "Free plan is limited to one monitor and one status page; faster checks and larger monitoring quotas require a paid plan.",
+    "pricing_url": "https://www.openstatus.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
+  },
+  {
+    "id": "cloudflare-browser-run",
+    "name": "Cloudflare Browser Run Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10 minutes of browser time/day; up to 3 concurrent browser sessions",
+    "watch_out": "Workers Free plan required; browser time resets daily, session timeout is 60 seconds and new sessions are rate-limited.",
+    "pricing_url": "https://developers.cloudflare.com/browser-run/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
   }
 ]
