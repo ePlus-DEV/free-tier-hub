@@ -70,6 +70,13 @@ def main():
                 errors.append(f"{sid}: review date is in the future")
         except (TypeError, ValueError):
             errors.append(f"{sid}: invalid last_checked ISO date")
+        if "added_at" in item:
+            try:
+                added = datetime.date.fromisoformat(item["added_at"])
+                if added > datetime.datetime.now(datetime.timezone.utc).date():
+                    errors.append(f"{sid}: added_at is in the future")
+            except (TypeError, ValueError):
+                errors.append(f"{sid}: invalid added_at ISO date")
         link = f"[{item['name']}]({item['pricing_url']})"
         if link not in readme:
             errors.append(f"{sid}: missing linked row in README")
