@@ -397,45 +397,25 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<p>Find useful tools, compare their real free allowances, and understand '
         'billing caveats before you build. A practical reference for developers, '
         'created to make the free tier less confusing.</p>'
-        '<div class="hero-actions">'
-        '<a class="button primary" href="#explore" data-focus-search>'
-        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a>'
-        '<a class="button secondary" href="' + tag(REPOSITORY) +
-        '" rel="noopener noreferrer">' + glyph("code") + ' Open on GitHub</a></div>'
+        '<div class="hero-search">' + glyph("search") +
+        '<label for="hero-search" class="sr-only">Search developer tools</label>'
+        '<input id="hero-search" type="search" placeholder="Search ' + str(len(items)) +
+        ' developer tools..." autocomplete="off" aria-controls="service-grid">'
+        '<span class="hero-search-hint" aria-hidden="true">/</span></div>'
         '<div class="hero-trust">' + glyph("check") +
         '<span>Independent listings · Official provider links · No referral ranking</span></div>'
-        '</div><div class="hero-panel" aria-label="Catalog preview">'
-        '<div class="hero-panel-top"><span>EXPLORE THE CATALOG</span>'
-        '<span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>'
-        '<p class="hero-panel-title">Find the right building blocks</p>'
-        '<div class="hero-panel-row">' + glyph("globe") +
-        '<span>Frontend & static hosting</span><strong>' +
-        str(counts["static-hosting"]) + ' tools</strong></div>'
-        '<div class="hero-panel-row">' + glyph("database") +
-        '<span>Managed databases</span><strong>' +
-        str(counts["databases"]) + ' tools</strong></div>'
-        '<div class="hero-panel-row">' + glyph("queue") +
-        '<span>Queues & background jobs</span><strong>' +
-        str(counts["queues-jobs"]) + ' tools</strong></div>'
-        '<div class="hero-panel-footer"><span>Built for developers</span>'
-        '<span>Explore by category ↗</span></div></div></section>'
+        '</div></section>'
         '<div class="stats-strip" aria-label="Catalog statistics">'
-        '<div class="stat"><span class="stat-icon">' + glyph("layers") +
-        '</span><div><strong>' + str(len(items)) + ' services</strong>'
-        '<span>Curated free-tier listings</span></div></div>'
-        '<div class="stat"><span class="stat-icon">' + glyph("grid") +
-        '</span><div><strong>' + str(len(CATEGORIES)) + ' categories</strong>'
-        '<span>From deployment to AI</span></div></div>'
-        '<div class="stat"><span class="stat-icon">' + glyph("clock") +
-        '</span><div><strong>' + tag(latest) + '</strong>'
-        '<span>Latest provider check in catalog</span></div></div></div>'
+        '<div class="stat"><strong>' + str(len(items)) + '</strong><span>Services</span></div>'
+        '<div class="stat"><strong>' + str(len(CATEGORIES)) + '</strong><span>Categories</span></div>'
+        '<div class="stat"><strong>' + tag(latest) + '</strong><span>Latest provider check</span></div></div>'
         '<section id="explore" class="section catalog-section">'
         '<div class="section-heading"><div>'
         '<span class="heading-label">THE SERVICE DIRECTORY</span>'
-        '<h2>Find your next developer tool</h2>'
-        '<p>Filter by workload, compare free limits and open official documentation.</p>'
+        '<h2>Explore free developer tools</h2>'
+        '<p>Browse by category, compare allowances and check billing terms.</p>'
         '</div></div><div class="catalog-layout"><aside class="catalog-sidebar">'
-        '<div class="sidebar-title"><span>Filter categories</span>' +
+        '<div class="sidebar-title"><span>Categories</span>' +
         glyph("grid") + '</div><div class="sidebar-categories">'
         '<button type="button" class="sidebar-category" data-filter-category="" '
         'aria-pressed="true">' + glyph("layers") +
@@ -462,7 +442,8 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<option value="name">Name A–Z</option>'
         '<option value="name-desc">Name Z–A</option>'
         '<option value="category">Category</option></select></label>'
-        '<div class="filter-checks" role="group" aria-label="Additional filters">'
+        '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" aria-expanded="false" aria-controls="advanced-filters">' + glyph("filter") + ' Filters</button>'
+        '<div class="filter-checks" id="advanced-filters" role="group" aria-label="Additional filters" hidden>'
         '<label><input id="filter-no-card" type="checkbox"> No credit card required</label>'
         '<label><input id="filter-commercial" type="checkbox"> Commercial use allowed</label>'
         '</div>'
