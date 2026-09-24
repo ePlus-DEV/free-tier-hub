@@ -1066,5 +1066,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-24"
+  },
+  {
+    "id": "kinsta-wordpress-trial",
+    "name": "Kinsta WordPress First Month",
+    "category": "app-hosting",
+    "plan": "limited-duration",
+    "free_limit": "First month free for eligible new customers on select managed WordPress plans; Single 20GB includes 1 WordPress install, 20 GB server bandwidth/month, 10 GB storage and 125 GB CDN bandwidth/month.",
+    "watch_out": "Not an ongoing free tier. Selected plans only; Single 20GB renews at $35/month on monthly billing after the first month, excluding taxes. Confirm eligibility, payment requirements and cancellation terms before signing up.",
+    "pricing_url": "https://kinsta.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
   }
 ]
