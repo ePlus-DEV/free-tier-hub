@@ -2,6 +2,16 @@
 (function () {
   "use strict";
   var doc = document.documentElement;
+  var siteHeader = document.querySelector(".site-header");
+  function syncHeaderHeight() {
+    if (siteHeader) doc.style.setProperty("--site-header-height", siteHeader.getBoundingClientRect().height + "px");
+  }
+  syncHeaderHeight();
+  if (siteHeader && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(syncHeaderHeight).observe(siteHeader);
+  } else {
+    window.addEventListener("resize", syncHeaderHeight);
+  }
   var themeToggle = document.getElementById("theme-toggle");
   var storedTheme = null;
   try { storedTheme = window.localStorage.getItem("fth-theme"); } catch (_error) {}
