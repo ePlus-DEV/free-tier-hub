@@ -89,6 +89,17 @@ class SiteTests(unittest.TestCase):
         self.assertIn("ResizeObserver(syncHeaderHeight)", script)
         self.assertIn(".filter-checks[hidden]{display:none}", css)
 
+    def test_compact_advanced_filter_popover(self):
+        html = self.text("index.html")
+        css = self.text("assets/site.css")
+        script = self.text("assets/site.js")
+        self.assertIn('class="filter-popover-wrap"', html)
+        self.assertIn('id="active-filter-count"', html)
+        self.assertIn('class="filter-popover-heading"', html)
+        self.assertIn(".catalog-main>.filters .filter-checks[hidden]{display:none!important}", css)
+        self.assertIn("updateFilterCount()", script)
+        self.assertIn("advancedFilters.contains(event.target)", script)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
