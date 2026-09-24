@@ -181,7 +181,8 @@ SERVICE_LOGOS = {
     "tailscale-personal": "tailscale",
     "tinyfish-search-fetch": None,
     "openstatus-hobby": None,  # Verified initials fallback until official icon is curated.
-    "cloudflare-browser-run": "cloudflare"
+    "cloudflare-browser-run": "cloudflare",
+    "kinsta-wordpress-trial": None  # Initials fallback; avoid unverified brand icon.
 }
 
 
