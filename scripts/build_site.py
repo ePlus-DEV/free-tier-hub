@@ -451,6 +451,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         options + '</select></label>'
         '<label class="sort-field" for="sort">Sort by<select id="sort">'
         '<option value="default">Catalog order</option>'
+        '<option value="newest">Newest added</option>'
         '<option value="name">Name A–Z</option>'
         '<option value="category">Category</option></select></label>'
         '</div><div class="results-meta">'
