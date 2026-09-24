@@ -661,3 +661,36 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
   .header-actions{gap:5px}
   .github-button{padding-inline:7px}
 }
+
+/* Mobile: one-row search + filters; category/sort live inside the filter popover. */
+@media(max-width:680px){
+  .catalog-main>.filters{
+    grid-template-columns:minmax(0,1fr) 43px;
+    column-gap:8px;row-gap:0;align-items:end;
+    padding:8px;margin-bottom:10px;
+  }
+  .catalog-main>.filters>.search-field{grid-column:1;grid-row:1;gap:0}
+  .catalog-main>.filters>.search-field>span.input-wrap{min-height:43px}
+  .catalog-main>.filters>.search-field>span.input-wrap input{min-height:41px}
+  .catalog-main>.filters>.search-field{font-size:0}
+  .catalog-main>.filters>.search-field>.input-wrap{font-size:13px}
+  .catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1}
+  .catalog-main>.filters>.mobile-category,
+  .catalog-main>.filters>.sort-field{display:none}
+  .catalog-main>.filters .filter-checks{top:calc(100% + 8px);right:0;width:min(330px,calc(100vw - 30px));gap:8px}
+  .catalog-main>.filters .filter-checks>.mobile-category,
+  .catalog-main>.filters .filter-checks>.sort-field{
+    display:flex;flex-direction:column;gap:5px;width:100%;min-width:0;
+    font-size:11px;font-weight:750;color:var(--ink-soft);
+  }
+  .catalog-main>.filters .filter-checks select{width:100%;min-height:43px;height:43px}
+  .catalog-main>.filters .filter-checks>.sort-field{margin-bottom:7px}
+  .catalog-main>.filters .filter-checks>.mobile-category{margin:0}
+  .catalog-main>.filters .filter-checks label:has(input[type="checkbox"]){min-height:55px}
+  .catalog-main .service-card{padding:13px 15px}
+}
+@media(max-width:390px){
+  .catalog-main>.filters{grid-template-columns:minmax(0,1fr) 43px}
+  .catalog-main>.filters>.search-field{grid-column:1;grid-row:1}
+  .catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1}
+}
