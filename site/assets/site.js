@@ -251,6 +251,23 @@
     sheetBackdrop.className = "filter-sheet-backdrop";
     sheetBackdrop.hidden = true;
     document.body.appendChild(sheetBackdrop);
+    // Portal the sheet to <body> on mobile. A fixed panel inside the sticky
+    // toolbar inherits its stacking context and gets clipped/overlaid.
+    var sheetHome = document.createComment("filter sheet original position");
+    advancedFilters.parentNode.insertBefore(sheetHome, advancedFilters);
+    function placeFilterSheet() {
+      var isMobile = window.matchMedia("(max-width: 680px)").matches;
+      if (isMobile && advancedFilters.parentNode !== document.body) {
+        document.body.appendChild(advancedFilters);
+        advancedFilters.classList.add("mobile-filter-sheet");
+      } else if (!isMobile && advancedFilters.parentNode === document.body) {
+        sheetHome.parentNode.insertBefore(advancedFilters, sheetHome.nextSibling);
+        advancedFilters.classList.remove("mobile-filter-sheet");
+      }
+    }
+    placeFilterSheet();
+    window.addEventListener("resize", placeFilterSheet);
+
     function closeFilters(restoreFocus) {
       advancedFilters.hidden = true;
       filterToggle.setAttribute("aria-expanded", "false");
