@@ -55,6 +55,19 @@ class SiteTests(unittest.TestCase):
         self.assertIn('data-credit-card="', html)
         self.assertIn('data-commercial-use="', html)
 
+    def test_compact_search_first_directory(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        css = self.text("assets/site.css")
+        self.assertIn('id="hero-search"', html)
+        self.assertIn('id="advanced-filter-toggle"', html)
+        self.assertIn('id="advanced-filters"', html)
+        self.assertIn('aria-controls="advanced-filters"', html)
+        self.assertIn('getElementById("hero-search")', script)
+        self.assertIn('getElementById("advanced-filter-toggle")', script)
+        self.assertIn(".hero-search:focus-within", css)
+        self.assertIn("@media(max-width:680px){.hero", css)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
