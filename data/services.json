@@ -1030,5 +1030,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-24"
+  },
+  {
+    "id": "motherduck-lite",
+    "name": "MotherDuck Lite",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "10 GB storage and 10 Pulse compute CU-hours/month; up to 3 internal active users and 2 service accounts",
+    "watch_out": "Free accounts are for internal business use only; embedding in third-party products/services is prohibited. Usage beyond included quotas requires a paid account; no SLA.",
+    "pricing_url": "https://motherduck.com/product/pricing/",
+    "credit_card": "no",
+    "commercial_use": "no",
+    "last_checked": "2026-09-24"
   }
 ]

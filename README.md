@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-86-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-87-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -15,7 +15,7 @@
 | Backend & app hosting | 7 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 17 | [Browse](docs/databases.md) |
+| Databases & caching | 18 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 11 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
@@ -121,6 +121,7 @@
 | [Svix Free](https://www.svix.com/pricing/) | Ongoing free allowance | Up to 50,000 messages/month; 50 messages/second; 7-day payload retention | Free plan targets developers testing or setting up first webhooks; retries and filtered messages do not count; no stated uptime SLA. |
 | [Tailscale Personal](https://tailscale.com/pricing) | Ongoing free allowance | Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month | Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid. |
 | [Pinecone Starter](https://www.pinecone.io/pricing/) | Ongoing free allowance | 2 GB vector storage; 2M write units and 1M read units/month; up to 5 indexes | AWS us-east-1 only; 1 GB egress/month; 1 project and up to 2 users; no uptime SLA. Monthly read/write quotas reset each month. |
+| [MotherDuck Lite](https://motherduck.com/product/pricing/) | Ongoing free allowance | 10 GB storage and 10 Pulse compute CU-hours/month; up to 3 internal active users and 2 service accounts | Free accounts are for internal business use only; embedding in third-party products/services is prohibited. Usage beyond included quotas requires a paid account; no SLA. |
 
 ## How to choose
 
