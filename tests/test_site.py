@@ -42,6 +42,19 @@ class SiteTests(unittest.TestCase):
         for service in self.data:
             self.assertTrue((self.output / "service" / service["id"] / "index.html").is_file())
 
+    def test_sort_and_billing_filters(self):
+        html = self.text("index.html")
+        script = self.text("assets/site.js")
+        for value in ("newest", "oldest", "verified", "name", "name-desc", "category"):
+            self.assertIn('value="' + value + '"', html)
+        for control in ("filter-no-card", "filter-commercial"):
+            self.assertIn('id="' + control + '"', html)
+            self.assertIn('getElementById("' + control + '")', script)
+        self.assertIn('data-last-checked="', html)
+        self.assertIn('data-added-at="', html)
+        self.assertIn('data-credit-card="', html)
+        self.assertIn('data-commercial-use="', html)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
