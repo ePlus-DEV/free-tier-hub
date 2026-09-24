@@ -558,3 +558,10 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 .hero .hero-actions .button.primary{min-height:44px;padding:11px 19px;border-radius:10px}
 .hero .hero-trust{margin-top:16px}
 @media(max-width:680px){.hero .hero-actions{margin-top:20px}}
+
+/* Keep the catalog search and sort toolbar directly beneath the sticky navigation. */
+.catalog-main>.filters{position:sticky;top:calc(var(--site-header-height,76px) + env(safe-area-inset-top,0px));z-index:20;margin:0 -12px 14px;padding:12px 12px 15px;background:var(--page-bg,var(--bg));border-bottom:1px solid var(--line);box-shadow:0 8px 16px -16px rgba(15,23,42,.24)}
+.catalog-main>.filters[style*="sticky"]{position:sticky}
+.catalog-main>.filters .filter-checks[hidden]{display:none}
+.catalog-sidebar{top:calc(var(--site-header-height,76px) + 16px);max-height:calc(100vh - var(--site-header-height,76px) - 32px)}
+@media(max-width:680px){.catalog-main>.filters{margin:0 -8px 12px;padding:10px 8px 12px;gap:8px}.catalog-main>.filters .search-field{grid-column:1/-1}.catalog-main>.filters .filter-checks{max-height:38vh;overflow:auto}}
