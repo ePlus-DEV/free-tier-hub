@@ -279,7 +279,7 @@ class SiteTests(unittest.TestCase):
 
     def test_redesigned_directory_has_real_filters_and_pagination(self):
         home = self.text("index.html")
-        self.assertIn('class="hero-panel"', home)
+        self.assertIn('id="hero-search"', home)
         self.assertIn('class="catalog-layout"', home)
         self.assertIn('class="catalog-sidebar"', home)
         self.assertIn('id="theme-toggle"', home)
