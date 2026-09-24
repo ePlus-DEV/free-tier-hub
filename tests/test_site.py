@@ -81,6 +81,14 @@ class SiteTests(unittest.TestCase):
         self.assertIn('headerSearch.addEventListener("input"', script)
         self.assertIn(".header-search-panel{", css)
 
+    def test_catalog_search_toolbar_sticks_below_header(self):
+        css = self.text("assets/site.css")
+        script = self.text("assets/site.js")
+        self.assertIn(".catalog-main>.filters{position:sticky;top:calc(var(--site-header-height", css)
+        self.assertIn("syncHeaderHeight", script)
+        self.assertIn("ResizeObserver(syncHeaderHeight)", script)
+        self.assertIn(".filter-checks[hidden]{display:none}", css)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
