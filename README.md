@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-85-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-86-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -15,7 +15,7 @@
 | Backend & app hosting | 7 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 16 | [Browse](docs/databases.md) |
+| Databases & caching | 17 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 11 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
@@ -120,6 +120,7 @@
 | [Hookdeck Developer](https://hookdeck.com/pricing) | Ongoing free allowance | 10,000 events/month; 100,000 discarded requests/month; 5 events/second per destination; 3-day event retention | One user; retries included. After 10,000 events, dashboard locks until next billing period or upgrade; excessive overages may stop processing. |
 | [Svix Free](https://www.svix.com/pricing/) | Ongoing free allowance | Up to 50,000 messages/month; 50 messages/second; 7-day payload retention | Free plan targets developers testing or setting up first webhooks; retries and filtered messages do not count; no stated uptime SLA. |
 | [Tailscale Personal](https://tailscale.com/pricing) | Ongoing free allowance | Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month | Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid. |
+| [Pinecone Starter](https://www.pinecone.io/pricing/) | Ongoing free allowance | 2 GB vector storage; 2M write units and 1M read units/month; up to 5 indexes | AWS us-east-1 only; 1 GB egress/month; 1 project and up to 2 users; no uptime SLA. Monthly read/write quotas reset each month. |
 
 ## How to choose
 
