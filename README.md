@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-89-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-90-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -12,7 +12,7 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 7 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 7 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 18 | [Browse](docs/databases.md) |
@@ -112,6 +112,7 @@
 | [Qdrant Cloud Free](https://qdrant.tech/pricing/) | Ongoing free allowance | One single-node cluster with 0.5 vCPU, 1 GB RAM and 4 GB disk | For testing and prototypes; limited regions, no high availability; suspends after 1 week of inactivity and deletes after 4 weeks unless reactivated. |
 | [Cloudflare Durable Objects Free](https://developers.cloudflare.com/durable-objects/platform/pricing/) | Ongoing free allowance | 100,000 Durable Object requests/day; 13,000 GB-s compute/day; up to 5 GB SQLite-backed storage/account | Workers Free supports only SQLite-backed objects; operations fail when daily quotas are exceeded; Workers request limits apply separately. |
 | [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. |
+| [Kinsta WordPress First Month](https://kinsta.com/pricing/) | Time-limited offer | First month free on select WordPress plans; Single 20GB: 1 site, 20 GB bandwidth/month, 10 GB storage, 125 GB CDN bandwidth/month | Selected new customers only; $35/month after first month on monthly billing, excluding tax. Not a permanent free plan. |
 | [Val Town Free](https://www.val.town/pricing) | Ongoing free allowance | 100,000 runs/day; unlimited public vals; 2,500 vals; cron schedules as often as every 15 minutes | New vals on Free are public; no custom domains; 1-minute execution timeout and 3-day log retention. |
 | [SimpleQ Free](https://simpleq.io/pricing) | Ongoing free allowance | 30,000 outbound webhook attempts/month; 5 queues; up to 5 attempts/job; 3-day job retention | Each dispatched webhook POST, including retries and backpressure responses, counts as an attempt; backpressure waiting is free. Commercial-use terms need confirmation. |
 | [ngrok Free](https://ngrok.com/pricing) | Ongoing free allowance | 3 online endpoints; 1 GB transfer and 20,000 HTTP/S requests/month; 5,000 TCP/TLS connections/month | HTTP/S interstitial; $5 one-time usage credit expires after one year; no usage beyond credit; custom domains require paid plan. |
