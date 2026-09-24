@@ -445,7 +445,11 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         'Read the cost-safety guide.</p>'
         '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
         '">Read the guide ↗</a></div></aside>'
-        '<div class="catalog-main"><div class="filters">'
+        '<div class="catalog-main"><div class="directory-intro">'
+        '<span class="directory-eyebrow">THE FREE TIER DIRECTORY</span>'
+        '<h3>Explore developer tools</h3>'
+        '<p>Search, compare and filter verified free tiers without the noise.</p>'
+        '</div><div class="filters">'
         '<label class="search-field" for="search">Search tools'
         '<span class="input-wrap">' + glyph("search") +
         '<input id="search" type="search" autocomplete="off" '
