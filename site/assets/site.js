@@ -213,6 +213,32 @@
     if (headerSearch) headerSearch.value = heroSearch.value;
     visible = pageSize; render();
   });
+  // Move existing controls into the mobile popover; preserve their nodes and listeners.
+  // Desktop keeps the original toolbar layout without duplicate category/sort inputs.
+  if (advancedFilters && mobileCategory && sort && window.matchMedia) {
+    var categoryLabel = mobileCategory.closest("label");
+    var sortLabel = sort.closest("label");
+    var categoryMarker = document.createComment("category desktop position");
+    var sortMarker = document.createComment("sort desktop position");
+    categoryLabel.parentNode.insertBefore(categoryMarker, categoryLabel);
+    sortLabel.parentNode.insertBefore(sortMarker, sortLabel);
+    var mobileLayout = window.matchMedia("(max-width: 680px)");
+    function placeMobileControls() {
+      if (mobileLayout.matches) {
+        var firstCheckbox = advancedFilters.querySelector("label:has(input[type=checkbox])");
+        advancedFilters.insertBefore(categoryLabel, firstCheckbox);
+        advancedFilters.insertBefore(sortLabel, firstCheckbox);
+        filterToggle.setAttribute("aria-label", "Open category, sort and filters");
+      } else {
+        categoryMarker.parentNode.insertBefore(categoryLabel, categoryMarker.nextSibling);
+        sortMarker.parentNode.insertBefore(sortLabel, sortMarker.nextSibling);
+        filterToggle.setAttribute("aria-label", "Open additional filters");
+      }
+    }
+    placeMobileControls();
+    if (mobileLayout.addEventListener) mobileLayout.addEventListener("change", placeMobileControls);
+    else mobileLayout.addListener(placeMobileControls);
+  }
   if (filterToggle && advancedFilters) {
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && !advancedFilters.hidden) {
