@@ -55,6 +55,17 @@ class SiteTests(unittest.TestCase):
         self.assertIn('data-credit-card="', html)
         self.assertIn('data-commercial-use="', html)
 
+    def test_directory_toolbar_has_accessible_filter_chips(self):
+        html = self.text("index.html")
+        css = self.text("assets/site.css")
+        self.assertIn('class="directory-toolbar"', html)
+        self.assertIn('class="toolbar-heading"', html)
+        self.assertIn('class="filter-checks"', html)
+        self.assertIn('id="filter-no-card"', html)
+        self.assertIn('id="filter-commercial"', html)
+        self.assertIn(".filter-checks input:focus-visible", css)
+        self.assertIn("@media(max-width:680px){.directory-toolbar", css)
+
     def test_mobile_header_remains_sticky(self):
         css = self.text("assets/site.css")
         mobile = css.split("@media(max-width:680px){", 1)[1].split("@media(max-width:390px){", 1)[0]
