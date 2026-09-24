@@ -292,7 +292,9 @@ class SiteTests(unittest.TestCase):
 
     def test_redesigned_directory_has_real_filters_and_pagination(self):
         home = self.text("index.html")
-        self.assertIn('id="hero-search"', home)
+        self.assertNotIn('id="hero-search"', home)
+        self.assertIn('id="search"', home)
+        self.assertIn('id="header-search-toggle"', home)
         self.assertIn('class="catalog-layout"', home)
         self.assertIn('class="catalog-sidebar"', home)
         self.assertIn('id="theme-toggle"', home)
