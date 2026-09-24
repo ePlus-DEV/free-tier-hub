@@ -765,3 +765,10 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
   body>.mobile-filter-sheet .filter-option-copy{min-width:0}
   .filter-sheet-backdrop{z-index:1001!important}
 }
+
+/* Keep mobile filters readable without dimming the entire directory. */
+@media(max-width:680px){
+  .filter-sheet-backdrop{background:transparent!important;box-shadow:none!important}
+  body.filter-sheet-open #back-to-top{visibility:hidden!important;pointer-events:none!important}
+  body>.mobile-filter-sheet{isolation:isolate;background:var(--surface)!important;color:var(--ink)!important}
+}
