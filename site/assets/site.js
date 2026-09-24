@@ -47,6 +47,9 @@
   }
 
   var search = document.getElementById("search");
+  var heroSearch = document.getElementById("hero-search");
+  var filterToggle = document.getElementById("advanced-filter-toggle");
+  var advancedFilters = document.getElementById("advanced-filters");
   var mobileCategory = document.getElementById("category-filter");
   var sort = document.getElementById("sort");
   var noCard = document.getElementById("filter-no-card");
@@ -148,7 +151,19 @@
     visible = pageSize;
     render();
   }
-  search.addEventListener("input", function () { visible = pageSize; render(); });
+  search.addEventListener("input", function () {
+    if (heroSearch && heroSearch.value !== search.value) heroSearch.value = search.value;
+    visible = pageSize; render();
+  });
+  if (heroSearch) heroSearch.addEventListener("input", function () {
+    search.value = heroSearch.value;
+    visible = pageSize; render();
+  });
+  if (filterToggle && advancedFilters) filterToggle.addEventListener("click", function () {
+    var opening = advancedFilters.hidden;
+    advancedFilters.hidden = !opening;
+    filterToggle.setAttribute("aria-expanded", String(opening));
+  });
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
       changeCategory(mobileCategory.value);
@@ -166,6 +181,7 @@
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
     search.value = "";
+    if (heroSearch) heroSearch.value = "";
     if (sort) sort.value = "default";
     if (noCard) noCard.checked = false;
     if (commercial) commercial.checked = false;
