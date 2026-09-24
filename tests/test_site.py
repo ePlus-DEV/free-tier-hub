@@ -59,13 +59,14 @@ class SiteTests(unittest.TestCase):
         html = self.text("index.html")
         script = self.text("assets/site.js")
         css = self.text("assets/site.css")
-        self.assertIn('id="hero-search"', html)
+        self.assertNotIn('id="hero-search"', html)
+        self.assertIn('href="#explore" data-focus-search', html)
         self.assertIn('id="advanced-filter-toggle"', html)
         self.assertIn('id="advanced-filters"', html)
         self.assertIn('aria-controls="advanced-filters"', html)
-        self.assertIn('getElementById("hero-search")', script)
+        self.assertIn('getElementById("search")', script)
         self.assertIn('getElementById("advanced-filter-toggle")', script)
-        self.assertIn(".hero-search:focus-within", css)
+        self.assertIn(".catalog-main>.filters", css)
         self.assertIn("@media(max-width:680px){.hero", css)
 
     def test_header_search_on_demand(self):
