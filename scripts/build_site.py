@@ -179,7 +179,9 @@ SERVICE_LOGOS = {
     "hookdeck-developer": None,
     "svix-free": None,
     "tailscale-personal": "tailscale",
-    "tinyfish-search-fetch": None
+    "tinyfish-search-fetch": None,
+    "openstatus-hobby": None,  # Verified initials fallback until official icon is curated.
+    "cloudflare-browser-run": "cloudflare"
 }
 
 
