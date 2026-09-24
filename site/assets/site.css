@@ -724,3 +724,44 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
   body.filter-sheet-open{overflow:hidden}
 }
 @media(max-width:390px){.catalog-main>.filters{grid-template-columns:minmax(0,1fr) 44px}.catalog-main>.filters>.search-field{grid-column:1;grid-row:1}.catalog-main>.filters .filter-popover-wrap{grid-column:2;grid-row:1}}
+
+/* Fixed mobile filter sheet portalled to body: independent of sticky toolbar. */
+@media(max-width:680px){
+  body>.mobile-filter-sheet{
+    position:fixed!important;inset:auto 0 0!important;z-index:1002!important;
+    display:flex;flex-direction:column;gap:10px;box-sizing:border-box;
+    width:100%!important;max-width:100vw!important;max-height:min(85dvh,680px)!important;
+    margin:0!important;padding:0 16px calc(18px + env(safe-area-inset-bottom))!important;
+    overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;
+    border:1px solid var(--line-strong);border-radius:20px 20px 0 0;
+    background:var(--surface);box-shadow:0 -12px 48px rgba(10,24,48,.25);
+  }
+  body>.mobile-filter-sheet[hidden]{display:none!important}
+  body>.mobile-filter-sheet>.mobile-category,
+  body>.mobile-filter-sheet>.sort-field{
+    display:flex!important;flex-direction:column;align-items:stretch;gap:6px;
+    width:100%;min-width:0;margin:0 0 6px;font-size:12px;
+    font-weight:700;color:var(--ink-soft)
+  }
+  body>.mobile-filter-sheet select{
+    display:block;width:100%;min-width:0;height:44px;min-height:44px;
+    padding:8px 12px;border:1px solid var(--line-strong);
+    border-radius:10px;background:var(--surface);color:var(--ink);
+    font-size:13px
+  }
+  body>.mobile-filter-sheet>.filter-popover-heading{
+    position:sticky;top:0;z-index:2;display:flex;flex-direction:row;
+    justify-content:space-between;align-items:center;min-height:64px;
+    padding:12px 0;margin:0 0 4px;background:var(--surface)
+  }
+  body>.mobile-filter-sheet>.filter-popover-heading>span{display:none}
+  body>.mobile-filter-sheet>label:has(input[type=checkbox]){
+    display:flex;align-items:center;gap:12px;min-height:54px;width:100%;
+    margin:0;padding:10px;border:1px solid var(--line);
+    border-radius:10px;background:var(--surface);box-sizing:border-box
+  }
+  body>.mobile-filter-sheet>label:has(input:checked){border-color:var(--brand);background:var(--brand-tint)}
+  body>.mobile-filter-sheet input[type=checkbox]{flex:none;width:17px;height:17px;accent-color:var(--brand)}
+  body>.mobile-filter-sheet .filter-option-copy{min-width:0}
+  .filter-sheet-backdrop{z-index:1001!important}
+}
