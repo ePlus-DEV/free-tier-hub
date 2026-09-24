@@ -1,11 +1,11 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-87-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-89-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
-> **Last editorial review: 2026-09-23 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
+> **Last editorial review: 2026-09-24 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
 
@@ -17,9 +17,9 @@
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 18 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 11 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 12 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 6 | [Browse](docs/observability.md) |
+| Monitoring & observability | 7 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
@@ -122,6 +122,8 @@
 | [Tailscale Personal](https://tailscale.com/pricing) | Ongoing free allowance | Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month | Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid. |
 | [Pinecone Starter](https://www.pinecone.io/pricing/) | Ongoing free allowance | 2 GB vector storage; 2M write units and 1M read units/month; up to 5 indexes | AWS us-east-1 only; 1 GB egress/month; 1 project and up to 2 users; no uptime SLA. Monthly read/write quotas reset each month. |
 | [MotherDuck Lite](https://motherduck.com/product/pricing/) | Ongoing free allowance | 10 GB storage and 10 Pulse compute CU-hours/month; up to 3 internal active users and 2 service accounts | Free accounts are for internal business use only; embedding in third-party products/services is prohibited. Usage beyond included quotas requires a paid account; no SLA. |
+| [Openstatus Hobby](https://www.openstatus.dev/pricing) | Ongoing free allowance | 1 uptime monitor; 1 status page with 3 components; checks every 10 minutes | Free plan is limited to one monitor and one status page; faster checks and larger monitoring quotas require a paid plan. |
+| [Cloudflare Browser Run Free](https://developers.cloudflare.com/browser-run/pricing/) | Ongoing free allowance | 10 minutes of browser time/day; up to 3 concurrent browser sessions | Workers Free plan required; browser time resets daily, session timeout is 60 seconds and new sessions are rate-limited. |
 
 ## How to choose
 
