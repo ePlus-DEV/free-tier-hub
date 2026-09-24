@@ -77,6 +77,10 @@
         return a.querySelector("h3").textContent.localeCompare(
           b.querySelector("h3").textContent, "en");
       });
+    } else if (mode === "newest") {
+      // Catalog entries are append-only; later entries were added more recently.
+      // Do not use last_checked: it records verification, not addition.
+      matched.sort(function (a, b) { return cards.indexOf(b) - cards.indexOf(a); });
     } else if (mode === "category") {
       matched.sort(function (a, b) {
         return a.getAttribute("data-category").localeCompare(
