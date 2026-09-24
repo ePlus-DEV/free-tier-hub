@@ -445,7 +445,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         'Read the cost-safety guide.</p>'
         '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
         '">Read the guide ↗</a></div></aside>'
-        '<div class="catalog-main"><div class="filters">'
+        '<div class="catalog-main"><div class="directory-toolbar">'
+        '<div class="toolbar-heading"><span class="toolbar-kicker">REFINE YOUR SEARCH</span>'
+        '<strong>Explore services</strong><span class="toolbar-subtitle">Find the right free tier for your project.</span></div>'
+        '<div class="filters">'
         '<label class="search-field" for="search">Search tools'
         '<span class="input-wrap">' + glyph("search") +
         '<input id="search" type="search" autocomplete="off" '
@@ -462,11 +465,11 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<option value="name">Name A–Z</option>'
         '<option value="name-desc">Name Z–A</option>'
         '<option value="category">Category</option></select></label>'
-        '<div class="filter-checks" role="group" aria-label="Additional filters">'
+        '</div><div class="filter-checks" role="group" aria-label="Additional filters">'
+        '<span class="filter-checks-title">Quick filters</span>'
         '<label><input id="filter-no-card" type="checkbox"> No credit card required</label>'
         '<label><input id="filter-commercial" type="checkbox"> Commercial use allowed</label>'
-        '</div>'
-        '</div><div class="results-meta">'
+        '</div></div><div class="results-meta">'
         '<p class="result-count" id="results-count" aria-live="polite">Showing ' +
         str(len(items)) + ' services</p>'
         '<button id="clear-filters" class="clear-filters" type="button" hidden>'
