@@ -540,3 +540,15 @@ html.js-enabled .service-card[data-paged-hidden="true"]{display:none}
 @media(max-width:680px){.hero{padding:32px 18px;margin-top:16px}.hero h1{font-size:clamp(2rem,8vw,2.65rem)}.hero-search{min-height:51px;margin-top:20px}.hero-search input{min-height:49px;font-size:13px}.stats-strip{flex-wrap:wrap;gap:8px 18px}.stats-strip .stat:last-child{grid-column:auto;border:0}.catalog-section{margin-top:34px}.catalog-main>.filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.catalog-main>.filters .search-field{grid-column:1/-1}.catalog-main>.filters .mobile-category{display:block}.catalog-main>.filters .filter-checks{grid-column:1/-1}.advanced-filter-toggle{grid-column:1/-1;width:100%}.catalog-main .service-card{min-height:0}.hero-trust{font-size:10px}}
 @media(max-width:390px){.catalog-main>.filters{grid-template-columns:1fr}.catalog-main>.filters .search-field,.catalog-main>.filters .filter-checks,.advanced-filter-toggle{grid-column:1}.stats-strip{gap:5px 12px}}
 @media(prefers-reduced-motion:reduce){.catalog-main .service-card{transition:none}.catalog-main .service-card:hover{transform:none}}
+
+/* On-demand global header search: available without taking permanent menu space. */
+.header-search-toggle{display:grid;place-items:center;width:39px;height:39px;padding:0;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink-soft)}
+.header-search-toggle:hover,.header-search-toggle[aria-expanded="true"]{background:var(--brand-tint);border-color:var(--brand);color:var(--brand-ink)}
+.header-search-toggle svg{width:19px;height:19px}
+.header-search-panel{position:absolute;top:100%;left:0;right:0;z-index:35;padding:13px 0 17px;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(14,28,52,.1)}
+.header-search-inner{display:flex;align-items:center;gap:12px;min-height:49px;padding:0 15px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface-muted)}
+.header-search-inner>svg{width:19px;height:19px;color:var(--muted);flex:none}
+.header-search-inner input{min-width:0;flex:1;min-height:47px;border:0;outline:0;background:transparent;color:var(--ink);font-size:14px}
+.header-search-inner:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-tint)}
+.header-search-inner kbd{padding:3px 6px;border:1px solid var(--line-strong);border-radius:5px;color:var(--muted);font-size:11px}
+@media(max-width:680px){.header-search-toggle{width:36px;height:36px}.header-search-panel{padding:10px 0 13px}.header-search-inner{min-height:45px}.header-search-inner input{min-height:43px;font-size:13px}}
