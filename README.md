@@ -1,11 +1,11 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-91-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-92-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
-> **Last editorial review: 2026-09-24 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
+> **Last editorial review: 2026-09-25 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
 
@@ -17,7 +17,7 @@
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 18 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 12 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 13 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 7 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
@@ -68,6 +68,7 @@
 | [Oracle Object Storage Always Free](https://www.oracle.com/cloud/free/) | Ongoing free allowance | Always Free object-storage allowance on eligible OCI accounts | Card verification required; quotas and capacity can vary by service and region. |
 | [PR Quorum Free](https://prquorum.com/pricing) | Ongoing free allowance | 50 AI code reviews/month across 2 repositories; max 3 inline comments/review | Default three-reviewer panel only; excess reviews are skipped until reset or upgrade. |
 | [Estuary Developer](https://estuary.dev/pricing/) | Ongoing free allowance | 10 GB data movement/month; 2 concurrent connector instances | Exceeding free quotas automatically starts a 30-day Cloud trial. |
+| [Novu Free](https://novu.co/pricing) | Ongoing free allowance | 10,000 workflow runs/month; up to 20 workflows; 2 environments; up to 3 team members | Activity-feed retention is 24 hours; 60 events/second throughput; commercial-use terms need confirmation. |
 | [Resend Free](https://resend.com/pricing) | Ongoing free allowance | 3,000 transactional emails/month; 100/day; up to 3 domains | Daily sending cap and deliverability/domain-verification requirements apply. |
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. |
