@@ -1090,5 +1090,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-24"
+  },
+  {
+    "id": "novu-free",
+    "name": "Novu Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10,000 workflow runs/month; up to 20 workflows; 2 environments (Dev + Prod); up to 3 team members",
+    "watch_out": "Free includes all notification channels but activity-feed retention is 24 hours and throughput is limited to 60 events/second. Provider states no credit card is required; commercial-use terms were not explicitly confirmed.",
+    "pricing_url": "https://novu.co/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-25"
   }
 ]
