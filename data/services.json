@@ -1090,5 +1090,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-09-24"
+  },
+  {
+    "id": "novu-free",
+    "name": "Novu Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10,000 workflow runs/month; up to 20 workflows; 2 environments; 3 team members",
+    "watch_out": "Free activity-feed retention is 24 hours; throughput and workflow logic limits apply; provider channels such as SMS can have separate delivery costs.",
+    "pricing_url": "https://novu.co/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-24"
   }
 ]
