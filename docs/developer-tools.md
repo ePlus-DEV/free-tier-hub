@@ -18,7 +18,6 @@ Transactional email, monitoring and CI/CD. [← Back to directory](../README.md)
 | [GitLab CI/CD Free](https://docs.gitlab.com/ci/pipelines/compute_minutes/) | Ongoing free allowance | 400 compute minutes/month per GitLab.com Free namespace on hosted instance runners | Runner cost factors vary; quota is shared across the namespace; extra compute minutes may need purchase. | Check provider | Check provider |
 | [CircleCI Free](https://circleci.com/pricing/) | Ongoing free allowance | 30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage | Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero. | Not required | Check provider |
 | [Cloudflare Browser Run Free](https://developers.cloudflare.com/browser-run/pricing/) | Ongoing free allowance | 10 minutes of browser time/day; up to 3 concurrent browser sessions | Workers Free plan required; browser time resets daily, session timeout is 60 seconds and new sessions are rate-limited. | Not required | Check provider |
-
 | [Novu Free](https://novu.co/pricing) | Ongoing free allowance | 10,000 workflow runs/month; up to 20 workflows; 2 environments; up to 3 team members | 24-hour activity-feed retention; 60 events/second throughput; commercial-use terms need confirmation. | Not required | Check provider |
 
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.
