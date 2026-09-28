@@ -182,6 +182,7 @@ SERVICE_LOGOS = {
     "tinyfish-search-fetch": None,
     "openstatus-hobby": None,  # Verified initials fallback until official icon is curated.
     "cloudflare-browser-run": "cloudflare",
+    "novu-free": None,  # Initials fallback; avoid unverified brand icon.
     "kinsta-wordpress-trial": None,  # Initials fallback; avoid unverified brand icon.
     "sevalla-static": None  # Initials fallback; avoid unverified brand icon.
 }
