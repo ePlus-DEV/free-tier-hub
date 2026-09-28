@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "webhooker-free": None,  # Safe initials fallback; official icon not curated.
     "motherduck-lite": None,
     "pinecone-starter": None,
     "vercel": "vercel",
