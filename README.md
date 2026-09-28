@@ -11,23 +11,23 @@
 
 | Category | Services | Browse |
 | --- | ---: | --- |
-| Static & frontend hosting |8 |[Browse](docs/static-hosting.md) |
-| Backend & app hosting |8 |[Browse](docs/app-hosting.md) |
-| Serverless & edge |3 |[Browse](docs/serverless.md) |
-| Cloud compute & VPS |3 |[Browse](docs/cloud-vps.md) |
-| Databases & caching |18 |[Browse](docs/databases.md) |
-| Object storage |4 |[Browse](docs/storage.md) |
-| APIs & developer tools |13 |[Browse](docs/developer-tools.md) |
-| Authentication & security |4 |[Browse](docs/auth-security.md) |
-| Monitoring & observability |7 |[Browse](docs/observability.md) |
-| Product analytics |2 |[Browse](docs/analytics.md) |
-| DNS & CDN |1 |[Browse](docs/dns-cdn.md) |
-| AI & ML platforms |3 |[Browse](docs/ai-ml.md) |
-| Queues, workflows & scheduling |9 |[Browse](docs/queues-jobs.md) |
-| Hosted search |3 |[Browse](docs/search.md) |
-| Feature flags & gradual rollout |2 |[Browse](docs/feature-flags.md) |
-| Tunneling & networking |2 |[Browse](docs/tunneling-networking.md) |
-| Webhooks & event delivery |3 |[Browse](docs/webhooks-events.md) |
+| Static & frontend hosting | 8 | [Browse](docs/static-hosting.md) |
+| Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
+| Serverless & edge | 3 | [Browse](docs/serverless.md) |
+| Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
+| Databases & caching | 18 | [Browse](docs/databases.md) |
+| Object storage | 4 | [Browse](docs/storage.md) |
+| APIs & developer tools | 13 | [Browse](docs/developer-tools.md) |
+| Authentication & security | 4 | [Browse](docs/auth-security.md) |
+| Monitoring & observability | 7 | [Browse](docs/observability.md) |
+| Product analytics | 2 | [Browse](docs/analytics.md) |
+| DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
+| AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
+| Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
+| Hosted search | 3 | [Browse](docs/search.md) |
+| Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
+| Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
+| Webhooks & event delivery | 3 | [Browse](docs/webhooks-events.md) |
 
 ## At a glance
 
