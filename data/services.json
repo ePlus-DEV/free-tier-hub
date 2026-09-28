@@ -1102,5 +1102,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-25"
+  },
+  {
+    "id": "webhooker-free",
+    "name": "Webhooker Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 inbound events/month; 3 sources; 9 shared destinations; 1 workspace member; 14-day event retention",
+    "watch_out": "120 inbound events/minute per source; up to 20% monthly quota buffer without overage charges; ordered delivery, static outbound IP and DPA require paid plans. Commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://webhooker.eu/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-09-28"
   }
 ]
