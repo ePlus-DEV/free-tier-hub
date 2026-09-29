@@ -1,11 +1,11 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-93-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-94-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
-> **Last editorial review: 2026-09-25 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
+> **Last editorial review: 2026-09-29 (UTC).** This is not a price guarantee or a production suitability endorsement. Free plans change, regional eligibility varies, and some services need a billing account or payment card. Always read the linked provider terms before enabling billing.
 
 ## Quick navigation
 
@@ -25,7 +25,7 @@
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
-| Feature flags & gradual rollout | 2 | [Browse](docs/feature-flags.md) |
+| Feature flags & gradual rollout | 3 | [Browse](docs/feature-flags.md) |
 | Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | 3 | [Browse](docs/webhooks-events.md) |
 
@@ -105,6 +105,7 @@
 | [Upstash Search Free](https://upstash.com/pricing/search) | Ongoing free allowance | One free search database; 20K monthly queries; maximum 200K documents | Query and indexed-document caps apply independently; higher volumes need a paid usage plan. |
 | [Flagsmith Free](https://www.flagsmith.com/pricing) | Ongoing free allowance | 50,000 flag API requests/month; one team member and one project; unlimited feature flags | Fair-use limits apply; multi-user administration, advanced scheduling and experimentation need paid plans. |
 | [LaunchDarkly Developer](https://launchdarkly.com/pricing/) | Ongoing free allowance | Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month | Client MAU and service connections have separate caps; higher-scale rollout capabilities use paid plans. |
+| [Featureflip Solo](https://featureflip.io/pricing/) | Ongoing free allowance | 1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations | 7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans. |
 | [Upstash Blob Free](https://upstash.com/pricing/blob) | Ongoing free allowance | 1 GB average storage/month; 10 GB bandwidth, 10,000 simple and 2,000 advanced operations/month | Free bucket stops serving requests when any quota is exhausted until its 30-day window resets; multipart uploads count as advanced operations. |
 | [Weaviate Cloud Free](https://weaviate.io/pricing) | Ongoing free allowance | One cluster/user; 100,000 objects, 1 GB RAM, 10 GB disk; 2,000 embedding requests/day and 1,000 Query Agent requests/month | One collection and up to three tenants; limited AWS regions, no backups or HA, best-effort availability. |
 | [Inngest Hobby](https://www.inngest.com/pricing) | Ongoing free allowance | 50,000 executions and 500,000 events/month; 5 concurrent steps; 3 users and 3 workers | An execution counts each function run plus its steps; free execution pauses on quota exhaustion; 24-hour trace retention and 7-day maximum sleep. |
