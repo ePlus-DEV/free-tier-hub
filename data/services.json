@@ -1114,5 +1114,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-28"
+  },
+  {
+    "id": "featureflip-solo",
+    "name": "Featureflip Solo",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations",
+    "watch_out": "7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans.",
+    "pricing_url": "https://featureflip.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-09-29"
   }
 ]
