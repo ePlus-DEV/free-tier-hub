@@ -145,6 +145,7 @@ SERVICE_LOGOS = {
     "posthog": "posthog",
     "tinybird-free": "tinybird",
     "new-relic-free": "newrelic",
+    "appsignal-free": None,  # Safe initials fallback; official icon not curated.
     "cloudflare-dns": "cloudflare",
     "hf-static-spaces": "huggingface",
     "gemini-api": "googlegemini",
