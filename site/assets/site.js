@@ -15,10 +15,9 @@
   var themeToggle = document.getElementById("theme-toggle");
   var storedTheme = null;
   try { storedTheme = window.localStorage.getItem("fth-theme"); } catch (_error) {}
-  // The directory ships in the graphite dark theme by default. Respect an explicit
-  // user choice after the first toggle, rather than changing with OS appearance.
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   var theme = storedTheme === "dark" || storedTheme === "light"
-    ? storedTheme : "dark";
+    ? storedTheme : (prefersDark ? "dark" : "light");
   function applyTheme(next) {
     theme = next;
     doc.setAttribute("data-theme", theme);
@@ -223,7 +222,7 @@
     var sortMarker = document.createComment("sort desktop position");
     categoryLabel.parentNode.insertBefore(categoryMarker, categoryLabel);
     sortLabel.parentNode.insertBefore(sortMarker, sortLabel);
-    var mobileLayout = window.matchMedia("(max-width: 920px)");
+    var mobileLayout = window.matchMedia("(max-width: 680px)");
     function placeMobileControls() {
       if (mobileLayout.matches) {
         var firstCheckbox = advancedFilters.querySelector("label:has(input[type=checkbox])");
@@ -257,7 +256,7 @@
     var sheetHome = document.createComment("filter sheet original position");
     advancedFilters.parentNode.insertBefore(sheetHome, advancedFilters);
     function placeFilterSheet() {
-      var isMobile = window.matchMedia("(max-width: 920px)").matches;
+      var isMobile = window.matchMedia("(max-width: 680px)").matches;
       if (isMobile && advancedFilters.parentNode !== document.body) {
         document.body.appendChild(advancedFilters);
         advancedFilters.classList.add("mobile-filter-sheet");
@@ -279,7 +278,7 @@
     function openFilters() {
       advancedFilters.hidden = false;
       filterToggle.setAttribute("aria-expanded", "true");
-      if (window.matchMedia("(max-width: 920px)").matches) {
+      if (window.matchMedia("(max-width: 680px)").matches) {
         sheetBackdrop.hidden = false;
         document.body.classList.add("filter-sheet-open");
         closeSheetButton.focus();
@@ -303,7 +302,7 @@
       else closeFilters(false);
     });
     if (window.matchMedia) {
-      var sheetMedia = window.matchMedia("(max-width: 920px)");
+      var sheetMedia = window.matchMedia("(max-width: 680px)");
       var syncSheet = function () {
         if (!sheetMedia.matches) {
           sheetBackdrop.hidden = true;
