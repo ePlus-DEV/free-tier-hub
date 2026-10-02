@@ -181,6 +181,17 @@ class SiteTests(unittest.TestCase):
         self.assertIn("this.nextElementSibling.hidden=false", detail)
         self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
 
+    def test_directory_theme_and_provider_logo_fallback(self):
+        html = self.text("index.html")
+        theme = self.text("assets/directory-theme.css")
+        fallback = self.text("service/deplexo-free/index.html")
+        self.assertIn('assets/directory-theme.css', html)
+        self.assertIn('grid-template-columns:repeat(3,minmax(0,1fr))', theme)
+        self.assertIn('class="credit-badge"', html)
+        self.assertIn('class="card-arrow"', html)
+        self.assertIn('www.google.com/s2/favicons?domain=deplexo.com&amp;sz=64', fallback)
+        self.assertIn('service-logo-favicon', fallback)
+
     def test_back_to_top_is_on_every_page_and_respects_motion_preference(self):
         for page in self.output.rglob("*.html"):
             html = page.read_text(encoding="utf-8")
@@ -250,7 +261,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn("Sitemap: " + CANONICAL + "sitemap.xml", content)
 
     def test_static_assets_and_nojekyll_exist(self):
-        for asset in ("site.css", "site.js", "icon.svg"):
+        for asset in ("site.css", "directory-theme.css", "site.js", "icon.svg"):
             self.assertGreater((self.output / "assets" / asset).stat().st_size, 0)
         self.assertTrue((self.output / ".nojekyll").is_file())
         self.assertIn('name="robots" content="noindex,follow"', self.text("404.html"))
