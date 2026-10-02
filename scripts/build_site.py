@@ -192,24 +192,31 @@ SERVICE_LOGOS = {
 
 
 def service_logo(item, monogram):
-    """Render a recognizable service mark with a resilient provider-favicon fallback."""
+    """Render a recognizable brand mark with favicon and monogram fallbacks."""
     slug = SERVICE_LOGOS.get(item["id"])
-    fallback = '<span class="service-monogram">' + tag(monogram) + '</span>'
-    if slug:
-        url = "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/" + slug + ".svg"
-        return ('<img class="service-logo" src="' + tag(url) + '" alt="" loading="lazy" '
-                'decoding="async" referrerpolicy="no-referrer" '
-                'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
-                '<span class="service-monogram" hidden>' + tag(monogram) + '</span>')
-
-    # Some smaller providers are not present in Simple Icons. Use their provider
-    # domain favicon so every catalog card still has a recognizable visual mark.
     domain = urlsplit(item["pricing_url"]).netloc.lower().split("@")[-1].split(":")[0]
     favicon = "https://www.google.com/s2/favicons?domain=" + domain + "&sz=64"
-    return ('<img class="service-logo service-logo-favicon" src="' + tag(favicon) +
-            '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" '
-            'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
-            '<span class="service-monogram" hidden>' + tag(monogram) + '</span>')
+    monogram_html = '<span class="service-monogram" hidden>' + tag(monogram) + '</span>'
+    favicon_html = (
+        '<img class="service-logo service-logo-favicon" src="' + tag(favicon) +
+        '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" '
+        'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
+    )
+
+    if slug:
+        # The Simple Icons color CDN keeps brand identity recognizable instead of
+        # rendering every provider as the same monochrome mark.
+        url = "https://cdn.simpleicons.org/" + slug + "?viewbox=auto"
+        return (
+            '<img class="service-logo" src="' + tag(url) + '" alt="" loading="lazy" '
+            'decoding="async" referrerpolicy="no-referrer" '
+            'onerror="this.hidden=true;this.nextElementSibling.hidden=false">' +
+            favicon_html.replace('class="service-logo service-logo-favicon"',
+                                 'class="service-logo service-logo-favicon" hidden', 1) +
+            monogram_html
+        )
+
+    return favicon_html + monogram_html
 
 assert set(CATEGORY_NAMES) == set(CATEGORIES)
 
