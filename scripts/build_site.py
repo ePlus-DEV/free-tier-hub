@@ -192,31 +192,15 @@ SERVICE_LOGOS = {
 
 
 def service_logo(item, monogram):
-    """Render a recognizable brand mark with favicon and monogram fallbacks."""
     slug = SERVICE_LOGOS.get(item["id"])
-    domain = urlsplit(item["pricing_url"]).netloc.lower().split("@")[-1].split(":")[0]
-    favicon = "https://www.google.com/s2/favicons?domain=" + domain + "&sz=64"
-    monogram_html = '<span class="service-monogram" hidden>' + tag(monogram) + '</span>'
-    favicon_html = (
-        '<img class="service-logo service-logo-favicon" src="' + tag(favicon) +
-        '" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" '
-        'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
-    )
-
-    if slug:
-        # The Simple Icons color CDN keeps brand identity recognizable instead of
-        # rendering every provider as the same monochrome mark.
-        url = "https://cdn.simpleicons.org/" + slug + "?viewbox=auto"
-        return (
-            '<img class="service-logo" src="' + tag(url) + '" alt="" loading="lazy" '
+    fallback = '<span class="service-monogram">' + tag(monogram) + '</span>'
+    if not slug:
+        return fallback
+    url = "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/" + slug + ".svg"
+    return ('<img class="service-logo" src="' + tag(url) + '" alt="" loading="lazy" '
             'decoding="async" referrerpolicy="no-referrer" '
-            'onerror="this.hidden=true;this.nextElementSibling.hidden=false">' +
-            favicon_html.replace('class="service-logo service-logo-favicon"',
-                                 'class="service-logo service-logo-favicon" hidden', 1) +
-            monogram_html
-        )
-
-    return favicon_html + monogram_html
+            'onerror="this.hidden=true;this.nextElementSibling.hidden=false">'
+            '<span class="service-monogram" hidden>' + tag(monogram) + '</span>')
 
 assert set(CATEGORY_NAMES) == set(CATEGORIES)
 
@@ -291,7 +275,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         head = (
             '<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width, initial-scale=1">'
-            '<meta name="color-scheme" content="dark light">'
+            '<meta name="color-scheme" content="light">'
             '<title>' + tag(title) + '</title>'
             '<meta name="description" content="' + tag(description) + '">'
             '<meta name="robots" content="' + tag(robots) + '">'
@@ -307,7 +291,6 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">'
             '<link rel="stylesheet" href="' + tag(absolute("assets/site.css")) + '">'
-            '<link rel="stylesheet" href="' + tag(absolute("assets/directory-theme.css")) + '">'
             '<link rel="alternate" type="text/plain" title="LLM overview" href="' + tag(absolute("llms.txt")) + '">'
             '<link rel="alternate" type="text/markdown" title="Agent discovery" href="' + tag(absolute("agents.md")) + '">'
             '<script type="application/ld+json">' + safe_json(structured_data) + '</script>'
@@ -376,11 +359,6 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         ).lower()
         monogram = "".join(word[0] for word in
                            re.findall(r"[A-Za-z0-9]+", item["name"])[:2]).upper() or "FT"
-        card_state = {
-            "no": ("NO CARD REQUIRED", "no"),
-            "yes": ("CARD REQUIRED", "yes"),
-            "check": ("CARD: CHECK PROVIDER", "check"),
-        }[item["credit_card"]]
         return (
             '<article class="service-card" data-service-id="' + tag(item["id"]) +
             '" data-category="' + tag(item["category"]) +
@@ -390,19 +368,16 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '" data-commercial-use="' + tag(item["commercial_use"]) +
             '" data-search="' + tag(searchable) + '">'
             '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
-            service_logo(item, monogram) + '</span>'
-            '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
-            '<span class="card-arrow" aria-hidden="true">↗</span></div>'
+            service_logo(item, monogram) + '</span><span class="badge" data-plan="' +
+            tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
             '<span class="eyebrow">' + tag(group) + '</span>'
+            '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
             '<p class="allowance">' + tag(item["free_limit"]) + '</p>'
-            '<div class="card-rule" aria-hidden="true"></div>'
-            '<div class="card-signal-row"><span class="credit-badge" data-card="' +
-            tag(card_state[1]) + '">' + tag(card_state[0]) + '</span></div>'
-            '<p class="restriction"><span>Watch out:</span> ' + tag(item["watch_out"]) + '</p>'
-            '<div class="card-bottom"><span class="verified-date">Verified ' +
-            tag(item["last_checked"]) + '</span><span class="badge" data-plan="' +
-            tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) +
-            '</span></div></article>'
+            '<p class="restriction">' + tag(item["watch_out"]) + '</p>'
+            '<div class="card-bottom"><span>Card: ' +
+            tag(CARD_NAMES[item["credit_card"]]) + '</span>'
+            '<a href="' + tag(dest) + '" aria-label="View ' + tag(item["name"]) +
+            ' details">View details ' + glyph("arrow") + '</a></div></article>'
         )
 
     def category_link(category):
@@ -433,7 +408,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
     home = (
         '<section class="hero"><div class="hero-copy">'
         '<p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>'
-        'CURATED FREE TIERS FOR DEVELOPERS</p>'
+        'THE OPEN DEVELOPER DIRECTORY</p>'
         '<h1>Discover developer-friendly free tiers.</h1>'
         '<p>Find useful tools, compare their real free allowances, and understand '
         'billing caveats before you build. A practical reference for developers, '
@@ -449,9 +424,9 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<div class="stat"><strong>' + tag(latest) + '</strong><span>Latest provider check</span></div></div>'
         '<section id="explore" class="section catalog-section">'
         '<div class="section-heading"><div>'
-        '<span class="heading-label">// DIRECTORY</span>'
-        '<h2>Find your next tool</h2>'
-        '<p>Search by product, category, quota or billing requirement.</p>'
+        '<span class="heading-label">THE SERVICE DIRECTORY</span>'
+        '<h2>Explore free developer tools</h2>'
+        '<p>Browse by category, compare allowances and check billing terms.</p>'
         '</div></div><div class="catalog-layout"><aside class="catalog-sidebar">'
         '<div class="sidebar-title"><span>Categories</span>' +
         glyph("grid") + '</div><div class="sidebar-categories">'
@@ -673,7 +648,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
     write_file(output, "agents.md", "\n".join(agents) + "\n")
     write_file(output, "catalog.json", json.dumps(items, indent=2, ensure_ascii=False) + "\n")
     source_assets = ROOT / "site" / "assets"
-    for name in ("site.css", "directory-theme.css", "site.js", "icon.svg"):
+    for name in ("site.css", "site.js", "icon.svg"):
         target = output / "assets" / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source_assets / name, target)
