@@ -1126,5 +1126,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-09-29"
+  },
+  {
+    "id": "appsignal-free",
+    "name": "AppSignal Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "30,000 application requests/month; 1 GB logging; 5-day retention; unlimited users, teams, applications and dashboards",
+    "watch_out": "New Free accounts use the 30K request limit. Existing Free accounts keep 50K requests/month until October 31, 2026. Crossing the request or logging limit locks AppSignal UI/API access and disables notifications; there are no overage invoices.",
+    "pricing_url": "https://www.appsignal.com/plans",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-01"
   }
 ]
