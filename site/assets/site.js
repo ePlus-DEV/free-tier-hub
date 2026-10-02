@@ -223,7 +223,7 @@
     var sortMarker = document.createComment("sort desktop position");
     categoryLabel.parentNode.insertBefore(categoryMarker, categoryLabel);
     sortLabel.parentNode.insertBefore(sortMarker, sortLabel);
-    var mobileLayout = window.matchMedia("(max-width: 680px)");
+    var mobileLayout = window.matchMedia("(max-width: 920px)");
     function placeMobileControls() {
       if (mobileLayout.matches) {
         var firstCheckbox = advancedFilters.querySelector("label:has(input[type=checkbox])");
@@ -257,7 +257,7 @@
     var sheetHome = document.createComment("filter sheet original position");
     advancedFilters.parentNode.insertBefore(sheetHome, advancedFilters);
     function placeFilterSheet() {
-      var isMobile = window.matchMedia("(max-width: 680px)").matches;
+      var isMobile = window.matchMedia("(max-width: 920px)").matches;
       if (isMobile && advancedFilters.parentNode !== document.body) {
         document.body.appendChild(advancedFilters);
         advancedFilters.classList.add("mobile-filter-sheet");
@@ -279,7 +279,7 @@
     function openFilters() {
       advancedFilters.hidden = false;
       filterToggle.setAttribute("aria-expanded", "true");
-      if (window.matchMedia("(max-width: 680px)").matches) {
+      if (window.matchMedia("(max-width: 920px)").matches) {
         sheetBackdrop.hidden = false;
         document.body.classList.add("filter-sheet-open");
         closeSheetButton.focus();
@@ -303,7 +303,7 @@
       else closeFilters(false);
     });
     if (window.matchMedia) {
-      var sheetMedia = window.matchMedia("(max-width: 680px)");
+      var sheetMedia = window.matchMedia("(max-width: 920px)");
       var syncSheet = function () {
         if (!sheetMedia.matches) {
           sheetBackdrop.hidden = true;
