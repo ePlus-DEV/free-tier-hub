@@ -15,9 +15,10 @@
   var themeToggle = document.getElementById("theme-toggle");
   var storedTheme = null;
   try { storedTheme = window.localStorage.getItem("fth-theme"); } catch (_error) {}
-  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // The directory ships in the graphite dark theme by default. Respect an explicit
+  // user choice after the first toggle, rather than changing with OS appearance.
   var theme = storedTheme === "dark" || storedTheme === "light"
-    ? storedTheme : (prefersDark ? "dark" : "light");
+    ? storedTheme : "dark";
   function applyTheme(next) {
     theme = next;
     doc.setAttribute("data-theme", theme);
