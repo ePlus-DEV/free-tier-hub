@@ -135,7 +135,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(entry["pricing_url"], "https://developers.cloudflare.com/hyperdrive/platform/pricing/")
         self.assertIn("100,000", entry["free_limit"])
         self.assertIn("origin", entry["watch_out"])
-        self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/cloudflare-hyperdrive/index.html"))
+        self.assertIn('cdn.simpleicons.org/cloudflare?viewbox=auto', self.text("service/cloudflare-hyperdrive/index.html"))
 
     def test_new_cloudflare_ai_and_vector_services(self):
         for service_id, category in [("cloudflare-vectorize", "databases"), ("cloudflare-workers-ai", "ai-ml")]:
@@ -144,7 +144,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(entry["category"], category)
                 self.assertEqual(entry["credit_card"], "no")
                 self.assertEqual(entry["commercial_use"], "check")
-                self.assertIn('simple-icons@v15/icons/cloudflare.svg', self.text("service/" + service_id + "/index.html"))
+                self.assertIn('cdn.simpleicons.org/cloudflare?viewbox=auto', self.text("service/" + service_id + "/index.html"))
         self.assertGreaterEqual(len(self.data), 70)
 
     def test_new_analytics_and_observability_services(self):
@@ -158,7 +158,7 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(entry["category"], category)
                 self.assertEqual(entry["credit_card"], "no")
                 self.assertEqual(entry["commercial_use"], "check")
-                self.assertIn("simple-icons@v15/icons/" + logo + ".svg", self.text("service/" + service_id + "/index.html"))
+                self.assertIn("cdn.simpleicons.org/" + logo + "?viewbox=auto", self.text("service/" + service_id + "/index.html"))
         self.assertGreaterEqual(len(self.data), 72)
 
     def test_six_new_free_tiers(self):
@@ -175,9 +175,9 @@ class SiteTests(unittest.TestCase):
     def test_service_logos_have_fallback_and_use_curated_slugs(self):
         html = self.text("index.html")
         detail = self.text("service/vercel/index.html")
-        self.assertIn("simple-icons@v15/icons/vercel.svg", html)
+        self.assertIn("cdn.simpleicons.org/vercel?viewbox=auto", html)
         self.assertIn('class="service-monogram" hidden', html)
-        self.assertIn("simple-icons@v15/icons/vercel.svg", detail)
+        self.assertIn("cdn.simpleicons.org/vercel?viewbox=auto", detail)
         self.assertIn("this.nextElementSibling.hidden=false", detail)
         self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
 
@@ -191,6 +191,8 @@ class SiteTests(unittest.TestCase):
         self.assertIn('class="card-arrow"', html)
         self.assertIn('www.google.com/s2/favicons?domain=deplexo.com&amp;sz=64', fallback)
         self.assertIn('service-logo-favicon', fallback)
+        self.assertIn('cdn.simpleicons.org/vercel?viewbox=auto', html)
+        self.assertIn('www.google.com/s2/favicons?domain=vercel.com&amp;sz=64', html)
 
     def test_back_to_top_is_on_every_page_and_respects_motion_preference(self):
         for page in self.output.rglob("*.html"):
