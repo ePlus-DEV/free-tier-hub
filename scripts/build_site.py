@@ -146,6 +146,7 @@ SERVICE_LOGOS = {
     "tinybird-free": "tinybird",
     "new-relic-free": "newrelic",
     "appsignal-free": None,  # Safe initials fallback; official icon not curated.
+    "honeycomb-free": None,
     "cloudflare-dns": "cloudflare",
     "hf-static-spaces": "huggingface",
     "gemini-api": "googlegemini",
