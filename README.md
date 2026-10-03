@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-95-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-96-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -11,7 +11,7 @@
 
 | Category | Services | Browse |
 | --- | ---: | --- |
-| Static & frontend hosting | 8 | [Browse](docs/static-hosting.md) |
+| Static & frontend hosting | 9 | [Browse](docs/static-hosting.md) |
 | Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
@@ -126,6 +126,7 @@
 | [Cloudflare Browser Run Free](https://developers.cloudflare.com/browser-run/pricing/) | Ongoing free allowance | 10 minutes of browser time/day; up to 3 concurrent browser sessions | Workers Free plan required; browser time resets daily, session timeout is 60 seconds and new sessions are rate-limited. |
 | [Kinsta WordPress First Month](https://kinsta.com/pricing/) | Time-limited | First month free for eligible new customers on select managed WordPress plans; Single 20GB includes 1 WordPress install, 20 GB server bandwidth/month, 10 GB storage and 125 GB CDN bandwidth/month. | Not an ongoing free tier. Selected plans only; Single 20GB renews at $35/month on monthly billing after the first month, excluding taxes. Confirm eligibility, payment requirements and cancellation terms before signing up. |
 | [Sevalla Static Site Hosting](https://sevalla.com/pricing/) | Ongoing free allowance | 100 static sites/account; 600 build minutes/month; 100 GB bandwidth/month/account; 1 GB/site size limit | Fair-use limits apply; usage beyond free allowances may incur charges. Confirm card requirements and commercial-use terms with provider. |
+| [Shipvela Hobby](https://shipvela.com/#pricing) | Ongoing free allowance | 3 projects; 20 publishes/month; custom domains and managed HTTPS | Early access. Static CLI uploads are limited to 50 MB and 5,000 files; server-rendered Next.js requires a paid plan. No hosted databases or long-lived backend servers. |
 | [Novu Free](https://novu.co/pricing) | Ongoing free allowance | 10,000 workflow runs/month; up to 20 workflows; 2 environments (Dev + Prod); up to 3 team members | Free includes all notification channels but activity-feed retention is 24 hours and throughput is limited to 60 events/second. Provider states no credit card is required; commercial-use terms were not explicitly confirmed. |
 | [Webhooker Free](https://webhooker.eu/pricing) | Ongoing free allowance | 10,000 inbound events/month; 3 sources; 9 shared destinations; 1 workspace member; 14-day event retention | 120 inbound events/minute per source; up to 20% monthly quota buffer without overage charges; ordered delivery, static outbound IP and DPA require paid plans. Commercial-use terms not explicitly confirmed. |
 | [Featureflip Solo](https://featureflip.io/pricing/) | Ongoing free allowance | 1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations | 7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans. |
