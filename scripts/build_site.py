@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "checkly-hobby": None,  # Safe initials fallback; official icon not curated.
     "honeycomb-free": None,  # Safe initials fallback; official icon not curated.
     "webhooker-free": None,  # Safe initials fallback; official icon not curated.
     "motherduck-lite": None,
