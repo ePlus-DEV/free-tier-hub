@@ -1,0 +1,86 @@
+name: Catalog delivery
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Existing catalog delivery branch to synchronize
+        required: true
+        type: string
+      pr_title:
+        description: Pull request title
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: catalog-delivery-${{ inputs.branch }}
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Validate branch input
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "${{ inputs.branch }}" in
+            catalog/*) ;;
+            *) echo "Only catalog/* branches are allowed"; exit 1 ;;
+          esac
+
+      - name: Check out delivery branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Synchronize generated catalog files
+        run: python3 scripts/sync_catalog.py
+
+      - name: Validate synchronized catalog
+        run: |
+          set -euo pipefail
+          python3 scripts/sync_catalog.py --check
+          python3 -m unittest discover -s tests -v
+          python3 scripts/validate_catalog.py
+
+      - name: Commit generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "Generated files already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/
+          git diff --cached --check
+          git commit -m "chore: sync generated catalog files"
+          git push origin "HEAD:${{ inputs.branch }}"
+
+      - name: Create pull request if missing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: ${{ inputs.branch }}
+          PR_TITLE: ${{ inputs.pr_title }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          existing="$(gh pr list --state open --head "$HEAD_BRANCH" --base main --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            echo "PR #$existing already exists."
+            exit 0
+          fi
+          gh pr create             --base main             --head "$HEAD_BRANCH"             --title "$PR_TITLE"             --body "Automated catalog delivery. Generated Markdown was synchronized and repository validation passed before this PR was opened."
