@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-96-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-97-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -19,7 +19,7 @@
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 13 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 8 | [Browse](docs/observability.md) |
+| Monitoring & observability | 9 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
@@ -131,6 +131,7 @@
 | [Webhooker Free](https://webhooker.eu/pricing) | Ongoing free allowance | 10,000 inbound events/month; 3 sources; 9 shared destinations; 1 workspace member; 14-day event retention | 120 inbound events/minute per source; up to 20% monthly quota buffer without overage charges; ordered delivery, static outbound IP and DPA require paid plans. Commercial-use terms not explicitly confirmed. |
 | [Featureflip Solo](https://featureflip.io/pricing/) | Ongoing free allowance | 1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations | 7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans. |
 | [AppSignal Free](https://www.appsignal.com/plans) | Ongoing free allowance | 30,000 application requests/month; 1 GB logging; 5-day retention; unlimited users, teams, applications and dashboards | New Free accounts use the 30K request limit. Existing Free accounts keep 50K requests/month until October 31, 2026. Crossing the request or logging limit locks AppSignal UI/API access and disables notifications; there are no overage invoices. |
+| [Honeycomb Free](https://www.honeycomb.io/pricing) | Ongoing free allowance | 20 million events/month; 100 million metrics data points/month; unlimited seats; unlimited querying | SLOs and Service Map are not included on Free. Free support is limited to account support. Commercial-use terms need confirmation. |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.

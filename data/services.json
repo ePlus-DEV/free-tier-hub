@@ -1151,5 +1151,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-01"
+  },
+  {
+    "id": "honeycomb-free",
+    "name": "Honeycomb Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "20 million events/month; 100 million metrics data points/month; unlimited seats; unlimited querying",
+    "watch_out": "SLOs and Service Map are not included on Free. Free support is limited to account support. Commercial-use terms need confirmation.",
+    "pricing_url": "https://www.honeycomb.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-04"
   }
 ]
