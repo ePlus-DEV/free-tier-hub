@@ -162,6 +162,7 @@ SERVICE_LOGOS = {
     "flagsmith": "flagsmith",
     "launchdarkly-developer": "launchdarkly",
     "featureflip-solo": None,  # Safe initials fallback; official icon not curated.
+    "shipvela-hobby": None,  # Safe initials fallback; official icon not curated.
     "upstash-blob": "upstash",
     "weaviate-cloud-free": "weaviate",
     "inngest-hobby": "inngest",
