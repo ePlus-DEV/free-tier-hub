@@ -1092,6 +1092,19 @@
     "last_checked": "2026-09-24"
   },
   {
+    "id": "shipvela-hobby",
+    "name": "Shipvela Hobby",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "3 projects; 20 publishes/month; custom domains and managed HTTPS",
+    "watch_out": "Early access. Static CLI uploads are limited to 50 MB and 5,000 files; server-rendered Next.js requires a paid plan. No hosted databases or long-lived backend servers.",
+    "pricing_url": "https://shipvela.com/#pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-03",
+    "added_at": "2026-10-03"
+  },
+  {
     "id": "novu-free",
     "name": "Novu Free",
     "category": "developer-tools",
