@@ -1,0 +1,128 @@
+name: Catalog candidate queue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: catalog-candidate-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    if: startsWith(github.event.issue.title, '[catalog-candidate] ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Trust gate
+        env:
+          ASSOCIATION: ${{ github.event.issue.author_association }}
+        run: |
+          case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ;; *) exit 1 ;; esac
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Parse candidate
+        id: candidate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$ISSUE_BODY" > /tmp/candidate.json
+          python3 - <<'PY'
+          import json, os, re
+          d=json.load(open("/tmp/candidate.json"))
+          required={"id","name","category","plan","free_limit","watch_out","pricing_url","credit_card","commercial_use","last_checked"}
+          missing=sorted(required-set(d))
+          if missing: raise SystemExit("Missing fields: "+", ".join(missing))
+          sid=d["id"]
+          if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",sid): raise SystemExit("Invalid id")
+          if not d["pricing_url"].startswith("https://"): raise SystemExit("pricing_url must be HTTPS")
+          if d["credit_card"] not in {"yes","no","check"}: raise SystemExit("Invalid credit_card")
+          if d["commercial_use"] not in {"yes","no","check"}: raise SystemExit("Invalid commercial_use")
+          with open(os.environ["GITHUB_OUTPUT"],"a") as o:
+              o.write(f"id={sid}\nbranch=catalog/add-{sid}\n")
+          PY
+
+      - name: Update source data
+        env:
+          SERVICE_ID: ${{ steps.candidate.outputs.id }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, pathlib, re
+          c=json.load(open("/tmp/candidate.json"))
+          p=pathlib.Path("data/services.json")
+          services=json.loads(p.read_text())
+          if any(x.get("id")==c["id"] for x in services):
+              raise SystemExit("Duplicate service id: "+c["id"])
+          services.append(c)
+          p.write_text(json.dumps(services,ensure_ascii=False,indent=2)+"\n")
+          b=pathlib.Path("scripts/build_site.py")
+          s=b.read_text()
+          sid=c["id"]
+          if not re.search(rf'^[ \\t]*["\\x27]{re.escape(sid)}["\\x27][ \\t]*:',s,re.M):
+              marker="SERVICE_LOGOS = {"
+              i=s.find(marker)
+              if i < 0: raise SystemExit("SERVICE_LOGOS mapping not found")
+              pos=s.find("\n",i)+1
+              s=s[:pos]+f'    "{sid}": None,\n'+s[pos:]
+              b.write_text(s)
+          PY
+
+      - name: Generate and validate
+        run: |
+          set -euo pipefail
+          python3 scripts/sync_catalog.py
+          python3 scripts/sync_catalog.py --check
+          python3 -m unittest discover -s tests -v
+          python3 scripts/validate_catalog.py
+          git diff --check
+
+      - name: Commit delivery branch
+        env:
+          DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
+          SERVICE_ID: ${{ steps.candidate.outputs.id }}
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "$DELIVERY_BRANCH" >/dev/null 2>&1; then
+            echo "Canonical branch already exists: $DELIVERY_BRANCH"
+            exit 2
+          fi
+          git switch -c "$DELIVERY_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/services.json scripts/build_site.py README.md docs/
+          git commit -m "catalog: add $SERVICE_ID"
+          git push origin "$DELIVERY_BRANCH"
+
+      - name: Open PR
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
+          SERVICE_ID: ${{ steps.candidate.outputs.id }}
+        run: |
+          url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Close queue item
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ steps.pr.outputs.url }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "Delivery PR created: $PR_URL"
+          gh issue close "${{ github.event.issue.number }}" --reason completed
