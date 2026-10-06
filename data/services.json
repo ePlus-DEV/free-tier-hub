@@ -1163,5 +1163,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-04"
+  },
+  {
+    "id": "flagify-free",
+    "name": "Flagify Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "2 projects/workspace; unlimited flags; 3 environments; 3 seats; 75,000 evaluations/month; 50 AI messages/month",
+    "watch_out": "Free plan is aimed at side projects and small teams; paid tiers add higher evaluation quotas and advanced controls.",
+    "pricing_url": "https://flagify.dev/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-06"
   }
 ]
