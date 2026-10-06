@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-97-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-98-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -25,7 +25,7 @@
 | AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
-| Feature flags & gradual rollout | 3 | [Browse](docs/feature-flags.md) |
+| Feature flags & gradual rollout | 4 | [Browse](docs/feature-flags.md) |
 | Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | 3 | [Browse](docs/webhooks-events.md) |
 
@@ -132,6 +132,7 @@
 | [Featureflip Solo](https://featureflip.io/pricing/) | Ongoing free allowance | 1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations | 7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans. |
 | [AppSignal Free](https://www.appsignal.com/plans) | Ongoing free allowance | 30,000 application requests/month; 1 GB logging; 5-day retention; unlimited users, teams, applications and dashboards | New Free accounts use the 30K request limit. Existing Free accounts keep 50K requests/month until October 31, 2026. Crossing the request or logging limit locks AppSignal UI/API access and disables notifications; there are no overage invoices. |
 | [Honeycomb Free](https://www.honeycomb.io/pricing) | Ongoing free allowance | 20 million events/month; 100 million metrics data points/month; unlimited seats; unlimited querying | SLOs and Service Map are not included on Free. Free support is limited to account support. Commercial-use terms need confirmation. |
+| [Flagify Free](https://flagify.dev/) | Ongoing free allowance | 2 projects/workspace; unlimited flags; 3 environments; 3 seats; 75,000 evaluations/month; 50 AI messages/month | Free plan is aimed at side projects and small teams; paid tiers add higher evaluation quotas and advanced controls. |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
