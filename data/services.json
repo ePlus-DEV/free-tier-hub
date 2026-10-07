@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "mastra-starter",
+    "name": "Mastra Platform Starter",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "100K observability events; 24 CPU hours; 10 GB egress per month",
+    "watch_out": "Usage beyond included allowance is pay-as-you-go; persistent server is paid",
+    "pricing_url": "https://mastra.ai/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
