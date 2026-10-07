@@ -165,11 +165,10 @@ jobs:
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
-      - name: Close queue item
+      - name: Link delivery PR to issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.pr.outputs.url }}
         run: |
           ISSUE_NUMBER="${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}"
-          gh issue comment "$ISSUE_NUMBER" --body "Delivery PR created: $PR_URL"
-          gh issue close "$ISSUE_NUMBER" --reason completed
+          gh issue comment "$ISSUE_NUMBER" --body "Delivery PR created: $PR_URL. This issue stays open until the PR is merged."
