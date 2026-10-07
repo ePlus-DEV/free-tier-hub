@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "dbgorilla-free",
+    "name": "DBGorilla Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "1 single-host cluster; 50 Gorilla Credits/month; 7-day retention",
+    "watch_out": "Initial 30-day Pro trial reverts to Free; auto-reload of purchased credits may incur charges",
+    "pricing_url": "https://www.dbgorilla.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
