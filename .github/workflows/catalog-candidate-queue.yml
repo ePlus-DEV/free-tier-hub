@@ -2,7 +2,13 @@ name: Catalog candidate queue
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened, edited]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Existing catalog candidate issue number to retry'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -15,11 +21,30 @@ concurrency:
 
 jobs:
   deliver:
-    if: startsWith(github.event.issue.title, '[catalog-candidate] ')
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, '[catalog-candidate] ')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Load candidate issue
+        if: github.event_name == 'workflow_dispatch'
+        id: queued_issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          set -euo pipefail
+          gh issue view "$ISSUE_NUMBER" --json title,body,authorAssociation > /tmp/issue.json
+          python3 - <<'PY'
+          import json, os
+          d=json.load(open("/tmp/issue.json"))
+          if not d["title"].startswith("[catalog-candidate] "): raise SystemExit("Not a catalog candidate issue")
+          if d["authorAssociation"] not in {"OWNER","MEMBER","COLLABORATOR"}: raise SystemExit("Untrusted submitter")
+          with open(os.environ["GITHUB_OUTPUT"],"a") as o:
+              o.write("body<<EOF\n"+d["body"]+"\nEOF\n")
+          PY
+
       - name: Trust gate
+        if: github.event_name == 'issues'
         env:
           ASSOCIATION: ${{ github.event.issue.author_association }}
         run: |
@@ -38,7 +63,7 @@ jobs:
       - name: Parse candidate
         id: candidate
         env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_BODY: ${{ github.event_name == 'workflow_dispatch' && steps.queued_issue.outputs.body || github.event.issue.body }}
         run: |
           set -euo pipefail
           printf '%s' "$ISSUE_BODY" > /tmp/candidate.json
@@ -116,7 +141,7 @@ jobs:
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
-          url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
+          url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Close queue item
@@ -124,5 +149,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.pr.outputs.url }}
         run: |
-          gh issue comment "${{ github.event.issue.number }}" --body "Delivery PR created: $PR_URL"
-          gh issue close "${{ github.event.issue.number }}" --reason completed
+          ISSUE_NUMBER="${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}"
+          gh issue comment "$ISSUE_NUMBER" --body "Delivery PR created: $PR_URL"
+          gh issue close "$ISSUE_NUMBER" --reason completed
