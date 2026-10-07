@@ -16,7 +16,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: catalog-candidate-${{ github.event.issue.number }}
+  group: catalog-candidate-${{ github.event_name }}-${{ github.event.issue.number || inputs.issue_number }}
   cancel-in-progress: false
 
 jobs:
@@ -71,8 +71,8 @@ jobs:
           import json, os, re
           d=json.load(open("/tmp/candidate.json"))
           required={"id","name","category","plan","free_limit","watch_out","pricing_url","credit_card","commercial_use","last_checked"}
-          missing=sorted(required-set(d))
-          if missing: raise SystemExit("Missing fields: "+", ".join(missing))
+          if set(d) != required:
+              raise SystemExit("Candidate must contain exactly the catalog schema fields")
           sid=d["id"]
           if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",sid): raise SystemExit("Invalid id")
           if not d["pricing_url"].startswith("https://"): raise SystemExit("pricing_url must be HTTPS")
@@ -83,12 +83,10 @@ jobs:
           PY
 
       - name: Update source data
-        env:
-          SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json, os, pathlib, re
+          import json, pathlib, re
           c=json.load(open("/tmp/candidate.json"))
           p=pathlib.Path("data/services.json")
           services=json.loads(p.read_text())
@@ -104,8 +102,7 @@ jobs:
               i=s.find(marker)
               if i < 0: raise SystemExit("SERVICE_LOGOS mapping not found")
               pos=s.find("\n",i)+1
-              s=s[:pos]+f'    "{sid}": None,\n'+s[pos:]
-              b.write_text(s)
+              b.write_text(s[:pos]+f'    "{sid}": None,\n'+s[pos:])
           PY
 
       - name: Generate and validate
@@ -117,31 +114,55 @@ jobs:
           python3 scripts/validate_catalog.py
           git diff --check
 
+      - name: Prepare canonical branch
+        id: branch
+        env:
+          DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
+        run: |
+          set -euo pipefail
+          git fetch origin main "$DELIVERY_BRANCH" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$DELIVERY_BRANCH"; then
+            AHEAD="$(git rev-list --count origin/main..origin/$DELIVERY_BRANCH)"
+            if [ "$AHEAD" -ne 0 ]; then
+              echo "Canonical branch has $AHEAD unique commit(s); refusing to overwrite"
+              exit 2
+            fi
+            git switch -C "$DELIVERY_BRANCH" origin/main
+            echo "mode=reused-empty" >> "$GITHUB_OUTPUT"
+          else
+            git switch -c "$DELIVERY_BRANCH" origin/main
+            echo "mode=created" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit delivery branch
         env:
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
           set -euo pipefail
-          if git ls-remote --exit-code --heads origin "$DELIVERY_BRANCH" >/dev/null 2>&1; then
-            echo "Canonical branch already exists: $DELIVERY_BRANCH"
-            exit 2
-          fi
-          git switch -c "$DELIVERY_BRANCH"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/services.json scripts/build_site.py README.md docs/
           git commit -m "catalog: add $SERVICE_ID"
-          git push origin "$DELIVERY_BRANCH"
+          # --force-with-lease is only used for a verified Ahead=0 stale canonical branch.
+          if [ "${{ steps.branch.outputs.mode }}" = "reused-empty" ]; then
+            git push --force-with-lease origin "$DELIVERY_BRANCH"
+          else
+            git push origin "$DELIVERY_BRANCH"
+          fi
 
-      - name: Open PR
+      - name: Open or reuse PR
         id: pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
-          url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
+          set -euo pipefail
+          url="$(gh pr list --state open --head "$DELIVERY_BRANCH" --json url --jq '.[0].url // empty')"
+          if [ -z "$url" ]; then
+            url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
+          fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Close queue item
