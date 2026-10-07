@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "pingzen-free",
+    "name": "PingZen Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "55 monitors; 1-minute check interval; 23 protocols; 3 alert channels",
+    "watch_out": "Confirm alert and monitoring retention limits before production reliance",
+    "pricing_url": "https://pingzen.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-07"
   }
 ]
