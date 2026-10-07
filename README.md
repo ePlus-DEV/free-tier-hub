@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-100-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-101-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -17,7 +17,7 @@
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 18 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 14 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 15 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 10 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
@@ -135,6 +135,7 @@
 | [Flagify Free](https://flagify.dev/) | Ongoing free allowance | 2 projects/workspace; unlimited flags; 3 environments; 3 seats; 75,000 evaluations/month; 50 AI messages/month | Free plan is aimed at side projects and small teams; paid tiers add higher evaluation quotas and advanced controls. |
 | [ReqKey](https://www.reqkey.com/pricing) | Ongoing free allowance | 100,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member | Official homepage and pricing page have conflicting request quotas; use conservative pricing-page limit and recheck before merging. Reselling or white-labeling requires separate agreement. |
 | [Logtrics](https://www.logtrics.io/pricing) | Ongoing free allowance | 1,000,000 logs/crashes/events per month; 30-day retention; 1 app; 1 team member; email alerts; 3 AI RCA and 3 AI Session Summaries per month | Free plan limits usage to 1 app and 1 team member; AI RCA and AI Session Summaries are limited to 3 each per month. |
+| [DataNest Basic Free](https://www.datanest.network/pricing) | Ongoing free allowance | 100 requests/month per API across 20 APIs | Free tier hard limit; RapidAPI subscription used |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
