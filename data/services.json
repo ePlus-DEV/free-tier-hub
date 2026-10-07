@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "growthbook-starter",
+    "name": "GrowthBook Cloud Starter",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "3 users, 1 project, unlimited feature flags and experiments",
+    "watch_out": "Advanced governance and additional projects require paid plan",
+    "pricing_url": "https://www.growthbook.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
