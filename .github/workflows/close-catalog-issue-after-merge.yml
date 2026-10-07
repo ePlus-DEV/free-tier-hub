@@ -1,0 +1,39 @@
+name: Close catalog issue after merge
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  close-delivered-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close linked catalog issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          set -euo pipefail
+          if [[ "$PR_BODY" =~ Automated[[:space:]]delivery[[:space:]]from[[:space:]]candidate[[:space:]]issue[[:space:]]\#([0-9]+) ]]; then
+            issue="${BASH_REMATCH[1]}"
+          else
+            echo "No catalog candidate issue reference; nothing to close."
+            exit 0
+          fi
+          title="$(gh issue view "$issue" --json title --jq '.title')"
+          if [[ "$title" != "[catalog-candidate] "* ]]; then
+            echo "Linked issue is not a catalog candidate; skipping."
+            exit 0
+          fi
+          state="$(gh issue view "$issue" --json state --jq '.state')"
+          if [[ "$state" == "OPEN" ]]; then
+            gh issue comment "$issue" --body "Completed by merged PR $PR_URL."
+            gh issue close "$issue" --reason completed
+          fi
