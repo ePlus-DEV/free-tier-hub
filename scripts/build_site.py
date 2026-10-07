@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "steadystack-initiate": None,
     "logtrics-free": None,
     "reqkey-free": None,
     "flagify-free": None,

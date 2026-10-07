@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "steadystack-initiate",
+    "name": "SteadyStack The Initiate",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "50 monitors; 3-minute checks (1 minute for first 10); 1 public status page",
+    "watch_out": "Launch cohort grandfathered terms; 3-day log retention",
+    "pricing_url": "https://steadystack.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-07"
   }
 ]
