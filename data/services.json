@@ -1175,5 +1175,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "reqkey-free",
+    "name": "ReqKey",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "100,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member",
+    "watch_out": "Official homepage and pricing page have conflicting request quotas; use conservative pricing-page limit and recheck before merging. Reselling or white-labeling requires separate agreement.",
+    "pricing_url": "https://www.reqkey.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
