@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "datpaq-free",
+    "name": "DATPAQ Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "250 API requests/month; full API catalog, CLI and MCP server",
+    "watch_out": "Over-limit grace period may lead to billing; monitor usage",
+    "pricing_url": "https://datpaq.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
