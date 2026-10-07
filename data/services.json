@@ -1199,5 +1199,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-06"
+  },
+  {
+    "id": "zenmanage-free",
+    "name": "Zenmanage Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "500 monthly active contexts; unlimited flags, projects and users",
+    "watch_out": "Lifecycle reporting and advanced reporting require paid Team plan",
+    "pricing_url": "https://zenmanage.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]
