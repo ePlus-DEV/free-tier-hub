@@ -99,8 +99,8 @@ jobs:
           script: |
             const marker = '<!-- free-tier-hub-pr-preview -->';
             const url = context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + '#artifacts';
-            const live = 'https://raw.githack.com/' + context.repo.owner + '/' + context.repo.repo + '/pr-preview-' + context.issue.number + '/index.html';
-            const body = [marker, '### Live design preview (before merge)', '**[Open live preview](' + live + ')** — open directly in browser. First visit may show a one-time safety confirmation from the preview provider.', '', '[Download offline backup](' + url + ') (artifact: free-tier-hub-pr-preview). Preview uses an isolated generated branch; production at free-tier.eplus.dev is unchanged. This temporary preview uses a third-party development proxy, not production hosting.'].join('\n');
+            const live = 'https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/tree/pr-preview-' + context.issue.number;
+            const body = [marker, '### PR design preview (before merge)', '**[Download preview files](' + url + ')** (artifact: free-tier-hub-pr-preview). Extract and open index.html locally to inspect the design without third-party proxy rate limits.', '', '[Browse generated preview branch](' + live + '). Preview uses an isolated generated branch; production at free-tier.eplus.dev is unchanged.'].join('\n');
             // Paginate and identify by our unique marker, not the API's user.type.
             // The workflow token owns the original github-actions[bot] comment.
             const comments = await github.paginate(github.rest.issues.listComments, {
