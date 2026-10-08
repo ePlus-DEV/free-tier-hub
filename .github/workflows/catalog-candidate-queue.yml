@@ -154,7 +154,7 @@ jobs:
       - name: Open or reuse PR
         id: pr
         env:
-          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
@@ -164,6 +164,21 @@ jobs:
             url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger PR checks with bot token
+        env:
+          BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+          DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
+        run: |
+          set -euo pipefail
+          test -n "$BOT_TOKEN" || { echo "::error::EPLUS_BOT_TOKEN is missing"; exit 1; }
+          git fetch origin "$DELIVERY_BRANCH"
+          git switch -C "$DELIVERY_BRANCH" "origin/$DELIVERY_BRANCH"
+          git config user.name "eplus-bot"
+          git config user.email "eplus-bot@users.noreply.github.com"
+          git commit --allow-empty -m "ci: trigger catalog PR validation"
+          git -c http.extraheader= push "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
+
 
       - name: Link delivery PR to issue
         env:
