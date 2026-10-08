@@ -23,5 +23,6 @@ Transactional email, monitoring and CI/CD. [← Back to directory](../README.md)
 | [MockHive Free](https://mockhive.dev/pricing) | Ongoing free allowance | 3 collections; 100 records each; 1,000 GET requests/month; 50 POST inserts/day | No production base URL on Free; paid plans unlock higher limits | Not required | Check provider |
 | [DATPAQ Free](https://datpaq.com/pricing) | Ongoing free allowance | 250 API requests/month; full API catalog, CLI and MCP server | Over-limit grace period may lead to billing; monitor usage | Not required | Check provider |
 | [DataNest Basic Free](https://www.datanest.network/pricing) | Ongoing free allowance | 100 requests/month per API across 20 APIs | Free tier hard limit; RapidAPI subscription used | Not required | Allowed |
+| [Botoi Free](https://botoi.com/pricing/) | Ongoing free allowance | 1,000 API requests/day; 10 requests/minute; 150+ endpoints and MCP server | 429 responses on quota exhaustion; resets midnight UTC | Not required | Check provider |
 
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.

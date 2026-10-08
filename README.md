@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-106-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-112-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -15,19 +15,19 @@
 | Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 18 | [Browse](docs/databases.md) |
+| Databases & caching | 19 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 17 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 18 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 10 | [Browse](docs/observability.md) |
+| Monitoring & observability | 12 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 4 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
-| Feature flags & gradual rollout | 6 | [Browse](docs/feature-flags.md) |
+| Feature flags & gradual rollout | 7 | [Browse](docs/feature-flags.md) |
 | Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
-| Webhooks & event delivery | 3 | [Browse](docs/webhooks-events.md) |
+| Webhooks & event delivery | 4 | [Browse](docs/webhooks-events.md) |
 
 ## At a glance
 
@@ -141,6 +141,12 @@
 | [DataNest Basic Free](https://www.datanest.network/pricing) | Ongoing free allowance | 100 requests/month per API across 20 APIs | Free tier hard limit; RapidAPI subscription used |
 | [Mastra Platform Starter](https://mastra.ai/pricing) | Ongoing free allowance | 100K observability events; 24 CPU hours; 10 GB egress per month | Usage beyond included allowance is pay-as-you-go; persistent server is paid |
 | [GrowthBook Cloud Starter](https://www.growthbook.io/pricing) | Ongoing free allowance | 3 users, 1 project, unlimited feature flags and experiments | Advanced governance and additional projects require paid plan |
+| [Hook0 Developer Free](https://www.hook0.com/pricing) | Ongoing free allowance | 100 events/day; 1 application, 1 developer, 7-day retention | Over-quota events rejected with HTTP 429 |
+| [PingZen Free](https://pingzen.dev/) | Ongoing free allowance | 55 monitors; 1-minute check interval; 23 protocols; 3 alert channels | Confirm alert and monitoring retention limits before production reliance |
+| [Zenmanage Free](https://zenmanage.com/pricing) | Ongoing free allowance | 500 monthly active contexts; unlimited flags, projects and users | Lifecycle reporting and advanced reporting require paid Team plan |
+| [SteadyStack The Initiate](https://steadystack.dev/pricing) | Ongoing free allowance | 50 monitors; 3-minute checks (1 minute for first 10); 1 public status page | Launch cohort grandfathered terms; 3-day log retention |
+| [Botoi Free](https://botoi.com/pricing/) | Ongoing free allowance | 1,000 API requests/day; 10 requests/minute; 150+ endpoints and MCP server | 429 responses on quota exhaustion; resets midnight UTC |
+| [DBGorilla Free](https://www.dbgorilla.com/pricing) | Ongoing free allowance | 1 single-host cluster; 50 Gorilla Credits/month; 7-day retention | Initial 30-day Pro trial reverts to Free; auto-reload of purchased credits may incur charges |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
