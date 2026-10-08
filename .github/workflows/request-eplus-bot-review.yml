@@ -1,0 +1,22 @@
+name: Request eplus-bot review
+
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  request-review:
+    if: ${{ github.event.pull_request.draft == false && github.event.pull_request.user.login != 'eplus-bot' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request review from eplus-bot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$GH_REPO/pulls/$PR_NUMBER/requested_reviewers" -f 'reviewers[]=eplus-bot'
