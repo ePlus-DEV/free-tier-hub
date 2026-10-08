@@ -205,6 +205,8 @@ SERVICE_LOGOS = {
     "cloudflare-browser-run": "cloudflare",
     "novu-free": None,  # Initials fallback; avoid unverified brand icon.
     "kinsta-wordpress-trial": None,  # Initials fallback; avoid unverified brand icon.
+    "prisma-postgres": "prisma",
+    "prisma-compute": "prisma",
     "sevalla-static": None  # Initials fallback; avoid unverified brand icon.
 }
 
