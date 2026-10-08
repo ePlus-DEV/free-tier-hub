@@ -36,7 +36,18 @@ jobs:
             pr="$(gh api "repos/$GH_REPO/pulls/$number")"
             head="$(jq -r '.head.sha' <<<"$pr")"
             test "$(jq -r '.head.repo.full_name' <<<"$pr")" = "$GH_REPO" || { echo "::notice::PR #$number skipped: fork"; continue; }
-            test "$(jq -r '.mergeable' <<<"$pr")" = "true" || { echo "::notice::PR #$number skipped: not mergeable"; continue; }
+            # GitHub REST may return mergeable=null until its asynchronous mergeability check finishes.
+            mergeable="$(jq -r '.mergeable' <<<"$pr")"
+            for attempt in 1 2 3 4 5 6; do
+              [ "$mergeable" != "null" ] && break
+              sleep 2
+              pr="$(gh api "repos/$GH_REPO/pulls/$number")"
+              mergeable="$(jq -r '.mergeable' <<<"$pr")"
+            done
+            if [ "$mergeable" != "true" ]; then
+              echo "::notice::PR #$number skipped: mergeable=$mergeable, mergeable_state=$(jq -r '.mergeable_state' <<<"$pr")"
+              continue
+            fi
             checks="$(gh pr checks "$number" --repo "$GH_REPO" --json bucket,name,workflow)" || { echo "::notice::PR #$number skipped: unable to read checks"; continue; }
             jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$checks" >/dev/null || { echo "::notice::PR #$number skipped: catalog validation missing or not passing"; continue; }
             jq -e 'all(.[]; .workflow == "pr-auto-approve" or .workflow == "Reconcile catalog PR approvals" or .bucket == "pass" or .bucket == "skipping")' <<<"$checks" >/dev/null || { echo "::notice::PR #$number skipped: checks not all passing"; continue; }
