@@ -33,7 +33,9 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Close linked catalog issue
+      # External fork contributions often have no candidate Issue. That is expected.
+      # Only close a verified, explicitly linked catalog-candidate Issue.
+      - name: Close linked catalog issue (if any)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -44,7 +46,7 @@ jobs:
           if [[ "$PR_BODY" =~ Automated[[:space:]]delivery[[:space:]]from[[:space:]]candidate[[:space:]]issue[[:space:]]\#([0-9]+) ]]; then
             issue="${BASH_REMATCH[1]}"
           else
-            echo "No catalog candidate issue reference; nothing to close."
+            echo "No linked catalog candidate Issue (normal for external contributions); skipping cleanup."
             exit 0
           fi
           title="$(gh issue view "$issue" --json title --jq '.title')"
