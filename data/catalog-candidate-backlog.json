@@ -94,5 +94,29 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "mailtrap-email-api-free",
+    "name": "Mailtrap Email API/SMTP Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "4,000 emails/month; 150 emails/day; 1 sending domain; API and SMTP relay; 3-day logs",
+    "watch_out": "No additional email sends on Free; marketing and sandbox plans are separate; explicit commercial-use terms not confirmed.",
+    "pricing_url": "https://mailtrap.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "emailoctopus-starter",
+    "name": "EmailOctopus Starter",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "2,500 subscribers; 10,000 emails/month; 1 user; 3 automations; 1 landing page and 1 form",
+    "watch_out": "EmailOctopus branding and rewards link required; 30-day reports; 5 steps per automation; subscriber consent required.",
+    "pricing_url": "https://emailoctopus.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
   }
 ]
