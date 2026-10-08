@@ -164,12 +164,20 @@ jobs:
           APPROVAL_RUN_ATTEMPT: ${{ github.run_attempt }}
           GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
 
-      - name: Auto-merge PRs authored by hoangsvit
-        if: ${{ steps.pr.outputs.should_approve == 'true' && steps.pr.outputs.author == 'hoangsvit' }}
+      - name: Auto-merge trusted catalog PRs
+        if: ${{ steps.pr.outputs.should_approve == 'true' && (steps.pr.outputs.author == 'hoangsvit' || steps.pr.outputs.author == 'github-actions[bot]') }}
         run: |
           set -euo pipefail
           PR_JSON="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER")"
-          test "$(jq -r '.user.login' <<<"$PR_JSON")" = "hoangsvit"
+          AUTHOR="$(jq -r '.user.login' <<<"$PR_JSON")"
+          if [ "$AUTHOR" = "github-actions[bot]" ]; then
+            BRANCH="$(jq -r '.head.ref' <<<"$PR_JSON")"
+            [[ "$BRANCH" == catalog/add-* ]] || exit 1
+            BODY="$(jq -r '.body // ""' <<<"$PR_JSON")"
+            [[ "$BODY" == "Automated delivery from candidate issue #"* ]] || exit 1
+          else
+            test "$AUTHOR" = "hoangsvit"
+          fi
           test "$(jq -r '.state' <<<"$PR_JSON")" = "open"
           test "$(jq -r '.draft' <<<"$PR_JSON")" = "false"
           test "$(jq -r '.head.repo.full_name' <<<"$PR_JSON")" = "$GITHUB_REPOSITORY"
