@@ -1,0 +1,122 @@
+[
+  {
+    "id": "jitterflow-developer",
+    "name": "Jitterflow Developer",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 webhooks/month; 5 requests/second; 3 endpoints; 256 KB payloads",
+    "watch_out": "3-day dead-letter queue and payload log retention; hard monthly cap; side projects and low-volume production.",
+    "pricing_url": "https://jitterflow.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "tigris-object-storage-free",
+    "name": "Tigris Object Storage Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "5 GiB Standard storage/month; 10,000 Class A and 100,000 Class B requests/month; free egress",
+    "watch_out": "Over-quota usage billed; non-Standard storage and object notifications may incur charges; card and commercial eligibility unconfirmed.",
+    "pricing_url": "https://www.tigrisdata.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "cloudinary-free",
+    "name": "Cloudinary Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "25 credits per rolling 30 days shared across transformations, storage and bandwidth; 3 users",
+    "watch_out": "1 credit equals 1,000 transformations OR 1 GB storage OR 1 GB delivery; credits combine all usage; overage can disable account after warnings; paid add-ons separate.",
+    "pricing_url": "https://cloudinary.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "dipsac-free",
+    "name": "DIPSAC Free API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "500 API requests/month; 2 requests/second; 5 MB files; 1 API key",
+    "watch_out": "Free API excludes audio/video endpoints; monthly overages return HTTP 429; commercial use unconfirmed.",
+    "pricing_url": "https://dipsac.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "railhook-cloud-free",
+    "name": "Railhook Cloud Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 events/month; 3 projects; 5 endpoints/project; 7-day history",
+    "watch_out": "Requests over monthly quota are rejected; hosted cloud commercial-use terms unconfirmed.",
+    "pricing_url": "https://railhook.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "belmo-starter",
+    "name": "Belmo Starter",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 always-on service; 0.5 shared vCPU; 512 MB RAM; SSL; 30-day logs",
+    "watch_out": "No custom domain on Starter, only belmo.io subdomain; commercial terms unconfirmed.",
+    "pricing_url": "https://belmo.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "langfuse-hobby",
+    "name": "Langfuse Cloud Hobby",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "50,000 billable units/month; 30-day data access; 2 users",
+    "watch_out": "Free tier is intended for hobby projects and POCs; longer retention and production support require paid plans; commercial terms unconfirmed.",
+    "pricing_url": "https://langfuse.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "uploadthing-free",
+    "name": "UploadThing 2GB App",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "2 GB storage shared across apps; unlimited uploads/downloads; 7-day audit logs",
+    "watch_out": "Private files and configurable storage regions require paid plans; card and commercial-use terms unconfirmed.",
+    "pricing_url": "https://uploadthing.com/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "mailtrap-email-api-free",
+    "name": "Mailtrap Email API/SMTP Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "4,000 emails/month; 150 emails/day; 1 sending domain; API and SMTP relay; 3-day logs",
+    "watch_out": "No additional email sends on Free; marketing and sandbox plans are separate; explicit commercial-use terms not confirmed.",
+    "pricing_url": "https://mailtrap.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "emailoctopus-starter",
+    "name": "EmailOctopus Starter",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "2,500 subscribers; 10,000 emails/month; 1 user; 3 automations; 1 landing page and 1 form",
+    "watch_out": "EmailOctopus branding and rewards link required; 30-day reports; 5 steps per automation; subscriber consent required.",
+    "pricing_url": "https://emailoctopus.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
+  }
+]
