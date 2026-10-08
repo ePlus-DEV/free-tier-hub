@@ -2,6 +2,8 @@ name: Reconcile catalog PR conflicts
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
   push:
     branches: [main]
     paths:
@@ -36,7 +38,8 @@ jobs:
           git config user.name "eplus-bot"
           git config user.email "eplus-bot@users.noreply.github.com"
           gh pr list --state open --limit 200 --json number,author,headRefName,baseRefName,isDraft,body |
-          jq -c '.[] | select(.author.login == "github-actions[bot]" and .baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' |
+          jq -c '.[] | select(.author.login == "github-actions[bot]" and .baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' > /tmp/eligible-catalog-prs.jsonl
+          failed=0
           while IFS= read -r pr; do
             number="$(jq -r '.number' <<<"$pr")"
             branch="$(jq -r '.headRefName' <<<"$pr")"
@@ -68,7 +71,8 @@ jobs:
               path.write_text(source[:pos] + '    "' + sid + '": None,\n' + source[pos:])
           PY
             then
-              echo "::warning::Skipping PR #$number: cannot safely extract candidate"
+              echo "::error::PR #$number: cannot safely extract candidate"
+              failed=$((failed + 1))
               echo "::endgroup::"
               continue
             fi
@@ -90,4 +94,8 @@ jobs:
               "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
               "HEAD:refs/heads/$branch"
             echo "::endgroup::"
-          done
+          done < /tmp/eligible-catalog-prs.jsonl
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed PR(s) require manual reconciliation"
+            exit 1
+          fi
