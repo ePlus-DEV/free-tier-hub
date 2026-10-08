@@ -22,5 +22,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "cloudinary-free",
+    "name": "Cloudinary Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "25 credits per rolling 30 days shared across transformations, storage and bandwidth; 3 users",
+    "watch_out": "1 credit equals 1,000 transformations OR 1 GB storage OR 1 GB delivery; credits combine all usage; overage can disable account after warnings; paid add-ons separate.",
+    "pricing_url": "https://cloudinary.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
   }
 ]
