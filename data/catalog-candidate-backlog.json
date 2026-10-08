@@ -118,5 +118,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "tally-forms-free",
+    "name": "Tally Forms Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Unlimited forms and submissions within fair-use guidelines; free webhooks and file uploads up to 10 MB/file",
+    "watch_out": "Sustained 50,000+ submissions/month or 100 GB uploads/month may require a billed custom plan; Tally branding remains; custom domains and team collaboration require paid Pro; explicit commercial-use terms unconfirmed.",
+    "pricing_url": "https://tally.so/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
   }
 ]
