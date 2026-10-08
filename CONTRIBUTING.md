@@ -8,8 +8,26 @@ Thanks for helping maintain an accurate directory. **Provider documentation is t
 2. Read the provider's official free-plan page **on the date of the contribution**. Describe included units and reset period, whether a payment card is required, the commercial-use policy, expiration/sleep rules, region restrictions and likely chargeable extras.
 3. Choose one plan type: `ongoing`, `monthly-credit`, `limited-duration`, or `temporary-resource`. A 30-day free database is a **temporary resource**, not a permanent free database.
 4. Set `last_checked` to the actual verification date, not the date you opened the PR. Use `check` for billing or commercial fields that you cannot verify.
-5. Update the matching `docs/<category>.md` table and the README overview. Run `python3 scripts/validate_catalog.py`.
-6. Open a focused pull request describing what changed and including official source URLs.
+5. Run `python3 scripts/sync_catalog.py` to regenerate the README and category documentation from your JSON changes. Then run `python3 scripts/sync_catalog.py --check` and `python3 scripts/validate_catalog.py`. Commit the generated documentation alongside `data/services.json`; do not edit generated tables by hand.
+6. Push your branch to **your own fork**, then open a focused pull request to `ePlus-DEV/free-tier-hub:main`, describing what changed and including official source URLs. GitHub Actions will run validation on the pull request; first-time external contributors may need a maintainer to approve the workflow run.
+
+### Quick start (fork and pull request)
+
+1. Fork this repository on GitHub and clone **your fork** locally.
+2. Create a branch, for example `catalog/add-example-free`.
+3. Edit **only** `data/services.json` manually to add or update the service; use official sources and the required fields below.
+4. Run the commands below to generate the README and docs and check the result:
+
+   ```bash
+   python3 scripts/sync_catalog.py
+   python3 -m unittest discover -s tests -v
+   python3 scripts/sync_catalog.py --check
+   python3 scripts/validate_catalog.py
+   ```
+
+5. Commit `data/services.json` and the generated Markdown files, push to your fork, and open a PR against upstream `main`.
+
+The generated Markdown files are **derived outputs**, not extra data entry. The read-only PR workflow does not push to contributor forks, and maintainers still review official pricing and restrictions before merging.
 
 ### Editorial guidelines
 
@@ -27,7 +45,7 @@ Thanks for helping maintain an accurate directory. **Provider documentation is t
 | --- | --- |
 | `id` | Unique kebab-case identifier |
 | `name` | Provider and specific plan/product |
-| `category` | One of seven catalog categories |
+| `category` | One of the supported catalog categories (see `scripts/check_markdown.py`) |
 | `plan` | `ongoing`, `monthly-credit`, `limited-duration`, `temporary-resource` |
 | `free_limit` | Key verified free allowance including time unit |
 | `watch_out` | One or more material limitations |
