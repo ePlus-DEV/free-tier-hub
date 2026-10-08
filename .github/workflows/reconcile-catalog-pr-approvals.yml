@@ -59,4 +59,8 @@ jobs:
               gh pr review "$number" --repo "$GH_REPO" --approve --body "Approved by @eplus-bot after all PR checks passed."
             fi
             gh pr merge "$number" --repo "$GH_REPO" --squash --match-head-commit "$head"
-          done
+          done < /tmp/eligible-catalog-prs.jsonl
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed catalog PR(s) remain conflicted or blocked."
+            exit 1
+          fi
