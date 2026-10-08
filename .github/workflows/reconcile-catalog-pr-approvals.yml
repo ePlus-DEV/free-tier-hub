@@ -1,0 +1,46 @@
+name: Reconcile catalog PR approvals
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: reconcile-catalog-pr-approvals
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Approve and merge eligible catalog PRs as eplus-bot
+        env:
+          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$(gh api user --jq .login)" = "eplus-bot" || { echo "::error::Expected eplus-bot token"; exit 1; }
+          gh pr list --repo "$GH_REPO" --state open --limit 100 --json number,author,headRefName,baseRefName,isDraft,body > /tmp/catalog-prs.json
+          jq -c '.[] | select(.author.login == "github-actions[bot]" or .author.login == "hoangsvit") | select(.baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' /tmp/catalog-prs.json |
+          while IFS= read -r item; do
+            number="$(jq -r .number <<<"$item")"
+            echo "Checking catalog PR #$number"
+            pr="$(gh api "repos/$GH_REPO/pulls/$number")"
+            head="$(jq -r '.head.sha' <<<"$pr")"
+            test "$(jq -r '.head.repo.full_name' <<<"$pr")" = "$GH_REPO" || continue
+            test "$(jq -r '.mergeable' <<<"$pr")" = "true" || continue
+            checks="$(gh pr checks "$number" --repo "$GH_REPO" --json bucket,name,workflow)" || continue
+            jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$checks" >/dev/null || continue
+            jq -e 'all(.[]; .workflow == "pr-auto-approve" or .workflow == "Reconcile catalog PR approvals" or .bucket == "pass" or .bucket == "skipping")' <<<"$checks" >/dev/null || continue
+            latest="$(gh api "repos/$GH_REPO/pulls/$number" --jq .head.sha)"
+            test "$latest" = "$head" || continue
+            approved="$(gh api "repos/$GH_REPO/pulls/$number/reviews" --paginate --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$head\") | .id" | tail -n 1)"
+            if [ -z "$approved" ]; then
+              gh pr review "$number" --repo "$GH_REPO" --approve --body "Approved by @eplus-bot after all PR checks passed."
+            fi
+            gh pr merge "$number" --repo "$GH_REPO" --squash --match-head-commit "$head"
+          done
