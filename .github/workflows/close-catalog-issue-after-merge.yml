@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  close-delivered-issue:
+  thank-contributor:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +29,13 @@ jobs:
             gh pr comment "$PR_NUMBER" --body "$(printf '%s\n' "$marker" "Thank you @$PR_AUTHOR for contributing to Free Tier Hub! 🎉" "" "This PR has been merged successfully. Your contribution helps keep the free-tier catalog useful and up to date. 💚")"
           fi
 
-      - name: Close linked catalog issue
+  close-linked-catalog-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # External fork contributions often have no candidate Issue. That is expected.
+      # Only close a verified, explicitly linked catalog-candidate Issue.
+      - name: Close linked catalog issue (if any)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -40,7 +46,7 @@ jobs:
           if [[ "$PR_BODY" =~ Automated[[:space:]]delivery[[:space:]]from[[:space:]]candidate[[:space:]]issue[[:space:]]\#([0-9]+) ]]; then
             issue="${BASH_REMATCH[1]}"
           else
-            echo "No catalog candidate issue reference; nothing to close."
+            echo "No linked catalog candidate Issue (normal for external contributions); skipping cleanup."
             exit 0
           fi
           title="$(gh issue view "$issue" --json title --jq '.title')"
