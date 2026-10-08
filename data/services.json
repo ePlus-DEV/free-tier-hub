@@ -1211,5 +1211,65 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-07"
+  },
+  {
+    "id": "devcycle-free",
+    "name": "DevCycle Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Up to 1,000 client-side monthly active users; unlimited seats and feature flags",
+    "watch_out": "Client-side MAU usage is capped on Free; confirm server-side and experimentation usage limits before scaling.",
+    "pricing_url": "https://devcycle.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
+  },
+  {
+    "id": "datpaq-free",
+    "name": "DATPAQ Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "250 API requests/month; full API catalog, CLI and MCP server",
+    "watch_out": "Over-limit grace period may lead to billing; monitor usage",
+    "pricing_url": "https://datpaq.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
+  },
+  {
+    "id": "datanest-free",
+    "name": "DataNest Basic Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "100 requests/month per API across 20 APIs",
+    "watch_out": "Free tier hard limit; RapidAPI subscription used",
+    "pricing_url": "https://www.datanest.network/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-07"
+  },
+  {
+    "id": "mastra-starter",
+    "name": "Mastra Platform Starter",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "100K observability events; 24 CPU hours; 10 GB egress per month",
+    "watch_out": "Usage beyond included allowance is pay-as-you-go; persistent server is paid",
+    "pricing_url": "https://mastra.ai/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
+  },
+  {
+    "id": "growthbook-starter",
+    "name": "GrowthBook Cloud Starter",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "3 users, 1 project, unlimited feature flags and experiments",
+    "watch_out": "Advanced governance and additional projects require paid plan",
+    "pricing_url": "https://www.growthbook.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-07"
   }
 ]

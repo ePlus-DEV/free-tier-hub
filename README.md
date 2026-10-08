@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-101-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-106-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -17,15 +17,15 @@
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 18 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
-| APIs & developer tools | 15 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 17 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 10 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
-| AI & ML platforms | 3 | [Browse](docs/ai-ml.md) |
+| AI & ML platforms | 4 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
-| Feature flags & gradual rollout | 4 | [Browse](docs/feature-flags.md) |
+| Feature flags & gradual rollout | 6 | [Browse](docs/feature-flags.md) |
 | Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | 3 | [Browse](docs/webhooks-events.md) |
 
@@ -136,6 +136,11 @@
 | [ReqKey](https://www.reqkey.com/pricing) | Ongoing free allowance | 100,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member | Official homepage and pricing page have conflicting request quotas; use conservative pricing-page limit and recheck before merging. Reselling or white-labeling requires separate agreement. |
 | [Logtrics](https://www.logtrics.io/pricing) | Ongoing free allowance | 1,000,000 logs/crashes/events per month; 30-day retention; 1 app; 1 team member; email alerts; 3 AI RCA and 3 AI Session Summaries per month | Free plan limits usage to 1 app and 1 team member; AI RCA and AI Session Summaries are limited to 3 each per month. |
 | [MockHive Free](https://mockhive.dev/pricing) | Ongoing free allowance | 3 collections; 100 records each; 1,000 GET requests/month; 50 POST inserts/day | No production base URL on Free; paid plans unlock higher limits |
+| [DevCycle Free](https://devcycle.com/pricing) | Ongoing free allowance | Up to 1,000 client-side monthly active users; unlimited seats and feature flags | Client-side MAU usage is capped on Free; confirm server-side and experimentation usage limits before scaling. |
+| [DATPAQ Free](https://datpaq.com/pricing) | Ongoing free allowance | 250 API requests/month; full API catalog, CLI and MCP server | Over-limit grace period may lead to billing; monitor usage |
+| [DataNest Basic Free](https://www.datanest.network/pricing) | Ongoing free allowance | 100 requests/month per API across 20 APIs | Free tier hard limit; RapidAPI subscription used |
+| [Mastra Platform Starter](https://mastra.ai/pricing) | Ongoing free allowance | 100K observability events; 24 CPU hours; 10 GB egress per month | Usage beyond included allowance is pay-as-you-go; persistent server is paid |
+| [GrowthBook Cloud Starter](https://www.growthbook.io/pricing) | Ongoing free allowance | 3 users, 1 project, unlimited feature flags and experiments | Advanced governance and additional projects require paid plan |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
