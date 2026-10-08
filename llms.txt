@@ -1,0 +1,34 @@
+# Free Tier Hub
+
+> Independent developer free-tier directory with usage caveats and official provider links.
+
+## Primary resources
+- [Directory](https://free-tier.eplus.dev/): crawlable HTML index of all listed services.
+- [Catalog JSON](https://free-tier.eplus.dev/catalog.json): machine-readable data with source URLs, review dates and plan types.
+- [Sitemap](https://free-tier.eplus.dev/sitemap.xml): category and service URLs.
+- [Agent discovery](https://free-tier.eplus.dev/agents.md): optional reading guide.
+
+## Categories
+- [Static & frontend hosting](https://free-tier.eplus.dev/category/static-hosting/)
+- [Backend & app hosting](https://free-tier.eplus.dev/category/app-hosting/)
+- [Serverless & edge](https://free-tier.eplus.dev/category/serverless/)
+- [Cloud compute & VPS](https://free-tier.eplus.dev/category/cloud-vps/)
+- [Databases & caching](https://free-tier.eplus.dev/category/databases/)
+- [Object storage](https://free-tier.eplus.dev/category/storage/)
+- [APIs & developer tools](https://free-tier.eplus.dev/category/developer-tools/)
+- [Authentication & security](https://free-tier.eplus.dev/category/auth-security/)
+- [Monitoring & observability](https://free-tier.eplus.dev/category/observability/)
+- [Product analytics](https://free-tier.eplus.dev/category/analytics/)
+- [DNS & CDN](https://free-tier.eplus.dev/category/dns-cdn/)
+- [AI & ML platforms](https://free-tier.eplus.dev/category/ai-ml/)
+- [Queues, workflows & scheduling](https://free-tier.eplus.dev/category/queues-jobs/)
+- [Hosted search](https://free-tier.eplus.dev/category/search/)
+- [Feature flags & gradual rollout](https://free-tier.eplus.dev/category/feature-flags/)
+- [Tunneling & networking](https://free-tier.eplus.dev/category/tunneling-networking/)
+- [Webhooks & event delivery](https://free-tier.eplus.dev/category/webhooks-events/)
+
+## Interpretation
+- A listed offer may be an ongoing allowance, recurring credit, trial or expiring resource.
+- An unknown card or commercial-use value means check the provider; it does not mean permission is granted.
+- Official provider links in the JSON are the primary sources of current billing and limits.
+- Review dates are editorial snapshots, not a guarantee that a provider has not changed its terms.
