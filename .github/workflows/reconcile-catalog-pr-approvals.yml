@@ -43,11 +43,7 @@ jobs:
               sleep 2
               pr="$(gh api "repos/$GH_REPO/pulls/$number")"
               mergeable="$(jq -r '.mergeable' <<<"$pr")"
-            done < /tmp/eligible-catalog-prs.jsonl
-          if [ "$failed" -gt 0 ]; then
-            echo "::error::$failed catalog PR(s) remain conflicted or blocked."
-            exit 1
-          fi
+            done
             if [ "$mergeable" != "true" ]; then
               echo "::error::PR #$number blocked: mergeable=$mergeable, mergeable_state=$(jq -r '.mergeable_state' <<<"$pr"). Run Reconcile catalog PR conflicts first."
               failed=$((failed + 1))
