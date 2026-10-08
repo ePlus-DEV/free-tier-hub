@@ -29,7 +29,7 @@ jobs:
           if [ ! -s /tmp/eligible-catalog-prs.jsonl ]; then
             echo "::notice::No matching catalog PRs; nothing to reconcile."
           fi
-          cat /tmp/eligible-catalog-prs.jsonl |
+          failed=0
           while IFS= read -r item; do
             number="$(jq -r .number <<<"$item")"
             echo "Checking catalog PR #$number"
@@ -43,9 +43,14 @@ jobs:
               sleep 2
               pr="$(gh api "repos/$GH_REPO/pulls/$number")"
               mergeable="$(jq -r '.mergeable' <<<"$pr")"
-            done
+            done < /tmp/eligible-catalog-prs.jsonl
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed catalog PR(s) remain conflicted or blocked."
+            exit 1
+          fi
             if [ "$mergeable" != "true" ]; then
-              echo "::notice::PR #$number skipped: mergeable=$mergeable, mergeable_state=$(jq -r '.mergeable_state' <<<"$pr")"
+              echo "::error::PR #$number blocked: mergeable=$mergeable, mergeable_state=$(jq -r '.mergeable_state' <<<"$pr"). Run Reconcile catalog PR conflicts first."
+              failed=$((failed + 1))
               continue
             fi
             checks="$(gh pr checks "$number" --repo "$GH_REPO" --json bucket,name,workflow)" || { echo "::notice::PR #$number skipped: unable to read checks"; continue; }
