@@ -177,7 +177,8 @@ jobs:
           git config user.name "eplus-bot"
           git config user.email "eplus-bot@users.noreply.github.com"
           git commit --allow-empty -m "ci: trigger catalog PR validation"
-          git -c http.extraheader= push "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
+          git config --local --unset-all http.https://github.com/.extraheader || true
+          git push "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
 
 
       - name: Link delivery PR to issue
