@@ -1,0 +1,26 @@
+[
+  {
+    "id": "jitterflow-developer",
+    "name": "Jitterflow Developer",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 webhooks/month; 5 requests/second; 3 endpoints; 256 KB payloads",
+    "watch_out": "3-day dead-letter queue and payload log retention; hard monthly cap; side projects and low-volume production.",
+    "pricing_url": "https://jitterflow.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "tigris-object-storage-free",
+    "name": "Tigris Object Storage Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "5 GiB Standard storage/month; 10,000 Class A and 100,000 Class B requests/month; free egress",
+    "watch_out": "Over-quota usage billed; non-Standard storage and object notifications may incur charges; card and commercial eligibility unconfirmed.",
+    "pricing_url": "https://www.tigrisdata.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  }
+]
