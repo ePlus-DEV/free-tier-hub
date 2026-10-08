@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-112-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-113-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -19,7 +19,7 @@
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 18 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 12 | [Browse](docs/observability.md) |
+| Monitoring & observability | 13 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
 | AI & ML platforms | 4 | [Browse](docs/ai-ml.md) |
@@ -147,6 +147,7 @@
 | [SteadyStack The Initiate](https://steadystack.dev/pricing) | Ongoing free allowance | 50 monitors; 3-minute checks (1 minute for first 10); 1 public status page | Launch cohort grandfathered terms; 3-day log retention |
 | [Botoi Free](https://botoi.com/pricing/) | Ongoing free allowance | 1,000 API requests/day; 10 requests/minute; 150+ endpoints and MCP server | 429 responses on quota exhaustion; resets midnight UTC |
 | [DBGorilla Free](https://www.dbgorilla.com/pricing) | Ongoing free allowance | 1 single-host cluster; 50 Gorilla Credits/month; 7-day retention | Initial 30-day Pro trial reverts to Free; auto-reload of purchased credits may incur charges |
+| [Checkly Hobby](https://www.checklyhq.com/pricing/) | Ongoing free allowance | 10 uptime monitors; 1,000 Browser check runs and 10,000 API check runs/month; 1 user; 7-day raw data retention | Hobby is intended for personal projects and learning; 1 user and 7-day raw data retention; monitoring frequency and check runs are capped. |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.

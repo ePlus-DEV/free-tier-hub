@@ -1343,5 +1343,18 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-07"
+  },
+  {
+    "id": "checkly-hobby",
+    "name": "Checkly Hobby",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "10 uptime monitors; 1,000 Browser check runs and 10,000 API check runs/month; 1 user; 7-day raw data retention",
+    "watch_out": "Hobby is intended for personal projects and learning; 1 user and 7-day raw data retention; monitoring frequency and check runs are capped.",
+    "pricing_url": "https://www.checklyhq.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "no",
+    "last_checked": "2026-10-08",
+    "added_at": "2026-10-05"
   }
 ]
