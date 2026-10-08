@@ -41,9 +41,14 @@ def load_candidates():
         if url.scheme != "https" or not url.hostname or url.username or url.password:
             raise ValueError("Invalid official HTTPS pricing URL")
         checked = datetime.date.fromisoformat(candidate["last_checked"])
-        if checked > today or (today - checked).days > 7:
-            raise ValueError("Candidate pricing review is stale or in the future: " + sid)
+        if checked > today:
+            raise ValueError("Candidate pricing review is in the future: " + sid)
     return entries
+
+
+def is_fresh(entry):
+    checked = datetime.date.fromisoformat(entry["last_checked"])
+    return (datetime.datetime.now(datetime.timezone.utc).date() - checked).days <= 7
 
 
 def main():
@@ -58,12 +63,14 @@ def main():
     present = {entry["id"] for entry in services}
     if args.list:
         for entry in entries:
-            if entry["id"] not in present:
+            if entry["id"] not in present and is_fresh(entry):
                 print(entry["id"])
         return
     selected = [entry for entry in entries if entry["id"] == args.apply]
     if len(selected) != 1 or args.apply in present:
         raise ValueError("Candidate missing from backlog or already catalogued")
+    if not is_fresh(selected[0]):
+        raise ValueError("Candidate pricing review is stale: " + args.apply)
     source = LOGOS.read_text(encoding="utf-8")
     marker = "SERVICE_LOGOS = {"
     if marker not in source:
