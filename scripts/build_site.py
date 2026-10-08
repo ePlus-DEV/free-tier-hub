@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "formbricks-hobby": None,
     "checkly-hobby": None,
     "dbgorilla-free": None,
     "botoi-free": None,

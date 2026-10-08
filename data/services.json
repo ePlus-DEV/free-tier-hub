@@ -1380,5 +1380,17 @@
     "commercial_use": "no",
     "last_checked": "2026-10-08",
     "added_at": "2026-10-05"
+  },
+  {
+    "id": "formbricks-hobby",
+    "name": "Formbricks Cloud Hobby",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "250 survey responses/month; 1 workspace; link and in-product surveys; full API access including MCP",
+    "watch_out": "Cloud Hobby includes Formbricks branding; response cap is 250/month; self-hosted Community Edition is a separate option; explicit commercial-use terms not confirmed.",
+    "pricing_url": "https://formbricks.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
   }
 ]
