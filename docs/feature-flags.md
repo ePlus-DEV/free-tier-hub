@@ -12,5 +12,6 @@ Gradually ship and disable features without redeploying. [← Back to directory]
 | [Flagify Free](https://flagify.dev/) | Ongoing free allowance | 2 projects/workspace; unlimited flags; 3 environments; 3 seats; 75,000 evaluations/month; 50 AI messages/month | Free plan is aimed at side projects and small teams; paid tiers add higher evaluation quotas and advanced controls. | Not required | Check provider |
 | [DevCycle Free](https://devcycle.com/pricing) | Ongoing free allowance | Up to 1,000 client-side monthly active users; unlimited seats and feature flags | Client-side MAU usage is capped on Free; confirm server-side and experimentation usage limits before scaling. | Not required | Check provider |
 | [GrowthBook Cloud Starter](https://www.growthbook.io/pricing) | Ongoing free allowance | 3 users, 1 project, unlimited feature flags and experiments | Advanced governance and additional projects require paid plan | Not required | Check provider |
+| [Zenmanage Free](https://zenmanage.com/pricing) | Ongoing free allowance | 500 monthly active contexts; unlimited flags, projects and users | Lifecycle reporting and advanced reporting require paid Team plan | Not required | Check provider |
 
 > **Important:** “Check provider” means card or commercial terms were not independently confirmed.

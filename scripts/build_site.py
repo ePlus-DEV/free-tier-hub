@@ -93,6 +93,12 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "dbgorilla-free": None,
+    "botoi-free": None,
+    "steadystack-initiate": None,
+    "zenmanage-free": None,
+    "pingzen-free": None,
+    "hook0-developer": None,
     "growthbook-starter": None,
     "mastra-starter": None,
     "datanest-free": None,
