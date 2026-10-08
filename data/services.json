@@ -144,6 +144,18 @@
     "last_checked": "2026-09-22"
   },
   {
+    "id": "prisma-compute",
+    "name": "Prisma Compute Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 million requests/month; 360 GB-hours memory/month; 4 active vCPU-hours/month; 10 GB outbound bandwidth/month",
+    "watch_out": "Scales to zero when idle; TypeScript apps (Node.js, Bun, Next.js); verify current limits before production use.",
+    "pricing_url": "https://www.prisma.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
     "id": "cloudflare-workers",
     "name": "Cloudflare Workers Free",
     "category": "serverless",
@@ -442,6 +454,18 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-22"
+  },
+  {
+    "id": "prisma-postgres",
+    "name": "Prisma Postgres Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "1.01 GB storage; 200,000 operations/month; up to 50 databases",
+    "watch_out": "Monthly operations and storage caps on Free; verify current limits before production use.",
+    "pricing_url": "https://www.prisma.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
   },
   {
     "id": "cloudflare-kv",
