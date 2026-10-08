@@ -1,0 +1,101 @@
+name: Reconcile catalog PR conflicts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reconcile-catalog-pr-conflicts.yml'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: reconcile-catalog-pr-conflicts
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild each catalog PR on latest main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$BOT_TOKEN" || { echo "::error::EPLUS_BOT_TOKEN missing"; exit 1; }
+          git config user.name "eplus-bot"
+          git config user.email "eplus-bot@users.noreply.github.com"
+          gh pr list --state open --limit 200 --json number,author,headRefName,baseRefName,isDraft,body |
+          jq -c '.[] | select(.author.login == "github-actions[bot]" and .baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' > /tmp/eligible-catalog-prs.jsonl
+          failed=0
+          while IFS= read -r pr; do
+            number="$(jq -r '.number' <<<"$pr")"
+            branch="$(jq -r '.headRefName' <<<"$pr")"
+            id="${branch#catalog/add-}"
+            echo "::group::Reconcile PR #$number ($id)"
+            git fetch origin main "$branch"
+            old_head="$(git rev-parse "origin/$branch")"
+            git switch -C "reconcile-$number" origin/main
+            if ! SERVICE_ID="$id" OLD_BRANCH="origin/$branch" python3 - <<'PY'
+          import json, os, pathlib, re, subprocess
+          sid = os.environ["SERVICE_ID"]
+          old = json.loads(subprocess.check_output(["git", "show", os.environ["OLD_BRANCH"] + ":data/services.json"]))
+          matches = [item for item in old if item["id"] == sid]
+          if len(matches) != 1:
+              raise SystemExit("Expected exactly one matching service")
+          path = pathlib.Path("data/services.json")
+          current = json.loads(path.read_text())
+          if any(item["id"] == sid for item in current):
+              raise SystemExit("Service already on main; skip rather than duplicate")
+          current.append(matches[0])
+          path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + "\n")
+          path = pathlib.Path("scripts/build_site.py")
+          source = path.read_text()
+          if not re.search(r'^\s*["\x27]' + re.escape(sid) + r'["\x27]\s*:', source, re.M):
+              marker = "SERVICE_LOGOS = {"
+              pos = source.find(marker)
+              if pos < 0: raise SystemExit("SERVICE_LOGOS mapping not found")
+              pos = source.find("\n", pos) + 1
+              path.write_text(source[:pos] + '    "' + sid + '": None,\n' + source[pos:])
+          PY
+            then
+              echo "::error::PR #$number: cannot safely extract candidate"
+              failed=$((failed + 1))
+              echo "::endgroup::"
+              continue
+            fi
+            python3 scripts/sync_catalog.py
+            python3 scripts/sync_catalog.py --check
+            python3 -m unittest discover -s tests -v
+            python3 scripts/validate_catalog.py
+            git diff --check
+            git add data/services.json scripts/build_site.py README.md docs/
+            if git diff --cached --quiet; then
+              echo "::notice::No changes for PR #$number"
+              echo "::endgroup::"
+              continue
+            fi
+            git commit -m "catalog: reconcile $id with latest main"
+            # The PR author stays github-actions[bot], allowing eplus-bot to review.
+            # Force-with-lease rejects concurrent edits; never overwrite a moving branch.
+            git push --force-with-lease="refs/heads/$branch:$old_head" \
+              "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
+              "HEAD:refs/heads/$branch"
+            echo "::endgroup::"
+          done < /tmp/eligible-catalog-prs.jsonl
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed PR(s) require manual reconciliation"
+            exit 1
+          fi

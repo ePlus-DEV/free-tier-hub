@@ -93,7 +93,22 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
-    "checkly-hobby": None,  # Safe initials fallback; official icon not curated.
+    "checkly-hobby": None,
+    "dbgorilla-free": None,
+    "botoi-free": None,
+    "steadystack-initiate": None,
+    "zenmanage-free": None,
+    "pingzen-free": None,
+    "hook0-developer": None,
+    "growthbook-starter": None,
+    "mastra-starter": None,
+    "datanest-free": None,
+    "datpaq-free": None,
+    "devcycle-free": None,
+    "mockhive-free": None,
+    "logtrics-free": None,
+    "reqkey-free": None,
+    "flagify-free": None,
     "honeycomb-free": None,  # Safe initials fallback; official icon not curated.
     "webhooker-free": None,  # Safe initials fallback; official icon not curated.
     "motherduck-lite": None,
