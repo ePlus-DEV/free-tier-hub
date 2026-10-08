@@ -24,5 +24,6 @@ Transactional email, monitoring and CI/CD. [← Back to directory](../README.md)
 | [DATPAQ Free](https://datpaq.com/pricing) | Ongoing free allowance | 250 API requests/month; full API catalog, CLI and MCP server | Over-limit grace period may lead to billing; monitor usage | Not required | Check provider |
 | [DataNest Basic Free](https://www.datanest.network/pricing) | Ongoing free allowance | 100 requests/month per API across 20 APIs | Free tier hard limit; RapidAPI subscription used | Not required | Allowed |
 | [Botoi Free](https://botoi.com/pricing/) | Ongoing free allowance | 1,000 API requests/day; 10 requests/minute; 150+ endpoints and MCP server | 429 responses on quota exhaustion; resets midnight UTC | Not required | Check provider |
+| [Formbricks Cloud Hobby](https://formbricks.com/pricing) | Ongoing free allowance | 250 survey responses/month; 1 workspace; link and in-product surveys; full API access including MCP | Cloud Hobby includes Formbricks branding; response cap is 250/month; self-hosted Community Edition is a separate option; explicit commercial-use terms not confirmed. | Not required | Check provider |
 
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.
