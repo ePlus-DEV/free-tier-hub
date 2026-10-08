@@ -22,18 +22,24 @@ jobs:
         run: |
           set -euo pipefail
           test "$(gh api user --jq .login)" = "eplus-bot" || { echo "::error::Expected eplus-bot token"; exit 1; }
-          gh pr list --repo "$GH_REPO" --state open --limit 100 --json number,author,headRefName,baseRefName,isDraft,body > /tmp/catalog-prs.json
-          jq -c '.[] | select(.author.login == "github-actions[bot]" or .author.login == "hoangsvit") | select(.baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' /tmp/catalog-prs.json |
+          gh api --paginate "repos/$GH_REPO/pulls?state=open&per_page=100" --jq '.[]' | jq -s '.' > /tmp/catalog-prs.json
+          echo "Open PRs discovered: $(jq length /tmp/catalog-prs.json)"
+          jq -c '.[] | select(.user.login == "github-actions[bot]" or .user.login == "hoangsvit") | select(.base.ref == "main" and .draft == false and (.head.ref | startswith("catalog/add-")) and ((.body // "") | startswith("Automated delivery from candidate issue #")))' /tmp/catalog-prs.json > /tmp/eligible-catalog-prs.jsonl
+          echo "Matching catalog PRs: $(wc -l < /tmp/eligible-catalog-prs.jsonl)"
+          if [ ! -s /tmp/eligible-catalog-prs.jsonl ]; then
+            echo "::notice::No matching catalog PRs; nothing to reconcile."
+          fi
+          cat /tmp/eligible-catalog-prs.jsonl |
           while IFS= read -r item; do
             number="$(jq -r .number <<<"$item")"
             echo "Checking catalog PR #$number"
             pr="$(gh api "repos/$GH_REPO/pulls/$number")"
             head="$(jq -r '.head.sha' <<<"$pr")"
-            test "$(jq -r '.head.repo.full_name' <<<"$pr")" = "$GH_REPO" || continue
-            test "$(jq -r '.mergeable' <<<"$pr")" = "true" || continue
-            checks="$(gh pr checks "$number" --repo "$GH_REPO" --json bucket,name,workflow)" || continue
-            jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$checks" >/dev/null || continue
-            jq -e 'all(.[]; .workflow == "pr-auto-approve" or .workflow == "Reconcile catalog PR approvals" or .bucket == "pass" or .bucket == "skipping")' <<<"$checks" >/dev/null || continue
+            test "$(jq -r '.head.repo.full_name' <<<"$pr")" = "$GH_REPO" || { echo "::notice::PR #$number skipped: fork"; continue; }
+            test "$(jq -r '.mergeable' <<<"$pr")" = "true" || { echo "::notice::PR #$number skipped: not mergeable"; continue; }
+            checks="$(gh pr checks "$number" --repo "$GH_REPO" --json bucket,name,workflow)" || { echo "::notice::PR #$number skipped: unable to read checks"; continue; }
+            jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$checks" >/dev/null || { echo "::notice::PR #$number skipped: catalog validation missing or not passing"; continue; }
+            jq -e 'all(.[]; .workflow == "pr-auto-approve" or .workflow == "Reconcile catalog PR approvals" or .bucket == "pass" or .bucket == "skipping")' <<<"$checks" >/dev/null || { echo "::notice::PR #$number skipped: checks not all passing"; continue; }
             latest="$(gh api "repos/$GH_REPO/pulls/$number" --jq .head.sha)"
             test "$latest" = "$head" || continue
             approved="$(gh api "repos/$GH_REPO/pulls/$number/reviews" --paginate --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$head\") | .id" | tail -n 1)"
