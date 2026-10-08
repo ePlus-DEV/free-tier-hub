@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  close-delivered-issue:
+  thank-contributor:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +29,10 @@ jobs:
             gh pr comment "$PR_NUMBER" --body "$(printf '%s\n' "$marker" "Thank you @$PR_AUTHOR for contributing to Free Tier Hub! 🎉" "" "This PR has been merged successfully. Your contribution helps keep the free-tier catalog useful and up to date. 💚")"
           fi
 
+  close-linked-catalog-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
       - name: Close linked catalog issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
