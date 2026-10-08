@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-113-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-115-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -12,10 +12,10 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 9 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 8 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 9 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 19 | [Browse](docs/databases.md) |
+| Databases & caching | 20 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 18 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 4 | [Browse](docs/auth-security.md) |
@@ -47,6 +47,7 @@
 | [Koyeb Free Web Instance](https://www.koyeb.com/docs/reference/instances) | Ongoing free allowance | One Free instance: 512 MB RAM, 0.1 vCPU, 2 GB SSD | Limited regions; sleeps after an hour without traffic; no persistent volumes. |
 | [Railway Free](https://docs.railway.com/pricing/free-trial) | Recurring free credit | $1 monthly credit after an initial up-to-30-day $5 trial | Usage beyond recurring free credit requires checking billing and available resources. |
 | [Deno Deploy Free](https://deno.com/deploy/pricing) | Ongoing free allowance | 1 million requests/month; 20 GiB egress/month; 5 custom domains | Runtime, resource and team restrictions apply; inspect current deployment pricing. |
+| [Prisma Compute Free](https://www.prisma.io/pricing) | Ongoing free allowance | 1 million requests/month; 360 GB-hours memory/month; 4 active vCPU-hours/month; 10 GB outbound bandwidth/month | Scales to zero when idle; TypeScript apps (Node.js, Bun, Next.js); verify current limits before production use. |
 | [Cloudflare Workers Free](https://developers.cloudflare.com/workers/platform/pricing/) | Ongoing free allowance | 100,000 requests/day; 10 ms CPU time per invocation | Functions on Pages share this quota; not a general-purpose always-on server. |
 | [Google Cloud Run](https://docs.cloud.google.com/free/docs/free-cloud-features) | Ongoing free allowance | 2 million requests/month under eligible request-based billing | A Cloud Billing account is required; builds, logging and network usage can incur charges. |
 | [Oracle Cloud Always Free Compute](https://www.oracle.com/cloud/free/) | Ongoing free allowance | Eligible AMD and Arm Ampere A1 compute resources | Requires a valid payment card for identity verification; region capacity and inactivity policies apply. |
@@ -72,6 +73,7 @@
 | [Better Stack Free](https://betterstack.com/pricing) | Ongoing free allowance | 10 monitors/heartbeats; 1 status page | Free personal-project tier; alert channels and log retention have limits. |
 | [GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) | Ongoing free allowance | Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos | Larger runners and over-quota private-repo usage may be billed. |
 | [Neon Free Postgres](https://neon.com/pricing) | Ongoing free allowance | 100 projects; 100 CU-hours/project/month; 0.5 GB storage/project | Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility. |
+| [Prisma Postgres Free](https://www.prisma.io/pricing) | Ongoing free allowance | 1.01 GB storage; 200,000 operations/month; up to 50 databases | Monthly operations and storage caps on Free; verify current limits before production use. |
 | [Cloudflare Workers KV Free](https://developers.cloudflare.com/kv/platform/pricing/) | Ongoing free allowance | 1 GB storage; 100k key reads/day; 1k key writes/day | Writes, deletes and list requests each have a 1k/day cap; operations fail when daily quota is exhausted. |
 | [Brevo Free](https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan) | Ongoing free allowance | 300 email sends/day; up to 100k contacts | Daily unused sends do not roll over; free emails carry Brevo branding; queues and transactional limits apply. |
 | [GitHub Codespaces (personal Free)](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces) | Ongoing free allowance | 120 core-hours/month and 15 GB-month storage for GitHub Free personal accounts | Organizations have no included Codespaces quota; 2-core machines use two core-hours per elapsed hour. |
