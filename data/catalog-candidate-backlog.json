@@ -34,5 +34,65 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "dipsac-free",
+    "name": "DIPSAC Free API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "500 API requests/month; 2 requests/second; 5 MB files; 1 API key",
+    "watch_out": "Free API excludes audio/video endpoints; monthly overages return HTTP 429; commercial use unconfirmed.",
+    "pricing_url": "https://dipsac.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "railhook-cloud-free",
+    "name": "Railhook Cloud Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 events/month; 3 projects; 5 endpoints/project; 7-day history",
+    "watch_out": "Requests over monthly quota are rejected; hosted cloud commercial-use terms unconfirmed.",
+    "pricing_url": "https://railhook.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "belmo-starter",
+    "name": "Belmo Starter",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 always-on service; 0.5 shared vCPU; 512 MB RAM; SSL; 30-day logs",
+    "watch_out": "No custom domain on Starter, only belmo.io subdomain; commercial terms unconfirmed.",
+    "pricing_url": "https://belmo.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "langfuse-hobby",
+    "name": "Langfuse Cloud Hobby",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "50,000 billable units/month; 30-day data access; 2 users",
+    "watch_out": "Free tier is intended for hobby projects and POCs; longer retention and production support require paid plans; commercial terms unconfirmed.",
+    "pricing_url": "https://langfuse.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
+  },
+  {
+    "id": "uploadthing-free",
+    "name": "UploadThing 2GB App",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "2 GB storage shared across apps; unlimited uploads/downloads; 7-day audit logs",
+    "watch_out": "Private files and configurable storage regions require paid plans; card and commercial-use terms unconfirmed.",
+    "pricing_url": "https://uploadthing.com/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-08"
   }
 ]
