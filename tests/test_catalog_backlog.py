@@ -77,8 +77,25 @@ class CatalogBacklogTests(unittest.TestCase):
         entry = candidate()
         entry["last_checked"] = "2020-01-01"
         self.write([entry])
-        with self.assertRaisesRegex(ValueError, "stale"):
-            consumer.load_candidates()
+        self.assertEqual(len(consumer.load_candidates()), 1)
+        with mock.patch.object(sys, "argv", ["consumer", "--list"]):
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                consumer.main()
+        self.assertEqual(output.getvalue(), "")
+        with mock.patch.object(sys, "argv", ["consumer", "--apply", "sample-free"]):
+            with self.assertRaisesRegex(ValueError, "stale"):
+                consumer.main()
+
+    def test_stale_entry_does_not_block_fresh_candidate(self):
+        stale = candidate("old-free")
+        stale["last_checked"] = "2020-01-01"
+        self.write([stale, candidate("fresh-free")])
+        with mock.patch.object(sys, "argv", ["consumer", "--list"]):
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                consumer.main()
+        self.assertEqual(output.getvalue().strip(), "fresh-free")
 
     def test_invalid_schema_rejected(self):
         entry = candidate()
