@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-117-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-118-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -18,7 +18,7 @@
 | Databases & caching | 20 | [Browse](docs/databases.md) |
 | Object storage | 4 | [Browse](docs/storage.md) |
 | APIs & developer tools | 19 | [Browse](docs/developer-tools.md) |
-| Authentication & security | 4 | [Browse](docs/auth-security.md) |
+| Authentication & security | 5 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 13 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
@@ -152,6 +152,7 @@
 | [Checkly Hobby](https://www.checklyhq.com/pricing/) | Ongoing free allowance | 10 uptime monitors; 1,000 Browser check runs and 10,000 API check runs/month; 1 user; 7-day raw data retention | Hobby is intended for personal projects and learning; 1 user and 7-day raw data retention; monitoring frequency and check runs are capped. |
 | [Formbricks Cloud Hobby](https://formbricks.com/pricing) | Ongoing free allowance | 250 survey responses/month; 1 workspace; link and in-product surveys; full API access including MCP | Cloud Hobby includes Formbricks branding; response cap is 250/month; self-hosted Community Edition is a separate option; explicit commercial-use terms not confirmed. |
 | [Botkeep Free](https://botkeep.cloud/) | Ongoing free allowance | 2 workload slots sharing 1 GB RAM, 1 vCore and 1 GB storage; 1 backup per workload with 7-day retention; no scheduled idle sleep or periodic renewal | Beta hosting without uptime SLA; capacity and fair-use rules apply. Resources shared across workloads; independent backups recommended. Founder Free (5 slots, 2 GB RAM, 1.5 vCore, 2 GB storage) requires signup by 15 Oct 2026 17:00 CEST; not the standard plan. Commercial-use terms not independently confirmed. |
+| [Hanko Cloud Starter Free](https://www.hanko.io/pricing) | Ongoing free allowance | 10,000 monthly active users; 2 projects; passkeys, passwords/passwordless, social SSO, MFA, custom domain | Hosted in AWS Frankfurt; webhooks, Admin API, custom SMTP and team invites require Pro; repeated overage prompts upgrade. Commercial-use terms for cloud Free not independently confirmed. |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
