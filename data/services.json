@@ -1416,5 +1416,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "suprsend-free",
+    "name": "SuprSend Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10,000 notifications/month; unlimited notification channels and team members; in-app feed, workflow branching, lists and broadcasts",
+    "watch_out": "30-day premium-feature trial transitions to ongoing Free; SuprSend branding on in-app feed; multi-channel delivery counts each user/channel separately; email/SMS providers may charge separately; free over-limit sends may continue pending contact from SuprSend; explicit commercial-use terms not confirmed.",
+    "pricing_url": "https://www.suprsend.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
