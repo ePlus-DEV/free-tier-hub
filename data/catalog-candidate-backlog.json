@@ -154,5 +154,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "rollbar-free",
+    "name": "Rollbar Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "5,000 error occurrences/month; 1,000 session replays/month; 30-day data retention; unlimited users and projects",
+    "watch_out": "14-day Advanced trial is separate from the ongoing Free tier; 0 AI credits on Free; processing stops at the monthly limit by default.",
+    "pricing_url": "https://rollbar.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-09"
   }
 ]
