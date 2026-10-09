@@ -178,5 +178,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "permit-community-free",
+    "name": "Permit.io Community",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "1,000 monthly active users; 20 tenants; unlimited authorization queries; 3 environments; 25 roles",
+    "watch_out": "Single deployment region; 14-day log retention; best-effort cloud uptime/support; enterprise compliance and SSO not included. Commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://www.permit.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
