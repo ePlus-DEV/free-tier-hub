@@ -130,5 +130,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "atlassian-statuspage-free",
+    "name": "Atlassian Statuspage Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Up to 2 public pages per organization; 100 subscribers, 25 components, 2 team members, 2 metrics; email/Slack/Teams notifications and rate-limited REST API",
+    "watch_out": "Free plan is only for public status pages; private pages and custom domains require paid plans. Credit-card requirement and commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.atlassian.com/software/statuspage/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
