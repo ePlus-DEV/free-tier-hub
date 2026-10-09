@@ -1404,5 +1404,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "hanko-cloud-starter-free",
+    "name": "Hanko Cloud Starter Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "10,000 monthly active users; 2 projects; passkeys, passwords/passwordless, social SSO, MFA, custom domain",
+    "watch_out": "Hosted in AWS Frankfurt; webhooks, Admin API, custom SMTP and team invites require Pro; repeated overage prompts upgrade. Commercial-use terms for cloud Free not independently confirmed.",
+    "pricing_url": "https://www.hanko.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
