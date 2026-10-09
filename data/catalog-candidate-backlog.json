@@ -166,5 +166,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "snyk-free",
+    "name": "Snyk Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "5 projects; monthly limits: 200 Open Source tests, 100 Code tests, 300 IaC tests and 100 Container tests",
+    "watch_out": "Designed for individual developers and small teams; private-repository scan quotas are enforced and recurring free-plan scans run weekly; commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://snyk.io/plans/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
