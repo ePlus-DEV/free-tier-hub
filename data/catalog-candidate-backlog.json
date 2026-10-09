@@ -118,5 +118,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "logto-cloud-free",
+    "name": "Logto Cloud Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Up to 50,000 monthly active users; 50,000 access tokens/month; 3 applications; 1 machine-to-machine app; 1 custom domain",
+    "watch_out": "Token allowance can constrain effective MAU; Pro is positioned for production and teams. Free excludes RBAC, organizations, MFA, enterprise SSO, passkeys and custom sign-in UI. Commercial-use permission not confirmed.",
+    "pricing_url": "https://logto.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
