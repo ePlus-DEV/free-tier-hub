@@ -1392,5 +1392,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "botkeep-free",
+    "name": "Botkeep Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "2 workload slots sharing 1 GB RAM, 1 vCore and 1 GB storage; 1 backup per workload with 7-day retention; no scheduled idle sleep or periodic renewal",
+    "watch_out": "Beta hosting without uptime SLA; capacity and fair-use rules apply. Resources shared across workloads; independent backups recommended. Founder Free (5 slots, 2 GB RAM, 1.5 vCore, 2 GB storage) requires signup by 15 Oct 2026 17:00 CEST; not the standard plan. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://botkeep.cloud/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
