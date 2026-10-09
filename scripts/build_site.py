@@ -93,6 +93,7 @@ def glyph(name):
 
 # Curated Simple Icons slugs; any unavailable logo falls back to the service initials.
 SERVICE_LOGOS = {
+    "suprsend-free": None,
     "hanko-cloud-starter-free": None,
     "botkeep-free": None,
     "formbricks-hobby": None,
