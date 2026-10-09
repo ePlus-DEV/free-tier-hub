@@ -118,5 +118,65 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-08"
+  },
+  {
+    "id": "logto-cloud-free",
+    "name": "Logto Cloud Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Up to 50,000 monthly active users; 50,000 access tokens/month; 3 applications; 1 machine-to-machine app; 1 custom domain",
+    "watch_out": "Token allowance can constrain effective MAU; Pro is positioned for production and teams. Free excludes RBAC, organizations, MFA, enterprise SSO, passkeys and custom sign-in UI. Commercial-use permission not confirmed.",
+    "pricing_url": "https://logto.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "atlassian-statuspage-free",
+    "name": "Atlassian Statuspage Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Up to 2 public pages per organization; 100 subscribers, 25 components, 2 team members, 2 metrics; email/Slack/Teams notifications and rate-limited REST API",
+    "watch_out": "Free plan is only for public status pages; private pages and custom domains require paid plans. Credit-card requirement and commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.atlassian.com/software/statuspage/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "helicone-hobby",
+    "name": "Helicone Hobby",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "10,000 requests/month; 1 GB storage; 1 seat and 1 organization; 7-day data retention",
+    "watch_out": "Free tier ingests up to 10 logs/minute; API access, alerts, and longer retention require paid plans. Homepage mentions a 7-day trial for premium features; card requirement and commercial-use rights for Hobby need confirmation.",
+    "pricing_url": "https://www.helicone.ai/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "rollbar-free",
+    "name": "Rollbar Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "5,000 error occurrences/month; 1,000 session replays/month; 30-day data retention; unlimited users and projects",
+    "watch_out": "14-day Advanced trial is separate from the ongoing Free tier; 0 AI credits on Free; processing stops at the monthly limit by default.",
+    "pricing_url": "https://rollbar.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "snyk-free",
+    "name": "Snyk Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "5 projects; monthly limits: 200 Open Source tests, 100 Code tests, 300 IaC tests and 100 Container tests",
+    "watch_out": "Designed for individual developers and small teams; private-repository scan quotas are enforced and recurring free-plan scans run weekly; commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://snyk.io/plans/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
