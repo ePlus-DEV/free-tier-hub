@@ -178,5 +178,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "aikido-developer-free",
+    "name": "Aikido Developer Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "2 users; 10 repositories; 2 container images; 1 domain; 1 cloud account; 10 AI AutoFixes/month; 250,000 protected requests/month",
+    "watch_out": "Rescans every 3 days; premium PR security review, integrations, and extended coverage require paid tiers. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.aikido.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
   }
 ]
