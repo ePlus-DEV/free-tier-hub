@@ -190,5 +190,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "pusher-channels-sandbox",
+    "name": "Pusher Channels Sandbox",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "200,000 messages per day; 100 concurrent connections; standard support; hosted realtime pub/sub channels",
+    "watch_out": "A published message and its deliveries to subscribed clients each count toward the daily quota. Sandbox is intended for prototypes and small production apps; no Sandbox SLA. Official signup credit-card requirement not confirmed.",
+    "pricing_url": "https://pusher.com/channels/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-09"
   }
 ]
