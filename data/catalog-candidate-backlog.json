@@ -250,5 +250,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-10"
+  },
+  {
+    "id": "memcachier-developer",
+    "name": "MemCachier Developer",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "25 MB fully managed Memcached cache; 1 proxy server; 10 connections; basic analytics and 24/7 monitoring",
+    "watch_out": "Developer tier is aimed at development; high availability, alerting and unlimited connections require paid plans. Free-signup card requirement and commercial production rights are unconfirmed; unauthorized resale is prohibited.",
+    "pricing_url": "https://www.memcachier.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-10"
   }
 ]
