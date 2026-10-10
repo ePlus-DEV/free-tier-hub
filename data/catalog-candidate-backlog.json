@@ -192,6 +192,30 @@
     "last_checked": "2026-10-09"
   },
   {
+    "id": "pusher-channels-sandbox",
+    "name": "Pusher Channels Sandbox",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "200,000 messages per day; 100 concurrent connections; standard support; hosted realtime pub/sub channels",
+    "watch_out": "A published message and its deliveries to subscribed clients each count toward the daily quota. Sandbox is intended for prototypes and small production apps; no Sandbox SLA. Official signup credit-card requirement not confirmed.",
+    "pricing_url": "https://pusher.com/channels/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "courier-developer",
+    "name": "Courier Developer",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10,000 notification sends/month; Journeys and broadcasts; SDKs, CLI and MCP server; Google and GitHub SSO",
+    "watch_out": "Beyond the free monthly allowance, Business pricing is $0.005 per send; downstream email/SMS provider charges may apply. Credit-card requirement and explicit commercial-use terms for Developer not confirmed.",
+    "pricing_url": "https://www.courier.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
     "id": "mailjet-free",
     "name": "Mailjet Free",
     "category": "developer-tools",
@@ -212,6 +236,18 @@
     "watch_out": "A 15-day trial precedes the ongoing capped Free plan; paid Individual is $25/month plus usage. Free plan features, credit-card signup requirement, and commercial-use terms need confirmation.",
     "pricing_url": "https://arcjet.com/pricing",
     "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-10"
+  },
+  {
+    "id": "composio-hobby",
+    "name": "Composio Hobby",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "100,000 tool calls/month and 50,000 trigger events/month using your own OAuth app, API key or MCP; 3 team members; unlimited connected accounts; 1 million sandbox LLM tokens/month",
+    "watch_out": "Composio-managed apps have smaller included allowances (20,000 tool calls and 10,000 trigger events/month); third-party provider and Instant Tool charges may apply separately; Hobby pauses at its usage cap. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://composio.dev/pricing",
+    "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-10"
   }
