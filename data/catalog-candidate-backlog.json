@@ -274,5 +274,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-10"
+  },
+  {
+    "id": "cloudamqp-little-lemur",
+    "name": "CloudAMQP Little Lemur",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Shared RabbitMQ broker; 1,000,000 messages/month; 20 connections; up to 100 queues and 10,000 queued messages",
+    "watch_out": "Free plan is intended for development; maximum idle queue time is 28 days. Free instances without published or consumed messages for two months are deleted after warning. Commercial production suitability not independently confirmed.",
+    "pricing_url": "https://www.cloudamqp.com/plans/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-10"
   }
 ]
