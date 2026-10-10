@@ -262,5 +262,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-10"
+  },
+  {
+    "id": "beeceptor-free",
+    "name": "Beeceptor Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "50 requests/day per public endpoint; 3 mock rules; 10 small CRUD objects; dynamic and conditional responses; ephemeral local tunnel",
+    "watch_out": "Free endpoints are public, with no SLA. Unclaimed endpoints are automatically deleted (official pages differ between 7 and 30 days); claimed endpoints expire 90 days after creation. Do not send sensitive payloads.",
+    "pricing_url": "https://beeceptor.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-10"
   }
 ]
