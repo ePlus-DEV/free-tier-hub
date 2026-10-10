@@ -202,5 +202,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-10"
+  },
+  {
+    "id": "arcjet-free",
+    "name": "Arcjet Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "10,000 security requests/month after the 15-day trial; SDK-based web and agent runtime protection",
+    "watch_out": "A 15-day trial precedes the ongoing capped Free plan; paid Individual is $25/month plus usage. Free plan features, credit-card signup requirement, and commercial-use terms need confirmation.",
+    "pricing_url": "https://arcjet.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-10"
   }
 ]
