@@ -190,5 +190,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "mailjet-free",
+    "name": "Mailjet Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "6,000 emails/month; 200 emails/day; up to 1,000 contacts; API, SMTP relay and event webhooks",
+    "watch_out": "Free support is limited to the first month; daily cap applies and advanced features or removal of branding require a paid plan. Explicit commercial-use terms for Free are unconfirmed.",
+    "pricing_url": "https://www.mailjet.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-10"
   }
 ]
