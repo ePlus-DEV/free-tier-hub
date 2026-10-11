@@ -396,8 +396,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
             '<span class="eyebrow">' + tag(group) + '</span>'
             '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
-            '<p class="allowance">' + tag(item["free_limit"]) + '</p>'
-            '<p class="restriction">' + tag(item["watch_out"]) + '</p>'
+            '<div class="allowance-block"><span class="card-label">Free allowance</span>'
+            '<p class="allowance">' + tag(item["free_limit"]) + '</p></div>'
+            '<div class="restriction-block"><span class="card-label">Keep in mind</span>'
+            '<p class="restriction">' + tag(item["watch_out"]) + '</p></div>'
             '<div class="card-bottom"><span>Card: ' +
             tag(CARD_NAMES[item["credit_card"]]) + '</span>'
             '<a href="' + tag(dest) + '" aria-label="View ' + tag(item["name"]) +
@@ -438,10 +440,17 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         'billing caveats before you build. A practical reference for developers, '
         'created to make the free tier less confusing.</p>'
         '<div class="hero-actions"><a class="button primary" href="#explore" data-focus-search>'
-        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a></div>'
+        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a>'
+        '<a class="button secondary" href="' + tag(REPOSITORY + '/blob/main/CONTRIBUTING.md') + '">'
+        'Suggest a service ' + glyph("code") + '</a></div>'
         '<div class="hero-trust">' + glyph("check") +
         '<span>Independent listings · Official provider links · No referral ranking</span></div>'
-        '</div></section>'
+        '</div><aside class="stack-panel" aria-label="Browse popular categories">'
+        '<div class="stack-heading"><span class="heading-label">FROM IDEA TO DEPLOYMENT</span>'
+        '<h2>A free tier for every layer.</h2><p>Find the tools your next project needs.</p></div>'
+        + ''.join(category_link(category) for category in ('static-hosting', 'databases', 'ai-ml')) +
+        '<a class="stack-all" href="#explore" data-focus-search>Find your next tool ' + glyph('arrow') + '</a>'
+        '</aside></section>'
         '<div class="stats-strip" aria-label="Catalog statistics">'
         '<div class="stat"><strong>' + str(len(items)) + '</strong><span>Services</span></div>'
         '<div class="stat"><strong>' + str(len(CATEGORIES)) + '</strong><span>Categories</span></div>'
