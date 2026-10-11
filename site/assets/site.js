@@ -12,6 +12,27 @@
   } else {
     window.addEventListener("resize", syncHeaderHeight);
   }
+  var menuToggle = document.getElementById("menu-toggle");
+  if (menuToggle) {
+    doc.classList.add("nav-ready");
+    doc.setAttribute("data-menu-open", "false");
+    function setMenu(open) {
+      doc.setAttribute("data-menu-open", String(open));
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    }
+    menuToggle.addEventListener("click", function () {
+      setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+        setMenu(false); menuToggle.focus();
+      }
+    });
+    document.querySelectorAll(".primary-nav a").forEach(function (link) {
+      link.addEventListener("click", function () { setMenu(false); });
+    });
+  }
   var themeToggle = document.getElementById("theme-toggle");
   var storedTheme = null;
   try { storedTheme = window.localStorage.getItem("fth-theme"); } catch (_error) {}
@@ -159,6 +180,12 @@
     matched.forEach(function (card) { grid.appendChild(card); });
   }
   function render() {
+    document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
+      var mode = button.getAttribute("data-quick-filter");
+      var active = mode === "all" ? !noCard.checked && !commercial.checked
+        : mode === "no-card" ? noCard.checked : commercial.checked;
+      button.setAttribute("aria-pressed", String(active));
+    });
     var term = normalize(search.value);
     var matched = cards.filter(function (card) {
       var words = normalize(card.getAttribute("data-search"));
@@ -226,9 +253,9 @@
     function placeMobileControls() {
       if (mobileLayout.matches) {
         var firstCheckbox = advancedFilters.querySelector("label:has(input[type=checkbox])");
-        advancedFilters.insertBefore(categoryLabel, firstCheckbox);
+
         advancedFilters.insertBefore(sortLabel, firstCheckbox);
-        filterToggle.setAttribute("aria-label", "Open category, sort and filters");
+        filterToggle.setAttribute("aria-label", "Open sort and filters");
       } else {
         categoryMarker.parentNode.insertBefore(categoryLabel, categoryMarker.nextSibling);
         sortMarker.parentNode.insertBefore(sortLabel, sortMarker.nextSibling);
@@ -329,6 +356,15 @@
   if (sort) sort.addEventListener("change", function () { visible = pageSize; render(); });
   [noCard, commercial].forEach(function (filter) {
     if (filter) filter.addEventListener("change", function () { visible = pageSize; updateFilterCount(); render(); });
+  });
+  document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var mode = button.getAttribute("data-quick-filter");
+      if (mode === "all") { noCard.checked = false; commercial.checked = false; }
+      else if (mode === "no-card") noCard.checked = !noCard.checked;
+      else commercial.checked = !commercial.checked;
+      visible = pageSize; updateFilterCount(); render();
+    });
   });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {

@@ -329,10 +329,10 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<span class="brand-mark"><img src="' + tag(absolute("assets/icon.svg")) + '" width="42" height="42" alt="" aria-hidden="true"></span>'
             '<span class="brand-wordmark"><span>Free Tier <strong>Hub</strong></span>'
             '<small>by ePlus-DEV</small></span></a>'
-            '<nav class="primary-nav" aria-label="Main navigation">'
-            '<a href="' + tag(absolute()) + '">Directory</a>'
+            '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">'
+            '<a href="' + tag(absolute()) + '">Explore</a>'
             '<a href="' + tag(absolute("#explore")) + '">Categories</a>'
-            '<a href="' + tag(absolute("llms.txt")) + '">For agents</a></nav>'
+            '<a href="' + tag(REPOSITORY + '/blob/main/CONTRIBUTING.md') + '">Contribute</a></nav>'
             '<div class="header-actions">'
             '<button class="header-search-toggle" id="header-search-toggle" type="button" '
             'aria-label="Open search" aria-expanded="false" aria-controls="header-search-panel" '
@@ -341,7 +341,11 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             'aria-label="Switch to dark appearance" aria-pressed="false" title="Dark mode">'
             + glyph("moon") + '</button>'
             '<a class="github-button" href="' + tag(REPOSITORY) + '" '
-            'rel="noopener noreferrer">' + glyph("code") + 'GitHub</a></div>'
+            'rel="noopener noreferrer">' + glyph("code") + 'GitHub</a>'
+            '<button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" '
+            'aria-controls="primary-nav" aria-label="Open navigation">'
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">'
+            '<path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>'
             '</div><div class="header-search-panel" id="header-search-panel" hidden>'
             '<div class="container header-search-inner">'
             '<label class="sr-only" for="header-search">Search free tiers</label>'
@@ -392,16 +396,18 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '" data-commercial-use="' + tag(item["commercial_use"]) +
             '" data-search="' + tag(searchable) + '">'
             '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
-            service_logo(item, monogram) + '</span><span class="badge" data-plan="' +
-            tag(item["plan"]) + '">' + tag(PLAN_NAMES[item["plan"]]) + '</span></div>'
-            '<span class="eyebrow">' + tag(group) + '</span>'
+            service_logo(item, monogram) + '</span><div class="card-identity">'
             '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
+            '<span class="eyebrow">' + tag(group) + '</span></div>'
+            '<span class="badge" data-plan="' + tag(item["plan"]) + '">' +
+            tag('Free tier' if item['plan'] == 'ongoing' else PLAN_NAMES[item['plan']]) + '</span></div>'
             '<div class="allowance-block"><span class="card-label">Free allowance</span>'
             '<p class="allowance">' + tag(item["free_limit"]) + '</p></div>'
             '<div class="restriction-block"><span class="card-label">Keep in mind</span>'
             '<p class="restriction">' + tag(item["watch_out"]) + '</p></div>'
-            '<div class="card-bottom"><span>Card: ' +
-            tag(CARD_NAMES[item["credit_card"]]) + '</span>'
+            '<div class="card-bottom"><span>' +
+            (glyph('check') + ' No credit card' if item['credit_card'] == 'no' else
+             'Card: ' + tag(CARD_NAMES[item['credit_card']])) + '</span>'
             '<a href="' + tag(dest) + '" aria-label="View ' + tag(item["name"]) +
             ' details">View details ' + glyph("arrow") + '</a></div></article>'
         )
@@ -433,33 +439,19 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
     )
     home = (
         '<section class="hero"><div class="hero-copy">'
-        '<p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>'
-        'THE OPEN DEVELOPER DIRECTORY</p>'
-        '<h1>Discover developer-friendly free tiers.</h1>'
-        '<p>Find useful tools, compare their real free allowances, and understand '
-        'billing caveats before you build. A practical reference for developers, '
-        'created to make the free tier less confusing.</p>'
-        '<div class="hero-actions"><a class="button primary" href="#explore" data-focus-search>'
-        'Explore ' + str(len(items)) + ' services ' + glyph("arrow") + '</a>'
-        '<a class="button secondary" href="' + tag(REPOSITORY + '/blob/main/CONTRIBUTING.md') + '">'
-        'Suggest a service ' + glyph("code") + '</a></div>'
-        '<div class="hero-trust">' + glyph("check") +
-        '<span>Independent listings · Official provider links · No referral ranking</span></div>'
-        '</div><aside class="stack-panel" aria-label="Browse popular categories">'
-        '<div class="stack-heading"><span class="heading-label">FROM IDEA TO DEPLOYMENT</span>'
-        '<h2>A free tier for every layer.</h2><p>Find the tools your next project needs.</p></div>'
-        + ''.join(category_link(category) for category in ('static-hosting', 'databases', 'ai-ml')) +
-        '<a class="stack-all" href="#explore" data-focus-search>Find your next tool ' + glyph('arrow') + '</a>'
-        '</aside></section>'
-        '<div class="stats-strip" aria-label="Catalog statistics">'
-        '<div class="stat"><strong>' + str(len(items)) + '</strong><span>Services</span></div>'
-        '<div class="stat"><strong>' + str(len(CATEGORIES)) + '</strong><span>Categories</span></div>'
-        '<div class="stat"><strong>' + tag(latest) + '</strong><span>Latest provider check</span></div></div>'
+        '<h1>Build more. Spend less.</h1>'
+        '<p>Discover free tools for your next project.</p>'
+        '<label class="hero-search" for="search"><span class="sr-only">Search free tiers</span>'
+        + glyph("search") + '<input id="search" type="search" autocomplete="off" '
+        'placeholder="Search hosting, databases, AI tools..." aria-controls="service-grid">'
+        '<kbd aria-hidden="true">/</kbd></label>'
+        '<p class="hero-meta">' + str(len(items)) + ' services · ' + str(len(CATEGORIES)) +
+        ' categories · Community maintained</p></div></section>'
         '<section id="explore" class="section catalog-section">'
         '<div class="section-heading"><div>'
-        '<span class="heading-label">THE SERVICE DIRECTORY</span>'
-        '<h2>Explore free developer tools</h2>'
-        '<p>Browse by category, compare allowances and check billing terms.</p>'
+        ''
+        '<h2>Explore services</h2>'
+        '<p>Compare free allowances, restrictions and official pricing.</p>'
         '</div></div><div class="catalog-layout"><aside class="catalog-sidebar">'
         '<div class="sidebar-title"><span>Categories</span>' +
         glyph("grid") + '</div><div class="sidebar-categories">'
@@ -472,11 +464,11 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
         '">Read the guide ↗</a></div></aside>'
         '<div class="catalog-main"><div class="filters">'
-        '<label class="search-field" for="search">Search tools'
-        '<span class="input-wrap">' + glyph("search") +
-        '<input id="search" type="search" autocomplete="off" '
-        'placeholder="Search services, quotas, features..." aria-controls="service-grid">'
-        '<span class="search-shortcut" aria-hidden="true">/</span></span></label>'
+        '<div class="quick-filters" aria-label="Quick billing filters">'
+        '<button type="button" data-quick-filter="all" aria-pressed="true">All services</button>'
+        '<button type="button" data-quick-filter="no-card" aria-pressed="false">No credit card</button>'
+        '<button type="button" data-quick-filter="commercial" aria-pressed="false">Commercial use</button>'
+        '</div>'
         '<label class="mobile-category" for="category-filter">Category'
         '<select id="category-filter"><option value="">All categories</option>' +
         options + '</select></label>'
