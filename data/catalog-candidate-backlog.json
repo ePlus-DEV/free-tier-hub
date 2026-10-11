@@ -286,5 +286,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-10"
+  },
+  {
+    "id": "redis-cloud-free",
+    "name": "Redis Cloud Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One free Redis Cloud database per account; 30 MB memory; 30 concurrent connections; 5 GB monthly network bandwidth; up to 100 operations/second (1 KiB requests)",
+    "watch_out": "Free Essentials is intended for learning and prototypes; shared deployment, best-effort SLA and community support. Network and throughput quotas apply; commercial production rights are not explicitly confirmed.",
+    "pricing_url": "https://redis.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-11"
   }
 ]
