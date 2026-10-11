@@ -36,6 +36,17 @@ CATEGORY_NAMES = {
     "tunneling-networking": "Tunneling & networking",
     "webhooks-events": "Webhooks & event delivery",
 }
+# Compact labels are presentation only; canonical category names stay unchanged.
+CATEGORY_LABELS = {
+    "static-hosting": "Static hosting", "app-hosting": "App hosting",
+    "serverless": "Serverless", "cloud-vps": "Cloud & VPS",
+    "databases": "Databases", "storage": "Storage",
+    "developer-tools": "Developer tools", "auth-security": "Authentication",
+    "observability": "Monitoring", "analytics": "Analytics", "dns-cdn": "DNS & CDN",
+    "ai-ml": "AI & ML", "queues-jobs": "Queues & workflows", "search": "Search",
+    "feature-flags": "Feature flags", "tunneling-networking": "Networking",
+    "webhooks-events": "Webhooks & events",
+}
 PLAN_NAMES = {
     "ongoing": "Ongoing free allowance",
     "monthly-credit": "Monthly credit",
@@ -398,12 +409,12 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
             '<div class="card-top"><span class="service-icon" aria-hidden="true">' +
             service_logo(item, monogram) + '</span><div class="card-identity">'
             '<h3><a href="' + tag(dest) + '">' + tag(item["name"]) + '</a></h3>'
-            '<span class="eyebrow">' + tag(group) + '</span></div>'
+            '<span class="eyebrow">' + tag(CATEGORY_LABELS[item['category']]) + '</span></div>'
             '<span class="badge" data-plan="' + tag(item["plan"]) + '">' +
             tag('Free tier' if item['plan'] == 'ongoing' else PLAN_NAMES[item['plan']]) + '</span></div>'
-            '<div class="allowance-block"><span class="card-label">Free allowance</span>'
+            '<div class="allowance-block">'
             '<p class="allowance">' + tag(item["free_limit"]) + '</p></div>'
-            '<div class="restriction-block"><span class="card-label">Keep in mind</span>'
+            '<div class="restriction-block">'
             '<p class="restriction">' + tag(item["watch_out"]) + '</p></div>'
             '<div class="card-bottom"><span>' +
             (glyph('check') + ' No credit card' if item['credit_card'] == 'no' else
@@ -433,7 +444,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
     sidebar = "".join(
         '<button type="button" class="sidebar-category" data-filter-category="' +
         tag(category) + '" aria-pressed="false">' + glyph(CATEGORY_ICONS[category]) +
-        '<span class="sidebar-label">' + tag(CATEGORY_NAMES[category]) + '</span>'
+        '<span class="sidebar-label">' + tag(CATEGORY_LABELS[category]) + '</span>'
         '<span class="sidebar-count">' + str(counts[category]) + '</span></button>'
         for category in CATEGORIES
     )
@@ -448,11 +459,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<p class="hero-meta">' + str(len(items)) + ' services · ' + str(len(CATEGORIES)) +
         ' categories · Community maintained</p></div></section>'
         '<section id="explore" class="section catalog-section">'
-        '<div class="section-heading"><div>'
-        ''
-        '<h2>Explore services</h2>'
-        '<p>Compare free allowances, restrictions and official pricing.</p>'
-        '</div></div><div class="catalog-layout"><aside class="catalog-sidebar">'
+        '<div class="catalog-layout"><aside class="catalog-sidebar">'
         '<div class="sidebar-title"><span>Categories</span>' +
         glyph("grid") + '</div><div class="sidebar-categories">'
         '<button type="button" class="sidebar-category" data-filter-category="" '
@@ -463,7 +470,14 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         'Read the cost-safety guide.</p>'
         '<a href="' + tag(REPOSITORY + "/blob/main/docs/cost-safety.md") +
         '">Read the guide ↗</a></div></aside>'
-        '<div class="catalog-main"><div class="filters">'
+        '<div class="catalog-main"><div class="directory-heading">'
+        '<h2>Explore services</h2>'
+        '<div class="results-meta">'
+        '<p class="result-count" id="results-count" aria-live="polite">Showing ' +
+        str(len(items)) + ' services</p>'
+        '<button id="clear-filters" class="clear-filters" type="button" hidden>'
+        'Clear filters</button></div>'
+        '</div><div class="filters">'
         '<div class="quick-filters" aria-label="Quick billing filters">'
         '<button type="button" data-quick-filter="all" aria-pressed="true">All services</button>'
         '<button type="button" data-quick-filter="no-card" aria-pressed="false">No credit card</button>'
@@ -472,7 +486,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<label class="mobile-category" for="category-filter">Category'
         '<select id="category-filter"><option value="">All categories</option>' +
         options + '</select></label>'
-        '<label class="sort-field" for="sort">Sort by<select id="sort">'
+        '<label class="sort-field" for="sort"><span class="sr-only">Sort by</span><select id="sort">'
         '<option value="default">Catalog order</option>'
         '<option value="newest">Newest added</option>'
         '<option value="oldest">Oldest added</option>'
@@ -487,11 +501,7 @@ def build(output_dir, site_url=DEFAULT_URL, catalog_path=None):
         '<label><input id="filter-no-card" type="checkbox"><span class="filter-option-copy"><strong>No credit card</strong><small>Start without adding a payment card</small></span></label>'
         '<label><input id="filter-commercial" type="checkbox"><span class="filter-option-copy"><strong>Commercial use</strong><small>Permitted for commercial projects</small></span></label>'
         '</div></div>'
-        '</div><div class="results-meta">'
-        '<p class="result-count" id="results-count" aria-live="polite">Showing ' +
-        str(len(items)) + ' services</p>'
-        '<button id="clear-filters" class="clear-filters" type="button" hidden>'
-        'Clear filters</button></div>'
+        '</div>'
         '<div class="service-grid" id="service-grid">' + cards + '</div>'
         '<div class="load-more-wrap" id="load-more-wrap" hidden>'
         '<button class="load-more" type="button" id="load-more">Show more services</button>'
