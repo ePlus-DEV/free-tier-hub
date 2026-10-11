@@ -203,9 +203,7 @@
       if (index >= visible) card.setAttribute("data-paged-hidden", "true");
     });
     var shown = Math.min(matched.length, visible);
-    count.innerHTML = "<strong>" + matched.length +
-      "</strong> " + labelText(matched.length) +
-      " found <span class=\"count-muted\">· Showing " + shown + "</span>";
+    count.textContent = "Showing " + shown + " of " + matched.length + " " + labelText(matched.length);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
@@ -240,8 +238,8 @@
     if (headerSearch) headerSearch.value = heroSearch.value;
     visible = pageSize; render();
   });
-  // Move existing controls into the mobile popover; preserve their nodes and listeners.
-  // Desktop keeps the original toolbar layout without duplicate category/sort inputs.
+  // Keep category selection in the toolbar and move sorting beside the mobile heading.
+  // Reuse the same controls so values and listeners survive viewport changes.
   if (advancedFilters && mobileCategory && sort && window.matchMedia) {
     var categoryLabel = mobileCategory.closest("label");
     var sortLabel = sort.closest("label");
@@ -252,10 +250,8 @@
     var mobileLayout = window.matchMedia("(max-width: 680px)");
     function placeMobileControls() {
       if (mobileLayout.matches) {
-        var firstCheckbox = advancedFilters.querySelector("label:has(input[type=checkbox])");
-
-        advancedFilters.insertBefore(sortLabel, firstCheckbox);
-        filterToggle.setAttribute("aria-label", "Open sort and filters");
+        document.querySelector(".directory-heading").appendChild(sortLabel);
+        filterToggle.setAttribute("aria-label", "Open billing filters");
       } else {
         categoryMarker.parentNode.insertBefore(categoryLabel, categoryMarker.nextSibling);
         sortMarker.parentNode.insertBefore(sortLabel, sortMarker.nextSibling);
