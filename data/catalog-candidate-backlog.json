@@ -298,5 +298,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-11"
+  },
+  {
+    "id": "expo-push-service-free",
+    "name": "Expo Push Service Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free push notification delivery through Expo to FCM and APNs; 600 notifications/second per project; 100 notifications per API request",
+    "watch_out": "Requires valid Expo push tokens and platform push credentials; no delivery SLA or guarantee of receipt on the device; Expo Go on Android requires a development build for remote push notifications. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://docs.expo.dev/push-notifications/faq/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-11"
   }
 ]
