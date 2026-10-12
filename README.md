@@ -213,7 +213,7 @@ We **separate** ongoing free allowances, monthly credits, time-limited offers an
 
 ## Contributing
 
-Found a new free tier or an outdated quota? Read [CONTRIBUTING.md](CONTRIBUTING.md) and submit a PR with an official pricing/documentation URL and the date verified. Please avoid referral links, scraped pricing and unverified claims.
+Found a new free tier or an outdated quota? [Suggest it without writing code](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml), or [follow the contribution guide](CONTRIBUTING.md) to open a fork-based PR. Include an official pricing/documentation URL and the date verified; avoid referral links and unverified claims.
 
 Maintained by [ePlus-DEV](https://github.com/ePlus-DEV). Community contributions welcome.
 
