@@ -181,7 +181,13 @@ class SiteTests(unittest.TestCase):
         self.assertIn('class="service-monogram" hidden', html)
         self.assertIn("simple-icons@v15/icons/vercel.svg", detail)
         self.assertIn("this.nextElementSibling.hidden=false", detail)
-        self.assertEqual(set(build_site.SERVICE_LOGOS), {item["id"] for item in self.data})
+        # Curated icons are optional: new JSON-only catalog entries get a safe initials fallback.
+        catalog_ids = {item["id"] for item in self.data}
+        self.assertTrue(set(build_site.SERVICE_LOGOS).issubset(catalog_ids))
+        fallback = build_site.service_logo({"id": "new-unmapped-service"}, "NU")
+        self.assertIn('class="service-monogram"', fallback)
+        self.assertIn(">NU</span>", fallback)
+        self.assertNotIn("<img", fallback)
 
     def test_back_to_top_is_on_every_page_and_respects_motion_preference(self):
         for page in self.output.rglob("*.html"):
