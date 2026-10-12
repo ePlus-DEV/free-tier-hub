@@ -25,9 +25,10 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v7
         with:
-          python-version: '3.12'
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
       - name: Rebuild each catalog PR on latest main
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,40 +49,30 @@ jobs:
             git fetch origin main "$branch"
             old_head="$(git rev-parse "origin/$branch")"
             git switch -C "reconcile-$number" origin/main
-            if ! SERVICE_ID="$id" OLD_BRANCH="origin/$branch" python3 - <<'PY'
-          import json, os, pathlib, re, subprocess
-          sid = os.environ["SERVICE_ID"]
-          old = json.loads(subprocess.check_output(["git", "show", os.environ["OLD_BRANCH"] + ":data/services.json"]))
-          matches = [item for item in old if item["id"] == sid]
-          if len(matches) != 1:
-              raise SystemExit("Expected exactly one matching service")
-          path = pathlib.Path("data/services.json")
-          current = json.loads(path.read_text())
-          if any(item["id"] == sid for item in current):
-              raise SystemExit("Service already on main; skip rather than duplicate")
-          current.append(matches[0])
-          path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + "\n")
-          path = pathlib.Path("scripts/build_site.py")
-          source = path.read_text()
-          if not re.search(r'^\s*["\x27]' + re.escape(sid) + r'["\x27]\s*:', source, re.M):
-              marker = "SERVICE_LOGOS = {"
-              pos = source.find(marker)
-              if pos < 0: raise SystemExit("SERVICE_LOGOS mapping not found")
-              pos = source.find("\n", pos) + 1
-              path.write_text(source[:pos] + '    "' + sid + '": None,\n' + source[pos:])
-          PY
+            if ! SERVICE_ID="$id" OLD_BRANCH="origin/$branch" node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { validateData } from './scripts/catalog.mjs';
+          const id = process.env.SERVICE_ID;
+          const previous = JSON.parse(execFileSync('git', ['show', process.env.OLD_BRANCH + ':data/services.json'], {encoding: 'utf8'}));
+          const matches = previous.filter(item => item.id === id);
+          if (matches.length !== 1) throw Error('Expected exactly one matching service');
+          const path = 'data/services.json';
+          const current = JSON.parse(fs.readFileSync(path, 'utf8'));
+          if (current.some(item => item.id === id)) throw Error('Service already on main; skip rather than duplicate');
+          validateData([...current, matches[0]]);
+          fs.writeFileSync(path, JSON.stringify([...current, matches[0]], null, 2) + '\n');
+          NODE
             then
               echo "::error::PR #$number: cannot safely extract candidate"
               failed=$((failed + 1))
               echo "::endgroup::"
               continue
             fi
-            python3 scripts/sync_catalog.py
-            python3 scripts/sync_catalog.py --check
-            python3 -m unittest discover -s tests -v
-            python3 scripts/validate_catalog.py
+            npm run catalog:sync
+            npm run verify
             git diff --check
-            git add data/services.json scripts/build_site.py README.md docs/
+            git add data/services.json README.md docs/
             if git diff --cached --quiet; then
               echo "::notice::No changes for PR #$number"
               echo "::endgroup::"
