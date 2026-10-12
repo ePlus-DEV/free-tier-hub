@@ -18,7 +18,7 @@ This project uses **GitHub Actions** to deploy, with `https://free-tier.eplus.de
 2. **Custom domain:** `free-tier.eplus.dev` (no scheme or trailing slash); save the setting.
 3. At the DNS provider, create a CNAME record for the `free-tier` subdomain pointing to `eplus-dev.github.io` (**DNS hostname only**, without `https://` or `/free-tier-hub/`). Check DNS propagation and enable **Enforce HTTPS** when available.
 
-For GitHub Actions deployments, GitHub stores the custom domain in Pages settings; adding a repository `CNAME` file does **not** configure it. The domain and certificate must be correctly configured in Pages and DNS; building canonical links alone cannot change the live hostname. The Pages workflow's `SITE_URL` setting is pinned to this domain, so any old repository-level `SITE_URL` Actions variable is ignored. If you intentionally move the site again, update both `DEFAULT_URL` in `scripts/build_site.py` and the workflow, then rerun the tests and rebuild.
+For GitHub Actions deployments, GitHub stores the custom domain in Pages settings; adding a repository `CNAME` file does **not** configure it. The domain and certificate must be correctly configured in Pages and DNS; building canonical links alone cannot change the live hostname. The Pages workflow's `SITE_URL` setting is pinned to this domain, so any old repository-level `SITE_URL` Actions variable is ignored. If you intentionally move the site again, update both `DEFAULT_URL` in `scripts/build-site.mjs` and the workflow, then rerun the tests and rebuild.
 
 Contributor catalog verification requires only Node.js 24 LTS (no npm dependencies):
 
@@ -27,19 +27,25 @@ npm run catalog:sync
 npm run verify
 ```
 
-Maintainer website build verification still uses Python 3.12 (no third-party runtime dependencies):
+Maintainer website build and contributor verification use **Node.js 24 LTS only** (no external npm packages):
 
 ```bash
-python3 -m unittest discover -s tests -v
-python3 scripts/validate_catalog.py
-python3 scripts/build_site.py --site-url https://free-tier.eplus.dev/ --output dist
+npm run verify
+npm run build
+npm run markdown:check
+```
+
+To build for a different canonical domain or base path, run:
+
+```bash
+node scripts/build-site.mjs --site-url https://example.com/free-tier/ --output dist
 ```
 
 ## Catalog data and maintenance
 
 - Source: [`data/services.json`](../data/services.json).
 - [Node.js contributor CLI](../scripts/catalog.mjs) updates README category counts and detailed category tables (`npm run catalog:sync`).
-- `npm run verify` checks service fields and generated documents before submission. The existing [Python validator](../scripts/validate_catalog.py) remains part of internal website regression tests.
+- `npm run verify` checks service fields and generated documents before submission. The [Node Markdown validator](../scripts/check-markdown.mjs) verifies table structures, local links, service rows, README counts and catalog consistency alongside the [Node site builder](../scripts/build-site.mjs).
 - [Catalog validation workflow](../.github/workflows/validate-catalog.yml) runs tests and consistency checks.
 - [Submit an update](https://github.com/ePlus-DEV/free-tier-hub/issues/new/choose) using official evidence and dated verification.
 
