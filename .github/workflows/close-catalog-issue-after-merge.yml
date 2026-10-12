@@ -5,7 +5,9 @@ name: Close catalog issue after merge
 # Do not check out or execute code from the contributor's fork here.
 on:
   pull_request_target:
-    types: [closed]
+    # Also handle a post-merge edit as a safe, idempotent way to retry a thank-you.
+    # No pull-request code is checked out or executed in this workflow.
+    types: [closed, edited]
   workflow_dispatch:
     inputs:
       pr_number:
