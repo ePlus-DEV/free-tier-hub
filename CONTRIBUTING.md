@@ -34,6 +34,8 @@ Use this route if you want to edit the catalog yourself. Install **Node.js 24 LT
 
 **Why generated Markdown is included:** README category counts and the category-page tables are derived from `data/services.json`. The current PR CI runs `npm run verify`, so a JSON-only PR without synchronized category tables and README counts **will fail** until those files are generated. Maintainers may help with synchronization if you cannot run Node.js; do not manually copy rows.
 
+**Provider data verification:** `npm run verify` checks JSON and Markdown consistency; it does **not** check live pricing, quotas or official terms. See [the source audit guide](docs/source-audit.md) for the read-only URL health report and required manual verification before changing `last_checked`.
+
 **Fork and review notes:**
 - CI validates external PRs but **does not push changes back to contributor forks**. For first-time contributions, GitHub may require a maintainer to approve the workflow run; that is not automatically a rejection.
 - `eplus-bot` can review/approve when checks succeed, but **external contributions are not automatically merged**. Maintainers still review official pricing and restrictions.
