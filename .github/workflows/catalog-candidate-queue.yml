@@ -34,14 +34,15 @@ jobs:
         run: |
           set -euo pipefail
           gh issue view "$ISSUE_NUMBER" --json title,body,authorAssociation > /tmp/issue.json
-          python3 - <<'PY'
-          import json, os
-          d=json.load(open("/tmp/issue.json"))
-          if not d["title"].startswith("[catalog-candidate] "): raise SystemExit("Not a catalog candidate issue")
-          if d["authorAssociation"] not in {"OWNER","MEMBER","COLLABORATOR"}: raise SystemExit("Untrusted submitter")
-          with open(os.environ["GITHUB_OUTPUT"],"a") as o:
-              o.write("body<<EOF\n"+d["body"]+"\nEOF\n")
-          PY
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const issue = JSON.parse(fs.readFileSync('/tmp/issue.json', 'utf8'));
+          if (!issue.title.startsWith('[catalog-candidate] ')) throw Error('Not a catalog candidate issue');
+          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.authorAssociation)) throw Error('Untrusted submitter');
+          const delimiter = 'BODY_' + crypto.randomUUID();
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, 'body<<' + delimiter + '\n' + issue.body + '\n' + delimiter + '\n');
+          NODE
 
       - name: Trust gate
         if: github.event_name == 'issues'
@@ -56,9 +57,10 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v7
         with:
-          python-version: '3.12'
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
 
       - name: Parse candidate
         id: candidate
@@ -67,51 +69,40 @@ jobs:
         run: |
           set -euo pipefail
           printf '%s' "$ISSUE_BODY" > /tmp/candidate.json
-          python3 - <<'PY'
-          import json, os, re
-          d=json.load(open("/tmp/candidate.json"))
-          required={"id","name","category","plan","free_limit","watch_out","pricing_url","credit_card","commercial_use","last_checked"}
-          if set(d) != required:
-              raise SystemExit("Candidate must contain exactly the catalog schema fields")
-          sid=d["id"]
-          if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",sid): raise SystemExit("Invalid id")
-          if not d["pricing_url"].startswith("https://"): raise SystemExit("pricing_url must be HTTPS")
-          if d["credit_card"] not in {"yes","no","check"}: raise SystemExit("Invalid credit_card")
-          if d["commercial_use"] not in {"yes","no","check"}: raise SystemExit("Invalid commercial_use")
-          with open(os.environ["GITHUB_OUTPUT"],"a") as o:
-              o.write(f"id={sid}\nbranch=catalog/add-{sid}\n")
-          PY
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateData } from './scripts/catalog.mjs';
+          const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
+          const fields = ['id', 'name', 'category', 'plan', 'free_limit', 'watch_out',
+            'pricing_url', 'credit_card', 'commercial_use', 'last_checked'];
+          if (Object.keys(candidate).sort().join() !== fields.sort().join()) {
+            throw Error('Candidate must contain exactly the catalog schema fields');
+          }
+          const services = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
+          validateData([...services, candidate]);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            'id=' + candidate.id + '\nbranch=catalog/add-' + candidate.id + '\n');
+          NODE
 
       - name: Update source data
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          import json, pathlib, re
-          c=json.load(open("/tmp/candidate.json"))
-          p=pathlib.Path("data/services.json")
-          services=json.loads(p.read_text())
-          if any(x.get("id")==c["id"] for x in services):
-              raise SystemExit("Duplicate service id: "+c["id"])
-          services.append(c)
-          p.write_text(json.dumps(services,ensure_ascii=False,indent=2)+"\n")
-          b=pathlib.Path("scripts/build_site.py")
-          s=b.read_text()
-          sid=c["id"]
-          if not re.search(rf'^[ \\t]*["\\x27]{re.escape(sid)}["\\x27][ \\t]*:',s,re.M):
-              marker="SERVICE_LOGOS = {"
-              i=s.find(marker)
-              if i < 0: raise SystemExit("SERVICE_LOGOS mapping not found")
-              pos=s.find("\n",i)+1
-              b.write_text(s[:pos]+f'    "{sid}": None,\n'+s[pos:])
-          PY
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateData } from './scripts/catalog.mjs';
+          const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
+          const catalog = 'data/services.json';
+          const services = JSON.parse(fs.readFileSync(catalog, 'utf8'));
+          validateData([...services, candidate]);
+          // Site builder supports safe initials fallback for newly catalogued IDs.
+          fs.writeFileSync(catalog, JSON.stringify([...services, candidate], null, 2) + '\n');
+          NODE
 
       - name: Generate and validate
         run: |
           set -euo pipefail
-          python3 scripts/sync_catalog.py
-          python3 scripts/sync_catalog.py --check
-          python3 -m unittest discover -s tests -v
-          python3 scripts/validate_catalog.py
+          npm run catalog:sync
+          npm run verify
           git diff --check
 
       - name: Prepare canonical branch
@@ -142,7 +133,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/services.json scripts/build_site.py README.md docs/
+          git add data/services.json README.md docs/
           git commit -m "catalog: add $SERVICE_ID"
           # --force-with-lease is only used for a verified Ahead=0 stale canonical branch.
           if [ "${{ steps.branch.outputs.mode }}" = "reused-empty" ]; then
