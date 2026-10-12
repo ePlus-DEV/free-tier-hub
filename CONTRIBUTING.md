@@ -15,7 +15,7 @@ There are **two ways to contribute**. You do not need to know Git, Node.js, or J
 
 ## Option B: Contribute directly using a fork and pull request
 
-Use this route if you want to edit the catalog yourself. Install **Node.js 20+** (npm is included). This contributor CLI has **zero external npm dependencies**: you do not need `npm install`.
+Use this route if you want to edit the catalog yourself. Install **Node.js 24 LTS** (npm is included). This contributor CLI has **zero external npm dependencies**: you do not need `npm install`.
 
 1. [Fork this repository](https://github.com/ePlus-DEV/free-tier-hub/fork) and clone **your fork**. Create a feature branch from its latest `main`, such as `catalog/add-example-free`.
 2. In **`data/services.json`**, add or update one entry, using the [fields](#catalog-fields) below and the provider's current official source. Check whether the entry already exists, even under a slightly different name. Use the actual verification date in `last_checked`.
