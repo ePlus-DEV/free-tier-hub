@@ -6,7 +6,6 @@ on:
       - 'catalog/**'
     paths:
       - 'data/services.json'
-      - 'scripts/build_site.py'
   workflow_dispatch:
     inputs:
       branch:
