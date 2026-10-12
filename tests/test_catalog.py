@@ -31,7 +31,8 @@ class MarkdownTests(unittest.TestCase):
         self.assertEqual(check_markdown.validate_documents(ROOT, self.data, self.readme, self.pages), [])
 
     def test_blank_line_splits_readme_table(self):
-        damaged = self.readme.replace("\n| [Neon Free Postgres]", "\n\n| [Neon Free Postgres]", 1)
+        damaged = self.readme.replace("\n| Static & frontend hosting", "\n\n| Static & frontend hosting", 1)
+        self.assertNotEqual(damaged, self.readme)
         _, errors = check_markdown.scan_tables(damaged, "README.md")
         self.assertTrue(any("orphan" in e for e in errors), errors)
 
@@ -77,10 +78,12 @@ class MarkdownTests(unittest.TestCase):
         errors = check_markdown.validate_documents(ROOT, self.data, bad, self.pages)
         self.assertTrue(any("navigation" in e for e in errors), errors)
 
-    def test_mismatched_readme_service(self):
-        bad = self.readme.replace("100 GB Fast Data Transfer", "999 GB Fast Data Transfer", 1)
-        errors = check_markdown.validate_documents(ROOT, self.data, bad, self.pages)
-        self.assertTrue(any("README.md: service row" in e for e in errors), errors)
+    def test_readme_does_not_duplicate_service_rows(self):
+        self.assertNotIn("| Service | Type | Free allowance | Critical restriction |", self.readme)
+        self.assertNotIn("100 GB Fast Data Transfer", self.readme)
+        duplicated = self.readme + "\n| Service | Type |\n| --- | --- |\n| Example | Ongoing |\n"
+        errors = check_markdown.validate_documents(ROOT, self.data, duplicated, self.pages)
+        self.assertTrue(any("exactly one category navigation table" in e for e in errors), errors)
 
     def test_mismatched_category_page(self):
         pages = dict(self.pages)
