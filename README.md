@@ -1,7 +1,7 @@
 # Free Tier Hub 🚀
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless and developer services.
 
-![Catalog](https://img.shields.io/badge/services-119-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-120-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Developer directory](https://free-tier.eplus.dev/#explore)
 
@@ -12,7 +12,7 @@
 | Category | Services | Browse |
 | --- | ---: | --- |
 | Static & frontend hosting | 9 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 10 | [Browse](docs/app-hosting.md) |
+| Backend & app hosting | 11 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 20 | [Browse](docs/databases.md) |
@@ -154,6 +154,7 @@
 | [Botkeep Free](https://botkeep.cloud/) | Ongoing free allowance | 2 workload slots sharing 1 GB RAM, 1 vCore and 1 GB storage; 1 backup per workload with 7-day retention; no scheduled idle sleep or periodic renewal | Beta hosting without uptime SLA; capacity and fair-use rules apply. Resources shared across workloads; independent backups recommended. Founder Free (5 slots, 2 GB RAM, 1.5 vCore, 2 GB storage) requires signup by 15 Oct 2026 17:00 CEST; not the standard plan. Commercial-use terms not independently confirmed. |
 | [Hanko Cloud Starter Free](https://www.hanko.io/pricing) | Ongoing free allowance | 10,000 monthly active users; 2 projects; passkeys, passwords/passwordless, social SSO, MFA, custom domain | Hosted in AWS Frankfurt; webhooks, Admin API, custom SMTP and team invites require Pro; repeated overage prompts upgrade. Commercial-use terms for cloud Free not independently confirmed. |
 | [SuprSend Free](https://www.suprsend.com/pricing) | Ongoing free allowance | 10,000 notifications/month; unlimited notification channels and team members; in-app feed, workflow branching, lists and broadcasts | 30-day premium-feature trial transitions to ongoing Free; SuprSend branding on in-app feed; multi-channel delivery counts each user/channel separately; email/SMS providers may charge separately; free over-limit sends may continue pending contact from SuprSend; explicit commercial-use terms not confirmed. |
+| [Cloady Free](https://cloady.com/docs/hosting#understand-free-and-paid-capacity) | Ongoing free allowance | 0.5 vCPU, 1 GB RAM and 5 GB persistent SSD shared by apps in a workspace; 200 GB traffic | Public beta with no guaranteed service level; free-region eligibility applies. Exceeding any free resource threshold makes the full workspace capacity billable, not just the excess. Optional managed backups cost extra; commercial-use and idle-expiry terms should be confirmed. |
 ## How to choose
 
 - **Personal frontend:** see [static & frontend hosting](docs/static-hosting.md); pay attention to commercial-use rules and build quotas.
