@@ -20,7 +20,14 @@ This project uses **GitHub Actions** to deploy, with `https://free-tier.eplus.de
 
 For GitHub Actions deployments, GitHub stores the custom domain in Pages settings; adding a repository `CNAME` file does **not** configure it. The domain and certificate must be correctly configured in Pages and DNS; building canonical links alone cannot change the live hostname. The Pages workflow's `SITE_URL` setting is pinned to this domain, so any old repository-level `SITE_URL` Actions variable is ignored. If you intentionally move the site again, update both `DEFAULT_URL` in `scripts/build_site.py` and the workflow, then rerun the tests and rebuild.
 
-Local verification (Python 3.12, no third-party runtime dependencies):
+Contributor catalog verification requires only Node.js 20+ (no npm dependencies):
+
+```bash
+npm run catalog:sync
+npm run verify
+```
+
+Maintainer website build verification still uses Python 3.12 (no third-party runtime dependencies):
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -31,8 +38,8 @@ python3 scripts/build_site.py --site-url https://free-tier.eplus.dev/ --output d
 ## Catalog data and maintenance
 
 - Source: [`data/services.json`](../data/services.json).
-- [Catalog generator](../scripts/sync_catalog.py) updates README category counts and detailed category tables.
-- [Catalog validator](../scripts/validate_catalog.py) checks fields, references, and generated category pages.
+- [Node.js contributor CLI](../scripts/catalog.mjs) updates README category counts and detailed category tables (`npm run catalog:sync`).
+- `npm run verify` checks service fields and generated documents before submission. The existing [Python validator](../scripts/validate_catalog.py) remains part of internal website regression tests.
 - [Catalog validation workflow](../.github/workflows/validate-catalog.yml) runs tests and consistency checks.
 - [Submit an update](https://github.com/ePlus-DEV/free-tier-hub/issues/new/choose) using official evidence and dated verification.
 
