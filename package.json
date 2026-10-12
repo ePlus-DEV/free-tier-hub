@@ -2,7 +2,7 @@
   "name": "free-tier-hub",
   "private": true,
   "version": "0.0.0",
-  "description": "Contributor tooling for the Free Tier Hub JSON catalog",
+  "description": "Node.js 24 tooling for Free Tier Hub catalog validation and static-site generation",
   "type": "module",
   "engines": {
     "node": ">=24 <25"
@@ -11,10 +11,12 @@
     "catalog:sync": "node scripts/catalog.mjs sync",
     "catalog:check": "node scripts/catalog.mjs check",
     "catalog:validate": "node scripts/catalog.mjs validate",
-    "test": "node --test scripts/catalog.test.mjs scripts/backlog.test.mjs scripts/prepare-preview.test.mjs",
-    "verify": "npm run test && npm run catalog:check",
+    "test": "node --test scripts/catalog.test.mjs scripts/backlog.test.mjs scripts/prepare-preview.test.mjs scripts/audit-sources.test.mjs scripts/build-site.test.mjs scripts/check-markdown.test.mjs",
+    "verify": "npm run test && npm run catalog:check && npm run markdown:check",
     "audit:sources": "node scripts/audit-sources.mjs",
     "audit:offline": "node scripts/audit-sources.mjs --offline",
-    "catalog:backlog": "node scripts/backlog.mjs"
+    "catalog:backlog": "node scripts/backlog.mjs",
+    "markdown:check": "node scripts/check-markdown.mjs",
+    "build": "node scripts/build-site.mjs --output dist"
   }
 }
