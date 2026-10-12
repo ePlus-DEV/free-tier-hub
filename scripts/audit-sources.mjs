@@ -26,7 +26,7 @@ export function publicHttps(raw) {
     const h = u.hostname.toLowerCase().replace(/\.$/, "");
     return u.protocol === "https:" && !u.username && !u.password &&
       !u.port && !!h && net.isIP(h) === 0 &&
-      h !== "localhost" && !h.endsWith(".localhost") && !h.endsWith(".local") &&
+      h !== "localhost" && !h.startsWith("[") && !h.endsWith(".localhost") && !h.endsWith(".local") &&
       !h.endsWith(".internal");
   } catch {
     return false;
