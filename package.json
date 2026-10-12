@@ -11,7 +11,7 @@
     "catalog:sync": "node scripts/catalog.mjs sync",
     "catalog:check": "node scripts/catalog.mjs check",
     "catalog:validate": "node scripts/catalog.mjs validate",
-    "test": "node --test scripts/catalog.test.mjs scripts/backlog.test.mjs",
+    "test": "node --test scripts/catalog.test.mjs scripts/backlog.test.mjs scripts/prepare-preview.test.mjs",
     "verify": "npm run test && npm run catalog:check",
     "audit:sources": "node scripts/audit-sources.mjs",
     "audit:offline": "node scripts/audit-sources.mjs --offline",
