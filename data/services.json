@@ -1428,5 +1428,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "cloady",
+    "name": "Cloady Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "0.5 vCPU, 1 GB RAM and 5 GB persistent SSD shared by apps in a workspace; 200 GB traffic",
+    "watch_out": "Public beta with no guaranteed service level; free-region eligibility applies. Exceeding any free resource threshold makes the full workspace capacity billable, not just the excess. Optional managed backups cost extra; commercial-use and idle-expiry terms should be confirmed.",
+    "pricing_url": "https://cloady.com/docs/hosting#understand-free-and-paid-capacity",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-11"
   }
 ]

@@ -60,7 +60,9 @@ class SiteTests(unittest.TestCase):
         script = self.text("assets/site.js")
         css = self.text("assets/site.css")
         self.assertNotIn('id="hero-search"', html)
-        self.assertIn('href="#explore" data-focus-search', html)
+        self.assertEqual(html.count('id="search"'), 1)
+        self.assertIn('class="hero-search" for="search"', html)
+        self.assertIn('data-quick-filter="no-card"', html)
         self.assertIn('id="advanced-filter-toggle"', html)
         self.assertIn('id="advanced-filters"', html)
         self.assertIn('aria-controls="advanced-filters"', html)
@@ -109,7 +111,7 @@ class SiteTests(unittest.TestCase):
 
     def test_home_crawlable_without_javascript(self):
         html = self.text("index.html")
-        self.assertIn('<h1>Discover developer-friendly free tiers.</h1>', html)
+        self.assertIn('<h1>Build more. Spend less.</h1>', html)
         self.assertEqual(html.count('class="service-card"'), len(self.data))
         self.assertIn('rel="canonical" href="' + CANONICAL + '"', html)
         self.assertIn('name="description"', html)
