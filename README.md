@@ -52,6 +52,7 @@ Use **official pricing/docs URLs** and the date verified. Avoid referral links, 
 - **Deployment, domain, SEO and local verification:** [`docs/deployment.md`](docs/deployment.md).
 - **Contributor tooling:** Node.js 24 LTS with no npm dependencies. Run `npm run catalog:sync` to update generated category tables, then `npm run verify` to validate changes.
 - **CI:** [Catalog checks](.github/workflows/validate-catalog.yml) and [GitHub Pages deployment](.github/workflows/pages.yml).
+- **Source review:** [Official-source audit guide](docs/source-audit.md) — weekly read-only URL, age and verification-backlog report (`npm run audit:sources`).
 
 Free allowances, recurring credits, trials and expiring resources are labeled separately. Unknown card or commercial-use policies are marked **Check provider**, not guessed.
 
