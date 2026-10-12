@@ -80,7 +80,7 @@ jobs:
           grep -Fq 'https://free-tier.eplus.dev/catalog.json' dist/agents.md
       - name: Prepare offline PR design preview
         if: github.event_name == 'pull_request'
-        run: python3 scripts/prepare_preview.py --site dist --base-url https://free-tier.eplus.dev/
+        run: node scripts/prepare-preview.mjs --site dist --base-url https://free-tier.eplus.dev/
       - name: Upload downloadable PR preview
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
