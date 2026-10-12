@@ -97,7 +97,7 @@ def broken_local_links(text, filename, root):
 
 
 def validate_documents(root, data, readme, pages):
-    """Check Markdown structure, local links, and exact JSON/README/docs consistency."""
+    """Check Markdown, README navigation counts, and exact category-page consistency."""
     errors = []
     all_docs = {"README.md": readme}
     all_docs.update({f"docs/{category}.md": body for category, body in pages.items()})
@@ -111,11 +111,9 @@ def validate_documents(root, data, readme, pages):
         return errors
 
     nav_header = ["Category", "Services", "Browse"]
-    list_header = ["Service", "Type", "Free allowance", "Critical restriction"]
     nav = [t for t in parsed["README.md"] if t["header"] == nav_header]
-    overview = [t for t in parsed["README.md"] if t["header"] == list_header]
-    if len(nav) != 1 or len(overview) != 1 or len(parsed["README.md"]) != 2:
-        errors.append("README.md: expected one navigation and one service table")
+    if len(nav) != 1 or len(parsed["README.md"]) != 1:
+        errors.append("README.md: expected exactly one category navigation table")
         return errors
 
     counts = Counter(item["category"] for item in data)
@@ -128,16 +126,6 @@ def validate_documents(root, data, readme, pages):
         if len(row) != 3 or row[1] != str(counts[category]) or row[2] != f"[Browse](docs/{category}.md)":
             errors.append(f"README.md: invalid navigation count or link for {category}")
 
-    summary = overview[0]["rows"]
-    if len(summary) != len(data):
-        errors.append(f"README.md: {len(summary)} service rows, expected {len(data)}")
-    for index, item in enumerate(data[:len(summary)]):
-        expected = [
-            f"[{item['name']}]({item['pricing_url']})",
-            PLANS[item["plan"]], item["free_limit"], item["watch_out"],
-        ]
-        if summary[index] != expected:
-            errors.append(f"README.md: service row {index + 1} differs from JSON ({item['id']})")
     count_badge = re.search(r"services-(\d+)-brightgreen", readme)
     if not count_badge or int(count_badge.group(1)) != len(data):
         errors.append("README.md: service-count badge is out of sync")
