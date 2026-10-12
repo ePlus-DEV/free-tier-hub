@@ -13,6 +13,7 @@ function fixture(fn) {
   const root = mkdtempSync(path.join(tmpdir(), "free-tier-hub-node-"));
   try {
     mkdirSync(path.join(root, "docs"));
+    mkdirSync(path.join(root, "data"));
     cpSync(path.join(ROOT, "README.md"), path.join(root, "README.md"));
     cpSync(path.join(ROOT, "data/services.json"), path.join(root, "data/services.json"));
     for (const category of CATEGORIES) {
