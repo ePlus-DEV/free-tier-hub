@@ -14,4 +14,4 @@ Link directly to provider pricing/docs pages and include the date you verified t
 - [ ] For catalog changes, I edited `data/services.json` and ran `python3 scripts/sync_catalog.py` to generate README/docs.
 - [ ] I ran `python3 -m unittest discover -s tests -v`, `python3 scripts/sync_catalog.py --check`, and `python3 scripts/validate_catalog.py` (or explained why I could not).
 
-Not sure how to run Python? See [CONTRIBUTING.md](../CONTRIBUTING.md) or use the [no-code suggestion form](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) instead. External fork PRs are reviewed by maintainers and do not auto-merge.
+Not sure how to run Python? See [CONTRIBUTING.md](https://github.com/ePlus-DEV/free-tier-hub/blob/main/CONTRIBUTING.md) or use the [no-code suggestion form](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) instead. External fork PRs are reviewed by maintainers and do not auto-merge.
