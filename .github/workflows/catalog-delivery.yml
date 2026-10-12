@@ -6,7 +6,6 @@ on:
       - 'catalog/**'
     paths:
       - 'data/services.json'
-      - 'scripts/build_site.py'
   workflow_dispatch:
     inputs:
       branch:
@@ -49,19 +48,19 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v7
         with:
-          python-version: '3.12'
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
 
       - name: Synchronize generated catalog files
-        run: python3 scripts/sync_catalog.py
+        run: npm run catalog:sync
 
       - name: Validate synchronized catalog
         run: |
           set -euo pipefail
-          python3 scripts/sync_catalog.py --check
-          python3 -m unittest discover -s tests -v
-          python3 scripts/validate_catalog.py
+          npm run verify
+          node --check site/assets/site.js
 
       - name: Commit generated files
         shell: bash

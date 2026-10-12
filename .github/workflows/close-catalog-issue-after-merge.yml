@@ -1,8 +1,19 @@
 name: Close catalog issue after merge
 
+# pull_request_target runs in the trusted base repository, so secrets are
+# available even when a contributor opens a pull request from a fork.
+# Do not check out or execute code from the contributor's fork here.
 on:
-  pull_request:
-    types: [closed]
+  pull_request_target:
+    # Also handle a post-merge edit as a safe, idempotent way to retry a thank-you.
+    # No pull-request code is checked out or executed in this workflow.
+    types: [closed, edited]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Merged PR number to thank (backfill)"
+        type: number
+        required: true
 
 permissions:
   issues: write
@@ -10,27 +21,48 @@ permissions:
 
 jobs:
   thank-contributor:
-    if: github.event.pull_request.merged == true
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Thank contributor as eplus-bot on merged PR
         env:
           GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
         run: |
           set -euo pipefail
-          test "$(gh api user --jq .login)" = "eplus-bot" || { echo "::error::Expected eplus-bot token"; exit 1; }
-          marker="<!-- free-tier-hub-merge-thanks -->"
-          existing="$(gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" --paginate --jq ".[] | select(.body | contains(\"$marker\")) | .id" | head -n 1)"
-          if [ -z "$existing" ]; then
-            gh pr comment "$PR_NUMBER" --body "$(printf '%s\n' "$marker" "Thank you @$PR_AUTHOR for contributing to Free Tier Hub! 🎉" "" "This PR has been merged successfully. Your contribution helps keep the free-tier catalog useful and up to date. 💚")"
+
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::error::EPLUS_BOT_TOKEN is unavailable. This workflow must authenticate as eplus-bot."
+            exit 1
+          fi
+          bot_login="$(gh api user --jq .login)"
+          if [ "$bot_login" != "eplus-bot" ]; then
+            echo "::error::EPLUS_BOT_TOKEN must belong to eplus-bot (got $bot_login)."
+            exit 1
           fi
 
+          # Always verify the PR with the trusted GitHub API (also for manual backfills).
+          pr_json="$(gh api "repos/$GH_REPO/pulls/$PR_NUMBER")"
+          if ! jq -e '.merged_at != null and .base.ref == "main"' <<<"$pr_json" >/dev/null; then
+            echo "::error::PR #$PR_NUMBER is not a merged PR into main."
+            exit 1
+          fi
+          pr_author="$(jq -r '.user.login' <<<"$pr_json")"
+
+          marker="<!-- free-tier-hub-merge-thanks -->"
+          existing="$(gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" --paginate --jq ".[] | select(.user.login == \"eplus-bot\" and (.body | contains(\"$marker\"))) | .id" | tail -n 1)"
+          if [ -n "$existing" ]; then
+            echo "eplus-bot already thanked the author on PR #$PR_NUMBER."
+            exit 0
+          fi
+
+          body="$(printf '%s\n' "$marker" "Thank you @$pr_author for contributing to Free Tier Hub! 🎉" "" "This PR has been merged successfully. Your contribution helps keep the free-tier catalog useful and up to date. 💚")"
+          gh api --method POST "repos/$GH_REPO/issues/$PR_NUMBER/comments" -f body="$body"
+          echo "Posted thanks as eplus-bot on PR #$PR_NUMBER."
+
   close-linked-catalog-issue:
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'pull_request_target' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       # External fork contributions often have no candidate Issue. That is expected.

@@ -448,12 +448,12 @@
     "name": "Neon Free Postgres",
     "category": "databases",
     "plan": "ongoing",
-    "free_limit": "100 projects; 100 CU-hours/project/month; 0.5 GB storage/project",
+    "free_limit": "100 projects; 100 CU-hours/project/month; 1 GB storage/project",
     "watch_out": "Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility.",
     "pricing_url": "https://neon.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-12"
   },
   {
     "id": "prisma-postgres",
@@ -1404,5 +1404,41 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-09"
+  },
+  {
+    "id": "hanko-cloud-starter-free",
+    "name": "Hanko Cloud Starter Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "10,000 monthly active users; 2 projects; passkeys, passwords/passwordless, social SSO, MFA, custom domain",
+    "watch_out": "Hosted in AWS Frankfurt; webhooks, Admin API, custom SMTP and team invites require Pro; repeated overage prompts upgrade. Commercial-use terms for cloud Free not independently confirmed.",
+    "pricing_url": "https://www.hanko.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "suprsend-free",
+    "name": "SuprSend Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "10,000 notifications/month; unlimited notification channels and team members; in-app feed, workflow branching, lists and broadcasts",
+    "watch_out": "30-day premium-feature trial transitions to ongoing Free; SuprSend branding on in-app feed; multi-channel delivery counts each user/channel separately; email/SMS providers may charge separately; free over-limit sends may continue pending contact from SuprSend; explicit commercial-use terms not confirmed.",
+    "pricing_url": "https://www.suprsend.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-09"
+  },
+  {
+    "id": "cloady",
+    "name": "Cloady Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "0.5 vCPU, 1 GB RAM and 5 GB persistent SSD shared by apps in a workspace; 200 GB traffic",
+    "watch_out": "No guaranteed service level; free-region eligibility applies. Exceeding any free resource threshold makes the full workspace capacity billable, not just the excess. Optional managed backups cost extra; commercial-use and idle-expiry terms should be confirmed.",
+    "pricing_url": "https://cloady.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-12"
   }
 ]

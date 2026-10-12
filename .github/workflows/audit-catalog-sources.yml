@@ -1,0 +1,43 @@
+name: Audit catalog official sources
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-official-source-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Check URL health and review-age signals
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Generate read-only official-source audit report
+        run: npm run audit:sources
+      - name: Add audit summary to GitHub Actions run
+        if: always()
+        run: |
+          if test -f audit-results/report.md; then
+            cat audit-results/report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Source audit report unavailable; inspect logs.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload JSON and Markdown evidence reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-source-audit
+          path: audit-results/
+          if-no-files-found: warn
+          retention-days: 30
