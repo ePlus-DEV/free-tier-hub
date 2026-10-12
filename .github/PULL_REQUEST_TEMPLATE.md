@@ -1,14 +1,17 @@
 ## Summary
 
-Describe the catalog entries or documentation changed.
+Describe the service/plan being added or updated (or the documentation change).
 
-## Official sources
+## Official sources and date checked
 
-Add direct provider links and the date each source was checked.
+Link directly to provider pricing/docs pages and include the date you verified the information (YYYY-MM-DD). For documentation-only PRs, write "Not applicable."
 
 ## Checklist
 
-- [ ] Plan type is correct; trials and expiring resources are not labeled ongoing.
-- [ ] Card, commercial-use, region and overage caveats are documented.
-- [ ] Updated `data/services.json`, `README.md` and matching `docs/*.md`.
-- [ ] Ran `python3 scripts/validate_catalog.py` successfully.
+- [ ] I checked that this provider/product is not a duplicate.
+- [ ] The free allowance and plan type are accurate; trials, monthly credits and expiring resources are correctly labeled.
+- [ ] Important restrictions (card, commercial use, region, sleep/expiry and possible charges) are documented or marked unconfirmed.
+- [ ] For catalog changes, I edited `data/services.json` and ran `python3 scripts/sync_catalog.py` to generate README/docs.
+- [ ] I ran `python3 -m unittest discover -s tests -v`, `python3 scripts/sync_catalog.py --check`, and `python3 scripts/validate_catalog.py` (or explained why I could not).
+
+Not sure how to run Python? See [CONTRIBUTING.md](../CONTRIBUTING.md) or use the [no-code suggestion form](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) instead. External fork PRs are reviewed by maintainers and do not auto-merge.
