@@ -50,7 +50,7 @@ Use **official pricing/docs URLs** and the date verified. Avoid referral links, 
 - **Source of truth:** [`data/services.json`](data/services.json) — structured pricing evidence, plan types, restrictions and review dates.
 - **Category references:** [`docs/`](docs/) — generated tables; do not manually edit them.
 - **Deployment, domain, SEO and local verification:** [`docs/deployment.md`](docs/deployment.md).
-- **Validation:** `python3 scripts/sync_catalog.py --check` and `python3 scripts/validate_catalog.py`.
+- **Contributor tooling:** Node.js 20+ with no npm dependencies. Run `npm run catalog:sync` to update generated category tables, then `npm run verify` to validate changes.
 - **CI:** [Catalog checks](.github/workflows/validate-catalog.yml) and [GitHub Pages deployment](.github/workflows/pages.yml).
 
 Free allowances, recurring credits, trials and expiring resources are labeled separately. Unknown card or commercial-use policies are marked **Check provider**, not guessed.
