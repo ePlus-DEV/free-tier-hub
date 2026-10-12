@@ -2,7 +2,7 @@
 
 Thanks for helping keep this free-tier directory accurate. **Official provider pricing and documentation are the source of truth**—not referral pages, blog summaries, or AI-generated prices.
 
-There are **two ways to contribute**. You do not need to know Git, Python, or JSON to suggest a service.
+There are **two ways to contribute**. You do not need to know Git, Node.js, or JSON to suggest a service.
 
 ## Option A: Suggest a service without code (recommended for beginners)
 
@@ -15,7 +15,7 @@ There are **two ways to contribute**. You do not need to know Git, Python, or JS
 
 ## Option B: Contribute directly using a fork and pull request
 
-Use this route if you want to edit the catalog yourself. Python 3.12+ is recommended; the validation scripts use the Python standard library only.
+Use this route if you want to edit the catalog yourself. Install **Node.js 20+** (npm is included). This contributor CLI has **zero external npm dependencies**: you do not need `npm install`.
 
 1. [Fork this repository](https://github.com/ePlus-DEV/free-tier-hub/fork) and clone **your fork**. Create a feature branch from its latest `main`, such as `catalog/add-example-free`.
 2. In **`data/services.json`**, add or update one entry, using the [fields](#catalog-fields) below and the provider's current official source. Check whether the entry already exists, even under a slightly different name. Use the actual verification date in `last_checked`.
@@ -23,18 +23,16 @@ Use this route if you want to edit the catalog yourself. Python 3.12+ is recomme
 4. From the repository root, generate and validate the derived files:
 
    ```bash
-   python3 scripts/sync_catalog.py
-   python3 -m unittest discover -s tests -v
-   python3 scripts/sync_catalog.py --check
-   python3 scripts/validate_catalog.py
+   npm run catalog:sync
+   npm run verify
    ```
 
-   On Windows, use `python` or `py -3` instead of `python3` if required.
+   These commands work the same way in Windows PowerShell, macOS and Linux. If you cannot run Node.js, use the no-code Issue form instead.
 
 5. Commit **`data/services.json` and any generated `README.md`/`docs/*.md` changes**. Push your branch to your own fork, then open a PR against [`ePlus-DEV/free-tier-hub:main`](https://github.com/ePlus-DEV/free-tier-hub/compare).
 6. In the PR, explain what changed and include official source URLs and the date checked. Keep the PR focused on one provider/product or a small related set.
 
-**Why generated Markdown is included:** README category counts and the category-page tables are derived from `data/services.json`. The current PR CI runs `sync_catalog.py --check`, so a JSON-only PR without synchronized category tables and README counts **will fail** until those files are generated. Maintainers may help with synchronization if you cannot run Python; do not manually copy rows.
+**Why generated Markdown is included:** README category counts and the category-page tables are derived from `data/services.json`. The current PR CI runs `npm run verify`, so a JSON-only PR without synchronized category tables and README counts **will fail** until those files are generated. Maintainers may help with synchronization if you cannot run Node.js; do not manually copy rows.
 
 **Fork and review notes:**
 - CI validates external PRs but **does not push changes back to contributor forks**. For first-time contributions, GitHub may require a maintainer to approve the workflow run; that is not automatically a rejection.
@@ -58,7 +56,7 @@ Use this route if you want to edit the catalog yourself. Python 3.12+ is recomme
 | --- | --- |
 | `id` | Unique lowercase kebab-case identifier |
 | `name` | Provider and specific plan/product |
-| `category` | A supported category from `scripts/check_markdown.py` |
+| `category` | A supported category from `scripts/catalog.mjs` |
 | `plan` | `ongoing`, `monthly-credit`, `limited-duration`, or `temporary-resource` |
 | `free_limit` | Verified free allowance, including amount and time unit |
 | `watch_out` | Material usage, billing, expiration, geographic, or other restrictions |
@@ -76,4 +74,4 @@ For `plan`, use `ongoing` only when the free allowance has no announced fixed en
 - [ ] Expiration, sleep, billing, payment-card, and commercial-use caveats are appropriately disclosed or marked unconfirmed.
 - [ ] No duplicated provider/product entry is being added.
 - [ ] `README.md` and category documentation match `data/services.json`.
-- [ ] Unit tests, `sync_catalog.py --check`, and `validate_catalog.py` pass.
+- [ ] `npm run verify` passes (CI also runs the existing site tests).
