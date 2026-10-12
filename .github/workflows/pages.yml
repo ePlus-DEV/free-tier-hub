@@ -57,7 +57,7 @@ jobs:
             echo 'Python scripts remain under scripts/' >&2
             exit 1
           fi
-          if grep -REn 'setup-python|python3' .github/workflows; then
+          if grep -REn 'setup-p[y]thon|p[y]thon3' .github/workflows; then
             echo 'Workflow still invokes Python' >&2
             exit 1
           fi
