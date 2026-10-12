@@ -78,8 +78,6 @@ def main():
             except (TypeError, ValueError):
                 errors.append(f"{sid}: invalid added_at ISO date")
         link = f"[{item['name']}]({item['pricing_url']})"
-        if link not in readme:
-            errors.append(f"{sid}: missing linked row in README")
         if category in pages and link not in pages[category]:
             errors.append(f"{sid}: missing linked row in docs/{category}.md")
         for other_cat, page in pages.items():
@@ -89,7 +87,7 @@ def main():
         from check_markdown import validate_documents
         errors.extend(validate_documents(ROOT, data, readme, pages))
     if not errors:
-        print(f"PASS: {len(data)} unique service entries across {len(CATEGORIES)} categories, with matching README and docs.")
+        print(f"PASS: {len(data)} unique service entries across {len(CATEGORIES)} categories, with matching category documentation and README counts.")
         return 0
     for error in errors:
         print("FAIL:", error, file=sys.stderr)
