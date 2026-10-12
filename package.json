@@ -1,0 +1,17 @@
+{
+  "name": "free-tier-hub",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Contributor tooling for the Free Tier Hub JSON catalog",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "catalog:sync": "node scripts/catalog.mjs sync",
+    "catalog:check": "node scripts/catalog.mjs check",
+    "catalog:validate": "node scripts/catalog.mjs validate",
+    "test": "node --test scripts/catalog.test.mjs",
+    "verify": "npm run test && npm run catalog:check"
+  }
+}
