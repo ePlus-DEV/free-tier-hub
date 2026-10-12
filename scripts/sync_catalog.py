@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate only catalog-owned Markdown tables from data/services.json."""
+"""Regenerate README category counts and category tables from data/services.json."""
 import argparse
 from collections import Counter
 import json
@@ -11,7 +11,6 @@ from check_markdown import CATEGORIES, PLANS, CARDS, COMMERCIAL
 
 ROOT = Path(__file__).resolve().parents[1]
 NAV = "| Category | Services | Browse |"
-OVERVIEW = "| Service | Type | Free allowance | Critical restriction |"
 CATEGORY = "| Service | Plan | Free allowance | Important caveat | Card | Commercial use |"
 
 
@@ -71,8 +70,6 @@ def render(root):
     if len(nav_rows) != len(CATEGORIES) or {re.search(r"docs/([a-z-]+)\.md", r[2]).group(1) for r in nav_rows} != set(CATEGORIES):
         raise ValueError("Navigation categories differ from catalog")
     readme = replace_table(readme, NAV, nav_rows, "README.md")
-    overview = [[f"[{item['name']}]({item['pricing_url']})", PLANS[item["plan"]], item["free_limit"], item["watch_out"]] for item in data]
-    readme = replace_table(readme, OVERVIEW, overview, "README.md")
     readme, badges = re.subn(r"services-\d+-brightgreen", f"services-{len(data)}-brightgreen", readme)
     if badges != 1:
         raise ValueError("README service badge missing or ambiguous")
@@ -98,7 +95,7 @@ def main(argv=None):
                 for path in stale:
                     print(f"OUT OF SYNC: {path.relative_to(args.root)}", file=sys.stderr)
                 return 1
-            print("PASS: README and category tables match JSON")
+            print("PASS: README navigation counts and category tables match JSON")
             return 0
         for path in stale:
             path.write_text(results[path], encoding="utf-8")
