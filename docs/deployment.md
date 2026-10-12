@@ -20,7 +20,7 @@ This project uses **GitHub Actions** to deploy, with `https://free-tier.eplus.de
 
 For GitHub Actions deployments, GitHub stores the custom domain in Pages settings; adding a repository `CNAME` file does **not** configure it. The domain and certificate must be correctly configured in Pages and DNS; building canonical links alone cannot change the live hostname. The Pages workflow's `SITE_URL` setting is pinned to this domain, so any old repository-level `SITE_URL` Actions variable is ignored. If you intentionally move the site again, update both `DEFAULT_URL` in `scripts/build_site.py` and the workflow, then rerun the tests and rebuild.
 
-Contributor catalog verification requires only Node.js 20+ (no npm dependencies):
+Contributor catalog verification requires only Node.js 24 LTS (no npm dependencies):
 
 ```bash
 npm run catalog:sync
