@@ -31,7 +31,7 @@ Use this route if you want to edit the catalog yourself. Python 3.12+ is recomme
 
    On Windows, use `python` or `py -3` instead of `python3` if required.
 
-5. Commit **`data/services.json` and any generated `README.md`/`docs/*.md` changes**. Push your branch to your own fork, then open a PR against [`ePlus-DEV/free-tier-hub:main`](https://github.com/ePlus-DEV/free-tier-hub/compare/main...main).
+5. Commit **`data/services.json` and any generated `README.md`/`docs/*.md` changes**. Push your branch to your own fork, then open a PR against [`ePlus-DEV/free-tier-hub:main`](https://github.com/ePlus-DEV/free-tier-hub/compare).
 6. In the PR, explain what changed and include official source URLs and the date checked. Keep the PR focused on one provider/product or a small related set.
 
 **Why generated Markdown is included:** `README.md` and the category pages are derived from `data/services.json`. The current PR CI runs `sync_catalog.py --check`, so a JSON-only PR without synchronized Markdown **will fail** until those files are generated. Maintainers may help with synchronization if you cannot run Python; do not manually copy rows.
