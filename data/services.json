@@ -1440,5 +1440,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-12"
+  },
+  {
+    "id": "jsdelivr-open-source-cdn",
+    "name": "jsDelivr Open Source CDN",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free CDN for open-source npm and GitHub files; no bandwidth or request limits under permitted use",
+    "watch_out": "Not general-purpose image, video, backup, or file hosting; must comply with source-platform terms and jsDelivr acceptable-use restrictions.",
+    "pricing_url": "https://www.jsdelivr.com/about",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-13"
   }
 ]
