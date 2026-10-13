@@ -57,7 +57,7 @@ test("sync updates README counts and category pages, preserving manual prose", (
     assert.throws(() => check(root), /Out of sync/);
     assert.ok(sync(root) >= 2);
     assert.equal(check(root), CATEGORIES.length + 1);
-    assert.match(readFileSync(path.join(root, "README.md"), "utf8"), /services-121-brightgreen/);
+    assert.match(readFileSync(path.join(root, "README.md"), "utf8"), new RegExp(`services-${data.length}-brightgreen`));
     assert.match(readFileSync(path.join(root, "docs/static-hosting.md"), "utf8"), /Node Test Service/);
     assert.equal(sync(root), 0);
   });
