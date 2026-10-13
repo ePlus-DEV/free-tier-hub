@@ -1476,5 +1476,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-13"
+  },
+  {
+    "id": "claude-free",
+    "name": "Claude Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free AI chat on web and mobile; writing, web search, files and code capabilities with variable usage limits",
+    "watch_out": "Message and model limits vary with demand and reset windows; Claude Code and higher limits require paid plan. Commercial-use permissions for Free need confirmation.",
+    "pricing_url": "https://claude.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-13"
   }
 ]

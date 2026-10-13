@@ -2,7 +2,7 @@
 
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless, AI and developer services.
 
-![Catalog](https://img.shields.io/badge/services-123-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-124-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Explore:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Search the catalog](https://free-tier.eplus.dev/#explore) · [Machine-readable JSON](https://free-tier.eplus.dev/catalog.json)
 
@@ -23,7 +23,7 @@
 | Monitoring & observability | 13 | [Browse](docs/observability.md) |
 | Product analytics | 2 | [Browse](docs/analytics.md) |
 | DNS & CDN | 1 | [Browse](docs/dns-cdn.md) |
-| AI & ML platforms | 4 | [Browse](docs/ai-ml.md) |
+| AI & ML platforms | 5 | [Browse](docs/ai-ml.md) |
 | Queues, workflows & scheduling | 9 | [Browse](docs/queues-jobs.md) |
 | Hosted search | 3 | [Browse](docs/search.md) |
 | Feature flags & gradual rollout | 7 | [Browse](docs/feature-flags.md) |
