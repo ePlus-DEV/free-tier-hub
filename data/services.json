@@ -1480,7 +1480,7 @@
   {
     "id": "claude-free",
     "name": "Claude Free",
-    "category": "ai-ml",
+    "category": "ai-assistants",
     "plan": "ongoing",
     "free_limit": "Free AI chat on web and mobile; writing, web search, files and code capabilities with variable usage limits",
     "watch_out": "Message and model limits vary with demand and reset windows; Claude Code and higher limits require paid plan. Commercial-use permissions for Free need confirmation.",
