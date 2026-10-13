@@ -8,7 +8,7 @@ import { CATEGORIES } from './catalog.mjs';
 import { applyCandidate, listCandidates, loadCandidates } from './backlog.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const today = '2026-10-12';
+const today = new Date().toISOString().slice(0, 10);
 const example = () => ({
   id: 'backlog-test-service',
   name: 'Backlog Test Service',
