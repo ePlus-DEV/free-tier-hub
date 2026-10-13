@@ -1440,5 +1440,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-12"
+  },
+  {
+    "id": "imagekit-forever-free",
+    "name": "ImageKit Forever Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "20 GB delivery bandwidth/month; 3 GB DAM storage; 500 video units/month; 2 users; 500 purge requests/month",
+    "watch_out": "Delivery stops at the monthly bandwidth cap; uploads stop at storage cap; no custom domain included; commercial-use terms and card requirement need confirmation.",
+    "pricing_url": "https://imagekit.io/plans/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-13"
   }
 ]
