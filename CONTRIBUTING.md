@@ -11,7 +11,7 @@ There are **two ways to contribute**. You do not need to know Git, Node.js, or J
 3. Include the free allowance **with units and reset period**, relevant restrictions, and the date you personally checked the source. If you cannot confirm a condition, say so rather than guessing.
 4. Submit the Issue. Maintainers will verify the information and make the catalog/code changes if accepted.
 
-**No fork, pull request, or local commands are needed.** The public suggestion form is reviewed by maintainers; it does **not** automatically create a PR. You may also [browse existing suggestions](https://github.com/ePlus-DEV/free-tier-hub/issues) to avoid duplicates.
+**No fork, pull request, or local commands are needed.** The public suggestion form is reviewed by maintainers; it does **not** automatically create a PR. A separate maintainer-oriented `[catalog-candidate] <id>` Issue queue exists, but requires valid JSON, trusted authorship and successful workflow execution. Do not assume an Issue automatically reaches production. You may also [browse existing suggestions](https://github.com/ePlus-DEV/free-tier-hub/issues) to avoid duplicates.
 
 ## Option B: Contribute directly using a fork and pull request
 
@@ -68,6 +68,13 @@ Use this route if you want to edit the catalog yourself. Install **Node.js 24 LT
 | `last_checked` | Date that you actually verified the provider source, `YYYY-MM-DD` |
 
 For `plan`, use `ongoing` only when the free allowance has no announced fixed end date. A database that expires after 30 days is a `temporary-resource`; a 30-day account-level trial is `limited-duration`.
+
+## After submitting a PR
+
+- Watch the PR's **Checks** tab for catalog validation and Pages build/preview results. A missing, skipped, pending or approval-required check is not a pass.
+- GitHub may require maintainer approval before workflows run on a first-time fork contribution. Do not bypass that approval or rewrite the contributor's branch history.
+- A green build does not verify the provider's current commercial terms or quotas; maintainers must review official sources.
+- The service appears publicly only after the PR is merged into `main` and the GitHub Pages deployment succeeds. Compare the live `/catalog.json` with the merged source if a new entry is missing.
 
 ## Maintainer review checklist
 
