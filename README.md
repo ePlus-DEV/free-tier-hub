@@ -39,6 +39,8 @@
 - **Developer infrastructure:** Browse [developer tools](docs/developer-tools.md), [queues and scheduling](docs/queues-jobs.md), [authentication](docs/auth-security.md), and [observability](docs/observability.md).
 - **Example stacks and risks:** Read [free-tier use cases](docs/use-cases.md) and [cost and data-safety tips](docs/cost-safety.md).
 
+Free Tier Hub is an **independent discovery directory**, not a provider of the listed services or a marketplace that provisions accounts. Visitors compare published free allowances and follow links to providers; provider terms remain authoritative.
+
 The website provides **search, categories and filters** for the full directory. Detailed service limits and caveats live in the category pages linked above and in `data/services.json`, not in a duplicate README table.
 
 ## Contributing
@@ -46,6 +48,13 @@ The website provides **search, categories and filters** for the full directory. 
 Found a new plan or incorrect limits? [Suggest a service without writing code](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml), or [follow the contribution guide](CONTRIBUTING.md) to open a pull request from a fork.
 
 Use **official pricing/docs URLs** and the date verified. Avoid referral links, unverified claims and misleading “always free” labels. Maintainers review external contributions before merging.
+
+## How updates reach the live site
+
+- **Public suggestions** submitted through the no-code Issue form are reviewed by maintainers; they do **not** automatically become PRs.
+- **Structured maintainer candidates** using the separate `[catalog-candidate] <id>` JSON Issue format may be processed by the candidate queue workflow, subject to permissions, valid data, secrets and successful Actions runs. An Issue alone does not publish a service.
+- **Contributions** must pass catalog consistency checks and review. Only merged changes to `main` can be built and deployed to the public GitHub Pages site; a PR preview is not production.
+- **Operational status** must be checked in [Actions](https://github.com/ePlus-DEV/free-tier-hub/actions) and against the [live machine-readable catalog](https://free-tier.eplus.dev/catalog.json). README counts describe repository source data and can temporarily differ from production during deployment or caching.
 
 ## For maintainers and developers
 
