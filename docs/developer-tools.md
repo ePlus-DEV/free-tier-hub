@@ -31,4 +31,6 @@ Transactional email, monitoring and CI/CD. [← Back to directory](../README.md)
 | [GitKraken Desktop Community](https://www.gitkraken.com/pricing) | Ongoing free allowance | Free Git client for local and public repositories. | Private repositories and advanced features require a paid plan; verify plan restrictions. | Not required | Check provider |
 | [Tally Forms Free](https://tally.so/pricing) | Ongoing free allowance | Unlimited forms and submissions under fair-use guidelines; webhooks and file uploads up to 10 MB per file. | Tally branding remains; custom domains, team collaboration and larger uploads require paid plans. Fair-use restrictions apply; commercial-use terms unconfirmed. | Not required | Check provider |
 
+| [Pipedream Connect Free (Development)](https://pipedream.com/pricing) | Ongoing free allowance | Free development and testing access to Connect APIs, SDKs, MCP and 3,000+ API connectors; no credit card required. | Development only: production deployment and serving external users require the paid Startup plan or higher. Do not confuse this with free production workflow hosting. | Not required | Check provider |
+
 > **Important:** “Check provider” means not independently confirmed in this catalog. It does **not** mean a credit card or commercial use is necessarily permitted.
