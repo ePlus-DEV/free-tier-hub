@@ -73,8 +73,8 @@ function card(item, absolute) {
     tag(CATEGORY_LABELS[item.category]), '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
-    '<div class="allowance-block"><p class="allowance">', tag(item.free_limit), '</p></div>',
-    '<div class="restriction-block"><p class="restriction">', tag(item.watch_out), '</p></div>',
+    '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
+    '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><span>',
     item.credit_card === 'no' ? glyph('check') + ' No credit card' :
       'Card: ' + tag(CARD_NAMES[item.credit_card]), '</span>',
@@ -177,14 +177,15 @@ function homePage(items, absolute, counts) {
     '<span class="sidebar-count">' + counts[category] + '</span></button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
+    '<p class="hero-kicker">', glyph('layers'), 'The developer’s free-tier directory</p>',
     '<h1>Build more. Spend less.</h1>',
     '<p>Discover free tools for your next project.</p>',
     '<label class="hero-search" for="search"><span class="sr-only">Search free tiers</span>',
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
     'placeholder="Search hosting, databases, AI tools..." aria-controls="service-grid">',
     '<kbd aria-hidden="true">/</kbd></label>',
-    '<p class="hero-meta">', items.length, ' services · ', CATEGORIES.length,
-    ' categories · Community maintained</p></div></section>',
+    '<p class="hero-meta"><span>', glyph('grid'), items.length, ' services</span><span>', glyph('layers'), CATEGORIES.length,
+    ' categories</span><span>', glyph('code'), 'Community maintained</span></p></div></section>',
     '<section id="explore" class="section catalog-section">',
     '<div class="catalog-layout"><aside class="catalog-sidebar">',
     '<div class="sidebar-title"><span>Categories</span>', glyph('grid'),
