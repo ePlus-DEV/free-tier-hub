@@ -1576,5 +1576,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-14",
     "added_at": "2026-10-14"
+  },
+  {
+    "id": "pipedream-connect-development",
+    "name": "Pipedream Connect Free (Development)",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free development and testing access to Connect APIs, SDKs, MCP and 3,000+ API connectors; no credit card required.",
+    "watch_out": "Development only: production deployment and serving external users require the paid Startup plan or higher. Do not confuse this with free production workflow hosting.",
+    "pricing_url": "https://pipedream.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-14",
+    "added_at": "2026-10-14"
   }
 ]
