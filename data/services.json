@@ -1535,7 +1535,8 @@
     "pricing_url": "https://laragon.app/pricing",
     "credit_card": "no",
     "commercial_use": "no",
-    "last_checked": "2026-10-14"
+    "last_checked": "2026-10-14",
+    "added_at": "2026-10-14"
   },
   {
     "id": "gitkraken-community",
@@ -1547,7 +1548,8 @@
     "pricing_url": "https://www.gitkraken.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-14"
+    "last_checked": "2026-10-14",
+    "added_at": "2026-10-14"
   },
   {
     "id": "tally-forms-free",
@@ -1559,7 +1561,8 @@
     "pricing_url": "https://tally.so/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-14"
+    "last_checked": "2026-10-14",
+    "added_at": "2026-10-14"
   },
   {
     "id": "duckdns-free",
@@ -1571,6 +1574,7 @@
     "pricing_url": "https://www.duckdns.org/about.jsp",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-14"
+    "last_checked": "2026-10-14",
+    "added_at": "2026-10-14"
   }
 ]
