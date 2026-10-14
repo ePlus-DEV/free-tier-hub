@@ -20,6 +20,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /type="submit"[^>]+class="search-submit"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.doesNotMatch(html, /class="catalog-sidebar"/);
+    assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
+    assert.match(html, /class="toolbar-results"><div class="directory-heading"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
     assert.equal((html.match(/class="official-link"/g) || []).length, entries.length);
     assert.doesNotMatch(html, /href=""/);
