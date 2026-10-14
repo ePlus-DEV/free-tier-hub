@@ -90,46 +90,11 @@ jobs:
           name: free-tier-hub-pr-preview
           path: dist/
           retention-days: 14
-      - name: Publish live PR preview to isolated branch
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+      - name: Include current open PR previews in production bundle
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          set -euo pipefail
-          cd dist
-          git init -q
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git checkout -qb "pr-preview-${PR_NUMBER}"
-          git add -A
-          git commit -qm "Preview PR #${PR_NUMBER} at ${GITHUB_SHA}"
-          git -c http.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" push --force "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/pr-preview-${PR_NUMBER}"
-      - name: Add preview link to PR
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const marker = '<!-- free-tier-hub-pr-preview -->';
-            const url = context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + '#artifacts';
-            const live = 'https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/tree/pr-preview-' + context.issue.number;
-            const body = [marker, '### PR design preview (before merge)', '**[Download preview files](' + url + ')** (artifact: free-tier-hub-pr-preview). Extract and open index.html locally to inspect the design without third-party proxy rate limits.', '', '[Browse generated preview branch](' + live + '). Preview uses an isolated generated branch; production at free-tier.eplus.dev is unchanged.'].join('\n');
-            // Paginate and identify by our unique marker, not the API's user.type.
-            // The workflow token owns the original github-actions[bot] comment.
-            const comments = await github.paginate(github.rest.issues.listComments, {
-              owner: context.repo.owner, repo: context.repo.repo,
-              issue_number: context.issue.number, per_page: 100
-            });
-            const existing = comments.find(c => c.body?.includes(marker) &&
-              c.user?.login === 'github-actions[bot]');
-            const args = {owner: context.repo.owner, repo: context.repo.repo, body};
-            if (existing) {
-              await github.rest.issues.updateComment({...args, comment_id: existing.id});
-              core.info('Updated existing PR preview comment #' + existing.id);
-            } else {
-              await github.rest.issues.createComment({...args, issue_number: context.issue.number});
-              core.info('Created initial PR preview comment');
-            }
+        run: node scripts/collect-pr-previews.mjs dist
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/configure-pages@v5

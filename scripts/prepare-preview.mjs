@@ -43,6 +43,7 @@ export function prepare(site, baseURL) {
     content = content.replace(
       /<script>window\.dataLayer=window\.dataLayer\|\|\[\];.*?gtag\('config','G-9YPGG0XEZV'\);<\/script>/gs,
       '');
+    content = content.replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex,nofollow">');
     fs.writeFileSync(page, content);
   }
   return pages.length;

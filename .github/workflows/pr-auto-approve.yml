@@ -185,6 +185,13 @@ jobs:
           test "$(jq -r '.head.sha' <<<"$PR_JSON")" = "$EXPECTED_HEAD"
           test "$(jq -r '.mergeable' <<<"$PR_JSON")" = "true"
 
+          # UI PRs remain open for visual review and explicit manual merge.
+          FILES="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')"
+          if grep -Eq '^(site/|scripts/(build-site|site-data)\.mjs$)' <<<"$FILES"; then
+            echo 'UI changes require visual review and manual merge after opening the live preview.'
+            exit 0
+          fi
+
           CHECKS="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json bucket,name,workflow)"
           jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
           jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or .bucket == "skipping")' <<<"$CHECKS" >/dev/null

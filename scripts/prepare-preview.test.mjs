@@ -16,6 +16,7 @@ test('preview localizes nested links, keeps production canonical, removes analyt
     fs.mkdirSync(detail, { recursive: true });
     fs.writeFileSync(path.join(assets, 'site.css'), 'body{}');
     fs.writeFileSync(path.join(root, 'index.html'),
+      '<meta name="robots" content="index,follow">' +
       '<link rel="canonical" href="' + URL + '">' +
       '<link rel="stylesheet" href="' + URL + 'assets/site.css">' +
       '<script src="' + URL + 'assets/site.js"></script>' +
@@ -36,6 +37,7 @@ test('preview localizes nested links, keeps production canonical, removes analyt
     assert.match(page, /href="\.\.\/\.\.\/assets\/site\.css"/);
     assert.match(page, /href="\.\.\/\.\.\/index\.html"/);
     assert.match(page, /rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/service\/vercel\/"/);
+    assert.match(home, /name="robots" content="noindex,nofollow"/);
     assert.doesNotMatch(home, /googletagmanager\.com/);
     assert.doesNotMatch(page, /gtag\('config'/);
   } finally {

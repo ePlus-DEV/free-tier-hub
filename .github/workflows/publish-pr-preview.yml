@@ -1,0 +1,112 @@
+name: Publish live PR preview
+on:
+  workflow_run:
+    workflows: [Build and deploy GitHub Pages]
+    types: [completed]
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  preview:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Never execute code from the PR artifact in this privileged workflow.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Verify current same-repository PR
+        id: pr
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const prs = await github.paginate(github.rest.pulls.list, {...context.repo, state:'open', per_page:100});
+            const pr = prs.find(p => p.head.sha === run.head_sha && p.head.repo?.full_name === context.payload.repository.full_name);
+            if (!pr) {core.info('No current same-repository PR for this build.');return;}
+            core.setOutput('number',pr.number);
+            core.setOutput('sha',pr.head.sha);
+      - name: Download static preview artifact
+        if: steps.pr.outputs.number != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: free-tier-hub-pr-preview
+          path: preview-input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+      - name: Validate and save preview snapshot
+        if: steps.pr.outputs.number != ''
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          HEAD_SHA: ${{ steps.pr.outputs.sha }}
+          BUILD_RUN: ${{ github.event.workflow_run.id }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import {validatePreview} from './scripts/collect-pr-previews.mjs';
+          validatePreview('preview-input');
+          if (!fs.existsSync('preview-input/index.html') || !fs.existsSync('preview-input/assets/site.css')) throw Error('Missing preview entrypoint');
+          fs.writeFileSync('preview-input/preview-meta.json',JSON.stringify({pr_number:Number(process.env.PR_NUMBER),head_sha:process.env.HEAD_SHA,run_id:Number(process.env.BUILD_RUN)}));
+          NODE
+          node scripts/prepare-preview.mjs --site preview-input --base-url https://free-tier.eplus.dev/
+          cd preview-input
+          git init -q
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -qb "pr-preview-${PR_NUMBER}"
+          git add -A
+          git commit -qm "Static preview PR #${PR_NUMBER} at ${HEAD_SHA}"
+          git -c http.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" push --force "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/pr-preview-${PR_NUMBER}"
+      - name: Build production from main and collect open previews
+        if: steps.pr.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run build
+          node scripts/collect-pr-previews.mjs dist
+      - uses: actions/configure-pages@v5
+        if: steps.pr.outputs.number != ''
+      - uses: actions/upload-pages-artifact@v4
+        if: steps.pr.outputs.number != ''
+        with:
+          path: dist
+      - uses: actions/deploy-pages@v4
+        if: steps.pr.outputs.number != ''
+        id: deployment
+      - name: Comment verified deployed preview URL
+        if: steps.pr.outputs.number != ''
+        uses: actions/github-script@v8
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          HEAD_SHA: ${{ steps.pr.outputs.sha }}
+        with:
+          script: |
+            const number = Number(process.env.PR_NUMBER);
+            const {data:pr} = await github.rest.pulls.get({...context.repo,pull_number:number});
+            if (pr.state !== 'open' || pr.head.sha !== process.env.HEAD_SHA) return;
+            const url = 'https://free-tier.eplus.dev/pr-preview/pr-'+number+'/';
+            const response = await fetch(url+'preview-meta.json',{cache:'no-store'});
+            if (!response.ok || (await response.json()).head_sha !== process.env.HEAD_SHA) throw Error('Live preview is not serving this PR commit');
+            const marker = '<!-- free-tier-hub-pr-preview -->';
+            const body = [marker,'### Live PR design preview','**[Open preview in your browser]('+url+')**','',
+              'Deployed commit: '+process.env.HEAD_SHA.slice(0,7)+'. Production is built from main; this preview is isolated under /pr-preview/.',
+              'UI PRs wait for visual review before auto-merge. Merge manually after reviewing. When the PR changes, wait for this comment to show the new commit.'].join('\n');
+            const comments = await github.paginate(github.rest.issues.listComments,{...context.repo,issue_number:number,per_page:100});
+            const old = comments.find(c => c.user?.login === 'github-actions[bot]' && c.body?.includes(marker));
+            if(old) await github.rest.issues.updateComment({...context.repo,comment_id:old.id,body});
+            else await github.rest.issues.createComment({...context.repo,issue_number:number,body});
