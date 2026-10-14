@@ -75,11 +75,9 @@ function card(item, absolute) {
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
-    '<div class="card-bottom"><span>',
-    item.credit_card === 'no' ? glyph('check') + ' No credit card' :
-      'Card: ' + tag(CARD_NAMES[item.credit_card]), '</span>',
-    '<a href="', tag(dest), '" aria-label="View ', tag(item.name),
-    ' details">View details ', glyph('arrow'), '</a></div></article>',
+    '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
+    ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(item.pricing_url),
+    '" rel="noopener noreferrer" aria-label="Official pricing source for ', tag(item.name), '">Official source ↗</a></div></article>',
   ].join('');
 }
 function document(absolute, title, description, relative, content, structuredData, robots = 'index,follow') {
@@ -118,7 +116,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<span class="brand-wordmark"><span>Free Tier <strong>Hub</strong></span>',
     '<small>by ePlus-DEV</small></span></a>',
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
-    '<a href="', tag(absolute()), '">Explore</a>',
+    '<a href="', tag(absolute()), '">Discover</a>',
     '<a href="', tag(absolute('#explore')), '">Categories</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></nav>',
     '<div class="header-actions">',
@@ -128,7 +126,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<button class="theme-toggle" id="theme-toggle" type="button" ',
     'aria-label="Switch to dark appearance" aria-pressed="false" title="Dark mode">',
     glyph('moon'), '</button>',
-    '<a class="github-button" href="', tag(REPOSITORY),
+    '<a class="github-button" href="', tag(REPOSITORY + '/issues/new/choose'),
     '" rel="noopener noreferrer">', glyph('code'), 'GitHub</a>',
     '<button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" ',
     'aria-controls="primary-nav" aria-label="Open navigation">',
@@ -170,43 +168,22 @@ function homePage(items, absolute, counts) {
   const cards = items.map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
-  const sidebar = CATEGORIES.map(category =>
-    '<button type="button" class="sidebar-category" data-filter-category="' + tag(category) +
-    '" aria-pressed="false">' + glyph(CATEGORY_ICONS[category]) +
-    '<span class="sidebar-label">' + tag(CATEGORY_LABELS[category]) + '</span>' +
-    '<span class="sidebar-count">' + counts[category] + '</span></button>').join('');
+  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage']].map(([category, label]) =>
+    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) + '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
-    '<p class="hero-kicker">', glyph('layers'), 'The developer’s free-tier directory</p>',
-    '<h1>Build more.<br><span>Spend less.</span></h1>',
-    '<p>Find the right tools for your next project. Compare free allowances, understand the limits, and start building.</p>',
-    '<label class="hero-search" for="search"><span class="sr-only">Search free tiers</span>',
+    '<p class="hero-kicker">The free-tier directory</p>',
+    '<h1>Your next project starts here.</h1>',
+    '<p>Discover free services. Compare limits. Build with confidence.</p>',
+    '<form class="hero-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
-    'placeholder="Search hosting, databases, AI tools..." aria-controls="service-grid">',
-    '<kbd aria-hidden="true">/</kbd></label>',
-    '<p class="hero-meta"><span>', glyph('grid'), items.length, ' services</span><span>', glyph('layers'), CATEGORIES.length,
-    ' categories</span><span>', glyph('code'), 'Community maintained</span></p></div>',
-    '<aside class="hero-discovery" aria-label="Explore popular categories">',
-    '<div class="discovery-heading"><span class="heading-label">Your next building block</span>', glyph('layers'), '</div>',
-    '<h2>A great stack starts here.</h2><p>Explore free services by what you want to build.</p>',
-    '<div class="discovery-links">',
-    ['static-hosting', 'databases', 'ai-assistants', 'developer-tools'].map(category =>
-      '<a href="' + tag(absolute('category/' + category + '/')) + '"><span class="discovery-icon">' +
-      glyph(CATEGORY_ICONS[category]) + '</span><span><strong>' + tag(CATEGORY_LABELS[category]) +
-      '</strong><small>' + counts[category] + ' services to explore</small></span>' + glyph('arrow') + '</a>').join(''),
-    '</div><div class="discovery-foot">', glyph('code'), 'Open source. Built for developers.</div></aside></section>',
-    '<section id="explore" class="section catalog-section">',
-    '<div class="catalog-layout"><aside class="catalog-sidebar">',
-    '<div class="sidebar-title"><span>Categories</span>', glyph('grid'),
-    '</div><div class="sidebar-categories">',
-    '<button type="button" class="sidebar-category" data-filter-category="" aria-pressed="true">',
-    glyph('layers'), '<span class="sidebar-label">All services</span>',
-    '<span class="sidebar-count">', items.length, '</span></button>',
-    sidebar, '</div>',
-    '<div class="sidebar-bottom"><p>Need to confirm billing or usage rules? ',
-    'Read the cost-safety guide.</p>',
-    '<a href="', tag(REPOSITORY + '/blob/main/docs/cost-safety.md'),
-    '">Read the guide ↗</a></div></aside>',
+    'placeholder="Search services, categories, or keywords" aria-controls="service-grid">',
+    '<button type="submit" class="search-submit">Search</button></form>',
+    '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
+    '<label class="all-categories" for="category-filter"><span class="sr-only">All categories</span>',
+    '<select id="category-filter"><option value="">All categories</option>', options, '</select></label></div>',
+    '</div></section><section id="explore" class="section catalog-section">',
+    '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite">Showing ',
@@ -214,12 +191,9 @@ function homePage(items, absolute, counts) {
     '<button id="clear-filters" class="clear-filters" type="button" hidden>',
     'Clear filters</button></div></div><div class="filters">',
     '<div class="quick-filters" aria-label="Quick billing filters">',
-    '<button type="button" data-quick-filter="all" aria-pressed="true">All services</button>',
-    '<button type="button" data-quick-filter="no-card" aria-pressed="false">No credit card</button>',
+        '<button type="button" data-quick-filter="no-card" aria-pressed="false">No credit card</button>',
     '<button type="button" data-quick-filter="commercial" aria-pressed="false">Commercial use</button>',
-    '</div><label class="mobile-category" for="category-filter">Category',
-    '<select id="category-filter"><option value="">All categories</option>',
-    options, '</select></label>',
+    '</div>',
     '<label class="sort-field" for="sort"><span class="sr-only">Sort by</span><select id="sort">',
     '<option value="default">Catalog order</option>',
     '<option value="newest">Newest added</option>',

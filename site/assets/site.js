@@ -129,7 +129,7 @@
   var moreWrap = document.getElementById("load-more-wrap");
   var clear = document.getElementById("clear-filters");
   var categoryButtons = Array.prototype.slice.call(
-    document.querySelectorAll(".sidebar-category[data-filter-category]")
+    document.querySelectorAll("[data-filter-category]")
   );
   if (!search || !grid || !count || !empty) return;
 
@@ -238,30 +238,12 @@
     if (headerSearch) headerSearch.value = heroSearch.value;
     visible = pageSize; render();
   });
-  // Keep category selection in the toolbar and move sorting beside the mobile heading.
-  // Reuse the same controls so values and listeners survive viewport changes.
-  if (advancedFilters && mobileCategory && sort && window.matchMedia) {
-    var categoryLabel = mobileCategory.closest("label");
-    var sortLabel = sort.closest("label");
-    var categoryMarker = document.createComment("category desktop position");
-    var sortMarker = document.createComment("sort desktop position");
-    categoryLabel.parentNode.insertBefore(categoryMarker, categoryLabel);
-    sortLabel.parentNode.insertBefore(sortMarker, sortLabel);
-    var mobileLayout = window.matchMedia("(max-width: 680px)");
-    function placeMobileControls() {
-      if (mobileLayout.matches) {
-        document.querySelector(".directory-heading").appendChild(sortLabel);
-        filterToggle.setAttribute("aria-label", "Open billing filters");
-      } else {
-        categoryMarker.parentNode.insertBefore(categoryLabel, categoryMarker.nextSibling);
-        sortMarker.parentNode.insertBefore(sortLabel, sortMarker.nextSibling);
-        filterToggle.setAttribute("aria-label", "Open additional filters");
-      }
-    }
-    placeMobileControls();
-    if (mobileLayout.addEventListener) mobileLayout.addEventListener("change", placeMobileControls);
-    else mobileLayout.addListener(placeMobileControls);
-  }
+  var searchForm = document.getElementById("directory-search-form");
+  if (searchForm) searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    visible = pageSize; render();
+    document.getElementById("explore").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
   if (filterToggle && advancedFilters) {
     var sheetHeading = advancedFilters.querySelector(".filter-popover-heading");
     var closeSheetButton = document.createElement("button");
