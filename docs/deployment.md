@@ -41,6 +41,16 @@ To build for a different canonical domain or base path, run:
 node scripts/build-site.mjs --site-url https://example.com/free-tier/ --output dist
 ```
 
+## Release verification and troubleshooting
+
+1. Confirm the catalog PR has been reviewed and that its **exact head commit** has successful required checks; missing, pending, skipped, cancelled or action-required checks are not successful results.
+2. After a maintainer merges the PR, find the [Build and deploy GitHub Pages workflow](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/pages.yml) for the resulting `main` commit. Confirm both the build and deploy jobs succeeded. PR previews are not deployments.
+3. Compare `data/services.json` on the deployed commit with [the live catalog JSON](https://free-tier.eplus.dev/catalog.json). A README count or a merged PR alone is not proof that production has updated.
+4. If the website lags, inspect the Pages deployment run, the configured Pages environment and custom-domain DNS/HTTPS before attributing the difference to caching.
+5. Public service suggestion Issues are reviewed manually. The separate structured `[catalog-candidate]` workflow can create catalog PRs, but depends on trusted authorship, the configured `EPLUS_BOT_TOKEN`, valid JSON and successful workflow execution. Inspect the specific queue run and PR checks rather than assuming automatic delivery.
+
+The build and verification scripts validate catalog **structure and consistency**, not live provider prices, quotas, credit-card requirements or commercial-use permissions. Those claims require independent verification against current official documentation.
+
 ## Catalog data and maintenance
 
 - Source: [`data/services.json`](../data/services.json).
