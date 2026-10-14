@@ -92,7 +92,7 @@ main{padding-bottom:64px;min-height:70vh}
 .service-card{position:relative;min-width:0;display:flex;flex-direction:column;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:border-color .18s,box-shadow .18s}
 .service-card:hover,.service-card:focus-within{border-color:var(--brand);box-shadow:var(--shadow-hover)}
 .card-identity{min-width:0}
-.service-logo{display:block;width:26px;height:26px;object-fit:contain}
+.service-logo{display:block;width:32px;height:32px;object-fit:contain}
 .service-monogram{font-weight:750}
 .badge{display:inline-flex;align-items:center;max-width:170px;background:var(--brand-tint);color:var(--brand-ink);font-size:9px;font-weight:650;padding:5px 8px;border-radius:6px;line-height:1.5}
 .badge[data-plan=ongoing]{background:var(--good-tint);color:var(--good)}
@@ -296,3 +296,7 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 @media(max-width:1100px){.catalog-toolbar{grid-template-columns:1fr;gap:10px}.catalog-toolbar>.filters{justify-content:flex-start}}
 @media(max-width:680px){.catalog-toolbar{padding:10px 0;gap:8px;max-height:45svh;overflow-y:auto;overscroll-behavior:contain}.catalog-toolbar>.filters{display:grid;grid-template-columns:minmax(0,1fr) 135px;gap:8px;align-items:center}.quick-filters{flex-wrap:nowrap;gap:6px}.quick-filters button{padding:6px 8px;font-size:11px}.catalog-toolbar .filters select{font-size:16px;padding:8px 4px}.catalog-main{padding-top:4px}}
 @media(max-width:380px){.catalog-toolbar>.filters{grid-template-columns:1fr}.catalog-toolbar .quick-filters{width:100%}}
+
+/* Preserve brand colors in both themes; never invert provider artwork. */
+.service-icon:has(.service-logo),.detail-icon:has(.service-logo){background:#fff;border:1px solid #e0e7ef}
+.detail-icon .service-logo{width:38px;height:38px}

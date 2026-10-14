@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, tag } from './build-site.mjs';
+import { build, tag, serviceLogoURL } from './build-site.mjs';
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -28,4 +28,17 @@ test('directory exposes unique search/category controls and official sources for
       assert.ok(fs.existsSync(path.join(output, 'service', entry.id, 'index.html')), entry.id);
     }
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
+});
+
+test('every service gets an actual provider favicon, including previously unmapped brands', () => {
+  const entries = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
+  for (const entry of entries) {
+    const url = new URL(serviceLogoURL(entry));
+    assert.equal(url.hostname, 'www.google.com');
+    assert.ok(url.searchParams.get('domain'));
+    assert.equal(url.searchParams.get('sz'), '128');
+    assert.doesNotMatch(url.href, /simple-icons/);
+  }
+  assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'pinecone-starter'))).searchParams.get('domain'), 'www.pinecone.io');
+  assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'chatgpt-free'))).searchParams.get('domain'), 'chatgpt.com');
 });

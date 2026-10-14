@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import {
   CATEGORY_NAMES, CATEGORY_LABELS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
-  ICON_PATHS, CATEGORY_ICONS, SERVICE_LOGOS,
+  ICON_PATHS, CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
 } from './site-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -40,16 +40,19 @@ const glyph = name =>
   ICON_PATHS[name] + '</svg>';
 const monogram = name => (String(name).match(/[A-Za-z0-9]+/g) || []).slice(0, 2)
   .map(word => word[0]).join('').toUpperCase() || 'FT';
+export function serviceLogoURL(item) {
+  // Provider favicons retain the actual brand artwork and colors. Domain overrides
+  // distinguish products sharing a corporate pricing/documentation website.
+  const domain = SERVICE_LOGO_DOMAINS[item.id] || new URL(item.pricing_url).hostname;
+  return 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
+}
 function serviceLogo(item) {
-  const slug = SERVICE_LOGOS[item.id];
-  const fallback = '<span class="service-monogram">' + tag(monogram(item.name)) + '</span>';
-  if (!slug) return fallback;
-  const src = 'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/' + slug + '.svg';
-  return '<img class="service-logo" src="' + tag(src) + '" alt="" loading="lazy" ' +
+  return '<img class="service-logo" src="' + tag(serviceLogoURL(item)) + '" alt="" width="32" height="32" loading="lazy" ' +
     'decoding="async" referrerpolicy="no-referrer" ' +
     'onerror="this.hidden=true;this.nextElementSibling.hidden=false">' +
     '<span class="service-monogram" hidden>' + tag(monogram(item.name)) + '</span>';
 }
+
 function breadcrumb(crumbs) {
   return { '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: crumbs.map(([name, item], i) =>
