@@ -1548,5 +1548,29 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-14"
+  },
+  {
+    "id": "tally-forms-free",
+    "name": "Tally Forms Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Unlimited forms and submissions under fair-use guidelines; webhooks and file uploads up to 10 MB per file.",
+    "watch_out": "Tally branding remains; custom domains, team collaboration and larger uploads require paid plans. Fair-use restrictions apply; commercial-use terms unconfirmed.",
+    "pricing_url": "https://tally.so/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-14"
+  },
+  {
+    "id": "duckdns-free",
+    "name": "Duck DNS Free",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free dynamic DNS subdomains under duckdns.org with IPv4/IPv6 updates using HTTPS.",
+    "watch_out": "Hostname quota, payment-card requirements and commercial-use terms not confirmed; verify account limits before relying on the service.",
+    "pricing_url": "https://www.duckdns.org/about.jsp",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-14"
   }
 ]
