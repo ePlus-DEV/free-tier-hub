@@ -138,6 +138,29 @@
   var pageSize = 12;
   var visible = pageSize;
 
+  var urlState = window.FreeTierDirectoryURL;
+  function restoreURL() {
+    var state = urlState.read(window.location.href,
+      Array.from(mobileCategory.options, function (option) { return option.value; }),
+      Array.from(sort.options, function (option) { return option.value; }));
+    category = state.category;
+    search.value = state.q;
+    if (headerSearch) headerSearch.value = state.q;
+    if (heroSearch) heroSearch.value = state.q;
+    sort.value = state.sort;
+    noCard.checked = state.noCard;
+    commercial.checked = state.commercial;
+    visible = pageSize;
+    updateFilterCount();
+  }
+  function syncURL() {
+    var next = urlState.write(window.location.href, {
+      q: search.value, category: category, sort: sort.value,
+      noCard: noCard.checked, commercial: commercial.checked
+    });
+    if (next !== window.location.href) window.history.replaceState(window.history.state, "", next);
+  }
+  window.addEventListener("popstate", function () { restoreURL(); render(); });
   function labelText(n) { return n === 1 ? "service" : "services"; }
   function normalize(text) {
     return (text || "").toLocaleLowerCase().normalize("NFD")
@@ -180,6 +203,7 @@
     matched.forEach(function (card) { grid.appendChild(card); });
   }
   function render() {
+    syncURL();
     document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
       var mode = button.getAttribute("data-quick-filter");
       var active = mode === "all" ? !noCard.checked && !commercial.checked
@@ -384,6 +408,7 @@
       }
     }
   });
+  restoreURL();
   doc.classList.add("js-enabled");
   render();
 })();

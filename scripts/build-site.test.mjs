@@ -42,3 +42,17 @@ test('every service gets an actual provider favicon, including previously unmapp
   assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'pinecone-starter'))).searchParams.get('domain'), 'www.pinecone.io');
   assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'chatgpt-free'))).searchParams.get('domain'), 'chatgpt.com');
 });
+
+test('URL filters round trip, reject unknown values, preserve unrelated params and hash', async () => {
+  await import('../site/assets/directory-url.js');
+  const api = globalThis.FreeTierDirectoryURL;
+  const state = {q: 'AI & cloud', category: 'databases', sort: 'name', noCard: true, commercial: true};
+  const href = api.write('https://free-tier.eplus.dev/?utm_source=test#explore', state);
+  assert.deepEqual(api.read(href, ['', 'databases'], ['default', 'name']), state);
+  assert.equal(new URL(href).searchParams.get('utm_source'), 'test');
+  assert.equal(new URL(href).hash, '#explore');
+  const reset = new URL(api.write(href, {q:'', category:'', sort:'default', noCard:false, commercial:false}));
+  assert.equal(reset.search, '?utm_source=test');
+  assert.deepEqual(api.read('https://free-tier.eplus.dev/?category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
+    {q:'', category:'', sort:'default', noCard:false, commercial:false});
+});

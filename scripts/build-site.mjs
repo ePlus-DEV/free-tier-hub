@@ -110,6 +110,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<script async src="https://www.googletagmanager.com/gtag/js?id=', GA_ID, '"></script>',
     '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}',
     "gtag('js',new Date());gtag('config','", GA_ID, "');</script>",
+    '<script src="', tag(absolute('assets/directory-url.js')), '" defer></script>',
     '<script src="', tag(absolute('assets/site.js')), '" defer></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
     '<header class="site-header"><div class="container header-inner">',
@@ -182,12 +183,13 @@ function homePage(items, absolute, counts) {
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
     'placeholder="Search services, categories, or keywords" aria-controls="service-grid">',
     '<button type="submit" class="search-submit">Search</button></form>',
+    '</div></section><section id="explore" class="section catalog-section">',
+    '<div class="catalog-layout">',
+    '<div class="catalog-main"><div class="catalog-toolbar">',
     '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
     '<label class="all-categories" for="category-filter"><span class="sr-only">All categories</span>',
     '<select id="category-filter"><option value="">All categories</option>', options, '</select></label></div>',
-    '</div></section><section id="explore" class="section catalog-section">',
-    '<div class="catalog-layout">',
-    '<div class="catalog-main"><div class="catalog-toolbar"><div class="directory-heading">',
+    '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite">Showing ',
     items.length, ' services</p>',
@@ -410,7 +412,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   ];
   file(output, 'agents.md', agents.join('\n') + '\n');
   file(output, 'catalog.json', JSON.stringify(items, null, 2) + '\n');
-  for (const name of ['site.css', 'site.js', 'icon.svg']) {
+  for (const name of ['site.css', 'directory-url.js', 'site.js', 'icon.svg']) {
     const dest = path.join(output, 'assets', name);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(path.join(ROOT, 'site/assets', name), dest);

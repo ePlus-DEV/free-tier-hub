@@ -300,3 +300,7 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 /* Preserve brand colors in both themes; never invert provider artwork. */
 .service-icon:has(.service-logo),.detail-icon:has(.service-logo){background:#fff;border:1px solid #e0e7ef}
 .detail-icon .service-logo{width:38px;height:38px}
+
+/* Categories share the sticky toolbar so all filtering stays within reach. */
+.catalog-toolbar>.category-bar{grid-column:1/-1;padding-bottom:10px;border-bottom:1px solid var(--line)}
+@media(max-width:680px){.catalog-toolbar>.category-bar{padding-bottom:8px}.catalog-toolbar .category-shortcuts{padding-bottom:4px}.catalog-toolbar .all-categories{margin-top:4px}.catalog-toolbar{max-height:45svh}}
