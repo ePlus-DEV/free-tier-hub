@@ -156,7 +156,7 @@
         var bd = b.getAttribute("data-added-at") || "";
         // Unknown historical dates retain catalog insertion order.
         return (mode === "newest" ? bd.localeCompare(ad) : ad.localeCompare(bd)) ||
-          (mode === "newest" ? cards.indexOf(b) - cards.indexOf(a) : cards.indexOf(a) - cards.indexOf(b));
+          a.querySelector("h3").textContent.localeCompare(b.querySelector("h3").textContent, "en");
       });
     } else if (mode === "verified") {
       matched.sort(function (a, b) {
