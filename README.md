@@ -2,7 +2,7 @@
 
 **Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless, AI and developer services.
 
-![Catalog](https://img.shields.io/badge/services-212-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+![Catalog](https://img.shields.io/badge/services-213-brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
 **Explore:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Search the catalog](https://free-tier.eplus.dev/#explore) · [Machine-readable JSON](https://free-tier.eplus.dev/catalog.json)
 
@@ -12,7 +12,7 @@
 
 | Category | Services | Browse |
 | --- | ---: | --- |
-| Static & frontend hosting | 9 | [Browse](docs/static-hosting.md) |
+| Static & frontend hosting | 10 | [Browse](docs/static-hosting.md) |
 | Backend & app hosting | 12 | [Browse](docs/app-hosting.md) |
 | Serverless & edge | 3 | [Browse](docs/serverless.md) |
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |

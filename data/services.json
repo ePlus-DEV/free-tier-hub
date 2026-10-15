@@ -2629,5 +2629,17 @@
     "commercial_use": "check",
     "last_checked": "2026-10-14",
     "added_at": "2026-10-14"
+  },
+  {
+    "id": "gitlab-pages-free",
+    "name": "GitLab Pages Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free static site hosting from GitLab repositories; custom domains and TLS; GitLab.com Free includes 400 CI/CD compute minutes/month and 10 GiB project storage.",
+    "watch_out": "Static sites only (no server-side PHP/ASP); GitLab CI/CD pipeline and runner required. Shared Free compute and storage quotas apply. Check project visibility and Pages access controls.",
+    "pricing_url": "https://about.gitlab.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-15"
   }
 ]
