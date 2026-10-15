@@ -2081,7 +2081,8 @@
     "pricing_url": "https://curlshot.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-15"
+    "last_checked": "2026-10-15",
+    "added_at": "2026-10-15"
   },
   {
     "id": "amplitude-free",
