@@ -12,24 +12,24 @@
 
 | Category | Services | Browse |
 | --- | ---: | --- |
-| Static & frontend hosting | 10 | [Browse](docs/static-hosting.md) |
-| Backend & app hosting | 12 | [Browse](docs/app-hosting.md) |
-| Serverless & edge | 3 | [Browse](docs/serverless.md) |
-| Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
-| Databases & caching | 27 | [Browse](docs/databases.md) |
-| Object storage | 12 | [Browse](docs/storage.md) |
-| APIs & developer tools | 38 | [Browse](docs/developer-tools.md) |
-| Authentication & security | 15 | [Browse](docs/auth-security.md) |
-| Monitoring & observability | 25 | [Browse](docs/observability.md) |
-| Product analytics | 12 | [Browse](docs/analytics.md) |
-| DNS & CDN | 2 | [Browse](docs/dns-cdn.md) |
-| AI & ML platforms | 7 | [Browse](docs/ai-ml.md) |
-| AI chatbots & assistants | 4 | [Browse](docs/ai-assistants.md) |
-| Queues, workflows & scheduling | 14 | [Browse](docs/queues-jobs.md) |
-| Hosted search | 7 | [Browse](docs/search.md) |
-| Feature flags & gradual rollout | 12 | [Browse](docs/feature-flags.md) |
-| Tunneling & networking | 2 | [Browse](docs/tunneling-networking.md) |
-| Webhooks & event delivery | 9 | [Browse](docs/webhooks-events.md) |
+| Static & frontend hosting | ![Count](https://free-tier.eplus.dev/badges/categories/static-hosting.svg) | [Browse](docs/static-hosting.md) |
+| Backend & app hosting | ![Count](https://free-tier.eplus.dev/badges/categories/app-hosting.svg) | [Browse](docs/app-hosting.md) |
+| Serverless & edge | ![Count](https://free-tier.eplus.dev/badges/categories/serverless.svg) | [Browse](docs/serverless.md) |
+| Cloud compute & VPS | ![Count](https://free-tier.eplus.dev/badges/categories/cloud-vps.svg) | [Browse](docs/cloud-vps.md) |
+| Databases & caching | ![Count](https://free-tier.eplus.dev/badges/categories/databases.svg) | [Browse](docs/databases.md) |
+| Object storage | ![Count](https://free-tier.eplus.dev/badges/categories/storage.svg) | [Browse](docs/storage.md) |
+| APIs & developer tools | ![Count](https://free-tier.eplus.dev/badges/categories/developer-tools.svg) | [Browse](docs/developer-tools.md) |
+| Authentication & security | ![Count](https://free-tier.eplus.dev/badges/categories/auth-security.svg) | [Browse](docs/auth-security.md) |
+| Monitoring & observability | ![Count](https://free-tier.eplus.dev/badges/categories/observability.svg) | [Browse](docs/observability.md) |
+| Product analytics | ![Count](https://free-tier.eplus.dev/badges/categories/analytics.svg) | [Browse](docs/analytics.md) |
+| DNS & CDN | ![Count](https://free-tier.eplus.dev/badges/categories/dns-cdn.svg) | [Browse](docs/dns-cdn.md) |
+| AI & ML platforms | ![Count](https://free-tier.eplus.dev/badges/categories/ai-ml.svg) | [Browse](docs/ai-ml.md) |
+| AI chatbots & assistants | ![Count](https://free-tier.eplus.dev/badges/categories/ai-assistants.svg) | [Browse](docs/ai-assistants.md) |
+| Queues, workflows & scheduling | ![Count](https://free-tier.eplus.dev/badges/categories/queues-jobs.svg) | [Browse](docs/queues-jobs.md) |
+| Hosted search | ![Count](https://free-tier.eplus.dev/badges/categories/search.svg) | [Browse](docs/search.md) |
+| Feature flags & gradual rollout | ![Count](https://free-tier.eplus.dev/badges/categories/feature-flags.svg) | [Browse](docs/feature-flags.md) |
+| Tunneling & networking | ![Count](https://free-tier.eplus.dev/badges/categories/tunneling-networking.svg) | [Browse](docs/tunneling-networking.md) |
+| Webhooks & event delivery | ![Count](https://free-tier.eplus.dev/badges/categories/webhooks-events.svg) | [Browse](docs/webhooks-events.md) |
 
 ## Choose a free-tier service
 
@@ -54,7 +54,7 @@ Use **official pricing/docs URLs** and the date verified. Avoid referral links, 
 - **Public suggestions** submitted through the no-code Issue form are reviewed by maintainers; they do **not** automatically become PRs.
 - **Structured maintainer candidates** using the separate `[catalog-candidate] <id>` JSON Issue format may be processed by the candidate queue workflow, subject to permissions, valid data, secrets and successful Actions runs. An Issue alone does not publish a service.
 - **Contributions** must pass catalog consistency checks and review. Only merged changes to `main` can be built and deployed to the public GitHub Pages site; a PR preview is not production.
-- **Operational status** must be checked in [Actions](https://github.com/ePlus-DEV/free-tier-hub/actions) and against the [live machine-readable catalog](https://free-tier.eplus.dev/catalog.json). README counts describe repository source data and can temporarily differ from production during deployment or caching.
+- **Operational status** must be checked in [Actions](https://github.com/ePlus-DEV/free-tier-hub/actions) and against the [live machine-readable catalog](https://free-tier.eplus.dev/catalog.json). The category count badges reflect the last successfully deployed website and may briefly lag repository source data during deployment or caching.
 
 ## For maintainers and developers
 
