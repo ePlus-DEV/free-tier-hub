@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CATEGORIES, validateData } from './catalog.mjs';
+import { CATEGORIES, hasDynamicServiceBadge, validateData } from './catalog.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PLANS = {
@@ -106,9 +106,8 @@ export function validateDocuments(root, data, readme, pages) {
       errors.push('README.md: invalid navigation count or link for ' + cat);
     }
   });
-  const badge = /services-(\d+)-brightgreen/.exec(readme);
-  if (!badge || Number(badge[1]) !== data.length)
-    errors.push('README.md: service-count badge out of sync');
+  if (!hasDynamicServiceBadge(readme))
+    errors.push('README.md: dynamic service-count badge URL missing or incorrect');
   if (/!\[License\]\([^)]*contributions-welcome/.test(readme))
     errors.push('README.md: incorrect License badge');
   for (const cat of CATEGORIES) {

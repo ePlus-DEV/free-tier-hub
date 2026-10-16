@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { CATEGORIES, check, render, sync, validateData } from "./catalog.mjs";
+import { CATEGORIES, check, hasDynamicServiceBadge, render, sync, validateData } from "./catalog.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceData = JSON.parse(readFileSync(path.join(ROOT, "data/services.json"), "utf8"));
@@ -57,7 +57,8 @@ test("sync updates README counts and category pages, preserving manual prose", (
     assert.throws(() => check(root), /Out of sync/);
     assert.ok(sync(root) >= 2);
     assert.equal(check(root), CATEGORIES.length + 1);
-    assert.match(readFileSync(path.join(root, "README.md"), "utf8"), new RegExp(`services-${data.length}-brightgreen`));
+    assert.ok(hasDynamicServiceBadge(readFileSync(path.join(root, "README.md"), "utf8")));
+    assert.ok(hasDynamicServiceBadge(readFileSync(path.join(ROOT, "README.md"), "utf8")));
     assert.match(readFileSync(path.join(root, "docs/static-hosting.md"), "utf8"), /Node Test Service/);
     assert.equal(sync(root), 0);
   });
