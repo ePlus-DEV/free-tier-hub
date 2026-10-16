@@ -53,7 +53,7 @@ Use **official pricing/docs URLs** and the date verified. Avoid referral links, 
 
 - **Public suggestions** submitted through the no-code Issue form are reviewed by maintainers; they do **not** automatically become PRs.
 - **Structured maintainer candidates** using the separate `[catalog-candidate] <id>` JSON Issue format may be processed by the candidate queue workflow, subject to permissions, valid data, secrets and successful Actions runs. An Issue alone does not publish a service.
-- **Contributions** must pass catalog consistency checks and review. Only merged changes to `main` can be built and deployed to the public GitHub Pages site; a PR preview is not production.
+- **Contributions** need only edit `data/services.json` for a standard service addition; GitHub Actions generates category documentation in CI. Changes must pass consistency checks and review. After merging to `main`, the Pages workflow commits generated category docs and deploys the site; PR previews are not production.
 - **Operational status** must be checked in [Actions](https://github.com/ePlus-DEV/free-tier-hub/actions) and against the [live machine-readable catalog](https://free-tier.eplus.dev/catalog.json). The category count badges reflect the last successfully deployed website and may briefly lag repository source data during deployment or caching.
 
 ## For maintainers and developers
@@ -61,7 +61,7 @@ Use **official pricing/docs URLs** and the date verified. Avoid referral links, 
 - **Source of truth:** [`data/services.json`](data/services.json) — structured pricing evidence, plan types, restrictions and review dates.
 - **Category references:** [`docs/`](docs/) — generated tables; do not manually edit them.
 - **Deployment, domain, SEO and local verification:** [`docs/deployment.md`](docs/deployment.md).
-- **Contributor tooling:** Node.js 24 LTS with no npm dependencies. Run `npm run catalog:sync` to update generated category tables, then `npm run verify` to validate changes.
+- **Contributor tooling:** GitHub Actions runs catalog synchronization and verification automatically; no local commands are required for standard data contributions. For optional local checks, Node.js 24 LTS requires no dependencies: `npm run catalog:sync && npm run verify`.
 - **CI:** [Catalog checks](.github/workflows/validate-catalog.yml) and [GitHub Pages deployment](.github/workflows/pages.yml).
 - **Source review:** [Official-source audit guide](docs/source-audit.md) — weekly read-only URL, age and verification-backlog report (`npm run audit:sources`).
 
