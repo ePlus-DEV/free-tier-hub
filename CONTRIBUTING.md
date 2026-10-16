@@ -46,6 +46,8 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - Never describe trials, one-time credits, or temporary resources as permanently free.
 - Avoid affiliate/referral links or ranking providers by commercial incentives.
 - Quote quotas precisely: **per day**, **per month**, **per account**, **per workspace**, or **one-time** matters.
+- Describe the **specific free product and its actual allowance or included functionality**, not placeholders such as "free offering available". For self-hosted software, describe what the software does and disclose that you must provide your own infrastructure.
+- Make `watch_out` **product-specific** (for example, edition restrictions, billing exposure, dependencies, or storage/retention limits). Do not reuse generic license or self-hosting warnings across unrelated services.
 - Explain any billing-account/card requirement, region or commercial-use restrictions, expiration/idle/sleep behavior, and chargeable overages.
 - If the official source conflicts with an existing row, update its claims and review date; do not silently omit caveats.
 - Keep descriptions concise, factual, and in English. Do not submit secrets or personal account credentials.
