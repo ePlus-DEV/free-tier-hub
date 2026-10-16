@@ -47,6 +47,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
+      - name: Regenerate category documentation in CI
+        run: npm run catalog:sync
       - name: Verify contributor catalog tooling
         run: npm run verify
       - name: Validate browser script syntax
@@ -96,6 +98,28 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/collect-pr-previews.mjs dist
+      # Fork PRs only generate documents in the ephemeral runner workspace.
+      # After a reviewed merge, persist derived docs to main with GITHUB_TOKEN.
+      # GITHUB_TOKEN pushes do not launch another workflow run.
+      - name: Commit generated category documentation on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          git add -u -- 'docs/*.md'
+          if git diff --cached --quiet; then
+            echo 'Category documentation already matches source data.'
+            exit 0
+          fi
+          # Never overwrite newer main changes from another merged PR.
+          REMOTE_HEAD="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if [ "$REMOTE_HEAD" != "$GITHUB_SHA" ]; then
+            echo '::error::main changed during CI; regenerate docs from the latest commit.'
+            exit 1
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'docs(catalog): regenerate category tables [skip ci]'
+          git push origin HEAD:refs/heads/main
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
