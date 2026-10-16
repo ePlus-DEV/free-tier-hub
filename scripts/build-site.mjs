@@ -302,6 +302,20 @@ function detailPage(item, absolute) {
     '">← Back to ', tag(category), '</a></p>',
   ].join('');
 }
+// GitHub Markdown cannot evaluate JSON. These tiny SVG assets show the latest
+// deployed catalog counts without bot commits or external image services.
+export function categoryCountSVG(count) {
+  if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid category count');
+  const number = String(count);
+  const width = Math.max(28, 16 + number.length * 8);
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
+    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + number + ' services">' +
+    '<title>' + number + ' services</title>' +
+    '<rect width="' + width + '" height="22" rx="7" fill="#e8f0ec"/>' +
+    '<text x="' + width / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
+    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + number + '</text></svg>\\n';
+}
+
 export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL,
   catalogPath = path.join(ROOT, 'data/services.json')) {
   const base = normalizeURL(siteURL);
@@ -421,6 +435,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   ];
   file(output, 'agents.md', agents.join('\n') + '\n');
   file(output, 'catalog.json', JSON.stringify(items, null, 2) + '\n');
+  for (const category of CATEGORIES) {
+    file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
+  }
   for (const name of ['site.css', 'directory-url.js', 'site.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
     const dest = path.join(output, 'assets', name);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
