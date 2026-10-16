@@ -5,6 +5,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+// The README badge counts services from the live source JSON on main; no sync commit needed.
+export const SERVICE_BADGE_URL = "https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen";
+export function hasDynamicServiceBadge(readme) {
+  const badges = [...readme.matchAll(/!\[Catalog\]\(([^)]+)\)/g)];
+  return badges.length === 1 && badges[0][1] === SERVICE_BADGE_URL;
+}
+
 export const CATEGORIES = [
   "static-hosting", "app-hosting", "serverless", "cloud-vps",
   "databases", "storage", "developer-tools", "auth-security",
@@ -111,10 +118,9 @@ export function render(root = DEFAULT_ROOT) {
     throw Error("README.md: missing or repeated category");
   }
   readme = replaceTable(readme, NAV, navRows, "README.md");
-  if ((readme.match(/services-\d+-brightgreen/g) || []).length !== 1) {
-    throw Error("README.md: expected one service-count badge");
+  if (!hasDynamicServiceBadge(readme)) {
+    throw Error("README.md: expected dynamic service-count badge from main catalog JSON");
   }
-  readme = readme.replace(/services-\d+-brightgreen/, "services-" + data.length + "-brightgreen");
   const output = new Map([["README.md", readme]]);
   for (const category of CATEGORIES) {
     const filename = "docs/" + category + ".md";
