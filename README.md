@@ -18,7 +18,7 @@
 | Cloud compute & VPS | 3 | [Browse](docs/cloud-vps.md) |
 | Databases & caching | 27 | [Browse](docs/databases.md) |
 | Object storage | 12 | [Browse](docs/storage.md) |
-| APIs & developer tools | 37 | [Browse](docs/developer-tools.md) |
+| APIs & developer tools | 38 | [Browse](docs/developer-tools.md) |
 | Authentication & security | 15 | [Browse](docs/auth-security.md) |
 | Monitoring & observability | 25 | [Browse](docs/observability.md) |
 | Product analytics | 12 | [Browse](docs/analytics.md) |

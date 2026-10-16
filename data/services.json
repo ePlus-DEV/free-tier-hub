@@ -2072,6 +2072,19 @@
     "added_at": "2026-10-14"
   },
   {
+    "id": "curlshot-free",
+    "name": "CurlShot Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "100 screenshots/month (URL, HTML or Markdown to PNG/JPEG/WebP/PDF); 10 requests/minute, 1 render at a time",
+    "watch_out": "Full-page captures have a lower maximum height and pixel density than paid plans. Failed renders and cache hits are not counted; paid overage is off by default.",
+    "pricing_url": "https://curlshot.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-15",
+    "added_at": "2026-10-15"
+  },
+  {
     "id": "amplitude-free",
     "name": "Amplitude Free",
     "category": "analytics",
