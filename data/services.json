@@ -2654,5 +2654,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-15"
+  },
+  {
+    "id": "arcjet-free",
+    "name": "Arcjet Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "10,000 security requests/month after the 15-day trial; SDK-based protection for web and AI-agent requests",
+    "watch_out": "The initial 15-day trial transitions to a capped ongoing Free plan. The current pricing page highlights paid Individual/Startup tiers; Free feature entitlements, card requirements and commercial-use rights are not separately specified. Do not assume paid-plan features or that usage above the cap is free.",
+    "pricing_url": "https://arcjet.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-16"
   }
 ]
