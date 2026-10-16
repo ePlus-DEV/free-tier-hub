@@ -1,14 +1,32 @@
 # Free Tier Hub 🚀
 
-**Build More, Spend Less.** A community-maintained directory of free hosting, cloud, databases, storage, serverless, AI and developer services.
+**Build More, Spend Less.**
 
-![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) ![Data](https://img.shields.io/badge/catalog-JSON-blue) ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)
+Discover and compare free-tier services for hosting, databases, cloud infrastructure, AI, security, and developer tools. Explore published free allowances, important restrictions, and direct links to official provider documentation—all in one independent directory.
 
-**Explore:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Search the catalog](https://free-tier.eplus.dev/#explore) · [Machine-readable JSON](https://free-tier.eplus.dev/catalog.json)
+![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
-> **Important:** A free plan is not necessarily free for every region, workload, or commercial use. Some providers require a payment card, expire resources, or charge overages. Each service has its own verification date (`last_checked`) in the [source catalog](data/services.json). Check official provider terms before relying on a plan.
+**[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json)
 
-## Quick navigation
+## Why Free Tier Hub?
+
+- **Compare before you sign up.** Review free allowances, limits, billing-card requirements, and commercial-use restrictions.
+- **Find a suitable starting point.** Browse by category, search, or filter the [interactive directory](https://free-tier.eplus.dev/#explore).
+- **Verify at the source.** Listings link to official pricing or documentation and include a `last_checked` date.
+- **Contribute improvements.** Report changed terms or suggest a service without setting up a local development environment.
+
+> **Free does not always mean zero cost.** Some plans use recurring credits, expire, require a payment method, or charge for overages. Free Tier Hub is an independent directory, not a service provider or an endorsement. Always verify current terms with the provider.
+
+## Find the right free tier
+
+- **Deploy a website or API:** [Static hosting](docs/static-hosting.md), [app hosting](docs/app-hosting.md), and [serverless](docs/serverless.md).
+- **Store and query data:** [Databases](docs/databases.md), [object storage](docs/storage.md), and [hosted search](docs/search.md).
+- **Build with AI:** [AI chatbots & assistants](docs/ai-assistants.md) and [AI & ML platforms](docs/ai-ml.md).
+- **Run developer infrastructure:** [Developer tools](docs/developer-tools.md), [authentication](docs/auth-security.md), [monitoring](docs/observability.md), and [queues & workflows](docs/queues-jobs.md).
+
+For practical combinations, see [example free-tier stacks](docs/use-cases.md) and the [cost and data-safety checklist](docs/cost-safety.md).
+
+## Browse all categories
 
 | Category | Services | Browse |
 | --- | ---: | --- |
@@ -31,40 +49,41 @@
 | Tunneling & networking | ![Count](https://free-tier.eplus.dev/badges/categories/tunneling-networking.svg) | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | ![Count](https://free-tier.eplus.dev/badges/categories/webhooks-events.svg) | [Browse](docs/webhooks-events.md) |
 
-## Choose a free-tier service
-
-- **Websites and APIs:** Compare [static hosting](docs/static-hosting.md), [app hosting](docs/app-hosting.md), and [serverless](docs/serverless.md).
-- **Data and files:** Browse [databases](docs/databases.md), [storage](docs/storage.md), and [hosted search](docs/search.md). Watch for paused projects, expiration and egress costs.
-- **AI tools:** Compare [AI chatbots and assistants](docs/ai-assistants.md) with [AI developer APIs and platforms](docs/ai-ml.md).
-- **Developer infrastructure:** Browse [developer tools](docs/developer-tools.md), [queues and scheduling](docs/queues-jobs.md), [authentication](docs/auth-security.md), and [observability](docs/observability.md).
-- **Example stacks and risks:** Read [free-tier use cases](docs/use-cases.md) and [cost and data-safety tips](docs/cost-safety.md).
-
-Free Tier Hub is an **independent discovery directory**, not a provider of the listed services or a marketplace that provisions accounts. Visitors compare published free allowances and follow links to providers; provider terms remain authoritative.
-
-The website provides **search, categories and filters** for the full directory. Detailed service limits and caveats live in the category pages linked above and in `data/services.json`, not in a duplicate README table.
+Category counts are generated from the catalog during successful site deployments. GitHub's image cache may briefly display earlier totals.
 
 ## Contributing
 
-Found a new plan or incorrect limits? [Suggest a service without writing code](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml), or [follow the contribution guide](CONTRIBUTING.md) to open a pull request from a fork.
+There are two ways to help keep the directory current:
 
-Use **official pricing/docs URLs** and the date verified. Avoid referral links, unverified claims and misleading “always free” labels. Maintainers review external contributions before merging.
+- **No-code suggestion:** [Open a service suggestion Issue](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) with the provider's official source and the date you checked it.
+- **Pull request:** Fork the repository, add or update an entry in [`data/services.json`](data/services.json), and open a PR. **No local Node.js commands or manual README/doc-count edits are required** for standard catalog contributions; GitHub Actions generates category tables for checks.
 
-## How updates reach the live site
+Please include accurate quotas, reset periods, restrictions, and official URLs. Maintainers review provider claims before merging. Read the [contribution guide](CONTRIBUTING.md) for the schema and full workflow.
 
-- **Public suggestions** submitted through the no-code Issue form are reviewed by maintainers; they do **not** automatically become PRs.
-- **Structured maintainer candidates** using the separate `[catalog-candidate] <id>` JSON Issue format may be processed by the candidate queue workflow, subject to permissions, valid data, secrets and successful Actions runs. An Issue alone does not publish a service.
-- **Contributions** need only edit `data/services.json` for a standard service addition; GitHub Actions generates category documentation in CI. Changes must pass consistency checks and review. After merging to `main`, the Pages workflow commits generated category docs and deploys the site; PR previews are not production.
-- **Operational status** must be checked in [Actions](https://github.com/ePlus-DEV/free-tier-hub/actions) and against the [live machine-readable catalog](https://free-tier.eplus.dev/catalog.json). The category count badges reflect the last successfully deployed website and may briefly lag repository source data during deployment or caching.
+## Catalog data and accuracy
 
-## For maintainers and developers
+[`data/services.json`](data/services.json) is the source of truth for listings. The website provides a [machine-readable catalog](https://free-tier.eplus.dev/catalog.json) and dedicated category and service pages. Each entry's `last_checked` date records a source review, **not** a guarantee of current prices or live availability.
 
-- **Source of truth:** [`data/services.json`](data/services.json) — structured pricing evidence, plan types, restrictions and review dates.
-- **Category references:** [`docs/`](docs/) — generated tables; do not manually edit them.
-- **Deployment, domain, SEO and local verification:** [`docs/deployment.md`](docs/deployment.md).
-- **Contributor tooling:** GitHub Actions runs catalog synchronization and verification automatically; no local commands are required for standard data contributions. For optional local checks, Node.js 24 LTS requires no dependencies: `npm run catalog:sync && npm run verify`.
-- **CI:** [Catalog checks](.github/workflows/validate-catalog.yml) and [GitHub Pages deployment](.github/workflows/pages.yml).
-- **Source review:** [Official-source audit guide](docs/source-audit.md) — weekly read-only URL, age and verification-backlog report (`npm run audit:sources`).
+Automated checks validate the data structure and generated documentation; they do not independently confirm every provider's terms. See the [source-audit guide](docs/source-audit.md) for review practices.
 
-Free allowances, recurring credits, trials and expiring resources are labeled separately. Unknown card or commercial-use policies are marked **Check provider**, not guessed.
+## Development and operations
 
-Maintained by [ePlus-DEV](https://github.com/ePlus-DEV). Community contributions welcome.
+The static site uses **Node.js 24** and GitHub Pages. GitHub Actions runs catalog synchronization, validation, and builds for pull requests. Following an approved merge, the production workflow generates category documentation and deploys the website.
+
+- **Source and generated docs:** [Service catalog](data/services.json) · [Category reference files](docs/)
+- **CI and deployment:** [Catalog checks](.github/workflows/validate-catalog.yml) · [GitHub Pages workflow](.github/workflows/pages.yml) · [Actions status](https://github.com/ePlus-DEV/free-tier-hub/actions)
+- **Maintainer documentation:** [Deployment & SEO](docs/deployment.md) · [Source audits](docs/source-audit.md)
+
+Local checks are optional:
+
+```bash
+npm run catalog:sync
+npm run verify
+npm run build
+```
+
+The live website may lag a merge while deployment or caching completes. Check the [Actions history](https://github.com/ePlus-DEV/free-tier-hub/actions) and [live catalog](https://free-tier.eplus.dev/catalog.json) when investigating publication status.
+
+---
+
+Maintained by [ePlus-DEV](https://github.com/ePlus-DEV) and community contributors.
