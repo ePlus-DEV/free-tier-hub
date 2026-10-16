@@ -47,6 +47,17 @@ test("rejects duplicate IDs, invalid URLs, unsupported plans and future dates", 
   }
 });
 
+test("rejects bulk-import placeholder descriptions", () => {
+  const placeholder = structuredClone(sourceData);
+  placeholder[0].free_limit = "Free offering available; review provider documentation for current limits.";
+  assert.throws(() => validateData(placeholder), /placeholder free_limit/);
+  placeholder[0].free_limit = "Free self-managed or open-source offering; hosting and infrastructure are not included.";
+  assert.throws(() => validateData(placeholder), /placeholder free_limit/);
+  placeholder[0].free_limit = sourceData[0].free_limit;
+  placeholder[0].watch_out = "Self-hosting, licensing, commercial-use conditions, and infrastructure costs require independent verification before publishing.";
+  assert.throws(() => validateData(placeholder), /placeholder watch_out/);
+});
+
 test("sync updates category pages while preserving dynamic README counts", () => {
   fixture(root => {
     const originalReadme = readFileSync(path.join(root, "README.md"), "utf8");
