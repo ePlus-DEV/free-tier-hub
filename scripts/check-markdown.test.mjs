@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { checkDocuments, validateDocuments, brokenLocalLinks, splitRow, scanTables } from './check-markdown.mjs';
-import { CATEGORIES } from './catalog.mjs';
+import { CATEGORIES, categoryCountBadge } from './catalog.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/services.json'), 'utf8'));
@@ -35,11 +35,13 @@ test('badge, README count, category row and extra table corruptions fail', () =>
   const wrongBadge = readme.replace('query=%24.length', 'query=%24.notLength');
   assert.notEqual(wrongBadge, readme);
   assert.ok(validateDocuments(ROOT, data, wrongBadge, pages).some(x => x.includes('badge')));
-  const count = data.filter(item => item.category === 'static-hosting').length;
-  const row = '| Static & frontend hosting | ' + count + ' |';
-  const wrongCount = readme.replace(row, '| Static & frontend hosting | ' + (count + 1) + ' |');
+  const row = '| Static & frontend hosting | ' + categoryCountBadge('static-hosting') + ' |';
+  const wrongCount = readme.replace(row, '| Static & frontend hosting | 999 |');
   assert.notEqual(wrongCount, readme);
   assert.ok(validateDocuments(ROOT, data, wrongCount, pages).some(x => x.includes('navigation')));
+  const wrongCategory = readme.replace('badges/categories/static-hosting.svg', 'badges/categories/databases.svg');
+  assert.notEqual(wrongCategory, readme);
+  assert.ok(validateDocuments(ROOT, data, wrongCategory, pages).some(x => x.includes('navigation')));
   const candidate = data.find(item => item.category === 'databases');
   const oldRow = '[' + candidate.name + '](' + candidate.pricing_url + ')';
   const modified = { ...pages, databases: pages.databases.replace(oldRow, '[Corrupted service](' + candidate.pricing_url + ')') };
