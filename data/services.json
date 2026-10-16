@@ -1595,12 +1595,12 @@
     "name": "Tigris Object Storage Free",
     "category": "storage",
     "plan": "ongoing",
-    "free_limit": "5 GB standard storage, 10,000 Class A and 100,000 Class B requests per month.",
-    "watch_out": "Overage and egress billing can apply; verify payment requirements.",
+    "free_limit": "5 GB Standard storage/month; 10,000 Class A (PUT/COPY/POST/LIST) and 100,000 Class B (GET/SELECT/other) requests/month; zero egress fees.",
+    "watch_out": "Free storage covers Standard tier only. Usage beyond the allowance is billed; object notifications cost $0.01/1,000 events. Other storage tiers have separate retrieval fees or minimum retention periods.",
     "pricing_url": "https://www.tigrisdata.com/pricing/",
-    "credit_card": "check",
+    "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-14",
+    "last_checked": "2026-10-16",
     "added_at": "2026-10-14"
   },
   {
