@@ -38,5 +38,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
+      - name: Regenerate category documentation in CI
+        run: npm run catalog:sync
       - name: Verify catalog and generated Markdown with Node.js
         run: npm run verify
