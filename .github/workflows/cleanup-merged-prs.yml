@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete only branches belonging to merged PRs
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const owner = context.repo.owner;
@@ -30,36 +30,72 @@ jobs:
             });
             const active = new Set(open.map(pr => pr.head.ref));
             for (const pr of open) active.add('pr-preview-' + pr.number);
-            const merged = await github.paginate(github.rest.pulls.list, {
+            const closed = await github.paginate(github.rest.pulls.list, {
               owner, repo, state: 'closed', per_page: 100
             });
-            const candidates = new Set();
-            for (const pr of merged) {
-              if (!pr.merged_at) continue;
-              candidates.add('pr-preview-' + pr.number);
-              if (pr.head.repo?.full_name === repository.full_name) {
-                candidates.add(pr.head.ref);
-              }
-            }
+            const merged = closed.filter(pr => Boolean(pr.merged_at));
+            const closedNumbers = new Set(closed.map(pr => pr.number));
+            const mergedHeads = new Set(merged
+              .filter(pr => pr.head.repo?.full_name === repository.full_name)
+              .map(pr => pr.head.ref));
             const branches = await github.paginate(github.rest.repos.listBranches, {
               owner, repo, per_page: 100
             });
-            const existing = new Map(branches.map(b => [b.name, b]));
-            for (const name of [...candidates].sort()) {
-              const branch = existing.get(name);
-              if (!branch || branch.protected || protectedBranches.has(name) || active.has(name)) continue;
-              // Never touch an arbitrary branch without a verified merged PR.
-              if (!/^pr-preview-\d+$/.test(name) &&
-                  !merged.some(pr => pr.merged_at &&
-                    pr.head.repo?.full_name === repository.full_name &&
-                    pr.head.ref === name)) continue;
+            const candidates = new Set();
+            for (const branch of branches) {
+              const name = branch.name;
+              if (branch.protected || protectedBranches.has(name) || active.has(name)) continue;
+
+              // Preview snapshots have unrelated Git history and never need merging.
+              // Delete only when the corresponding PR is closed (merged OR abandoned).
+              const preview = /^pr-preview-(\d+)$/.exec(name);
+              if (preview) {
+                if (closedNumbers.has(Number(preview[1]))) candidates.add(name);
+                continue;
+              }
+
+              // Merged PRs are safe to clean even after squash/rebase merges.
+              if (mergedHeads.has(name)) {
+                candidates.add(name);
+                continue;
+              }
+
+              // Also clean work branches that are already fully contained in main,
+              // even when they never had a PR. Never delete ahead/diverged branches.
               try {
+                const { data: comparison } = await github.rest.repos.compareCommits({
+                  owner, repo, base: repository.default_branch, head: name
+                });
+                if (comparison.ahead_by === 0 &&
+                    ['behind', 'identical'].includes(comparison.status)) {
+                  candidates.add(name);
+                } else {
+                  core.info('Kept unmerged branch: ' + name +
+                    ' (' + comparison.ahead_by + ' ahead)');
+                }
+              } catch (error) {
+                core.warning('Cannot establish merge status for ' + name +
+                  ', keeping branch: ' + error.message);
+              }
+            }
+
+            for (const name of [...candidates].sort()) {
+              const original = branches.find(branch => branch.name === name);
+              try {
+                // If the branch moved since enumeration, leave it untouched.
+                const { data: current } = await github.rest.repos.getBranch({
+                  owner, repo, branch: name
+                });
+                if (current.protected || current.commit.sha !== original.commit.sha) {
+                  core.warning('Branch moved or became protected; keeping ' + name);
+                  continue;
+                }
                 await github.rest.git.deleteRef({
                   owner, repo, ref: 'heads/' + name
                 });
-                core.info('Deleted merged PR branch: ' + name);
+                core.info('Deleted safe-to-remove branch: ' + name);
               } catch (error) {
                 core.warning('Could not delete ' + name + ': ' + error.message);
               }
             }
-            core.info('Kept default/protected branches, active PR branches and unrelated work branches.');
+            core.info('Kept main, protected branches, active PRs, and unmerged work.');
