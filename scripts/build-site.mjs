@@ -313,7 +313,7 @@ export function categoryCountSVG(count) {
     '<title>' + number + ' services</title>' +
     '<rect width="' + width + '" height="22" rx="7" fill="#e8f0ec"/>' +
     '<text x="' + width / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
-    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + number + '</text></svg>\\n';
+    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + number + '</text></svg>';
 }
 
 export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL,
