@@ -85,6 +85,15 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     for (const key of ["name", "free_limit", "watch_out"]) {
       if (typeof item[key] !== "string" || !item[key].trim()) errors.push(String(id) + ": invalid " + key);
     }
+    // These former bulk-import placeholders are not actionable free-tier descriptions.
+    // The catalog must describe the actual product and material restrictions.
+    if (typeof item.free_limit === "string" &&
+        /^(Free offering available; review provider documentation for current limits\.|Free self-managed or open-source offering; hosting and infrastructure are not included\.)$/.test(item.free_limit)) {
+      errors.push(String(id) + ": placeholder free_limit; describe the actual product and allowance");
+    }
+    if (item.watch_out === "Self-hosting, licensing, commercial-use conditions, and infrastructure costs require independent verification before publishing.") {
+      errors.push(String(id) + ": placeholder watch_out; describe product-specific restrictions");
+    }
     if (!CATEGORIES.includes(item.category)) errors.push(String(id) + ": unsupported category");
     if (!Object.hasOwn(PLANS, item.plan)) errors.push(String(id) + ": unsupported plan");
     for (const key of ["credit_card", "commercial_use"]) {
