@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CATEGORIES, hasDynamicServiceBadge, validateData } from './catalog.mjs';
+import { CATEGORIES, categoryCountBadge, hasDynamicServiceBadge, validateData } from './catalog.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PLANS = {
@@ -95,13 +95,11 @@ export function validateDocuments(root, data, readme, pages) {
     errors.push('README.md: expected exactly one category navigation table');
     return errors;
   }
-  const counts = Object.fromEntries(CATEGORIES.map(cat =>
-    [cat, data.filter(item => item.category === cat).length]));
   if (nav[0].rows.length !== CATEGORIES.length)
     errors.push('README.md: navigation category count mismatch');
   CATEGORIES.forEach((cat, i) => {
     const row = nav[0].rows[i];
-    if (!row || row.length !== 3 || row[1] !== String(counts[cat]) ||
+    if (!row || row.length !== 3 || row[1] !== categoryCountBadge(cat) ||
         row[2] !== '[Browse](docs/' + cat + '.md)') {
       errors.push('README.md: invalid navigation count or link for ' + cat);
     }

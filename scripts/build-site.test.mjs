@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, tag, serviceLogoURL } from './build-site.mjs';
+import { build, categoryCountSVG, tag, serviceLogoURL } from './build-site.mjs';
+import { CATEGORIES } from './catalog.mjs';
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -48,6 +49,30 @@ test('directory exposes unique search/category controls and official sources for
       assert.ok(fs.existsSync(path.join(output, 'service', entry.id, 'index.html')), entry.id);
     }
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
+});
+
+test('category count badges are generated from source JSON and update on rebuild', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-badges-'));
+  try {
+    const items = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
+    const first = path.join(tmp, 'first');
+    build(first);
+    for (const category of CATEGORIES) {
+      const count = items.filter(item => item.category === category).length;
+      const svg = fs.readFileSync(path.join(first, 'badges', 'categories', category + '.svg'), 'utf8');
+      assert.equal(svg, categoryCountSVG(count));
+      assert.match(svg, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg"/);
+      assert.match(svg, /role="img"/);
+    }
+    items.push({ ...items[0], id: 'dynamic-badge-test-service', name: 'Dynamic Badge Test Service' });
+    const source = path.join(tmp, 'catalog.json');
+    fs.writeFileSync(source, JSON.stringify(items));
+    const second = path.join(tmp, 'second');
+    build(second, undefined, source);
+    const category = items[0].category;
+    const count = items.filter(item => item.category === category).length;
+    assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'), categoryCountSVG(count));
+  } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 });
 
 test('every service gets an actual provider favicon, including previously unmapped brands', () => {

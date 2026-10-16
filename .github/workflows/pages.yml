@@ -72,6 +72,7 @@ jobs:
           test -s dist/llms.txt
           test -s dist/agents.md
           test -s dist/catalog.json
+          test -s dist/badges/categories/static-hosting.svg
           test -f dist/.nojekyll
       - name: Verify public-domain SEO URLs
         run: |

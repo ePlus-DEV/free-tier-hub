@@ -18,6 +18,12 @@ export const CATEGORIES = [
   "observability", "analytics", "dns-cdn", "ai-ml", "ai-assistants",
   "queues-jobs", "search", "feature-flags", "tunneling-networking", "webhooks-events",
 ];
+// Category count images are generated from the catalog at build time.
+export function categoryCountBadge(category) {
+  if (!CATEGORIES.includes(category)) throw Error("Unknown category: " + category);
+  return "![Count](https://free-tier.eplus.dev/badges/categories/" + category + ".svg)";
+}
+
 const PLANS = {
   ongoing: "Ongoing free allowance",
   "monthly-credit": "Recurring free credit",
@@ -99,9 +105,6 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
 
 export function render(root = DEFAULT_ROOT) {
   const data = validateData(JSON.parse(read(root, "data/services.json")));
-  const counts = Object.fromEntries(CATEGORIES.map(category => [
-    category, data.filter(item => item.category === category).length,
-  ]));
   let readme = read(root, "README.md");
   const lines = readme.split("\n");
   const start = lines.findIndex(line => line.trim() === NAV);
@@ -111,7 +114,7 @@ export function render(root = DEFAULT_ROOT) {
     const parts = lines[i].trim().slice(1, -1).split("|").map(v => v.trim());
     const match = parts.length === 3 && /^\[Browse\]\(docs\/([a-z-]+)\.md\)$/.exec(parts[2]);
     if (!match || !CATEGORIES.includes(match[1])) throw Error("README.md: invalid category link");
-    navRows.push([parts[0], String(counts[match[1]]), parts[2]]);
+    navRows.push([parts[0], categoryCountBadge(match[1]), parts[2]]);
   }
   if (navRows.length !== CATEGORIES.length ||
       new Set(navRows.map(v => v[2])).size !== CATEGORIES.length) {

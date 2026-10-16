@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { CATEGORIES, check, hasDynamicServiceBadge, render, sync, validateData } from "./catalog.mjs";
+import { CATEGORIES, categoryCountBadge, check, hasDynamicServiceBadge, render, sync, validateData } from "./catalog.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceData = JSON.parse(readFileSync(path.join(ROOT, "data/services.json"), "utf8"));
@@ -47,16 +47,20 @@ test("rejects duplicate IDs, invalid URLs, unsupported plans and future dates", 
   }
 });
 
-test("sync updates README counts and category pages, preserving manual prose", () => {
+test("sync updates category pages while preserving dynamic README counts", () => {
   fixture(root => {
+    const originalReadme = readFileSync(path.join(root, "README.md"), "utf8");
     const services = path.join(root, "data/services.json");
     const data = JSON.parse(readFileSync(services, "utf8"));
     const addition = { ...data[0], id: "node-test-service", name: "Node Test Service" };
     data.splice(3, 0, addition);
     writeFileSync(services, JSON.stringify(data, null, 2) + "\n");
     assert.throws(() => check(root), /Out of sync/);
-    assert.ok(sync(root) >= 2);
+    assert.ok(sync(root) >= 1);
+    assert.equal(readFileSync(path.join(root, "README.md"), "utf8"), originalReadme);
     assert.equal(check(root), CATEGORIES.length + 1);
+    assert.ok(originalReadme.includes(categoryCountBadge("static-hosting")));
+    assert.throws(() => categoryCountBadge("invalid"), /Unknown category/);
     assert.ok(hasDynamicServiceBadge(readFileSync(path.join(root, "README.md"), "utf8")));
     assert.ok(hasDynamicServiceBadge(readFileSync(path.join(ROOT, "README.md"), "utf8")));
     assert.match(readFileSync(path.join(root, "docs/static-hosting.md"), "utf8"), /Node Test Service/);
