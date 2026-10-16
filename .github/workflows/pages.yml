@@ -116,8 +116,8 @@ jobs:
             echo '::error::main changed during CI; regenerate docs from the latest commit.'
             exit 1
           fi
-          git -c user.name='github-actions[bot]' \\
-              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \\
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
               commit -m 'docs(catalog): regenerate category tables [skip ci]'
           git push origin HEAD:refs/heads/main
       - name: Configure GitHub Pages
