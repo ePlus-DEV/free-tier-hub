@@ -2666,5 +2666,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-16"
+  },
+  {
+    "id": "mistral-vibe-free",
+    "name": "Mistral Vibe Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free web and mobile AI assistant with access to Mistral models, limited chat messages and web searches, limited coding sessions, basic image generation/editing, and 100+ connectors; usage allowances are not published as fixed numeric quotas.",
+    "watch_out": "Free usage is rate-limited and subject to fair-use restrictions. Higher chat, search, image and coding limits require paid plans. Model training and commercial-use conditions should be reviewed before submitting sensitive or client data.",
+    "pricing_url": "https://mistral.ai/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-17"
   }
 ]
