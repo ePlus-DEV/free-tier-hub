@@ -1,0 +1,240 @@
+{
+  "as_of_utc": "2026-10-17",
+  "source_main_sha": "792f894c19f51293817083bffa3aca3df756a8bc",
+  "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
+  "categories": [
+    {
+      "category": "static-hosting",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-15",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "app-hosting",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-12",
+      "backlog_total": 1,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "serverless",
+      "service_count": 3,
+      "latest_catalog_verification": "2026-09-22",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-17"
+    },
+    {
+      "category": "cloud-vps",
+      "service_count": 3,
+      "latest_catalog_verification": "2026-09-22",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "databases",
+      "service_count": 27,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 2,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "storage",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-16",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
+      "last_discovery_review": null
+    },
+    {
+      "category": "developer-tools",
+      "service_count": 39,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 9,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "auth-security",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-16",
+      "backlog_total": 5,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "observability",
+      "service_count": 25,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "analytics",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "dns-cdn",
+      "service_count": 2,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-17"
+    },
+    {
+      "category": "ai-ml",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "ai-assistants",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "queues-jobs",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 1,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "search",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "feature-flags",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "tunneling-networking",
+      "service_count": 2,
+      "latest_catalog_verification": "2026-09-23",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "webhooks-events",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    }
+  ],
+  "discovery_log": [
+    {
+      "checked_utc": "2026-10-17",
+      "category": "serverless",
+      "official_sources": [
+        "https://aws.amazon.com/lambda/pricing/",
+        "https://aws.amazon.com/free/serverless/",
+        "https://supabase.com/docs/guides/functions/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "aws-lambda-always-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "1M requests and 400,000 GB-seconds per month; not in main/backlog or issue/PR search; GitHub Issue write blocked by connector safety checks.",
+          "candidate": {
+            "id": "aws-lambda-always-free",
+            "name": "AWS Lambda Always Free",
+            "category": "serverless",
+            "plan": "ongoing",
+            "free_limit": "1 million requests and 400,000 GB-seconds of Lambda Functions execution per month across x86 and Arm, on Free or Paid AWS plans.",
+            "watch_out": "Lambda Functions on-demand free allowance does not cover all Lambda modes or related AWS services. Overages, logs, networking, storage, response streaming and integrations may incur fees; AWS account signup may require a payment card.",
+            "pricing_url": "https://aws.amazon.com/lambda/pricing/",
+            "credit_card": "check",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-17"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Supabase Edge Functions Free",
+          "reason": "Not selected for delivery; existing Supabase listing requires product-level dedupe and separate review."
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "uploadthing-free",
+          "status": "catalogued-product-alias",
+          "existing_id": "uploadthing-2gb-app",
+          "reason": "Same UploadThing hosted storage plan already in catalog; do not create duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-17",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.cloudns.net/landing/page/free-dns/",
+        "https://www.gedo.se/en/dns",
+        "https://www.enum.co/dns",
+        "https://www.ptrdns.net/freedns"
+      ],
+      "candidates": [
+        {
+          "id": "cloudns-free-dns",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official provider confirms free-forever authoritative DNS with 1 zone, 50 records, 500K monthly queries and four unicast nameservers; no catalog/backlog/issue/PR match. GitHub issue write blocked by connector safety.",
+          "candidate": {
+            "id": "cloudns-free-dns",
+            "name": "ClouDNS Free DNS",
+            "category": "dns-cdn",
+            "plan": "ongoing",
+            "free_limit": "1 DNS zone, 50 DNS records, 500,000 queries/month, 4 unicast DNS servers, 1 mail forward and 1 Dynamic DNS hostname.",
+            "watch_out": "Free DNS is unicast; DNSSEC, Anycast and higher query limits require paid plans. Credit-card and commercial-use terms need confirmation.",
+            "pricing_url": "https://www.cloudns.net/landing/page/free-dns/",
+            "credit_card": "check",
+            "commercial_use": "check",
+            "last_checked": "2026-10-17"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "enum DNS",
+          "reason": "Provider describes early-access/waitlist availability; not selected for general-access catalog."
+        },
+        {
+          "name": "PTRDNS Free DNS",
+          "reason": "Provider says Free Plan temporarily unavailable; ineligible for immediate delivery."
+        },
+        {
+          "name": "Gedo DNS",
+          "reason": "Official free plan found; separate provider due diligence and dedupe before issue delivery."
+        }
+      ]
+    }
+  ]
+}
