@@ -91,7 +91,7 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-17"
     },
     {
       "category": "ai-ml",
@@ -190,6 +190,49 @@
           "status": "catalogued-product-alias",
           "existing_id": "uploadthing-2gb-app",
           "reason": "Same UploadThing hosted storage plan already in catalog; do not create duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-17",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.cloudns.net/landing/page/free-dns/",
+        "https://www.gedo.se/en/dns",
+        "https://www.enum.co/dns",
+        "https://www.ptrdns.net/freedns"
+      ],
+      "candidates": [
+        {
+          "id": "cloudns-free-dns",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official provider confirms free-forever authoritative DNS with 1 zone, 50 records, 500K monthly queries and four unicast nameservers; no catalog/backlog/issue/PR match. GitHub issue write blocked by connector safety.",
+          "candidate": {
+            "id": "cloudns-free-dns",
+            "name": "ClouDNS Free DNS",
+            "category": "dns-cdn",
+            "plan": "ongoing",
+            "free_limit": "1 DNS zone, 50 DNS records, 500,000 queries/month, 4 unicast DNS servers, 1 mail forward and 1 Dynamic DNS hostname.",
+            "watch_out": "Free DNS is unicast; DNSSEC, Anycast and higher query limits require paid plans. Credit-card and commercial-use terms need confirmation.",
+            "pricing_url": "https://www.cloudns.net/landing/page/free-dns/",
+            "credit_card": "check",
+            "commercial_use": "check",
+            "last_checked": "2026-10-17"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "enum DNS",
+          "reason": "Provider describes early-access/waitlist availability; not selected for general-access catalog."
+        },
+        {
+          "name": "PTRDNS Free DNS",
+          "reason": "Provider says Free Plan temporarily unavailable; ineligible for immediate delivery."
+        },
+        {
+          "name": "Gedo DNS",
+          "reason": "Official free plan found; separate provider due diligence and dedupe before issue delivery."
         }
       ]
     }
