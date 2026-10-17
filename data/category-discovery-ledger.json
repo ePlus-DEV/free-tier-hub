@@ -163,13 +163,33 @@
         {
           "id": "aws-lambda-always-free",
           "status": "verified-awaiting-Issue",
-          "reason": "1M requests and 400,000 GB-seconds per month; not in main/backlog or issue/PR search; GitHub Issue write blocked by connector safety checks."
+          "reason": "1M requests and 400,000 GB-seconds per month; not in main/backlog or issue/PR search; GitHub Issue write blocked by connector safety checks.",
+          "candidate": {
+            "id": "aws-lambda-always-free",
+            "name": "AWS Lambda Always Free",
+            "category": "serverless",
+            "plan": "ongoing",
+            "free_limit": "1 million requests and 400,000 GB-seconds of Lambda Functions execution per month across x86 and Arm, on Free or Paid AWS plans.",
+            "watch_out": "Lambda Functions on-demand free allowance does not cover all Lambda modes or related AWS services. Overages, logs, networking, storage, response streaming and integrations may incur fees; AWS account signup may require a payment card.",
+            "pricing_url": "https://aws.amazon.com/lambda/pricing/",
+            "credit_card": "check",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-17"
+          }
         }
       ],
       "excluded": [
         {
           "name": "Supabase Edge Functions Free",
           "reason": "Not selected for delivery; existing Supabase listing requires product-level dedupe and separate review."
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "uploadthing-free",
+          "status": "catalogued-product-alias",
+          "existing_id": "uploadthing-2gb-app",
+          "reason": "Same UploadThing hosted storage plan already in catalog; do not create duplicate."
         }
       ]
     }
