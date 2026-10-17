@@ -2678,5 +2678,18 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-17"
+  },
+  {
+    "id": "yylo-cli",
+    "name": "YYLO CLI",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free and open-source (MIT) command-line orchestrator for AI coding agents, repeatable workflows, and receipt-backed repository changes; unlimited local use for any number of projects.",
+    "watch_out": "Runs locally in a terminal rather than as a hosted service: requires Node.js 20.10+, Git, and your own model provider or API key; no cloud dashboard, team plan, or hosted tier.",
+    "pricing_url": "https://github.com/yylo-dev/yylo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-17",
+    "added_at": "2026-10-17"
   }
 ]
