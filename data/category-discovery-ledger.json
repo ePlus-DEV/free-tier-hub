@@ -1,0 +1,177 @@
+{
+  "as_of_utc": "2026-10-17",
+  "source_main_sha": "792f894c19f51293817083bffa3aca3df756a8bc",
+  "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
+  "categories": [
+    {
+      "category": "static-hosting",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-15",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "app-hosting",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-12",
+      "backlog_total": 1,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "serverless",
+      "service_count": 3,
+      "latest_catalog_verification": "2026-09-22",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-17"
+    },
+    {
+      "category": "cloud-vps",
+      "service_count": 3,
+      "latest_catalog_verification": "2026-09-22",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "databases",
+      "service_count": 27,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 2,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "storage",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-16",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
+      "last_discovery_review": null
+    },
+    {
+      "category": "developer-tools",
+      "service_count": 39,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 9,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "auth-security",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-16",
+      "backlog_total": 5,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "observability",
+      "service_count": 25,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "analytics",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "dns-cdn",
+      "service_count": 2,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "ai-ml",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "ai-assistants",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "queues-jobs",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-17",
+      "backlog_total": 1,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "search",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "feature-flags",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "tunneling-networking",
+      "service_count": 2,
+      "latest_catalog_verification": "2026-09-23",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    },
+    {
+      "category": "webhooks-events",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-14",
+      "backlog_total": 3,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": null
+    }
+  ],
+  "discovery_log": [
+    {
+      "checked_utc": "2026-10-17",
+      "category": "serverless",
+      "official_sources": [
+        "https://aws.amazon.com/lambda/pricing/",
+        "https://aws.amazon.com/free/serverless/",
+        "https://supabase.com/docs/guides/functions/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "aws-lambda-always-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "1M requests and 400,000 GB-seconds per month; not in main/backlog or issue/PR search; GitHub Issue write blocked by connector safety checks."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Supabase Edge Functions Free",
+          "reason": "Not selected for delivery; existing Supabase listing requires product-level dedupe and separate review."
+        }
+      ]
+    }
+  ]
+}
