@@ -164,44 +164,6 @@ jobs:
           APPROVAL_RUN_ATTEMPT: ${{ github.run_attempt }}
           GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
 
-      - name: Auto-merge trusted catalog PRs
-        if: ${{ steps.pr.outputs.should_approve == 'true' && (steps.pr.outputs.author == 'hoangsvit' || steps.pr.outputs.author == 'github-actions[bot]') }}
-        run: |
-          set -euo pipefail
-          PR_JSON="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER")"
-          AUTHOR="$(jq -r '.user.login' <<<"$PR_JSON")"
-          if [ "$AUTHOR" = "github-actions[bot]" ]; then
-            BRANCH="$(jq -r '.head.ref' <<<"$PR_JSON")"
-            [[ "$BRANCH" == catalog/add-* ]] || exit 1
-            BODY="$(jq -r '.body // ""' <<<"$PR_JSON")"
-            [[ "$BODY" == "Automated delivery from candidate issue #"* ]] || exit 1
-          else
-            test "$AUTHOR" = "hoangsvit"
-          fi
-          test "$(jq -r '.state' <<<"$PR_JSON")" = "open"
-          test "$(jq -r '.draft' <<<"$PR_JSON")" = "false"
-          test "$(jq -r '.head.repo.full_name' <<<"$PR_JSON")" = "$GITHUB_REPOSITORY"
-          test "$(jq -r '.base.ref' <<<"$PR_JSON")" = "main"
-          test "$(jq -r '.head.sha' <<<"$PR_JSON")" = "$EXPECTED_HEAD"
-          test "$(jq -r '.mergeable' <<<"$PR_JSON")" = "true"
-
-          # UI PRs remain open for visual review and explicit manual merge.
-          FILES="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')"
-          if grep -Eq '^(site/|scripts/(build-site|site-data)\.mjs$)' <<<"$FILES"; then
-            echo 'UI changes require visual review and manual merge after opening the live preview.'
-            exit 0
-          fi
-
-          CHECKS="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json bucket,name,workflow)"
-          jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
-          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or .bucket == "skipping")' <<<"$CHECKS" >/dev/null
-
-          APPROVED="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/reviews" --paginate \
-            --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$EXPECTED_HEAD\") | .id" | tail -n 1)"
-          test -n "$APPROVED"
-
-          gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$EXPECTED_HEAD"
-        env:
-          PR_NUMBER: ${{ steps.pr.outputs.number }}
-          EXPECTED_HEAD: ${{ github.event.workflow_run.head_sha }}
-          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+      # Merging is intentionally a maintainer-only decision.
+      # A successful CI run or bot review must never trigger an automatic
+      # merge, as a merge into main may trigger production deployment.
