@@ -2703,5 +2703,17 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-10-17"
+  },
+  {
+    "id": "infinityfree-free-hosting",
+    "name": "InfinityFree Free Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "5 GB website storage, PHP 8.4, MySQL/MariaDB, free SSL, custom domains and free subdomains; no ads or card required.",
+    "watch_out": "Website hosting only; not a general-purpose VPS. Sites must receive occasional visits to remain active. No bulk mail, file distribution, or hosting resale; resource limits and backup responsibility apply.",
+    "pricing_url": "https://www.infinityfree.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-18"
   }
 ]
