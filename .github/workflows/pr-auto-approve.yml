@@ -191,7 +191,11 @@ jobs:
             exit 0
           fi
           test "$(jq -r '.state' <<<"$PR_JSON")" = "open"
-          test "$(jq -r '.draft' <<<"$PR_JSON")" = "false"
+          # Draft PRs are intentionally not auto-merged; skip without reporting a failed CI job.
+          if [ "$(jq -r '.draft' <<<"$PR_JSON")" != "false" ]; then
+            echo "::notice::Draft PR is awaiting review; auto-merge skipped"
+            exit 0
+          fi
           test "$(jq -r '.head.repo.full_name' <<<"$PR_JSON")" = "$GITHUB_REPOSITORY"
           test "$(jq -r '.base.ref' <<<"$PR_JSON")" = "main"
           test "$(jq -r '.head.sha' <<<"$PR_JSON")" = "$EXPECTED_HEAD"
@@ -210,7 +214,8 @@ jobs:
           # Skipped deployment is expected on a PR; it is not counted as PASS.
           jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .name == "validate" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
           jq -e 'any(.[]; .workflow == "Build and deploy GitHub Pages" and .name == "Test and build static site" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
-          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or (.workflow == "Build and deploy GitHub Pages" and .name == "Deploy" and .bucket == "skipping"))' <<<"$CHECKS" >/dev/null
+          # Skip only known optional checks; never interpret skipped as PASS.
+          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or (.workflow == "Build and deploy GitHub Pages" and .name == "Deploy" and .bucket == "skipping") or (.workflow == "Request eplus-bot review" and .name == "request-review" and .bucket == "skipping"))' <<<"$CHECKS" >/dev/null
           APPROVED="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/reviews" --paginate \
             --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$EXPECTED_HEAD\") | .id" | tail -n 1)"
           test -n "$APPROVED"
