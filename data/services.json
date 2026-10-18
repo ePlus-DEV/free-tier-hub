@@ -2715,5 +2715,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-18"
+  },
+  {
+    "id": "aws-lambda-always-free",
+    "name": "AWS Lambda Always Free",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "1 million Lambda Functions requests and 400,000 GB-seconds of on-demand compute per month across x86 and Arm, available on AWS Free and Paid plans.",
+    "watch_out": "AWS Lambda Functions on-demand free allowance does not cover all Lambda modes or related AWS services. Usage above the monthly quotas and other AWS products can incur charges. Payment card requirement varies by AWS account enrollment.",
+    "pricing_url": "https://aws.amazon.com/lambda/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-18"
   }
 ]
