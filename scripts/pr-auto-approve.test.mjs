@@ -48,7 +48,7 @@ test("only services and generated Markdown are safe for automatic merge", () => 
 });
 
 test("auto-merge requires exact-head checks and approval, never counts skipped deploy as PASS", () => {
-  assert.ok(autoMerge.includes('".head.sha\' <<<"$PR_JSON")" = "$EXPECTED_HEAD"'));
+  assert.ok(autoMerge.includes(`test "$(jq -r '.head.sha' <<<"$PR_JSON")" = "$EXPECTED_HEAD"`));
   assert.ok(autoMerge.includes('Test and build static site'));
   assert.ok(autoMerge.includes('Validate free tier catalog'));
   assert.ok(autoMerge.includes('.bucket == "pass"'));
