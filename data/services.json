@@ -2727,5 +2727,17 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-10-18"
+  },
+  {
+    "id": "cloudns-free-dns",
+    "name": "ClouDNS Free DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "1 DNS zone, 50 DNS records, 500,000 monthly DNS queries, 4 unicast DNS servers, 1 mail forward and 1 Dynamic DNS hostname.",
+    "watch_out": "Only unicast nameservers are included. Anycast, DNSSEC, DNS failover and higher quotas are paid features. Commercial-use rights and card requirements for permanent Free DNS need confirmation.",
+    "pricing_url": "https://www.cloudns.net/landing/page/free-dns/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-18"
   }
 ]
