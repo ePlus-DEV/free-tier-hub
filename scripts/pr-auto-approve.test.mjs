@@ -56,3 +56,16 @@ test("auto-merge requires exact-head checks and approval, never counts skipped d
   assert.ok(autoMerge.includes('APPROVED_FOR_HEAD') || autoMerge.includes('APPROVED="$(gh api'));
   assert.ok(autoMerge.includes('--match-head-commit "$EXPECTED_HEAD"'));
 });
+
+test("draft pull requests are skipped safely", () => {
+  assert.ok(autoMerge.includes('Draft PR is awaiting review; auto-merge skipped'));
+  assert.ok(autoMerge.includes('exit 0'));
+});
+
+test("only exact optional skipped check names are permitted", () => {
+  assert.ok(autoMerge.includes('.name == "Deploy" and .bucket == "skipping"'));
+  assert.ok(autoMerge.includes('.name == "request-review" and .bucket == "skipping"'));
+  assert.ok(autoMerge.includes('.workflow == "Request eplus-bot review"'));
+  assert.ok(autoMerge.includes('.name == "validate" and .bucket == "pass"'));
+  assert.ok(autoMerge.includes('.name == "Test and build static site" and .bucket == "pass"'));
+});
