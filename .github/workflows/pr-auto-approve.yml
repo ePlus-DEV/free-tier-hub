@@ -170,13 +170,25 @@ jobs:
           set -euo pipefail
           PR_JSON="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER")"
           AUTHOR="$(jq -r '.user.login' <<<"$PR_JSON")"
+          BRANCH="$(jq -r '.head.ref' <<<"$PR_JSON")"
           if [ "$AUTHOR" = "github-actions[bot]" ]; then
-            BRANCH="$(jq -r '.head.ref' <<<"$PR_JSON")"
-            [[ "$BRANCH" == catalog/add-* ]] || exit 1
+            # Only catalog PRs generated from an existing candidate issue can auto-merge.
+            [[ "$BRANCH" == catalog/add-* ]] || { echo "::notice::Not a catalog candidate branch"; exit 0; }
             BODY="$(jq -r '.body // ""' <<<"$PR_JSON")"
-            [[ "$BODY" == "Automated delivery from candidate issue #"* ]] || exit 1
+            ISSUE_NUMBER="$(sed -nE 's/^Automated delivery from candidate issue #([0-9]+)\..*/\1/p' <<<"$BODY" | head -n 1)"
+            [[ "$ISSUE_NUMBER" =~ ^[0-9]+$ ]] || { echo "::notice::Candidate issue reference missing"; exit 0; }
+            ISSUE_JSON="$(gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER")"
+            ISSUE_TITLE="$(jq -r '.title' <<<"$ISSUE_JSON")"
+            test "$ISSUE_TITLE" = "[catalog-candidate] ${BRANCH#catalog/add-}"
+            jq -e '.state == "open" and .pull_request == null' <<<"$ISSUE_JSON" >/dev/null
+          elif [ "$AUTHOR" = "hoangsvit" ]; then
+            # Maintainer-authored safe data-only PRs need an explicit opt-in label.
+            jq -e 'any(.labels[]?; .name == "auto-merge-approved")' <<<"$PR_JSON" >/dev/null || {
+              echo "::notice::Maintainer PR has no auto-merge-approved label"; exit 0;
+            }
           else
-            test "$AUTHOR" = "hoangsvit"
+            echo "::notice::External contributor PR requires normal review"
+            exit 0
           fi
           test "$(jq -r '.state' <<<"$PR_JSON")" = "open"
           test "$(jq -r '.draft' <<<"$PR_JSON")" = "false"
@@ -185,17 +197,20 @@ jobs:
           test "$(jq -r '.head.sha' <<<"$PR_JSON")" = "$EXPECTED_HEAD"
           test "$(jq -r '.mergeable' <<<"$PR_JSON")" = "true"
 
-          # UI PRs remain open for visual review and explicit manual merge.
+          # Keep auto-merge limited to catalog records and generated Markdown.
+          # Workflow, application, script, test and UI changes require manual review.
           FILES="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')"
-          if grep -Eq '^(site/|scripts/(build-site|site-data)\.mjs$)' <<<"$FILES"; then
-            echo 'UI changes require visual review and manual merge after opening the live preview.'
+          test -n "$FILES"
+          if grep -Ev '^(data/services\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$FILES"; then
+            echo "::notice::Changes outside catalog data/docs require manual review"
             exit 0
           fi
-
           CHECKS="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json bucket,name,workflow)"
-          jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
-          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or .bucket == "skipping")' <<<"$CHECKS" >/dev/null
-
+          # Validation and build must each PASS on the same exact PR HEAD.
+          # Skipped deployment is expected on a PR; it is not counted as PASS.
+          jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .name == "validate" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
+          jq -e 'any(.[]; .workflow == "Build and deploy GitHub Pages" and .name == "Test and build static site" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
+          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or (.workflow == "Build and deploy GitHub Pages" and .name == "Deploy" and .bucket == "skipping"))' <<<"$CHECKS" >/dev/null
           APPROVED="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/reviews" --paginate \
             --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$EXPECTED_HEAD\") | .id" | tail -n 1)"
           test -n "$APPROVED"
