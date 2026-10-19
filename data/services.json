@@ -2739,5 +2739,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-18"
+  },
+  {
+    "id": "desec-free-dns",
+    "name": "deSEC Free DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free authoritative DNS hosting with automatic DNSSEC and REST API; one dedyn.io hostname per account; bring-your-own domains subject to per-account quota; authenticated API limited to 2,000 requests/day.",
+    "watch_out": "No domain registration or commercial SLA. Domain creation is quota-controlled, and DNS record writes have per-domain rate limits (300/day); paid third-party domain registration may be needed. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://desec.io/#!/en/product/dnshosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-19"
   }
 ]
