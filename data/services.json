@@ -434,7 +434,7 @@
   {
     "id": "github-actions",
     "name": "GitHub Actions",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
     "free_limit": "Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos",
     "watch_out": "Larger runners and over-quota private-repo usage may be billed.",
@@ -734,7 +734,7 @@
   {
     "id": "gitlab-ci",
     "name": "GitLab CI/CD Free",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
     "free_limit": "400 compute minutes/month per GitLab.com Free namespace on hosted instance runners",
     "watch_out": "Runner cost factors vary; quota is shared across the namespace; extra compute minutes may need purchase.",
@@ -938,7 +938,7 @@
   {
     "id": "circleci-free",
     "name": "CircleCI Free",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
     "free_limit": "30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage",
     "watch_out": "Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero.",
@@ -946,6 +946,18 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-09-23"
+  },
+  {
+    "id": "crow-ci",
+    "name": "Crow CI",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CI/CD for self-hosted pipelines; no software-enforced build-minute or pipeline-run quotas, with Docker, Podman, Kubernetes and other agent backends.",
+    "watch_out": "Self-hosted only: provide and pay for your own servers/runners, storage and networking; capacity and costs depend on your infrastructure. No managed free runner allowance is included.",
+    "pricing_url": "https://crowci.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-19"
   },
   {
     "id": "val-town-free",
