@@ -38,6 +38,10 @@ test('directory exposes unique search/category controls and official sources for
     assert.doesNotMatch(html, /class="search-submit"/);
     assert.doesNotMatch(html, /aria-label="Quick billing filters"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
+    assert.ok(html.includes('data-filter-category="ci-cd"'));
+    assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines</option>'));
+    assert.ok(fs.existsSync(path.join(output, 'category/ci-cd/index.html')));
+    assert.ok(fs.existsSync(path.join(output, 'service/crow-ci/index.html')));
     assert.doesNotMatch(html, /class="catalog-sidebar"/);
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);

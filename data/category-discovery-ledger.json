@@ -1,6 +1,6 @@
 {
-  "as_of_utc": "2026-10-17",
-  "source_main_sha": "792f894c19f51293817083bffa3aca3df756a8bc",
+  "as_of_utc": "2026-10-19",
+  "source_main_sha": "53b4dd9047831b4f6bbcaf721ed29cf0ca27d7c5",
   "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
   "categories": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 12,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-12",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -21,7 +21,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 3,
+      "service_count": 4,
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -55,11 +55,19 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 39,
+      "service_count": 36,
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
+    },
+    {
+      "category": "ci-cd",
+      "service_count": 4,
+      "latest_catalog_verification": "2026-10-19",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-19"
     },
     {
       "category": "auth-security",
@@ -87,7 +95,7 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 2,
+      "service_count": 4,
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 0,
       "uncatalogued_backlog": [],

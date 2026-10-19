@@ -25,6 +25,16 @@ function fixture(fn) {
   }
 }
 
+test("CI/CD category and self-hosted Crow CI entry are correctly classified", () => {
+  const entries = sourceData.filter(item => item.category === "ci-cd");
+  assert.deepEqual(entries.map(item => item.id).sort(),
+    ["github-actions", "gitlab-ci", "circleci-free", "crow-ci"].sort());
+  assert.ok(CATEGORIES.includes("ci-cd"));
+  assert.equal(sourceData.find(item => item.id === "crow-ci").pricing_url, "https://crowci.com/");
+  assert.equal(sourceData.filter(item => item.category === "developer-tools")
+    .some(item => ["github-actions", "gitlab-ci", "circleci-free"].includes(item.id)), false);
+});
+
 test("Node generator matches committed Markdown exactly", () => {
   assert.equal(check(ROOT), CATEGORIES.length + 1);
   assert.equal(render(ROOT).size, CATEGORIES.length + 1);

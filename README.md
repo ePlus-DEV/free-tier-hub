@@ -22,7 +22,7 @@ Discover and compare free-tier services for hosting, databases, cloud infrastruc
 - **Deploy a website or API:** [Static hosting](docs/static-hosting.md), [app hosting](docs/app-hosting.md), and [serverless](docs/serverless.md).
 - **Store and query data:** [Databases](docs/databases.md), [object storage](docs/storage.md), and [hosted search](docs/search.md).
 - **Build with AI:** [AI chatbots & assistants](docs/ai-assistants.md) and [AI & ML platforms](docs/ai-ml.md).
-- **Run developer infrastructure:** [Developer tools](docs/developer-tools.md), [authentication](docs/auth-security.md), [monitoring](docs/observability.md), and [queues & workflows](docs/queues-jobs.md).
+- **Run developer infrastructure:** [CI/CD pipelines](docs/ci-cd.md), [developer tools](docs/developer-tools.md), [authentication](docs/auth-security.md), [monitoring](docs/observability.md), and [queues & workflows](docs/queues-jobs.md).
 
 For practical combinations, see [example free-tier stacks](docs/use-cases.md) and the [cost and data-safety checklist](docs/cost-safety.md).
 
@@ -37,6 +37,7 @@ For practical combinations, see [example free-tier stacks](docs/use-cases.md) an
 | Databases & caching | ![Count](https://free-tier.eplus.dev/badges/categories/databases.svg) | [Browse](docs/databases.md) |
 | Object storage | ![Count](https://free-tier.eplus.dev/badges/categories/storage.svg) | [Browse](docs/storage.md) |
 | APIs & developer tools | ![Count](https://free-tier.eplus.dev/badges/categories/developer-tools.svg) | [Browse](docs/developer-tools.md) |
+| CI/CD & pipelines | ![Count](https://free-tier.eplus.dev/badges/categories/ci-cd.svg) | [Browse](docs/ci-cd.md) |
 | Authentication & security | ![Count](https://free-tier.eplus.dev/badges/categories/auth-security.svg) | [Browse](docs/auth-security.md) |
 | Monitoring & observability | ![Count](https://free-tier.eplus.dev/badges/categories/observability.svg) | [Browse](docs/observability.md) |
 | Product analytics | ![Count](https://free-tier.eplus.dev/badges/categories/analytics.svg) | [Browse](docs/analytics.md) |
