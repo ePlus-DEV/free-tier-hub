@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-21",
-  "source_main_sha": "9b83be2d8aa56544040a583e209f855c1e31c9e0",
+  "source_main_sha": "3e12b071b8fc360f35d52bf21ca7c18ae3f5c35c",
   "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
   "categories": [
     {
@@ -33,7 +33,7 @@
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-21"
     },
     {
       "category": "databases",
@@ -89,7 +89,7 @@
       "latest_catalog_verification": "2026-10-19",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17"
+      "last_discovery_review": "2026-10-21"
     },
     {
       "category": "ai-ml",
@@ -101,8 +101,8 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-21",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
@@ -160,8 +160,8 @@
       "candidates": [
         {
           "id": "aws-lambda-always-free",
-          "status": "verified-awaiting-Issue",
-          "reason": "1M requests and 400,000 GB-seconds per month; not in main/backlog or issue/PR search; GitHub Issue write blocked by connector safety checks.",
+          "status": "catalogued",
+          "reason": "Confirmed present in latest main catalog; earlier awaiting-Issue snapshot is superseded.",
           "candidate": {
             "id": "aws-lambda-always-free",
             "name": "AWS Lambda Always Free",
@@ -203,8 +203,8 @@
       "candidates": [
         {
           "id": "cloudns-free-dns",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official provider confirms free-forever authoritative DNS with 1 zone, 50 records, 500K monthly queries and four unicast nameservers; no catalog/backlog/issue/PR match. GitHub issue write blocked by connector safety.",
+          "status": "catalogued",
+          "reason": "Confirmed present in latest main catalog; earlier awaiting-Issue snapshot is superseded.",
           "candidate": {
             "id": "cloudns-free-dns",
             "name": "ClouDNS Free DNS",
@@ -274,6 +274,70 @@
           "status": "catalogued-product-alias",
           "existing_id": "uploadthing-2gb-app",
           "reason": "Existing catalog service represents same free plan."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-21",
+      "category": "cloud-vps",
+      "official_sources": [
+        "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+        "https://www.oracle.com/cloud/free/",
+        "https://cloud.google.com/free",
+        "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-FAQ.html"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Oracle Cloud Always Free",
+          "reason": "Already catalogued; official Oracle documentation now states 1,500 A1 OCPU-hours and 9,000 GB-hours monthly (2 OCPUs/12 GB), changed from older limits; propose reverify/update via separate reviewed PR."
+        },
+        {
+          "name": "AWS Free Plan",
+          "reason": "Existing limited-duration entry, not an indefinite free VPS."
+        },
+        {
+          "name": "Google Cloud e2-micro",
+          "reason": "Already catalogued; no distinct eligible new provider established."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-21",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://ice.domains/free-dns",
+        "https://ice.domains/free-dns/dynamic-dns",
+        "https://greatddns.com/",
+        "https://fastddns.net/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "ice-domains-free-dns",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official ongoing free plan with no card, unlimited DNS zones/records/queries, commercial use expressly promoted for startups and small business; absent from current catalog, backlog, Issues and PRs. GitHub connector blocked Issue creation in this run.",
+          "candidate": {
+            "id": "ice-domains-free-dns",
+            "name": "ice.domains Free DNS",
+            "category": "dns-cdn",
+            "plan": "ongoing",
+            "free_limit": "Free authoritative anycast DNS for domains registered at any registrar; unlimited hosted zones, DNS records and DNS queries; DNSSEC, REST API and dynamic DNS included.",
+            "watch_out": "Domain registration and renewal are paid separately if a new domain is needed; point existing domain nameservers to ice.domains. Exceptional DNS traffic may require provider coordination; review terms and DNS migration carefully.",
+            "pricing_url": "https://ice.domains/free-dns",
+            "credit_card": "no",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-21"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "GreatDDNS",
+          "reason": "Free plan exists but precise hostname limit not confirmed; defer."
+        },
+        {
+          "name": "FastDDNS Free",
+          "reason": "1 annual-renewed hostname; not selected while higher-priority backlog and DNS candidate await delivery."
         }
       ]
     }
