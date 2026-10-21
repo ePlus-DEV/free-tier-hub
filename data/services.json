@@ -2775,5 +2775,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-21"
+  },
+  {
+    "id": "microsoft-copilot-free",
+    "name": "Microsoft Copilot Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free web and mobile AI chat for writing, brainstorming, summaries and real-time web answers; Edge page insights. Personal-account sign-in adds chat history, image creation and longer conversations. Free usage is capacity-limited, with no fixed public message quota.",
+    "watch_out": "Usage limits, features and regional availability vary; Microsoft 365 business Copilot, in-app Office integrations and paid subscriptions are separate. Consumer Free commercial-use rights are not independently confirmed.",
+    "pricing_url": "https://www.microsoft.com/en-us/copilot/pricing/individuals",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-21"
   }
 ]
