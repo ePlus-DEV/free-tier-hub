@@ -2763,5 +2763,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-19"
+  },
+  {
+    "id": "azure-functions-consumption-free",
+    "name": "Azure Functions Consumption Free Grant",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "1 million executions and 400,000 GB-seconds of resource consumption per month per subscription on the Consumption plan.",
+    "watch_out": "Free grant applies only to paid Consumption subscriptions. The required storage account, network usage, monitoring and other Azure resources can be billed separately. Over-quota use is billed; a payment card is normally required at Azure signup. Linux Consumption hosting retires September 2028.",
+    "pricing_url": "https://azure.microsoft.com/en-us/pricing/details/functions/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-21"
   }
 ]
