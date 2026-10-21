@@ -2787,5 +2787,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-21"
+  },
+  {
+    "id": "netbird-cloud-free",
+    "name": "NetBird Cloud Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 users and 100 machines on the hosted Free plan; peer-to-peer encrypted connections, access controls, private DNS and network routes.",
+    "watch_out": "Free Cloud is limited to 5 users and 100 machines; paid Team/Business and self-hosted commercial-license features are separate. Payment-card requirement and explicit commercial-use terms need confirmation.",
+    "pricing_url": "https://netbird.io/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-21"
   }
 ]
