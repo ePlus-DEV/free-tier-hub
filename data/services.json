@@ -2799,5 +2799,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-21"
+  },
+  {
+    "id": "groqcloud-api-free",
+    "name": "GroqCloud API Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Rate-limited free inference API; for openai/gpt-oss-120b: 30 requests/minute, 1,000 requests/day, 8,000 tokens/minute and 200,000 tokens/day; limits vary by model and organization.",
+    "watch_out": "Free limits vary by model and organization; exceeding quota returns HTTP 429. Batch/Flex and higher rate limits require paid Developer tier. Check model-specific commercial-use terms.",
+    "pricing_url": "https://console.groq.com/docs/rate-limits",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-22"
   }
 ]
