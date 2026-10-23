@@ -798,7 +798,7 @@
           "status": "catalogued",
           "issue_number": 273,
           "pr_number": 274,
-          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; noted in watch_out. Commercial permission unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before Issue #273. Initial queue failed due future UTC date, Issue corrected to 2026-10-23 and rerun succeeded. Queue generated PR #274, exact-head 1285819997e578ad96ede198fd8bbd70b73e8d17 validation/build SUCCESS, review APPROVED, automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49; confirmed in main catalog and Issue closed. Production Pages deployment must be separately verified."
+          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; noted in watch_out. Commercial permission unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before Issue #273. Initial queue failed due future UTC date, Issue corrected to 2026-10-23 and rerun succeeded. Queue generated PR #274, exact-head 1285819997e578ad96ede198fd8bbd70b73e8d17 validation/build SUCCESS, review APPROVED, automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49; confirmed in main catalog and Issue closed. Main Pages workflow run #40018866940 has build and Deploy SUCCESS at merge SHA 6f6f164191a762f06936b8dbe2dc01f1017b1f49; prior failed Pages incident #272 recovered, underlying concurrency issue remains for monitoring."
         }
       ],
       "excluded": [
@@ -845,6 +845,6 @@
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "248 services in 19 categories after Activepieces Cloud Free Issue #273 -> queue -> PR #274 exact-head CI PASS and review APPROVED -> automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49. Ledger non-main PR #265 pending new exact-head CI/review; main Pages deploy not yet verified. Historical backlog 30 entries all catalogued or alias (UploadThing). 212 records stale >7d."
+    "note": "248 services in 19 categories. Activepieces Cloud Free Issue #273 -> queue -> PR #274 exact-head validation/build PASS, review APPROVED -> automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49. Main Pages run #40018866940 Deploy SUCCESS. Discovery ledger PR #265 awaiting fresh exact-head CI/review after commit. Historical backlog 30 entries all catalogued or alias (UploadThing). 212 records stale >7d."
   }
 }
