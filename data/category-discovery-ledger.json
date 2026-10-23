@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "6d3be7c663917e74ccc82ed9cf32e63c1054d2dc",
+  "source_main_sha": "f8a9033ab528796a31401598680485b927a8fed0",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 14,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -726,6 +726,54 @@
           "reason": "Already catalogued (koyeb); official current docs require a valid payment card and $29 preauthorization, while 2026 new-signup Starter availability has conflicting evidence. Needs catalog card/availability re-verification, not duplicate."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "app-hosting",
+      "searches": [
+        "AwardSpace Free hosting 2026 1GB 5GB no card terms commercial",
+        "Freehostia Chocolate ongoing free plan commercial use 2026",
+        "alwaysdata Free current pricing and registration card verification",
+        "Northflank Sandbox free 2 services database current pricing",
+        "HelioHost Johnny free signup availability and donation-only Tommy"
+      ],
+      "official_sources": [
+        "https://www.awardspace.com/",
+        "https://www.awardspace.com/terms-of-services/",
+        "https://www.awardspace.com/freebies/",
+        "https://www.freehostia.com/free-cloud-hosting/",
+        "https://help.alwaysdata.com/en/docs/admin-billing/billing/public-cloud-prices/",
+        "https://www.alwaysdata.com/en/register/",
+        "https://northflank.com/pricing",
+        "https://heliohost.org/signup/"
+      ],
+      "candidates": [
+        {
+          "id": "awardspace-free-hosting",
+          "status": "catalogued",
+          "issue_number": 270,
+          "pr_number": 271,
+          "reason": "New ongoing ad-free free hosting (1 GB disk, 5 GB/month bandwidth, 1 domain plus 3 subdomains, PHP and 30 MB MySQL). Provider explicitly states no card; terms require annual human login and restrict uploads/outbound use. Business use not explicitly confirmed (check). Dedupe against main services, backlog, GitHub Issues/PRs/branches before canonical Issue #270. Queue created PR #271; exact-head 8ef95c187c8889fb946640655eeb7afa5ff184b6 validation/build PASS, review APPROVED, automated merge at f8a9033ab528796a31401598680485b927a8fed0; main catalog confirmed. Issue state closed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "alwaysdata Free",
+          "reason": "Free 1 GB/256 MB/1/4 CPU for personal non-profit websites only; official registration page currently requests card despite marketing no-card claim; defer until registration/card conflict clarified."
+        },
+        {
+          "name": "Freehostia Chocolate",
+          "reason": "Ongoing $0 250 MB/6 GB monthly traffic and small-business hosting documented; reserve for future distinct candidate verification, particularly card requirement and ambiguous trial text."
+        },
+        {
+          "name": "Northflank Sandbox",
+          "reason": "Official Sandbox advertises 2 free services, 1 database, 2 cron jobs; card and commercial conditions need verification before Issue."
+        },
+        {
+          "name": "HelioHost Johnny",
+          "reason": "Official free signup opens in capacity-limited windows; check current signup/hosting availability and service restrictions before Issue."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -751,11 +799,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 246,
+    "total_services": 247,
     "total_categories": 19,
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "App-hosting discovery: PythonAnywhere Beginner Free Issue #268 -> queue -> PR #269 exact-head CI/review PASS, automatically merged; main catalog 246 services in 19 categories. Koyeb card/new-signup caveat remains flagged for separate verification. No direct main writes."
+    "note": "Verified app-hosting AwardSpace Free Issue #270 -> queue -> PR #271, exact-head validation/build PASS, review APPROVED, automated merge; confirmed main catalog 247 services in 19 categories. Non-main discovery ledger PR only; no direct main write."
   }
 }
