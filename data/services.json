@@ -3015,5 +3015,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "opik-free-cloud",
+    "name": "Opik Free Cloud (Comet)",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "25,000 spans/month; up to 10 team members; 60-day data retention; agent tracing, evaluation suites and playground.",
+    "watch_out": "Cloud data region is US. Additional spans are not included on Free; Pro Cloud is paid. Commercial-use terms for hosted Free are not explicitly confirmed; Ollie coding harness trial is separate from the ongoing Opik Free Cloud allowance.",
+    "pricing_url": "https://www.comet.com/site/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
