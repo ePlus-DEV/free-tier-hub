@@ -2835,5 +2835,17 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "duck-ai-free",
+    "name": "Duck.ai Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free private AI chat with six available models and a recurring daily usage allowance; provider does not publish a fixed message or token quota.",
+    "watch_out": "Daily free usage cap varies by model and anonymous abuse controls; higher limits and advanced models require a subscription. Model-provider usage policies apply; commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://duckduckgo.com/duckduckgo-help-pages/duckai/usage-limits",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
