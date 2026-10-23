@@ -9,3 +9,5 @@ The workflow checks **all historical Issues and PRs**, plus any existing deliver
 The consumer uses `EPLUS_BOT_TOKEN` to create the Issue so the normal GitHub `issues` event can trigger the queue; `GITHUB_TOKEN`-authored Issues would not trigger another workflow. The bot must be a trusted repository collaborator and have Issue write permission. The consumer itself has read-only default-token permissions and never pushes code, merges PRs or deploys.
 
 **Fail closed:** Missing token, invalid catalog/backlog, API errors or existing Issue/PR/branch stop or skip delivery without overwriting anything. Review logs and fix the underlying cause; do not bypass approvals or relax CI. A green consumer run with zero eligible candidates is not evidence of end-to-end delivery.
+
+Current historical backlog note: `uploadthing-free` is a product alias of the already catalogued `uploadthing-2gb-app`; it must not generate a duplicate Issue. Existing backlog records dated 2026-10-08 are stale as of 2026-10-23 and require fresh official verification before they can be consumed.
