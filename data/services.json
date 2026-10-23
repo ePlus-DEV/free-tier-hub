@@ -3039,5 +3039,17 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "awardspace-free-hosting",
+    "name": "AwardSpace Free Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 GB disk, 5 GB monthly bandwidth, 1 hosted domain and 3 subdomains, PHP and 1 MySQL database (30 MB); ad-free hosting.",
+    "watch_out": "One free account per user; outbound connections and hotlinking disabled; 15 MB file upload limit, 25,000 inodes, restricted file types. Free hosting renews annually on human login and may be disabled for inactivity; provider recommends paid hosting for business websites.",
+    "pricing_url": "https://www.awardspace.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
