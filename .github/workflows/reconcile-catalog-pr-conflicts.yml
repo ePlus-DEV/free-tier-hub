@@ -29,7 +29,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
-      - name: Rebuild each catalog PR on latest main
+      - name: Reconcile only by non-force ancestry-preserving merges
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
@@ -44,49 +44,43 @@ jobs:
           while IFS= read -r pr; do
             number="$(jq -r '.number' <<<"$pr")"
             branch="$(jq -r '.headRefName' <<<"$pr")"
-            id="${branch#catalog/add-}"
-            echo "::group::Reconcile PR #$number ($id)"
+            echo "::group::Reconcile PR #$number ($branch)"
             git fetch origin main "$branch"
             old_head="$(git rev-parse "origin/$branch")"
-            git switch -C "reconcile-$number" origin/main
-            if ! SERVICE_ID="$id" OLD_BRANCH="origin/$branch" node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import { execFileSync } from 'node:child_process';
-          import { validateData } from './scripts/catalog.mjs';
-          const id = process.env.SERVICE_ID;
-          const previous = JSON.parse(execFileSync('git', ['show', process.env.OLD_BRANCH + ':data/services.json'], {encoding: 'utf8'}));
-          const matches = previous.filter(item => item.id === id);
-          if (matches.length !== 1) throw Error('Expected exactly one matching service');
-          const path = 'data/services.json';
-          const current = JSON.parse(fs.readFileSync(path, 'utf8'));
-          if (current.some(item => item.id === id)) throw Error('Service already on main; skip rather than duplicate');
-          validateData([...current, matches[0]]);
-          fs.writeFileSync(path, JSON.stringify([...current, matches[0]], null, 2) + '\n');
-          NODE
-            then
-              echo "::error::PR #$number: cannot safely extract candidate"
+            if git merge-base --is-ancestor origin/main "origin/$branch"; then
+              echo "::notice::PR #$number already includes current main"
+              echo "::endgroup::"
+              continue
+            fi
+            # Start from the actual PR head; never rebuild from main or discard unique commits.
+            git switch -C "reconcile-$number" "origin/$branch"
+            # Conflicts are not auto-resolved: fail closed for human review.
+            if ! git merge --no-commit --no-ff origin/main; then
+              git merge --abort || true
+              echo "::error::PR #$number conflicts with main; head $old_head unchanged"
               failed=$((failed + 1))
               echo "::endgroup::"
               continue
             fi
-            npm run catalog:sync
-            npm run verify
-            git diff --check
-            git add data/services.json README.md docs/
-            if git diff --cached --quiet; then
-              echo "::notice::No changes for PR #$number"
+            if ! npm run catalog:sync || ! npm run verify || ! git diff --check; then
+              git merge --abort || true
+              echo "::error::PR #$number failed verification; no remote update"
+              failed=$((failed + 1))
               echo "::endgroup::"
               continue
             fi
-            git commit -m "catalog: reconcile $id with latest main"
-            # The PR author stays github-actions[bot], allowing eplus-bot to review.
-            # Force-with-lease rejects concurrent edits; never overwrite a moving branch.
-            git push --force-with-lease="refs/heads/$branch:$old_head" \
+            git add data/services.json README.md docs/
+            git commit -m "catalog: merge latest main into PR #$number (preserve ancestry)"
+            # Normal push is fast-forward from the original head. Concurrent edits reject it.
+            if ! git -c credential.helper= push \
               "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
-              "HEAD:refs/heads/$branch"
+              "HEAD:refs/heads/$branch"; then
+              echo "::error::PR #$number moved or push denied; no force retry"
+              failed=$((failed + 1))
+            fi
             echo "::endgroup::"
           done < /tmp/eligible-catalog-prs.jsonl
           if [ "$failed" -gt 0 ]; then
-            echo "::error::$failed PR(s) require manual reconciliation"
+            echo "::error::$failed PR(s) require safe manual reconciliation"
             exit 1
           fi
