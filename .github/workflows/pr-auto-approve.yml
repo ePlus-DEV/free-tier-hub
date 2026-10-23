@@ -70,12 +70,13 @@ jobs:
             fi
 
             PENDING_COUNT="$(jq '[.[] | select(.workflow != env.APPROVAL_WORKFLOW and .bucket == "pending")] | length' <<<"$CHECKS")"
-            CHECK_COUNT="$(jq '[.[] | select(.workflow == "Validate free tier catalog")] | length' <<<"$CHECKS")"
-            if [ "$CHECK_COUNT" -gt 0 ] && [ "$PENDING_COUNT" -eq 0 ]; then
+            VALIDATION_PASS_COUNT="$(jq '[.[] | select(.workflow == "Validate free tier catalog" and .name == "validate" and .bucket == "pass")] | length' <<<"$CHECKS")"
+            BUILD_PASS_COUNT="$(jq '[.[] | select(.workflow == "Build and deploy GitHub Pages" and .name == "Test and build static site" and .bucket == "pass")] | length' <<<"$CHECKS")"
+            if [ "$VALIDATION_PASS_COUNT" -gt 0 ] && [ "$BUILD_PASS_COUNT" -gt 0 ] && [ "$PENDING_COUNT" -eq 0 ]; then
               exit 0
             fi
 
-            echo "Waiting for $PENDING_COUNT pull request check(s) before approving (attempt $attempt/60)."
+            echo "Waiting for exact-head validation/build PASS and $PENDING_COUNT pending checks (attempt $attempt/60)."
             sleep 10
           done
 
