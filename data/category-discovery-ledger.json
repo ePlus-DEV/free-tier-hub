@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-10-17",
-  "source_main_sha": "792f894c19f51293817083bffa3aca3df756a8bc",
-  "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
+  "as_of_utc": "2026-10-23",
+  "source_main_sha": "5b593f148ca8749007c13acf63a87a299829da3b",
+  "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
@@ -9,23 +9,29 @@
       "latest_catalog_verification": "2026-10-15",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 10,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "app-hosting",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-12",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-18",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "serverless",
-      "service_count": 3,
-      "latest_catalog_verification": "2026-09-22",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-21",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17"
+      "last_discovery_review": "2026-10-17",
+      "stale_over_7d": 3,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "cloud-vps",
@@ -33,7 +39,9 @@
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 3,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "databases",
@@ -41,17 +49,21 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 27,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "storage",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-16",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-19",
       "backlog_total": 3,
       "uncatalogued_backlog": [
         "uploadthing-free"
       ],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 11,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
@@ -59,7 +71,9 @@
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 38,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "auth-security",
@@ -67,7 +81,9 @@
       "latest_catalog_verification": "2026-10-16",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 15,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
@@ -75,7 +91,9 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 25,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "analytics",
@@ -83,31 +101,39 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "dns-cdn",
-      "service_count": 2,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17"
+      "last_discovery_review": "2026-10-17",
+      "stale_over_7d": 2,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-22",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 7,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 4,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "queues-jobs",
@@ -115,7 +141,9 @@
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 14,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "search",
@@ -123,23 +151,29 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 7,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "feature-flags",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "tunneling-networking",
-      "service_count": 2,
-      "latest_catalog_verification": "2026-09-23",
+      "service_count": 4,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 2,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "webhooks-events",
@@ -147,7 +181,9 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": null,
+      "stale_over_7d": 9,
+      "open_catalog_candidate_issues": 0
     }
   ],
   "discovery_log": [
@@ -235,6 +271,118 @@
           "reason": "Official free plan found; separate provider due diligence and dedupe before issue delivery."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "cloud-vps",
+      "official_sources": [
+        "https://vyce.cloud/",
+        "https://cloud.google.com/free",
+        "https://www.oracle.com/cloud/free/"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Vyce.Cloud VPS-Mini",
+          "reason": "Provider advertises 2 GB RAM, 1 vCore, 6 GB NVMe, no card, but requires daily renewal and capacity is first-come; powered-off VPS is deleted after three days. Not delivered pending independent service reliability and eligibility review."
+        },
+        {
+          "name": "Google Compute Engine and Oracle Always Free",
+          "reason": "Already represented in catalog; do not duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ai-assistants",
+      "official_sources": [
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai/usage-limits",
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai",
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai/approach-to-ai",
+        "https://duckduckgo.com/duckai/privacy-terms",
+        "https://brave.com/leo/"
+      ],
+      "candidates": [
+        {
+          "id": "duck-ai-free",
+          "status": "catalogued",
+          "reason": "New eligible free chat service, no login or card, provider confirms recurring daily free cap but not numeric quota. Created Issue #230, queue produced PR #231; exact-head validation/build passed and PR merged automatically. Commercial use marked check.",
+          "issue": 230,
+          "pr": 231
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Brave Leo Free",
+          "reason": "Provider confirms free tier, no signup and rate limits; defer to future rotation to verify current feature limits, usage policy and catalog/Issue/PR deduplication."
+        },
+        {
+          "name": "Poe Free",
+          "reason": "Free compute-point allowance varies and is not numerically documented by provider; defer precise limit claims."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "feature-flags",
+      "official_sources": [
+        "https://feat.so/pricing/",
+        "https://docs.feat.so/"
+      ],
+      "candidates": [
+        {
+          "id": "feat-feature-flags-free",
+          "status": "catalogued",
+          "reason": "Reverified official ongoing free plan: 7,500 MAU, 100 server connections, 2 projects, unlimited flags/seats/environments; no credit card and provider explicitly supports production. Canonical Issue #235 generated PR #236; exact-head CI passed, initial auto-approval raced pending build and failed closed, then safe retry passed and GitHub Actions merged.",
+          "issue": 235,
+          "pr": 236
+        }
+      ],
+      "excluded": []
     }
-  ]
+  ],
+  "pending_reverification": [
+    {
+      "id": "ackee-self-hosted",
+      "category": "analytics"
+    },
+    {
+      "id": "tiiny-host-free",
+      "category": "static-hosting"
+    },
+    {
+      "id": "webhooks-cc-free",
+      "category": "webhooks-events"
+    },
+    {
+      "id": "gedo-free-dns",
+      "category": "dns-cdn"
+    },
+    {
+      "id": "enum-dns-free",
+      "category": "dns-cdn"
+    },
+    {
+      "id": "surge-static-hosting-free",
+      "category": "static-hosting"
+    },
+    {
+      "id": "tavily-researcher-free",
+      "category": "search"
+    },
+    {
+      "id": "freedns-afraid-org-free",
+      "category": "dns-cdn"
+    }
+  ],
+  "coverage_summary": {
+    "total_services": 231,
+    "total_categories": 18,
+    "stale_over_7d": 213,
+    "open_catalog_candidate_issues": 0,
+    "unmatched_backlog": [
+      "uploadthing-free"
+    ],
+    "note": "uploadthing-free is an alias of catalogued uploadthing-2gb-app; no duplicate Issue."
+  }
 }
