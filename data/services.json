@@ -3075,5 +3075,17 @@
     "credit_card": "yes",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "tidb-cloud-starter-free",
+    "name": "TiDB Cloud Starter Free (MySQL-compatible)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 free MySQL-compatible instances per organization; each includes 5 GiB row storage, 5 GiB columnar storage and 50 million Request Units per month.",
+    "watch_out": "Free allowance applies separately to each of the first five eligible instances; at quota, new connections are blocked and existing sessions throttled until reset. Enabling paid overages or adding instances requires a credit card and spending limit. PostgreSQL-compatible public-preview quota is separate and not included. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.pingcap.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
