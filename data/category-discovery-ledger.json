@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "8041e7492af42c799a811b87133e5e8cd3151e7f",
+  "source_main_sha": "c608efc9f6e852a29c719ea4868a26124a188c1f",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -19,9 +19,9 @@
       "latest_catalog_verification": "2026-10-18",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "serverless",
@@ -689,6 +689,42 @@
           "reason": "Third-party summaries indicate a free plan; not selected without independent official current card/commercial and limit verification."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "app-hosting",
+      "searches": [
+        "PythonAnywhere Beginner Free pricing 2026 limits monthly renewal commercial use",
+        "alwaysdata free 1GB non-profit only 2026 pricing",
+        "Koyeb free instance Starter plan card requirements and new signup availability"
+      ],
+      "official_sources": [
+        "https://www.pythonanywhere.com/pricing/",
+        "https://help.pythonanywhere.com/pages/FreeAccountsFeatures",
+        "https://blog.pythonanywhere.com/221/",
+        "https://www.pythonanywhere.com/forums/topic/31393/",
+        "https://help.alwaysdata.com/en/docs/admin-billing/billing/public-cloud-prices/",
+        "https://www.koyeb.com/docs/faqs/pricing",
+        "https://www.koyeb.com/docs/reference/organizations"
+      ],
+      "candidates": [
+        {
+          "id": "pythonanywhere-beginner-free",
+          "status": "issue",
+          "issue_number": 268,
+          "reason": "Verified ongoing $0 Beginner plan: 1 Python web app, 1 worker, 512 MiB disk, 100 CPU-seconds/day and 2 consoles; monthly web app renewal, outbound allowlist, no SSH/MySQL/scheduled tasks for new accounts. Staff confirms commercial use permitted subject to terms. Card not expressly documented, marked check. Dedupe against current catalog/backlog/Issues/PRs found no match. Canonical JSON-only Issue #268 opened; PR/queue/exact-head CI not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "alwaysdata Free",
+          "reason": "Ongoing free plan with 1GB disk, 256MB RAM and 1/4 CPU, but official docs prohibit for-profit use; defer for distinct personal-only listing and eligibility review."
+        },
+        {
+          "name": "Koyeb Free Web Instance",
+          "reason": "Already catalogued (koyeb); official current docs require a valid payment card and $29 preauthorization, while 2026 new-signup Starter availability has conflicting evidence. Needs catalog card/availability re-verification, not duplicate."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -714,11 +750,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 243,
+    "total_services": 245,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Analytics discovery: Ackee #258/#259 and newly discovered Offen #260/#261 both delivered through exact-head CI, review, and automatic merge. All 19 categories enumerated from current site config; no manual merge."
+    "note": "App-hosting discovery: PythonAnywhere Beginner Free verified and canonical Issue #268 created, awaiting queue/PR/exact-head CI. All 19 current categories re-counted; Koyeb card/new-signup caveat flagged for separate review. No direct main writes."
   }
 }
