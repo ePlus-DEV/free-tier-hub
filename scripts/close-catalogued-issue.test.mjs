@@ -36,3 +36,11 @@ test('failure to confirm state remains fatal', () => {
   const run = () => { throw Error('GitHub API unavailable'); };
   assert.throws(() => closeCataloguedIssue('org/repo', 253, 'delivered', run), /GitHub API unavailable/);
 });
+
+test('comment failure remains fatal after closing the issue', () => {
+  const run = (_command, args) => {
+    if (args[0] === 'issue' && args[1] === 'comment') throw Error('comment denied');
+    return '';
+  };
+  assert.throws(() => closeCataloguedIssue('org/repo', 253, 'delivered', run), /comment denied/);
+});
