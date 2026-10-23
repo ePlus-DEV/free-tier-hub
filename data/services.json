@@ -2907,5 +2907,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "neocities-free",
+    "name": "Neocities Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 GB storage; 200 GB bandwidth; free neocities.org subdomain with HTTPS",
+    "watch_out": "Static HTML/CSS/JS only. Custom domains, multiple sites, WebDAV and hotlinking are Supporter features; prohibited SEO-spam/fraud and third-party site generation restrictions apply. Commercial business sites are allowed under the AUP.",
+    "pricing_url": "https://neocities.org/supporter",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
