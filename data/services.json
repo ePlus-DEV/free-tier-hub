@@ -2895,5 +2895,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "webhooks-cc-free",
+    "name": "webhooks.cc Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "50 requests per rolling 24 hours; unlimited permanent endpoints for signed-in accounts; 7-day request retention; CLI, SDK, MCP and replay",
+    "watch_out": "Guest endpoints expire after 12 hours and allow only 25 requests; sign in for permanent Free endpoints. Requests over quota return HTTP 429; commercial-use terms not independently confirmed.",
+    "pricing_url": "https://webhooks.cc/docs/plans-limits",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
