@@ -69,3 +69,13 @@ test("only exact optional skipped check names are permitted", () => {
   assert.ok(autoMerge.includes('.name == "validate" and .bucket == "pass"'));
   assert.ok(autoMerge.includes('.name == "Test and build static site" and .bucket == "pass"'));
 });
+
+test("approval waits for both exact-head validation and build, even if build check is not yet visible", () => {
+  const waitStep = yaml.slice(yaml.indexOf("      - name: Wait for pull request checks"), yaml.indexOf("      - name: Approve pull request"));
+  assert.ok(waitStep.includes("VALIDATION_PASS_COUNT"));
+  assert.ok(waitStep.includes("BUILD_PASS_COUNT"));
+  assert.ok(waitStep.includes('.name == "validate" and .bucket == "pass"'));
+  assert.ok(waitStep.includes('.name == "Test and build static site" and .bucket == "pass"'));
+  assert.ok(waitStep.includes('"$BUILD_PASS_COUNT" -gt 0'));
+  assert.ok(waitStep.includes('"$PENDING_COUNT" -eq 0'));
+});
