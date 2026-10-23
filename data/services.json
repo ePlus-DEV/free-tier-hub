@@ -3027,5 +3027,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "pythonanywhere-beginner-free",
+    "name": "PythonAnywhere Beginner Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 Python web app with 1 web worker, 512 MiB disk, 100 CPU-seconds/day for consoles, and 2 consoles; web app expires after 1 month unless renewed.",
+    "watch_out": "Free web app uses a pythonanywhere.com subdomain; restricted outbound HTTP(S) allowlist; no SSH, scheduled tasks or MySQL for new accounts. Renew the web app monthly. No paid-tier features included.",
+    "pricing_url": "https://www.pythonanywhere.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
