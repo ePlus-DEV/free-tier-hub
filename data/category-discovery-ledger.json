@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "447782f709240eb88cca81cc914380f06e7e4fd9",
+  "source_main_sha": "8041e7492af42c799a811b87133e5e8cd3151e7f",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -125,13 +125,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-22",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
@@ -673,9 +673,10 @@
       "candidates": [
         {
           "id": "opik-free-cloud",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 266,
-          "reason": "Official ongoing hosted $0 Free Cloud: 25,000 spans/month, up to 10 team members, 60-day retention; Comet explicitly states no credit card to sign up. Commercial rights not explicit (check). Not found in 244-service main, backlog, issues, PRs or branches before canonical Issue #266. Await queue, PR and exact-head CI; do not claim catalogued."
+          "reason": "Official ongoing Opik Free Cloud: 25,000 spans/month, 10 team members, 60-day retention, no card; hosted commercial-use terms check. Canonical Issue #266 -> queue -> PR #267 exact-head 4e4dc61228a22a3b3f4479312717501d580f9f52 validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED into main 8041e7492af42c799a811b87133e5e8cd3151e7f; Issue CLOSED and catalog entry verified.",
+          "pr_number": 267
         }
       ],
       "excluded": [
