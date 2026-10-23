@@ -2847,5 +2847,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "feat-feature-flags-free",
+    "name": "feat Free Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "7,500 monthly active users; 100 concurrent server connections; 2 projects; unlimited flags, environments and seats; 30-day audit log.",
+    "watch_out": "Free tier has soft MAU and connection limits; the provider warns rather than immediately disabling flag evaluations. Advanced features including segments, change approvals, and several roadmap items require paid tiers or are not yet available.",
+    "pricing_url": "https://feat.so/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
