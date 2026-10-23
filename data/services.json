@@ -3063,5 +3063,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "workos-authkit-free",
+    "name": "WorkOS AuthKit Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Up to 1,000,000 monthly active users for AuthKit user management and authentication, including email/password, social sign-in, passkeys and MFA.",
+    "watch_out": "A payment card is required before using a production environment; staging can be tested without a card. Enterprise SSO and Directory Sync cost from $125 per connection/month, custom domains $99/month, and each additional 1 million MAUs $2,500/month. Avoid paid features and overages.",
+    "pricing_url": "https://workos.com/pricing",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
