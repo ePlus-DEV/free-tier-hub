@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "3a0c216a7c349cbbdb78106bbebb595776e863c3",
+  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -484,16 +484,19 @@
           "issue_number": 247,
           "pr_number": 248,
           "reason": "Official ongoing free tier: 1 GB storage, 200 GB bandwidth, subdomain SSL; registration does not request a card, provider legal guidance permits legitimate business sites. Verified no catalog/backlog/Issue/PR/branch duplicate before canonical Issue #247. Queue SUCCESS; PR #248 exact-head validation/build SUCCESS, APPROVED, automatically merged to main 3a0c216a7c349cbbdb78106bbebb595776e863c3."
+        },
+        {
+          "id": "tiiny-host-free",
+          "status": "catalogued",
+          "issue_number": 249,
+          "pr_number": 250,
+          "reason": "Previously verified historical candidate rechecked from official Free plan and helpdesk: one active site, 3 MB project upload (0.5 MB PDF), three uploads/day, 5,000 visits and 5 GB bandwidth/month, quarterly login requirement, no card. Commercial terms remain check. Issue #249 -> queue SUCCESS -> PR #250 exact-head validation/build SUCCESS and APPROVED; auto-merged to main 990906ddbd8158997e343d4299a537457d416bc4."
         }
       ],
       "excluded": [
         {
           "name": "Surge Free",
           "reason": "Eligible official ongoing free static hosting with unlimited projects, custom domains and managed SSL, but already reported as surge-static-hosting-free in pending_reverification; dedupe and reverify separately."
-        },
-        {
-          "name": "Tiiny Host Free",
-          "reason": "Eligible official ongoing 1-site tier (3 MB, 5,000 visits/month, 5 GB/month, login every 3 months); already reported as tiiny-host-free in pending_reverification, so deferred for backlog-first delivery."
         }
       ]
     }
@@ -502,10 +505,6 @@
     {
       "id": "ackee-self-hosted",
       "category": "analytics"
-    },
-    {
-      "id": "tiiny-host-free",
-      "category": "static-hosting"
     },
     {
       "id": "gedo-free-dns",
@@ -529,7 +528,7 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 236,
+    "total_services": 237,
     "total_categories": 18,
     "stale_over_7d": 213,
     "open_catalog_candidate_issues": 0,
