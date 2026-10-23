@@ -2979,5 +2979,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "offen-fair-web-analytics",
+    "name": "Offen Fair Web Analytics (Self-hosted)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0-licensed self-hosted analytics; multiple websites per instance, no vendor-imposed pageview quota; built-in 6-month data retention.",
+    "watch_out": "Self-hosted infrastructure and maintenance costs apply. Requires visitor opt-in; first-party cookies used. Original source is Apache-2.0, but the Offen icon/logo have CC-BY-NC-ND-4.0 restrictions; check branding rights for commercial deployments.",
+    "pricing_url": "https://github.com/offen/offen",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
