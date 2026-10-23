@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "3a0c216a7c349cbbdb78106bbebb595776e863c3",
+  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -364,13 +364,13 @@
           "id": "crow-ci",
           "status": "pr",
           "pr_number": 215,
-          "reason": "Reviewed historical PR #215 preserved; official Apache-2.0 self-hosted CI with unlimited software-side builds. Corrected official documentation URL to crowci.dev and updated CircleCI Free to provider's current 6,000 small-Docker build minutes. Branch synchronization must preserve unique commits and pass exact-head CI before any merge."
+          "reason": "Safe ancestry-preserving reconciliation of reviewed PR #215; Crow CI is Apache-2.0 self-hosted with no software build-minute cap. Correct official URL to crowci.dev and update CircleCI Free to 6,000 small-Docker build minutes/month. No direct main push or manual PR merge."
         }
       ],
       "excluded": [
         {
           "name": "Crow CI hosted runners",
-          "reason": "No managed free hosted runners; self-hosted only, infrastructure costs extra."
+          "reason": "Self-hosted only; no managed free hosted runner allowance."
         }
       ]
     }
@@ -410,11 +410,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 237,
+    "total_services": 238,
     "total_categories": 19,
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Known uploadthing-free backlog alias corresponds to catalogued uploadthing-2gb-app; not a new service."
+    "note": "uploadthing-free is an alias of catalogued uploadthing-2gb-app; no duplicate Issue."
   }
 }
