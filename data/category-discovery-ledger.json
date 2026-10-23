@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "c608efc9f6e852a29c719ea4868a26124a188c1f",
+  "source_main_sha": "6d3be7c663917e74ccc82ed9cf32e63c1054d2dc",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,13 +15,13 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-18",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "serverless",
@@ -710,9 +710,10 @@
       "candidates": [
         {
           "id": "pythonanywhere-beginner-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 268,
-          "reason": "Verified ongoing $0 Beginner plan: 1 Python web app, 1 worker, 512 MiB disk, 100 CPU-seconds/day and 2 consoles; monthly web app renewal, outbound allowlist, no SSH/MySQL/scheduled tasks for new accounts. Staff confirms commercial use permitted subject to terms. Card not expressly documented, marked check. Dedupe against current catalog/backlog/Issues/PRs found no match. Canonical JSON-only Issue #268 opened; PR/queue/exact-head CI not yet confirmed."
+          "reason": "Verified ongoing $0 Beginner plan: 1 Python web app, 1 worker, 512 MiB disk, 100 CPU-seconds/day and 2 consoles; monthly web app renewal, restricted outbound allowlist, no SSH/MySQL/scheduled tasks for new accounts. Staff confirms commercial use subject to terms; card requirement not explicit, marked check. Canonical Issue #268 -> catalog-candidate-queue -> PR #269 at exact head 4ec6a6a470345895aad8497e40fc2fdb8084600e: validation and build jobs SUCCESS, review APPROVED, GitHub Actions automatically MERGED; Issue CLOSED and main catalog verified.",
+          "pr_number": 269
         }
       ],
       "excluded": [
@@ -750,11 +751,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 245,
+    "total_services": 246,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "App-hosting discovery: PythonAnywhere Beginner Free verified and canonical Issue #268 created, awaiting queue/PR/exact-head CI. All 19 current categories re-counted; Koyeb card/new-signup caveat flagged for separate review. No direct main writes."
+    "note": "App-hosting discovery: PythonAnywhere Beginner Free Issue #268 -> queue -> PR #269 exact-head CI/review PASS, automatically merged; main catalog 246 services in 19 categories. Koyeb card/new-signup caveat remains flagged for separate verification. No direct main writes."
   }
 }
