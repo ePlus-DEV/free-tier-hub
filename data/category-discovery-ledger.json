@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
+  "source_main_sha": "9d7e98c2bfc45d1906482238ff142f4fd204aaec",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -107,8 +107,8 @@
     },
     {
       "category": "analytics",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
@@ -595,11 +595,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 239,
+    "total_services": 240,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Merged #239 discovery rounds with main CI/CD category and PR #215/#242 changes; Swetrix Community Edition Issue #253 awaits catalog-candidate queue."
+    "note": "Resolved PR #239 divergence via two-parent non-force merge; preserved branch discovery history and main CI/CD plus Swetrix #254. Category coverage recomputed from current main catalog; pending candidates deduped."
   }
 }

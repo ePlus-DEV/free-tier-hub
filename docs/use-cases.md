@@ -6,7 +6,7 @@ These are example combinations, **not production endorsements**. Verify provider
 
 ## Static portfolio or project documentation
 
-Use [Cloudflare Pages](static-hosting.md) or [GitHub Pages](static-hosting.md) to publish a static site, and [GitHub Actions or GitLab CI](developer-tools.md) to automate checks. GitHub Pages has restrictions on commercial hosting.
+Use [Cloudflare Pages](static-hosting.md) or [GitHub Pages](static-hosting.md) to publish a static site, and [GitHub Actions or GitLab CI](ci-cd.md) to automate checks. GitHub Pages has restrictions on commercial hosting.
 
 ## Small API plus managed PostgreSQL
 

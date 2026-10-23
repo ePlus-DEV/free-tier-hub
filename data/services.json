@@ -434,7 +434,7 @@
   {
     "id": "github-actions",
     "name": "GitHub Actions",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
     "free_limit": "Standard GitHub-hosted runners free for public repos; 2,000 minutes/month on GitHub Free private repos",
     "watch_out": "Larger runners and over-quota private-repo usage may be billed.",
@@ -734,7 +734,7 @@
   {
     "id": "gitlab-ci",
     "name": "GitLab CI/CD Free",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
     "free_limit": "400 compute minutes/month per GitLab.com Free namespace on hosted instance runners",
     "watch_out": "Runner cost factors vary; quota is shared across the namespace; extra compute minutes may need purchase.",
@@ -938,14 +938,26 @@
   {
     "id": "circleci-free",
     "name": "CircleCI Free",
-    "category": "developer-tools",
+    "category": "ci-cd",
     "plan": "ongoing",
-    "free_limit": "30,000 credits/month; up to 5 active users; 1 GB network transfer and 2 GB-month storage",
-    "watch_out": "Free credits expire monthly and do not roll over; resource classes consume credits at different rates; personal builds stop when credits reach zero.",
+    "free_limit": "Up to 6,000 build minutes/month on a small Docker resource; up to 5 active users",
+    "watch_out": "Build-minute consumption varies by resource class and credit rate; higher-resource jobs exhaust the free allowance sooner. Paid plans offer additional credits.",
     "pricing_url": "https://circleci.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23"
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "crow-ci",
+    "name": "Crow CI",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CI/CD for self-hosted pipelines; no software-enforced build-minute or pipeline-run quotas, with Docker, Podman, Kubernetes and other agent backends.",
+    "watch_out": "Self-hosted only: provide and pay for your own servers/runners, storage and networking; capacity and costs depend on your infrastructure. No managed free runner allowance is included.",
+    "pricing_url": "https://crowci.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   },
   {
     "id": "val-town-free",
@@ -2930,6 +2942,30 @@
     "pricing_url": "https://tiiny.host/pricing",
     "credit_card": "no",
     "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "dynu-free-dynamic-dns",
+    "name": "Dynu Free Dynamic DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "4 free hostnames, 4 own-domain hostnames, 4 subdomains, 4 custom DNS records and 4 web redirects; unlimited DNS queries; dynamic DNS updates",
+    "watch_out": "Free account does not expire and requires no credit card. DNSSEC, HTTPS redirects, expanded hostnames/records and premium features require paid membership; own domains must be registered separately. Commercial-use permission for Free is not explicitly confirmed.",
+    "pricing_url": "https://www.dynu.com/en-US/Membership",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "swetrix-community-edition",
+    "name": "Swetrix Community Edition (Self-hosted)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Community Edition with core web analytics, custom events, funnels, performance monitoring and error tracking; no vendor-imposed hosted event quota; infrastructure is self-provided.",
+    "watch_out": "Self-hosting requires Docker, Redis and ClickHouse; at least 2 GB RAM recommended. AGPL-3.0 license obligations apply, including network-use source sharing where required. Swetrix Cloud has no ongoing free plan (14-day card-required trial only).",
+    "pricing_url": "https://swetrix.com/docs/selfhosting/how-to",
+    "credit_card": "no",
+    "commercial_use": "yes",
     "last_checked": "2026-10-23"
   }
 ]
