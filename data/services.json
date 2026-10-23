@@ -2955,5 +2955,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "swetrix-community-edition",
+    "name": "Swetrix Community Edition (Self-hosted)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Community Edition with core web analytics, custom events, funnels, performance monitoring and error tracking; no vendor-imposed hosted event quota; infrastructure is self-provided.",
+    "watch_out": "Self-hosting requires Docker, Redis and ClickHouse; at least 2 GB RAM recommended. AGPL-3.0 license obligations apply, including network-use source sharing where required. Swetrix Cloud has no ongoing free plan (14-day card-required trial only).",
+    "pricing_url": "https://swetrix.com/docs/selfhosting/how-to",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
