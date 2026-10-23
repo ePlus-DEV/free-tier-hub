@@ -181,9 +181,9 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     }
   ],
   "discovery_log": [
@@ -422,6 +422,43 @@
           "reason": "One-year promotion only, not eligible as an ongoing free tier; Starter is separate."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "webhooks-events",
+      "official_sources": [
+        "https://webhookrelay.com/pricing/",
+        "https://webhookrelay.com/",
+        "https://webhooks.cc/docs/plans-limits",
+        "https://hookdeck.com/pricing",
+        "https://www.webhook.co/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "webhookrelay-free-starter",
+          "status": "Issue",
+          "issue_number": 243,
+          "reason": "New provider verified from current official Free Starter pricing: 150 webhooks/month, 1 input, 2 destinations, 0 tunnels, no credit card; commercial use check. Canonical Issue #243 created; await queue PR and exact-head CI before claiming delivery."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hookdeck Developer",
+          "reason": "Already catalogued as hookdeck-developer; do not duplicate."
+        },
+        {
+          "name": "webhooks.cc Free",
+          "reason": "Eligible 50 requests/24h and 7-day retention, but previously reported and awaiting canonical Issue; prioritize newly discovered webhookrelay for this round."
+        },
+        {
+          "name": "webhook.co Free",
+          "reason": "Official provider explicitly describes 5,000 one-time events that never reset: trial-only, ineligible."
+        },
+        {
+          "name": "Webhook.site guest URLs",
+          "reason": "Ephemeral 7-day URL; no permanent free account established."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -459,10 +496,10 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 231,
+    "total_services": 233,
     "total_categories": 18,
     "stale_over_7d": 213,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
