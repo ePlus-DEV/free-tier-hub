@@ -3003,5 +3003,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "filestack-free",
+    "name": "Filestack Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "500 uploads/month; 1 GB managed storage; 1 GB delivery bandwidth; 1,000 transformations; 1 workflow; 1 team member; 20 MB maximum file size.",
+    "watch_out": "Free plan has community support only. Upload count resets monthly; other allowance reset periods are not explicitly confirmed. Premium OCR, AI and enhancement add-ons are paid; overage fees may apply. Explicit commercial-use rights on the Free plan require confirmation.",
+    "pricing_url": "https://www.filestack.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
