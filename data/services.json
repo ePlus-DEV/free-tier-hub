@@ -2931,5 +2931,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "tiiny-host-free",
+    "name": "Tiiny Host Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 active site; 3 MB per-project upload (0.5 MB PDFs); 3 uploads/day; 5,000 visits and 5 GB bandwidth/month",
+    "watch_out": "Log in at least once every 3 months to keep the site online. Free sites display a Tiiny Host banner; custom domains, API, analytics and larger uploads require paid plans. Commercial-use terms on Free are not explicitly confirmed.",
+    "pricing_url": "https://tiiny.host/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
