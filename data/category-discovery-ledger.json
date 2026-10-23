@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "28409809c93bb69d9b00e795df8b2d30ef4e46f4",
+  "source_main_sha": "e85280a961eb02f2e1498affa5a6a1c5d489ea79",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,11 +45,11 @@
     },
     {
       "category": "databases",
-      "service_count": 27,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 27,
       "open_catalog_candidate_issues": 0
     },
@@ -60,7 +60,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
-      "stale_over_7d": 11,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -90,7 +90,7 @@
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
-      "stale_over_7d": 15,
+      "stale_over_7d": 16,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -882,6 +882,42 @@
           "reason": "Official current pricing lists paid annual production plans, not an ongoing hosted free tier."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "databases",
+      "searches": [
+        "TiDB Cloud Starter free plan 2026 official MySQL 5 GiB 50M RUs no card",
+        "CockroachDB Basic free plan after September 15 2026 new cluster eligibility",
+        "Nhost Starter Free managed PostgreSQL 1 GB official pricing and inactivity pause"
+      ],
+      "official_sources": [
+        "https://www.pingcap.com/pricing/",
+        "https://docs.pingcap.com/tidbcloud/select-cluster-tier/",
+        "https://docs.pingcap.com/tidbcloud/manage-serverless-spend-limit/",
+        "https://www.cockroachlabs.com/cockroachdb/pricing/",
+        "https://nhost.io/pricing",
+        "https://docs.nhost.io/platform/cloud/billing"
+      ],
+      "candidates": [
+        {
+          "id": "tidb-cloud-starter-free",
+          "status": "catalogued",
+          "issue_number": 279,
+          "pr_number": 280,
+          "reason": "Official ongoing MySQL-compatible Starter quota is 5 GiB row + 5 GiB columnar storage and 50M RUs/month per eligible instance, up to five free instances; no card when spending limit is zero; commercial terms unconfirmed (check). Dedupe verified against current main, all Issues/PRs and branches. Canonical Issue #279 -> queue run #40038740444 SUCCESS -> PR #280 exact-head dbdcec63f7e2333c8002302b02861edfc7abd677 validation #40038764260 SUCCESS, build #40038764250 SUCCESS, Deploy SKIPPED (not counted), review APPROVED -> automatic merge into main e85280a961eb02f2e1498affa5a6a1c5d489ea79, Issue closed; confirmed catalogued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CockroachDB Cloud Basic for new signups",
+          "reason": "Official pricing says legacy Basic/Standard/Advanced plans apply to deployments created before September 15, 2026 and are no longer available for new purchases; do not classify historical free Basic allowance as currently available to new customers."
+        },
+        {
+          "name": "Nhost Starter Free",
+          "reason": "Official Starter is free forever with 1 GB PostgreSQL, 1 GB storage and 5 GB egress; pauses after one week of inactivity, commercial-use and overage/billing details warrant separate verified candidate in future rotation; not added this run."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -907,11 +943,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 249,
+    "total_services": 250,
     "total_categories": 19,
-    "stale_over_7d": 212,
+    "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "249 services across 19 categories; WorkOS AuthKit Free delivered via Issue #277 -> PR #278 exact-head PASS/APPROVED -> automatic merge, catalog confirmed on main 28409809c93b. Buildkite #275 still blocked by hard-coded CI/CD test; fix PR #276 remains OPEN. Ledger PR #265 requires fresh exact-head CI and review after this update. Historical 30 backlog entries deduped."
+    "note": "250 services across 19 dynamically enumerated categories; 17/19 categories reviewed in current rotation, remaining developer-tools, observability. TiDB Cloud Starter Free delivered via Issue #279 -> queue #40038740444 -> PR #280 exact-head PASS/APPROVED -> automatic merge; main e85280a961eb02f2e1498affa5a6a1c5d489ea79. CI/CD Issue #275 remains blocked pending reviewed fix PR #276, which is OPEN; no bypass or manual merge. Historical backlog 30 entries deduped."
   }
 }
