@@ -2811,5 +2811,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-22"
+  },
+  {
+    "id": "zrok-hosted-free",
+    "name": "zrok Hosted Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "5 GB transfer per rolling 24 hours; 25 environments; 50 share backends; 50 private access frontends; public HTTPS and private sharing.",
+    "watch_out": "Exceeding daily transfer suspends shares until usage falls below the limit. Public shares have 2,000 requests/IP and 7,500 requests/share per 5 minutes; free no-card accounts show an anti-phishing interstitial. Production SLAs and custom limits require commercial arrangements.",
+    "pricing_url": "https://zrok.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
