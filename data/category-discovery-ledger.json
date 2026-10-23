@@ -1,15 +1,15 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "497cfbe918c897e2473d509dd942f31aa3d3a647",
+  "source_main_sha": "3a0c216a7c349cbbdb78106bbebb595776e863c3",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-15",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 10,
       "open_catalog_candidate_issues": 0
     },
@@ -463,6 +463,39 @@
           "reason": "Ephemeral 7-day URL; no permanent free account established."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "static-hosting",
+      "official_sources": [
+        "https://neocities.org/supporter",
+        "https://neocities.org/",
+        "https://neocities.org/legal",
+        "https://neocities.org/terms",
+        "https://surge.sh/pricing",
+        "https://surge.sh/help/upgrading-to-surge-plus",
+        "https://tiiny.host/pricing",
+        "https://helpdesk.tiiny.host/en/article/plan-limits-explained-projects-uploads-visits-and-bandwidth-1ihflbr/"
+      ],
+      "candidates": [
+        {
+          "id": "neocities-free",
+          "status": "catalogued",
+          "issue_number": 247,
+          "pr_number": 248,
+          "reason": "Official ongoing free tier: 1 GB storage, 200 GB bandwidth, subdomain SSL; registration does not request a card, provider legal guidance permits legitimate business sites. Verified no catalog/backlog/Issue/PR/branch duplicate before canonical Issue #247. Queue SUCCESS; PR #248 exact-head validation/build SUCCESS, APPROVED, automatically merged to main 3a0c216a7c349cbbdb78106bbebb595776e863c3."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Surge Free",
+          "reason": "Eligible official ongoing free static hosting with unlimited projects, custom domains and managed SSL, but already reported as surge-static-hosting-free in pending_reverification; dedupe and reverify separately."
+        },
+        {
+          "name": "Tiiny Host Free",
+          "reason": "Eligible official ongoing 1-site tier (3 MB, 5,000 visits/month, 5 GB/month, login every 3 months); already reported as tiiny-host-free in pending_reverification, so deferred for backlog-first delivery."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -496,13 +529,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 235,
+    "total_services": 236,
     "total_categories": 18,
     "stale_over_7d": 213,
     "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "uploadthing-free is an alias of catalogued uploadthing-2gb-app; no duplicate Issue."
+    "unmatched_backlog": [],
+    "note": "uploadthing-free remains a known alias of catalogued uploadthing-2gb-app; no duplicate Issue."
   }
 }
