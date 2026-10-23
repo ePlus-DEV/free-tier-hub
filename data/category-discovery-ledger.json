@@ -58,9 +58,7 @@
       "service_count": 14,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 11,
       "open_catalog_candidate_issues": 0
@@ -131,9 +129,9 @@
       "latest_catalog_verification": "2026-10-22",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-assistants",
@@ -655,6 +653,39 @@
         {
           "name": "Uploadcare Free",
           "reason": "Official docs restrict Free to personal use; not selected in this storage round. 14-day Pro trial is separate from ongoing Free; do not mistake trial allowances for Free."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ai-ml",
+      "searches": [
+        "Opik Free Cloud Comet official pricing 25k spans credit card commercial",
+        "LangSmith Developer free pricing 5k traces",
+        "Weights & Biases Weave Free official pricing"
+      ],
+      "official_sources": [
+        "https://www.comet.com/site/pricing/",
+        "https://www.comet.com/site/products/opik/",
+        "https://www.comet.com/docs/opik/quickstart",
+        "https://www.langchain.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "opik-free-cloud",
+          "status": "Issue",
+          "issue_number": 266,
+          "reason": "Official ongoing hosted $0 Free Cloud: 25,000 spans/month, up to 10 team members, 60-day retention; Comet explicitly states no credit card to sign up. Commercial rights not explicit (check). Not found in 244-service main, backlog, issues, PRs or branches before canonical Issue #266. Await queue, PR and exact-head CI; do not claim catalogued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "LangSmith Developer",
+          "reason": "Ongoing $0 plan with 1 seat and 5k base traces/month, but pay-as-you-go after quota; defer for separate billing/card and commercial-use review."
+        },
+        {
+          "name": "Weights & Biases Weave Free",
+          "reason": "Third-party summaries indicate a free plan; not selected without independent official current card/commercial and limit verification."
         }
       ]
     }
