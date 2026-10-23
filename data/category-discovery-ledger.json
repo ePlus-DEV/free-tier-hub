@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
+  "source_main_sha": "1a82767f4ae387accc28d74a3c4d97a94c00c2bf",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,9 +58,7 @@
       "service_count": 13,
       "latest_catalog_verification": "2026-10-19",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": null,
       "stale_over_7d": 11,
       "open_catalog_candidate_issues": 0
@@ -107,13 +105,13 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 5,
+      "service_count": 6,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17",
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-ml",
@@ -499,6 +497,39 @@
           "reason": "Eligible official ongoing free static hosting with unlimited projects, custom domains and managed SSL, but already reported as surge-static-hosting-free in pending_reverification; dedupe and reverify separately."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.dynu.com/en-US/Membership",
+        "https://www.dynu.com/en-US/DynamicDNS",
+        "https://www.dynu.com/Resources/API",
+        "https://dns.he.net/"
+      ],
+      "candidates": [
+        {
+          "id": "dynu-free-dynamic-dns",
+          "status": "PR",
+          "issue_number": 251,
+          "pr_number": 252,
+          "reason": "Official provider confirms forever-free 4 free hostnames/own domains/subdomains/custom records/redirects and unlimited DNS queries; no credit card, free account never expires. Commercial rights marked check. Catalog/backlog, open/closed Issues/PRs and branches deduplicated. Canonical Issue #251 created; queue run #39953184753 succeeded and opened PR #252. Exact-head validation/build and approval must be checked before marking catalogued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hurricane Electric Free DNS",
+          "reason": "Official free authoritative DNS and dynamic DNS confirmed; numeric zone/record quotas and commercial terms not stated on official page. Keep as future candidate, do not invent unlimited quotas."
+        },
+        {
+          "name": "Dynamix Free Dynamic DNS",
+          "reason": "Official free service explicitly advertised for personal use; commercial usage requires separate review and likely paid business account."
+        },
+        {
+          "name": "ClouDNS, deSEC and 1984 Hosting FreeDNS",
+          "reason": "Already catalogued; not new candidates."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -528,11 +559,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 237,
+    "total_services": 238,
     "total_categories": 18,
     "stale_over_7d": 213,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "uploadthing-free remains a known alias of catalogued uploadthing-2gb-app; no duplicate Issue."
+    "note": "uploadthing-free is a catalogued UploadThing 2GB App alias; new Dynu candidate is in Issue #251 / PR #252 pending exact-head verification and automatic merge."
   }
 }
