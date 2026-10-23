@@ -89,9 +89,9 @@
       "latest_catalog_verification": "2026-10-16",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "observability",
@@ -848,6 +848,40 @@
           "reason": "Community Edition self-hosted docs confirm no card, but managed hosted Free plan quota/card/commercial terms not independently verified this round."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "auth-security",
+      "official_sources": [
+        "https://workos.com/pricing",
+        "https://workos.com/user-management",
+        "https://stytch.com/pricing",
+        "https://supertokens.com/pricing",
+        "https://www.ory.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "workos-authkit-free",
+          "status": "pr",
+          "issue_number": 277,
+          "pr_number": 278,
+          "reason": "Official WorkOS pricing verifies ongoing AuthKit free up to 1M MAU; production requires payment card, enterprise SSO/Directory Sync/custom domains are paid. Dedupe checked against main catalog, 30-item backlog, all accessible Issues/PRs and branches. Initial Issue queue failed due future UTC date, corrected canonical JSON last_checked to 2026-10-23; retry queue #40032771524 SUCCESS and created PR #278 at exact head 907a7d02; CI and review not yet confirmed PASS."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Stytch Pay-as-you-go",
+          "reason": "Official always-free 10K MAU and 5 SSO/SCIM connections; legitimate separate provider, deferred to next category rotation; overage billed, card requirement not independently confirmed."
+        },
+        {
+          "name": "SuperTokens Cloud",
+          "reason": "Official hosted service free under 5K MAU; separate eligible provider, deferred; optional MFA/account-linking paid with minimums, card requirement not confirmed."
+        },
+        {
+          "name": "Ory Network Production",
+          "reason": "Official current pricing lists paid annual production plans, not an ongoing hosted free tier."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -876,8 +910,8 @@
     "total_services": 248,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "248 services across 19 main categories; 212 stale >7d. New Buildkite Free candidate canonical Issue #275 BLOCKED by pre-existing hard-coded CI/CD test, queue run #40026066559 failed. Fix PR #276 open pending exact-head CI/review; re-run existing Issue only after approved merge. Historical 30 backlog entries deduped, no unmatched."
+    "note": "248 services in 19 categories at main 6f6f164191a7; auth-security new candidate WorkOS AuthKit Issue #277 -> queue #40032771524 SUCCESS -> PR #278 exact-head CI/review pending. CI/CD Buildkite Issue #275 blocked by pre-existing hard-coded test; fix PR #276 validated and approved but open. Historical backlog 30 entries deduped, UploadThing alias."
   }
 }
