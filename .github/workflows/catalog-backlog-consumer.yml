@@ -1,0 +1,87 @@
+name: Consume reviewed catalog backlog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: consume-reviewed-catalog-backlog
+  cancel-in-progress: false
+
+jobs:
+  consume:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Validate source catalog and reviewed backlog
+        run: |
+          set -euo pipefail
+          npm run verify
+          npm run catalog:backlog -- --list
+      - name: Open one canonical candidate issue, if eligible
+        env:
+          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$GH_TOKEN" || { echo "::error::EPLUS_BOT_TOKEN is required to trigger issue workflows"; exit 1; }
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { loadCandidates, listCandidates } from './scripts/backlog.mjs';
+
+          const repo = process.env.GITHUB_REPOSITORY;
+          const eligible = new Set(listCandidates());
+          if (!eligible.size) {
+            console.log('No fresh, uncatalogued backlog entries; no Issue created.');
+            process.exit(0);
+          }
+          const api = (endpoint) => JSON.parse(execFileSync(
+            'gh', ['api', '--paginate', '--slurp', 'repos/' + repo + '/' + endpoint],
+            { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
+          )).flat();
+          const issues = api('issues?state=all&per_page=100');
+          const prs = api('pulls?state=all&per_page=100');
+          for (const candidate of loadCandidates()) {
+            if (!eligible.has(candidate.id)) continue;
+            const title = '[catalog-candidate] ' + candidate.id;
+            const branch = 'catalog/add-' + candidate.id;
+            if (issues.some(item => item.title === title)) {
+              console.log('Already has an Issue: ' + candidate.id);
+              continue;
+            }
+            if (prs.some(item => item.head?.ref === branch)) {
+              console.log('Already has a PR: ' + candidate.id);
+              continue;
+            }
+            const remoteBranch = execFileSync(
+              'git', ['ls-remote', '--heads', 'origin', 'refs/heads/' + branch],
+              { encoding: 'utf8' }
+            ).trim();
+            if (remoteBranch) {
+              console.log('Existing delivery branch needs inspection: ' + candidate.id);
+              continue;
+            }
+            const path = '/tmp/catalog-candidate-' + candidate.id + '.json';
+            fs.writeFileSync(path, JSON.stringify(candidate, null, 2) + '\n');
+            const issueUrl = execFileSync(
+              'gh', ['issue', 'create', '--repo', repo, '--title', title, '--body-file', path],
+              { encoding: 'utf8' }
+            ).trim();
+            console.log('Created ' + issueUrl + '; catalog-candidate-queue handles PR delivery.');
+            process.exit(0);
+          }
+          console.log('No safely actionable backlog candidate after Issue/PR/branch deduplication.');
+          NODE
