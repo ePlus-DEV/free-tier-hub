@@ -179,7 +179,7 @@ function homePage(items, absolute, counts) {
   const cards = items.map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
-  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
+  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) + '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
