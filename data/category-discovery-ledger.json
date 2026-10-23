@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "dad2cc73c4f931e64c184b07ce68360f4133742e",
+  "source_main_sha": "ecbbf22a7128d45084b31d9ab2ac0a203e26955c",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -107,11 +107,11 @@
     },
     {
       "category": "analytics",
-      "service_count": 13,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -596,13 +596,46 @@
           "reason": "Classic was sunset July 20, 2026; only new Deno Deploy qualifies. Avoid duplicate/discontinued service."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "analytics",
+      "official_sources": [
+        "https://github.com/electerious/Ackee",
+        "https://github.com/electerious/Ackee/blob/master/LICENSE",
+        "https://github.com/offen/offen",
+        "https://support.countly.com/hc/en-us/articles/360037501312-Countly-Licensing-FAQ",
+        "https://github.com/Open-Web-Analytics/open-web-analytics"
+      ],
+      "candidates": [
+        {
+          "id": "ackee-self-hosted",
+          "status": "catalogued",
+          "issue_number": 258,
+          "pr_number": 259,
+          "reason": "Historical pending re-verification resolved: official MIT self-hosted Ackee software; no vendor-imposed quotas; commercial use permitted by MIT; infrastructure costs apply. Issue #258 -> PR #259 exact-head validation/build SUCCESS, auto-MERGED into main 3103e583aba708a53c467a1958816f8913020b37."
+        },
+        {
+          "id": "offen-fair-web-analytics",
+          "status": "catalogued",
+          "issue_number": 260,
+          "pr_number": 261,
+          "reason": "Genuinely new candidate, deduped against catalog/Issues/PRs/branches. Official Apache-2.0 self-hosted analytics, multiple sites, opt-in, six-month retention; logo CC-BY-NC-ND. Issue #260 -> PR #261; non-force two-parent conflict resolution 102f8c7a5214132a9912b0cdcbf10a4e86bde97a; exact-head validation/build SUCCESS, APPROVED, auto-MERGED into main ecbbf22a7128d45084b31d9ab2ac0a203e26955c."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Countly Lite",
+          "reason": "Official licensing restricts third-party analytics-as-a-service and rebranding; internal company use allowed. Not selected pending clear commercial-use caveat and edition status."
+        },
+        {
+          "name": "Open Web Analytics",
+          "reason": "Official GPLv2+ self-hosted analytics supports unlimited websites. Reserved for future candidate verification; not counted as delivered."
+        }
+      ]
     }
   ],
   "pending_reverification": [
-    {
-      "id": "ackee-self-hosted",
-      "category": "analytics"
-    },
     {
       "id": "gedo-free-dns",
       "category": "dns-cdn"
@@ -625,11 +658,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 241,
+    "total_services": 243,
     "total_categories": 19,
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Serverless rotation delivered Deno Deploy Free #256/#257; 19 categories reconciled with current main, all discovery history preserved via non-force merge."
+    "note": "Analytics discovery: Ackee #258/#259 and newly discovered Offen #260/#261 both delivered through exact-head CI, review, and automatic merge. All 19 categories enumerated from current site config; no manual merge."
   }
 }
