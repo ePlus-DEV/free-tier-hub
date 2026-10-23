@@ -833,9 +833,9 @@
       "candidates": [
         {
           "id": "buildkite-free",
-          "status": "Issue",
+          "status": "Issue-blocked-CI",
           "issue_number": 275,
-          "reason": "Official current ongoing $0 Free plan after 30-day all-access trial: up to 5 users, 10 concurrent jobs, 2,000 Linux vCPU-minutes/month, 250k test executions/month, no card; commercial terms unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before canonical Issue #275; awaiting queue-generated PR and exact-head checks."
+          "reason": "Canonical Issue #275 verified and created; queue run #40026066559 FAILED at Generate and validate because scripts/catalog.test.mjs hard-coded exactly four CI/CD IDs. Non-main regression fix PR #276 (HEAD e3f6c8c936daf729a95b81a6bafa55f28c532d1c) preserves baseline membership/uniqueness and adds dynamic CI/CD sync test; awaiting exact-head checks, required review and permitted merge. Retry same Issue via queue only after fix is merged; no duplicate Issue or bypass."
         }
       ],
       "excluded": [
@@ -878,6 +878,6 @@
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "248 services in 19 categories on current main. Buildkite Free verified official ongoing $0 plan; canonical Issue #275 created and queue/PR/exact-head CI pending. Historical 30 backlog entries catalogued or UploadThing alias. PR #265 remains non-main and requires exact-head verification after this ledger update."
+    "note": "248 services across 19 main categories; 212 stale >7d. New Buildkite Free candidate canonical Issue #275 BLOCKED by pre-existing hard-coded CI/CD test, queue run #40026066559 failed. Fix PR #276 open pending exact-head CI/review; re-run existing Issue only after approved merge. Historical 30 backlog entries deduped, no unmatched."
   }
 }
