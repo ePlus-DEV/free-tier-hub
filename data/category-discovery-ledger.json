@@ -393,7 +393,7 @@
           "id": "twingate-starter-free",
           "status": "catalogued",
           "issue_number": 240,
-          "reason": "Canonical Issue #240 triggered catalog-candidate-queue; PR #241 exact-head validation/build passed, eplus-bot approved, PR merged automatically; verified in main catalog at 26437aba13cb44f9b0522d7b696e4d4756cc9182.",
+          "reason": "Canonical Issue #240 triggered catalog-candidate-queue and PR #241 (exact head d76de2fc0eeb5c7004e5027ace7eb1f0cb6a5179). Both exact-head validation and build jobs succeeded, review approved by eplus-bot, PR auto-merged; service verified in main catalog at 26437aba13cb44f9b0522d7b696e4d4756cc9182. Deploy job was skipped and is not counted as PASS.",
           "candidate": {
             "id": "twingate-starter-free",
             "name": "Twingate Starter Free",
