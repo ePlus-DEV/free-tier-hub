@@ -14,7 +14,7 @@ export function hasDynamicServiceBadge(readme) {
 
 export const CATEGORIES = [
   "static-hosting", "app-hosting", "serverless", "cloud-vps",
-  "databases", "storage", "developer-tools", "auth-security",
+  "databases", "storage", "developer-tools", "ci-cd", "auth-security",
   "observability", "analytics", "dns-cdn", "ai-ml", "ai-assistants",
   "queues-jobs", "search", "feature-flags", "tunneling-networking", "webhooks-events",
 ];

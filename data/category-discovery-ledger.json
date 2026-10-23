@@ -1,12 +1,12 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "5b593f148ca8749007c13acf63a87a299829da3b",
+  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-15",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
@@ -67,12 +67,22 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 39,
+      "service_count": 36,
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
-      "stale_over_7d": 38,
+      "stale_over_7d": 35,
+      "open_catalog_candidate_issues": 0
+    },
+    {
+      "category": "ci-cd",
+      "service_count": 4,
+      "latest_catalog_verification": "2026-10-23",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -147,8 +157,8 @@
     },
     {
       "category": "search",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
@@ -167,7 +177,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 4,
+      "service_count": 5,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -177,8 +187,8 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
@@ -339,6 +349,30 @@
         }
       ],
       "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ci-cd",
+      "official_sources": [
+        "https://crowci.dev/",
+        "https://docs.gitlab.com/ci/pipelines/compute_minutes/",
+        "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+        "https://circleci.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "crow-ci",
+          "status": "pr",
+          "pr_number": 215,
+          "reason": "Safe ancestry-preserving reconciliation of reviewed PR #215; Crow CI is Apache-2.0 self-hosted with no software build-minute cap. Correct official URL to crowci.dev and update CircleCI Free to 6,000 small-Docker build minutes/month. No direct main push or manual PR merge."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Crow CI hosted runners",
+          "reason": "Self-hosted only; no managed free hosted runner allowance."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -376,13 +410,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 231,
-    "total_categories": 18,
-    "stale_over_7d": 213,
+    "total_services": 238,
+    "total_categories": 19,
+    "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
+    "unmatched_backlog": [],
     "note": "uploadthing-free is an alias of catalogued uploadthing-2gb-app; no duplicate Issue."
   }
 }
