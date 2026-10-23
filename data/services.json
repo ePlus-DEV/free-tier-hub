@@ -2931,5 +2931,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "dynu-free-dynamic-dns",
+    "name": "Dynu Free Dynamic DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "4 free hostnames, 4 own-domain hostnames, 4 subdomains, 4 custom DNS records and 4 web redirects; unlimited DNS queries; dynamic DNS updates",
+    "watch_out": "Free account does not expire and requires no credit card. DNSSEC, HTTPS redirects, expanded hostnames/records and premium features require paid membership; own domains must be registered separately. Commercial-use permission for Free is not explicitly confirmed.",
+    "pricing_url": "https://www.dynu.com/en-US/Membership",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
