@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "6f6f164191a762f06936b8dbe2dc01f1017b1f49",
+  "source_main_sha": "28409809c93bb69d9b00e795df8b2d30ef4e46f4",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -85,13 +85,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-16",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
@@ -862,10 +862,10 @@
       "candidates": [
         {
           "id": "workos-authkit-free",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 277,
           "pr_number": 278,
-          "reason": "Official WorkOS pricing verifies ongoing AuthKit free up to 1M MAU; production requires payment card, enterprise SSO/Directory Sync/custom domains are paid. Dedupe checked against main catalog, 30-item backlog, all accessible Issues/PRs and branches. Initial Issue queue failed due future UTC date, corrected canonical JSON last_checked to 2026-10-23; retry queue #40032771524 SUCCESS and created PR #278 at exact head 907a7d02; CI and review not yet confirmed PASS."
+          "reason": "Canonical Issue #277 (UTC date corrected to 2026-10-23) -> queue #40032771524 SUCCESS -> PR #278 exact-head 907a7d02e8b5572fe4e3f6556b9c696cd0915aa9 validation/build PASS and review APPROVED; GitHub Actions automatically merged PR to main 28409809c93bb69d9b00e795df8b2d30ef4e46f4 and Issue #277 CLOSED. Production card required; paid extras documented."
         }
       ],
       "excluded": [
@@ -907,11 +907,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 248,
+    "total_services": 249,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "248 services in 19 categories at main 6f6f164191a7; auth-security new candidate WorkOS AuthKit Issue #277 -> queue #40032771524 SUCCESS -> PR #278 exact-head CI/review pending. CI/CD Buildkite Issue #275 blocked by pre-existing hard-coded test; fix PR #276 validated and approved but open. Historical backlog 30 entries deduped, UploadThing alias."
+    "note": "249 services across 19 categories; WorkOS AuthKit Free delivered via Issue #277 -> PR #278 exact-head PASS/APPROVED -> automatic merge, catalog confirmed on main 28409809c93b. Buildkite #275 still blocked by hard-coded CI/CD test; fix PR #276 remains OPEN. Ledger PR #265 requires fresh exact-head CI and review after this update. Historical 30 backlog entries deduped."
   }
 }
