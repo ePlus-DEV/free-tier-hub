@@ -3051,5 +3051,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "activepieces-cloud-free",
+    "name": "Activepieces Cloud Free",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "1,000 credits/month; up to 5 users; unlimited flows; cloud-hosted automation, agents, tables, MCP and API access",
+    "watch_out": "AI model steps use additional credits (2/10/20 per model tier); free quota pauses runs until credits refresh. Official pricing page inconsistently states daily vs monthly reset; verify reset timing. Cloud Free is distinct from self-hosted Community Edition; commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://www.activepieces.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
