@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "f8a9033ab528796a31401598680485b927a8fed0",
+  "source_main_sha": "6f6f164191a762f06936b8dbe2dc01f1017b1f49",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -151,7 +151,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 14,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "search",
@@ -795,10 +795,10 @@
       "candidates": [
         {
           "id": "activepieces-cloud-free",
-          "status": "pr-open",
+          "status": "catalogued",
           "issue_number": 273,
           "pr_number": 274,
-          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; note in watch_out. Commercial permission not explicitly established (check). Dedupe checked catalog, historical backlog, Issues, PRs, and branches before Issue #273. Initial queue run failed because last_checked was a future UTC date; Issue corrected to 2026-10-23 and rerun succeeded, opening PR #274. Exact-head validation/build/review and merge remain to be verified."
+          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; noted in watch_out. Commercial permission unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before Issue #273. Initial queue failed due future UTC date, Issue corrected to 2026-10-23 and rerun succeeded. Queue generated PR #274, exact-head 1285819997e578ad96ede198fd8bbd70b73e8d17 validation/build SUCCESS, review APPROVED, automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49; confirmed in main catalog and Issue closed. Production Pages deployment must be separately verified."
         }
       ],
       "excluded": [
@@ -843,8 +843,8 @@
     "total_services": 248,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Queues/jobs first discovery round: Activepieces Cloud Free official current pricing verified; Issue #273 corrected to current UTC date, catalog candidate queue succeeded, PR #274 open; awaiting exact-head CI/review and merge. Previous catalog 247 services across 19 categories, with 212 stale (>7d). UploadThing backlog ID is alias of catalogued uploadthing-2gb-app."
+    "note": "248 services in 19 categories after Activepieces Cloud Free Issue #273 -> queue -> PR #274 exact-head CI PASS and review APPROVED -> automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49. Ledger non-main PR #265 pending new exact-head CI/review; main Pages deploy not yet verified. Historical backlog 30 entries all catalogued or alias (UploadThing). 212 records stale >7d."
   }
 }
