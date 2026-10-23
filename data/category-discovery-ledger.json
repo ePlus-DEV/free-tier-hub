@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "ecbbf22a7128d45084b31d9ab2ac0a203e26955c",
+  "source_main_sha": "c608efc9f6e852a29c719ea4868a26124a188c1f",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -61,9 +61,9 @@
       "uncatalogued_backlog": [
         "uploadthing-free"
       ],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 11,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "developer-tools",
@@ -631,6 +631,30 @@
         {
           "name": "Open Web Analytics",
           "reason": "Official GPLv2+ self-hosted analytics supports unlimited websites. Reserved for future candidate verification; not counted as delivered."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "storage",
+      "official_sources": [
+        "https://www.filestack.com/pricing/",
+        "https://go.filestack.com/signup-free/",
+        "https://uploadcare.com/docs/billing/"
+      ],
+      "candidates": [
+        {
+          "id": "filestack-free",
+          "status": "PR",
+          "issue_number": 263,
+          "pr_number": 264,
+          "reason": "New provider absent from main catalog, reviewed backlog, Issues, PRs and branches before delivery. Official Free plan is ongoing with 500 uploads/month, 1 GB storage, 1 GB bandwidth, 1,000 transformations, no credit card; commercial use not explicitly confirmed. Exact-head CI and review must pass before counting as catalogued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Uploadcare Free",
+          "reason": "Official docs restrict Free to personal use; not selected in this storage round. 14-day Pro trial is separate from ongoing Free; do not mistake trial allowances for Free."
         }
       ]
     }
