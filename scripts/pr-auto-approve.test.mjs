@@ -79,3 +79,19 @@ test("approval waits for both exact-head validation and build, even if build che
   assert.ok(waitStep.includes('"$BUILD_PASS_COUNT" -gt 0'));
   assert.ok(waitStep.includes('"$PENDING_COUNT" -eq 0'));
 });
+
+test("approval tolerates delayed check registration, not arbitrary CLI errors", () => {
+  const waitStep = yaml.slice(
+    yaml.indexOf("      - name: Wait for pull request checks"),
+    yaml.indexOf("      - name: Approve pull request"),
+  );
+  assert.ok(waitStep.includes('if ! CHECKS="$(gh pr checks'));
+  assert.ok(waitStep.includes('no checks reported on'));
+  assert.ok(waitStep.includes('sleep 10'));
+  assert.ok(waitStep.includes('continue'));
+  assert.ok(waitStep.includes('Unable to read pull request checks; refusing approval.'));
+  assert.ok(waitStep.includes('exit 1'));
+  assert.ok(waitStep.includes('FAILING_COUNT'));
+  assert.ok(waitStep.includes('VALIDATION_PASS_COUNT'));
+  assert.ok(waitStep.includes('BUILD_PASS_COUNT'));
+});
