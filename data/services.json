@@ -2871,5 +2871,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "twingate-starter-free",
+    "name": "Twingate Starter Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 users, 50 Resources, 10 Remote Networks and 5 devices per user; secure remote access with split tunneling and conditional access.",
+    "watch_out": "Starter has community support only and limited advanced access controls; premium identity, service accounts and device posture features require paid plans. Verify payment-card requirements during signup. The separate startup Enterprise promotion is time-limited and is not this free tier.",
+    "pricing_url": "https://www.twingate.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
