@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "7c71f5079991b796dc95b425a9c9860ff5974606",
+  "source_main_sha": "c55d0253107429965986f8290464ee406589f616",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -147,13 +147,13 @@
     },
     {
       "category": "search",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "feature-flags",
@@ -354,9 +354,10 @@
       "candidates": [
         {
           "id": "brave-search-api-monthly-credit",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 237,
-          "reason": "Official Brave Search API documentation confirms $5 free monthly recurring credits (1,000 Search requests at $5/1,000), credit card required, optional $0 prepaid balance, no carryover, attribution required; commercial-use terms left check. Canonical JSON-only Issue #237 created; await queue PR and exact-head CI."
+          "reason": "Verified official recurring $5 monthly credit, card required, commercial terms check. Canonical Issue #237 created; queue succeeded, generated PR #238, exact-head validation/build PASS, approved and automatically merged; main catalog now includes this service.",
+          "pr": 238
         }
       ],
       "excluded": [
