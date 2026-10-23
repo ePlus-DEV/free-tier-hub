@@ -145,13 +145,13 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 14,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "search",
@@ -774,6 +774,47 @@
           "reason": "Official free signup opens in capacity-limited windows; check current signup/hosting availability and service restrictions before Issue."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "queues-jobs",
+      "searches": [
+        "Activepieces Cloud Free official pricing 2026 credit limit no card commercial use",
+        "Zeplo Developer Free monthly requests and paid overage official",
+        "Restate Cloud Free monthly actions conflicting official pages",
+        "Hatchet Cloud 2026 pay-as-you-go card required free usage"
+      ],
+      "official_sources": [
+        "https://www.activepieces.com/pricing",
+        "https://www.activepieces.com/docs/about/license",
+        "https://zeplo.io/pricing/",
+        "https://restate.dev/pricing",
+        "https://restate.dev/cloud",
+        "https://hatchet.run/announcement/pay-as-you-go-pricing"
+      ],
+      "candidates": [
+        {
+          "id": "activepieces-cloud-free",
+          "status": "pr-open",
+          "issue_number": 273,
+          "pr_number": 274,
+          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; note in watch_out. Commercial permission not explicitly established (check). Dedupe checked catalog, historical backlog, Issues, PRs, and branches before Issue #273. Initial queue run failed because last_checked was a future UTC date; Issue corrected to 2026-10-23 and rerun succeeded, opening PR #274. Exact-head validation/build/review and merge remain to be verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Restate Cloud Free",
+          "reason": "Official pricing page states 100k actions/month but Restate Cloud product page currently states 50k/month; defer until quota discrepancy is resolved."
+        },
+        {
+          "name": "Hatchet Cloud pay-as-you-go",
+          "reason": "Official September 2026 announcement requires adding a payment card; 1M runs and 1M events/month free but usage beyond quota is billed. Defer because paid overage and card requirement need careful classification."
+        },
+        {
+          "name": "Zeplo Developer Free",
+          "reason": "Official pricing states 500 requests free/month with $20/100k overage, one developer and 30-day logs. Reserve for follow-up card and overage/cap confirmation."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -799,11 +840,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 247,
+    "total_services": 248,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Verified app-hosting AwardSpace Free Issue #270 -> queue -> PR #271, exact-head validation/build PASS, review APPROVED, automated merge; confirmed main catalog 247 services in 19 categories. Non-main discovery ledger PR only; no direct main write."
+    "note": "Queues/jobs first discovery round: Activepieces Cloud Free official current pricing verified; Issue #273 corrected to current UTC date, catalog candidate queue succeeded, PR #274 open; awaiting exact-head CI/review and merge. Previous catalog 247 services across 19 categories, with 212 stale (>7d). UploadThing backlog ID is alias of catalogued uploadthing-2gb-app."
   }
 }
