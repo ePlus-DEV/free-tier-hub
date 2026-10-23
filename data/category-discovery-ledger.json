@@ -81,7 +81,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "auth-security",
@@ -815,6 +815,39 @@
           "reason": "Official pricing states 500 requests free/month with $20/100k overage, one developer and 30-day logs. Reserve for follow-up card and overage/cap confirmation."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ci-cd",
+      "searches": [
+        "Buildkite Free plan official 2026 2000 Linux vCPU minutes and no credit card",
+        "Semaphore CI free hosted pricing vs community edition",
+        "Woodpecker CI self-hosted open-source license and setup"
+      ],
+      "official_sources": [
+        "https://buildkite.com/pricing/",
+        "https://woodpecker-ci.org/docs/2.8/intro",
+        "https://woodpecker-ci.org/docs/2.8/about",
+        "https://docs.semaphoreci.com/CE/getting-started/guided-tour"
+      ],
+      "candidates": [
+        {
+          "id": "buildkite-free",
+          "status": "Issue",
+          "issue_number": 275,
+          "reason": "Official current ongoing $0 Free plan after 30-day all-access trial: up to 5 users, 10 concurrent jobs, 2,000 Linux vCPU-minutes/month, 250k test executions/month, no card; commercial terms unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before canonical Issue #275; awaiting queue-generated PR and exact-head checks."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Woodpecker CI",
+          "reason": "Self-hosted free open-source CI; viable alternative but would require its own infrastructure, reserved for separate verified self-hosted listing."
+        },
+        {
+          "name": "Semaphore",
+          "reason": "Community Edition self-hosted docs confirm no card, but managed hosted Free plan quota/card/commercial terms not independently verified this round."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -843,8 +876,8 @@
     "total_services": 248,
     "total_categories": 19,
     "stale_over_7d": 212,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "248 services in 19 categories. Activepieces Cloud Free Issue #273 -> queue -> PR #274 exact-head validation/build PASS, review APPROVED -> automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49. Main Pages run #40018866940 Deploy SUCCESS. Discovery ledger PR #265 awaiting fresh exact-head CI/review after commit. Historical backlog 30 entries all catalogued or alias (UploadThing). 212 records stale >7d."
+    "note": "248 services in 19 categories on current main. Buildkite Free verified official ongoing $0 plan; canonical Issue #275 created and queue/PR/exact-head CI pending. Historical 30 backlog entries catalogued or UploadThing alias. PR #265 remains non-main and requires exact-head verification after this ledger update."
   }
 }
