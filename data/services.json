@@ -2979,5 +2979,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "ackee-self-hosted",
+    "name": "Ackee Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted website analytics; no vendor-imposed limits on tracked sites, pageviews or events.",
+    "watch_out": "Self-hosted only; requires Node.js and MongoDB. Hosting, storage, backups and maintenance may incur infrastructure costs. No managed free SaaS tier.",
+    "pricing_url": "https://github.com/electerious/Ackee",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
