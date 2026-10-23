@@ -2859,5 +2859,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "brave-search-api-monthly-credit",
+    "name": "Brave Search API Monthly Credit",
+    "category": "search",
+    "plan": "monthly-credit",
+    "free_limit": "$5 in recurring Search API credits/month, equivalent to 1,000 web search requests at $5 per 1,000 requests; up to 50 requests/second.",
+    "watch_out": "No standalone free plan. A payment card is required for identity verification (temporary $0/$1 authorization). Set prepaid balance to $0 and disable auto-reload / set usage limits to avoid charges. Unused free credits do not roll over. Attribution is required to receive free credits; storing API result data is prohibited without separate agreement. Commercial-use terms require review.",
+    "pricing_url": "https://brave.com/search/api/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
