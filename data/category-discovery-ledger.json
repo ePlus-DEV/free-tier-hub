@@ -111,7 +111,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
@@ -510,10 +510,10 @@
       "candidates": [
         {
           "id": "dynu-free-dynamic-dns",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 251,
           "pr_number": 252,
-          "reason": "Official provider confirms forever-free 4 free hostnames/own domains/subdomains/custom records/redirects and unlimited DNS queries; no credit card, free account never expires. Commercial rights marked check. Catalog/backlog, open/closed Issues/PRs and branches deduplicated. Canonical Issue #251 created; queue run #39953184753 succeeded and opened PR #252. Exact-head validation/build and approval must be checked before marking catalogued."
+          "reason": "Official ongoing free DNS verified: 4 free hostnames, 4 own-domain hostnames, 4 subdomains, 4 custom records, 4 redirects, unlimited DNS queries; no card, commercial-use check. Issue #251 -> queue #39953184753 SUCCESS -> PR #252 exact-head 294feff13a10d411251c8455eda961d3ea1a1d7b validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED into main 1a82767f4ae387accc28d74a3c4d97a94c00c2bf; Issue CLOSED and catalog verified."
         }
       ],
       "excluded": [
@@ -562,8 +562,8 @@
     "total_services": 238,
     "total_categories": 18,
     "stale_over_7d": 213,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "uploadthing-free is a catalogued UploadThing 2GB App alias; new Dynu candidate is in Issue #251 / PR #252 pending exact-head verification and automatic merge."
+    "note": "uploadthing-free is a catalogued product alias of uploadthing-2gb-app; Dynu Free Dynamic DNS is now catalogued via PR #252, not an open candidate."
   }
 }
