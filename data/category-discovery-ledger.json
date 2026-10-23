@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "c608efc9f6e852a29c719ea4868a26124a188c1f",
+  "source_main_sha": "447782f709240eb88cca81cc914380f06e7e4fd9",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -55,15 +55,15 @@
     },
     {
       "category": "storage",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-19",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [
         "uploadthing-free"
       ],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 11,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
@@ -645,10 +645,10 @@
       "candidates": [
         {
           "id": "filestack-free",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 263,
           "pr_number": 264,
-          "reason": "New provider absent from main catalog, reviewed backlog, Issues, PRs and branches before delivery. Official Free plan is ongoing with 500 uploads/month, 1 GB storage, 1 GB bandwidth, 1,000 transformations, no credit card; commercial use not explicitly confirmed. Exact-head CI and review must pass before counting as catalogued."
+          "reason": "Canonical Issue #263 delivered through queue to PR #264; exact-head validation and build PASS, review APPROVED, PR auto-merged and Issue closed. Verified in main catalog. Commercial-use permission still check."
         }
       ],
       "excluded": [
