@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "26437aba13cb44f9b0522d7b696e4d4756cc9182",
+  "source_main_sha": "497cfbe918c897e2473d509dd942f31aa3d3a647",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -177,13 +177,13 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     }
   ],
   "discovery_log": [
@@ -436,19 +436,23 @@
       "candidates": [
         {
           "id": "webhookrelay-free-starter",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 243,
-          "reason": "New provider verified from current official Free Starter pricing: 150 webhooks/month, 1 input, 2 destinations, 0 tunnels, no credit card; commercial use check. Canonical Issue #243 created; await queue PR and exact-head CI before claiming delivery."
+          "pr_number": 244,
+          "reason": "Verified 150 webhook deliveries/month, one input, two destinations, no card; commercial terms check. Canonical Issue #243 -> queue SUCCESS -> PR #244 exact-head validation/build SUCCESS, approved and automatically merged."
+        },
+        {
+          "id": "webhooks-cc-free",
+          "status": "catalogued",
+          "issue_number": 245,
+          "pr_number": 246,
+          "reason": "Previously reported pending candidate reverified from official ongoing free plan: 50 requests per 24 hours, 7-day retention, permanent endpoints with account, no card; commercial terms check. Issue #245 -> queue SUCCESS -> PR #246 exact-head validation/build SUCCESS, approved and automatically merged."
         }
       ],
       "excluded": [
         {
           "name": "Hookdeck Developer",
           "reason": "Already catalogued as hookdeck-developer; do not duplicate."
-        },
-        {
-          "name": "webhooks.cc Free",
-          "reason": "Eligible 50 requests/24h and 7-day retention, but previously reported and awaiting canonical Issue; prioritize newly discovered webhookrelay for this round."
         },
         {
           "name": "webhook.co Free",
@@ -469,10 +473,6 @@
     {
       "id": "tiiny-host-free",
       "category": "static-hosting"
-    },
-    {
-      "id": "webhooks-cc-free",
-      "category": "webhooks-events"
     },
     {
       "id": "gedo-free-dns",
@@ -496,10 +496,10 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 233,
+    "total_services": 235,
     "total_categories": 18,
     "stale_over_7d": 213,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
