@@ -30,7 +30,7 @@ test("CI/CD category and self-hosted Crow CI entry are correctly classified", ()
   assert.deepEqual(entries.map(item => item.id).sort(),
     ["github-actions", "gitlab-ci", "circleci-free", "crow-ci"].sort());
   assert.ok(CATEGORIES.includes("ci-cd"));
-  assert.equal(sourceData.find(item => item.id === "crow-ci").pricing_url, "https://crowci.com/");
+  assert.equal(sourceData.find(item => item.id === "crow-ci").pricing_url, "https://crowci.dev/");
   assert.equal(sourceData.filter(item => item.category === "developer-tools")
     .some(item => ["github-actions", "gitlab-ci", "circleci-free"].includes(item.id)), false);
 });
