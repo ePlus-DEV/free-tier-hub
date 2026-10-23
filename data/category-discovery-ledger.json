@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "9d7e98c2bfc45d1906482238ff142f4fd204aaec",
+  "source_main_sha": "dad2cc73c4f931e64c184b07ce68360f4133742e",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,11 +25,11 @@
     },
     {
       "category": "serverless",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-21",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17",
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
@@ -566,6 +566,36 @@
           "reason": "Already catalogued; not new candidates."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "serverless",
+      "official_sources": [
+        "https://deno.com/deploy/pricing",
+        "https://docs.deno.com/deploy/changelog/",
+        "https://docs.deno.com/deploy/acceptable_use_policy/",
+        "https://www.val.town/pricing",
+        "https://www.val.town/limits"
+      ],
+      "candidates": [
+        {
+          "id": "deno-deploy-free",
+          "status": "catalogued",
+          "issue_number": 256,
+          "pr_number": 257,
+          "reason": "Current Deno Deploy Free plan: 1M requests/month, 20 GiB egress, 10 active CPU hours, 150 GiB-hours memory, 1 GiB KV, 5 custom domains. Full published limits require credit card organization verification; unverified Free is restricted, commercial terms check. Issue #256 -> queue #39969628881 SUCCESS -> PR #257 exact-head validation/build SUCCESS, APPROVED and auto-MERGED into main dad2cc73c4f931e64c184b07ce68360f4133742e."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Val Town Free",
+          "reason": "Official ongoing free tier: 100,000 runs/day, 15-minute minimum cron, 1-minute runtime, public vals only; card and commercial-use policy not confirmed. Hold for verification, not marked ineligible."
+        },
+        {
+          "name": "Deno Deploy Classic",
+          "reason": "Classic was sunset July 20, 2026; only new Deno Deploy qualifies. Avoid duplicate/discontinued service."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -595,11 +625,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 240,
+    "total_services": 241,
     "total_categories": 19,
     "stale_over_7d": 212,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Resolved PR #239 divergence via two-parent non-force merge; preserved branch discovery history and main CI/CD plus Swetrix #254. Category coverage recomputed from current main catalog; pending candidates deduped."
+    "note": "Serverless rotation delivered Deno Deploy Free #256/#257; 19 categories reconciled with current main, all discovery history preserved via non-force merge."
   }
 }
