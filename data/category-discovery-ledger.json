@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "4a85d9867e77725b0440dd6d68b6aa41345e69be",
+  "source_main_sha": "5b593f148ca8749007c13acf63a87a299829da3b",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -157,11 +157,11 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-23",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -321,13 +321,27 @@
           "reason": "Free compute-point allowance varies and is not numerically documented by provider; defer precise limit claims."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "feature-flags",
+      "official_sources": [
+        "https://feat.so/pricing/",
+        "https://docs.feat.so/"
+      ],
+      "candidates": [
+        {
+          "id": "feat-feature-flags-free",
+          "status": "catalogued",
+          "reason": "Reverified official ongoing free plan: 7,500 MAU, 100 server connections, 2 projects, unlimited flags/seats/environments; no credit card and provider explicitly supports production. Canonical Issue #235 generated PR #236; exact-head CI passed, initial auto-approval raced pending build and failed closed, then safe retry passed and GitHub Actions merged.",
+          "issue": 235,
+          "pr": 236
+        }
+      ],
+      "excluded": []
     }
   ],
   "pending_reverification": [
-    {
-      "id": "feat-feature-flags-free",
-      "category": "feature-flags"
-    },
     {
       "id": "ackee-self-hosted",
       "category": "analytics"
@@ -362,7 +376,7 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 230,
+    "total_services": 231,
     "total_categories": 18,
     "stale_over_7d": 213,
     "open_catalog_candidate_issues": 0,
