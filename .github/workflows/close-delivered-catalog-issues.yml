@@ -30,6 +30,7 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { execFileSync } from 'node:child_process';
+          import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
           const repo = process.env.GITHUB_REPOSITORY;
           const catalog = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
           const ids = new Set(catalog.map(item => item.id));
@@ -45,19 +46,8 @@ jobs:
               try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
               if (candidate.id !== match[1]) continue;
               const message = `Catalog entry \`${match[1]}\` is present on main at \`${process.env.GITHUB_SHA}\`. Closing this candidate as delivered. Production visibility still depends on a successful GitHub Pages deployment.`;
-              // Another post-merge workflow may close this issue concurrently.
-              // Only accept a close failure if the API confirms it is already closed.
-              try {
-                execFileSync('gh', ['issue', 'close', String(issue.number), '--repo', repo, '--reason', 'completed']);
-              } catch (error) {
-                const state = execFileSync('gh', ['api', `repos/${repo}/issues/${issue.number}`,
-                  '--jq', '.state'], {encoding:'utf8'}).trim();
-                if (state !== 'closed') throw error;
-                console.log(`Already closed concurrently #${issue.number}: ${match[1]}`);
-                continue;
-              }
-              execFileSync('gh', ['issue', 'comment', String(issue.number), '--repo', repo, '--body', message]);
-              console.log(`Closed #${issue.number}: ${match[1]}`);
+              const outcome = closeCataloguedIssue(repo, issue.number, message);
+              console.log(`${outcome === 'already-closed' ? 'Already closed' : 'Closed'} #${issue.number}: ${match[1]}`);
             }
             if (JSON.parse(raw).length < 100) break;
             page++;
