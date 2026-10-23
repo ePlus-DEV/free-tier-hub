@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "c55d0253107429965986f8290464ee406589f616",
+  "source_main_sha": "26437aba13cb44f9b0522d7b696e4d4756cc9182",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -167,13 +167,13 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 4,
+      "service_count": 5,
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-23",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "webhooks-events",
@@ -391,9 +391,9 @@
       "candidates": [
         {
           "id": "twingate-starter-free",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 240,
-          "reason": "Starter is an ongoing free tier for personal projects and small startups, with 5 users, 50 resources, 10 remote networks, 5 devices/user. Official pricing supports commercial startup use; credit-card requirement not explicitly confirmed, marked check. Created canonical Issue #240; await queue PR and exact-head CI.",
+          "reason": "Canonical Issue #240 triggered catalog-candidate-queue; PR #241 exact-head validation/build passed, eplus-bot approved, PR merged automatically; verified in main catalog at 26437aba13cb44f9b0522d7b696e4d4756cc9182.",
           "candidate": {
             "id": "twingate-starter-free",
             "name": "Twingate Starter Free",
