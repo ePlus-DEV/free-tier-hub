@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-23",
-  "source_main_sha": "1a82767f4ae387accc28d74a3c4d97a94c00c2bf",
+  "source_main_sha": "990906ddbd8158997e343d4299a537457d416bc4",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,19 +58,31 @@
       "service_count": 13,
       "latest_catalog_verification": "2026-10-19",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": null,
       "stale_over_7d": 11,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 39,
+      "service_count": 36,
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": null,
-      "stale_over_7d": 38,
+      "stale_over_7d": 35,
+      "open_catalog_candidate_issues": 0
+    },
+    {
+      "category": "ci-cd",
+      "service_count": 4,
+      "latest_catalog_verification": "2026-10-23",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -340,6 +352,30 @@
     },
     {
       "checked_utc": "2026-10-23",
+      "category": "ci-cd",
+      "official_sources": [
+        "https://crowci.dev/",
+        "https://docs.gitlab.com/ci/pipelines/compute_minutes/",
+        "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+        "https://circleci.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "crow-ci",
+          "status": "pr",
+          "pr_number": 215,
+          "reason": "Safe ancestry-preserving reconciliation of reviewed PR #215; Crow CI is Apache-2.0 self-hosted with no software build-minute cap. Correct official URL to crowci.dev and update CircleCI Free to 6,000 small-Docker build minutes/month. No direct main push or manual PR merge."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Crow CI hosted runners",
+          "reason": "Self-hosted only; no managed free hosted runner allowance."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
       "category": "search",
       "official_sources": [
         "https://brave.com/search/api/",
@@ -559,11 +595,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 238,
-    "total_categories": 18,
-    "stale_over_7d": 213,
-    "open_catalog_candidate_issues": 0,
+    "total_services": 239,
+    "total_categories": 19,
+    "stale_over_7d": 212,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "uploadthing-free is a catalogued product alias of uploadthing-2gb-app; Dynu Free Dynamic DNS is now catalogued via PR #252, not an open candidate."
+    "note": "Merged #239 discovery rounds with main CI/CD category and PR #215/#242 changes; Swetrix Community Edition Issue #253 awaits catalog-candidate queue."
   }
 }
