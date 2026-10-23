@@ -2823,5 +2823,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "1984-hosting-freedns",
+    "name": "1984 Hosting FreeDNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free authoritative DNS hosting with no published zone-count limit; A, AAAA, CAA, CNAME, MX, SRV, TXT, SSHFP and TLSA records, DNSSEC, Dynamic DNS and web redirects.",
+    "watch_out": "DNS hosting only; domain registration and website hosting are separate. Provider offers the free DNS service without guarantees or SLA. PTR/reverse zones and a Let's Encrypt API are not currently offered.",
+    "pricing_url": "https://1984.hosting/product/freedns/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
