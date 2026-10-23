@@ -2967,5 +2967,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "deno-deploy-free",
+    "name": "Deno Deploy Free",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "1,000,000 requests/month; 20 GiB egress/month; 10 active CPU hours/month; 150 GiB-hours memory/month; 1 GiB KV storage; 5 custom domains; up to 10 active apps",
+    "watch_out": "The full published Free allowance requires organization verification with a credit card; unverified organizations have restricted Free limits. Free apps pause when request/bandwidth/CPU/memory allowance is exceeded. This is new Deno Deploy, not discontinued Deploy Classic. Commercial eligibility of the Free plan needs provider confirmation.",
+    "pricing_url": "https://deno.com/deploy/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
   }
 ]
