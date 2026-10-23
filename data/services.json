@@ -2883,5 +2883,41 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "webhookrelay-free-starter",
+    "name": "Webhook Relay Free Starter",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "150 webhooks/month; 1 input; 2 destinations; 0 bidirectional tunnels; MCP access",
+    "watch_out": "Each received webhook counts toward quota; forwarding to multiple destinations counts separately. Free buckets suspend on quota exhaustion. Free plan is positioned for individual developers and home automation; commercial-use permission not independently confirmed.",
+    "pricing_url": "https://webhookrelay.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "webhooks-cc-free",
+    "name": "webhooks.cc Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "50 requests per rolling 24 hours; unlimited permanent endpoints for signed-in accounts; 7-day request retention; CLI, SDK, MCP and replay",
+    "watch_out": "Guest endpoints expire after 12 hours and allow only 25 requests; sign in for permanent Free endpoints. Requests over quota return HTTP 429; commercial-use terms not independently confirmed.",
+    "pricing_url": "https://webhooks.cc/docs/plans-limits",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "neocities-free",
+    "name": "Neocities Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 GB storage; 200 GB bandwidth; free neocities.org subdomain with HTTPS",
+    "watch_out": "Static HTML/CSS/JS only. Custom domains, multiple sites, WebDAV and hotlinking are Supporter features; prohibited SEO-spam/fraud and third-party site generation restrictions apply. Commercial business sites are allowed under the AUP.",
+    "pricing_url": "https://neocities.org/supporter",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
   }
 ]
