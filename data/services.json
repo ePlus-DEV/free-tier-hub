@@ -3111,5 +3111,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "tunnl-gg-free",
+    "name": "tunnl.gg Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "3 simultaneous HTTPS/WebSocket tunnels per IP; random URLs or SSH-key-bound stable URLs without signup; tunnels close after 2 hours idle or 24 hours maximum.",
+    "watch_out": "Free tunnels show a browser safety warning; 50 requests/second per tunnel (burst 400), 25 requests/second per visitor (burst 200). Stable URLs require an SSH key; chosen subdomain names and unlimited session duration require Pro. Hosted free-tier commercial-use permission not explicitly confirmed.",
+    "pricing_url": "https://tunnl.gg/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
