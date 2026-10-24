@@ -3123,5 +3123,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "buildkite-free",
+    "name": "Buildkite Free",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 active users; 10 concurrent jobs; 2,000 Linux vCPU-minutes/month on Small hosted agents; 250,000 test executions/month; 50 GB artifact storage and 250 GB artifact downloads/month.",
+    "watch_out": "Starts with a 30-day all-access trial; select the ongoing $0 Free plan afterward. Linux Small only on Free; 30-day build/artifact retention; self-hosted agents consume your own infrastructure. Commercial-use permission for Free not explicitly stated.",
+    "pricing_url": "https://buildkite.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
