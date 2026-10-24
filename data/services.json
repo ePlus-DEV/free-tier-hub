@@ -3135,5 +3135,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "fastly-compute-free",
+    "name": "Fastly Compute Free Tier",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "10 million Compute requests and 100 million Compute vCPU milliseconds per month, included at no charge in the recurring free tier.",
+    "watch_out": "Usage beyond either free allowance is billed automatically at published usage-based rates; Fastly signup requires a credit card for verification. Other products, data transfer and optional features may incur charges. Legacy pre-2026-03-31 Compute development trials are separate; confirm production and commercial-use terms before deployment.",
+    "pricing_url": "https://www.fastly.com/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
