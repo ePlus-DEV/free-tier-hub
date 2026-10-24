@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-10-23",
+  "as_of_utc": "2026-10-24",
   "source_main_sha": "e85280a961eb02f2e1498affa5a6a1c5d489ea79",
   "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
@@ -99,9 +99,9 @@
       "latest_catalog_verification": "2026-10-14",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "analytics",
@@ -918,6 +918,41 @@
           "reason": "Official Starter is free forever with 1 GB PostgreSQL, 1 GB storage and 5 GB egress; pauses after one week of inactivity, commercial-use and overage/billing details warrant separate verified candidate in future rotation; not added this run."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "observability",
+      "searches": [
+        "2026 free uptime monitoring official pricing 25 monitors commercial no card UptimeSignal",
+        "UptimeUp Free official pricing 5 monitors personal projects",
+        "OpenStatus official hosted pricing trial vs ongoing Free",
+        "2026 independent free uptime monitoring comparisons"
+      ],
+      "official_sources": [
+        "https://uptimesignal.io/",
+        "https://uptimesignal.io/free-uptime-monitoring",
+        "https://uptimesignal.io/ai-agents",
+        "https://uptimeup.com/pricing",
+        "https://www.openstatus.dev/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "uptimesignal-free",
+          "status": "Issue-awaiting-queue",
+          "issue_number": 281,
+          "reason": "New provider absent from main catalog, backlog, open/closed Issues and PRs, and branches. Official site confirms ongoing $0, 25 monitors, 5-minute checks, 7-day history, no card, commercial use. Official pages conflict on Free status-page count and alert channels; catalog only uses consistently confirmed limits. Canonical Issue #281 created 2026-10-24 UTC; queue/PR/exact-head CI pending verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "UptimeUp Free",
+          "reason": "Official ongoing $0 for 5 monitors at 5-minute intervals, 1 status page and 7-day retention; marked for testing/personal projects. Deferred until commercial restrictions clarified."
+        },
+        {
+          "name": "OpenStatus hosted",
+          "reason": "Current official pricing shows new workspaces begin with a 14-day Starter trial; no confirmed ongoing hosted $0 quota on current plan comparison, so do not treat trial as free tier."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -946,8 +981,8 @@
     "total_services": 250,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "250 services across 19 dynamically enumerated categories; 17/19 categories reviewed in current rotation, remaining developer-tools, observability. TiDB Cloud Starter Free delivered via Issue #279 -> queue #40038740444 -> PR #280 exact-head PASS/APPROVED -> automatic merge; main e85280a961eb02f2e1498affa5a6a1c5d489ea79. CI/CD Issue #275 remains blocked pending reviewed fix PR #276, which is OPEN; no bypass or manual merge. Historical backlog 30 entries deduped."
+    "note": "250 services in 19 dynamically enumerated categories; 18/19 categories reviewed in current rotation. Remaining developer-tools. UptimeSignal Issue #281 is open, pending queue/PR/exact-head verification. CI/CD Issue #275 blocked by reviewed PR #276 still OPEN; attempted auto-merge returned GitHub clean-status rejection, no manual merge or bypass. Historical backlog deduped."
   }
 }
