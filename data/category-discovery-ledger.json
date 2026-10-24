@@ -2325,7 +2325,7 @@
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 3 now 7/19. Gemini Notebook Standard Free: official current free plan verified, distinct from Gemini App. Canonical Issue #349 -> queue #40138205205 SUCCESS -> PR #350 exact HEAD 2026cc4ca61ff27c8a250a186b5a45ce8b969b09 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 628f8fc3266e15120affde1983233cda56eb5029, Issue CLOSED. Production Pages at this HEAD requires separate Deploy SUCCESS. LangWatch Issue #301 / draft PR #302 still pending safe conflict/review resolution; PRs #292/#323/#328 remain open. No manual merge, force push or direct main push.",
+    "note": "Rotation 3 now 7/19. Gemini Notebook Standard Free verified from official Google Standard plan, distinct from Gemini App. Canonical Issue #349 -> queue #40138205205 SUCCESS -> PR #350 exact HEAD 2026cc4ca61ff27c8a250a186b5a45ce8b969b09 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 628f8fc3266e15120affde1983233cda56eb5029, Issue CLOSED; main Pages #40138265429 build and Deploy SUCCESS. LangWatch Issue #301 / PR #302 conflict safely reconciled with non-force two-parent merge commit 1656716781b3cee25d90bfe0b22c6a402cf44768 preserving unique commits; exact-head validation #40138368741 and build #40138368899 SUCCESS, bot APPROVED at exact HEAD; PR marked ready but remains OPEN. GitHub-native auto-merge rejected clean status; no bypass. Other fixes #292/#323/#328 remain OPEN. No manual merge, force push, direct main push or production deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
