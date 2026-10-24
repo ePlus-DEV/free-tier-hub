@@ -3399,5 +3399,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "frp-self-hosted",
+    "name": "frp Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source frps/frpc reverse proxy for self-hosted TCP, UDP, HTTP and HTTPS tunnels; no vendor-imposed monthly tunnel, request or bandwidth quota.",
+    "watch_out": "Requires your own publicly reachable server/VPS, connectivity and secure authentication; hosting, domain and bandwidth costs are not included. No managed free tunnel, hosted SLA or bundled infrastructure.",
+    "pricing_url": "https://github.com/fatedier/frp",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
