@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "fd2b60fc6cf6fcd9deddb655cbf4a1ec3f1d1d91",
+  "source_main_sha": "467806186eb9387b4712586523b9774c76626d05",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -55,11 +55,11 @@
     },
     {
       "category": "storage",
-      "service_count": 14,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 14,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -1508,8 +1508,8 @@
         },
         {
           "id": "statsig-developer-free",
-          "status": "verified-awaiting-Issue",
-          "reason": "Provider officially confirms ongoing Developer Free with 2M events/month, unlimited feature flag/config checks, 50K session replays/month, unlimited seats, no credit card. No matching catalog, backlog, Issue or PR found in this run; defer separate canonical Issue until next category/backlog cycle to avoid concurrent queue races.",
+          "status": "catalogued",
+          "reason": "Reverified official pricing on 2026-10-24. Issue #313 -> queue #40085386104 SUCCESS -> PR #314 exact HEAD b815912078f0112429fe400eeb953a44cafd0d6f validation #40085404492 SUCCESS and build #40085404669 SUCCESS (PR Deploy SKIPPED); eplus-bot APPROVED and workflow auto-MERGED to main 3ef6250fa1c58f77653630009e2cea50bf2d68f8; Issue CLOSED. Main Pages #40085435392 Deploy SUCCESS.",
           "candidate": {
             "id": "statsig-developer-free",
             "name": "Statsig Developer Free",
@@ -1521,7 +1521,9 @@
             "credit_card": "no",
             "commercial_use": "check",
             "last_checked": "2026-10-24"
-          }
+          },
+          "issue_number": 313,
+          "pr_number": 314
         }
       ],
       "excluded": [
@@ -1534,6 +1536,77 @@
           "reason": "Third-party directories mention a free plan but current official terms/availability not independently verified; do not catalog."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "storage",
+      "rotation": "2 (12/19)",
+      "searches": [
+        "2026 object storage free tier IPFS Pinata official pricing",
+        "RustFS S3 object storage Apache-2.0 GA 2026 official GitHub/docs",
+        "Uploadcare Free storage pricing and commercial-use restrictions",
+        "Tigris and Cloudinary ongoing storage allowances official pricing"
+      ],
+      "official_sources": [
+        "https://github.com/rustfs/rustfs",
+        "https://rustfs.com/blog/announcing-rustfs-1-0-0-ga/",
+        "https://docs.rustfs.com/en/installation",
+        "https://pinata.cloud/pricing",
+        "https://uploadcare.com/pricing/",
+        "https://uploadcare.com/docs/billing/",
+        "https://www.tigrisdata.com/pricing/",
+        "https://cloudinary.com/pricing",
+        "https://cloudinary.com/documentation/developer_onboarding_faq_free_plan"
+      ],
+      "candidates": [
+        {
+          "id": "rustfs-self-hosted",
+          "status": "catalogued",
+          "issue_number": 315,
+          "pr_number": 316,
+          "reason": "Genuinely new provider, absent from all catalog/backlog/Issues/PRs/branches before delivery. Official RustFS 1.0.0 GA and Apache-2.0 source/docs confirm S3-compatible self-hosted storage with no provider usage quota, no card, commercial use permitted; user provides hardware, bandwidth and operations. Issue #315 -> canonical queue #40085453059 SUCCESS -> PR #316 exact HEAD 8e49bc00a7e81181238c63c6ab9f59d53bba4368 validation/build SUCCESS and APPROVED, workflow auto-MERGED; Issue CLOSED; main catalog confirmed. PR Deploy SKIPPED; main deployment separate."
+        },
+        {
+          "id": "pinata-ipfs-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official current Pinata pricing confirms ongoing Free $0: 1 GB storage, 500 files, 10 GB bandwidth/month, 10,000 requests/month, one gateway; absent from main/backlog/all searched Issues/PRs. Credit-card and hosted commercial-use rights not independently confirmed; hold for deduplicated canonical Issue in next run.",
+          "candidate": {
+            "id": "pinata-ipfs-free",
+            "name": "Pinata IPFS Free",
+            "category": "storage",
+            "plan": "ongoing",
+            "free_limit": "1 GB total storage; 500 files; 10 GB gateway bandwidth/month; 10,000 gateway requests/month; 1 gateway.",
+            "watch_out": "Storage/file caps and monthly gateway traffic/request caps; extra capacity requires paid plan. Credit-card signup and hosted commercial-use eligibility not independently confirmed.",
+            "pricing_url": "https://pinata.cloud/pricing",
+            "credit_card": "check",
+            "commercial_use": "check",
+            "last_checked": "2026-10-24"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Uploadcare Free",
+          "reason": "Official Free tier 1 GB storage, 5 GB traffic and 1,000 operations/month, but expressly Personal use only; not chosen for commercial-use-focused delivery. Hosted commercial use no."
+        },
+        {
+          "name": "Garage / SeaweedFS self-hosted",
+          "reason": "Already catalogued under garage-object-storage and seaweedfs-self-hosted; deduplicated."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "tigris-object-storage-free",
+          "status": "reverified",
+          "reason": "Official 2026-10-24 pricing confirms 5 GB Standard storage, 10k Class A and 100k Class B requests monthly, free egress; current record still accurate. Metadata-only date update deferred to reviewed catalog PR."
+        },
+        {
+          "id": "cloudinary-free",
+          "status": "reverified",
+          "reason": "Official 2026-10-24 pricing confirms ongoing $0 Free with 25 monthly credits and no credit card, allowed production usage subject to quota; current record still accurate. Metadata-only date update deferred."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: self-hosted S3 storage and IPFS pinning fit current storage category."
     }
   ],
   "pending_reverification": [
@@ -1551,12 +1624,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 264,
+    "total_services": 266,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "264 services in 19 current main categories at fd2b60fc6cf6fcd9deddb655cbf4a1ec3f1d1d91. Rotation 2 11/19; feature-flags reviewed. ConfigCat Forever Free #311/#312 delivered by canonical Issue, queue, exact-head checks and automatic merge. Statsig Developer Free independently verified, held for next Issue after dedupe. 214 records older than 7 days; 1 open catalog-candidate Issue(s). PR Deploy SKIPPED is not PASS; main Pages deployment requires separate confirmation.",
+    "note": "266 services across 19 current main categories at 467806186eb9387b4712586523b9774c76626d05. Rotation 2 12/19; storage reviewed. Statsig #313/#314 and RustFS #315/#316 delivered via canonical Issues, queue, exact-head CI, approval and automatic merge. 214 catalog records older than 7 days; one open LangWatch candidate #301 in reverify. Pinata IPFS Free verified-awaiting-Issue. PR Deploy SKIPPED is not PASS; production Pages must be confirmed independently.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -1569,12 +1642,12 @@
       "search",
       "tunneling-networking",
       "webhooks-events",
-      "feature-flags"
+      "feature-flags",
+      "storage"
     ],
     "rotation_2_categories_remaining": [
       "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
       "auth-security",
       "observability",
