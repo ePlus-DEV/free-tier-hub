@@ -3315,5 +3315,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "google-cloud-tasks-free",
+    "name": "Google Cloud Tasks Free Allowance",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "First 1,000,000 billable operations per month per Google Cloud billing account; HTTP task queue API calls and push delivery attempts (32 KB operation units).",
+    "watch_out": "Active Google Cloud billing account and valid payment method required; operations over 1 million/month cost $0.40 per million, 32 KB chunking and retries count, and HTTP target network/compute can incur separate charges.",
+    "pricing_url": "https://cloud.google.com/tasks/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
