@@ -3231,5 +3231,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "surge-static-hosting-free",
+    "name": "Surge Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Unlimited static projects and publishes; free surge.sh subdomains, custom domains and managed SSL certificates; static CDN hosting.",
+    "watch_out": "Static HTML/CSS/JavaScript only; no backend runtime. Custom redirects, CORS controls, password protection and user-supplied SSL certificates require paid Surge Professional. Traffic/abuse policies and commercial-use rights require confirmation; custom domain registration itself is not included.",
+    "pricing_url": "https://surge.sh/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
