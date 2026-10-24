@@ -3387,5 +3387,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "jenkins-self-hosted",
+    "name": "Jenkins Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed Jenkins core; self-hosted CI/CD pipelines, jobs and agents without vendor-imposed monthly build limits; capacity depends on your infrastructure.",
+    "watch_out": "Requires self-managed controller, build agents, Java, security updates and infrastructure costs. Third-party plugins may use different open-source licenses; no managed compute or SLA included.",
+    "pricing_url": "https://www.jenkins.io/project/governance/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
