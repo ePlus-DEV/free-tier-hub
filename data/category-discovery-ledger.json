@@ -10,7 +10,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 10,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -20,7 +20,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -30,7 +30,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 3,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -40,7 +40,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 3,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -50,7 +50,7 @@
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 27,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -60,7 +60,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -70,7 +70,7 @@
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 36,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -80,7 +80,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -90,7 +90,7 @@
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 16,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -100,7 +100,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 25,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -110,7 +110,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -120,7 +120,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -130,7 +130,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 7,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 1
     },
     {
@@ -140,7 +140,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 5,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -150,7 +150,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 15,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -160,7 +160,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 7,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -170,7 +170,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -180,7 +180,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -190,7 +190,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 9,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0
     }
   ],
@@ -2065,7 +2065,7 @@
   "coverage_summary": {
     "total_services": 277,
     "total_categories": 19,
-    "stale_over_7d": 217,
+    "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
     "note": "Rotation 2 completed 19/19; rotation 3 now 3/19 (cloud-vps, ci-cd, tunneling-networking). New frp Self-Hosted Issue #339 -> queue SUCCESS -> PR #340 exact-head validation/build SUCCESS, review APPROVED and automatic MERGE into main 4e229bc2020d02c34e6bccbd42c9f0c784f865c1. Main Pages deploy pending independent verification. LangWatch Issue #301/PR #302 stays DRAFT due official pricing-vs-ToS contradiction; correction PRs #292/#323/#328 and discovery PR #291 remain OPEN. No direct main push, force push, manual merge or production deploy.",
