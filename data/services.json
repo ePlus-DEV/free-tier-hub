@@ -3459,5 +3459,17 @@
     "credit_card": "yes",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "gemini-notebook-standard-free",
+    "name": "Gemini Notebook Standard Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "100 notebooks per user and 50 sources per notebook; free source-grounded AI chat and notebook outputs with compute-based usage limits refreshing every five hours.",
+    "watch_out": "Formerly NotebookLM. Generation quotas vary by task complexity, chat length, source count and feature; higher limits and some advanced tools require paid Google AI/Workspace plans. Regional availability, output watermarks and commercial-use terms should be checked.",
+    "pricing_url": "https://support.google.com/gemininotebook/answer/16213268",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
