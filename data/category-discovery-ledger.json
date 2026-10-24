@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "467806186eb9387b4712586523b9774c76626d05",
+  "source_main_sha": "9b5d9aebdec0c23377eeed5af71892a9f74e04f6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,11 +15,11 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -55,7 +55,7 @@
     },
     {
       "category": "storage",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -1568,8 +1568,8 @@
         },
         {
           "id": "pinata-ipfs-free",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official current Pinata pricing confirms ongoing Free $0: 1 GB storage, 500 files, 10 GB bandwidth/month, 10,000 requests/month, one gateway; absent from main/backlog/all searched Issues/PRs. Credit-card and hosted commercial-use rights not independently confirmed; hold for deduplicated canonical Issue in next run.",
+          "status": "catalogued",
+          "reason": "Previously verified historical candidate reverified against current official pricing on 2026-10-24. Issue #317 -> queue #40089535021 SUCCESS -> PR #319 exact HEAD 11970d2da55f18084a8d010f4eaae9ebca157951 validation #40089559568 SUCCESS and build #40089559589 SUCCESS, eplus-bot APPROVED at exact HEAD -> automatic MERGE; Issue CLOSED, main catalog confirmed. PR Deploy SKIPPED; main deployment verified separately.",
           "candidate": {
             "id": "pinata-ipfs-free",
             "name": "Pinata IPFS Free",
@@ -1581,7 +1581,9 @@
             "credit_card": "check",
             "commercial_use": "check",
             "last_checked": "2026-10-24"
-          }
+          },
+          "issue_number": 317,
+          "pr_number": 319
         }
       ],
       "excluded": [
@@ -1607,6 +1609,77 @@
         }
       ],
       "new_category_assessment": "No new category warranted: self-hosted S3 storage and IPFS pinning fit current storage category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "app-hosting",
+      "rotation": "2 (13/19)",
+      "searches": [
+        "2026 app hosting always-free current provider pricing no card business terms",
+        "blitz.cloud Free 5 apps 512 MB 10 GB pricing October 2026",
+        "blitz.cloud terms 18 October 2026 startup cancellation commercial business",
+        "webapp.io free full-stack hosting two VMs official",
+        "Northflank Sandbox free pricing versus payment method documentation",
+        "Zeabur Free plan docs versus pricing managed own server",
+        "Byet Host 2026 free PHP hosting no card"
+      ],
+      "official_sources": [
+        "https://blitz.cloud/pricing/",
+        "https://blitz.cloud/terms/",
+        "https://webapp.io/hosting",
+        "https://northflank.com/pricing",
+        "https://northflank.com/docs/v1/application/billing/pricing-on-northflank",
+        "https://zeabur.com/en-US/pricing",
+        "https://zeabur.com/docs/en-US/pricing/free-plan",
+        "https://byet.host/",
+        "https://deplexo.com/free-hosting"
+      ],
+      "candidates": [
+        {
+          "id": "blitz-cloud-free",
+          "status": "catalogued",
+          "issue_number": 318,
+          "pr_number": 320,
+          "reason": "Genuinely new eligible hosted app provider, absent from current catalog, backlog, prior Issue/PR and branches. Official Free has 5 apps, 512 MB shared RAM, 10 GB storage and 1 managed DB; no card, no time limit. Free app sleeps after 30 min; no custom domains; business rights check. Terms updated 2026-10-18 allow provider to terminate free during startup with 14 days notice through 2027-03-31; caveat explicitly disclosed. Issue #318 -> queue #40089545728 SUCCESS -> PR #320 exact original HEAD f57241fb18 validation/build SUCCESS. After Pinata merged, reconciled branch by two-parent non-force merge df39756c32efc5b697112c84b662bcf0b4369855 preserving original PR HEAD and new main; exact-head validation #40089711632 SUCCESS and build #40089711627 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED at new HEAD, automatically MERGED. Issue CLOSED and catalog confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "webapp.io Free Hosting",
+          "reason": "Official ongoing two concurrent VM hosted free plan without card; defer verification of current platform operation, quota details and hosted commercial-use terms; not treated as a duplicate."
+        },
+        {
+          "name": "Northflank Sandbox",
+          "reason": "Current pricing says no card needed and up to $20/mo free resources, but current billing docs state all users must add a payment method. Do not claim card-free signup without reconciling official contradiction."
+        },
+        {
+          "name": "Zeabur Free",
+          "reason": "Current Free Plan docs describe hosted apps with auto-sleep, while pricing page describes free management of own servers; unclear whether managed cloud compute is included. Reverify before delivery."
+        },
+        {
+          "name": "Byet Host Free",
+          "reason": "Official 2026 page advertises no-card, no-expiry PHP/MySQL hosting; defer separate resource/abuse-policy and commercial-use due diligence."
+        },
+        {
+          "name": "Deplexo Free Hosting",
+          "reason": "Already catalogued as deplexo-free, official 128 MB RAM, 0.25 CPU, 250 MB disk, 1 project. No duplicate."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "deplexo-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://deplexo.com/free-hosting",
+          "reason": "Official current Free advertises 1 always-on app with 128 MB RAM, 0.25 CPU, 250 MB disk, no card and custom domain. No catalog correction required."
+        },
+        {
+          "id": "koyeb",
+          "status": "reverify-pr-open",
+          "official_source": "https://www.koyeb.com/blog/koyeb-is-joining-mistral-ai-to-build-the-future-of-ai-infrastructure",
+          "reason": "Existing Koyeb paid-signup/grandfathered-free correction remains PR #292 OPEN; exact-head CI and current review needed before merge."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: hosted containers and full-stack apps fit current app-hosting category."
     }
   ],
   "pending_reverification": [
@@ -1624,12 +1697,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 266,
+    "total_services": 268,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "266 services across 19 current main categories at 467806186eb9387b4712586523b9774c76626d05. Rotation 2 12/19; storage reviewed. Statsig #313/#314 and RustFS #315/#316 delivered via canonical Issues, queue, exact-head CI, approval and automatic merge. 214 catalog records older than 7 days; one open LangWatch candidate #301 in reverify. Pinata IPFS Free verified-awaiting-Issue. PR Deploy SKIPPED is not PASS; production Pages must be confirmed independently.",
+    "note": "268 services across 19 dynamically enumerated categories at 9b5d9aebdec0c23377eeed5af71892a9f74e04f6. Rotation 2 13/19: app-hosting reviewed. Historical Pinata #317/#319 and genuinely new blitz.cloud #318/#320 delivered through canonical Issue -> queue -> PR -> exact-head validation/build SUCCESS -> APPROVED -> automatic MERGE; Issues CLOSED. Both PR Deploy jobs SKIPPED (not PASS); main Pages verification separate. 214 records stale >7 days. LangWatch #301/#302 DRAFT remains reverify; Koyeb correction PR #292 remains OPEN. No direct main write, force-push, manual merge or production deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -1643,10 +1716,10 @@
       "tunneling-networking",
       "webhooks-events",
       "feature-flags",
-      "storage"
+      "storage",
+      "app-hosting"
     ],
     "rotation_2_categories_remaining": [
-      "app-hosting",
       "databases",
       "developer-tools",
       "auth-security",
