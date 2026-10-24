@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "d475b37b82d9c6cd78638cef33180a272c4a2b5b",
+  "source_main_sha": "ff5eba7d3f7dfafd54f30d90918e7ed09616c325",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,13 +25,13 @@
     },
     {
       "category": "serverless",
-      "service_count": 6,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "cloud-vps",
@@ -1138,9 +1138,10 @@
       "candidates": [
         {
           "id": "fastly-compute-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 289,
-          "reason": "New eligible ongoing monthly Compute allowance; 10M requests and 100M vCPU milliseconds. Fastly official documentation confirms monthly free tier, automatic paid overages and card verification; commercial terms remain check. Deduped main catalog, reviewed backlog, ledger, all indexed issues/PRs and branches before creating canonical Issue #289. Queue/PR/exact-head CI not yet confirmed."
+          "reason": "Official recurring Fastly Compute tier: 10M requests and 100M vCPU ms/month, card required, paid overages, commercial check. Canonical Issue #289 -> queue #40055552414 SUCCESS -> PR #290 exact HEAD dde347efbc065e30746957c77a3fa93dd0b7aa1a validation #40055570538 SUCCESS and build #40055570545 SUCCESS (PR Deploy SKIPPED, not PASS), review APPROVED at HEAD, automatically merged into main ff5eba7d3f7dfafd54f30d90918e7ed09616c325. Issue CLOSED and service verified in main. Main validation #40055607975 SUCCESS and Pages #40055608012 build and Deploy both SUCCESS at exact main HEAD.",
+          "pr_number": 290
         }
       ],
       "excluded": [
@@ -1179,12 +1180,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 254,
+    "total_services": 255,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Main at d475b37b82d9c6cd78638cef33180a272c4a2b5b has 254 services across 19 categories. Newly verified Fastly Compute Free canonical Issue #289 OPEN; queue and exact-head PR checks not yet confirmed. Previous Buildkite delivery and CI/CD fix already merged. Do not count Issue as catalogued.",
+    "note": "255 services in 19 categories on main ff5eba7d3f7dfafd54f30d90918e7ed09616c325. Fastly Compute Issue #289 -> PR #290 automatically merged after exact-head validation/build SUCCESS and review APPROVED; main Pages build/Deploy SUCCESS at exact main HEAD #40055608012. Rotation 2: 4/19 categories reviewed. Discovery ledger PR #291 is separate and not yet merged.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
