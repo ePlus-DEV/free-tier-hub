@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "59a276017f9c8ae4aef0f5487af1940f37934842",
+  "source_main_sha": "4e229bc2020d02c34e6bccbd42c9f0c784f865c1",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -70,7 +70,7 @@
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 35,
+      "stale_over_7d": 36,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -140,7 +140,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 4,
+      "stale_over_7d": 5,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -150,7 +150,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 14,
+      "stale_over_7d": 15,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -175,7 +175,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 6,
+      "service_count": 7,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -2010,6 +2010,42 @@
         }
       ],
       "new_category_assessment": "No new category warranted; Jenkins belongs to existing ci-cd."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "tunneling-networking",
+      "searches": [
+        "2026 official Apache-2.0 self-hosted reverse tunnels commercial free frp",
+        "frp upstream README TCP UDP HTTP HTTPS frps frpc deployment and license",
+        "rathole Apache-2.0 reverse proxy self-hosted comparison",
+        "Dedup frp against 277 main catalog IDs, 30 reviewed backlog entries, all open/closed Issues/PRs, branches and existing discovery log"
+      ],
+      "official_sources": [
+        "https://github.com/fatedier/frp",
+        "https://github.com/fatedier/frp/blob/dev/LICENSE",
+        "https://github.com/rathole-org/rathole",
+        "https://gofrp.org/en/docs/"
+      ],
+      "candidates": [
+        {
+          "id": "frp-self-hosted",
+          "status": "catalogued",
+          "issue": 339,
+          "pr": 340,
+          "reason": "First reported in this run, not in prior discovery log, catalog, backlog, Issues/PRs or delivery branches. Official frp upstream documents Apache-2.0, free self-hosted TCP/UDP/HTTP/HTTPS reverse tunnels; commercial use allowed without vendor card or monthly caps, public server and bandwidth at user's cost. Canonical Issue #339 -> queue #40125192621 SUCCESS -> PR #340 HEAD bf8aac5a20245fd8cab754427d4a833b62969273 validation #40125216897 SUCCESS and build #40125217036 SUCCESS (PR Deploy SKIPPED, not PASS), eplus-bot APPROVED -> automatic MERGE. Confirmed main 4e229bc2020d02c34e6bccbd42c9f0c784f865c1; main Pages deployment not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "rathole self-hosted",
+          "reason": "Official Apache-2.0 reverse proxy with mandatory per-service tokens; distinct eligible alternative, deferred for future fair rotation and full dedupe, not trial-only."
+        },
+        {
+          "name": "Hurricane Electric Hosted DNS",
+          "reason": "Free authoritative DNS already reported in previous DNS discovery; belongs to dns-cdn, not a new tunneling service. Numeric zone quota not currently established by official page."
+        }
+      ],
+      "new_category_assessment": "No new category needed; frp fits existing tunneling-networking."
     }
   ],
   "pending_reverification": [
@@ -2027,12 +2063,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 276,
+    "total_services": 277,
     "total_categories": 19,
-    "stale_over_7d": 214,
+    "stale_over_7d": 217,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 2 completed 19/19. Rotation 3 started with cloud-vps (no safely verified new service) and ci-cd (Jenkins Self-Hosted Issue #337 -> queue SUCCESS -> PR #338 exact-head validation/build SUCCESS, bot approval, auto-merged; main SHA 59a276017f9c8ae4aef0f5487af1940f37934842). Main Pages deploy not yet verified. PR #323 validation rerun succeeded at exact head d90d9df3; PR remains open. No direct main push, force push, manual merge or production deploy.",
+    "note": "Rotation 2 completed 19/19; rotation 3 now 3/19 (cloud-vps, ci-cd, tunneling-networking). New frp Self-Hosted Issue #339 -> queue SUCCESS -> PR #340 exact-head validation/build SUCCESS, review APPROVED and automatic MERGE into main 4e229bc2020d02c34e6bccbd42c9f0c784f865c1. Main Pages deploy pending independent verification. LangWatch Issue #301/PR #302 stays DRAFT due official pricing-vs-ToS contradiction; correction PRs #292/#323/#328 and discovery PR #291 remain OPEN. No direct main push, force push, manual merge or production deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2059,7 +2095,8 @@
     "rotation_3_started_utc": "2026-10-24",
     "rotation_3_categories_reviewed": [
       "cloud-vps",
-      "ci-cd"
+      "ci-cd",
+      "tunneling-networking"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2077,7 +2114,6 @@
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
