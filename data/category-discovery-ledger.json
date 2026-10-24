@@ -58,9 +58,7 @@
       "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -1772,6 +1770,10 @@
         {
           "name": "Google Cloud Scheduler",
           "reason": "Official 3 free jobs/month per billing account; distinct product, deferred for separate delivery after verification of overage charges."
+        },
+        {
+          "name": "UploadThing 2GB App (historical backlog alias)",
+          "reason": "Backlog ID uploadthing-free matches existing catalog product uploadthing-2gb-app; product-level dedupe, not an uncatalogued candidate."
         }
       ]
     }
