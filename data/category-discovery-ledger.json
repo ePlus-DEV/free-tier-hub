@@ -89,9 +89,9 @@
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "observability",
@@ -1832,6 +1832,36 @@
         }
       ],
       "new_category_assessment": "No new category: managed Postgres and distributed SQLite belong to databases."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "auth-security",
+      "official_sources": [
+        "https://www.casdoor.com/pricing",
+        "https://www.casdoor.com/",
+        "https://www.ory.com/kratos",
+        "https://www.ory.com/open-source",
+        "https://supertokens.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "casdoor-self-hosted",
+          "status": "pr",
+          "issue": 331,
+          "pr": 332,
+          "reason": "Official Casdoor pricing confirms Apache-2.0 self-hosted edition is free without per-user fee, separate from paid/trial Cloud; no matching main/backlog/open or closed Issues/PRs before canonical Issue #331. Queue #40106785960 completed SUCCESS and created PR #332; exact-head validation/build succeeded and review APPROVED, merge still pending at time of ledger update."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Ory Kratos OSS",
+          "reason": "Official Apache-2.0 self-hosted option; defer to next auth-security rotation because enterprise security patch and SLA coverage require commercial license; distinguish OSS from Ory Network."
+        },
+        {
+          "name": "SuperTokens OSS",
+          "reason": "Official self-hosted open-source features are free; defer separate review of licensing and paid-only features, do not conflate with cloud MAU pricing."
+        }
+      ]
     }
   ],
   "pending_reverification": [
