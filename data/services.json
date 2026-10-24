@@ -3195,5 +3195,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "arize-ax-free",
+    "name": "Arize AX Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "25,000 trace spans/month; 1 GB ingestion/month; 15-day retention; unlimited users and evaluations; Signal 10 issues/month.",
+    "watch_out": "SaaS Free tier has span and ingestion quotas, short retention, one space and community support. Paid Pro starts at $50/month for higher limits; hosted Free commercial-use terms require confirmation.",
+    "pricing_url": "https://arize.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
