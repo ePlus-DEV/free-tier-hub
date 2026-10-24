@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "96518edc37c290e4a9057a2bcafd9d12bd5bdb34",
+  "source_main_sha": "6b072ba3c63158b0c7e6cb6c96cb1cb7e83426f4",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,11 +45,11 @@
     },
     {
       "category": "databases",
-      "service_count": 28,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 29,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 27,
       "open_catalog_candidate_issues": 0
     },
@@ -131,7 +131,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
@@ -1776,6 +1776,62 @@
           "reason": "Backlog ID uploadthing-free matches existing catalog product uploadthing-2gb-app; product-level dedupe, not an uncatalogued candidate."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "databases",
+      "rotation": "2 (16/19)",
+      "searches": [
+        "rqlite MIT distributed SQLite self-hosted official GitHub license and docs",
+        "Nile Database Free current pricing and Terms of Service",
+        "Chroma Cloud Starter monthly credits and metered pricing",
+        "Neon Free 1 GB per project Oct 2 2026 official update",
+        "Upstash Redis current Free 256 MB and 500K commands"
+      ],
+      "official_sources": [
+        "https://github.com/rqlite/rqlite",
+        "https://github.com/rqlite/rqlite/blob/master/LICENSE",
+        "https://rqlite.io/",
+        "https://www.thenile.dev/pricing",
+        "https://www.thenile.dev/terms-of-service",
+        "https://www.trychroma.com/pricing/",
+        "https://neon.com/blog/neon-free-plan-1-gb-per-project",
+        "https://upstash.com/pricing/redis"
+      ],
+      "candidates": [
+        {
+          "id": "rqlite-self-hosted",
+          "status": "catalogued",
+          "issue": 329,
+          "pr": 330,
+          "reason": "Official MIT-licensed self-hosted distributed SQLite database. No vendor card or quota; commercial use permitted by MIT. Dedupe main catalog, all Issue/PR search, branches and durable backlog. Canonical Issue #329 -> queue #40102034489 SUCCESS -> PR #330 exact HEAD 35927daef40e4ec0257671bc5483c2c2441d8af5 validation #40102060327 SUCCESS, build #40102060338 SUCCESS (PR deploy not counted), eplus-bot APPROVED at HEAD -> auto MERGED, Issue CLOSED and service confirmed on main 6b072ba3c63158b0c7e6cb6c96cb1cb7e83426f4."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Nile Database Free",
+          "reason": "Official hosted Free plan includes 50M query tokens and 1 GB storage with paid overages; official general Terms grant site access for personal noncommercial use. Commercial application eligibility and card requirements unresolved, so reverify before catalog Issue."
+        },
+        {
+          "name": "Chroma Cloud Starter",
+          "reason": "Current Starter is $0 base plus $5 free credits but metered paid usage. Do not claim indefinite usage is free without clarifying hard-stop/credit renewal."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "neon",
+          "status": "catalogued-reverified",
+          "official_source": "https://neon.com/blog/neon-free-plan-1-gb-per-project",
+          "reason": "Official Oct 2 update confirms 1 GB storage per project, 100 projects and 100 CU-hours per project/month; main catalog already matches."
+        },
+        {
+          "id": "upstash-redis",
+          "status": "catalogued-reverified",
+          "official_source": "https://upstash.com/pricing/redis",
+          "reason": "Official current Free confirms 256 MB, 500K commands/month and 10 GB bandwidth; main record matches."
+        }
+      ],
+      "new_category_assessment": "No new category: managed Postgres and distributed SQLite belong to databases."
     }
   ],
   "pending_reverification": [
