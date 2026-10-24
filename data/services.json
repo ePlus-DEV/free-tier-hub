@@ -3447,5 +3447,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "azure-container-apps-consumption-free",
+    "name": "Azure Container Apps Consumption Free Grant",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "180,000 vCPU-seconds, 360,000 GiB-seconds and 2 million HTTP requests per Azure subscription per calendar month on the Consumption plan.",
+    "watch_out": "Requires an Azure subscription and a supported payment method for standard signup; usage above monthly grants is billed. Idle replicas, networking, logs and other Azure services may incur charges. Set minimum replicas to zero to avoid idle compute charges; dedicated plans are separate.",
+    "pricing_url": "https://azure.microsoft.com/en-us/pricing/details/container-apps/",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
