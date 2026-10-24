@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "b801ef8f25e7879dd33813f6413dd17bbfd9ad3f",
+  "source_main_sha": "a9d8d981f162ff5dca7e592ad295f0435bda164d",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,14 +58,16 @@
       "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 37,
+      "service_count": 38,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
@@ -1898,6 +1900,41 @@
         {
           "name": "Coroot Community",
           "reason": "Open-source Apache-2.0 observability alternative; defer to future rotation after full dedupe and limits review."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "developer-tools",
+      "official_sources": [
+        "https://mockoon.com/what-is-mockoon/",
+        "https://mockoon.com/faq/",
+        "https://mockoon.com/trust/",
+        "https://mockoon.com/pricing/",
+        "https://scalar.com/products/api-client",
+        "https://hoppscotch.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "mockoon-open-source",
+          "status": "catalogued",
+          "issue": 335,
+          "pr": 336,
+          "reason": "Official Mockoon Open Source desktop/CLI/Docker is MIT licensed, free forever, no account/card, unlimited local mock requests; commercial permitted. Pro 14-day trial is excluded. Issue #335 -> catalog-candidate-queue -> PR #336, exact-head validation/build SUCCESS, review APPROVED, auto-merged; confirmed on main a9d8d981f162ff5dca7e592ad295f0435bda164d."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Scalar API Client",
+          "reason": "Official MIT-licensed free desktop/browser API client, apparently eligible; defer to next fair rotation after catalog/Issue/PR/branch dedupe and commercial/limits review; not classified ineligible."
+        },
+        {
+          "name": "Hoppscotch Free",
+          "reason": "Official $0 forever cloud API testing and MIT self-hosted Community are distinct from Mockoon; defer for independent limits/duplication review, not trial-only."
+        },
+        {
+          "name": "Mockoon Pro",
+          "reason": "Paid commercial collaboration product with a 14-day trial; not an ongoing free tier."
         }
       ]
     }
