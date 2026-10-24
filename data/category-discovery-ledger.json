@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "88f68ba81758f0c876fe5d611addcf7a406d2b22",
+  "source_main_sha": "f3c09eeade13f2a7c139111d310cbb7ae04ee8e6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -39,7 +39,7 @@
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
@@ -79,7 +79,7 @@
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 1
     },
@@ -175,11 +175,11 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -1001,6 +1001,118 @@
           "reason": "Official $0 free tier for up to 4 users; 14-day trial messaging applies to premium features. Viable future candidate after confirming exact free-project limits, card and commercial terms; not selected this run."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "cloud-vps",
+      "searches": [
+        "2026 free forever cloud VPS providers always-free virtual machine without trial",
+        "Vyce Cloud VPS-Mini free daily renewal and capacity",
+        "Google Compute Engine e2-micro always free official",
+        "Oracle Cloud Always Free VM official",
+        "AWS new Free Plan six-month expiry official"
+      ],
+      "official_sources": [
+        "https://vyce.cloud/",
+        "https://cloud.google.com/products/compute",
+        "https://docs.cloud.google.com/free/docs/free-cloud-features",
+        "https://www.oracle.com/cloud/free/",
+        "https://aws.amazon.com/about-aws/whats-new/2025/07/aws-free-tier-credits-month-free-plan/"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Vyce.Cloud VPS-Mini",
+          "reason": "Official ongoing free offer advertises 2 GB RAM, 1 vCore and 6 GB NVMe without card, but capacity is first-come, daily manual renewal is mandatory, and stopped instances are deleted after 3 days. Defer pending independent operational reliability review; do not promise dependable always-on VPS."
+        },
+        {
+          "name": "Google Compute Engine e2-micro and Oracle Always Free",
+          "reason": "Both are already represented in main catalog; reverified official continuing free allowances, no duplicate."
+        },
+        {
+          "name": "AWS EC2 under new AWS Free Plan",
+          "reason": "New Free Plan expires after six months or when credits are exhausted, so it is not a new ongoing free VPS. Existing aws-free-plan entry already represents the time-limited program."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "gce-e2-micro",
+          "status": "catalogued-reverified",
+          "official_source": "https://cloud.google.com/products/compute",
+          "reason": "Google confirms continuing e2-micro VM allowance, 30 GB standard persistent disk and 1 GB outbound traffic monthly in eligible regions; no catalog correction required."
+        },
+        {
+          "id": "oracle-cloud",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.oracle.com/cloud/free/",
+          "reason": "Oracle confirms Always Free services continue after 30-day trial credit expires; no catalog correction required."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "ci-cd",
+      "searches": [
+        "Buildkite Free official 2026 pricing 5 users 2000 vCPU minutes",
+        "Exact-head GitHub Actions and review of CI/CD extensibility fix PR 276"
+      ],
+      "official_sources": [
+        "https://buildkite.com/pricing/",
+        "https://github.com/ePlus-DEV/free-tier-hub/issues/275",
+        "https://github.com/ePlus-DEV/free-tier-hub/pull/276"
+      ],
+      "candidates": [
+        {
+          "id": "buildkite-free",
+          "status": "issue",
+          "issue_number": 275,
+          "reason": "Reverified official ongoing $0 plan after 30-day all-access trial, no card; Issue #275 remains OPEN. Existing queue failure is caused by hard-coded four-service CI/CD test. PR #276 exact HEAD edb18cf4150cf2dbce5663183b8b5ab8a5088d3f has validation/build SUCCESS and bot APPROVED but remains OPEN. Do not retry queue until permitted reviewed fix is merged; never bypass tests or merge manually."
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "tunneling-networking",
+      "searches": [
+        "New free HTTPS localhost SSH tunnel providers 2026 official pricing",
+        "tunnl.gg Free pricing no card 3 tunnels 24-hour limit stable URLs",
+        "tunnl.gg official documentation limits browser warning and rate limits",
+        "Compare Pinggy, localhost.run, Horizon free tunneling"
+      ],
+      "official_sources": [
+        "https://tunnl.gg/pricing",
+        "https://tunnl.gg/docs",
+        "https://tunnl.gg/stable-urls",
+        "https://github.com/klipitkas/tunnl.gg",
+        "https://pinggy.io/",
+        "https://localhost.run/docs/forever-free/",
+        "https://hrzn.run/"
+      ],
+      "candidates": [
+        {
+          "id": "tunnl-gg-free",
+          "status": "catalogued",
+          "issue_number": 285,
+          "pr_number": 286,
+          "reason": "Genuinely new ongoing hosted $0 SSH-to-HTTPS/WebSocket tunnel: 3 concurrent tunnels per IP, 2h idle and 24h lifetime, free stable SSH-key URL, no signup/card, commercial-use check. Deduplicated against all main catalog IDs, backlog, Issues, PRs, branches and previous ledger before Issue. Issue #285 -> catalog-candidate queue #40053935778 SUCCESS -> PR #286 exact HEAD 327e915dfc070ee17a33028dc3839418eb3420e1 validation #40053960530 SUCCESS and build #40053960544 SUCCESS (PR Deploy SKIPPED), review APPROVED at exact HEAD, automatically merged into main f3c09eeade13f2a7c139111d310cbb7ae04ee8e6. Main validation #40053995829 SUCCESS and Pages build/deploy #40053995842 both SUCCESS. Issue CLOSED, catalog confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Pinggy Free",
+          "reason": "Previously reported in an earlier discovery round; official 60-minute free tunnels, not a genuinely new first report for this run."
+        },
+        {
+          "name": "localhost.run Forever Free",
+          "reason": "Previously reported in an earlier discovery round; official rotating free domains and speed limits, not selected for new delivery."
+        },
+        {
+          "name": "Horizon Free",
+          "reason": "Official no-card random-domain HTTPS/WebSocket tunnel plan verified; defer separate commercial-use and reliability review."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: tunnl.gg fits existing tunneling-networking category."
     }
   ],
   "pending_reverification": [
@@ -1026,11 +1138,35 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 252,
+    "total_services": 253,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Completed 19/19-category discovery rotation on 2026-10-24. Bruno Issue #283 -> PR #284 exact-head validation/build PASS, review APPROVED, automatically MERGED, Issue CLOSED and confirmed catalogued on main (88f68ba81758f0c876fe5d611addcf7a406d2b22). Buildkite Issue #275 still open pending reviewed CI fix PR #276. Next rotation prioritize lowest-count and least-recently-reviewed categories; 214 entries are older than 7 days. Production deployment is separate and not implied by PR merge."
+    "note": "Round 1 completed 19/19. Round 2: cloud-vps and CI/CD reverified, tunneling-networking delivered tunnl.gg Free through Issue #285 -> auto-merged PR #286, main now 253 services. Buildkite Issue #275 awaits approved but unmerged CI fix PR #276. Main GitHub Pages deploy at f3c09eeade13f2a7c139111d310cbb7ae04ee8e6 SUCCESS. No manual merge or main push.",
+    "rotation_2_started_utc": "2026-10-24",
+    "rotation_2_categories_reviewed": [
+      "cloud-vps",
+      "ci-cd",
+      "tunneling-networking"
+    ],
+    "rotation_2_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "databases",
+      "storage",
+      "developer-tools",
+      "auth-security",
+      "observability",
+      "analytics",
+      "dns-cdn",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "webhooks-events"
+    ]
   }
 }
