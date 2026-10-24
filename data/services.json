@@ -3303,5 +3303,65 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "litlyx-self-hosted",
+    "name": "Litlyx Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted web and product analytics with pageviews, real-time dashboards, custom events and funnels; no vendor-hosted monthly quota.",
+    "watch_out": "Self-hosted only: operator pays for servers, database, updates, security and maintenance. Managed Litlyx Cloud pricing and free trials are separate, not an ongoing hosted free tier; Apache-2.0 license terms apply.",
+    "pricing_url": "https://github.com/Litlyx/litlyx",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "google-cloud-tasks-free",
+    "name": "Google Cloud Tasks Free Allowance",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "First 1,000,000 billable operations per month per Google Cloud billing account; HTTP task queue API calls and push delivery attempts (32 KB operation units).",
+    "watch_out": "Active Google Cloud billing account and valid payment method required; operations over 1 million/month cost $0.40 per million, 32 KB chunking and retries count, and HTTP target network/compute can incur separate charges.",
+    "pricing_url": "https://cloud.google.com/tasks/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "zeplo-developer-free",
+    "name": "Zeplo Developer Free",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "500 queued or scheduled HTTP requests per month free forever; unlimited jobs; 1 developer; 30-day log retention.",
+    "watch_out": "Requests beyond the free allowance are listed at $20 per 100,000; spending cap can limit charges. Card requirement for free signup and commercial production rights are not explicitly confirmed; Developer is positioned for development.",
+    "pricing_url": "https://zeplo.io/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "rqlite-self-hosted",
+    "name": "rqlite Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted distributed relational database built on SQLite, with HTTP/JSON API, Raft replication and high availability; no vendor-enforced database, query or monthly usage quota.",
+    "watch_out": "Self-hosted software, not a managed free database: compute, disk, network, backups and operations are your responsibility. Multi-node high availability needs quorum; no hosted SLA. Preserve MIT copyright and license notices.",
+    "pricing_url": "https://github.com/rqlite/rqlite",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "casdoor-self-hosted",
+    "name": "Casdoor Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted IAM/SSO; no per-user or monthly-active-user software fee; OAuth 2.0, OIDC, SAML, CAS, LDAP and MFA supported.",
+    "watch_out": "Self-hosted only: operate and secure your own servers, database, upgrades, backups and identity integrations; hosting, SMS/email and infrastructure may cost extra. Casdoor Cloud is paid after its time-limited trial/credit; do not confuse with the perpetual self-hosted edition.",
+    "pricing_url": "https://www.casdoor.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
