@@ -139,9 +139,9 @@
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "queues-jobs",
@@ -1208,6 +1208,57 @@
         }
       ],
       "new_category_assessment": "No new category warranted; Namecheap FreeDNS fits existing dns-cdn."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "ai-assistants",
+      "rotation": "2 (6/19)",
+      "searches": [
+        "2026 official free private AI assistants Lumo Qwen DeepSeek Grok pricing",
+        "Proton Lumo Free official $0 card Max messages 1 Project chat history 7 days commercial",
+        "Qwen Studio free official 2026 usage",
+        "DeepSeek app official free no in-app purchases",
+        "Independent 2026 private AI chatbot comparisons and limitations"
+      ],
+      "official_sources": [
+        "https://proton.me/lumo/pricing",
+        "https://proton.me/support/lumo-getting-started",
+        "https://proton.me/lumo/terms",
+        "https://qwen.ai/qwenchat",
+        "https://www.deepseek.com/en/download/",
+        "https://x.ai/news/x-subscription"
+      ],
+      "discovery_sources": [
+        "https://www.techradar.com/pro/huggingchat-review",
+        "https://www.evenfall.ai/guides/best-private-ai-chat-apps-2026"
+      ],
+      "candidates": [
+        {
+          "id": "proton-lumo-free",
+          "status": "issue",
+          "issue_number": 295,
+          "reason": "New eligible ongoing $0 Proton Lumo AI chat, absent from main catalog (256 entries), backlog (30), all matching Issues/PRs/branches and prior ledger. Official Free has limited messages, Max model usage and image generation, 1 Project, 7-day saved chat history; no card. Commercial use marked check, no numeric quota claimed. Canonical Issue #295 created; GitHub Actions queue started, PR/exact-head checks not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Qwen Studio Free",
+          "reason": "Officially free but numeric limits, card and commercial terms need more review; reserve for another fair rotation."
+        },
+        {
+          "name": "DeepSeek App Free",
+          "reason": "Official free app confirmed; commercial permission, privacy/data handling and provider restrictions need independent verification."
+        },
+        {
+          "name": "Grok Free",
+          "reason": "Official October 2026 X Subscription lists daily Grok access at $0; exact usage limits and card/commercial terms remain unclear."
+        },
+        {
+          "name": "Brave Leo Free",
+          "reason": "Already mentioned in prior discovery ledger; not counted as a genuinely new candidate."
+        }
+      ],
+      "new_category_assessment": "No new category needed; Proton Lumo and alternatives fit current ai-assistants category."
     }
   ],
   "pending_reverification": [
