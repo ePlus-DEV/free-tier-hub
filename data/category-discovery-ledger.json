@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013",
+  "source_main_sha": "5f500f90c8b013e524de22e6b204df74296e1c3d",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -125,13 +125,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-assistants",
@@ -1310,6 +1310,70 @@
         }
       ],
       "new_category_assessment": "No new category warranted: hosted Search APIs and self-hosted search engines fit existing search."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "ai-ml",
+      "rotation": "2 (8/19)",
+      "searches": [
+        "2026 official AI observability and evaluation free tiers LangWatch Arize AX LangSmith W&B Weave Braintrust",
+        "LangWatch Developer 50k events/month 2 users no credit card official pricing versus 14-day trial Terms of Service",
+        "Arize AX Free 25k spans/month 1GB ingestion 15-day retention no credit card official",
+        "LangSmith Developer 5k base traces/month and pay-as-you-go overages",
+        "Weights & Biases Weave Free 1GB/month data ingestion and personal development restrictions",
+        "Cloudflare Workers AI 10k Neurons/day model-specific free eligibility"
+      ],
+      "official_sources": [
+        "https://langwatch.ai/pricing",
+        "https://langwatch.ai/legal/terms-conditions",
+        "https://arize.com/pricing/",
+        "https://arize.com/compare/",
+        "https://www.langchain.com/pricing",
+        "https://site.wandb.ai/pricing/",
+        "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+      ],
+      "discovery_sources": [
+        "https://evalsreview.com/tools/weave",
+        "https://freetier.co/directory/products/arize"
+      ],
+      "candidates": [
+        {
+          "id": "arize-ax-free",
+          "status": "catalogued",
+          "issue_number": 303,
+          "pr_number": 304,
+          "reason": "Official recurring Arize AX SaaS Free: 25,000 spans/month, 1 GB ingestion/month, 15-day retention, unlimited users/evals, no credit card; commercial_use check. Dedupe across main, backlog, Issues, PRs and branches found no prior listing. Issue #303 -> catalog-candidate-queue #40070174421 SUCCESS -> PR #304 exact HEAD 73bc53d82f340d25983e3a8df270f720b4070918 validation #40070194301 SUCCESS, build #40070194266 SUCCESS (PR Deploy SKIPPED, not PASS), eplus-bot APPROVED at exact HEAD -> automatically merged main 5f500f90c8b013e524de22e6b204df74296e1c3d. Issue #303 CLOSED and service verified in main; production deploy at this main HEAD not yet confirmed."
+        },
+        {
+          "id": "langwatch-developer-free",
+          "status": "reverify",
+          "issue_number": 301,
+          "pr_number": 302,
+          "reason": "Official pricing advertises Developer €0 free forever, 50k events/month, 2 users, 14-day data access, no card, BUT official Terms updated 2026-09-22 section 3.2 states new users receive 14-day trial then subscription suspended unless upgraded to paid. This contradiction makes ongoing-free eligibility uncertain. Issue #301 OPEN, queue #40070099668 SUCCESS and PR #302 exists but was explicitly converted to DRAFT, not merged. Exact HEAD f2aeaf03367a3ba29413f39a6d931bc9a5ed90b3 has validation #40070117101 SUCCESS and build #40070117076 SUCCESS; trial ambiguity blocks delivery pending provider clarification; PR comment documents evidence. Do not classify as eligible/catalogued or auto-merge."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "LangSmith Developer",
+          "reason": "Official $0/seat plan includes 5k base traces/month, then pay-as-you-go; card requirement and commercial terms need additional confirmation before creating an Issue."
+        },
+        {
+          "name": "Weights & Biases Weave Free",
+          "reason": "Official Free tier includes 1 GB/month Weave ingestion but is described as personal development/small projects; commercial eligibility and card requirement need independent verification."
+        },
+        {
+          "name": "Braintrust Starter",
+          "reason": "Third-party summaries describe 1 GB processed data and 10k scores, but official production pricing/card/commercial conditions not sufficiently verified in this run; defer."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-workers-ai",
+          "status": "reverified",
+          "reason": "Official 2026-10-01 pricing still provides 10,000 Neurons/day on Workers Free with 00:00 UTC reset. Some models require paid billing; catalog free_limit and watch_out remain consistent. Last-checked metadata is stale; record here for a separate reviewed update, not direct main edit."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; hosted agent evaluation and observability fit existing ai-ml category."
     }
   ],
   "pending_reverification": [
@@ -1331,12 +1395,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 259,
+    "total_services": 260,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "259 services across 19 actual main categories at e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013. Rotation 2 7/19: search reviewed. Tavily Researcher Free Issue #297 -> queue SUCCESS -> PR #298 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged; Manticore Search Self-Hosted Issue #299 -> queue SUCCESS -> PR #300 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged. Both issues CLOSED and services present in main. PR #292 Koyeb correction safely rebased by ancestry-preserving non-force merge; its latest exact-head CI/review/mergeability must be rechecked. Production deployment is not inferred from PR builds.",
+    "note": "260 services across 19 actual main categories at 5f500f90c8b013e524de22e6b204df74296e1c3d. Rotation 2 8/19: ai-ml reviewed. Arize AX Free #303 -> queue SUCCESS -> PR #304 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged, Issue CLOSED, main catalog confirmed. LangWatch Developer #301 -> PR #302 DRAFT/reverify because official pricing free-forever contradicts 2026-09-22 Terms 14-day trial/suspension; do not merge without confirmation. PR #292 Koyeb correction remains OPEN; no manual merge or production deploy. Production deploy for latest main HEAD requires exact-head job verification.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
@@ -1345,7 +1409,8 @@
       "serverless",
       "dns-cdn",
       "search",
-      "ai-assistants"
+      "ai-assistants",
+      "ai-ml"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
@@ -1356,7 +1421,6 @@
       "auth-security",
       "observability",
       "analytics",
-      "ai-ml",
       "queues-jobs",
       "feature-flags",
       "webhooks-events"
