@@ -3219,5 +3219,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "codeberg-pages-free",
+    "name": "Codeberg Pages Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free static website hosting from public Codeberg repositories; user, organization and per-repository sites on codeberg.page; custom domains supported.",
+    "watch_out": "Codeberg is intended for free/libre software and freely licensed content; proprietary/commercial site eligibility requires provider-policy review. Repository storage guidance is 750 MiB Git and 100 MiB total non-promoted content; larger usage may require an exception. Pages migrated to git-pages; legacy v2 is unavailable to new users. Static sites only; deployment uses repository webhooks or Forgejo Actions.",
+    "pricing_url": "https://docs.codeberg.org/codeberg-pages/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
