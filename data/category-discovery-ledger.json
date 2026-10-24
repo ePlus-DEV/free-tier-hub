@@ -1,7 +1,7 @@
 {
   "as_of_utc": "2026-10-24",
   "source_main_sha": "e317523df0d01aa62abc59d64629847dc40a0e06",
-  "policy": "Enumerate all current site categories from scripts/site-data.mjs on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
+  "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
@@ -69,9 +69,9 @@
       "latest_catalog_verification": "2026-10-17",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null,
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 35,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ci-cd",
@@ -959,6 +959,48 @@
           "reason": "Official FAQ confirms ongoing $0 Hobby plan (1 monitor, 1 status page with 3 components, 10-minute checks, no card). New workspaces may begin with a separate 14-day Starter trial and return to Hobby after trial; trial must not be confused with the ongoing free plan. Existing catalog entry is accurate; no catalog mutation needed."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "developer-tools",
+      "searches": [
+        "Bruno API client official open source pricing 2026 2 workspaces OpenAPI sync commercial MIT",
+        "Hoppscotch Cloud Free official unlimited requests pricing 2026",
+        "Apidog Free official 4 users API testing pricing 2026",
+        "Independent 2026 API client alternatives and free plans"
+      ],
+      "official_sources": [
+        "https://www.usebruno.com/pricing",
+        "https://www.usebruno.com/product",
+        "https://github.com/usebruno/bruno",
+        "https://github.com/usebruno/bruno/blob/main/packages/bruno-cli/license.md",
+        "https://hoppscotch.com/pricing",
+        "https://apidog.com/vi/pricing/",
+        "https://apidog.com/compare/apidog-vs-postman/"
+      ],
+      "discovery_sources": [
+        "https://dupple.com/learn/best-free-api-clients",
+        "https://www.g2.com/products/apidog/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "bruno-api-client-open-source",
+          "status": "PR",
+          "issue_number": 283,
+          "pr_number": 284,
+          "reason": "Official Bruno pricing confirms perpetual Open Source $0, 2 workspaces, 5 OpenAPI syncs/month and unlimited collection runner; no payment method for free; no account needed. MIT-licensed core permits commercial use with license notice. Absent from main, 30-record backlog, all Issue/PR searches and branches before creation. Canonical Issue #283 -> automated catalog/add-bruno-api-client-open-source branch -> PR #284; exact-head CI/review/merge/main ingestion pending independent verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hoppscotch Cloud Free",
+          "reason": "Official $0 forever with unlimited requests/workspaces/collections/runners; viable distinct future candidate, but not selected this run. Card/commercial terms require separate verification and dedupe."
+        },
+        {
+          "name": "Apidog Free",
+          "reason": "Official $0 free tier for up to 4 users; 14-day trial messaging applies to premium features. Viable future candidate after confirming exact free-project limits, card and commercial terms; not selected this run."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -987,8 +1029,8 @@
     "total_services": 251,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "251 services across 19 categories; 18/19 categories reviewed, remaining developer-tools. UptimeSignal delivered via Issue #281 -> queue -> PR #282 exact-head PASS/APPROVED -> automatic merge and main catalog confirmed. Issue closure and main Pages deployment are separate asynchronous checks. Buildkite Issue #275 still blocked by OPEN reviewed CI fix PR #276."
+    "note": "Completed 19/19-category discovery rotation as of 2026-10-24 with developer-tools review. Bruno Open Source candidate Issue #283 -> PR #284; not counted as catalogued until exact-head CI, review and automatic merge verified on main. Buildkite Issue #275 remains open pending reviewed CI fix PR #276 (non-force merge of latest main into PR branch; exact-head CI recheck required). Next rotation should prioritize low-count, least-recently-reviewed categories; 214 catalog entries have last_checked older than 7 days."
   }
 }
