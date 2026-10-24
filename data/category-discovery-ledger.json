@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "16cf47f65198030ded8d5ab295b9b7ca01057a34",
+  "source_main_sha": "b801ef8f25e7879dd33813f6413dd17bbfd9ad3f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -95,7 +95,7 @@
     },
     {
       "category": "observability",
-      "service_count": 26,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -131,7 +131,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-assistants",
@@ -1862,6 +1862,44 @@
           "reason": "Official self-hosted open-source features are free; defer separate review of licensing and paid-only features, do not conflate with cloud MAU pricing."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "observability",
+      "official_sources": [
+        "https://github.com/VictoriaMetrics/VictoriaMetrics",
+        "https://victoriametrics.com/products/cloud/",
+        "https://uptrace.dev/editions",
+        "https://signoz.io/pricing/",
+        "https://github.com/coroot/coroot"
+      ],
+      "candidates": [
+        {
+          "id": "victoriametrics-self-hosted",
+          "status": "catalogued",
+          "issue": 333,
+          "pr": 334,
+          "reason": "Official Apache-2.0 single-node and cluster builds are free for self-hosting and commercial use. Cloud is a 30-day trial, excluded. Canonical Issue #333 -> queue #40111048598 SUCCESS -> PR #334; exact-head validation #40111068920 and build #40111068903 SUCCESS, review APPROVED at exact SHA 472ffa48, PR auto-merged; main includes service at b801ef8f25e7879dd33813f6413dd17bbfd9ad3f; production deploy must be verified separately."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "VictoriaMetrics Cloud",
+          "reason": "Paid managed plan with 30-day trial only; not an ongoing free hosted service."
+        },
+        {
+          "name": "Uptrace Community",
+          "reason": "Provider documents free self-hosted Community with 14-day retention and feature differences; separate candidate for future review, not duplicate of VictoriaMetrics."
+        },
+        {
+          "name": "SigNoz Community",
+          "reason": "Free self-hosted edition; Cloud starts paid after trial. Requires separate product and licensing review before Issue."
+        },
+        {
+          "name": "Coroot Community",
+          "reason": "Open-source Apache-2.0 observability alternative; defer to future rotation after full dedupe and limits review."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -1879,12 +1917,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 269,
+    "total_services": 274,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "269 services across 19 current categories at a223333d1420b1a0a4d1b1bcf5d2ab74d1bb0db1; rotation 2 14/19 analytics reviewed. Litlyx Self-Hosted delivered via Issue #321 -> queue SUCCESS -> PR #322 exact-head validation/build SUCCESS -> APPROVED -> auto MERGED, Issue CLOSED. PR Deploy SKIPPED; main Pages #40093737243 CANCELLED, so production deploy remains unverified. 214 records stale >7 days. LangWatch #301/#302 DRAFT reverify; Koyeb #292 OPEN, stale approval. No direct main writes, force-push, manual merge or deploy.",
+    "note": "274 services / 19 dynamic categories at main b801ef8f25e7879dd33813f6413dd17bbfd9ad3f. Rotation 2: 18/19; next developer-tools. VictoriaMetrics Self-Hosted Issue #333 -> queue SUCCESS -> PR #334 auto MERGED with exact-head validation/build SUCCESS and approval; main catalog verified. Main Pages deploy not assumed. Historical backlog 30 entries deduped (0 unmatched). No direct main push, force-push, manual merge or deployment.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -1900,14 +1938,14 @@
       "feature-flags",
       "storage",
       "app-hosting",
-      "analytics"
+      "analytics",
+      "databases",
+      "queues-jobs",
+      "auth-security",
+      "observability"
     ],
     "rotation_2_categories_remaining": [
-      "databases",
-      "developer-tools",
-      "auth-security",
-      "observability",
-      "queues-jobs"
+      "developer-tools"
     ]
   }
 }
