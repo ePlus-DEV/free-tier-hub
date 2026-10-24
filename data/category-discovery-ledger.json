@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "9b5d9aebdec0c23377eeed5af71892a9f74e04f6",
+  "source_main_sha": "a223333d1420b1a0a4d1b1bcf5d2ab74d1bb0db1",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -105,13 +105,13 @@
     },
     {
       "category": "analytics",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "dns-cdn",
@@ -1702,9 +1702,10 @@
       "candidates": [
         {
           "id": "litlyx-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 321,
-          "reason": "New distinct analytics provider; absent from 268-entry main catalog, 30-entry durable backlog, GitHub Issue/PR search and branch search. Official Apache-2.0 repository and current vendor self-hosting comparison confirm free ongoing self-hosted software; commercial use permitted under Apache-2.0. No vendor card for self-hosting; user supplies infrastructure. Hosted Cloud is paid/trial, explicitly excluded. Canonical JSON-only Issue #321 created 2026-10-24 UTC; queue run #40093681183 observed in progress, PR/exact-head CI not yet verified."
+          "reason": "Genuinely new eligible Apache-2.0 self-hosted analytics; official sources confirm ongoing free self-host, no vendor card, commercial license allowed. Dedupe against main, backlog, historical Issues/PRs/branches completed. Canonical Issue #321 -> queue #40093681183 SUCCESS -> PR #322 exact HEAD 66fe11be9b2faa6a02572db7720191ef6f59ac24 validation #40093701439 SUCCESS and build #40093701448 SUCCESS (PR Deploy SKIPPED, not PASS), eplus-bot APPROVED at exact HEAD 2026-10-24T12:23:29Z -> auto MERGED 2026-10-24T12:23:35Z. Issue #321 CLOSED, main catalog confirmed at a223333d1420b1a0a4d1b1bcf5d2ab74d1bb0db1. Main Pages run #40093737243 CANCELLED; deployment not confirmed.",
+          "pr_number": 322
         }
       ],
       "excluded": [
@@ -1751,12 +1752,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 268,
+    "total_services": 269,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "268 services across 19 dynamically enumerated categories at 9b5d9aebdec0c23377eeed5af71892a9f74e04f6. Rotation 2 14/19: analytics reviewed. Litlyx Self-Hosted verified from official Apache-2.0 sources and canonical Issue #321 created; queue in progress, PR/CI/merge not yet confirmed. Existing Cloudflare Web Analytics reverified. 214 catalog records stale >7 days; LangWatch #301/#302 DRAFT remains reverify, Koyeb correction PR #292 remains OPEN. No direct main writes, force-push, manual merge or deploy.",
+    "note": "269 services across 19 current categories at a223333d1420b1a0a4d1b1bcf5d2ab74d1bb0db1; rotation 2 14/19 analytics reviewed. Litlyx Self-Hosted delivered via Issue #321 -> queue SUCCESS -> PR #322 exact-head validation/build SUCCESS -> APPROVED -> auto MERGED, Issue CLOSED. PR Deploy SKIPPED; main Pages #40093737243 CANCELLED, so production deploy remains unverified. 214 records stale >7 days. LangWatch #301/#302 DRAFT reverify; Koyeb #292 OPEN, stale approval. No direct main writes, force-push, manual merge or deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
