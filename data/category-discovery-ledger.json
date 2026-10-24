@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "f873459f639295c8edbc277d351152d2fdfdd5ea",
+  "source_main_sha": "cc29f92d9a3cfc52f893c2c9c31c1bf22f49ca38",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 7,
+      "service_count": 8,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -71,7 +71,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 35,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ci-cd",
@@ -131,7 +131,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-assistants",
@@ -2163,6 +2163,52 @@
         }
       ],
       "new_category_assessment": "No new category needed: dynamic DNS belongs to existing dns-cdn."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "serverless",
+      "rotation": "3 (6/19)",
+      "searches": [
+        "Azure Container Apps Consumption recurring free grant and card/commercial terms 2026",
+        "IBM Cloud Code Engine always free monthly CPU memory HTTP request allowance",
+        "Modal Starter recurring free monthly compute credits and excluded billable endpoints",
+        "Compare distinct products with 280-entry main catalog, all 348 Issues, all 250 PRs, 30-entry backlog, 14 branch names and previous discovery log"
+      ],
+      "official_sources": [
+        "https://azure.microsoft.com/en-us/pricing/details/container-apps/",
+        "https://learn.microsoft.com/en-us/azure/container-apps/billing",
+        "https://azure.microsoft.com/free/",
+        "https://cloud.ibm.com/codeengine/landing",
+        "https://modal.com/pricing"
+      ],
+      "discovery_sources": [
+        "https://freetier.co/directory/products/azure-container-apps",
+        "https://www.srvrlss.io/provider/ibm-cloud-engine/"
+      ],
+      "candidates": [
+        {
+          "id": "azure-container-apps-consumption-free",
+          "status": "catalogued",
+          "issue": 347,
+          "pr": 348,
+          "reason": "Genuinely new distinct Azure Container Apps Consumption monthly free grant; not the existing azure-functions-consumption-free or another Azure product. Official 180,000 vCPU-seconds, 360,000 GiB-seconds and 2M HTTP requests per subscription/month; card required for standard Azure subscription; commercial deployment permitted, billable overages and associated resources warned. Canonical Issue #347 -> queue #40133484301 SUCCESS -> PR #348 exact HEAD 7afddcd32115b0334e8a7fcfa01f9675c3bfba00 validation #40133505090 SUCCESS, Pages build #40133505110 SUCCESS (PR Deploy SKIPPED, not counted), eplus-bot APPROVED at exact HEAD -> auto-MERGED. Issue #347 CLOSED; confirmed on main cc29f92d9a3cfc52f893c2c9c31c1bf22f49ca38. Main Pages deployment not yet verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "IBM Cloud Code Engine",
+          "reason": "Official recurring free 100,000 vCPU-seconds, 200,000 GB-seconds and 100,000 HTTP requests/month. Distinct eligible candidate for a future fair rotation after confirming card and commercial terms; not yet reported in previous discovery log."
+        },
+        {
+          "name": "Modal Starter",
+          "reason": "Official recurring $30/month compute credits, but Shared Endpoints billed from first request since 2026-09-01 and overages charged; defer separate card/terms review before Issue."
+        },
+        {
+          "name": "Cloudflare Workers Free",
+          "reason": "Already in catalog as cloudflare-workers; no duplicate Issue."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: Azure Container Apps and IBM Code Engine fit existing serverless."
     }
   ],
   "pending_reverification": [
@@ -2220,12 +2266,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 280,
+    "total_services": 281,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 3 5/19. dynv6 Free Dynamic DNS newly verified, canonical Issue #345 -> queue #40129290726 -> PR #346 exact-head validation/build SUCCESS, eplus-bot approved, automatically MERGED, Issue CLOSED and main catalog 280 services at f873459f639295c8edbc277d351152d2fdfdd5ea. Production Pages run still requires final job-level confirmation. Historical LangWatch #301/#302 DRAFT, Koyeb #292, Litlyx favicon #323, Pages concurrency #328 remain open. All 30 reviewed backlog IDs are catalogued or UploadThing equivalent; 214 records >7d stale. No direct main push, force push, manual merge, bypass or deploy.",
+    "note": "Rotation 3 now 6/19. Azure Container Apps Consumption verified against current official pricing; canonical Issue #347 -> queue #40133484301 SUCCESS -> PR #348 exact HEAD 7afddcd3 validation/build SUCCESS and eplus-bot APPROVED, auto-merged into main cc29f92d9a3cfc52f893c2c9c31c1bf22f49ca38. Issue closed, 281 catalogued services. Main Pages deployment still pending job-level confirmation. Open LangWatch #301/#302 requires conflict/eligibility review; other open fixes #292/#323/#328 require authorized merge; no manual merge or direct main push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2255,12 +2301,12 @@
       "ci-cd",
       "tunneling-networking",
       "developer-tools",
-      "dns-cdn"
+      "dns-cdn",
+      "serverless"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "auth-security",
