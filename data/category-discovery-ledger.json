@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "a223333d1420b1a0a4d1b1bcf5d2ab74d1bb0db1",
+  "source_main_sha": "a5c561b0ee042cfae29ac85d44b5501a3beb9aa7",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -145,13 +145,13 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 14,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "search",
@@ -1735,6 +1735,43 @@
         }
       ],
       "new_category_assessment": "No new category: privacy-first self-hosted web analytics fits existing analytics category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "queues-jobs",
+      "official_sources": [
+        "https://cloud.google.com/tasks/pricing",
+        "https://docs.cloud.google.com/free/docs/free-cloud-features",
+        "https://zeplo.io/pricing/",
+        "https://cloud.google.com/pubsub/pricing",
+        "https://cloud.google.com/scheduler/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "google-cloud-tasks-free",
+          "status": "catalogued",
+          "issue": 324,
+          "pr": 326,
+          "reason": "Official ongoing 1 million billable operations/month; billing/payment method required. Issue #324 -> queue #40098175370 SUCCESS -> PR #326 exact-head validation/build SUCCESS, APPROVED, automatically MERGED. Confirmed catalogued on main."
+        },
+        {
+          "id": "zeplo-developer-free",
+          "status": "PR",
+          "issue": 325,
+          "pr": 327,
+          "reason": "Official 500 requests/month free forever; 1 developer, 30-day logs; card/commercial use check. Issue #325 -> queue #40098177340 -> PR #327. Exact-head CI and review must be checked before delivery is considered complete."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Google Cloud Pub/Sub",
+          "reason": "Official 10 GiB/month Message Delivery Basic throughput; distinct ongoing free allowance, deferred for independent review of billing and storage/egress charges."
+        },
+        {
+          "name": "Google Cloud Scheduler",
+          "reason": "Official 3 free jobs/month per billing account; distinct product, deferred for separate delivery after verification of overage charges."
+        }
+      ]
     }
   ],
   "pending_reverification": [
