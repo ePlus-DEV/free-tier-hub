@@ -3435,5 +3435,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "dynv6-free-dynamic-dns",
+    "name": "dynv6 Free Dynamic DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free IPv4/IPv6 dynamic DNS hostname or delegated own domain, with DNS record management and REST/DynDNS/SSH/TSIG update APIs; no numeric zone or query allowance published.",
+    "watch_out": "No SLA or enterprise DDoS protection; unsuitable for critical services. Inactive accounts may be deleted, excessive API requests throttled, and the free service may change or end without guarantee. Commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://dynv6.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
