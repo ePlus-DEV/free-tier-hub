@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "f3c09eeade13f2a7c139111d310cbb7ae04ee8e6",
+  "source_main_sha": "fda21202c66405c5ccc3445fba3029106f40c73b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,13 +75,13 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 4,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "auth-security",
@@ -1064,9 +1064,10 @@
       "candidates": [
         {
           "id": "buildkite-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 275,
-          "reason": "Reverified official ongoing $0 plan after 30-day all-access trial, no card; Issue #275 remains OPEN. Existing queue failure is caused by hard-coded four-service CI/CD test. PR #276 exact HEAD edb18cf4150cf2dbce5663183b8b5ab8a5088d3f has validation/build SUCCESS and bot APPROVED but remains OPEN. Do not retry queue until permitted reviewed fix is merged; never bypass tests or merge manually."
+          "reason": "Official ongoing $0 plan reverified on 2026-10-24 (5 users, 10 jobs, 2,000 Linux vCPU-minutes and 250k tests/month; no card; commercial check). Existing test fix PR #276 was merged through permitted maintainer review, preserving original branch commits. Canonical Issue #275 updated with current UTC verification date -> queue #40055098247 SUCCESS -> PR #287 exact HEAD 891db068d1f4243131ef9a176826d9e83b1003be validation #40055123082 SUCCESS, build #40055123113 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED at exact HEAD -> automatic merge into main fda21202c66405c5ccc3445fba3029106f40c73b. Issue CLOSED; catalog verified. Main validation #40055170388 SUCCESS and main Pages #40055170351 Test/build and Deploy both SUCCESS at exact main HEAD fda21202c66405c5ccc3445fba3029106f40c73b.",
+          "pr_number": 287
         }
       ],
       "excluded": []
@@ -1138,12 +1139,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 253,
+    "total_services": 254,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Round 1 completed 19/19. Round 2: cloud-vps and CI/CD reverified, tunneling-networking delivered tunnl.gg Free through Issue #285 -> auto-merged PR #286, main now 253 services. Buildkite Issue #275 awaits approved but unmerged CI fix PR #276. Main GitHub Pages deploy at f3c09eeade13f2a7c139111d310cbb7ae04ee8e6 SUCCESS. No manual merge or main push.",
+    "note": "Round 1: 19/19 categories. Round 2: cloud-vps, ci-cd, tunneling-networking reviewed (3/19). New tunnl.gg Free Issue #285/PR #286 and historical Buildkite Issue #275/PR #287 both auto-merged with exact-head validation/build PASS and reviews APPROVED; CI/CD extensibility fix PR #276 and ledger PR #265 merged through permitted maintainer process. Main now 254 services. Main Pages #40055170351 build and Deploy both SUCCESS at exact main HEAD fda21202c66405c5ccc3445fba3029106f40c73b. No manual merge or direct main push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
