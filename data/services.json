@@ -3423,5 +3423,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "mailersend-free",
+    "name": "MailerSend Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "500 transactional emails per month (up to 100 emails/day); 100 API requests/day; 1 sending domain, 1 API token, 1 webhook and 1 template.",
+    "watch_out": "A credit card and account approval are required to activate Free, although the plan is $0. Sending pauses at the quota until reset; 14-day Professional trial is separate and downgrades to Free. Hosted Free commercial-use conditions require confirmation.",
+    "pricing_url": "https://www.mailersend.com/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
