@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "628f8fc3266e15120affde1983233cda56eb5029",
+  "source_main_sha": "25e4c665f9706397fce757804283f5c3476e0ca3",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,7 +58,9 @@
       "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -155,7 +157,7 @@
     },
     {
       "category": "search",
-      "service_count": 10,
+      "service_count": 11,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -2263,6 +2265,46 @@
         }
       ],
       "new_category_assessment": "No new category needed; Gemini Notebook fits the existing ai-assistants category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "search",
+      "official_sources": [
+        "https://serpapi.com/pricing",
+        "https://serpapi.com/blog/scrape-youtube-channel-data-with-serpapi/",
+        "https://zenserp.com/pricing-plans/",
+        "https://zenserp.com/",
+        "https://upstash.com/pricing/search",
+        "https://www.searchapi.io/"
+      ],
+      "candidates": [
+        {
+          "id": "serpapi-free",
+          "status": "catalogued",
+          "issue": 351,
+          "pr": 352,
+          "reason": "Genuinely new hosted SERP API, not previously in main, backlog, Issues, PRs, branches or discovery log. Official recurring Free: 250 successful searches/month and 50/hour; no card. Free-plan commercial eligibility remains check (historically noncommercial). Canonical JSON Issue #351 -> candidate queue #40142012660 SUCCESS -> PR #352 exact HEAD 352602103e50bc58b094874f5c28f5c6a8b921d7 validation #40142036730 SUCCESS, Pages PR build #40142036789 SUCCESS, eplus-bot APPROVED at exact HEAD -> auto-MERGED into main 25e4c665f9706397fce757804283f5c3476e0ca3; Issue CLOSED. Main deployment separately verify."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Zenserp Free",
+          "reason": "Official ongoing 50 searches/month, no card. Eligible alternate but deferred to next discovery rotation/issue after SerpApi delivery; no duplicate."
+        },
+        {
+          "name": "SearchApi.io",
+          "reason": "Official pricing currently emphasizes paid developer plans and trial signup credits; no independently verified recurring free plan; not delivered."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "upstash-search",
+          "status": "catalogued-verified",
+          "official_source": "https://upstash.com/pricing/search",
+          "reason": "Official free Search quota still 20K queries/month and 200K records; matches existing record. Provider notes Preview/Early Access with no uptime SLA."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; hosted SERP API fits current search category."
     }
   ],
   "pending_reverification": [
@@ -2320,12 +2362,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 282,
+    "total_services": 283,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
-    "unmatched_backlog": [],
-    "note": "Rotation 3 now 7/19. Gemini Notebook Standard Free verified from official Google Standard plan, distinct from Gemini App. Canonical Issue #349 -> queue #40138205205 SUCCESS -> PR #350 exact HEAD 2026cc4ca61ff27c8a250a186b5a45ce8b969b09 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 628f8fc3266e15120affde1983233cda56eb5029, Issue CLOSED; main Pages #40138265429 build and Deploy SUCCESS. LangWatch Issue #301 / PR #302 conflict safely reconciled with non-force two-parent merge commit 1656716781b3cee25d90bfe0b22c6a402cf44768 preserving unique commits; exact-head validation #40138368741 and build #40138368899 SUCCESS, bot APPROVED at exact HEAD; PR marked ready but remains OPEN. GitHub-native auto-merge rejected clean status; no bypass. Other fixes #292/#323/#328 remain OPEN. No manual merge, force push, direct main push or production deploy.",
+    "unmatched_backlog": [
+      "uploadthing-free"
+    ],
+    "note": "Rotation 3 now 8/19. SerpApi Free Issue #351 -> queue #40142012660 SUCCESS -> PR #352 exact HEAD 352602103e50bc58b094874f5c28f5c6a8b921d7 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 25e4c665f9706397fce757804283f5c3476e0ca3; Issue CLOSED. Main Pages production deployment pending independent job-level verification. Existing PRs #291/#292/#302/#323/#328 remain under review; no manual merge, direct main push, force push, approval bypass or manual deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2357,7 +2401,8 @@
       "developer-tools",
       "dns-cdn",
       "serverless",
-      "ai-assistants"
+      "ai-assistants",
+      "search"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2369,7 +2414,6 @@
       "analytics",
       "ai-ml",
       "queues-jobs",
-      "search",
       "feature-flags",
       "webhooks-events"
     ]
