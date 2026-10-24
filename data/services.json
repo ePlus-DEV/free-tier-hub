@@ -3207,5 +3207,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "hookget-free",
+    "name": "HookGet Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 webhook deliveries/month; 1 project, 2 endpoints; 3-day retention; up to 25 publishes/second.",
+    "watch_out": "Deliveries are counted per destination; fan-out to multiple endpoints consumes multiple deliveries. Payload usage is metered in 64 KB units. Free quota is a hard cap (publishing rejected, not billed). Hosted only; no published uptime SLA; commercial-use terms unconfirmed.",
+    "pricing_url": "https://hookget.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
