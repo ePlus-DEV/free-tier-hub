@@ -3363,5 +3363,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "victoriametrics-self-hosted",
+    "name": "VictoriaMetrics Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 single-node and cluster self-hosted metrics monitoring and time-series storage, with no vendor-enforced monthly ingestion, host, or seat quota.",
+    "watch_out": "Self-hosting requires your own compute, disk, backups, security and operations. Enterprise-only features, managed VictoriaMetrics Cloud and support are paid; Cloud's 30-day trial is not a free plan.",
+    "pricing_url": "https://github.com/VictoriaMetrics/VictoriaMetrics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
