@@ -1264,7 +1264,7 @@
     {
       "checked_utc": "2026-10-24",
       "category": "search",
-      "rotation": "2 (6/19)",
+      "rotation": "2 (7/19)",
       "searches": [
         "Tavily Researcher free monthly API credits pricing no card official",
         "Valyu Search API signup credits versus recurring free plan",
@@ -1336,7 +1336,7 @@
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "259 services across 19 actual main categories at e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013. Rotation 2 6/19: search reviewed. Tavily Researcher Free Issue #297 -> queue SUCCESS -> PR #298 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged; Manticore Search Self-Hosted Issue #299 -> queue SUCCESS -> PR #300 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged. Both issues CLOSED and services present in main. PR #292 Koyeb correction safely rebased by ancestry-preserving non-force merge; its latest exact-head CI/review/mergeability must be rechecked. Production deployment is not inferred from PR builds.",
+    "note": "259 services across 19 actual main categories at e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013. Rotation 2 7/19: search reviewed. Tavily Researcher Free Issue #297 -> queue SUCCESS -> PR #298 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged; Manticore Search Self-Hosted Issue #299 -> queue SUCCESS -> PR #300 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged. Both issues CLOSED and services present in main. PR #292 Koyeb correction safely rebased by ancestry-preserving non-force merge; its latest exact-head CI/review/mergeability must be rechecked. Production deployment is not inferred from PR builds.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
@@ -1344,7 +1344,8 @@
       "tunneling-networking",
       "serverless",
       "dns-cdn",
-      "search"
+      "search",
+      "ai-assistants"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
@@ -1356,7 +1357,6 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "feature-flags",
       "webhooks-events"
