@@ -3375,5 +3375,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "mockoon-open-source",
+    "name": "Mockoon Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local mock API servers, routes and requests using the free desktop app, CLI or Docker image; OpenAPI import/export and CI integration.",
+    "watch_out": "Local-first MIT-licensed edition; infrastructure for remote deployment is self-funded. Real-time team collaboration, centralized administration, managed deployments and browser workspace require paid Mockoon Pro; its 14-day trial is not the free edition.",
+    "pricing_url": "https://mockoon.com/what-is-mockoon/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
