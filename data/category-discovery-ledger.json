@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "078c782ac54edc05856c89734600753cffa70902",
+  "source_main_sha": "f873459f639295c8edbc277d351152d2fdfdd5ea",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -71,7 +71,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 35,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ci-cd",
@@ -115,7 +115,7 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 7,
+      "service_count": 8,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -131,7 +131,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
@@ -2102,6 +2102,67 @@
         }
       ],
       "new_category_assessment": "No new category warranted; ApyHub and MailerSend API services fit developer-tools."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "dns-cdn",
+      "rotation": "3 (5/19)",
+      "searches": [
+        "dynv6 official free Dynamic DNS and current Terms of Service dated 2026-10-21",
+        "dynv6 API and registration form to verify supported IPv4/IPv6 updates and absence of card field",
+        "ZoneEdit official Free DNS 1 personal zone and 100K queries/month; business use restricted",
+        "Hurricane Electric Free DNS and FreeDNS afraid.org prior-ledger deduplication",
+        "Official Cloudflare and ClouDNS DNS Free quotas current Oct 2026",
+        "Cross-check dynv6 against all 280 main service IDs, 30 reviewed backlog items, historical discovery ledger, all Issue/PR search and branch names"
+      ],
+      "official_sources": [
+        "https://dynv6.com/",
+        "https://dynv6.com/terms",
+        "https://dynv6.com/docs/apis",
+        "https://dynv6.com/users/sign_up",
+        "https://www.zoneedit.com/free-dns/",
+        "https://www.zoneedit.com/pricing/",
+        "https://developers.cloudflare.com/dns/manage-dns-records/",
+        "https://www.cloudns.net/landing/page/free-dns/"
+      ],
+      "candidates": [
+        {
+          "id": "dynv6-free-dynamic-dns",
+          "status": "catalogued",
+          "issue": 345,
+          "pr": 346,
+          "reason": "Genuinely new distinct provider absent from main/backlog/Issues/PRs/branches/prior ledger. Official free ongoing IPv4/IPv6 DDNS with own-domain delegation and APIs; no numeric quota published, no card requested on official registration form, commercial rights check. Canonical Issue #345 -> queue #40129290726 SUCCESS -> PR #346 exact HEAD 22b2779d8199f3c88d113e1f1eec3520bb582231 validation #40129311535 SUCCESS and build #40129311569 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED after CI, automatically MERGED. Issue CLOSED and service verified on main f873459f639295c8edbc277d351152d2fdfdd5ea. Production Pages deployment requires separate confirmation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "ZoneEdit Free DNS",
+          "reason": "Official current free tier is 1 personal/non-commercial DNS zone, 100,000 queries/month and 5 mail forwarders; business/production use must be paid. Not chosen for this commercial-friendly discovery run."
+        },
+        {
+          "name": "Hurricane Electric Free DNS",
+          "reason": "Already documented in prior discovery ledger; avoid claiming a genuinely new discovery. Official numeric quota and commercial terms need reverify."
+        },
+        {
+          "name": "FreeDNS afraid.org",
+          "reason": "Already in durable pending_reverification; do not duplicate historical candidate."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-dns",
+          "status": "catalogued-reverified",
+          "official_source": "https://developers.cloudflare.com/dns/manage-dns-records/",
+          "reason": "Official current Free zone limit 200 DNS records for zones created on/after 2024-09-01; existing watch_out matches."
+        },
+        {
+          "id": "cloudns-free-dns",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.cloudns.net/landing/page/free-dns/",
+          "reason": "Official current Free Forever confirms 1 zone, 50 records, 500K queries/month, 4 unicast servers, 1 mail forward, 1 DDNS hostname; existing record matches."
+        }
+      ],
+      "new_category_assessment": "No new category needed: dynamic DNS belongs to existing dns-cdn."
     }
   ],
   "pending_reverification": [
@@ -2159,12 +2220,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 279,
+    "total_services": 280,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 2 complete 19/19; rotation 3 4/19 (cloud-vps, ci-cd, tunneling-networking, developer-tools). Three successful automatic catalog deliveries this run: new frp Self-Hosted #339/#340, historical ApyHub Starter #341/#342, historical MailerSend Free #343/#344; each exact-head validation/build SUCCESS and bot APPROVED, Issue CLOSED, confirmed in main 078c782ac54edc05856c89734600753cffa70902. Main Pages #40125602784 pending final confirmation; previous main Pages for frp #40125252867 and ApyHub #40125477946 SUCCESS. LangWatch #301/#302 remains DRAFT due official pricing-vs-ToS contradiction; Koyeb #292, favicon #323, concurrency #328 remain OPEN. Historical Aptabase pricing-vs-ToS discrepancy held for reverify. No direct main push, force push, manual merge or deploy.",
+    "note": "Rotation 3 5/19. dynv6 Free Dynamic DNS newly verified, canonical Issue #345 -> queue #40129290726 -> PR #346 exact-head validation/build SUCCESS, eplus-bot approved, automatically MERGED, Issue CLOSED and main catalog 280 services at f873459f639295c8edbc277d351152d2fdfdd5ea. Production Pages run still requires final job-level confirmation. Historical LangWatch #301/#302 DRAFT, Koyeb #292, Litlyx favicon #323, Pages concurrency #328 remain open. All 30 reviewed backlog IDs are catalogued or UploadThing equivalent; 214 records >7d stale. No direct main push, force push, manual merge, bypass or deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2193,7 +2254,8 @@
       "cloud-vps",
       "ci-cd",
       "tunneling-networking",
-      "developer-tools"
+      "developer-tools",
+      "dns-cdn"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2204,7 +2266,6 @@
       "auth-security",
       "observability",
       "analytics",
-      "dns-cdn",
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
