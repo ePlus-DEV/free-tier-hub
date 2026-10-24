@@ -3279,5 +3279,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "blitz-cloud-free",
+    "name": "blitz.cloud Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 hosted apps; 512 MB RAM shared across apps; 10 GB storage; 1 managed PostgreSQL, MariaDB or Redis database; free blitz.cloud subdomains with HTTPS.",
+    "watch_out": "Apps sleep after 30 minutes idle and wake on browser visits; webhooks/scheduled tasks cannot reliably wake them. Free excludes custom domains, search indexing and app-file backups. Background workers stop after 2 days without account activity. Provider may end Free with 14 days notice during startup phase through 31 March 2027; explicit Free commercial-use permission is unconfirmed.",
+    "pricing_url": "https://blitz.cloud/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
