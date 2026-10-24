@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "e317523df0d01aa62abc59d64629847dc40a0e06",
+  "source_main_sha": "88f68ba81758f0c876fe5d611addcf7a406d2b22",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -65,13 +65,13 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 36,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 37,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 35,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ci-cd",
@@ -985,10 +985,10 @@
       "candidates": [
         {
           "id": "bruno-api-client-open-source",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 283,
           "pr_number": 284,
-          "reason": "Official Bruno pricing confirms perpetual Open Source $0, 2 workspaces, 5 OpenAPI syncs/month and unlimited collection runner; no payment method for free; no account needed. MIT-licensed core permits commercial use with license notice. Absent from main, 30-record backlog, all Issue/PR searches and branches before creation. Canonical Issue #283 -> automated catalog/add-bruno-api-client-open-source branch -> PR #284; exact-head CI/review/merge/main ingestion pending independent verification."
+          "reason": "Official Bruno $0 Open Source, MIT commercial license, no card, 2 workspaces, 5 OpenAPI syncs/month and unlimited collection runs. Canonical Issue #283 -> automated PR #284 HEAD 37f9fbafe59ce1ef46495fa1217358b70945abb6, validation #40049113517 PASS, build #40049113461 PASS (Deploy SKIPPED, not counted), review APPROVED -> automatic merge. Issue #283 CLOSED; confirmed present on main 88f68ba81758f0c876fe5d611addcf7a406d2b22."
         }
       ],
       "excluded": [
@@ -1026,11 +1026,11 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 251,
+    "total_services": 252,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Completed 19/19-category discovery rotation as of 2026-10-24 with developer-tools review. Bruno Open Source candidate Issue #283 -> PR #284; not counted as catalogued until exact-head CI, review and automatic merge verified on main. Buildkite Issue #275 remains open pending reviewed CI fix PR #276 (non-force merge of latest main into PR branch; exact-head CI recheck required). Next rotation should prioritize low-count, least-recently-reviewed categories; 214 catalog entries have last_checked older than 7 days."
+    "note": "Completed 19/19-category discovery rotation on 2026-10-24. Bruno Issue #283 -> PR #284 exact-head validation/build PASS, review APPROVED, automatically MERGED, Issue CLOSED and confirmed catalogued on main (88f68ba81758f0c876fe5d611addcf7a406d2b22). Buildkite Issue #275 still open pending reviewed CI fix PR #276. Next rotation prioritize lowest-count and least-recently-reviewed categories; 214 entries are older than 7 days. Production deployment is separate and not implied by PR merge."
   }
 }
