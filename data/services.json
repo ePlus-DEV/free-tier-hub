@@ -3243,5 +3243,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "configcat-forever-free",
+    "name": "ConfigCat Forever Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "10 feature flags; 2 environments; 2 products; 5 million config JSON downloads/month; 20 GB network traffic/month; unlimited seats, service connections, MAUs and local flag evaluations.",
+    "watch_out": "Free plan caps flags, environments, products, targeting rules and monthly CDN downloads/traffic; higher limits and advanced governance require paid plans. ConfigCat counts config JSON downloads rather than individual flag evaluations; commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://configcat.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
