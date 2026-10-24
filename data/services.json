@@ -3303,5 +3303,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "litlyx-self-hosted",
+    "name": "Litlyx Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted web and product analytics with pageviews, real-time dashboards, custom events and funnels; no vendor-hosted monthly quota.",
+    "watch_out": "Self-hosted only: operator pays for servers, database, updates, security and maintenance. Managed Litlyx Cloud pricing and free trials are separate, not an ongoing hosted free tier; Apache-2.0 license terms apply.",
+    "pricing_url": "https://github.com/Litlyx/litlyx",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
