@@ -3267,5 +3267,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "rustfs-self-hosted",
+    "name": "RustFS Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source, self-hosted S3-compatible object storage; no vendor-enforced monthly storage or request quota (capacity depends on your own infrastructure).",
+    "watch_out": "Not a free managed cloud storage tier: servers, disks, bandwidth, backups, TLS, operations and support cost extra. Use Linux for production, replace default credentials before network exposure, and verify S3 feature compatibility and Apache-2.0 obligations.",
+    "pricing_url": "https://github.com/rustfs/rustfs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
