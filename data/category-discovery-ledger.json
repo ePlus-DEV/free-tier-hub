@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "6b072ba3c63158b0c7e6cb6c96cb1cb7e83426f4",
+  "source_main_sha": "16cf47f65198030ded8d5ab295b9b7ca01057a34",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -85,13 +85,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 17,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 18,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
@@ -1846,10 +1846,10 @@
       "candidates": [
         {
           "id": "casdoor-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 331,
           "pr": 332,
-          "reason": "Official Casdoor pricing confirms Apache-2.0 self-hosted edition is free without per-user fee, separate from paid/trial Cloud; no matching main/backlog/open or closed Issues/PRs before canonical Issue #331. Queue #40106785960 completed SUCCESS and created PR #332; exact-head validation/build succeeded and review APPROVED, merge still pending at time of ledger update."
+          "reason": "Official Apache-2.0 self-hosted Casdoor is ongoing free and commercially usable. Canonical Issue #331 → queue #40106785960 SUCCESS → PR #332 exact-head validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED; confirmed in main 16cf47f65198030ded8d5ab295b9b7ca01057a34; Issue closed."
         }
       ],
       "excluded": [
