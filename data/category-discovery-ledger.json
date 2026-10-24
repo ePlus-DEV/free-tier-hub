@@ -1,15 +1,15 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "dfcd72467948b74b8c120b13e32ea913a38e506c",
+  "source_main_sha": "ae00d5e1e09da91e06840648ac6330fcb970295e",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 10,
       "open_catalog_candidate_issues": 0
     },
@@ -1441,6 +1441,52 @@
         }
       ],
       "new_category_assessment": "No new category warranted; webhook delivery and inspection fit webhooks-events."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "static-hosting",
+      "official_sources": [
+        "https://docs.codeberg.org/codeberg-pages/",
+        "https://docs.codeberg.org/getting-started/faq/",
+        "https://blog.codeberg.org/new-storage-limits-on-codeberg-what-you-need-to-know.html",
+        "https://surge.sh/pricing",
+        "https://surge.sh/help/upgrading-to-surge-plus",
+        "https://surge.sh/help/getting-started-with-surge",
+        "https://static.app/pricing",
+        "https://static.app/free-website-hosting",
+        "https://www.w3schools.com/spaces/",
+        "https://fleek.xyz/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "codeberg-pages-free",
+          "status": "catalogued",
+          "issue_number": 307,
+          "pr_number": 308,
+          "reason": "Genuinely new, not in historical backlog/Issues/PRs/branches/catalog. Official free Codeberg account and Pages hosting with custom domains; FOSS content and resource constraints disclosed; card no, commercial use check. Canonical Issue #307 -> queue #40077652830 SUCCESS -> PR #308 exact-head validation/build SUCCESS, APPROVED, automatically merged to main."
+        },
+        {
+          "id": "surge-static-hosting-free",
+          "status": "catalogued",
+          "issue_number": 309,
+          "pr_number": 310,
+          "reason": "Previously reported as pending reverify; official ongoing Free confirms unlimited projects/publishes, custom domains, managed SSL and email/password signup; no card, commercial use check. Reverified no existing catalog/Issue/PR/branch duplicate. Issue #309 -> queue #40077717016 SUCCESS -> PR #310 exact-head validation/build SUCCESS, APPROVED, automatically merged."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Static.app",
+          "reason": "Current official pages contradict on Free versus 7-day trial; homepage and free-hosting page state paid plan required after trial. Not eligible without clarification."
+        },
+        {
+          "name": "W3Schools Spaces",
+          "reason": "Current pricing refers to Trial users; no clear indefinite free hosted publishing allowance. Do not catalog as ongoing."
+        },
+        {
+          "name": "Fleek hosting",
+          "reason": "Historical free web-app hosting exists, but current pricing emphasizes paid AI-agent plans; no sufficiently current, unambiguous free hosting limits. Reverify."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -1453,35 +1499,31 @@
       "category": "dns-cdn"
     },
     {
-      "id": "surge-static-hosting-free",
-      "category": "static-hosting"
-    },
-    {
       "id": "freedns-afraid-org-free",
       "category": "dns-cdn"
     }
   ],
   "coverage_summary": {
-    "total_services": 261,
+    "total_services": 263,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "261 services in 19 current main categories at dfcd72467948b74b8c120b13e32ea913a38e506c. Rotation 2 9/19, latest webhooks-events. HookGet Free Issue #305 -> queue SUCCESS -> PR #306 exact-head validation/build SUCCESS, review APPROVED, auto-merged; main catalog confirmed. HeyListenUp historical candidate requires reverify because official pricing 7-day Free retention contradicts Terms 48-hour Free retention. LangWatch #301/#302 remains DRAFT/reverify; Koyeb #292 and discovery ledger #291 remain OPEN. PR Deploy SKIPPED not PASS; main Pages deploy separately verified.",
+    "note": "263 services in 19 current main categories at ae00d5e1e09da91e06840648ac6330fcb970295e. Rotation 2 10/19; static-hosting reviewed. Codeberg Pages Free (#307/#308) and Surge Free (#309/#310) delivered through canonical Issues, exact-head CI and bot-approved automatic merges. 30 backlog entries catalogued or deduped via UploadThing alias; LangWatch #301/#302 DRAFT/reverify, Koyeb #292 and discovery ledger #291 OPEN. PR Deploy SKIPPED not PASS; main Pages deploy must be separately verified.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
+      "static-hosting",
+      "serverless",
       "cloud-vps",
       "ci-cd",
-      "tunneling-networking",
-      "serverless",
       "dns-cdn",
-      "search",
-      "ai-assistants",
       "ai-ml",
+      "ai-assistants",
+      "search",
+      "tunneling-networking",
       "webhooks-events"
     ],
     "rotation_2_categories_remaining": [
-      "static-hosting",
       "app-hosting",
       "databases",
       "storage",
