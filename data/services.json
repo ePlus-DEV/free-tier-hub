@@ -3171,5 +3171,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "tavily-researcher-free",
+    "name": "Tavily Researcher Free",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "1,000 API credits per month for Search, Extract, Crawl, Map and other supported API operations; credits reset on the first day of each month.",
+    "watch_out": "Credits are shared across API operations and consumption varies by endpoint/depth. Free requests stop when credits are exhausted until the monthly reset; higher usage requires paid billing. Commercial-use rights for the free tier require confirmation.",
+    "pricing_url": "https://www.tavily.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
