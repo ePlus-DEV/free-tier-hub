@@ -3183,5 +3183,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "manticore-search-self-hosted",
+    "name": "Manticore Search Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted open-source full-text, vector and hybrid search engine; no vendor-enforced query, document or seat quota for the open-source distribution.",
+    "watch_out": "You provide and pay for compute, storage, backups, monitoring and operations. GPLv3-or-later obligations apply when redistributing covered software; managed cloud services and paid support are separate.",
+    "pricing_url": "https://manticoresearch.com/services/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
