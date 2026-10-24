@@ -109,9 +109,9 @@
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "dns-cdn",
@@ -1680,6 +1680,60 @@
         }
       ],
       "new_category_assessment": "No new category warranted: hosted containers and full-stack apps fit current app-hosting category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "analytics",
+      "rotation": 2,
+      "searches": [
+        "self-hosted web analytics Apache-2.0 Litlyx Shynet Liwan official repository",
+        "Litlyx official pricing vs free self-host and commercial license",
+        "Cloudflare Web Analytics official current free docs"
+      ],
+      "official_sources": [
+        "https://github.com/Litlyx/litlyx",
+        "https://github.com/Litlyx/litlyx/blob/main/LICENSE",
+        "https://litlyx.com/blog/umami-analytics-vs-litlyx-comparison",
+        "https://litlyx.com/",
+        "https://github.com/milesmcc/shynet",
+        "https://github.com/explodingcamera/liwan",
+        "https://developers.cloudflare.com/web-analytics/about/"
+      ],
+      "candidates": [
+        {
+          "id": "litlyx-self-hosted",
+          "status": "Issue",
+          "issue_number": 321,
+          "reason": "New distinct analytics provider; absent from 268-entry main catalog, 30-entry durable backlog, GitHub Issue/PR search and branch search. Official Apache-2.0 repository and current vendor self-hosting comparison confirm free ongoing self-hosted software; commercial use permitted under Apache-2.0. No vendor card for self-hosting; user supplies infrastructure. Hosted Cloud is paid/trial, explicitly excluded. Canonical JSON-only Issue #321 created 2026-10-24 UTC; queue run #40093681183 observed in progress, PR/exact-head CI not yet verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Shynet Self-Hosted",
+          "reason": "Official Apache-2.0 self-hosted privacy analytics appears eligible and absent from main; hold as potential next discovery after verifying deploy requirements and deduping live Issues/PRs."
+        },
+        {
+          "name": "Liwan Self-Hosted",
+          "reason": "Official Apache-2.0 self-hosted analytics appears eligible; hold for later rotation to avoid premature duplication and confirm license/production caveats."
+        },
+        {
+          "name": "Cloudflare Web Analytics Free",
+          "reason": "Already catalogued as cloudflare-web-analytics; official docs continue to describe free privacy-first analytics. No duplicate."
+        },
+        {
+          "name": "Litlyx Managed Cloud",
+          "reason": "Official current pricing shows paid plans and trial-style onboarding; do not list managed cloud as ongoing free."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-web-analytics",
+          "status": "catalogued-reverified",
+          "official_source": "https://developers.cloudflare.com/web-analytics/about/",
+          "reason": "Current Cloudflare documentation confirms ongoing free Web Analytics; no change proposed."
+        }
+      ],
+      "new_category_assessment": "No new category: privacy-first self-hosted web analytics fits existing analytics category."
     }
   ],
   "pending_reverification": [
@@ -1700,9 +1754,9 @@
     "total_services": 268,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "268 services across 19 dynamically enumerated categories at 9b5d9aebdec0c23377eeed5af71892a9f74e04f6. Rotation 2 13/19: app-hosting reviewed. Historical Pinata #317/#319 and genuinely new blitz.cloud #318/#320 delivered through canonical Issue -> queue -> PR -> exact-head validation/build SUCCESS -> APPROVED -> automatic MERGE; Issues CLOSED. Both PR Deploy jobs SKIPPED (not PASS); main Pages verification separate. 214 records stale >7 days. LangWatch #301/#302 DRAFT remains reverify; Koyeb correction PR #292 remains OPEN. No direct main write, force-push, manual merge or production deploy.",
+    "note": "268 services across 19 dynamically enumerated categories at 9b5d9aebdec0c23377eeed5af71892a9f74e04f6. Rotation 2 14/19: analytics reviewed. Litlyx Self-Hosted verified from official Apache-2.0 sources and canonical Issue #321 created; queue in progress, PR/CI/merge not yet confirmed. Existing Cloudflare Web Analytics reverified. 214 catalog records stale >7 days; LangWatch #301/#302 DRAFT remains reverify, Koyeb correction PR #292 remains OPEN. No direct main writes, force-push, manual merge or deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -1717,14 +1771,14 @@
       "webhooks-events",
       "feature-flags",
       "storage",
-      "app-hosting"
+      "app-hosting",
+      "analytics"
     ],
     "rotation_2_categories_remaining": [
       "databases",
       "developer-tools",
       "auth-security",
       "observability",
-      "analytics",
       "queues-jobs"
     ]
   }
