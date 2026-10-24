@@ -3135,5 +3135,113 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "fastly-compute-free",
+    "name": "Fastly Compute Free Tier",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "10 million Compute requests and 100 million Compute vCPU milliseconds per month, included at no charge in the recurring free tier.",
+    "watch_out": "Usage beyond either free allowance is billed automatically at published usage-based rates; Fastly signup requires a credit card for verification. Other products, data transfer and optional features may incur charges. Legacy pre-2026-03-31 Compute development trials are separate; confirm production and commercial-use terms before deployment.",
+    "pricing_url": "https://www.fastly.com/pricing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "namecheap-freedns",
+    "name": "Namecheap FreeDNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free authoritative DNS for domains registered with other registrars; up to 150 DNS records per domain; Dynamic DNS, email forwarding and URL forwarding.",
+    "watch_out": "Requires an existing third-party domain; domain registration is not included. Verify domain ownership and configure FreeDNS nameservers within 10 days. DNSSEC and premium SLA require PremiumDNS. Payment-card and commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://www.namecheap.com/domains/freedns/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "proton-lumo-free",
+    "name": "Proton Lumo Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free AI chat with limited messages, Max-model usage and image generations; 1 Project; signed-in Free chat history retained for 7 days. No fixed numeric message quota published.",
+    "watch_out": "Proton account required for saved Free-plan chats; guest chat works without signup but has tighter limits. Free usage caps are not numerically published. Lumo Plus and Lumo for Business are paid; commercial use of Free is not explicitly confirmed. Automated or bulk account creation is prohibited.",
+    "pricing_url": "https://proton.me/lumo/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "tavily-researcher-free",
+    "name": "Tavily Researcher Free",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "1,000 API credits per month for Search, Extract, Crawl, Map and other supported API operations; credits reset on the first day of each month.",
+    "watch_out": "Credits are shared across API operations and consumption varies by endpoint/depth. Free requests stop when credits are exhausted until the monthly reset; higher usage requires paid billing. Commercial-use rights for the free tier require confirmation.",
+    "pricing_url": "https://www.tavily.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "manticore-search-self-hosted",
+    "name": "Manticore Search Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted open-source full-text, vector and hybrid search engine; no vendor-enforced query, document or seat quota for the open-source distribution.",
+    "watch_out": "You provide and pay for compute, storage, backups, monitoring and operations. GPLv3-or-later obligations apply when redistributing covered software; managed cloud services and paid support are separate.",
+    "pricing_url": "https://manticoresearch.com/services/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "arize-ax-free",
+    "name": "Arize AX Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "25,000 trace spans/month; 1 GB ingestion/month; 15-day retention; unlimited users and evaluations; Signal 10 issues/month.",
+    "watch_out": "SaaS Free tier has span and ingestion quotas, short retention, one space and community support. Paid Pro starts at $50/month for higher limits; hosted Free commercial-use terms require confirmation.",
+    "pricing_url": "https://arize.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "hookget-free",
+    "name": "HookGet Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 webhook deliveries/month; 1 project, 2 endpoints; 3-day retention; up to 25 publishes/second.",
+    "watch_out": "Deliveries are counted per destination; fan-out to multiple endpoints consumes multiple deliveries. Payload usage is metered in 64 KB units. Free quota is a hard cap (publishing rejected, not billed). Hosted only; no published uptime SLA; commercial-use terms unconfirmed.",
+    "pricing_url": "https://hookget.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "codeberg-pages-free",
+    "name": "Codeberg Pages Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free static website hosting from public Codeberg repositories; user, organization and per-repository sites on codeberg.page; custom domains supported.",
+    "watch_out": "Codeberg is intended for free/libre software and freely licensed content; proprietary/commercial site eligibility requires provider-policy review. Repository storage guidance is 750 MiB Git and 100 MiB total non-promoted content; larger usage may require an exception. Pages migrated to git-pages; legacy v2 is unavailable to new users. Static sites only; deployment uses repository webhooks or Forgejo Actions.",
+    "pricing_url": "https://docs.codeberg.org/codeberg-pages/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "surge-static-hosting-free",
+    "name": "Surge Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Unlimited static projects and publishes; free surge.sh subdomains, custom domains and managed SSL certificates; static CDN hosting.",
+    "watch_out": "Static HTML/CSS/JavaScript only; no backend runtime. Custom redirects, CORS controls, password protection and user-supplied SSL certificates require paid Surge Professional. Traffic/abuse policies and commercial-use rights require confirmation; custom domain registration itself is not included.",
+    "pricing_url": "https://surge.sh/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
