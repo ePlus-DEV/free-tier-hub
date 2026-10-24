@@ -3351,5 +3351,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "casdoor-self-hosted",
+    "name": "Casdoor Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted IAM/SSO; no per-user or monthly-active-user software fee; OAuth 2.0, OIDC, SAML, CAS, LDAP and MFA supported.",
+    "watch_out": "Self-hosted only: operate and secure your own servers, database, upgrades, backups and identity integrations; hosting, SMS/email and infrastructure may cost extra. Casdoor Cloud is paid after its time-limited trial/credit; do not confuse with the perpetual self-hosted edition.",
+    "pricing_url": "https://www.casdoor.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
