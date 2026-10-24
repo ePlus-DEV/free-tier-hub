@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "a5c561b0ee042cfae29ac85d44b5501a3beb9aa7",
+  "source_main_sha": "96518edc37c290e4a9057a2bcafd9d12bd5bdb34",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,7 +58,9 @@
       "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -145,13 +147,13 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 14,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "search",
@@ -1752,14 +1754,14 @@
           "status": "catalogued",
           "issue": 324,
           "pr": 326,
-          "reason": "Official ongoing 1 million billable operations/month; billing/payment method required. Issue #324 -> queue #40098175370 SUCCESS -> PR #326 exact-head validation/build SUCCESS, APPROVED, automatically MERGED. Confirmed catalogued on main."
+          "reason": "Official 1M operations/month. Issue #324 -> queue #40098175370 SUCCESS -> PR #326 exact-head validation/build SUCCESS and eplus-bot APPROVED; automatically MERGED, catalogued on main."
         },
         {
           "id": "zeplo-developer-free",
-          "status": "PR",
+          "status": "catalogued",
           "issue": 325,
           "pr": 327,
-          "reason": "Official 500 requests/month free forever; 1 developer, 30-day logs; card/commercial use check. Issue #325 -> queue #40098177340 -> PR #327. Exact-head CI and review must be checked before delivery is considered complete."
+          "reason": "Official 500 requests/month free forever. Issue #325 -> queue #40098177340 SUCCESS -> PR #327 exact-head 52860102a1149f8bbf922f5809e167dcb5555c9c validation/build SUCCESS, eplus-bot APPROVED; safely reconciled conflict with non-force two-parent merge, automatically MERGED and catalogued on main."
         }
       ],
       "excluded": [
