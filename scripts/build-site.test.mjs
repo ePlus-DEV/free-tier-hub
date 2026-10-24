@@ -90,6 +90,7 @@ test('every service gets an actual provider favicon, including previously unmapp
   }
   assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'pinecone-starter'))).searchParams.get('domain'), 'www.pinecone.io');
   assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'chatgpt-free'))).searchParams.get('domain'), 'chatgpt.com');
+  assert.equal(new URL(serviceLogoURL(entries.find(x => x.id === 'litlyx-self-hosted'))).searchParams.get('domain'), 'litlyx.com');
 });
 
 test('URL filters round trip, reject unknown values, preserve unrelated params and hash', async () => {
