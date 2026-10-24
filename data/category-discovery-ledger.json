@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "5f500f90c8b013e524de22e6b204df74296e1c3d",
+  "source_main_sha": "dfcd72467948b74b8c120b13e32ea913a38e506c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,11 +185,11 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 11,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 0
     }
@@ -1374,6 +1374,73 @@
         }
       ],
       "new_category_assessment": "No new category warranted; hosted agent evaluation and observability fit existing ai-ml category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "webhooks-events",
+      "rotation": "2 (9/19)",
+      "searches": [
+        "2026 hosted webhook event delivery free forever official pricing and terms",
+        "HeyListenUp Free 10 endpoints 500 rolling event buffer 7-day pricing vs 48-hour legal terms",
+        "HookGet Free 10k deliveries/month 2 endpoints 3-day retention no card",
+        "HookSync Free 10k events/month 3 endpoints 7-day logs personal projects",
+        "HookDeploy Free 10k requests/month pricing vs older docs/terms",
+        "Convoy Community self-hosted free forever versus cloud trial"
+      ],
+      "official_sources": [
+        "https://hookget.com/pricing/",
+        "https://hookget.com/",
+        "https://heylistenup.app/pricing",
+        "https://heylistenup.app/terms",
+        "https://hooksync.net/",
+        "https://hookdeploy.dev/pricing/",
+        "https://hookdeploy.dev/docs/billing/plans/",
+        "https://www.getconvoy.io/pricing"
+      ],
+      "discovery_sources": [
+        "https://hookget.com/compare/"
+      ],
+      "candidates": [
+        {
+          "id": "hookget-free",
+          "status": "catalogued",
+          "issue_number": 305,
+          "pr_number": 306,
+          "reason": "Official ongoing $0 managed webhook plan: 10,000 deliveries/month, 1 project, 2 endpoints, 3-day retention, 25 publishes/sec, no card, hard cap; commercial_use check. Dedupe main/backlog/all Issues/PRs/branches confirmed new. Issue #305 -> catalog-candidate-queue #40073819053 job SUCCESS -> PR #306 exact HEAD fd327604cd2933468587bf5570fb78ed35481628, validation #40073837354 SUCCESS and build #40073837273 build job SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED, workflow auto-MERGED. Catalog confirmed on main; main Pages deploy must be verified separately."
+        },
+        {
+          "id": "heylistenup-free",
+          "status": "reverify",
+          "reason": "Historical candidate not catalogued, no Issue/PR; pricing says Free forever 10 endpoints, 500-event rolling visible buffer, 7-day history, no card; official Terms §5 instead says 48-hour retention for Free. Hold pending provider clarification; commercial use check, resale prohibited without consent."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "HookSync Free",
+          "reason": "Official $0 forever 10k events/month, 3 endpoints and 7-day logs, but Free explicitly positioned for personal projects/exploration; commercial permission unclear, not selected this run."
+        },
+        {
+          "name": "HookDeploy Free",
+          "reason": "Official current pricing $0 forever 10k requests/month and no card, but /docs/billing/plans lists different tier names and limits; resolve conflicting official pages before delivery."
+        },
+        {
+          "name": "Convoy Cloud",
+          "reason": "Official Cloud only 14-day trial, ineligible as ongoing free; separate self-hosted Community is free but not prioritized."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "hookdeck-developer",
+          "status": "reverify",
+          "reason": "Catalog last_checked 2026-09-23; schedule dedicated official pricing recheck."
+        },
+        {
+          "id": "svix-free",
+          "status": "reverify",
+          "reason": "Catalog last_checked 2026-09-23; schedule dedicated official pricing recheck."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; webhook delivery and inspection fit webhooks-events."
     }
   ],
   "pending_reverification": [
@@ -1395,12 +1462,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 260,
+    "total_services": 261,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "260 services across 19 actual main categories at 5f500f90c8b013e524de22e6b204df74296e1c3d. Rotation 2 8/19: ai-ml reviewed. Arize AX Free #303 -> queue SUCCESS -> PR #304 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged, Issue CLOSED, main catalog confirmed. LangWatch Developer #301 -> PR #302 DRAFT/reverify because official pricing free-forever contradicts 2026-09-22 Terms 14-day trial/suspension; do not merge without confirmation. PR #292 Koyeb correction remains OPEN; no manual merge or production deploy. Production deploy for latest main HEAD requires exact-head job verification.",
+    "note": "261 services in 19 current main categories at dfcd72467948b74b8c120b13e32ea913a38e506c. Rotation 2 9/19, latest webhooks-events. HookGet Free Issue #305 -> queue SUCCESS -> PR #306 exact-head validation/build SUCCESS, review APPROVED, auto-merged; main catalog confirmed. HeyListenUp historical candidate requires reverify because official pricing 7-day Free retention contradicts Terms 48-hour Free retention. LangWatch #301/#302 remains DRAFT/reverify; Koyeb #292 and discovery ledger #291 remain OPEN. PR Deploy SKIPPED not PASS; main Pages deploy separately verified.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
@@ -1410,7 +1477,8 @@
       "dns-cdn",
       "search",
       "ai-assistants",
-      "ai-ml"
+      "ai-ml",
+      "webhooks-events"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
@@ -1422,8 +1490,7 @@
       "observability",
       "analytics",
       "queues-jobs",
-      "feature-flags",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
