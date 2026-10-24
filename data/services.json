@@ -3087,5 +3087,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "uptimesignal-free",
+    "name": "UptimeSignal Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "25 HTTP/API uptime monitors with 5-minute checks; 7-day uptime history; email alerts and hosted status pages.",
+    "watch_out": "Free tier uses uptimesignal.io subdomains; custom domains, 1-minute checks and longer history require Pro. Official product pages disagree about whether Free includes one or unlimited status pages and about extra alert channels; verify in account before relying on them. Commercial use explicitly permitted.",
+    "pricing_url": "https://uptimesignal.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
