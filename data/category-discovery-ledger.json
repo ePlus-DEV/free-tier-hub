@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "4e229bc2020d02c34e6bccbd42c9f0c784f865c1",
+  "source_main_sha": "078c782ac54edc05856c89734600753cffa70902",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -10,7 +10,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 10,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -20,7 +20,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -30,7 +30,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -40,7 +40,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -50,7 +50,7 @@
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 27,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -60,17 +60,17 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 38,
+      "service_count": 40,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 35,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -80,7 +80,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -90,7 +90,7 @@
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 16,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -100,7 +100,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 25,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -110,7 +110,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -120,7 +120,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -130,7 +130,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 7,
       "open_catalog_candidate_issues": 1
     },
     {
@@ -140,7 +140,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 4,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -150,7 +150,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 14,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -160,7 +160,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -170,7 +170,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -180,7 +180,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -190,7 +190,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 0,
+      "stale_over_7d": 9,
       "open_catalog_candidate_issues": 0
     }
   ],
@@ -2046,6 +2046,62 @@
         }
       ],
       "new_category_assessment": "No new category needed; frp fits existing tunneling-networking."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "developer-tools",
+      "searches": [
+        "Historical backlog ApyHub Starter 2026 official recurring free atoms, card and commercial terms",
+        "ApyHub official pricing and terms per-API licensing and traffic cap",
+        "Historical backlog MailerSend Free 2026 card requirement, monthly emails, daily API limits and trial-to-free conversion",
+        "Cross-check Atlassian Forge, Better Auth managed Starter, OneUptime and Aptabase historical offers for eligibility and contradictions"
+      ],
+      "official_sources": [
+        "https://apyhub.com/pricing",
+        "https://apyhub.com/terms",
+        "https://www.mailersend.com/pricing",
+        "https://www.mailersend.com/help/plans-features-and-limits",
+        "https://developer.atlassian.com/platform/forge/forge-platform-pricing/",
+        "https://better-auth.com/pricing",
+        "https://oneuptime.com/pricing/",
+        "https://aptabase.com/",
+        "https://aptabase.com/legal/terms"
+      ],
+      "candidates": [
+        {
+          "id": "apyhub-starter-free",
+          "status": "catalogued",
+          "issue": 341,
+          "pr": 342,
+          "reason": "Historical backlog candidate reverified against official $0 Starter with 3,000 atoms/month, 5 req/s, 1 key, 1 member; no card, upstream API commercial licenses vary (check). Deduped against catalog, all Issues/PRs, branches and ledger. Canonical Issue #341 -> queue #40125424760 SUCCESS -> PR #342 exact HEAD b907856c4b910c52beb024d7823776e82f1d053b validation #40125444406 SUCCESS, build #40125444423 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED, automatically MERGED; Issue CLOSED, main 4a8b54761afa3bd3d66684fac6d2ae16ecc8ff16 Pages #40125477946 SUCCESS."
+        },
+        {
+          "id": "mailersend-free",
+          "status": "catalogued",
+          "issue": 343,
+          "pr": 344,
+          "reason": "Historical backlog reverified: official $0 Free with 500 emails/month, 100 daily API requests, 1 domain, 1 token and card required. 14-day Pro trial is separate and reverts to ongoing Free. Commercial rights check. Canonical Issue #343 -> queue #40125540320 SUCCESS -> PR #344 exact HEAD 85f576e55def33e42aa3d9d1718d3e55ae2c2a85 validation #40125560557 SUCCESS, build #40125560484 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED, automatically MERGED; Issue CLOSED, main 078c782ac54edc05856c89734600753cffa70902; Pages #40125602784 requires independent final confirmation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Aptabase Cloud Free",
+          "reason": "Official pricing advertises ongoing 20,000 events/month with no card, but official Terms §4 describes a time-limited free trial followed by account freeze without payment; hold reverify, do not create Issue until clarified."
+        },
+        {
+          "name": "OneUptime Free",
+          "reason": "Official $0 includes one status page, 100 subscribers and unlimited manual monitors, but active monitors cost $1/month. Reverify precise free scope before Issue."
+        },
+        {
+          "name": "Atlassian Forge",
+          "reason": "Official per-app free monthly usage allowances but payment details required and overages billed; verify billing controls and free entitlement before Issue."
+        },
+        {
+          "name": "Better Auth Managed Starter",
+          "reason": "Official $0 managed Starter offers 10k audit logs/month and 1k security detections/month, described for evaluation and side projects; reverify production/commercial rights."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; ApyHub and MailerSend API services fit developer-tools."
     }
   ],
   "pending_reverification": [
@@ -2060,15 +2116,55 @@
     {
       "id": "freedns-afraid-org-free",
       "category": "dns-cdn"
+    },
+    {
+      "id": "aptabase-cloud-free",
+      "category": "analytics"
+    },
+    {
+      "id": "oneuptime-free",
+      "category": "observability"
+    },
+    {
+      "id": "atlassian-forge-free",
+      "category": "serverless"
+    },
+    {
+      "id": "better-auth-managed-starter",
+      "category": "auth-security"
+    },
+    {
+      "id": "context-dev",
+      "category": "ai-ml"
+    },
+    {
+      "id": "cabin-analytics",
+      "category": "analytics"
+    },
+    {
+      "id": "switchflag-free",
+      "category": "feature-flags"
+    },
+    {
+      "id": "render-key-value",
+      "category": "databases"
+    },
+    {
+      "id": "plung-developer-free",
+      "category": "analytics"
+    },
+    {
+      "id": "fixfaults-free",
+      "category": "observability"
     }
   ],
   "coverage_summary": {
-    "total_services": 277,
+    "total_services": 279,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 2 completed 19/19; rotation 3 now 3/19 (cloud-vps, ci-cd, tunneling-networking). New frp Self-Hosted Issue #339 -> queue SUCCESS -> PR #340 exact-head validation/build SUCCESS, review APPROVED and automatic MERGE into main 4e229bc2020d02c34e6bccbd42c9f0c784f865c1. Main Pages deploy pending independent verification. LangWatch Issue #301/PR #302 stays DRAFT due official pricing-vs-ToS contradiction; correction PRs #292/#323/#328 and discovery PR #291 remain OPEN. No direct main push, force push, manual merge or production deploy.",
+    "note": "Rotation 2 complete 19/19; rotation 3 4/19 (cloud-vps, ci-cd, tunneling-networking, developer-tools). Three successful automatic catalog deliveries this run: new frp Self-Hosted #339/#340, historical ApyHub Starter #341/#342, historical MailerSend Free #343/#344; each exact-head validation/build SUCCESS and bot APPROVED, Issue CLOSED, confirmed in main 078c782ac54edc05856c89734600753cffa70902. Main Pages #40125602784 pending final confirmation; previous main Pages for frp #40125252867 and ApyHub #40125477946 SUCCESS. LangWatch #301/#302 remains DRAFT due official pricing-vs-ToS contradiction; Koyeb #292, favicon #323, concurrency #328 remain OPEN. Historical Aptabase pricing-vs-ToS discrepancy held for reverify. No direct main push, force push, manual merge or deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2096,7 +2192,8 @@
     "rotation_3_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "tunneling-networking"
+      "tunneling-networking",
+      "developer-tools"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2104,7 +2201,6 @@
       "serverless",
       "databases",
       "storage",
-      "developer-tools",
       "auth-security",
       "observability",
       "analytics",
