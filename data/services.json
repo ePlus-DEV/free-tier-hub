@@ -3255,5 +3255,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "statsig-developer-free",
+    "name": "Statsig Developer Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "2 million metered events/month; unlimited feature flag and config checks; 50,000 session replays/month; unlimited seats.",
+    "watch_out": "Developer has 1-year analytics retention and 30-day session replay retention; advanced approvals and higher quotas require Pro. Above 2M events, metric-lift computations stop while gate/config targeting continues; upgrading requires a card. Hosted commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.statsig.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
