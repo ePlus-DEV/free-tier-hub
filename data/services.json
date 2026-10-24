@@ -3327,5 +3327,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "zeplo-developer-free",
+    "name": "Zeplo Developer Free",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "500 queued or scheduled HTTP requests per month free forever; unlimited jobs; 1 developer; 30-day log retention.",
+    "watch_out": "Requests beyond the free allowance are listed at $20 per 100,000; spending cap can limit charges. Card requirement for free signup and commercial production rights are not explicitly confirmed; Developer is positioned for development.",
+    "pricing_url": "https://zeplo.io/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
