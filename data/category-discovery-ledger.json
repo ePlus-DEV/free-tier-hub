@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "cc29f92d9a3cfc52f893c2c9c31c1bf22f49ca38",
+  "source_main_sha": "628f8fc3266e15120affde1983233cda56eb5029",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -135,7 +135,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 8,
+      "service_count": 9,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -2209,6 +2209,60 @@
         }
       ],
       "new_category_assessment": "No new category warranted: Azure Container Apps and IBM Code Engine fit existing serverless."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "ai-assistants",
+      "rotation": "3 (7/19)",
+      "searches": [
+        "2026 official free consumer AI assistants DeepSeek Qwen Mistral and NotebookLM",
+        "Google Gemini Notebook Standard free plan and current usage limits, renamed NotebookLM July 2026",
+        "Google official September 2026 five-hour compute-based generation quota update",
+        "Cross-check Gemini Notebook against all 281 main service IDs, 30 backlog records, open/closed Issues and PRs, branches and existing discovery log"
+      ],
+      "official_sources": [
+        "https://support.google.com/gemininotebook/answer/16213268",
+        "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+        "https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/",
+        "https://www.deepseek.com/en/download/",
+        "https://qwen.ai/"
+      ],
+      "candidates": [
+        {
+          "id": "gemini-notebook-standard-free",
+          "status": "catalogued",
+          "issue": 349,
+          "pr": 350,
+          "reason": "Genuinely new separate source-grounded notebook research assistant, distinct from catalogued Gemini App and Gemini Developer API; no prior catalog/backlog/Issues/PRs/branches/ledger duplicate. Official Google Standard is free to sign up with Gmail (no card), 100 notebooks/user and 50 sources/notebook; consumer compute quotas reset every five hours, commercial rights check. Canonical Issue #349 JSON-only -> queue #40138205205 deliver job SUCCESS -> PR #350 exact HEAD 2026cc4ca61ff27c8a250a186b5a45ce8b969b09 validation #40138228215 SUCCESS and Pages build #40138228247 SUCCESS (PR Deploy SKIPPED, not PASS), bot APPROVED -> auto-MERGED into main 628f8fc3266e15120affde1983233cda56eb5029. Issue CLOSED. Main production Pages deployment requires independent job-level verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Mistral Vibe Free",
+          "reason": "Already catalogued as mistral-vibe-free; no duplicate."
+        },
+        {
+          "name": "Qwen Studio Free",
+          "reason": "Previously documented in 2026-10-24 discovery; free official but card/commercial terms and exact quota require reverify."
+        },
+        {
+          "name": "DeepSeek Chat Free",
+          "reason": "Previously documented in 2026-10-24 discovery; commercial/privacy and service restrictions need further verification."
+        },
+        {
+          "name": "Brave Leo Free",
+          "reason": "Previously documented in earlier discovery log; no genuinely new claim."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "gemini-app-free",
+          "status": "catalogued-product-distinct",
+          "official_source": "https://gemini.google/subscriptions/",
+          "reason": "Consumer Gemini chat app is a different product from standalone Gemini Notebook (formerly NotebookLM); no duplicate."
+        }
+      ],
+      "new_category_assessment": "No new category needed; Gemini Notebook fits the existing ai-assistants category."
     }
   ],
   "pending_reverification": [
@@ -2266,12 +2320,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 281,
+    "total_services": 282,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 3 now 6/19. Azure Container Apps Consumption verified against current official pricing; canonical Issue #347 -> queue #40133484301 SUCCESS -> PR #348 exact HEAD 7afddcd3 validation/build SUCCESS and eplus-bot APPROVED, auto-merged into main cc29f92d9a3cfc52f893c2c9c31c1bf22f49ca38. Issue closed, 281 catalogued services. Main Pages deployment still pending job-level confirmation. Open LangWatch #301/#302 requires conflict/eligibility review; other open fixes #292/#323/#328 require authorized merge; no manual merge or direct main push.",
+    "note": "Rotation 3 now 7/19. Gemini Notebook Standard Free: official current free plan verified, distinct from Gemini App. Canonical Issue #349 -> queue #40138205205 SUCCESS -> PR #350 exact HEAD 2026cc4ca61ff27c8a250a186b5a45ce8b969b09 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 628f8fc3266e15120affde1983233cda56eb5029, Issue CLOSED. Production Pages at this HEAD requires separate Deploy SUCCESS. LangWatch Issue #301 / draft PR #302 still pending safe conflict/review resolution; PRs #292/#323/#328 remain open. No manual merge, force push or direct main push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2302,7 +2356,8 @@
       "tunneling-networking",
       "developer-tools",
       "dns-cdn",
-      "serverless"
+      "serverless",
+      "ai-assistants"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2313,7 +2368,6 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
