@@ -3159,5 +3159,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "proton-lumo-free",
+    "name": "Proton Lumo Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free AI chat with limited messages, Max-model usage and image generations; 1 Project; signed-in Free chat history retained for 7 days. No fixed numeric message quota published.",
+    "watch_out": "Proton account required for saved Free-plan chats; guest chat works without signup but has tighter limits. Free usage caps are not numerically published. Lumo Plus and Lumo for Business are paid; commercial use of Free is not explicitly confirmed. Automated or bulk account creation is prohibited.",
+    "pricing_url": "https://proton.me/lumo/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
