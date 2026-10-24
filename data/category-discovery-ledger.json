@@ -1431,13 +1431,13 @@
       "reverified_existing": [
         {
           "id": "hookdeck-developer",
-          "status": "reverify",
-          "reason": "Catalog last_checked 2026-09-23; schedule dedicated official pricing recheck."
+          "status": "reverified",
+          "reason": "Official https://hookdeck.com/pricing checked 2026-10-24: Developer always $0, 10,000 events/month, 100,000 discarded requests/month, 5 events/sec/destination, 3-day retention, 1 user, no card. Existing catalog limits/caveats remain accurate; last_checked field still 2026-09-23, defer metadata-only refresh to reviewed catalog PR."
         },
         {
           "id": "svix-free",
-          "status": "reverify",
-          "reason": "Catalog last_checked 2026-09-23; schedule dedicated official pricing recheck."
+          "status": "reverified",
+          "reason": "Official https://www.svix.com/pricing/ checked 2026-10-24: Free $0, 50k messages/month, 50 messages/sec, 7-day retention, no card; no Free uptime SLA. Existing catalog limits/caveats remain accurate; last_checked field still 2026-09-23, defer metadata-only refresh to reviewed catalog PR."
         }
       ],
       "new_category_assessment": "No new category warranted; webhook delivery and inspection fit webhooks-events."
