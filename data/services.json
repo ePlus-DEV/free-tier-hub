@@ -3279,5 +3279,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "pinata-ipfs-free",
+    "name": "Pinata IPFS Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "1 GB total storage; 500 files; 10 GB gateway bandwidth/month; 10,000 gateway requests/month; 1 gateway.",
+    "watch_out": "Storage and file caps are total limits, while gateway bandwidth and requests reset monthly. Additional capacity, private files and advanced gateway features require paid plans. Free signup card requirement and hosted commercial-use terms are not independently confirmed.",
+    "pricing_url": "https://pinata.cloud/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
