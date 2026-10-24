@@ -3099,5 +3099,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "bruno-api-client-open-source",
+    "name": "Bruno Open Source API Client",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local-first API client and CLI for HTTP/REST, GraphQL and gRPC; unlimited collection runs, 2 workspaces, 5 OpenAPI syncs/month; API testing, scripting and local Git-friendly collections.",
+    "watch_out": "Desktop/CLI software, not a hosted API service; no cloud sync or provider-hosted usage allowance. Advanced in-app Git actions, private Git-provider integration, unlimited workspaces and premium support require paid plans. Follow MIT license notices; external API and CI infrastructure costs are separate.",
+    "pricing_url": "https://www.usebruno.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
