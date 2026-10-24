@@ -3147,5 +3147,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "namecheap-freedns",
+    "name": "Namecheap FreeDNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free authoritative DNS for domains registered with other registrars; up to 150 DNS records per domain; Dynamic DNS, email forwarding and URL forwarding.",
+    "watch_out": "Requires an existing third-party domain; domain registration is not included. Verify domain ownership and configure FreeDNS nameservers within 10 days. DNSSEC and premium SLA require PremiumDNS. Payment-card and commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://www.namecheap.com/domains/freedns/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
