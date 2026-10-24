@@ -3471,5 +3471,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "serpapi-free",
+    "name": "SerpApi Free",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "250 successful searches per month across supported search APIs; maximum 50 successful searches per hour.",
+    "watch_out": "Free tier is rate-limited; cached, errored and failed searches are not charged. Commercial use of the Free plan is not confirmed; SerpApi historically described a non-commercial Free plan, so verify current terms before production use. Higher quotas require paid plans.",
+    "pricing_url": "https://serpapi.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
