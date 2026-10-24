@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "ae00d5e1e09da91e06840648ac6330fcb970295e",
+  "source_main_sha": "fd2b60fc6cf6fcd9deddb655cbf4a1ec3f1d1d91",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -165,11 +165,11 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -1487,6 +1487,53 @@
           "reason": "Historical free web-app hosting exists, but current pricing emphasizes paid AI-agent plans; no sufficiently current, unambiguous free hosting limits. Reverify."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "feature-flags",
+      "official_sources": [
+        "https://configcat.com/pricing/",
+        "https://configcat.com/docs/purchase/",
+        "https://configcat.com/policies/",
+        "https://www.statsig.com/pricing",
+        "https://www.hypertune.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "configcat-forever-free",
+          "status": "catalogued",
+          "issue_number": 311,
+          "pr_number": 312,
+          "reason": "Genuinely new provider absent from main/backlog/all searched Issues/PRs/branches. Official Forever Free: 10 flags, 2 environments/products, 5M config JSON downloads and 20GB traffic/month; no card; commercial eligibility check. Issue #311 -> queue #40081682004 SUCCESS -> PR #312 exact HEAD c09fa2129d179a387cc0fb9ef61564fda4f072c9 validation/build SUCCESS, Deploy job SKIPPED, APPROVED, automatically merged; Issue closed and main catalog confirmed."
+        },
+        {
+          "id": "statsig-developer-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "Provider officially confirms ongoing Developer Free with 2M events/month, unlimited feature flag/config checks, 50K session replays/month, unlimited seats, no credit card. No matching catalog, backlog, Issue or PR found in this run; defer separate canonical Issue until next category/backlog cycle to avoid concurrent queue races.",
+          "candidate": {
+            "id": "statsig-developer-free",
+            "name": "Statsig Developer Free",
+            "category": "feature-flags",
+            "plan": "ongoing",
+            "free_limit": "2 million events/month; unlimited feature flag and config checks; 50,000 session replays/month; unlimited seats.",
+            "watch_out": "Developer plan has metered events and replay caps; advanced experimentation, approvals and higher volume are paid. Commercial eligibility not explicitly confirmed.",
+            "pricing_url": "https://www.statsig.com/pricing",
+            "credit_card": "no",
+            "commercial_use": "check",
+            "last_checked": "2026-10-24"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hypertune Free",
+          "reason": "Official pricing page states new signups are closed and service shut down on 10 August 2026, despite a stale Free pricing table; ineligible."
+        },
+        {
+          "name": "Bucket Free",
+          "reason": "Third-party directories mention a free plan but current official terms/availability not independently verified; do not catalog."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -1504,12 +1551,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 263,
+    "total_services": 264,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "263 services in 19 current main categories at ae00d5e1e09da91e06840648ac6330fcb970295e. Rotation 2 10/19; static-hosting reviewed. Codeberg Pages Free (#307/#308) and Surge Free (#309/#310) delivered through canonical Issues, exact-head CI and bot-approved automatic merges. 30 backlog entries catalogued or deduped via UploadThing alias; LangWatch #301/#302 DRAFT/reverify, Koyeb #292 and discovery ledger #291 OPEN. PR Deploy SKIPPED not PASS; main Pages deploy must be separately verified.",
+    "note": "264 services in 19 current main categories at fd2b60fc6cf6fcd9deddb655cbf4a1ec3f1d1d91. Rotation 2 11/19; feature-flags reviewed. ConfigCat Forever Free #311/#312 delivered by canonical Issue, queue, exact-head checks and automatic merge. Statsig Developer Free independently verified, held for next Issue after dedupe. 214 records older than 7 days; 1 open catalog-candidate Issue(s). PR Deploy SKIPPED is not PASS; main Pages deployment requires separate confirmation.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -1521,7 +1568,8 @@
       "ai-assistants",
       "search",
       "tunneling-networking",
-      "webhooks-events"
+      "webhooks-events",
+      "feature-flags"
     ],
     "rotation_2_categories_remaining": [
       "app-hosting",
@@ -1531,8 +1579,7 @@
       "auth-security",
       "observability",
       "analytics",
-      "queues-jobs",
-      "feature-flags"
+      "queues-jobs"
     ]
   }
 }
