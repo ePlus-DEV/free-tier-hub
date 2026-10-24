@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "ff5eba7d3f7dfafd54f30d90918e7ed09616c325",
+  "source_main_sha": "8a5aafdfbab3df41bb7a64b43adc111deb7891c5",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -115,11 +115,11 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 6,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -1155,6 +1155,59 @@
         }
       ],
       "new_category_assessment": "No new category needed: Fastly Compute fits existing serverless."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "dns-cdn",
+      "searches": [
+        "Namecheap FreeDNS 2026 free forever 150 records third-party domains card commercial official",
+        "Hetzner DNS free zones official 2026 third-party domains",
+        "Porkbun free DNS management domain purchase requirement",
+        "2026 free authoritative DNS providers comparison and dedupe"
+      ],
+      "official_sources": [
+        "https://www.namecheap.com/domains/freedns/",
+        "https://www.namecheap.com/support/knowledgebase/article.aspx/544/51/how-do-i-set-up-host-records-for-a-domain-when-i-use-freedns/",
+        "https://www.namecheap.com/support/knowledgebase/article.aspx/548/51/why-is-this-free/",
+        "https://www.namecheap.com/support/knowledgebase/article.aspx/536/51/how-do-i-set-my-domain-to-use-namecheaps-freedns-service/",
+        "https://docs.hetzner.com/networking/dns/overview/",
+        "https://porkbun.com/products/dns_management",
+        "https://www.cloudflare.com/en-gb/application-services/products/dns/"
+      ],
+      "discovery_sources": [
+        "https://nameservertool.com/blog/best-free-dns-providers-compared"
+      ],
+      "candidates": [
+        {
+          "id": "namecheap-freedns",
+          "status": "catalogued",
+          "issue_number": 293,
+          "pr_number": 294,
+          "reason": "New standalone provider, absent from main/backlog/Issue/PR searches and previous ledger. Official FreeDNS forever for third-party registered domains, 150 DNS records/domain, DDNS and forwarding; card/commercial check. Canonical Issue #293 -> queue run #40057968692 SUCCESS -> PR #294 HEAD cd5474f91cf4c240294a95206d13c46594af895e, exact-head validation #40057987146 SUCCESS, build #40057987166 SUCCESS (Deploy SKIPPED on PR), review APPROVED, automatically merged to main 8a5aafdfbab3df41bb7a64b43adc111deb7891c5. Issue CLOSED. Main Pages deployment pending when ledger written."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hetzner DNS",
+          "reason": "Official DNS zones have no charge and accept third-party domains; defer until standalone signup/payment-card and commercial conditions are checked, not ineligible."
+        },
+        {
+          "name": "Porkbun DNS",
+          "reason": "Official free DNS management is bundled with domains registered through Porkbun; not selected as independent third-party domain DNS."
+        },
+        {
+          "name": "Hurricane Electric Free DNS",
+          "reason": "Previously explored and reported; no duplicate candidate this rotation."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-dns",
+          "status": "reverified",
+          "reason": "Official Cloudflare DNS Free plan remains $0 forever; catalog last_checked 2026-09-22 is stale and requires separate reviewed correction before updating metadata."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; Namecheap FreeDNS fits existing dns-cdn."
     }
   ],
   "pending_reverification": [
@@ -1180,18 +1233,19 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 255,
+    "total_services": 256,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "255 services in 19 categories on main ff5eba7d3f7dfafd54f30d90918e7ed09616c325. Fastly Compute Issue #289 -> PR #290 automatically merged after exact-head validation/build SUCCESS and review APPROVED; main Pages build/Deploy SUCCESS at exact main HEAD #40055608012. Rotation 2: 4/19 categories reviewed. Discovery ledger PR #291 is separate and not yet merged.",
+    "note": "256 services in 19 categories at main 8a5aafdfbab3df41bb7a64b43adc111deb7891c5. Namecheap FreeDNS Issue #293 -> queue SUCCESS -> PR #294 exact-head validation/build SUCCESS and APPROVED, automatically MERGED, Issue CLOSED. Round 2 5/19 categories reviewed. Main Pages deployment not yet confirmed for this merge. No direct main push or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
       "tunneling-networking",
-      "serverless"
+      "serverless",
+      "dns-cdn"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
@@ -1202,7 +1256,6 @@
       "auth-security",
       "observability",
       "analytics",
-      "dns-cdn",
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
