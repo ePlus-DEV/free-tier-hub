@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "8a5aafdfbab3df41bb7a64b43adc111deb7891c5",
+  "source_main_sha": "805798b269c64a409ec21c3057175df8bdbb4cba",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -135,13 +135,13 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "queues-jobs",
@@ -1235,9 +1235,10 @@
       "candidates": [
         {
           "id": "proton-lumo-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 295,
-          "reason": "New eligible ongoing $0 Proton Lumo AI chat, absent from main catalog (256 entries), backlog (30), all matching Issues/PRs/branches and prior ledger. Official Free has limited messages, Max model usage and image generation, 1 Project, 7-day saved chat history; no card. Commercial use marked check, no numeric quota claimed. Canonical Issue #295 created; GitHub Actions queue started, PR/exact-head checks not yet confirmed."
+          "reason": "Official ongoing Lumo Free verified with no card, 1 Project and limited Max/messages/images; numeric caps not published, commercial check. Absent from previous main/backlog/Issues/PRs/branches/ledger. Issue #295 -> queue run #40061703054 SUCCESS -> PR #296 exact HEAD a3b0a21ead8a200880143a149515d0f236a6e1e8, validation #40061717573 SUCCESS, build #40061717567 SUCCESS (PR Deploy SKIPPED, not PASS), eplus-bot APPROVED -> auto-merged main 805798b269c64a409ec21c3057175df8bdbb4cba. Issue #295 CLOSED and catalog now has 257 services. Main Pages run #40061748052 CANCELLED before jobs, so production at this HEAD NOT confirmed.",
+          "pr_number": 296
         }
       ],
       "excluded": [
