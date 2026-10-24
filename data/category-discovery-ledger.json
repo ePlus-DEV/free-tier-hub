@@ -933,7 +933,8 @@
         "https://uptimesignal.io/free-uptime-monitoring",
         "https://uptimesignal.io/ai-agents",
         "https://uptimeup.com/pricing",
-        "https://www.openstatus.dev/pricing"
+        "https://www.openstatus.dev/pricing",
+        "https://www.openstatus.dev/"
       ],
       "candidates": [
         {
@@ -948,10 +949,14 @@
         {
           "name": "UptimeUp Free",
           "reason": "Official ongoing $0 for 5 monitors at 5-minute intervals, 1 status page and 7-day retention; marked for testing/personal projects. Deferred until commercial restrictions clarified."
-        },
+        }
+      ],
+      "reverified_existing": [
         {
-          "name": "OpenStatus hosted",
-          "reason": "Current official pricing shows new workspaces begin with a 14-day Starter trial; no confirmed ongoing hosted $0 quota on current plan comparison, so do not treat trial as free tier."
+          "id": "openstatus-hobby",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.openstatus.dev/pricing",
+          "reason": "Official FAQ confirms ongoing $0 Hobby plan (1 monitor, 1 status page with 3 components, 10-minute checks, no card). New workspaces may begin with a separate 14-day Starter trial and return to Hobby after trial; trial must not be confused with the ongoing free plan. Existing catalog entry is accurate; no catalog mutation needed."
         }
       ]
     }
