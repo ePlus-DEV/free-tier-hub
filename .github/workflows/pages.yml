@@ -30,8 +30,11 @@ permissions:
   contents: write
   pull-requests: write
 
+# Isolate PR builds from main deployments. GitHub cancels older pending runs
+# within a shared group even when cancel-in-progress is false.
+# Keep all main/dispatch production deployments serialized by ref.
 concurrency:
-  group: github-pages
+  group: github-pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
