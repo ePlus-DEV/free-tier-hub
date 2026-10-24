@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "fda21202c66405c5ccc3445fba3029106f40c73b",
+  "source_main_sha": "d475b37b82d9c6cd78638cef33180a272c4a2b5b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -29,9 +29,9 @@
       "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "cloud-vps",
@@ -1114,6 +1114,46 @@
         }
       ],
       "new_category_assessment": "No new category warranted: tunnl.gg fits existing tunneling-networking category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "serverless",
+      "searches": [
+        "2026 official ongoing free edge/serverless functions pricing Fastly Supabase Netlify Tencent EdgeOne",
+        "Fastly Compute 10 million requests and 100 million vCPU milliseconds free monthly 2026",
+        "Fastly signup credit card billing and commercial eligibility",
+        "Fastly legacy Compute development trial versus new free tier"
+      ],
+      "official_sources": [
+        "https://www.fastly.com/pricing",
+        "https://www.fastly.com/documentation/guides/organizations-and-accounts/billing/account-types/",
+        "https://www.fastly.com/documentation/guides/organizations-and-accounts/billing/about-the-charges-on-your-bill/",
+        "https://www.fastly.com/documentation/solutions/tutorials/full-site-delivery/introduction-to-cdn/2-getting-started-with-fastly/",
+        "https://supabase.com/docs/guides/functions/pricing",
+        "https://www.netlify.com/pricing/"
+      ],
+      "discovery_sources": [
+        "https://community.fastly.com/t/now-available-self-purchase-and-simplified-vcpu-billing-for-fastly-compute/4402"
+      ],
+      "candidates": [
+        {
+          "id": "fastly-compute-free",
+          "status": "issue",
+          "issue_number": 289,
+          "reason": "New eligible ongoing monthly Compute allowance; 10M requests and 100M vCPU milliseconds. Fastly official documentation confirms monthly free tier, automatic paid overages and card verification; commercial terms remain check. Deduped main catalog, reviewed backlog, ledger, all indexed issues/PRs and branches before creating canonical Issue #289. Queue/PR/exact-head CI not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Supabase Edge Functions Free",
+          "reason": "500,000 invocations/month officially confirmed, but existing Supabase product-level record and cross-product deduplication need review before a separate Issue."
+        },
+        {
+          "name": "Netlify Functions Free",
+          "reason": "Netlify is already catalogued under static-hosting; new credit-based 300/month plan bundles functions, so avoid duplicating the same account plan without product-level justification."
+        }
+      ],
+      "new_category_assessment": "No new category needed: Fastly Compute fits existing serverless."
     }
   ],
   "pending_reverification": [
@@ -1142,19 +1182,19 @@
     "total_services": 254,
     "total_categories": 19,
     "stale_over_7d": 214,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Round 1: 19/19 categories. Round 2: cloud-vps, ci-cd, tunneling-networking reviewed (3/19). New tunnl.gg Free Issue #285/PR #286 and historical Buildkite Issue #275/PR #287 both auto-merged with exact-head validation/build PASS and reviews APPROVED; CI/CD extensibility fix PR #276 and ledger PR #265 merged through permitted maintainer process. Main now 254 services. Main Pages #40055170351 build and Deploy both SUCCESS at exact main HEAD fda21202c66405c5ccc3445fba3029106f40c73b. No manual merge or direct main push.",
+    "note": "Main at d475b37b82d9c6cd78638cef33180a272c4a2b5b has 254 services across 19 categories. Newly verified Fastly Compute Free canonical Issue #289 OPEN; queue and exact-head PR checks not yet confirmed. Previous Buildkite delivery and CI/CD fix already merged. Do not count Issue as catalogued.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "tunneling-networking"
+      "tunneling-networking",
+      "serverless"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "developer-tools",
