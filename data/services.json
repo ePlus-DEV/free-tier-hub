@@ -3003,5 +3003,113 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-23"
+  },
+  {
+    "id": "filestack-free",
+    "name": "Filestack Free",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "500 uploads/month; 1 GB managed storage; 1 GB delivery bandwidth; 1,000 transformations; 1 workflow; 1 team member; 20 MB maximum file size.",
+    "watch_out": "Free plan has community support only. Upload count resets monthly; other allowance reset periods are not explicitly confirmed. Premium OCR, AI and enhancement add-ons are paid; overage fees may apply. Explicit commercial-use rights on the Free plan require confirmation.",
+    "pricing_url": "https://www.filestack.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "opik-free-cloud",
+    "name": "Opik Free Cloud (Comet)",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "25,000 spans/month; up to 10 team members; 60-day data retention; agent tracing, evaluation suites and playground.",
+    "watch_out": "Cloud data region is US. Additional spans are not included on Free; Pro Cloud is paid. Commercial-use terms for hosted Free are not explicitly confirmed; Ollie coding harness trial is separate from the ongoing Opik Free Cloud allowance.",
+    "pricing_url": "https://www.comet.com/site/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "pythonanywhere-beginner-free",
+    "name": "PythonAnywhere Beginner Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 Python web app with 1 web worker, 512 MiB disk, 100 CPU-seconds/day for consoles, and 2 consoles; web app expires after 1 month unless renewed.",
+    "watch_out": "Free web app uses a pythonanywhere.com subdomain; restricted outbound HTTP(S) allowlist; no SSH, scheduled tasks or MySQL for new accounts. Renew the web app monthly. No paid-tier features included.",
+    "pricing_url": "https://www.pythonanywhere.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "awardspace-free-hosting",
+    "name": "AwardSpace Free Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 GB disk, 5 GB monthly bandwidth, 1 hosted domain and 3 subdomains, PHP and 1 MySQL database (30 MB); ad-free hosting.",
+    "watch_out": "One free account per user; outbound connections and hotlinking disabled; 15 MB file upload limit, 25,000 inodes, restricted file types. Free hosting renews annually on human login and may be disabled for inactivity; provider recommends paid hosting for business websites.",
+    "pricing_url": "https://www.awardspace.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "activepieces-cloud-free",
+    "name": "Activepieces Cloud Free",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "1,000 credits/month; up to 5 users; unlimited flows; cloud-hosted automation, agents, tables, MCP and API access",
+    "watch_out": "AI model steps use additional credits (2/10/20 per model tier); free quota pauses runs until credits refresh. Official pricing page inconsistently states daily vs monthly reset; verify reset timing. Cloud Free is distinct from self-hosted Community Edition; commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://www.activepieces.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "workos-authkit-free",
+    "name": "WorkOS AuthKit Free",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Up to 1,000,000 monthly active users for AuthKit user management and authentication, including email/password, social sign-in, passkeys and MFA.",
+    "watch_out": "A payment card is required before using a production environment; staging can be tested without a card. Enterprise SSO and Directory Sync cost from $125 per connection/month, custom domains $99/month, and each additional 1 million MAUs $2,500/month. Avoid paid features and overages.",
+    "pricing_url": "https://workos.com/pricing",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "tidb-cloud-starter-free",
+    "name": "TiDB Cloud Starter Free (MySQL-compatible)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 free MySQL-compatible instances per organization; each includes 5 GiB row storage, 5 GiB columnar storage and 50 million Request Units per month.",
+    "watch_out": "Free allowance applies separately to each of the first five eligible instances; at quota, new connections are blocked and existing sessions throttled until reset. Enabling paid overages or adding instances requires a credit card and spending limit. PostgreSQL-compatible public-preview quota is separate and not included. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://www.pingcap.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-23"
+  },
+  {
+    "id": "uptimesignal-free",
+    "name": "UptimeSignal Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "25 HTTP/API uptime monitors with 5-minute checks; 7-day uptime history; email alerts and hosted status pages.",
+    "watch_out": "Free tier uses uptimesignal.io subdomains; custom domains, 1-minute checks and longer history require Pro. Official product pages disagree about whether Free includes one or unlimited status pages and about extra alert channels; verify in account before relying on them. Commercial use explicitly permitted.",
+    "pricing_url": "https://uptimesignal.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
+  },
+  {
+    "id": "bruno-api-client-open-source",
+    "name": "Bruno Open Source API Client",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local-first API client and CLI for HTTP/REST, GraphQL and gRPC; unlimited collection runs, 2 workspaces, 5 OpenAPI syncs/month; API testing, scripting and local Git-friendly collections.",
+    "watch_out": "Desktop/CLI software, not a hosted API service; no cloud sync or provider-hosted usage allowance. Advanced in-app Git actions, private Git-provider integration, unlimited workspaces and premium support require paid plans. Follow MIT license notices; external API and CI infrastructure costs are separate.",
+    "pricing_url": "https://www.usebruno.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
