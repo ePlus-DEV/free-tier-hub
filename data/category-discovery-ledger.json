@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-24",
-  "source_main_sha": "805798b269c64a409ec21c3057175df8bdbb4cba",
+  "source_main_sha": "e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -155,11 +155,11 @@
     },
     {
       "category": "search",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-23",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-23",
+      "last_discovery_review": "2026-10-24",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
@@ -1260,6 +1260,56 @@
         }
       ],
       "new_category_assessment": "No new category needed; Proton Lumo and alternatives fit current ai-assistants category."
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "search",
+      "rotation": "2 (6/19)",
+      "searches": [
+        "Tavily Researcher free monthly API credits pricing no card official",
+        "Valyu Search API signup credits versus recurring free plan",
+        "Manticore Search free GPLv3 self-hosted official commercial license",
+        "ZincSearch self-hosted free license and maintenance",
+        "2026 hosted and self-hosted search engines free-tier comparison"
+      ],
+      "official_sources": [
+        "https://www.tavily.com/pricing",
+        "https://www.valyu.ai/pricing",
+        "https://manticoresearch.com/",
+        "https://manticoresearch.com/services/",
+        "https://github.com/manticoresoftware/manticoresearch"
+      ],
+      "discovery_sources": [
+        "https://reachkit.ai/directory/tools/tavily",
+        "https://freetier.co/directory/products/tavily"
+      ],
+      "candidates": [
+        {
+          "id": "tavily-researcher-free",
+          "status": "catalogued",
+          "issue_number": 297,
+          "pr_number": 298,
+          "reason": "Previously listed for re-verification in durable ledger. Reverified official ongoing Researcher $0: 1,000 API credits/month, reset first day monthly, no card; commercial use check. Issue #297 -> queue #40065787353 SUCCESS -> PR #298 exact-head validation #40065805529 SUCCESS and build #40065805507 SUCCESS (Deploy skipped is not PASS), eplus-bot APPROVED, automatically merged; issue closed, catalog confirmed."
+        },
+        {
+          "id": "manticore-search-self-hosted",
+          "status": "catalogued",
+          "issue_number": 299,
+          "pr_number": 300,
+          "reason": "Genuinely new verified candidate absent from catalog, historical backlog, Issues and PRs. Official Manticore Search states free open-source self-hosted search; GPLv3-or-later allows commercial use subject to license obligations; infrastructure costs remain user responsibility. Issue #299 -> queue #40065870152 SUCCESS -> PR #300 exact-head validation #40065887831 SUCCESS and build #40065887883 SUCCESS (PR Deploy skipped, not PASS), bot APPROVED, automatically merged; issue closed and catalog confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Valyu Search API signup credits",
+          "reason": "Official pricing provides $10 once at signup, not an ongoing monthly free allowance; excluded."
+        },
+        {
+          "name": "Algolia Free / Meilisearch / Typesense / OpenSearch / SearXNG",
+          "reason": "Already catalogued in search category; do not duplicate."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: hosted Search APIs and self-hosted search engines fit existing search."
     }
   ],
   "pending_reverification": [
@@ -1276,28 +1326,25 @@
       "category": "static-hosting"
     },
     {
-      "id": "tavily-researcher-free",
-      "category": "search"
-    },
-    {
       "id": "freedns-afraid-org-free",
       "category": "dns-cdn"
     }
   ],
   "coverage_summary": {
-    "total_services": 256,
+    "total_services": 259,
     "total_categories": 19,
     "stale_over_7d": 214,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "256 services in 19 categories at main 8a5aafdfbab3df41bb7a64b43adc111deb7891c5. Namecheap FreeDNS Issue #293 -> queue SUCCESS -> PR #294 exact-head validation/build SUCCESS and APPROVED, automatically MERGED, Issue CLOSED. Round 2 5/19 categories reviewed. Main Pages deployment not yet confirmed for this merge. No direct main push or manual merge.",
+    "note": "259 services across 19 actual main categories at e32c4f36967dcdb14f0d2f4d4413c3f8d62ff013. Rotation 2 6/19: search reviewed. Tavily Researcher Free Issue #297 -> queue SUCCESS -> PR #298 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged; Manticore Search Self-Hosted Issue #299 -> queue SUCCESS -> PR #300 exact-head validation/build SUCCESS and bot APPROVED -> auto-merged. Both issues CLOSED and services present in main. PR #292 Koyeb correction safely rebased by ancestry-preserving non-force merge; its latest exact-head CI/review/mergeability must be rechecked. Production deployment is not inferred from PR builds.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
       "tunneling-networking",
       "serverless",
-      "dns-cdn"
+      "dns-cdn",
+      "search"
     ],
     "rotation_2_categories_remaining": [
       "static-hosting",
@@ -1311,7 +1358,6 @@
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
-      "search",
       "feature-flags",
       "webhooks-events"
     ]
