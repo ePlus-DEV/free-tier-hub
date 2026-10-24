@@ -58,9 +58,7 @@
       "service_count": 16,
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -1935,6 +1933,10 @@
         {
           "name": "Mockoon Pro",
           "reason": "Paid commercial collaboration product with a 14-day trial; not an ongoing free tier."
+        },
+        {
+          "name": "UploadThing backlog alias",
+          "reason": "Backlog id uploadthing-free is already represented by main catalog id uploadthing-2gb-app (same UploadThing 2GB App offering); no duplicate Issue/PR."
         }
       ]
     }
