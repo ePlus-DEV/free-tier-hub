@@ -3339,5 +3339,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "rqlite-self-hosted",
+    "name": "rqlite Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted distributed relational database built on SQLite, with HTTP/JSON API, Raft replication and high availability; no vendor-enforced database, query or monthly usage quota.",
+    "watch_out": "Self-hosted software, not a managed free database: compute, disk, network, backups and operations are your responsibility. Multi-node high availability needs quorum; no hosted SLA. Preserve MIT copyright and license notices.",
+    "pricing_url": "https://github.com/rqlite/rqlite",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-24"
   }
 ]
