@@ -3795,5 +3795,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "openbao-self-hosted",
+    "name": "OpenBao Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free MPL-2.0 open-source secrets and encryption management; self-hosted secret engines, identity-based policies, audit devices and HTTP API; no software license quotas.",
+    "watch_out": "Requires self-managed infrastructure, secure TLS, unsealing, key recovery, access policies and backups; hosting/operations cost extra. MPL-2.0 source distribution obligations apply to modified covered files.",
+    "pricing_url": "https://openbao.org/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
