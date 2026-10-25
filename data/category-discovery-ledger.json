@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "4e3109160f197af8102c5336f08f355e9692648a",
+  "source_main_sha": "231a05649c88777e1e54b9c2d77ecbdf0675ee64",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -95,11 +95,11 @@
     },
     {
       "category": "observability",
-      "service_count": 27,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 25,
       "open_catalog_candidate_issues": 0
     },
@@ -2778,6 +2778,59 @@
         }
       ],
       "new_category_assessment": "No new category warranted; authorization PDP is within auth-security."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "observability",
+      "rotation": "3 (17/19)",
+      "searches": [
+        "Enumerated all 19 main category definitions and 293 catalog records; checked 30 backlog entries, historical ledger, open/closed candidate Issues, open/merged/closed PRs and branches.",
+        "Verified official Jaeger v2.22 self-hosted distributed tracing, Apache-2.0 license, production storage caveats; compared SigNoz Community and OpenTelemetry Collector.",
+        "Reverified existing New Relic Free 100 GB/month and UptimeRobot Free 50 monitors / 5-minute checks."
+      ],
+      "official_sources": [
+        "https://www.jaegertracing.io/docs/2.22/getting-started/",
+        "https://www.jaegertracing.io/docs/2.22/architecture/",
+        "https://github.com/jaegertracing/jaeger",
+        "https://signoz.io/pricing/",
+        "https://newrelic.com/pricing/free-tier",
+        "https://help.uptimerobot.com/en/articles/11604710-who-should-use-uptimerobot-s-free-plan"
+      ],
+      "candidates": [
+        {
+          "id": "jaeger-self-hosted",
+          "status": "catalogued",
+          "issue_number": 370,
+          "pr_number": 371,
+          "queue_run": 40176119335,
+          "reason": "New Apache-2.0 CNCF self-hosted tracing, no vendor-imposed quotas; no card, commercial allowed, own storage required. Canonical JSON-only Issue #370 -> queue #40176119335 SUCCESS -> PR #371 exact HEAD 0d9c5487e5e491aa123b1d75810aa26707b59cc5 validation #40176134910 SUCCESS and Pages PR build #40176136602 SUCCESS (Deploy SKIPPED, not counted PASS), bot APPROVED and auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64; production deployment pending verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SigNoz Community",
+          "reason": "Official self-hosted Community free, but already reported in previous discovery ledger; defer separate product verification."
+        },
+        {
+          "name": "OpenTelemetry Collector",
+          "reason": "Telemetry collection pipeline distinct from Jaeger UI/query backend; defer separate product scope review."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "new-relic-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://newrelic.com/pricing/free-tier",
+          "reason": "Current official 100 GB ingest/month, 1 full platform user, unlimited basic users, no card match catalog."
+        },
+        {
+          "id": "uptimerobot",
+          "status": "catalogued-reverified",
+          "official_source": "https://help.uptimerobot.com/en/articles/11604710-who-should-use-uptimerobot-s-free-plan",
+          "reason": "Official ongoing 50 monitors, 5-minute checks, no card and commercial use match catalog."
+        }
+      ],
+      "new_category_assessment": "No new category needed: Jaeger belongs to observability."
     }
   ],
   "pending_reverification": [
@@ -2839,12 +2892,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 292,
+    "total_services": 293,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 16/19, 292 services. Cerbos PDP Issue #368 -> queue SUCCESS -> PR #369 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; production deploy at current main not yet confirmed at ledger write. Oracle correction PR #367 OPEN with exact-head checks and review SUCCESS. Preserve GitHub approvals and non-force ancestry; no manual merge/deploy.",
+    "note": "Rotation 3 17/19; Jaeger Issue #370 -> queue SUCCESS -> PR #371 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64. Production deploy pending. Koyeb PR #292 reconciled non-force at 84bf0c6a9cd12861ebf1c7e8ceeee5783a62b112; exact-head CI/review pending.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2885,10 +2938,10 @@
       "webhooks-events",
       "databases",
       "storage",
-      "auth-security"
+      "auth-security",
+      "observability"
     ],
     "rotation_3_categories_remaining": [
-      "observability",
       "analytics",
       "queues-jobs"
     ]
