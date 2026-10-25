@@ -39,7 +39,7 @@
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
@@ -2686,6 +2686,45 @@
         }
       ],
       "new_category_assessment": "No new category needed: Ceph, SeaweedFS, Garage and file sync services fit existing storage."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "cloud-vps",
+      "rotation": "3 reverify (15/19 unchanged)",
+      "searches": [
+        "Audit all 12 live branches; inspect unmerged unique Oracle A1 correction branch and compare to latest main",
+        "Oracle 2026 Always Free tenancy official 1,500 OCPU-hours / 9,000 GB-hours, 2 OCPUs and 12 GB RAM, 2 AMD micro instances, 200 GB shared boot/block storage",
+        "Oracle free-trial vs Always Free tenancy limits and payment-card/home-region restrictions",
+        "Safely merge latest main into existing Oracle branch with two-parent non-force commit; exact-head PR checks and bot review"
+      ],
+      "official_sources": [
+        "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+        "https://docs.oracle.com/iaas/Content/FreeTier/freetier.htm",
+        "https://www.oracle.com/cloud/free/"
+      ],
+      "candidates": [
+        {
+          "id": "oracle-cloud",
+          "status": "PR",
+          "pr_number": 367,
+          "reason": "Existing catalog record is vague and stale. Recovered 2 unique orphan-branch commits using a non-force two-parent merge with main, preserving all ancestry. PR #367 exact HEAD 6c04a6ebabf1792090ebf7706bc4a7013059b829 validation #40168931198 SUCCESS, PR Pages build #40168931180 SUCCESS (Deploy SKIPPED), eplus-bot APPROVED at exact HEAD. PR remains OPEN; do not claim correction catalogued until merged."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Oracle 4 OCPU / 24 GB always free for all accounts",
+          "reason": "Official 2026 Free Tier docs scope 2 OCPUs / 12 GB to Always Free tenancies; higher promotional or paid-tenancy A1 allowances are not the same entitlement."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "oracle-cloud",
+          "status": "reverify-correction-PR",
+          "official_source": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "reason": "Official 2026 documentation verifies 1,500 OCPU-hours and 9,000 GB-hours per month for Always Free tenancies; correction proposed in PR #367, not yet on main."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; Oracle compute remains cloud-vps."
     }
   ],
   "pending_reverification": [
@@ -2748,7 +2787,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 15/19. Ceph Self-Hosted Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED at main 03d68aa7c38cca256d57127cc25f16e11086ab06. Main production Pages at this SHA requires independent completion verification. No manual merge, deploy, force push, or bypass. UploadThing backlog alias matches catalogued uploadthing-2gb-app.",
+    "note": "Rotation 3 15/19, 291 services. Ceph Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head CI/review SUCCESS and auto-MERGED to main 03d68aa7c38cca256d57127cc25f16e11086ab06; main validation #40168745918 SUCCESS and Pages #40168745961 Build/Deploy SUCCESS. Historical orphan Oracle correction recovered without force push; PR #367 exact-head CI/review SUCCESS, OPEN pending permitted merge. No manual merge/deploy or approval bypass.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
