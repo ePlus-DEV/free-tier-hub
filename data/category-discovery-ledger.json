@@ -2547,7 +2547,7 @@
           "status": "catalogued",
           "issue_number": 361,
           "pr_number": 362,
-          "reason": "New distinct official ongoing free PHP/MySQL web hosting: 5 GB NVMe, unmetered fair-use bandwidth, SSL on subdomains, 10 MB file uploads; no card, commercial use check. Dedupe catalog, all candidate Issues/PRs and branches. Issue #361 JSON-only -> candidate queue #40161568205 SUCCESS -> PR #362 exact HEAD 094722e6b9f19a7d7b072962646dcb4bd02b3855 validation #40161582924 SUCCESS, Pages build #40161582923 SUCCESS (PR Deploy skipped, not counted PASS), eplus-bot approval and automated merge to main ff8e49967fd608c91879283a522331a3f1113154; Issue CLOSED. Main Pages deployment pending verification."
+          "reason": "New distinct official ongoing free PHP/MySQL web hosting: 5 GB NVMe, unmetered fair-use bandwidth, SSL on subdomains, 10 MB file uploads; no card, commercial use check. Dedupe catalog, all candidate Issues/PRs and branches. Issue #361 JSON-only -> candidate queue #40161568205 SUCCESS -> PR #362 exact HEAD 094722e6b9f19a7d7b072962646dcb4bd02b3855 validation #40161582924 SUCCESS, Pages build #40161582923 SUCCESS (PR Deploy skipped, not counted PASS), eplus-bot approval and automated merge to main ff8e49967fd608c91879283a522331a3f1113154; Issue CLOSED. Main Pages #40161610185 Build and Deploy SUCCESS at main ff8e49967fd608c91879283a522331a3f1113154; main validation #40161610205 SUCCESS."
         }
       ],
       "excluded": [
@@ -2630,7 +2630,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 13/19. Byet Host Free Issue #361 -> candidate queue #40161568205 SUCCESS -> PR #362 exact-head validation/build SUCCESS and eplus-bot APPROVED, auto-MERGED. Main ff8e49967fd608c91879283a522331a3f1113154 includes 289 services. Main Pages deployment must be verified separately; no manual merge/deploy. PR #292 Koyeb eligibility correction still OPEN with exact-head CI PASS and review; new signups require a paid plan per 2026-02-17 provider notice.",
+    "note": "Rotation 3 13/19. Byet Host Free Issue #361 -> candidate queue #40161568205 SUCCESS -> PR #362 exact-head validation/build SUCCESS and eplus-bot APPROVED, auto-MERGED. Main ff8e49967fd608c91879283a522331a3f1113154 includes 289 services. Main Pages #40161610185 Build and Deploy SUCCESS; main validation #40161610205 SUCCESS. No manual merge/deploy. PR #292 Koyeb eligibility correction still OPEN with exact-head CI PASS and review; new signups require a paid plan per 2026-02-17 provider notice.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
