@@ -3531,5 +3531,65 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "go-feature-flag-self-hosted",
+    "name": "GO Feature Flag Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted feature flag system with unlimited feature flags and no vendor-imposed seat, evaluation or monthly request limits; OpenFeature SDKs and stateless relay proxy.",
+    "watch_out": "Self-host and maintain the relay proxy, configuration storage and any supporting infrastructure; hosting, monitoring and maintenance costs are not included. Dedicated enterprise support and security-response SLA are paid separately.",
+    "pricing_url": "https://gofeatureflag.org/product/open_source",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "byet-host-free-web-hosting",
+    "name": "Byet Host Free Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "5 GB NVMe storage; unmetered bandwidth subject to fair use; PHP 8.3 and MySQL 8; free SSL for provider subdomains; custom domains and up to 10 MB file uploads.",
+    "watch_out": "Free hosting is intended for personal sites and experiments. No uptime SLA; high resource use, bulk email, proxy services and download/file-sharing hosting are prohibited. Three free accounts maximum per person; users must maintain their own backups. Commercial-use eligibility is not explicit.",
+    "pricing_url": "https://byet.host/free-hosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "valkey-self-hosted",
+    "name": "Valkey Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source in-memory key/value datastore for standalone or clustered self-hosting; no vendor-imposed instance, request, or storage quota.",
+    "watch_out": "You must provision and secure your own servers, memory, storage, backups and operations; no hosted free instance or managed SLA is included.",
+    "pricing_url": "https://valkey.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "ceph-self-hosted",
+    "name": "Ceph Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free, open-source distributed object, block, and file storage on self-managed hardware; no vendor-imposed storage, request, or user quota.",
+    "watch_out": "No managed storage capacity, hosting, or SLA is included. Supply and operate disks, servers, network, backups, monitoring and security; comply with LGPL 2.1/3.0 and bundled component licenses.",
+    "pricing_url": "https://ceph.io/en/discover/why-ceph/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "cerbos-pdp-self-hosted",
+    "name": "Cerbos PDP Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free-forever Apache-2.0 self-hosted policy decision point with YAML authorization policies, decision APIs, audit logs and Git/disk/cloud/DB policy storage; no vendor-enforced monthly decision or user quota.",
+    "watch_out": "Requires your own hosting, security updates and operations. Cerbos Hub PoC has separate hosted limits (100 monthly active principals); Hub collaboration, managed policy delivery, enterprise features and support are not included.",
+    "pricing_url": "https://www.cerbos.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
