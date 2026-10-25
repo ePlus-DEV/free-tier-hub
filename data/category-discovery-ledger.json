@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "ff8e49967fd608c91879283a522331a3f1113154",
+  "source_main_sha": "cc00e2368497e84164a7c6fcf3f285df96d44f37",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,11 +45,11 @@
     },
     {
       "category": "databases",
-      "service_count": 29,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 30,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 27,
       "open_catalog_candidate_issues": 0
     },
@@ -2568,6 +2568,60 @@
           "reason": "Already catalogued as infinityfree-free-hosting; do not duplicate."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "databases",
+      "rotation": "3 (14/19)",
+      "searches": [
+        "Valkey BSD-3-Clause license self-hosted official 2026",
+        "QuestDB Apache 2.0 open source self-hosted official pricing",
+        "KeyDB BSD-3-Clause self-hosted current status",
+        "Turso Free 2026 official pricing 100 databases 5 GB",
+        "Neon Free October 2026 1 GB per project official"
+      ],
+      "official_sources": [
+        "https://valkey.io/",
+        "https://github.com/valkey-io/valkey/blob/unstable/COPYING",
+        "https://questdb.com/download/",
+        "https://questdb.com/terms/",
+        "https://turso.tech/pricing",
+        "https://neon.com/blog/neon-free-plan-1-gb-per-project"
+      ],
+      "candidates": [
+        {
+          "id": "valkey-self-hosted",
+          "status": "catalogued",
+          "issue_number": 363,
+          "pr_number": 364,
+          "reason": "Distinct from Redis Cloud and Upstash Redis: BSD-3-Clause self-hosted key/value datastore, free ongoing commercial use, no vendor-imposed quotas; own infrastructure required, no card. Canonical JSON-only Issue #363 -> queue #40165371350 SUCCESS -> PR #364 exact HEAD 8d7b8d0868579ebf8357e3386ae88ead708996e3 validation #40165386477 SUCCESS, Pages PR build #40165386678 SUCCESS (PR Deploy SKIPPED), auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation #40165418447 SUCCESS; production Pages #40165418457 pending at ledger update; NOT verified deployed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "QuestDB Open Source",
+          "reason": "Official Apache-2.0 free self-hosted database verified, but not selected this run; defer for dedupe and product scope review."
+        },
+        {
+          "name": "KeyDB Self-Hosted",
+          "reason": "BSD licensed Redis-compatible self-hosted alternative; defer for separate official license/release verification."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "turso",
+          "status": "catalogued-reverified",
+          "official_source": "https://turso.tech/pricing",
+          "reason": "Official free tier 100 databases, 5 GB storage, 500M rows read and 10M rows written monthly; catalog matches."
+        },
+        {
+          "id": "neon",
+          "status": "catalogued-reverified",
+          "official_source": "https://neon.com/blog/neon-free-plan-1-gb-per-project",
+          "reason": "Provider 2026-10-02 confirms 1 GB storage per project; existing catalog already updated to 1 GB, no correction needed."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; Valkey, QuestDB, and KeyDB fit existing databases."
     }
   ],
   "pending_reverification": [
@@ -2625,12 +2679,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 289,
+    "total_services": 290,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 13/19. Byet Host Free Issue #361 -> candidate queue #40161568205 SUCCESS -> PR #362 exact-head validation/build SUCCESS and eplus-bot APPROVED, auto-MERGED. Main ff8e49967fd608c91879283a522331a3f1113154 includes 289 services. Main Pages #40161610185 Build and Deploy SUCCESS; main validation #40161610205 SUCCESS. No manual merge/deploy. PR #292 Koyeb eligibility correction still OPEN with exact-head CI PASS and review; new signups require a paid plan per 2026-02-17 provider notice.",
+    "note": "Rotation 3 14/19. Valkey Self-Hosted Issue #363 -> candidate queue #40165371350 SUCCESS -> PR #364 exact-head validation/build SUCCESS, auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation SUCCESS; Pages #40165418457 pending, NOT production-confirmed. No manual merge/deploy/force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2668,10 +2722,10 @@
       "search",
       "feature-flags",
       "tunneling-networking",
-      "webhooks-events"
+      "webhooks-events",
+      "databases"
     ],
     "rotation_3_categories_remaining": [
-      "databases",
       "storage",
       "auth-security",
       "observability",
