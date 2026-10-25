@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "4be4ed966a1e13156fe3f4b659d074911cd54d49",
+  "source_main_sha": "48336204b95a4ce419ab80e116846ab29075f68a",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -175,11 +175,11 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -3065,6 +3065,69 @@
         }
       ],
       "new_category_assessment": "No new category warranted: Woodpecker and Concourse belong to existing ci-cd."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "tunneling-networking",
+      "rotation": "4 (3/19)",
+      "searches": [
+        "Re-enumerated all 19 categories from current main scripts/catalog.mjs, counted 298 catalog records, 30 reviewed backlog entries, open candidate Issues, all-state Issue/PR history, branches and prior discovery ledger. Confirmed bore was absent from catalog, backlog, Issues, PRs and discovery history.",
+        "Compared official ekzhang/bore README and MIT LICENSE with hosted Pinggy Free, localhost.run Forever Free, rathole self-hosted and existing frp; confirmed self-hosted bore is a distinct eligible TCP tunnel with no vendor quotas.",
+        "Reverified existing zrok Hosted Free (5 GB/day, 25 environments, 50 share backends, no card) and ngrok Free (3 endpoints, 1 GB transfer, 20k HTTP requests; TCP requires card) against official current pages."
+      ],
+      "official_sources": [
+        "https://github.com/ekzhang/bore",
+        "https://github.com/ekzhang/bore/blob/main/LICENSE",
+        "https://pinggy.io/",
+        "https://localhost.run/docs/forever-free/",
+        "https://github.com/rathole-org/rathole",
+        "https://zrok.io/pricing/",
+        "https://ngrok.com/pricing",
+        "https://ngrok.com/blog/tcp-endpoints-require-verification"
+      ],
+      "candidates": [
+        {
+          "id": "bore-self-hosted",
+          "status": "catalogued",
+          "issue_number": 380,
+          "pr_number": 381,
+          "queue_run": 40196887774,
+          "reason": "New MIT-licensed self-hosted TCP tunnel; no vendor quotas/card, commercial permitted. CRITICAL: TCP payloads unencrypted by default; use TLS/VPN, optional shared secret only authenticates handshake. Canonical Issue #380 JSON-only -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070 validation #40196908159 SUCCESS and PR Pages build #40196908185 SUCCESS (PR deploy skipped), bot APPROVED at exact HEAD and GitHub-native auto-MERGED to main 48336204b95a4ce419ab80e116846ab29075f68a; Issue CLOSED, main validation #40196951620 SUCCESS. Production Pages run #40196951487 was still in progress when ledger was prepared."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Pinggy Free",
+          "reason": "Already mentioned in historical discovery ledger; eligible hosted 60-minute sessions and rotating subdomains, not genuinely new for this rotation. Defer separate candidate."
+        },
+        {
+          "name": "localhost.run Forever Free",
+          "reason": "Previously reported in discovery history; free no-signup short-lived tunnels, rotating domains and rate limits, not a new discovery."
+        },
+        {
+          "name": "rathole Self-Hosted",
+          "reason": "Already reported in discovery history; Apache-2.0 distinct tunnel, defer independent candidate."
+        },
+        {
+          "name": "frp Self-Hosted",
+          "reason": "Already catalogued as frp-self-hosted; not a duplicate of bore."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "zrok-hosted-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://zrok.io/pricing/",
+          "reason": "Official Free still 5 daily GB, 25 environments, 50 share backends and no card; catalog agrees."
+        },
+        {
+          "id": "ngrok-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://ngrok.com/pricing",
+          "reason": "Official Free still 3 online endpoints, 1 GB transfer and 20k HTTP requests; TCP requires card verification, existing credit_card=check is appropriate."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; bore belongs to the existing tunneling-networking category."
     }
   ],
   "pending_reverification": [
@@ -3126,12 +3189,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 297,
+    "total_services": 298,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 4: 2/19 categories reviewed. Latest main 4be4ed966a1e contains 297 services; 217 records older than seven days. Verified Woodpecker CI Self-Hosted official Apache-2.0 ongoing free software, commercial yes, no card; Issue #378 -> queue #40192996956 SUCCESS -> PR #379 exact head e8bdf286b54f1bdab0dfc106c80bd4963603cc66, validation #40193022275 SUCCESS and PR build #40193022282 SUCCESS (Deploy SKIPPED, not counted PASS), bot review APPROVED. Status at ledger update: catalogued; main deployment not claimed.",
+    "note": "Rotation 4: 3/19 categories reviewed. Main 48336204b95a4ce419ab80e116846ab29075f68a contains 298 services; 217 records older than seven days. bore Self-Hosted verified from official MIT license/README; Issue #380 -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070, validation/build SUCCESS, bot APPROVED at exact HEAD and automatically MERGED. Main validation SUCCESS; production Pages #40196951487 pending at ledger update. No manual merge, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3181,7 +3244,8 @@
     "rotation_4_started_utc": "2026-10-25",
     "rotation_4_categories_reviewed": [
       "cloud-vps",
-      "ci-cd"
+      "ci-cd",
+      "tunneling-networking"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3199,7 +3263,6 @@
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
