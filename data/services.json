@@ -3675,5 +3675,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "modal-starter-free-compute",
+    "name": "Modal Starter Free Compute",
+    "category": "serverless",
+    "plan": "monthly-credit",
+    "free_limit": "$30/month recurring compute credit for CPU, memory and GPU workloads; up to 3 workspace seats, 100 containers, 10 concurrent GPUs, 5 scheduled crons and 1 TiB/month included network egress.",
+    "watch_out": "Starter is $0/month plus metered usage: compute above $30/month and services outside the compute credit (including Shared Endpoints tokens) incur charges. Configure a workspace budget to control spending. Card requirement and unrestricted commercial use on Starter need confirmation.",
+    "pricing_url": "https://modal.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
