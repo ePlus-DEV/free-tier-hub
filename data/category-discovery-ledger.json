@@ -1,17 +1,17 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "516ed468a75eb770ea86f295054af307d399122f",
+  "source_main_sha": "df63cbc9a79dd7dc5c2052b695a9747edcdc9600",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 14,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "app-hosting",
@@ -2412,6 +2412,61 @@
           "reason": "Official current pricing confirms existing catalog 50,000 messages/month, 50 messages/second, 7-day retention; no correction needed."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "static-hosting",
+      "rotation": "3 (11/19)",
+      "searches": [
+        "Static hosting providers with permanent free plans and current 2026 official pricing: NudgeHost, Static.app, Kinsta/Sevalla, Cloudflare Pages, GitHub Pages",
+        "Official NudgeHost Free 10 links, 25 MB, permanent registered account, card and commercial restrictions",
+        "Static.app 7-day Free Trial on live pricing page versus older Free plan snippets; exclude trial-only",
+        "Deduplicate NudgeHost across 286 main services, 30 backlog entries, all Issue/PR search, branch search and prior ledger"
+      ],
+      "official_sources": [
+        "https://www.nudgehost.com/pricing",
+        "https://www.nudgehost.com/host/portfolio",
+        "https://www.nudgehost.com/compare/nudgehost-vs-github-pages",
+        "https://static.app/pricing",
+        "https://developers.cloudflare.com/pages/platform/limits/",
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+        "https://kinsta.com/changelog/paas-moving-to-sevalla/"
+      ],
+      "candidates": [
+        {
+          "id": "nudgehost-free-static-hosting",
+          "status": "PR",
+          "issue": 357,
+          "pr": 358,
+          "queue_run": 40154122098,
+          "reason": "Genuinely new provider absent from main/backlog/Issues/PRs/branches/prior ledger. Official ongoing Free: 10 active links/sites, 25 MB file/ZIP, 2 API keys at 20 RPM, no visitor cap; free registered account keeps links permanently; no card. Commercial rights check because Free marketed for personal files despite provider comparison describing no restrictions. Canonical Issue #357 JSON-only -> queue #40154122098 SUCCESS -> PR #358 exact HEAD 026a8de6082e5c732afb0f7d4d2f0a2e17fe6190 validation #40154137147 SUCCESS, Pages PR build #40154137199 SUCCESS (Deploy SKIPPED, not PASS); review APPROVED. Merge and main production deployment not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Static.app Free",
+          "reason": "Official live pricing page explicitly calls the $0 tier 'Free Trial' for 7 days. Earlier indexed page says Free; current evidence does not establish a continuing free plan. Excluded as trial-only pending provider clarification."
+        },
+        {
+          "name": "Kinsta Static Hosting",
+          "reason": "Provider moved static hosting to Sevalla on 2026-02-02; Sevalla Static already catalogued, avoid duplicate."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-pages",
+          "status": "catalogued-reverified",
+          "official_source": "https://developers.cloudflare.com/pages/platform/limits/",
+          "reason": "Current Free still 500 builds/month and 20,000 files/site, matching existing catalog."
+        },
+        {
+          "id": "github-pages",
+          "status": "catalogued-reverified",
+          "official_source": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+          "reason": "Official 1GB published site and 100GB/month soft bandwidth, with commercial hosting restriction; matches catalog."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: NudgeHost static HTML/ZIP sites belong to static-hosting."
     }
   ],
   "pending_reverification": [
@@ -2469,12 +2524,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 285,
+    "total_services": 287,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 3 now 9/19. OpenRouter Free Models Issue #353 -> PR #354 auto-MERGED; LangWatch historical PR #302 safely reconciled with a two-parent, non-force merge commit 2c698eb5e9694eef58a29c00c9eef700576299ff, exact-head validation/build SUCCESS and bot APPROVED -> auto-MERGED main f03d9bac557cceb664e3a71940ec229ad1ce8e02; both Issues CLOSED. Catalog 285 services. Main Pages #40146335078 CANCELLED; production LangWatch not verified. Existing workflow fix PR #328 awaits maintainer merge; no bypass.",
+    "note": "Rotation 3 11/19. NudgeHost Issue #357 -> queue SUCCESS -> PR #358 exact-head validation/build SUCCESS, approved, awaiting permitted auto-merge and independent main Pages verification. Static.app excluded: current official 7-day trial. Main df63cbc9a79dd7dc5c2052b695a9747edcdc9600 has 287 services; no direct main writes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2508,10 +2563,10 @@
       "serverless",
       "ai-assistants",
       "search",
-      "ai-ml"
+      "ai-ml",
+      "static-hosting"
     ],
     "rotation_3_categories_remaining": [
-      "static-hosting",
       "app-hosting",
       "databases",
       "storage",
