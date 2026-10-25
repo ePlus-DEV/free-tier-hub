@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "231a05649c88777e1e54b9c2d77ecbdf0675ee64",
+  "source_main_sha": "a1d1ac75da9515db5a715c537fb35cb8d328d3cf",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -105,11 +105,11 @@
     },
     {
       "category": "analytics",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -2831,6 +2831,67 @@
         }
       ],
       "new_category_assessment": "No new category needed: Jaeger belongs to observability."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "analytics",
+      "rotation": "3 (18/19)",
+      "searches": [
+        "Enumerated all 19 live categories from main scripts/catalog.mjs and scripts/site-data.mjs; deduplicated 294 catalog records, 30 durable backlog candidates, all current/open/closed Issues and PRs, branches and discovery history.",
+        "Rybbit official self-hosting and AGPL-3.0 business-use FAQ; compared the 7-day-only Rybbit Cloud trial, Countly Lite and Apache-2.0 Shynet.",
+        "Reverified existing PostHog Free (1M events/month, 5K replays) and Amplitude Free (2M events/month, no card) from official pricing."
+      ],
+      "official_sources": [
+        "https://rybbit.com/docs/self-hosting",
+        "https://rybbit.com/",
+        "https://rybbit.com/docs",
+        "https://rybbit.com/docs/managing-your-installation",
+        "https://rybbit.com/pricing",
+        "https://github.com/rybbit-io/rybbit",
+        "https://support.countly.com/hc/en-us/articles/360037501312-Countly-Licensing-FAQ",
+        "https://github.com/milesmcc/shynet",
+        "https://posthog.com/pricing",
+        "https://amplitude.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "rybbit-self-hosted",
+          "status": "catalogued",
+          "issue_number": 372,
+          "pr_number": 373,
+          "queue_run": 40180168098,
+          "reason": "New Rybbit AGPL-3.0 self-hosted analytics: vendor-free unlimited own-hosted usage, commercial allowed, no card; own VPS (>=2GB RAM recommended), ClickHouse/PostgreSQL, HTTPS and AGPL obligations. Distinct from 7-day cloud trial. Canonical JSON-only Issue #372 -> queue #40180168098 SUCCESS -> PR #373 exact HEAD 8e92631dfef665659e40106d29a80bd60771f8b1 validation #40180187598 SUCCESS, PR Pages build #40180187619 SUCCESS (Deploy SKIPPED, not counted PASS), eplus-bot APPROVED and auto-MERGED to main a1d1ac75da9515db5a715c537fb35cb8d328d3cf. Issue CLOSED; main deploy was pending at ledger preparation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Rybbit Cloud",
+          "reason": "Current official pricing has only a 7-day trial followed by paid Standard/Pro; not an ongoing free hosted plan. Only self-hosted Rybbit is eligible."
+        },
+        {
+          "name": "Countly Lite",
+          "reason": "Separate free self-hosted edition with modified AGPL-3.0 and restricted external service use; requires dedicated license review before cataloguing."
+        },
+        {
+          "name": "Shynet Self-Hosted",
+          "reason": "Apache-2.0 alternative identified and not yet catalogued; not delivered this run to avoid rushed independent operational/security verification."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "posthog",
+          "status": "catalogued-reverified",
+          "official_source": "https://posthog.com/pricing",
+          "reason": "Current 1M analytics events/month, 5K recordings/month, no card matches catalog."
+        },
+        {
+          "id": "amplitude-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://amplitude.com/pricing",
+          "reason": "Current Free plan 2M events/month, no card, unlimited seats; catalog core limits match."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: web/product analytics already belongs to analytics. Rybbit self-hosted is distinct from ineligible trial-only cloud offering."
     }
   ],
   "pending_reverification": [
@@ -2892,12 +2953,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 293,
+    "total_services": 294,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 17/19; Jaeger Issue #370 CLOSED, queue #40176119335 SUCCESS, PR #371 exact-head validation/build SUCCESS, APPROVED and auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64. Main validation #40176166450 SUCCESS, Pages #40176166433 Build and Deploy SUCCESS. Koyeb PR #292 reconciled by two-parent non-force commit 84bf0c6a9cd12861ebf1c7e8ceeee5783a62b112; exact-head validation #40176223604 and build #40176223567 SUCCESS, review APPROVED, still OPEN.",
+    "note": "Rotation 3 18/19: Rybbit Self-Hosted verified and delivered via Issue #372 -> queue #40180168098 SUCCESS -> PR #373 exact-head validation/build SUCCESS and bot APPROVED -> auto-MERGED to main a1d1ac75da9515db5a715c537fb35cb8d328d3cf; Issue CLOSED. Main validation/Pages deployment not yet confirmed at ledger preparation; never count pending/skipped as PASS. Next: queues-jobs.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2939,10 +3000,10 @@
       "databases",
       "storage",
       "auth-security",
-      "observability"
+      "observability",
+      "analytics"
     ],
     "rotation_3_categories_remaining": [
-      "analytics",
       "queues-jobs"
     ]
   }
