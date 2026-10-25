@@ -3579,5 +3579,53 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "cerbos-pdp-self-hosted",
+    "name": "Cerbos PDP Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free-forever Apache-2.0 self-hosted policy decision point with YAML authorization policies, decision APIs, audit logs and Git/disk/cloud/DB policy storage; no vendor-enforced monthly decision or user quota.",
+    "watch_out": "Requires your own hosting, security updates and operations. Cerbos Hub PoC has separate hosted limits (100 monthly active principals); Hub collaboration, managed policy delivery, enterprise features and support are not included.",
+    "pricing_url": "https://www.cerbos.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "jaeger-self-hosted",
+    "name": "Jaeger Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed tracing backend with collector, query API and UI; self-hosted deployments have no vendor-imposed monthly trace, user or instance quota.",
+    "watch_out": "Provide and operate your own compute, storage backend, backups and security. Default all-in-one in-memory storage loses traces on restart and is for development; production needs durable storage and appropriate scaling. No hosted free tracing service or managed SLA is included.",
+    "pricing_url": "https://www.jaegertracing.io/docs/2.22/getting-started/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "rybbit-self-hosted",
+    "name": "Rybbit Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted web and product analytics with pageviews, custom events, funnels and session replays; no vendor-imposed monthly event or pageview quota.",
+    "watch_out": "Requires your own VPS (2 GB RAM or more recommended), domain with HTTPS, Docker, PostgreSQL and ClickHouse; hosting, backups and maintenance are not included. AGPL-3.0 obligations apply; optional anonymous instance telemetry can be disabled. Rybbit Cloud offers a 7-day trial, NOT an ongoing free cloud plan.",
+    "pricing_url": "https://rybbit.com/docs/self-hosting",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
+    "id": "rabbitmq-open-source-self-hosted",
+    "name": "RabbitMQ Open Source Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted RabbitMQ message broker under MPL-2.0, with queues, streams, AMQP messaging and no vendor-imposed message, queue or connection quotas.",
+    "watch_out": "You supply servers, storage, backups, monitoring and upgrades; capacity is infrastructure-dependent. Community security patches and support are limited to currently supported release series; extended lifecycle and 24/7 vendor support require commercial Tanzu RabbitMQ. Distinct from CloudAMQP's managed Little Lemur tier.",
+    "pricing_url": "https://www.rabbitmq.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
