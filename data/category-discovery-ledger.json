@@ -3092,7 +3092,7 @@
           "issue_number": 380,
           "pr_number": 381,
           "queue_run": 40196887774,
-          "reason": "New MIT-licensed self-hosted TCP tunnel; no vendor quotas/card, commercial permitted. CRITICAL: TCP payloads unencrypted by default; use TLS/VPN, optional shared secret only authenticates handshake. Canonical Issue #380 JSON-only -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070 validation #40196908159 SUCCESS and PR Pages build #40196908185 SUCCESS (PR deploy skipped), bot APPROVED at exact HEAD and GitHub-native auto-MERGED to main 48336204b95a4ce419ab80e116846ab29075f68a; Issue CLOSED, main validation #40196951620 SUCCESS. Production Pages run #40196951487 was still in progress when ledger was prepared."
+          "reason": "New MIT-licensed self-hosted TCP tunnel; no vendor quotas/card, commercial permitted. CRITICAL: TCP payloads unencrypted by default; use TLS/VPN, optional shared secret only authenticates handshake. Canonical Issue #380 JSON-only -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070 validation #40196908159 SUCCESS and PR Pages build #40196908185 SUCCESS (PR deploy skipped), bot APPROVED at exact HEAD and GitHub-native auto-MERGED to main 48336204b95a4ce419ab80e116846ab29075f68a; Issue CLOSED, main validation #40196951620 SUCCESS. Production Pages #40196951487 first attempt failed with HTTP 400 due to a previous in-progress deployment (job #121179893173); safe retry of the failed job completed SUCCESS on attempt 2, with Test and build static site SUCCESS and Deploy SUCCESS at exact main 48336204b95a4ce419ab80e116846ab29075f68a. Issue #272 / PR #328 track the underlying concurrency risk; do not claim fixed."
         }
       ],
       "excluded": [
@@ -3194,7 +3194,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 4: 3/19 categories reviewed. Main 48336204b95a4ce419ab80e116846ab29075f68a contains 298 services; 217 records older than seven days. bore Self-Hosted verified from official MIT license/README; Issue #380 -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070, validation/build SUCCESS, bot APPROVED at exact HEAD and automatically MERGED. Main validation SUCCESS; production Pages #40196951487 pending at ledger update. No manual merge, direct main push or force push.",
+    "note": "Rotation 4: 3/19 categories reviewed. Main 48336204b95a4ce419ab80e116846ab29075f68a contains 298 services; 217 records older than seven days. bore Self-Hosted verified from official MIT license/README; Issue #380 -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070, validation/build SUCCESS, bot APPROVED at exact HEAD and automatically MERGED. Main validation SUCCESS; production Pages #40196951487 first attempt failed due to prior in-progress deployment, then safe failed-job retry attempt 2 Build/Deploy SUCCESS at exact main HEAD. Underlying concurrency issue #272 / PR #328 remains open. No manual merge, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
