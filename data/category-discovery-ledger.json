@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "a4c643fb19da46af47cae8cb6aef8b1c7d01d6ed",
+  "source_main_sha": "3d56eb1382288546b776ed665bcecb1e4a606d75",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -85,13 +85,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
@@ -3596,10 +3596,10 @@
       "candidates": [
         {
           "id": "openbao-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 405,
           "pr_number": 407,
-          "reason": "Official MPL-2.0 ongoing free self-hosted secrets management, commercial allowed, no vendor card. Requires secure operations and self-funded infrastructure. Issue #405 -> PR #407 exact head 4514c32d8a6914a4e7631bc6f0a76f8eb0408c5: validation #40244150046 SUCCESS, build #40244150149 SUCCESS, bot APPROVED; PR remains OPEN, mergeable=false after #406 merged; requires non-force reconciliation. PR Deploy SKIPPED (not a production pass)."
+          "reason": "Official MPL-2.0 free self-hosted secrets manager; commercial use allowed, no software card. Issue #405 -> PR #407 exact-head 67a3f2157d866bf6f507e850955d686dfc5e8a8f validation #40244606240 SUCCESS, build #40244606228 SUCCESS, review APPROVED at exact head, GitHub-native auto-MERGED 3d56eb1382288546b776ed665bcecb1e4a606d75. Issue CLOSED; main 311 includes entry. PR Deploy SKIPPED; do not claim production deploy."
         }
       ],
       "excluded": [],
@@ -3665,12 +3665,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 310,
+    "total_services": 311,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 4: 15/19 categories. Main 310 services. Kopia #404 -> PR #406 auto-merged after exact-head CI success and bot approval. OpenBao #405 -> PR #407 exact-head CI success and bot approval; mergeable=false pending safe non-force reconciliation; not yet merged. PR deploy skipped is not production success. No direct main push, force push or manual PR merge.",
+    "note": "Rotation 4: 15/19 categories; main 311 services. Kopia #404 -> PR #406 auto-merged after exact-head CI and approval. OpenBao #405 -> PR #407 safely reconciled with non-force two-parent merge commit 67a3f2157d866bf6f507e850955d686dfc5e8a8f, exact-head validation #40244606240 SUCCESS, build #40244606228 SUCCESS (Deploy SKIPPED), bot re-approved at 23:24 UTC and auto-MERGED as 3d56eb1382288546b776ed665bcecb1e4a606d75; both Issues CLOSED. Production main Pages deployment requires independent check.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
