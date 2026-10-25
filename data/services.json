@@ -3735,5 +3735,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "smee-io-self-hosted",
+    "name": "Smee.io Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook relay for development and testing; no software subscription or vendor-imposed usage quota; optional public hosted development channels.",
+    "watch_out": "Development/testing only: not designed for production; channels are unauthenticated and anyone with the URL can inspect webhook payloads. Self-hosting and optional Redis/infrastructure incur costs; messages are forwarded to connected clients, not durably queued.",
+    "pricing_url": "https://github.com/probot/smee.io",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
