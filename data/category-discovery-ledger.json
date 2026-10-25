@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "fe7891f915939ee6f88d84e0a00c0c488964957b",
+  "source_main_sha": "a4c643fb19da46af47cae8cb6aef8b1c7d01d6ed",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -55,7 +55,7 @@
     },
     {
       "category": "storage",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -91,7 +91,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "observability",
@@ -145,7 +145,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 16,
+      "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -3384,6 +3384,176 @@
           "reason": "Already represented."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "ai-ml",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category ai-ml.",
+        "Deduplicated vllm-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://github.com/vllm-project/vllm",
+        "https://github.com/vllm-project/vllm/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "vllm-self-hosted",
+          "status": "catalogued",
+          "issue_number": 392,
+          "pr_number": 393,
+          "reason": "Apache-2.0 self-hosted model serving, commercial use allowed; GPU/CPU and model licenses separate; automated PR #393 merged."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "app-hosting",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category app-hosting.",
+        "Deduplicated coolify-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://coolify.io/pricing",
+        "https://github.com/coollabsio/coolify"
+      ],
+      "candidates": [
+        {
+          "id": "coolify-self-hosted",
+          "status": "catalogued",
+          "issue_number": 396,
+          "pr_number": 397,
+          "reason": "Official self-hosted Apache-2.0 free plan; infrastructure paid separately; automated PR #397 merged."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "queues-jobs",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category queues-jobs.",
+        "Deduplicated bullmq-open-source-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://bullmq.io/",
+        "https://github.com/taskforcesh/bullmq/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "bullmq-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 398,
+          "pr_number": 399,
+          "reason": "MIT self-hosted job queue; Redis and worker infrastructure costs apply; automated PR #399 merged."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "static-hosting",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category static-hosting.",
+        "Deduplicated digitalocean-app-platform-static-free by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://www.digitalocean.com/pricing/app-platform",
+        "https://docs.digitalocean.com/platform/billing/manage-payment-methods/"
+      ],
+      "candidates": [
+        {
+          "id": "digitalocean-app-platform-static-free",
+          "status": "catalogued",
+          "issue_number": 400,
+          "pr_number": 401,
+          "reason": "Official ongoing 3 free static sites and 1 GiB transfer per app monthly; payment method needed; card/commercial flags check; automated PR #401 merged."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "feature-flags",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category feature-flags.",
+        "Deduplicated flagd-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://flagd.dev/",
+        "https://github.com/open-feature/flagd/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "flagd-self-hosted",
+          "status": "catalogued",
+          "issue_number": 402,
+          "pr_number": 403,
+          "reason": "Apache-2.0 self-hosted feature flag evaluator, no vendor quota; no built-in management UI; automated PR #403 merged."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "storage",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category storage.",
+        "Deduplicated kopia-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://kopia.io/docs/installation/",
+        "https://kopia.io/docs/features/",
+        "https://github.com/kopia/kopia/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "kopia-self-hosted",
+          "status": "catalogued",
+          "issue_number": 404,
+          "pr_number": 406,
+          "reason": "Official Apache-2.0 free self-hosted encrypted backup and server mode; no card/software fee, commercial allowed; repository password is shared; PR #406 exact head 071a57f214b4bdef5204399c93ab20dce1a65ef9 validation #40244148125 SUCCESS and PR build #40244148124 SUCCESS, bot APPROVED; auto-merged=true."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "auth-security",
+      "rotation": "4",
+      "searches": [
+        "Enumerated all 19 actual main categories and 310 current services; checked all-state Issue/PR search, branches and 30-item reviewed backlog; selected category auth-security.",
+        "Deduplicated openbao-self-hosted by catalog ID, existing Issue/PR and provider identity before creating the canonical candidate Issue."
+      ],
+      "official_sources": [
+        "https://openbao.org/docs/",
+        "https://openbao.org/docs/what-is-openbao/",
+        "https://github.com/openbao/openbao/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "openbao-self-hosted",
+          "status": "pr",
+          "issue_number": 405,
+          "pr_number": 407,
+          "reason": "Official MPL-2.0 self-hosted secrets management; commercial allowed, no card/software fee; secure deployment costs extra; PR #407 exact head 4514c32d8a6914a4e7631bc6f0a76f8eb0408c5c validation #40244150046 SUCCESS and PR build #40244150149 SUCCESS, bot APPROVED; mergeable=false after #406 merged; safe non-force reconciliation required; no manual merge. PR Deploy SKIPPED, not production success."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema or category additions."
     }
   ],
   "pending_reverification": [
@@ -3445,14 +3615,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 303,
+    "total_services": 310,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "Rotation 4: 7/19 categories reviewed. Quickwit Self-Hosted Issue #390 -> queue #40216239043 SUCCESS -> PR #391 exact HEAD 613e166ac253c62335ff3a152447cbbc8b3fc5e5 validation/build SUCCESS and eplus-bot APPROVED; GitHub-native auto-MERGED; main e03bcb00b82104fc9583529c70b9885bc9b4d58c contains 303 services; production Pages deployment pending separate verification. No manual merge/deploy, direct main push, or force push.",
+    "open_catalog_candidate_issues": 1,
+    "unmatched_backlog": [],
+    "note": "Rotation 4: 15/19 categories. Current main has 310 services. New Kopia #404 -> PR #406 auto-merged with exact-head validation/build success and approved review. OpenBao #405 -> PR #407 exact-head validation/build success and approved review; PR not merged, currently conflict after Kopia merged; non-force ancestry-preserving reconcile required. PR deploy skipped, not a production success. No direct main push, manual merge, or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3507,21 +3675,21 @@
       "serverless",
       "dns-cdn",
       "ai-assistants",
-      "search"
+      "search",
+      "ai-ml",
+      "webhooks-events",
+      "app-hosting",
+      "queues-jobs",
+      "static-hosting",
+      "feature-flags",
+      "storage",
+      "auth-security"
     ],
     "rotation_4_categories_remaining": [
-      "static-hosting",
-      "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
       "observability",
-      "analytics",
-      "ai-ml",
-      "queues-jobs",
-      "feature-flags",
-      "webhooks-events"
+      "analytics"
     ]
   }
 }
