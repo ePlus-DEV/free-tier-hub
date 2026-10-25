@@ -3555,5 +3555,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "valkey-self-hosted",
+    "name": "Valkey Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source in-memory key/value datastore for standalone or clustered self-hosting; no vendor-imposed instance, request, or storage quota.",
+    "watch_out": "You must provision and secure your own servers, memory, storage, backups and operations; no hosted free instance or managed SLA is included.",
+    "pricing_url": "https://valkey.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
