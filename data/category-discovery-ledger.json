@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "e1db1c89782ee6cc2d19cc9728db56ae5293e2f2",
+  "source_main_sha": "e03bcb00b82104fc9583529c70b9885bc9b4d58c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -157,11 +157,11 @@
     },
     {
       "category": "search",
-      "service_count": 11,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
@@ -3292,6 +3292,59 @@
         }
       ],
       "new_category_assessment": "No new category warranted; self-hosted multi-model chat interface belongs to ai-assistants."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "search",
+      "rotation": "4 (7/19)",
+      "searches": [
+        "Enumerated all 19 categories dynamically from current main scripts/catalog.mjs and 303-service data/services.json; deduplicated 30 reviewed backlog records, all-state Issues/PRs, and branch/ledger history. Selected under-covered search (11 services before delivery), not already reviewed in rotation 4.",
+        "Compared Quickwit, Vespa and Sonic open-source self-hosted search engines from official GitHub/docs. Quickwit absent from catalog/Issues/PRs and discovery ledger; Vespa and Sonic deferred to future category rotations rather than classified ineligible.",
+        "Verified Quickwit official installation documentation and GitHub repository: Apache-2.0 open-source, self-hosted Linux search for observability, no vendor software quota or card, commercial permitted; own servers/storage cost money.",
+        "Reverified existing Upstash Search Free official 20K monthly queries / 200K documents and SerpApi Free 250 searches/month / 50 hourly; no correction needed. Issue #390 JSON-only -> queue #40216239043 SUCCESS -> PR #391 exact-head validation/build SUCCESS, eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED, Issue CLOSED, 303 services on main."
+      ],
+      "official_sources": [
+        "https://quickwit.io/docs/get-started/installation",
+        "https://github.com/quickwit-oss/quickwit",
+        "https://github.com/vespa-engine/vespa",
+        "https://github.com/syllogy/sonic_search",
+        "https://upstash.com/pricing/search",
+        "https://serpapi.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "quickwit-self-hosted",
+          "status": "catalogued",
+          "issue_number": 390,
+          "pr_number": 391,
+          "reason": "Official Apache-2.0 self-hosted search, free software and commercial use; operator-funded infrastructure. Issue #390 -> queue #40216239043 SUCCESS -> PR #391 exact HEAD 613e166ac253c62335ff3a152447cbbc8b3fc5e5: validation #40216263855 SUCCESS, PR Pages build #40216263821 SUCCESS (Deploy SKIPPED, not PASS); eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED; Issue CLOSED. Main e03bcb00b82104fc9583529c70b9885bc9b4d58c contains Quickwit. Production Pages deployment awaiting independent confirmation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Vespa Self-Hosted",
+          "reason": "Official Apache-2.0 self-hosted search is potentially eligible; deferred for separate full provider validation in future rotation, not marked ineligible."
+        },
+        {
+          "name": "Sonic Search Self-Hosted",
+          "reason": "Open-source search candidate; deferred for independent current upstream/maintenance and licensing verification, not marked ineligible."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "upstash-search",
+          "status": "catalogued-reverified",
+          "official_source": "https://upstash.com/pricing/search",
+          "reason": "Official Free remains $0 with 20K monthly queries and 200K max documents; no catalog correction."
+        },
+        {
+          "id": "serpapi-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://serpapi.com/pricing",
+          "reason": "Official Free remains $0, 250 searches/month, 50 searches/hour; commercial terms still check, no catalog correction."
+        }
+      ],
+      "new_category_assessment": "No new category needed: self-hosted log/search engine fits existing search category."
     }
   ],
   "pending_reverification": [
@@ -3353,14 +3406,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 302,
+    "total_services": 303,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
-    "note": "Rotation 4: 6/19 categories reviewed. LibreChat Self-Hosted Issue #388 -> PR #389 exact-head validation/build SUCCESS, review APPROVED, GitHub-native auto-MERGED; main e1db1c89782ee6cc2d19cc9728db56ae5293e2f2 has 302 services. PR Deploy SKIPPED; main production Pages deployment not yet verified. No manual merge, direct main push, or force push.",
+    "note": "Rotation 4: 7/19 categories reviewed. Quickwit Self-Hosted Issue #390 -> queue #40216239043 SUCCESS -> PR #391 exact HEAD 613e166ac253c62335ff3a152447cbbc8b3fc5e5 validation/build SUCCESS and eplus-bot APPROVED; GitHub-native auto-MERGED; main e03bcb00b82104fc9583529c70b9885bc9b4d58c contains 303 services; production Pages deployment pending separate verification. No manual merge/deploy, direct main push, or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3414,7 +3467,8 @@
       "tunneling-networking",
       "serverless",
       "dns-cdn",
-      "ai-assistants"
+      "ai-assistants",
+      "search"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3427,7 +3481,6 @@
       "analytics",
       "ai-ml",
       "queues-jobs",
-      "search",
       "feature-flags",
       "webhooks-events"
     ]
