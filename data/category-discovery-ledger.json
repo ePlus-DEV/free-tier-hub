@@ -58,9 +58,7 @@
       "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -3077,10 +3075,8 @@
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "Rotation 4 began with lowest-coverage cloud-vps (3->4). EUserv VS2-free Issue #376 -> queue #40188449935 SUCCESS -> PR #377 exact-head validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED to main ae3818660fe410f4261a35241043cd7d9f91b113; main validation #40188504186 SUCCESS. Main Pages #40188504164 pending at update, not counted PASS. Next prioritize ci-cd (6), then least-recently-reviewed low-count categories; 217 catalog records older than 7 days.",
+    "unmatched_backlog": [],
+    "note": "Rotation 4 began with lowest-coverage cloud-vps (3->4). EUserv VS2-free Issue #376 -> queue #40188449935 SUCCESS -> PR #377 exact-head validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED to main ae3818660fe410f4261a35241043cd7d9f91b113; main validation #40188504186 SUCCESS. Main Pages #40188504164 pending at update, not counted PASS. Next prioritize ci-cd (6), then least-recently-reviewed low-count categories; 217 catalog records older than 7 days. Durable backlog ID uploadthing-free is a catalogued product alias of uploadthing-2gb-app (not an unmatched candidate).",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
