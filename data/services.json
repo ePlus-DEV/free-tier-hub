@@ -3579,5 +3579,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "cerbos-pdp-self-hosted",
+    "name": "Cerbos PDP Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free-forever Apache-2.0 self-hosted policy decision point with YAML authorization policies, decision APIs, audit logs and Git/disk/cloud/DB policy storage; no vendor-enforced monthly decision or user quota.",
+    "watch_out": "Requires your own hosting, security updates and operations. Cerbos Hub PoC has separate hosted limits (100 monthly active principals); Hub collaboration, managed policy delivery, enterprise features and support are not included.",
+    "pricing_url": "https://www.cerbos.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
