@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "a1d1ac75da9515db5a715c537fb35cb8d328d3cf",
+  "source_main_sha": "ca36dc194bff214314a9bdbdcb7d3427be7f7a29",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -145,11 +145,11 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 15,
       "open_catalog_candidate_issues": 0
     },
@@ -2892,6 +2892,63 @@
         }
       ],
       "new_category_assessment": "No new category warranted: web/product analytics already belongs to analytics. Rybbit self-hosted is distinct from ineligible trial-only cloud offering."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "queues-jobs",
+      "rotation": "3 (19/19, complete)",
+      "searches": [
+        "Enumerated all 19 categories from main scripts/catalog.mjs and site-data.mjs; recomputed all 295 per-category counts and stale verification, compared 30 durable backlog entries, candidate Issues/PRs and 13 pre-delivery branches.",
+        "Verified RabbitMQ official open-source MPL-2.0 license, current 4.4 documentation and support policy; distinguished self-hosted broker from CloudAMQP managed Little Lemur.",
+        "Compared BullMQ MIT self-hosted job queues and Temporal MIT self-hosted workflows; deferred as separate products rather than duplicating RabbitMQ.",
+        "Reverified CloudAMQP Little Lemur 1M messages/month, 20 connections, 100 queues, 10K queued messages, no card, and Upstash QStash 1K deliveries/day, 50 GB/month from official pricing."
+      ],
+      "official_sources": [
+        "https://www.rabbitmq.com/",
+        "https://www.rabbitmq.com/docs",
+        "https://www.rabbitmq.com/release-information",
+        "https://www.rabbitmq.com/blog/2024/05/31/new-community-support-policy",
+        "https://github.com/rabbitmq/rabbitmq-server/blob/main/LICENSE",
+        "https://bullmq.io/",
+        "https://go.temporal.io/",
+        "https://www.cloudamqp.com/plans/",
+        "https://upstash.com/pricing/qstash"
+      ],
+      "candidates": [
+        {
+          "id": "rabbitmq-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 374,
+          "pr_number": 375,
+          "queue_run": 40184618745,
+          "reason": "Official free MPL-2.0 RabbitMQ OSS self-hosted with no vendor-imposed quotas, no card, commercial use allowed. Different from managed CloudAMQP. Canonical JSON-only Issue #374 -> queue #40184618745 SUCCESS -> PR #375 exact HEAD 3d6d664d3bba292785f04508a296de765a2987a9 validation #40184637555 SUCCESS, PR build #40184637556 SUCCESS (Deploy SKIPPED, not PASS), eplus-bot APPROVED at exact HEAD and auto-MERGED to main ca36dc194bff214314a9bdbdcb7d3427be7f7a29. Issue CLOSED, main validation #40184668388 SUCCESS; Pages #40184668315 pending at ledger update."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "BullMQ Open Source",
+          "reason": "MIT-licensed Redis-backed background jobs, verified as separate possible future candidate; not delivered this run pending own feature/operational review."
+        },
+        {
+          "name": "Temporal Self-Hosted",
+          "reason": "MIT-licensed durable execution service, distinct from RabbitMQ; requires separate infrastructure/licensing/duplicate review before delivery."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudamqp-little-lemur",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.cloudamqp.com/plans/",
+          "reason": "Official free managed RabbitMQ plan remains 1M messages/month, 20 connections, 100 queues, 10K queued messages, no card."
+        },
+        {
+          "id": "upstash-qstash",
+          "status": "catalogued-reverified",
+          "official_source": "https://upstash.com/pricing/qstash",
+          "reason": "Official ongoing Free 1,000 delivery attempts/day and 50 GB monthly bandwidth match core catalog limits."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; RabbitMQ and other messaging brokers belong to queues-jobs."
     }
   ],
   "pending_reverification": [
@@ -2953,12 +3010,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 294,
+    "total_services": 295,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 18/19: Rybbit Self-Hosted verified and delivered via Issue #372 -> queue #40180168098 SUCCESS -> PR #373 exact-head validation/build SUCCESS and bot APPROVED -> auto-MERGED to main a1d1ac75da9515db5a715c537fb35cb8d328d3cf; Issue CLOSED. Main validation/Pages deployment not yet confirmed at ledger preparation; never count pending/skipped as PASS. Next: queues-jobs.",
+    "note": "Rotation 3 completed 19/19. RabbitMQ OSS self-hosted Issue #374 -> queue #40184618745 SUCCESS -> PR #375 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED to main ca36dc194bff214314a9bdbdcb7d3427be7f7a29; main validation #40184668388 SUCCESS. Pages deploy #40184668315 still pending at ledger update (not PASS). Next rotation prioritize low-count cloud-vps (3) and least recently reviewed categories; avoid duplicates and review 217 stale entries.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3001,10 +3058,9 @@
       "storage",
       "auth-security",
       "observability",
-      "analytics"
-    ],
-    "rotation_3_categories_remaining": [
+      "analytics",
       "queues-jobs"
-    ]
+    ],
+    "rotation_3_categories_remaining": []
   }
 }
