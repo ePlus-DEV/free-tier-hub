@@ -3747,5 +3747,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "coolify-self-hosted",
+    "name": "Coolify Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free forever self-hosted PaaS with unlimited app, database and service deployments, connected servers and team members; all software features included.",
+    "watch_out": "Requires your own server/VPS and payment for infrastructure, storage, network and third-party services. Managed Coolify Cloud is paid; Apache-2.0 license applies to self-hosted software.",
+    "pricing_url": "https://coolify.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
