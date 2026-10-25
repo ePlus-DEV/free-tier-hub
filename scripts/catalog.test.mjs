@@ -25,6 +25,36 @@ function fixture(fn) {
   }
 }
 
+test("CI/CD category and self-hosted Crow CI entry are correctly classified", () => {
+  const entries = sourceData.filter(item => item.category === "ci-cd");
+  const baseline = ["github-actions", "gitlab-ci", "circleci-free", "crow-ci"];
+  for (const id of baseline) {
+    assert.ok(entries.some(item => item.id === id), `Required CI/CD entry ${id} must remain classified`);
+  }
+  assert.equal(new Set(entries.map(item => item.id)).size, entries.length,
+    "CI/CD service IDs must remain unique");
+  assert.ok(CATEGORIES.includes("ci-cd"));
+  assert.equal(sourceData.find(item => item.id === "crow-ci").pricing_url, "https://crowci.dev/");
+  assert.equal(sourceData.filter(item => item.category === "developer-tools")
+    .some(item => ["github-actions", "gitlab-ci", "circleci-free"].includes(item.id)), false);
+});
+
+test("new CI/CD entries synchronize without changing the baseline category invariants", () => {
+  fixture(root => {
+    const servicesPath = path.join(root, "data/services.json");
+    const data = JSON.parse(readFileSync(servicesPath, "utf8"));
+    const crow = data.find(item => item.id === "crow-ci");
+    assert.ok(crow, "Crow CI baseline fixture must exist");
+    data.push({ ...crow, id: "node-test-ci-provider", name: "Node Test CI Provider" });
+    writeFileSync(servicesPath, JSON.stringify(data, null, 2) + "\n");
+    assert.throws(() => check(root), /Out of sync/);
+    assert.ok(sync(root) >= 1);
+    assert.equal(check(root), CATEGORIES.length + 1);
+    assert.match(readFileSync(path.join(root, "docs/ci-cd.md"), "utf8"), /Node Test CI Provider/);
+    assert.equal(sync(root), 0);
+  });
+});
+
 test("Node generator matches committed Markdown exactly", () => {
   assert.equal(check(ROOT), CATEGORIES.length + 1);
   assert.equal(render(ROOT).size, CATEGORIES.length + 1);

@@ -1,31 +1,37 @@
 {
-  "as_of_utc": "2026-10-17",
-  "source_main_sha": "792f894c19f51293817083bffa3aca3df756a8bc",
-  "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
+  "as_of_utc": "2026-10-24",
+  "source_main_sha": "fda21202c66405c5ccc3445fba3029106f40c73b",
+  "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-15",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 10,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "app-hosting",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-12",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "serverless",
-      "service_count": 3,
-      "latest_catalog_verification": "2026-09-22",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17"
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 3,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "cloud-vps",
@@ -33,121 +39,159 @@
       "latest_catalog_verification": "2026-09-22",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-24",
+      "stale_over_7d": 3,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "databases",
-      "service_count": 27,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 27,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "storage",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-16",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
-      "last_discovery_review": null
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 39,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 37,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-24",
+      "stale_over_7d": 35,
+      "open_catalog_candidate_issues": 0
+    },
+    {
+      "category": "ci-cd",
+      "service_count": 5,
+      "latest_catalog_verification": "2026-10-24",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-24",
+      "stale_over_7d": 2,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "auth-security",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-16",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 16,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
-      "service_count": 25,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 26,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-24",
+      "stale_over_7d": 25,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "analytics",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "dns-cdn",
-      "service_count": 2,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-17"
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 2,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 7,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 4,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "queues-jobs",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 14,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "search",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 7,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "feature-flags",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 12,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "tunneling-networking",
-      "service_count": 2,
-      "latest_catalog_verification": "2026-09-23",
+      "service_count": 6,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-24",
+      "stale_over_7d": 2,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "webhooks-events",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-23",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-23",
+      "stale_over_7d": 9,
+      "open_catalog_candidate_issues": 0
     }
   ],
   "discovery_log": [
@@ -235,6 +279,895 @@
           "reason": "Official free plan found; separate provider due diligence and dedupe before issue delivery."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "cloud-vps",
+      "official_sources": [
+        "https://vyce.cloud/",
+        "https://cloud.google.com/free",
+        "https://www.oracle.com/cloud/free/"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Vyce.Cloud VPS-Mini",
+          "reason": "Provider advertises 2 GB RAM, 1 vCore, 6 GB NVMe, no card, but requires daily renewal and capacity is first-come; powered-off VPS is deleted after three days. Not delivered pending independent service reliability and eligibility review."
+        },
+        {
+          "name": "Google Compute Engine and Oracle Always Free",
+          "reason": "Already represented in catalog; do not duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ai-assistants",
+      "official_sources": [
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai/usage-limits",
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai",
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai/approach-to-ai",
+        "https://duckduckgo.com/duckai/privacy-terms",
+        "https://brave.com/leo/"
+      ],
+      "candidates": [
+        {
+          "id": "duck-ai-free",
+          "status": "catalogued",
+          "reason": "New eligible free chat service, no login or card, provider confirms recurring daily free cap but not numeric quota. Created Issue #230, queue produced PR #231; exact-head validation/build passed and PR merged automatically. Commercial use marked check.",
+          "issue": 230,
+          "pr": 231
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Brave Leo Free",
+          "reason": "Provider confirms free tier, no signup and rate limits; defer to future rotation to verify current feature limits, usage policy and catalog/Issue/PR deduplication."
+        },
+        {
+          "name": "Poe Free",
+          "reason": "Free compute-point allowance varies and is not numerically documented by provider; defer precise limit claims."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "feature-flags",
+      "official_sources": [
+        "https://feat.so/pricing/",
+        "https://docs.feat.so/"
+      ],
+      "candidates": [
+        {
+          "id": "feat-feature-flags-free",
+          "status": "catalogued",
+          "reason": "Reverified official ongoing free plan: 7,500 MAU, 100 server connections, 2 projects, unlimited flags/seats/environments; no credit card and provider explicitly supports production. Canonical Issue #235 generated PR #236; exact-head CI passed, initial auto-approval raced pending build and failed closed, then safe retry passed and GitHub Actions merged.",
+          "issue": 235,
+          "pr": 236
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ci-cd",
+      "official_sources": [
+        "https://crowci.dev/",
+        "https://docs.gitlab.com/ci/pipelines/compute_minutes/",
+        "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+        "https://circleci.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "crow-ci",
+          "status": "pr",
+          "pr_number": 215,
+          "reason": "Safe ancestry-preserving reconciliation of reviewed PR #215; Crow CI is Apache-2.0 self-hosted with no software build-minute cap. Correct official URL to crowci.dev and update CircleCI Free to 6,000 small-Docker build minutes/month. No direct main push or manual PR merge."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Crow CI hosted runners",
+          "reason": "Self-hosted only; no managed free hosted runner allowance."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "search",
+      "official_sources": [
+        "https://brave.com/search/api/",
+        "https://api-dashboard.search.brave.com/documentation/pricing",
+        "https://api-dashboard.search.brave.com/documentation/resources/help-feedback",
+        "https://searchapi.io/pricing",
+        "https://jina.ai/api-dashboard/pricing/",
+        "https://www.linkup.so/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "brave-search-api-monthly-credit",
+          "status": "catalogued",
+          "issue": 237,
+          "reason": "Verified official recurring $5 monthly credit, card required, commercial terms check. Canonical Issue #237 created; queue succeeded, generated PR #238, exact-head validation/build PASS, approved and automatically merged; main catalog now includes this service.",
+          "pr": 238
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SearchApi.io",
+          "reason": "Official pricing offers 100 signup trial requests; not an ongoing free plan."
+        },
+        {
+          "name": "Jina AI Toy Experiment",
+          "reason": "Official 10M free tokens are one-time and noncommercial CC-BY-NC; not recurring."
+        },
+        {
+          "name": "Linkup",
+          "reason": "Signup credits versus recurring monthly credit are ambiguous across sources; defer until provider confirms."
+        },
+        {
+          "name": "Tavily Researcher",
+          "reason": "Previously reported pending candidate; reverify and deduplicate before new Issue."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "tunneling-networking",
+      "official_sources": [
+        "https://www.twingate.com/pricing",
+        "https://www.twingate.com/home",
+        "https://pinggy.io/",
+        "https://localhost.run/"
+      ],
+      "candidates": [
+        {
+          "id": "twingate-starter-free",
+          "status": "catalogued",
+          "issue_number": 240,
+          "reason": "Canonical Issue #240 triggered catalog-candidate-queue and PR #241 (exact head d76de2fc0eeb5c7004e5027ace7eb1f0cb6a5179). Both exact-head validation and build jobs succeeded, review approved by eplus-bot, PR auto-merged; service verified in main catalog at 26437aba13cb44f9b0522d7b696e4d4756cc9182. Deploy job was skipped and is not counted as PASS.",
+          "candidate": {
+            "id": "twingate-starter-free",
+            "name": "Twingate Starter Free",
+            "category": "tunneling-networking",
+            "plan": "ongoing",
+            "free_limit": "Up to 5 users, 50 Resources, 10 Remote Networks and 5 devices per user; secure remote access with split tunneling and conditional access.",
+            "watch_out": "Starter has community support only and limited advanced access controls; premium identity, service accounts and device posture features require paid plans. Verify payment-card requirements during signup. The separate startup Enterprise promotion is time-limited and is not this free tier.",
+            "pricing_url": "https://www.twingate.com/pricing",
+            "credit_card": "check",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-23"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Pinggy Free",
+          "reason": "Official free-forever 60-minute tunnel sessions with random URLs; eligible for later deduplicated review, not selected for this run."
+        },
+        {
+          "name": "localhost.run Free",
+          "reason": "Official forever-free ephemeral SSH tunnels with HTTPS; eligible for later deduplicated review, not selected for this run."
+        },
+        {
+          "name": "Twingate Enterprise Startup Promotion",
+          "reason": "One-year promotion only, not eligible as an ongoing free tier; Starter is separate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "webhooks-events",
+      "official_sources": [
+        "https://webhookrelay.com/pricing/",
+        "https://webhookrelay.com/",
+        "https://webhooks.cc/docs/plans-limits",
+        "https://hookdeck.com/pricing",
+        "https://www.webhook.co/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "webhookrelay-free-starter",
+          "status": "catalogued",
+          "issue_number": 243,
+          "pr_number": 244,
+          "reason": "Verified 150 webhook deliveries/month, one input, two destinations, no card; commercial terms check. Canonical Issue #243 -> queue SUCCESS -> PR #244 exact-head validation/build SUCCESS, approved and automatically merged."
+        },
+        {
+          "id": "webhooks-cc-free",
+          "status": "catalogued",
+          "issue_number": 245,
+          "pr_number": 246,
+          "reason": "Previously reported pending candidate reverified from official ongoing free plan: 50 requests per 24 hours, 7-day retention, permanent endpoints with account, no card; commercial terms check. Issue #245 -> queue SUCCESS -> PR #246 exact-head validation/build SUCCESS, approved and automatically merged."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hookdeck Developer",
+          "reason": "Already catalogued as hookdeck-developer; do not duplicate."
+        },
+        {
+          "name": "webhook.co Free",
+          "reason": "Official provider explicitly describes 5,000 one-time events that never reset: trial-only, ineligible."
+        },
+        {
+          "name": "Webhook.site guest URLs",
+          "reason": "Ephemeral 7-day URL; no permanent free account established."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "static-hosting",
+      "official_sources": [
+        "https://neocities.org/supporter",
+        "https://neocities.org/",
+        "https://neocities.org/legal",
+        "https://neocities.org/terms",
+        "https://surge.sh/pricing",
+        "https://surge.sh/help/upgrading-to-surge-plus",
+        "https://tiiny.host/pricing",
+        "https://helpdesk.tiiny.host/en/article/plan-limits-explained-projects-uploads-visits-and-bandwidth-1ihflbr/"
+      ],
+      "candidates": [
+        {
+          "id": "neocities-free",
+          "status": "catalogued",
+          "issue_number": 247,
+          "pr_number": 248,
+          "reason": "Official ongoing free tier: 1 GB storage, 200 GB bandwidth, subdomain SSL; registration does not request a card, provider legal guidance permits legitimate business sites. Verified no catalog/backlog/Issue/PR/branch duplicate before canonical Issue #247. Queue SUCCESS; PR #248 exact-head validation/build SUCCESS, APPROVED, automatically merged to main 3a0c216a7c349cbbdb78106bbebb595776e863c3."
+        },
+        {
+          "id": "tiiny-host-free",
+          "status": "catalogued",
+          "issue_number": 249,
+          "pr_number": 250,
+          "reason": "Previously verified historical candidate rechecked from official Free plan and helpdesk: one active site, 3 MB project upload (0.5 MB PDF), three uploads/day, 5,000 visits and 5 GB bandwidth/month, quarterly login requirement, no card. Commercial terms remain check. Issue #249 -> queue SUCCESS -> PR #250 exact-head validation/build SUCCESS and APPROVED; auto-merged to main 990906ddbd8158997e343d4299a537457d416bc4."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Surge Free",
+          "reason": "Eligible official ongoing free static hosting with unlimited projects, custom domains and managed SSL, but already reported as surge-static-hosting-free in pending_reverification; dedupe and reverify separately."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.dynu.com/en-US/Membership",
+        "https://www.dynu.com/en-US/DynamicDNS",
+        "https://www.dynu.com/Resources/API",
+        "https://dns.he.net/"
+      ],
+      "candidates": [
+        {
+          "id": "dynu-free-dynamic-dns",
+          "status": "catalogued",
+          "issue_number": 251,
+          "pr_number": 252,
+          "reason": "Official ongoing free DNS verified: 4 free hostnames, 4 own-domain hostnames, 4 subdomains, 4 custom records, 4 redirects, unlimited DNS queries; no card, commercial-use check. Issue #251 -> queue #39953184753 SUCCESS -> PR #252 exact-head 294feff13a10d411251c8455eda961d3ea1a1d7b validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED into main 1a82767f4ae387accc28d74a3c4d97a94c00c2bf; Issue CLOSED and catalog verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hurricane Electric Free DNS",
+          "reason": "Official free authoritative DNS and dynamic DNS confirmed; numeric zone/record quotas and commercial terms not stated on official page. Keep as future candidate, do not invent unlimited quotas."
+        },
+        {
+          "name": "Dynamix Free Dynamic DNS",
+          "reason": "Official free service explicitly advertised for personal use; commercial usage requires separate review and likely paid business account."
+        },
+        {
+          "name": "ClouDNS, deSEC and 1984 Hosting FreeDNS",
+          "reason": "Already catalogued; not new candidates."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "serverless",
+      "official_sources": [
+        "https://deno.com/deploy/pricing",
+        "https://docs.deno.com/deploy/changelog/",
+        "https://docs.deno.com/deploy/acceptable_use_policy/",
+        "https://www.val.town/pricing",
+        "https://www.val.town/limits"
+      ],
+      "candidates": [
+        {
+          "id": "deno-deploy-free",
+          "status": "catalogued",
+          "issue_number": 256,
+          "pr_number": 257,
+          "reason": "Current Deno Deploy Free plan: 1M requests/month, 20 GiB egress, 10 active CPU hours, 150 GiB-hours memory, 1 GiB KV, 5 custom domains. Full published limits require credit card organization verification; unverified Free is restricted, commercial terms check. Issue #256 -> queue #39969628881 SUCCESS -> PR #257 exact-head validation/build SUCCESS, APPROVED and auto-MERGED into main dad2cc73c4f931e64c184b07ce68360f4133742e."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Val Town Free",
+          "reason": "Official ongoing free tier: 100,000 runs/day, 15-minute minimum cron, 1-minute runtime, public vals only; card and commercial-use policy not confirmed. Hold for verification, not marked ineligible."
+        },
+        {
+          "name": "Deno Deploy Classic",
+          "reason": "Classic was sunset July 20, 2026; only new Deno Deploy qualifies. Avoid duplicate/discontinued service."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "analytics",
+      "official_sources": [
+        "https://github.com/electerious/Ackee",
+        "https://github.com/electerious/Ackee/blob/master/LICENSE",
+        "https://github.com/offen/offen",
+        "https://support.countly.com/hc/en-us/articles/360037501312-Countly-Licensing-FAQ",
+        "https://github.com/Open-Web-Analytics/open-web-analytics"
+      ],
+      "candidates": [
+        {
+          "id": "ackee-self-hosted",
+          "status": "catalogued",
+          "issue_number": 258,
+          "pr_number": 259,
+          "reason": "Historical pending re-verification resolved: official MIT self-hosted Ackee software; no vendor-imposed quotas; commercial use permitted by MIT; infrastructure costs apply. Issue #258 -> PR #259 exact-head validation/build SUCCESS, auto-MERGED into main 3103e583aba708a53c467a1958816f8913020b37."
+        },
+        {
+          "id": "offen-fair-web-analytics",
+          "status": "catalogued",
+          "issue_number": 260,
+          "pr_number": 261,
+          "reason": "Genuinely new candidate, deduped against catalog/Issues/PRs/branches. Official Apache-2.0 self-hosted analytics, multiple sites, opt-in, six-month retention; logo CC-BY-NC-ND. Issue #260 -> PR #261; non-force two-parent conflict resolution 102f8c7a5214132a9912b0cdcbf10a4e86bde97a; exact-head validation/build SUCCESS, APPROVED, auto-MERGED into main ecbbf22a7128d45084b31d9ab2ac0a203e26955c."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Countly Lite",
+          "reason": "Official licensing restricts third-party analytics-as-a-service and rebranding; internal company use allowed. Not selected pending clear commercial-use caveat and edition status."
+        },
+        {
+          "name": "Open Web Analytics",
+          "reason": "Official GPLv2+ self-hosted analytics supports unlimited websites. Reserved for future candidate verification; not counted as delivered."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "storage",
+      "official_sources": [
+        "https://www.filestack.com/pricing/",
+        "https://go.filestack.com/signup-free/",
+        "https://uploadcare.com/docs/billing/"
+      ],
+      "candidates": [
+        {
+          "id": "filestack-free",
+          "status": "catalogued",
+          "issue_number": 263,
+          "pr_number": 264,
+          "reason": "Canonical Issue #263 delivered through queue to PR #264; exact-head validation and build PASS, review APPROVED, PR auto-merged and Issue closed. Verified in main catalog. Commercial-use permission still check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Uploadcare Free",
+          "reason": "Official docs restrict Free to personal use; not selected in this storage round. 14-day Pro trial is separate from ongoing Free; do not mistake trial allowances for Free."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ai-ml",
+      "searches": [
+        "Opik Free Cloud Comet official pricing 25k spans credit card commercial",
+        "LangSmith Developer free pricing 5k traces",
+        "Weights & Biases Weave Free official pricing"
+      ],
+      "official_sources": [
+        "https://www.comet.com/site/pricing/",
+        "https://www.comet.com/site/products/opik/",
+        "https://www.comet.com/docs/opik/quickstart",
+        "https://www.langchain.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "opik-free-cloud",
+          "status": "catalogued",
+          "issue_number": 266,
+          "reason": "Official ongoing Opik Free Cloud: 25,000 spans/month, 10 team members, 60-day retention, no card; hosted commercial-use terms check. Canonical Issue #266 -> queue -> PR #267 exact-head 4e4dc61228a22a3b3f4479312717501d580f9f52 validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED into main 8041e7492af42c799a811b87133e5e8cd3151e7f; Issue CLOSED and catalog entry verified.",
+          "pr_number": 267
+        }
+      ],
+      "excluded": [
+        {
+          "name": "LangSmith Developer",
+          "reason": "Ongoing $0 plan with 1 seat and 5k base traces/month, but pay-as-you-go after quota; defer for separate billing/card and commercial-use review."
+        },
+        {
+          "name": "Weights & Biases Weave Free",
+          "reason": "Third-party summaries indicate a free plan; not selected without independent official current card/commercial and limit verification."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "app-hosting",
+      "searches": [
+        "PythonAnywhere Beginner Free pricing 2026 limits monthly renewal commercial use",
+        "alwaysdata free 1GB non-profit only 2026 pricing",
+        "Koyeb free instance Starter plan card requirements and new signup availability"
+      ],
+      "official_sources": [
+        "https://www.pythonanywhere.com/pricing/",
+        "https://help.pythonanywhere.com/pages/FreeAccountsFeatures",
+        "https://blog.pythonanywhere.com/221/",
+        "https://www.pythonanywhere.com/forums/topic/31393/",
+        "https://help.alwaysdata.com/en/docs/admin-billing/billing/public-cloud-prices/",
+        "https://www.koyeb.com/docs/faqs/pricing",
+        "https://www.koyeb.com/docs/reference/organizations"
+      ],
+      "candidates": [
+        {
+          "id": "pythonanywhere-beginner-free",
+          "status": "catalogued",
+          "issue_number": 268,
+          "reason": "Verified ongoing $0 Beginner plan: 1 Python web app, 1 worker, 512 MiB disk, 100 CPU-seconds/day and 2 consoles; monthly web app renewal, restricted outbound allowlist, no SSH/MySQL/scheduled tasks for new accounts. Staff confirms commercial use subject to terms; card requirement not explicit, marked check. Canonical Issue #268 -> catalog-candidate-queue -> PR #269 at exact head 4ec6a6a470345895aad8497e40fc2fdb8084600e: validation and build jobs SUCCESS, review APPROVED, GitHub Actions automatically MERGED; Issue CLOSED and main catalog verified.",
+          "pr_number": 269
+        }
+      ],
+      "excluded": [
+        {
+          "name": "alwaysdata Free",
+          "reason": "Ongoing free plan with 1GB disk, 256MB RAM and 1/4 CPU, but official docs prohibit for-profit use; defer for distinct personal-only listing and eligibility review."
+        },
+        {
+          "name": "Koyeb Free Web Instance",
+          "reason": "Already catalogued (koyeb); official current docs require a valid payment card and $29 preauthorization, while 2026 new-signup Starter availability has conflicting evidence. Needs catalog card/availability re-verification, not duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "app-hosting",
+      "searches": [
+        "AwardSpace Free hosting 2026 1GB 5GB no card terms commercial",
+        "Freehostia Chocolate ongoing free plan commercial use 2026",
+        "alwaysdata Free current pricing and registration card verification",
+        "Northflank Sandbox free 2 services database current pricing",
+        "HelioHost Johnny free signup availability and donation-only Tommy"
+      ],
+      "official_sources": [
+        "https://www.awardspace.com/",
+        "https://www.awardspace.com/terms-of-services/",
+        "https://www.awardspace.com/freebies/",
+        "https://www.freehostia.com/free-cloud-hosting/",
+        "https://help.alwaysdata.com/en/docs/admin-billing/billing/public-cloud-prices/",
+        "https://www.alwaysdata.com/en/register/",
+        "https://northflank.com/pricing",
+        "https://heliohost.org/signup/"
+      ],
+      "candidates": [
+        {
+          "id": "awardspace-free-hosting",
+          "status": "catalogued",
+          "issue_number": 270,
+          "pr_number": 271,
+          "reason": "New ongoing ad-free free hosting (1 GB disk, 5 GB/month bandwidth, 1 domain plus 3 subdomains, PHP and 30 MB MySQL). Provider explicitly states no card; terms require annual human login and restrict uploads/outbound use. Business use not explicitly confirmed (check). Dedupe against main services, backlog, GitHub Issues/PRs/branches before canonical Issue #270. Queue created PR #271; exact-head 8ef95c187c8889fb946640655eeb7afa5ff184b6 validation/build PASS, review APPROVED, automated merge at f8a9033ab528796a31401598680485b927a8fed0; main catalog confirmed. Issue state closed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "alwaysdata Free",
+          "reason": "Free 1 GB/256 MB/1/4 CPU for personal non-profit websites only; official registration page currently requests card despite marketing no-card claim; defer until registration/card conflict clarified."
+        },
+        {
+          "name": "Freehostia Chocolate",
+          "reason": "Ongoing $0 250 MB/6 GB monthly traffic and small-business hosting documented; reserve for future distinct candidate verification, particularly card requirement and ambiguous trial text."
+        },
+        {
+          "name": "Northflank Sandbox",
+          "reason": "Official Sandbox advertises 2 free services, 1 database, 2 cron jobs; card and commercial conditions need verification before Issue."
+        },
+        {
+          "name": "HelioHost Johnny",
+          "reason": "Official free signup opens in capacity-limited windows; check current signup/hosting availability and service restrictions before Issue."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "queues-jobs",
+      "searches": [
+        "Activepieces Cloud Free official pricing 2026 credit limit no card commercial use",
+        "Zeplo Developer Free monthly requests and paid overage official",
+        "Restate Cloud Free monthly actions conflicting official pages",
+        "Hatchet Cloud 2026 pay-as-you-go card required free usage"
+      ],
+      "official_sources": [
+        "https://www.activepieces.com/pricing",
+        "https://www.activepieces.com/docs/about/license",
+        "https://zeplo.io/pricing/",
+        "https://restate.dev/pricing",
+        "https://restate.dev/cloud",
+        "https://hatchet.run/announcement/pay-as-you-go-pricing"
+      ],
+      "candidates": [
+        {
+          "id": "activepieces-cloud-free",
+          "status": "catalogued",
+          "issue_number": 273,
+          "pr_number": 274,
+          "reason": "Distinct managed-cloud plan from catalogued activepieces-community self-hosted edition. Current official pricing states Free forever, no card, 1,000 credits/month, up to 5 users and unlimited flows. AI steps use extra credits. Official page contradicts itself on daily/monthly refresh; noted in watch_out. Commercial permission unconfirmed (check). Dedupe checked catalog, backlog, Issues, PRs and branches before Issue #273. Initial queue failed due future UTC date, Issue corrected to 2026-10-23 and rerun succeeded. Queue generated PR #274, exact-head 1285819997e578ad96ede198fd8bbd70b73e8d17 validation/build SUCCESS, review APPROVED, automated merge at 6f6f164191a762f06936b8dbe2dc01f1017b1f49; confirmed in main catalog and Issue closed. Main Pages workflow run #40018866940 has build and Deploy SUCCESS at merge SHA 6f6f164191a762f06936b8dbe2dc01f1017b1f49; prior failed Pages incident #272 recovered, underlying concurrency issue remains for monitoring."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Restate Cloud Free",
+          "reason": "Official pricing page states 100k actions/month but Restate Cloud product page currently states 50k/month; defer until quota discrepancy is resolved."
+        },
+        {
+          "name": "Hatchet Cloud pay-as-you-go",
+          "reason": "Official September 2026 announcement requires adding a payment card; 1M runs and 1M events/month free but usage beyond quota is billed. Defer because paid overage and card requirement need careful classification."
+        },
+        {
+          "name": "Zeplo Developer Free",
+          "reason": "Official pricing states 500 requests free/month with $20/100k overage, one developer and 30-day logs. Reserve for follow-up card and overage/cap confirmation."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "ci-cd",
+      "searches": [
+        "Buildkite Free plan official 2026 2000 Linux vCPU minutes and no credit card",
+        "Semaphore CI free hosted pricing vs community edition",
+        "Woodpecker CI self-hosted open-source license and setup"
+      ],
+      "official_sources": [
+        "https://buildkite.com/pricing/",
+        "https://woodpecker-ci.org/docs/2.8/intro",
+        "https://woodpecker-ci.org/docs/2.8/about",
+        "https://docs.semaphoreci.com/CE/getting-started/guided-tour"
+      ],
+      "candidates": [
+        {
+          "id": "buildkite-free",
+          "status": "Issue-blocked-CI",
+          "issue_number": 275,
+          "reason": "Canonical Issue #275 verified and created; queue run #40026066559 FAILED at Generate and validate because scripts/catalog.test.mjs hard-coded exactly four CI/CD IDs. Non-main regression fix PR #276 (HEAD e3f6c8c936daf729a95b81a6bafa55f28c532d1c) preserves baseline membership/uniqueness and adds dynamic CI/CD sync test; awaiting exact-head checks, required review and permitted merge. Retry same Issue via queue only after fix is merged; no duplicate Issue or bypass."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Woodpecker CI",
+          "reason": "Self-hosted free open-source CI; viable alternative but would require its own infrastructure, reserved for separate verified self-hosted listing."
+        },
+        {
+          "name": "Semaphore",
+          "reason": "Community Edition self-hosted docs confirm no card, but managed hosted Free plan quota/card/commercial terms not independently verified this round."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "auth-security",
+      "official_sources": [
+        "https://workos.com/pricing",
+        "https://workos.com/user-management",
+        "https://stytch.com/pricing",
+        "https://supertokens.com/pricing",
+        "https://www.ory.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "workos-authkit-free",
+          "status": "catalogued",
+          "issue_number": 277,
+          "pr_number": 278,
+          "reason": "Canonical Issue #277 (UTC date corrected to 2026-10-23) -> queue #40032771524 SUCCESS -> PR #278 exact-head 907a7d02e8b5572fe4e3f6556b9c696cd0915aa9 validation/build PASS and review APPROVED; GitHub Actions automatically merged PR to main 28409809c93bb69d9b00e795df8b2d30ef4e46f4 and Issue #277 CLOSED. Production card required; paid extras documented."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Stytch Pay-as-you-go",
+          "reason": "Official always-free 10K MAU and 5 SSO/SCIM connections; legitimate separate provider, deferred to next category rotation; overage billed, card requirement not independently confirmed."
+        },
+        {
+          "name": "SuperTokens Cloud",
+          "reason": "Official hosted service free under 5K MAU; separate eligible provider, deferred; optional MFA/account-linking paid with minimums, card requirement not confirmed."
+        },
+        {
+          "name": "Ory Network Production",
+          "reason": "Official current pricing lists paid annual production plans, not an ongoing hosted free tier."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-23",
+      "category": "databases",
+      "searches": [
+        "TiDB Cloud Starter free plan 2026 official MySQL 5 GiB 50M RUs no card",
+        "CockroachDB Basic free plan after September 15 2026 new cluster eligibility",
+        "Nhost Starter Free managed PostgreSQL 1 GB official pricing and inactivity pause"
+      ],
+      "official_sources": [
+        "https://www.pingcap.com/pricing/",
+        "https://docs.pingcap.com/tidbcloud/select-cluster-tier/",
+        "https://docs.pingcap.com/tidbcloud/manage-serverless-spend-limit/",
+        "https://www.cockroachlabs.com/cockroachdb/pricing/",
+        "https://nhost.io/pricing",
+        "https://docs.nhost.io/platform/cloud/billing"
+      ],
+      "candidates": [
+        {
+          "id": "tidb-cloud-starter-free",
+          "status": "catalogued",
+          "issue_number": 279,
+          "pr_number": 280,
+          "reason": "Official ongoing MySQL-compatible Starter quota is 5 GiB row + 5 GiB columnar storage and 50M RUs/month per eligible instance, up to five free instances; no card when spending limit is zero; commercial terms unconfirmed (check). Dedupe verified against current main, all Issues/PRs and branches. Canonical Issue #279 -> queue run #40038740444 SUCCESS -> PR #280 exact-head dbdcec63f7e2333c8002302b02861edfc7abd677 validation #40038764260 SUCCESS, build #40038764250 SUCCESS, Deploy SKIPPED (not counted), review APPROVED -> automatic merge into main e85280a961eb02f2e1498affa5a6a1c5d489ea79, Issue closed; confirmed catalogued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CockroachDB Cloud Basic for new signups",
+          "reason": "Official pricing says legacy Basic/Standard/Advanced plans apply to deployments created before September 15, 2026 and are no longer available for new purchases; do not classify historical free Basic allowance as currently available to new customers."
+        },
+        {
+          "name": "Nhost Starter Free",
+          "reason": "Official Starter is free forever with 1 GB PostgreSQL, 1 GB storage and 5 GB egress; pauses after one week of inactivity, commercial-use and overage/billing details warrant separate verified candidate in future rotation; not added this run."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "observability",
+      "searches": [
+        "2026 free uptime monitoring official pricing 25 monitors commercial no card UptimeSignal",
+        "UptimeUp Free official pricing 5 monitors personal projects",
+        "OpenStatus official hosted pricing trial vs ongoing Free",
+        "2026 independent free uptime monitoring comparisons"
+      ],
+      "official_sources": [
+        "https://uptimesignal.io/",
+        "https://uptimesignal.io/free-uptime-monitoring",
+        "https://uptimesignal.io/ai-agents",
+        "https://uptimeup.com/pricing",
+        "https://www.openstatus.dev/pricing",
+        "https://www.openstatus.dev/"
+      ],
+      "candidates": [
+        {
+          "id": "uptimesignal-free",
+          "status": "catalogued",
+          "issue_number": 281,
+          "reason": "Official ongoing free plan confirmed. Issue #281 -> queue #40044304871 SUCCESS -> PR #282 HEAD 5d9bed98cfdd28a99d78cb906d988f0f866d4a15 validation #40044325400 PASS, build #40044325296 PASS (PR deploy SKIPPED), review APPROVED, automatically merged to main e317523df0d01aa62abc59d64629847dc40a0e06; verified in main catalog. Official pages disagree on status-page count and alert channels, so listing avoids those uncertain limits.",
+          "pr_number": 282
+        }
+      ],
+      "excluded": [
+        {
+          "name": "UptimeUp Free",
+          "reason": "Official ongoing $0 for 5 monitors at 5-minute intervals, 1 status page and 7-day retention; marked for testing/personal projects. Deferred until commercial restrictions clarified."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "openstatus-hobby",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.openstatus.dev/pricing",
+          "reason": "Official FAQ confirms ongoing $0 Hobby plan (1 monitor, 1 status page with 3 components, 10-minute checks, no card). New workspaces may begin with a separate 14-day Starter trial and return to Hobby after trial; trial must not be confused with the ongoing free plan. Existing catalog entry is accurate; no catalog mutation needed."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "developer-tools",
+      "searches": [
+        "Bruno API client official open source pricing 2026 2 workspaces OpenAPI sync commercial MIT",
+        "Hoppscotch Cloud Free official unlimited requests pricing 2026",
+        "Apidog Free official 4 users API testing pricing 2026",
+        "Independent 2026 API client alternatives and free plans"
+      ],
+      "official_sources": [
+        "https://www.usebruno.com/pricing",
+        "https://www.usebruno.com/product",
+        "https://github.com/usebruno/bruno",
+        "https://github.com/usebruno/bruno/blob/main/packages/bruno-cli/license.md",
+        "https://hoppscotch.com/pricing",
+        "https://apidog.com/vi/pricing/",
+        "https://apidog.com/compare/apidog-vs-postman/"
+      ],
+      "discovery_sources": [
+        "https://dupple.com/learn/best-free-api-clients",
+        "https://www.g2.com/products/apidog/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "bruno-api-client-open-source",
+          "status": "catalogued",
+          "issue_number": 283,
+          "pr_number": 284,
+          "reason": "Official Bruno $0 Open Source, MIT commercial license, no card, 2 workspaces, 5 OpenAPI syncs/month and unlimited collection runs. Canonical Issue #283 -> automated PR #284 HEAD 37f9fbafe59ce1ef46495fa1217358b70945abb6, validation #40049113517 PASS, build #40049113461 PASS (Deploy SKIPPED, not counted), review APPROVED -> automatic merge. Issue #283 CLOSED; confirmed present on main 88f68ba81758f0c876fe5d611addcf7a406d2b22."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hoppscotch Cloud Free",
+          "reason": "Official $0 forever with unlimited requests/workspaces/collections/runners; viable distinct future candidate, but not selected this run. Card/commercial terms require separate verification and dedupe."
+        },
+        {
+          "name": "Apidog Free",
+          "reason": "Official $0 free tier for up to 4 users; 14-day trial messaging applies to premium features. Viable future candidate after confirming exact free-project limits, card and commercial terms; not selected this run."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "cloud-vps",
+      "searches": [
+        "2026 free forever cloud VPS providers always-free virtual machine without trial",
+        "Vyce Cloud VPS-Mini free daily renewal and capacity",
+        "Google Compute Engine e2-micro always free official",
+        "Oracle Cloud Always Free VM official",
+        "AWS new Free Plan six-month expiry official"
+      ],
+      "official_sources": [
+        "https://vyce.cloud/",
+        "https://cloud.google.com/products/compute",
+        "https://docs.cloud.google.com/free/docs/free-cloud-features",
+        "https://www.oracle.com/cloud/free/",
+        "https://aws.amazon.com/about-aws/whats-new/2025/07/aws-free-tier-credits-month-free-plan/"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Vyce.Cloud VPS-Mini",
+          "reason": "Official ongoing free offer advertises 2 GB RAM, 1 vCore and 6 GB NVMe without card, but capacity is first-come, daily manual renewal is mandatory, and stopped instances are deleted after 3 days. Defer pending independent operational reliability review; do not promise dependable always-on VPS."
+        },
+        {
+          "name": "Google Compute Engine e2-micro and Oracle Always Free",
+          "reason": "Both are already represented in main catalog; reverified official continuing free allowances, no duplicate."
+        },
+        {
+          "name": "AWS EC2 under new AWS Free Plan",
+          "reason": "New Free Plan expires after six months or when credits are exhausted, so it is not a new ongoing free VPS. Existing aws-free-plan entry already represents the time-limited program."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "gce-e2-micro",
+          "status": "catalogued-reverified",
+          "official_source": "https://cloud.google.com/products/compute",
+          "reason": "Google confirms continuing e2-micro VM allowance, 30 GB standard persistent disk and 1 GB outbound traffic monthly in eligible regions; no catalog correction required."
+        },
+        {
+          "id": "oracle-cloud",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.oracle.com/cloud/free/",
+          "reason": "Oracle confirms Always Free services continue after 30-day trial credit expires; no catalog correction required."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "ci-cd",
+      "searches": [
+        "Buildkite Free official 2026 pricing 5 users 2000 vCPU minutes",
+        "Exact-head GitHub Actions and review of CI/CD extensibility fix PR 276"
+      ],
+      "official_sources": [
+        "https://buildkite.com/pricing/",
+        "https://github.com/ePlus-DEV/free-tier-hub/issues/275",
+        "https://github.com/ePlus-DEV/free-tier-hub/pull/276"
+      ],
+      "candidates": [
+        {
+          "id": "buildkite-free",
+          "status": "catalogued",
+          "issue_number": 275,
+          "reason": "Official ongoing $0 plan reverified on 2026-10-24 (5 users, 10 jobs, 2,000 Linux vCPU-minutes and 250k tests/month; no card; commercial check). Existing test fix PR #276 was merged through permitted maintainer review, preserving original branch commits. Canonical Issue #275 updated with current UTC verification date -> queue #40055098247 SUCCESS -> PR #287 exact HEAD 891db068d1f4243131ef9a176826d9e83b1003be validation #40055123082 SUCCESS, build #40055123113 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED at exact HEAD -> automatic merge into main fda21202c66405c5ccc3445fba3029106f40c73b. Issue CLOSED; catalog verified. Main validation #40055170388 SUCCESS and main Pages #40055170351 Test/build and Deploy both SUCCESS at exact main HEAD fda21202c66405c5ccc3445fba3029106f40c73b.",
+          "pr_number": 287
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-24",
+      "category": "tunneling-networking",
+      "searches": [
+        "New free HTTPS localhost SSH tunnel providers 2026 official pricing",
+        "tunnl.gg Free pricing no card 3 tunnels 24-hour limit stable URLs",
+        "tunnl.gg official documentation limits browser warning and rate limits",
+        "Compare Pinggy, localhost.run, Horizon free tunneling"
+      ],
+      "official_sources": [
+        "https://tunnl.gg/pricing",
+        "https://tunnl.gg/docs",
+        "https://tunnl.gg/stable-urls",
+        "https://github.com/klipitkas/tunnl.gg",
+        "https://pinggy.io/",
+        "https://localhost.run/docs/forever-free/",
+        "https://hrzn.run/"
+      ],
+      "candidates": [
+        {
+          "id": "tunnl-gg-free",
+          "status": "catalogued",
+          "issue_number": 285,
+          "pr_number": 286,
+          "reason": "Genuinely new ongoing hosted $0 SSH-to-HTTPS/WebSocket tunnel: 3 concurrent tunnels per IP, 2h idle and 24h lifetime, free stable SSH-key URL, no signup/card, commercial-use check. Deduplicated against all main catalog IDs, backlog, Issues, PRs, branches and previous ledger before Issue. Issue #285 -> catalog-candidate queue #40053935778 SUCCESS -> PR #286 exact HEAD 327e915dfc070ee17a33028dc3839418eb3420e1 validation #40053960530 SUCCESS and build #40053960544 SUCCESS (PR Deploy SKIPPED), review APPROVED at exact HEAD, automatically merged into main f3c09eeade13f2a7c139111d310cbb7ae04ee8e6. Main validation #40053995829 SUCCESS and Pages build/deploy #40053995842 both SUCCESS. Issue CLOSED, catalog confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Pinggy Free",
+          "reason": "Previously reported in an earlier discovery round; official 60-minute free tunnels, not a genuinely new first report for this run."
+        },
+        {
+          "name": "localhost.run Forever Free",
+          "reason": "Previously reported in an earlier discovery round; official rotating free domains and speed limits, not selected for new delivery."
+        },
+        {
+          "name": "Horizon Free",
+          "reason": "Official no-card random-domain HTTPS/WebSocket tunnel plan verified; defer separate commercial-use and reliability review."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: tunnl.gg fits existing tunneling-networking category."
     }
-  ]
+  ],
+  "pending_reverification": [
+    {
+      "id": "gedo-free-dns",
+      "category": "dns-cdn"
+    },
+    {
+      "id": "enum-dns-free",
+      "category": "dns-cdn"
+    },
+    {
+      "id": "surge-static-hosting-free",
+      "category": "static-hosting"
+    },
+    {
+      "id": "tavily-researcher-free",
+      "category": "search"
+    },
+    {
+      "id": "freedns-afraid-org-free",
+      "category": "dns-cdn"
+    }
+  ],
+  "coverage_summary": {
+    "total_services": 254,
+    "total_categories": 19,
+    "stale_over_7d": 214,
+    "open_catalog_candidate_issues": 0,
+    "unmatched_backlog": [],
+    "note": "Round 1: 19/19 categories. Round 2: cloud-vps, ci-cd, tunneling-networking reviewed (3/19). New tunnl.gg Free Issue #285/PR #286 and historical Buildkite Issue #275/PR #287 both auto-merged with exact-head validation/build PASS and reviews APPROVED; CI/CD extensibility fix PR #276 and ledger PR #265 merged through permitted maintainer process. Main now 254 services. Main Pages #40055170351 build and Deploy both SUCCESS at exact main HEAD fda21202c66405c5ccc3445fba3029106f40c73b. No manual merge or direct main push.",
+    "rotation_2_started_utc": "2026-10-24",
+    "rotation_2_categories_reviewed": [
+      "cloud-vps",
+      "ci-cd",
+      "tunneling-networking"
+    ],
+    "rotation_2_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "databases",
+      "storage",
+      "developer-tools",
+      "auth-security",
+      "observability",
+      "analytics",
+      "dns-cdn",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "webhooks-events"
+    ]
+  }
 }
