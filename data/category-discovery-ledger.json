@@ -1,151 +1,151 @@
 {
-  "as_of_utc": "2026-10-21",
-  "source_main_sha": "3e12b071b8fc360f35d52bf21ca7c18ae3f5c35c",
+  "as_of_utc": "2026-10-25",
+  "source_main_sha": "8e77f1673770646bd0880eabc392054687896209",
   "policy": "Rotate among least-explored and lowest-count categories; verify official current pricing and dedupe catalog, issues, PRs and backlog before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-15",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "app-hosting",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-18",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "serverless",
-      "service_count": 5,
-      "latest_catalog_verification": "2026-10-21",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-17"
     },
     {
       "category": "cloud-vps",
-      "service_count": 3,
-      "latest_catalog_verification": "2026-09-22",
+      "service_count": 4,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-21"
     },
     {
       "category": "databases",
-      "service_count": 27,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 30,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "storage",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-19",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "developer-tools",
-      "service_count": 39,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 40,
+      "latest_catalog_verification": "2026-10-24",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "auth-security",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-16",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "observability",
-      "service_count": 25,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "analytics",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "dns-cdn",
-      "service_count": 4,
-      "latest_catalog_verification": "2026-10-19",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-21"
     },
     {
       "category": "ai-ml",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "ai-assistants",
-      "service_count": 6,
-      "latest_catalog_verification": "2026-10-21",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "queues-jobs",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-17",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "search",
-      "service_count": 7,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 12,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "feature-flags",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": null
     },
     {
       "category": "tunneling-networking",
-      "service_count": 2,
-      "latest_catalog_verification": "2026-09-23",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-21"
     },
     {
       "category": "webhooks-events",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-14",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": null
+      "last_discovery_review": "2026-10-25"
     }
   ],
   "discovery_log": [
@@ -338,6 +338,47 @@
         {
           "name": "FastDDNS Free",
           "reason": "1 annual-renewed hostname; not selected while higher-priority backlog and DNS candidate await delivery."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "webhooks-events",
+      "official_sources": [
+        "https://github.com/probot/smee.io",
+        "https://github.com/probot/smee.io/blob/master/LICENSE",
+        "https://smee.io/",
+        "https://hookdump.dev/",
+        "https://conduitrelay.com/",
+        "https://www.webcatch.dev/"
+      ],
+      "candidates": [
+        {
+          "id": "smee-io-self-hosted",
+          "status": "PR",
+          "reason": "Verified MIT license and official Docker self-host instructions; commercial license allowed, no vendor software fee/card; development/testing only, unauthenticated channels, no durable storage; deduped against 304 main entries, 30 backlog entries, Issues and PRs. Issue #394 generated automated PR #395, awaiting exact-head build and approval."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Webcatch",
+          "reason": "Official site advertises $12 one-time payment; not an ongoing free plan."
+        },
+        {
+          "name": "Conduit",
+          "reason": "Official website states free and self-hostable, but commercial-use/license terms not independently verified this run; defer."
+        },
+        {
+          "name": "Hookdump",
+          "reason": "Official site advertises MIT self-hosted webhook debugger; defer for separate license/repository and duplicate checks."
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "uploadthing-free",
+          "status": "catalogued-product-alias",
+          "existing_id": "uploadthing-2gb-app",
+          "reason": "Historical backlog alias already represented in main."
         }
       ]
     }
