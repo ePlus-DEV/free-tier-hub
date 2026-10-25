@@ -3639,5 +3639,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "woodpecker-ci-self-hosted",
+    "name": "Woodpecker CI Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 CI/CD server and agents for self-hosted container-based pipelines; no vendor-imposed per-user, per-repository or build-minute quotas.",
+    "watch_out": "Requires your own server, build agents, Docker-compatible execution infrastructure and Git forge integration; infrastructure, maintenance and any third-party services are not included.",
+    "pricing_url": "https://woodpecker-ci.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
