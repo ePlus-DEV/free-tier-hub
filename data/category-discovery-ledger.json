@@ -189,7 +189,7 @@
       "latest_catalog_verification": "2026-10-24",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 0
     }
@@ -2354,6 +2354,55 @@
           "issue": 301,
           "pr": 302,
           "reason": "Historical candidate Issue #301 -> PR #302, conflicted with new main catalog. Reconciled original branch using two-parent merge commit 2c698eb5e9694eef58a29c00c9eef700576299ff (parents original HEAD 1656716781b3cee25d90bfe0b22c6a402cf44768 and main e0a893c8b68433074900672232eac5cab3e11d65), non-force fast-forward update, all unique commits preserved. Exact-head validation #40146299742 SUCCESS, Pages build #40146299641 SUCCESS, eplus-bot APPROVED 2026-10-25 00:20 UTC, auto-MERGED main f03d9bac557cceb664e3a71940ec229ad1ce8e02; Issue CLOSED. Main Pages deploy cancelled; not production-verified."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "webhooks-events",
+      "official_sources": [
+        "https://hookdeck.com/docs/outpost/overview",
+        "https://github.com/hookdeck/outpost",
+        "https://hookdeck.com/webhooks/platforms/best-open-source-webhook-tools",
+        "https://github.com/probot/smee.io",
+        "https://hookdeck.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "hookdeck-outpost-self-hosted",
+          "status": "Issue",
+          "reason": "Genuinely new separate outbound self-hosted product from catalogued inbound Hookdeck Developer; Apache-2.0 commercial use and no vendor quota verified; canonical Issue #355 created, queue #40150308470 initially QUEUED; exact-head PR CI not yet established.",
+          "issue": 355,
+          "candidate": {
+            "id": "hookdeck-outpost-self-hosted",
+            "name": "Hookdeck Outpost Self-Hosted",
+            "category": "webhooks-events",
+            "plan": "ongoing",
+            "free_limit": "Apache-2.0 open-source outbound webhook and event-destination server, self-hosted with no vendor-enforced monthly event, delivery, tenant, or user quota; supports HTTP webhooks, queue/bus destinations, retries, fan-out and a customer portal.",
+            "watch_out": "Self-hosted software, not Hookdeck's paid managed Outpost or the separate hosted Event Gateway Free plan. Requires your own compute, Redis, PostgreSQL, supported message queue, security, backups and operations; third-party destination services may charge. Apache-2.0 attribution applies; provider logos and trademarks are excluded.",
+            "pricing_url": "https://hookdeck.com/docs/outpost/overview",
+            "credit_card": "no",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-25"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hookdeck Event Gateway Developer",
+          "reason": "Already catalogued as hookdeck-developer; different inbound managed product."
+        },
+        {
+          "name": "smee.io",
+          "reason": "Official README explicitly warns development-only, unauthenticated channels; not selected for production-oriented delivery."
+        },
+        {
+          "name": "Convoy Cloud",
+          "reason": "Hosted free is a 14-day trial; self-hosted source-available license and terms require separate review."
+        },
+        {
+          "name": "Webhook.site Free",
+          "reason": "Temporary testing URLs and request caps; not selected over permanent Apache-2.0 self-hosted product."
         }
       ]
     }
