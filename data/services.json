@@ -3483,5 +3483,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "openrouter-free-models",
+    "name": "OpenRouter Free Models",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "25+ free models with chat and API access; 50 free-model requests/day and 20 requests/minute without purchased credits; up to 5 workspaces.",
+    "watch_out": "Free model availability and provider routing may change; failed requests count toward daily cap. Buying at least $10 credits raises free-model allowance to 1,000 requests/day. Free endpoints may retain prompts; commercial rights and output licenses depend on each underlying model/provider; no SLA.",
+    "pricing_url": "https://openrouter.ai/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
