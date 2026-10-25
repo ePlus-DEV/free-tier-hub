@@ -3507,5 +3507,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-24"
+  },
+  {
+    "id": "hookdeck-outpost-self-hosted",
+    "name": "Hookdeck Outpost Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source outbound webhook and event-destination server, self-hosted with no vendor-enforced monthly event, delivery, tenant, or user quota; supports HTTP webhooks, queue/bus destinations, retries, fan-out and a customer portal.",
+    "watch_out": "Self-hosted software, not Hookdeck's paid managed Outpost or the separate hosted Event Gateway Free plan. Requires your own compute, Redis, PostgreSQL, supported message queue, security, backups and operations; third-party destination services may charge. Apache-2.0 attribution applies; provider logos and trademarks are excluded.",
+    "pricing_url": "https://hookdeck.com/docs/outpost/overview",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
