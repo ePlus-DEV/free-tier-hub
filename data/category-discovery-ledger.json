@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "cc00e2368497e84164a7c6fcf3f285df96d44f37",
+  "source_main_sha": "03d68aa7c38cca256d57127cc25f16e11086ab06",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -55,11 +55,11 @@
     },
     {
       "category": "storage",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -2622,6 +2622,70 @@
         }
       ],
       "new_category_assessment": "No new category warranted; Valkey, QuestDB, and KeyDB fit existing databases."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "storage",
+      "rotation": "3 (15/19)",
+      "searches": [
+        "Enumerated all 19 main CATEGORIES, 290 pre-delivery catalog IDs, 30 durable backlog records, open/closed Issues, merged/open/closed PRs, and 12 branches; checked 16 storage services and previous ledger history.",
+        "Official Ceph free open source object/block/file storage license LGPL 2.1/3.0; commercial usage and own infrastructure",
+        "Official SeaweedFS Apache-2.0 and Garage AGPLv3 storage: deduplicated against existing catalog",
+        "Official Seafile Community Edition, Nextcloud Self-Hosted alternatives: deferred for separate product and licensing verification",
+        "Cloudflare R2 official current 10 GB / 1M Class A / 10M Class B; Backblaze B2 official 10 GB and 3x egress"
+      ],
+      "official_sources": [
+        "https://ceph.io/en/discover/why-ceph/",
+        "https://www.ceph.io/en/users/faq/",
+        "https://github.com/ceph/ceph",
+        "https://github.com/seaweedfs/seaweedfs",
+        "https://en.seafile.com/en/pricing/",
+        "https://nextcloud.com/fairusepolicy/",
+        "https://developers.cloudflare.com/r2/pricing/",
+        "https://www.backblaze.com/cloud-storage/transaction-pricing"
+      ],
+      "candidates": [
+        {
+          "id": "ceph-self-hosted",
+          "status": "catalogued",
+          "issue_number": 365,
+          "pr_number": 366,
+          "reason": "Ceph official no-fee self-hosted distributed object, block and file storage, LGPL 2.1/3.0, commercial allowed; no vendor storage or request quota; own hardware/operations required. Canonical JSON-only Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact HEAD 3e9173a38196ef62c72b03d4b1ddfcb783eabc9b validation #40168712926 SUCCESS and PR Pages build #40168712909 SUCCESS (PR deploy skipped); bot APPROVED at exact HEAD; auto-MERGED to main 03d68aa7c38cca256d57127cc25f16e11086ab06; Issue CLOSED. Production Pages deployment at this HEAD not yet confirmed at ledger-write time."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SeaweedFS Self-Hosted",
+          "reason": "Already catalogued as seaweedfs-self-hosted; no duplicate."
+        },
+        {
+          "name": "Garage Object Storage",
+          "reason": "Already catalogued as garage-object-storage; no duplicate."
+        },
+        {
+          "name": "Seafile Community Edition",
+          "reason": "Official free community tier exists, but scope/license/commercial details require separate verification before delivery."
+        },
+        {
+          "name": "Nextcloud Self-Hosted",
+          "reason": "Official free self-hosting exists; deferred for distinct product scope and AGPL compliance review."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudflare-r2",
+          "status": "catalogued-reverified",
+          "official_source": "https://developers.cloudflare.com/r2/pricing/",
+          "reason": "Current 10 GB Standard, 1M Class A, 10M Class B free monthly, consistent with catalog. R2 subscription checkout still required; exact card requirement not proven, keep credit_card=check."
+        },
+        {
+          "id": "backblaze-b2-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.backblaze.com/cloud-storage/transaction-pricing",
+          "reason": "Current 10 GB always free, 3x average stored bytes egress and API Class D paid after daily allowance; existing record already includes Class D caveat. No correction needed."
+        }
+      ],
+      "new_category_assessment": "No new category needed: Ceph, SeaweedFS, Garage and file sync services fit existing storage."
     }
   ],
   "pending_reverification": [
@@ -2679,12 +2743,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 290,
+    "total_services": 291,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 14/19. Valkey Self-Hosted Issue #363 -> candidate queue #40165371350 SUCCESS -> PR #364 exact-head validation/build SUCCESS, auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation #40165418447 SUCCESS; Pages #40165418457 Build and Deploy SUCCESS at exact main HEAD. No manual merge/deploy/force push.",
+    "note": "Rotation 3 15/19. Ceph Self-Hosted Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED at main 03d68aa7c38cca256d57127cc25f16e11086ab06. Main production Pages at this SHA requires independent completion verification. No manual merge, deploy, force push, or bypass. UploadThing backlog alias matches catalogued uploadthing-2gb-app.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2723,10 +2787,10 @@
       "feature-flags",
       "tunneling-networking",
       "webhooks-events",
-      "databases"
+      "databases",
+      "storage"
     ],
     "rotation_3_categories_remaining": [
-      "storage",
       "auth-security",
       "observability",
       "analytics",
