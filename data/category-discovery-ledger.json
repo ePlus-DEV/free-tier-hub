@@ -2494,7 +2494,7 @@
           "status": "catalogued",
           "issue": 359,
           "pr": 360,
-          "reason": "Genuinely new self-hosted MIT licensed feature flag backend, unlimited flags and no vendor limits; commercial use yes, no card, own infrastructure. Canonical Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact HEAD 855aea19efd0342d5aac7a7518b5f20074f1568d validation #40158088843 SUCCESS and build #40158088839 SUCCESS, bot APPROVED, auto-MERGED to main c9dbeb80f7758cae03dc21635c9ce408b9e4119e; Issue CLOSED, 288 services. Main Pages deployment awaiting verification."
+          "reason": "Genuinely new self-hosted MIT licensed feature flag backend, unlimited flags and no vendor limits; commercial use yes, no card, own infrastructure. Canonical Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact HEAD 855aea19efd0342d5aac7a7518b5f20074f1568d validation #40158088843 SUCCESS and build #40158088839 SUCCESS, bot APPROVED, auto-MERGED to main c9dbeb80f7758cae03dc21635c9ce408b9e4119e; Issue CLOSED, 288 services. Main Pages #40158115600 build and deploy SUCCESS, main validation #40158115610 SUCCESS."
         }
       ],
       "excluded": [
@@ -2584,7 +2584,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 12/19. GO Feature Flag Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main c9dbeb80f7758cae03dc21635c9ce408b9e4119e includes 288 services. Main Pages deploy not yet confirmed. PR #328 safely reconciled non-force two-parent merge to a03c8a2f45c3918b49d5d4954fb9eeccdb952360; exact-head validation/build SUCCESS, approval at new HEAD pending. No manual main push/merge/deploy or force push.",
+    "note": "Rotation 3 12/19. GO Feature Flag Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main c9dbeb80f7758cae03dc21635c9ce408b9e4119e includes 288 services. Main Pages #40158115600 build and deploy SUCCESS; main validation #40158115610 SUCCESS. PR #328 safely reconciled non-force two-parent merge to a03c8a2f45c3918b49d5d4954fb9eeccdb952360; exact-head validation/build SUCCESS, approval at new HEAD pending. No manual main push/merge/deploy or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
