@@ -3783,5 +3783,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "flagd-self-hosted",
+    "name": "flagd Self-Hosted Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source feature-flag evaluation engine with local/remote flag sources, targeting rules, real-time updates and progressive rollouts; no vendor-imposed flag or evaluation quota when self-hosted.",
+    "watch_out": "Self-hosted software only; provide your own compute, configuration and flag source. No built-in UI, management console or persistence layer. Operational infrastructure costs are separate.",
+    "pricing_url": "https://flagd.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
