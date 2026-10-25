@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "c9dbeb80f7758cae03dc21635c9ce408b9e4119e",
+  "source_main_sha": "ff8e49967fd608c91879283a522331a3f1113154",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,11 +15,11 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -2522,6 +2522,52 @@
         }
       ],
       "new_category_assessment": "No new category warranted; feature flag backends fit existing feature-flags."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "app-hosting",
+      "searches": [
+        "Byet Host official free hosting 2026 5GB no card PHP MySQL",
+        "Byet Host official Terms of Service free hosting CPU limits account cap backup commercial",
+        "alwaysdata Free 1 GB personal non-profit 2026 official",
+        "HelioHost Johnny signup and free hosting current availability",
+        "Serv00 free hosting registration manual review"
+      ],
+      "official_sources": [
+        "https://byet.host/free-hosting",
+        "https://byet.host/terms-of-service",
+        "https://www.alwaysdata.com/en/offers/",
+        "https://help.alwaysdata.com/en/docs/admin-billing/billing/public-cloud-prices/",
+        "https://heliohost.org/signup/",
+        "https://www.serv00.com/register-account/"
+      ],
+      "candidates": [
+        {
+          "id": "byet-host-free-web-hosting",
+          "status": "catalogued",
+          "issue_number": 361,
+          "pr_number": 362,
+          "reason": "New distinct official ongoing free PHP/MySQL web hosting: 5 GB NVMe, unmetered fair-use bandwidth, SSL on subdomains, 10 MB file uploads; no card, commercial use check. Dedupe catalog, all candidate Issues/PRs and branches. Issue #361 JSON-only -> candidate queue #40161568205 SUCCESS -> PR #362 exact HEAD 094722e6b9f19a7d7b072962646dcb4bd02b3855 validation #40161582924 SUCCESS, Pages build #40161582923 SUCCESS (PR Deploy skipped, not counted PASS), eplus-bot approval and automated merge to main ff8e49967fd608c91879283a522331a3f1113154; Issue CLOSED. Main Pages deployment pending verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "alwaysdata Free",
+          "reason": "Official 1 GB/256 MB/0.25 CPU personal-only non-profit tier, but previous discovery noted contradictory card prompt on registration; not selected until resolved."
+        },
+        {
+          "name": "HelioHost Johnny",
+          "reason": "Capacity-gated free signup windows and resource constraints; deferred until reliable access and usage limits checked."
+        },
+        {
+          "name": "Serv00 Free",
+          "reason": "Manual review of new registrations can take up to 72 hours; eligibility and app runtime terms need independent recheck."
+        },
+        {
+          "name": "InfinityFree",
+          "reason": "Already catalogued as infinityfree-free-hosting; do not duplicate."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -2579,12 +2625,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 288,
+    "total_services": 289,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 12/19. GO Feature Flag Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main c9dbeb80f7758cae03dc21635c9ce408b9e4119e includes 288 services. Main Pages #40158115600 build and deploy SUCCESS; main validation #40158115610 SUCCESS. PR #328 safely reconciled non-force two-parent merge to a03c8a2f45c3918b49d5d4954fb9eeccdb952360; exact-head validation/build SUCCESS, approval at new HEAD pending. No manual main push/merge/deploy or force push.",
+    "note": "Rotation 3 13/19. Byet Host Free Issue #361 -> candidate queue #40161568205 SUCCESS -> PR #362 exact-head validation/build SUCCESS and eplus-bot APPROVED, auto-MERGED. Main ff8e49967fd608c91879283a522331a3f1113154 includes 289 services. Main Pages deployment must be verified separately; no manual merge/deploy. PR #292 Koyeb eligibility correction still OPEN with exact-head CI PASS and review; new signups require a paid plan per 2026-02-17 provider notice.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2610,21 +2656,21 @@
     "rotation_2_categories_remaining": [],
     "rotation_3_started_utc": "2026-10-24",
     "rotation_3_categories_reviewed": [
-      "cloud-vps",
-      "ci-cd",
-      "tunneling-networking",
-      "developer-tools",
-      "dns-cdn",
+      "static-hosting",
+      "app-hosting",
       "serverless",
+      "cloud-vps",
+      "developer-tools",
+      "ci-cd",
+      "dns-cdn",
+      "ai-ml",
       "ai-assistants",
       "search",
-      "ai-ml",
-      "static-hosting",
-      "webhooks-events",
-      "feature-flags"
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
     ],
     "rotation_3_categories_remaining": [
-      "app-hosting",
       "databases",
       "storage",
       "auth-security",
