@@ -3771,5 +3771,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "digitalocean-app-platform-static-free",
+    "name": "DigitalOcean App Platform Static Sites Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Up to 3 static-site-only apps at $0/month; 1 GiB outbound transfer per app/month, automatic HTTPS, custom domains and CDN.",
+    "watch_out": "Static components only; additional static-only apps cost $3/month and outbound transfer above 1 GiB/app costs $0.02/GiB. A payment method is required to create resources (cards and alternatives accepted); credit-card necessity and commercial-use permission not explicitly confirmed.",
+    "pricing_url": "https://www.digitalocean.com/pricing/app-platform",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
