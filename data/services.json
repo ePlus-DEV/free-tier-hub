@@ -3797,6 +3797,18 @@
     "last_checked": "2026-10-25"
   },
   {
+    "id": "kopia-self-hosted",
+    "name": "Kopia Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source encrypted backup software; unlimited locally managed snapshots and backup policies; optional self-hosted server mode with web UI and API.",
+    "watch_out": "Self-managed backups require local, network, or cloud storage at your own cost; cloud provider transfer/storage fees apply. Shared repositories use a single password and have no per-user repository ACL.",
+    "pricing_url": "https://kopia.io/docs/installation/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
+  },
+  {
     "id": "openbao-self-hosted",
     "name": "OpenBao Self-Hosted",
     "category": "auth-security",
