@@ -3663,5 +3663,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "semaphore-community-edition-self-hosted",
+    "name": "Semaphore Community Edition Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free open-source Apache-2.0 Community Edition for self-hosted CI/CD; run jobs on own infrastructure and agents; no vendor-hosted build-minute allowance.",
+    "watch_out": "Requires self-hosting and infrastructure/agent costs; Community Edition lacks paid Enterprise features. No vendor-managed hosting included.",
+    "pricing_url": "https://docs.semaphore.io/getting-started/install",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
