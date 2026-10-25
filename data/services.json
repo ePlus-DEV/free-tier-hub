@@ -3591,5 +3591,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "jaeger-self-hosted",
+    "name": "Jaeger Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed tracing backend with collector, query API and UI; self-hosted deployments have no vendor-imposed monthly trace, user or instance quota.",
+    "watch_out": "Provide and operate your own compute, storage backend, backups and security. Default all-in-one in-memory storage loses traces on restart and is for development; production needs durable storage and appropriate scaling. No hosted free tracing service or managed SLA is included.",
+    "pricing_url": "https://www.jaegertracing.io/docs/2.22/getting-started/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
