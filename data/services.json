@@ -3567,5 +3567,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "ceph-self-hosted",
+    "name": "Ceph Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free, open-source distributed object, block, and file storage on self-managed hardware; no vendor-imposed storage, request, or user quota.",
+    "watch_out": "No managed storage capacity, hosting, or SLA is included. Supply and operate disks, servers, network, backups, monitoring and security; comply with LGPL 2.1/3.0 and bundled component licenses.",
+    "pricing_url": "https://ceph.io/en/discover/why-ceph/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
