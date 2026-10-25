@@ -3699,5 +3699,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "librechat-self-hosted",
+    "name": "LibreChat Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted multi-provider AI chat and agent interface, with Docker Compose deployment and no vendor-imposed seat, message, or monthly usage quota for the self-hosted software.",
+    "watch_out": "Operator supplies server/container resources and model access; paid model API usage, third-party services and hosting may incur costs. LibreChat does not bundle free model API credits; self-hosted setup requires MongoDB and other services.",
+    "pricing_url": "https://www.librechat.ai/docs/local/docker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
