@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "f03d9bac557cceb664e3a71940ec229ad1ce8e02",
+  "source_main_sha": "516ed468a75eb770ea86f295054af307d399122f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,8 +185,8 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 13,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
@@ -2365,13 +2365,14 @@
         "https://github.com/hookdeck/outpost",
         "https://hookdeck.com/webhooks/platforms/best-open-source-webhook-tools",
         "https://github.com/probot/smee.io",
-        "https://hookdeck.com/pricing"
+        "https://hookdeck.com/pricing",
+        "https://www.svix.com/pricing/"
       ],
       "candidates": [
         {
           "id": "hookdeck-outpost-self-hosted",
-          "status": "Issue",
-          "reason": "Genuinely new separate outbound self-hosted product from catalogued inbound Hookdeck Developer; Apache-2.0 commercial use and no vendor quota verified; canonical Issue #355 created, queue #40150308470 initially QUEUED; exact-head PR CI not yet established.",
+          "status": "catalogued",
+          "reason": "Issue #355 → queue #40150308470 SUCCESS → PR #356 exact HEAD e8ff5c89b8845b620748e293a59c2bab979f279c validation #40150323412 SUCCESS and PR Pages build #40150323473 SUCCESS, bot APPROVED, automatically MERGED; issue CLOSED; main 516ed468a75eb770ea86f295054af307d399122f includes service. Production Pages deployment separate.",
           "issue": 355,
           "candidate": {
             "id": "hookdeck-outpost-self-hosted",
@@ -2384,7 +2385,9 @@
             "credit_card": "no",
             "commercial_use": "yes",
             "last_checked": "2026-10-25"
-          }
+          },
+          "pr": 356,
+          "queue_run": 40150308470
         }
       ],
       "excluded": [
@@ -2403,6 +2406,10 @@
         {
           "name": "Webhook.site Free",
           "reason": "Temporary testing URLs and request caps; not selected over permanent Apache-2.0 self-hosted product."
+        },
+        {
+          "name": "Svix Free",
+          "reason": "Official current pricing confirms existing catalog 50,000 messages/month, 50 messages/second, 7-day retention; no correction needed."
         }
       ]
     }
