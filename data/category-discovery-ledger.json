@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "e03bcb00b82104fc9583529c70b9885bc9b4d58c",
+  "source_main_sha": "ef369b6409132b89a2f95ff0220ac9ffdc64f873",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -58,9 +58,7 @@
       "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -127,7 +125,7 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 12,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -187,7 +185,7 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 13,
+      "service_count": 14,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -3345,6 +3343,100 @@
         }
       ],
       "new_category_assessment": "No new category needed: self-hosted log/search engine fits existing search category."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "ai-ml",
+      "rotation": "4 (8/19)",
+      "searches": [
+        "Retrospective verification of canonical Issue #392, PR #393 and exact-head Actions for vLLM."
+      ],
+      "official_sources": [
+        "https://github.com/vllm-project/vllm",
+        "https://docs.vllm.ai/"
+      ],
+      "candidates": [
+        {
+          "id": "vllm-self-hosted",
+          "status": "catalogued",
+          "issue_number": 392,
+          "pr_number": 393,
+          "reason": "Apache-2.0 self-hosted inference server; own compute/GPU and separate model license required. PR #393 auto-merged after exact-head validation/build and review; confirmed on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Ollama / LocalAI",
+          "reason": "Previously considered; separate eligibility and deduplication verification deferred."
+        }
+      ],
+      "new_category_assessment": "No new category; fits ai-ml."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "webhooks-events",
+      "rotation": "4 (9/19)",
+      "searches": [
+        "Retrospective verification of canonical Issue #394, PR #395 and exact-head Actions for smee.io."
+      ],
+      "official_sources": [
+        "https://github.com/probot/smee.io"
+      ],
+      "candidates": [
+        {
+          "id": "smee-io-self-hosted",
+          "status": "catalogued",
+          "issue_number": 394,
+          "pr_number": 395,
+          "reason": "MIT self-hosted webhook relay; developer explicitly discourages production use because channels are unauthenticated. PR #395 auto-merged after exact-head validation/build and review; confirmed on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Conduit / Hookdump",
+          "reason": "Provider terms, limits and uniqueness not yet independently verified."
+        }
+      ],
+      "new_category_assessment": "No new category; fits webhooks-events."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "app-hosting",
+      "rotation": "4 (10/19)",
+      "searches": [
+        "Coolify official self-hosted pricing 2026 free forever unlimited features Apache-2.0",
+        "Coolify coollabs official open source license commercial use",
+        "CapRover official license appendix commercial restrictions 2026",
+        "Dokploy official self-hosted PaaS versus cloud 7-day trial pricing"
+      ],
+      "official_sources": [
+        "https://coolify.io/pricing",
+        "https://coolify.io/self-hosted",
+        "https://github.com/coollabsio/coolify",
+        "https://github.com/coollabsio",
+        "https://dokploy.com/pricing",
+        "https://dokploy.com/self-hosted-paas"
+      ],
+      "candidates": [
+        {
+          "id": "coolify-self-hosted",
+          "status": "catalogued",
+          "issue_number": 396,
+          "pr_number": 397,
+          "reason": "Official Coolify self-hosted Free Forever with unlimited apps, services, servers, team members; Apache-2.0 allows commercial use; no card for self-hosted software, own infrastructure costs. Canonical Issue #396 -> queue #40230165659 SUCCESS -> PR #397 exact HEAD 80bae76b4bec198d9b3bb04762f716cf44f9c523 validation #40230188920 SUCCESS and Pages PR build #40230188980 SUCCESS (PR Deploy skipped, NOT PASS); eplus-bot APPROVED at exact HEAD; GitHub-native auto-MERGED to main ef369b6409132b89a2f95ff0220ac9ffdc64f873. Main validation #40230221784 SUCCESS; main Pages deployment pending final verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CapRover Self-Hosted",
+          "reason": "Source-available custom Apache-2.0 appendix may restrict commercial redistribution/hosting; not selected pending official license review."
+        },
+        {
+          "name": "Dokploy Self-Hosted",
+          "reason": "Self-hosted free core exists but proprietary/Enterprise folder has separate commercial terms; not selected pending component-scope verification."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; self-hosted PaaS fits app-hosting."
     }
   ],
   "pending_reverification": [
@@ -3406,14 +3498,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 303,
+    "total_services": 306,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
-    "note": "Rotation 4: 7/19 categories reviewed. Quickwit Self-Hosted Issue #390 -> queue #40216239043 SUCCESS -> PR #391 exact HEAD 613e166ac253c62335ff3a152447cbbc8b3fc5e5 validation/build SUCCESS and eplus-bot APPROVED; GitHub-native auto-MERGED; main e03bcb00b82104fc9583529c70b9885bc9b4d58c contains 303 services; production Pages deployment pending separate verification. No manual merge/deploy, direct main push, or force push.",
+    "note": "Rotation 4: 10/19 categories reviewed; Coolify Self-Hosted Issue #396 -> queue #40230165659 SUCCESS -> PR #397 exact HEAD 80bae76b4bec198d9b3bb04762f716cf44f9c523 validation/build SUCCESS, eplus-bot APPROVED at exact HEAD, auto-MERGED; main ef369b6409132b89a2f95ff0220ac9ffdc64f873 contains 306 services. Main validation SUCCESS; production Pages pending verification. No manual merge/deploy, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3468,21 +3560,21 @@
       "serverless",
       "dns-cdn",
       "ai-assistants",
-      "search"
+      "search",
+      "ai-ml",
+      "webhooks-events",
+      "app-hosting"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
       "storage",
       "developer-tools",
       "auth-security",
       "observability",
       "analytics",
-      "ai-ml",
       "queues-jobs",
-      "feature-flags",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
