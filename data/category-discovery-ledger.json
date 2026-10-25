@@ -2779,6 +2779,10 @@
     {
       "id": "fixfaults-free",
       "category": "observability"
+    },
+    {
+      "id": "heylistenup-free",
+      "category": "webhooks-events"
     }
   ],
   "coverage_summary": {
@@ -2787,7 +2791,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 15/19, 291 services. Ceph Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head CI/review SUCCESS and auto-MERGED to main 03d68aa7c38cca256d57127cc25f16e11086ab06; main validation #40168745918 SUCCESS and Pages #40168745961 Build/Deploy SUCCESS. Historical orphan Oracle correction recovered without force push; PR #367 exact-head CI/review SUCCESS, OPEN pending permitted merge. No manual merge/deploy or approval bypass.",
+    "note": "Rotation 3 15/19, 291 services. Ceph Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head CI/review SUCCESS and auto-MERGED to main 03d68aa7c38cca256d57127cc25f16e11086ab06; main validation #40168745918 SUCCESS and Pages #40168745961 Build/Deploy SUCCESS. Historical orphan Oracle correction recovered without force push; PR #367 exact-head CI/review SUCCESS, OPEN pending permitted merge. No manual merge/deploy or approval bypass. Historical name audit: 68 tracked providers/tiers checked against 291 main IDs; 57 name matches, 11 need product-level reverify/dedupe (10 already in pending_reverification, HeyListenUp newly added due official retention discrepancy).",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
