@@ -59,9 +59,20 @@ jobs:
         if: ${{ steps.pr.outputs.should_approve == 'true' }}
         run: |
           for attempt in {1..60}; do
-            CHECKS="$(gh pr checks "$PR_NUMBER" \
+            # Newly pushed PR heads may not have registered any checks yet.
+            # Retry only that known transient state; fail closed for every other CLI/API error.
+            if ! CHECKS="$(gh pr checks "$PR_NUMBER" \
               --repo "$GITHUB_REPOSITORY" \
-              --json bucket,name,workflow)"
+              --json bucket,name,workflow 2>&1)"; then
+              if [[ "$CHECKS" == *"no checks reported on"* ]]; then
+                echo "::notice::No exact-head checks registered yet (attempt $attempt/60)."
+                sleep 10
+                continue
+              fi
+              printf '%s\n' "$CHECKS" >&2
+              echo "::error::Unable to read pull request checks; refusing approval."
+              exit 1
+            fi
 
             FAILING_COUNT="$(jq '[.[] | select(.workflow != env.APPROVAL_WORKFLOW and (.bucket == "fail" or .bucket == "cancel"))] | length' <<<"$CHECKS")"
             if [ "$FAILING_COUNT" -gt 0 ]; then
@@ -70,12 +81,13 @@ jobs:
             fi
 
             PENDING_COUNT="$(jq '[.[] | select(.workflow != env.APPROVAL_WORKFLOW and .bucket == "pending")] | length' <<<"$CHECKS")"
-            CHECK_COUNT="$(jq '[.[] | select(.workflow == "Validate free tier catalog")] | length' <<<"$CHECKS")"
-            if [ "$CHECK_COUNT" -gt 0 ] && [ "$PENDING_COUNT" -eq 0 ]; then
+            VALIDATION_PASS_COUNT="$(jq '[.[] | select(.workflow == "Validate free tier catalog" and .name == "validate" and .bucket == "pass")] | length' <<<"$CHECKS")"
+            BUILD_PASS_COUNT="$(jq '[.[] | select(.workflow == "Build and deploy GitHub Pages" and .name == "Test and build static site" and .bucket == "pass")] | length' <<<"$CHECKS")"
+            if [ "$VALIDATION_PASS_COUNT" -gt 0 ] && [ "$BUILD_PASS_COUNT" -gt 0 ] && [ "$PENDING_COUNT" -eq 0 ]; then
               exit 0
             fi
 
-            echo "Waiting for $PENDING_COUNT pull request check(s) before approving (attempt $attempt/60)."
+            echo "Waiting for exact-head validation/build PASS and $PENDING_COUNT pending checks (attempt $attempt/60)."
             sleep 10
           done
 
