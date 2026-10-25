@@ -3615,5 +3615,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "rabbitmq-open-source-self-hosted",
+    "name": "RabbitMQ Open Source Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted RabbitMQ message broker under MPL-2.0, with queues, streams, AMQP messaging and no vendor-imposed message, queue or connection quotas.",
+    "watch_out": "You supply servers, storage, backups, monitoring and upgrades; capacity is infrastructure-dependent. Community security patches and support are limited to currently supported release series; extended lifecycle and 24/7 vendor support require commercial Tanzu RabbitMQ. Distinct from CloudAMQP's managed Little Lemur tier.",
+    "pricing_url": "https://www.rabbitmq.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
