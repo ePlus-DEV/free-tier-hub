@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "e0a893c8b68433074900672232eac5cab3e11d65",
+  "source_main_sha": "f03d9bac557cceb664e3a71940ec229ad1ce8e02",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -125,13 +125,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
@@ -2346,7 +2346,16 @@
           "reason": "Official gpt-oss-120b free base limits remain 30 RPM, 1,000 RPD, 8,000 TPM, 200,000 TPD; catalog matches."
         }
       ],
-      "new_category_assessment": "No new category warranted: OpenRouter and AI Gateway fit existing ai-ml; no schema change."
+      "new_category_assessment": "No new category warranted: OpenRouter and AI Gateway fit existing ai-ml; no schema change.",
+      "historical_backlog_delivery": [
+        {
+          "id": "langwatch-developer-free",
+          "status": "catalogued",
+          "issue": 301,
+          "pr": 302,
+          "reason": "Historical candidate Issue #301 -> PR #302, conflicted with new main catalog. Reconciled original branch using two-parent merge commit 2c698eb5e9694eef58a29c00c9eef700576299ff (parents original HEAD 1656716781b3cee25d90bfe0b22c6a402cf44768 and main e0a893c8b68433074900672232eac5cab3e11d65), non-force fast-forward update, all unique commits preserved. Exact-head validation #40146299742 SUCCESS, Pages build #40146299641 SUCCESS, eplus-bot APPROVED 2026-10-25 00:20 UTC, auto-MERGED main f03d9bac557cceb664e3a71940ec229ad1ce8e02; Issue CLOSED. Main Pages deploy cancelled; not production-verified."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -2404,12 +2413,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 284,
+    "total_services": 285,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 now 9/19; OpenRouter Free Models Issue #353 -> queue #40146184249 SUCCESS -> PR #354 exact HEAD ea7b4ab93deb65d95d8b100e28495851208722a7 validation/build SUCCESS and bot APPROVED -> auto-MERGED into main e0a893c8b68433074900672232eac5cab3e11d65; Issue CLOSED. Main Pages deployment separately verify. LangWatch PR #302 ancestry-preserving reconciliation in progress; no direct main push, manual merge, force push, approval bypass or manual deploy.",
+    "note": "Rotation 3 now 9/19. OpenRouter Free Models Issue #353 -> PR #354 auto-MERGED; LangWatch historical PR #302 safely reconciled with a two-parent, non-force merge commit 2c698eb5e9694eef58a29c00c9eef700576299ff, exact-head validation/build SUCCESS and bot APPROVED -> auto-MERGED main f03d9bac557cceb664e3a71940ec229ad1ce8e02; both Issues CLOSED. Catalog 285 services. Main Pages #40146335078 CANCELLED; production LangWatch not verified. Existing workflow fix PR #328 awaits maintainer merge; no bypass.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
