@@ -3531,5 +3531,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "go-feature-flag-self-hosted",
+    "name": "GO Feature Flag Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted feature flag system with unlimited feature flags and no vendor-imposed seat, evaluation or monthly request limits; OpenFeature SDKs and stateless relay proxy.",
+    "watch_out": "Self-host and maintain the relay proxy, configuration storage and any supporting infrastructure; hosting, monitoring and maintenance costs are not included. Dedicated enterprise support and security-response SLA are paid separately.",
+    "pricing_url": "https://gofeatureflag.org/product/open_source",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
