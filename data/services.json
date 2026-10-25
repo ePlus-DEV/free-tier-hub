@@ -3543,5 +3543,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "byet-host-free-web-hosting",
+    "name": "Byet Host Free Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "5 GB NVMe storage; unmetered bandwidth subject to fair use; PHP 8.3 and MySQL 8; free SSL for provider subdomains; custom domains and up to 10 MB file uploads.",
+    "watch_out": "Free hosting is intended for personal sites and experiments. No uptime SLA; high resource use, bulk email, proxy services and download/file-sharing hosting are prohibited. Three free accounts maximum per person; users must maintain their own backups. Commercial-use eligibility is not explicit.",
+    "pricing_url": "https://byet.host/free-hosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
