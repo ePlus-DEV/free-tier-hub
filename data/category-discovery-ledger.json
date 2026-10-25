@@ -1,6 +1,6 @@
 {
-  "as_of_utc": "2026-10-24",
-  "source_main_sha": "25e4c665f9706397fce757804283f5c3476e0ca3",
+  "as_of_utc": "2026-10-25",
+  "source_main_sha": "e0a893c8b68433074900672232eac5cab3e11d65",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -70,7 +70,7 @@
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 35,
+      "stale_over_7d": 36,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -125,11 +125,11 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 1
     },
@@ -140,7 +140,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 4,
+      "stale_over_7d": 5,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -150,7 +150,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-24",
-      "stale_over_7d": 14,
+      "stale_over_7d": 15,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -2303,6 +2303,50 @@
         }
       ],
       "new_category_assessment": "No new category warranted; hosted SERP API fits current search category."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "ai-ml",
+      "rotation": "3 (9/19)",
+      "searches": [
+        "Official OpenRouter Free pricing and free-model rate limits; compare AI API alternatives GroqCloud, Hugging Face Inference Providers and Cloudflare AI Gateway",
+        "Deduplicate OpenRouter against 284 main services, 30 backlog entries, all open/closed Issues and PRs, branches and 50 existing discovery entries"
+      ],
+      "official_sources": [
+        "https://openrouter.ai/pricing",
+        "https://openrouter.ai/terms",
+        "https://console.groq.com/docs/rate-limits",
+        "https://developers.cloudflare.com/ai-gateway/reference/pricing/",
+        "https://huggingface.co/docs/inference-providers/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "openrouter-free-models",
+          "status": "catalogued",
+          "issue": 353,
+          "pr": 354,
+          "reason": "Genuinely new free model gateway, not previously in catalog/backlog/Issues/PRs/branches/ledger. Official ongoing Free offers 25+ models, 50 requests/day, 20/minute, 5 workspaces and no payment method. Model-specific commercial licenses remain check. Canonical JSON-only Issue #353 -> queue #40146184249 deliver SUCCESS -> PR #354 exact HEAD ea7b4ab93deb65d95d8b100e28495851208722a7 validation #40146200799 SUCCESS and Pages PR build #40146200780 SUCCESS (Deploy SKIPPED, not PASS), eplus-bot APPROVED 2026-10-25 00:19 UTC -> auto-MERGED into main e0a893c8b68433074900672232eac5cab3e11d65; Issue CLOSED. Production Pages job requires independent confirmation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hugging Face Inference Providers Free Credits",
+          "reason": "Conflicting provider docs and October 2026 pricing-change reports about whether Free receives $0.10/month or none; defer until current official source resolves."
+        },
+        {
+          "name": "Cloudflare AI Gateway Free",
+          "reason": "Official free core gateway, but not selected this run; separate eligibility/product dedupe and quota verification for next rotation."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "groqcloud-api-free",
+          "status": "catalogued-verified",
+          "official_source": "https://console.groq.com/docs/rate-limits",
+          "reason": "Official gpt-oss-120b free base limits remain 30 RPM, 1,000 RPD, 8,000 TPM, 200,000 TPD; catalog matches."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: OpenRouter and AI Gateway fit existing ai-ml; no schema change."
     }
   ],
   "pending_reverification": [
@@ -2360,12 +2404,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 283,
+    "total_services": 284,
     "total_categories": 19,
-    "stale_over_7d": 214,
+    "stale_over_7d": 217,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 3 now 8/19. SerpApi Free Issue #351 -> queue #40142012660 SUCCESS -> PR #352 exact HEAD 352602103e50bc58b094874f5c28f5c6a8b921d7 validation/build SUCCESS and eplus-bot APPROVED -> auto-MERGED main 25e4c665f9706397fce757804283f5c3476e0ca3; Issue CLOSED. Main Pages production deployment pending independent job-level verification. Existing PRs #291/#292/#302/#323/#328 remain under review; no manual merge, direct main push, force push, approval bypass or manual deploy.",
+    "note": "Rotation 3 now 9/19; OpenRouter Free Models Issue #353 -> queue #40146184249 SUCCESS -> PR #354 exact HEAD ea7b4ab93deb65d95d8b100e28495851208722a7 validation/build SUCCESS and bot APPROVED -> auto-MERGED into main e0a893c8b68433074900672232eac5cab3e11d65; Issue CLOSED. Main Pages deployment separately verify. LangWatch PR #302 ancestry-preserving reconciliation in progress; no direct main push, manual merge, force push, approval bypass or manual deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2398,7 +2442,8 @@
       "dns-cdn",
       "serverless",
       "ai-assistants",
-      "search"
+      "search",
+      "ai-ml"
     ],
     "rotation_3_categories_remaining": [
       "static-hosting",
@@ -2408,7 +2453,6 @@
       "auth-security",
       "observability",
       "analytics",
-      "ai-ml",
       "queues-jobs",
       "feature-flags",
       "webhooks-events"
