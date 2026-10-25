@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "df63cbc9a79dd7dc5c2052b695a9747edcdc9600",
+  "source_main_sha": "c9dbeb80f7758cae03dc21635c9ce408b9e4119e",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -165,11 +165,11 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 15,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 16,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -2467,6 +2467,61 @@
         }
       ],
       "new_category_assessment": "No new category warranted: NudgeHost static HTML/ZIP sites belong to static-hosting."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "feature-flags",
+      "rotation": "3 (12/19)",
+      "searches": [
+        "GO Feature Flag MIT license and self-hosted free feature flags official",
+        "FeatBit Foundation free pricing and open-core license",
+        "OpenFeature flagd Apache-2.0 self-hosted daemon",
+        "ConfigCat Forever Free current limits",
+        "Statsig Developer Free current limits"
+      ],
+      "official_sources": [
+        "https://gofeatureflag.org/product/open_source",
+        "https://gofeatureflag.org/docs",
+        "https://github.com/thomaspoignant/go-feature-flag",
+        "https://home.featbit.co/pricing",
+        "https://github.com/open-feature/flagd",
+        "https://configcat.com/pricing/",
+        "https://www.statsig.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "go-feature-flag-self-hosted",
+          "status": "catalogued",
+          "issue": 359,
+          "pr": 360,
+          "reason": "Genuinely new self-hosted MIT licensed feature flag backend, unlimited flags and no vendor limits; commercial use yes, no card, own infrastructure. Canonical Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact HEAD 855aea19efd0342d5aac7a7518b5f20074f1568d validation #40158088843 SUCCESS and build #40158088839 SUCCESS, bot APPROVED, auto-MERGED to main c9dbeb80f7758cae03dc21635c9ce408b9e4119e; Issue CLOSED, 288 services. Main Pages deployment awaiting verification."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatBit Foundation",
+          "reason": "Official free self-hosted open-core tier with unlimited MAU/seats/projects; premium license boundary requires independent review before Issue; deferred, not ineligible."
+        },
+        {
+          "name": "OpenFeature flagd",
+          "reason": "Apache-2.0 evaluation daemon is distinct from OpenFeature SDK and GO Feature Flag; defer for separate management-scope assessment."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "configcat-forever-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://configcat.com/pricing/",
+          "reason": "Forever Free 10 flags, 2 environments/products, 5M JSON downloads and 20 GB/month; catalog matches."
+        },
+        {
+          "id": "statsig-developer-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.statsig.com/pricing",
+          "reason": "Developer Free 2M events, unlimited flag checks, 50K replays monthly; catalog matches."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; feature flag backends fit existing feature-flags."
     }
   ],
   "pending_reverification": [
@@ -2524,12 +2579,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 287,
+    "total_services": 288,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 11/19. NudgeHost Issue #357 -> queue SUCCESS -> PR #358 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main df63cbc9a79dd7dc5c2052b695a9747edcdc9600 contains 287 services; main validation and Pages build/deploy SUCCESS. Static.app excluded as 7-day trial. No manual main push, merge, force push, or deploy.",
+    "note": "Rotation 3 12/19. GO Feature Flag Issue #359 -> queue #40158074927 SUCCESS -> PR #360 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main c9dbeb80f7758cae03dc21635c9ce408b9e4119e includes 288 services. Main Pages deploy not yet confirmed. PR #328 safely reconciled non-force two-parent merge to a03c8a2f45c3918b49d5d4954fb9eeccdb952360; exact-head validation/build SUCCESS, approval at new HEAD pending. No manual main push/merge/deploy or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2564,7 +2619,9 @@
       "ai-assistants",
       "search",
       "ai-ml",
-      "static-hosting"
+      "static-hosting",
+      "webhooks-events",
+      "feature-flags"
     ],
     "rotation_3_categories_remaining": [
       "app-hosting",
@@ -2573,9 +2630,7 @@
       "auth-security",
       "observability",
       "analytics",
-      "queues-jobs",
-      "feature-flags",
-      "webhooks-events"
+      "queues-jobs"
     ]
   }
 }
