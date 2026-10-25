@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "497e248b4920ee9bb5f581de3579ce2be84fb10f",
+  "source_main_sha": "dc81a7b4670a487b4db62f1166d1ef1a8d1a0e13",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -117,11 +117,11 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -3189,6 +3189,63 @@
         }
       ],
       "new_category_assessment": "No new category; Modal is managed serverless compute and belongs to existing serverless."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "dns-cdn",
+      "rotation": "4 (5/19)",
+      "searches": [
+        "Enumerated all 19 categories from current main scripts/catalog.mjs and 301-service catalog; compared 30 durable backlog IDs, all-state Issues/PRs and candidate branches; confirmed Quad9 absent from all before delivery.",
+        "Compared Quad9 Public DNS against existing ClouDNS Free DNS and deSEC Free DNS; researched Hurricane Electric Free DNS as another candidate, deferred until card/commercial use and beta conditions are sufficiently verified.",
+        "Verified Quad9 current official FAQ and service documentation: ongoing free public recursive DNS, no signup/card, free for businesses and large organizations (large traffic operators should contact Quad9). Verified malware blocking, DNSSEC, DNS-over-HTTPS/TLS; distinguished recursive resolver from authoritative DNS hosting.",
+        "Rechecked existing ClouDNS Free (1 zone, 50 records, 500K monthly queries) and deSEC Free; both already catalogued, no duplicate Issue created."
+      ],
+      "official_sources": [
+        "https://quad9.net/support/faq/",
+        "https://docs.quad9.net/services/",
+        "https://quad9.net/",
+        "https://www.cloudns.net/landing/page/free-dns/",
+        "https://desec.io/",
+        "https://dns.he.net/"
+      ],
+      "candidates": [
+        {
+          "id": "quad9-public-dns",
+          "status": "catalogued",
+          "issue_number": 386,
+          "pr_number": 387,
+          "reason": "Official free DNS for personal and business use with no signup/card; large-scale ISPs/service providers should contact Quad9. Canonical JSON-only Issue #386 -> GitHub-native catalog candidate queue -> PR #387 exact HEAD 37956464e749a4d5fe816b3d79f6a2c4caeeff25; validation run #40206211918 SUCCESS, PR build run #40206211914 SUCCESS (Deploy SKIPPED, not PASS); eplus-bot APPROVED, GitHub-native auto-MERGED. Main dc81a7b4670a487b4db62f1166d1ef1a8d1a0e13 contains service; Issue CLOSED. Production Pages deployment for main not yet independently verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "ClouDNS Free DNS",
+          "reason": "Already catalogued as cloudns-free-dns, not a new service."
+        },
+        {
+          "name": "deSEC Free DNS",
+          "reason": "Already catalogued as desec-free-dns, not a new service."
+        },
+        {
+          "name": "Hurricane Electric Free DNS",
+          "reason": "Official free hosted DNS remains open beta; commercial/card and service quota terms need further verification before canonical delivery."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudns-free-dns",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.cloudns.net/landing/page/free-dns/",
+          "reason": "Free Forever still 1 DNS zone, 50 records and 500K queries/month; commercial and card details remain check."
+        },
+        {
+          "id": "desec-free-dns",
+          "status": "catalogued-reverified",
+          "official_source": "https://desec.io/",
+          "reason": "Free DNSSEC-enabled authoritative hosting still advertised; .dedyn.io new registration is suspended, separate own-domain service remains available."
+        }
+      ],
+      "new_category_assessment": "No new category: public recursive DNS belongs to dns-cdn; explicitly disclose that Quad9 is not authoritative DNS hosting."
     }
   ],
   "pending_reverification": [
@@ -3250,14 +3307,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 300,
+    "total_services": 301,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
-    "note": "Rotation 4: 4/19 categories reviewed. Main contains 300 services after Semaphore Community Edition #383 and Modal Starter #385 were automatically merged. Modal #384 -> PR #385 exact-head validation #40201795877 SUCCESS, PR build #40201795993 SUCCESS (PR deploy SKIPPED), eplus-bot APPROVED, GitHub-native MERGED; production Pages main deployment not yet verified. Card and commercial eligibility remain check. No manual merge, direct main push or force push.",
+    "note": "Rotation 4: 5/19 categories reviewed. Quad9 Public DNS Issue #386 -> PR #387 exact-head validation and build SUCCESS, review APPROVED, GitHub-native auto-MERGED. Main dc81a7b4670a487b4db62f1166d1ef1a8d1a0e13 contains 301 services. PR deploy SKIPPED; main production deployment awaits independent verification. No manual merge, direct main push, or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3309,7 +3366,8 @@
       "cloud-vps",
       "ci-cd",
       "tunneling-networking",
-      "serverless"
+      "serverless",
+      "dns-cdn"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3320,13 +3378,12 @@
       "auth-security",
       "observability",
       "analytics",
-      "dns-cdn",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
-      "webhooks-events"
+      "webhooks-events",
+      "ai-assistants"
     ]
   }
 }
