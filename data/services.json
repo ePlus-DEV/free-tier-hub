@@ -3495,5 +3495,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "langwatch-developer-free",
+    "name": "LangWatch Developer Free",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "50,000 events/month; 2 users; 14-day data access; 3 scenarios, 3 simulations and 3 custom evals.",
+    "watch_out": "Each LLM call, tool call, retrieval, evaluation or simulation step counts as an event. Developer has limited retention and evaluation quotas; paid Growth adds capacity. Commercial-use rights for hosted Developer require confirmation.",
+    "pricing_url": "https://langwatch.ai/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-24"
   }
 ]
