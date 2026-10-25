@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "9c9a18f104661d0fd2b1ee35931b256bc53ecec7",
+  "source_main_sha": "a4c643fb19da46af47cae8cb6aef8b1c7d01d6ed",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -55,7 +55,7 @@
     },
     {
       "category": "storage",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -91,7 +91,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "observability",
@@ -3552,6 +3552,58 @@
           "reason": "Small/young project; reverify license, maturity, security and limits before eligibility."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "storage",
+      "rotation": "4",
+      "searches": [
+        "Selected storage from remaining categories after enumerating actual main catalog/config, open/closed Issues, merged/open PRs, branches and durable backlog.",
+        "Deduplicated kopia-self-hosted against existing 309 services, all-state GitHub Issues/PRs, branch names and 30 reviewed backlog candidates.",
+        "Verified official documentation, license, ongoing self-hosted free status, no card for software and commercial usage; checked operational caveats."
+      ],
+      "official_sources": [
+        "https://kopia.io/docs/installation/",
+        "https://kopia.io/docs/features/",
+        "https://github.com/kopia/kopia/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "kopia-self-hosted",
+          "status": "catalogued",
+          "issue_number": 404,
+          "pr_number": 406,
+          "reason": "Official Apache-2.0 ongoing free encrypted backups and optional server mode; no vendor license fee/card; commercial allowed. Infrastructure and storage paid separately; shared repository has no per-user ACL. Issue #404 -> PR #406 exact head 071a57f214b4bdef5204399c93ab20dce1a65ef9: validation #40244148125 SUCCESS, build #40244148124 SUCCESS, bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no category or schema change."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "auth-security",
+      "rotation": "4",
+      "searches": [
+        "Selected auth-security from remaining categories after enumerating actual main catalog/config, open/closed Issues, merged/open PRs, branches and durable backlog.",
+        "Deduplicated openbao-self-hosted against existing 309 services, all-state GitHub Issues/PRs, branch names and 30 reviewed backlog candidates.",
+        "Verified official documentation, license, ongoing self-hosted free status, no card for software and commercial usage; checked operational caveats."
+      ],
+      "official_sources": [
+        "https://openbao.org/docs/",
+        "https://openbao.org/docs/what-is-openbao/",
+        "https://github.com/openbao/openbao/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "openbao-self-hosted",
+          "status": "pr",
+          "issue_number": 405,
+          "pr_number": 407,
+          "reason": "Official MPL-2.0 ongoing free self-hosted secrets management, commercial allowed, no vendor card. Requires secure operations and self-funded infrastructure. Issue #405 -> PR #407 exact head 4514c32d8a6914a4e7631bc6f0a76f8eb0408c5: validation #40244150046 SUCCESS, build #40244150149 SUCCESS, bot APPROVED; PR remains OPEN, mergeable=false after #406 merged; requires non-force reconciliation. PR Deploy SKIPPED (not a production pass)."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no category or schema change."
     }
   ],
   "pending_reverification": [
@@ -3613,12 +3665,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 309,
+    "total_services": 310,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 4: 13/19 categories reviewed; static-hosting DigitalOcean App Platform Free (#400 -> #401) and feature-flags flagd (#402 -> #403) passed exact-head validation/build and eplus-bot approval, auto-MERGED via existing workflow; main 9c9a18f104661d0fd2b1ee35931b256bc53ecec7 contains 309 services. 29 exact backlog IDs catalogued plus UploadThing product alias; no unresolved backlog entries. 217 catalog services older than 7 days. No direct main push, manual merge/deploy or force push.",
+    "note": "Rotation 4: 15/19 categories. Main 310 services. Kopia #404 -> PR #406 auto-merged after exact-head CI success and bot approval. OpenBao #405 -> PR #407 exact-head CI success and bot approval; mergeable=false pending safe non-force reconciliation; not yet merged. PR deploy skipped is not production success. No direct main push, force push or manual PR merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3679,13 +3731,13 @@
       "app-hosting",
       "queues-jobs",
       "static-hosting",
-      "feature-flags"
+      "feature-flags",
+      "storage",
+      "auth-security"
     ],
     "rotation_4_categories_remaining": [
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
       "observability",
       "analytics"
     ]
