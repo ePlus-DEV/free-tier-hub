@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "03d68aa7c38cca256d57127cc25f16e11086ab06",
+  "source_main_sha": "4e3109160f197af8102c5336f08f355e9692648a",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -85,11 +85,11 @@
     },
     {
       "category": "auth-security",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 16,
       "open_catalog_candidate_issues": 0
     },
@@ -2725,6 +2725,59 @@
         }
       ],
       "new_category_assessment": "No new category warranted; Oracle compute remains cloud-vps."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "auth-security",
+      "rotation": "3 (16/19)",
+      "searches": [
+        "Enumerated current 19 categories from main scripts/catalog.mjs and 292 catalog records; checked 30 durable backlog IDs, open Issues/PRs and branches for duplicate Cerbos.",
+        "Cerbos PDP official free forever self-hosted policy engine Apache 2.0 commercial use and Cerbos Hub PoC separate limits",
+        "Ory Kratos official Apache 2.0 self-hosted and enterprise patch support restrictions",
+        "SuperTokens official self-hosted free and cloud 5K MAU with paid add-ons",
+        "WorkOS AuthKit official current 1M MAU and production billing-card requirement"
+      ],
+      "official_sources": [
+        "https://www.cerbos.dev/pricing",
+        "https://github.com/cerbos/cerbos",
+        "https://github.com/cerbos/cerbos/blob/main/LICENSE",
+        "https://www.ory.com/kratos",
+        "https://supertokens.com/pricing",
+        "https://workos.com/pricing",
+        "https://workos.com/docs/authkit/environments"
+      ],
+      "candidates": [
+        {
+          "id": "cerbos-pdp-self-hosted",
+          "status": "catalogued",
+          "issue_number": 368,
+          "pr_number": 369,
+          "reason": "Official perpetual free Apache-2.0 self-hosted PDP, no vendor-imposed authorization decision quota, commercial allowed, no card; distinct from identity-provider entries and hosted Cerbos Hub PoC. JSON-only Issue #368 -> queue #40172380445 SUCCESS -> PR #369 exact HEAD a74847ffd20208b40cf2070ffe2412773c5f9d14 validation #40172403184 SUCCESS, PR Pages build #40172403187 SUCCESS (PR deploy not treated as pass); eplus-bot APPROVED; GitHub Actions auto-MERGED to main 4e3109160f197af8102c5336f08f355e9692648a; main contains 292 services. Main deploy check pending at ledger update."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Ory Kratos OSS",
+          "reason": "Previously reported in 2026-10-24 auth-security discovery; not genuinely new to ledger, defer to reverify licensing and enterprise security-patch caveats."
+        },
+        {
+          "name": "SuperTokens OSS",
+          "reason": "Previously reported in 2026-10-24 auth-security discovery; defer separate paid add-on and cloud/self-hosted product split verification."
+        },
+        {
+          "name": "Cerbos Hub PoC",
+          "reason": "Hosted 100-MAP PoC offering is separate from free-forever self-hosted Cerbos PDP; avoid conflating limits."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "workos-authkit-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://workos.com/docs/authkit/environments",
+          "reason": "Official current 1M MAU AuthKit allowance and required billing information for production agree with catalog; no correction needed."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; authorization PDP is within auth-security."
     }
   ],
   "pending_reverification": [
@@ -2786,12 +2839,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 291,
+    "total_services": 292,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 15/19, 291 services. Ceph Issue #365 -> queue #40168697507 SUCCESS -> PR #366 exact-head CI/review SUCCESS and auto-MERGED to main 03d68aa7c38cca256d57127cc25f16e11086ab06; main validation #40168745918 SUCCESS and Pages #40168745961 Build/Deploy SUCCESS. Historical orphan Oracle correction recovered without force push; PR #367 exact-head CI/review SUCCESS, OPEN pending permitted merge. No manual merge/deploy or approval bypass. Historical name audit: 68 tracked providers/tiers checked against 291 main IDs; 57 name matches, 11 need product-level reverify/dedupe (10 already in pending_reverification, HeyListenUp newly added due official retention discrepancy).",
+    "note": "Rotation 3 16/19, 292 services. Cerbos PDP Issue #368 -> queue SUCCESS -> PR #369 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; production deploy at current main not yet confirmed at ledger write. Oracle correction PR #367 OPEN with exact-head checks and review SUCCESS. Preserve GitHub approvals and non-force ancestry; no manual merge/deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -2831,10 +2884,10 @@
       "tunneling-networking",
       "webhooks-events",
       "databases",
-      "storage"
+      "storage",
+      "auth-security"
     ],
     "rotation_3_categories_remaining": [
-      "auth-security",
       "observability",
       "analytics",
       "queues-jobs"
