@@ -3627,5 +3627,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "euserv-vs2-free",
+    "name": "EUserv VS2-free IPv6 VPS",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Free Linux container VPS with root access: 1 vCPU at 1 GHz, 1 GB RAM, 10 GB HDD, 1 IPv6 /128 and 1 TB traffic per month.",
+    "watch_out": "IPv6-only (no included IPv4); connection throttled to 1 Mbit/s after 1 TB/month. One-month contract requires manual renewal; account verification and capacity/order availability apply. Paid IPv4, extras and licensed operating systems may cost money. Card and commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://www.euserv.com/en/virtual-private-server/root-vserver/v2/vs2-free.php",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
