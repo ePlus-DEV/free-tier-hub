@@ -3687,5 +3687,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "quad9-public-dns",
+    "name": "Quad9 Public DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free public recursive DNS resolver with malware/phishing blocking, DNSSEC validation, DNS-over-HTTPS and DNS-over-TLS; no account or published monthly query quota for ordinary use.",
+    "watch_out": "Recursive DNS only: does not host authoritative DNS zones or provide CDN. ISPs, service providers and other large organizations should contact Quad9 before sending large-scale DNS traffic; no business SLA or per-domain DNS management.",
+    "pricing_url": "https://quad9.net/support/faq/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
