@@ -146,6 +146,14 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25"
+    },
+    {
+      "category": "ci-cd",
+      "service_count": 8,
+      "latest_catalog_verification": "2026-10-25",
+      "backlog_total": 0,
+      "uncatalogued_backlog": [],
+      "last_discovery_review": "2026-10-25"
     }
   ],
   "discovery_log": [
