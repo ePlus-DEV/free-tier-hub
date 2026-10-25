@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "bcfdfeeb3b8753ba92ec250507a48c2c578efbce",
+  "source_main_sha": "9c9a18f104661d0fd2b1ee35931b256bc53ecec7",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -58,9 +58,7 @@
       "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -167,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 16,
+      "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -3493,6 +3491,67 @@
         }
       ],
       "new_category_assessment": "No new category warranted; OSS job queue library belongs to queues-jobs."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "static-hosting",
+      "official_sources": [
+        "https://www.digitalocean.com/pricing/app-platform",
+        "https://docs.digitalocean.com/products/app-platform/details/pricing/",
+        "https://docs.digitalocean.com/platform/billing/manage-payment-methods/",
+        "https://deno.com/deploy/pricing",
+        "https://droply.host/",
+        "https://drops.sh/free-website-hosting"
+      ],
+      "candidates": [
+        {
+          "id": "digitalocean-app-platform-static-free",
+          "status": "catalogued",
+          "reason": "Verified ongoing 3 static-only apps and 1 GiB monthly egress each, extra apps $3/month and overage $0.02/GiB. Payment method required; specific card and commercial permissions conservatively check. Issue #400 -> PR #401 exact-head validation/build PASS and eplus-bot approval; merged automatically and present on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Deno Deploy Free",
+          "reason": "Valid 1M monthly requests and 20 GiB bandwidth but belongs in serverless category, not static-hosting; defer separate product-level review."
+        },
+        {
+          "name": "Droply Free",
+          "reason": "Free forever/no card claimed, but quantitative limits and commercial terms not established from official page; reverify before Issue."
+        },
+        {
+          "name": "Drops Free",
+          "reason": "Free forever claimed, but official quantitative file/site caps and commercial terms not established; defer."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "feature-flags",
+      "official_sources": [
+        "https://flagd.dev/",
+        "https://github.com/open-feature/flagd",
+        "https://github.com/open-feature/flagd/blob/main/LICENSE",
+        "https://github.com/openflagr/flagr",
+        "https://github.com/openflagr/flagr/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "flagd-self-hosted",
+          "status": "catalogued",
+          "reason": "Apache-2.0 OpenFeature-compatible flag evaluation daemon; standalone/self-hosted with no vendor quota or card, commercial use permitted. No management UI/persistence, own hosting costs. Issue #402 -> PR #403 exact-head validation/build PASS and eplus-bot approval; GitHub-native auto-merged and present on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenFlagr Self-Hosted",
+          "reason": "Apache-2.0 and maintained as of 2026-10-06; promising distinct self-hosted service with UI. Defer independent delivery after flagd; dedupe all Issues/PRs first."
+        },
+        {
+          "name": "OpenFlags Self-Hosted",
+          "reason": "Small/young project; reverify license, maturity, security and limits before eligibility."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -3554,14 +3613,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 307,
+    "total_services": 309,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "Rotation 4: 11/19 categories reviewed; BullMQ OSS Issue #398 -> PR #399 exact HEAD 48b12c14a5ba64966106cafa0eaeabfa989828d3 validation/build SUCCESS, eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED; main bcfdfeeb3b8753ba92ec250507a48c2c578efbce contains 307 services. Main validation and Pages pending final verification at ledger write. No manual merge/deploy, direct main push or force push.",
+    "unmatched_backlog": [],
+    "note": "Rotation 4: 13/19 categories reviewed; static-hosting DigitalOcean App Platform Free (#400 -> #401) and feature-flags flagd (#402 -> #403) passed exact-head validation/build and eplus-bot approval, auto-MERGED via existing workflow; main 9c9a18f104661d0fd2b1ee35931b256bc53ecec7 contains 309 services. 29 exact backlog IDs catalogued plus UploadThing product alias; no unresolved backlog entries. 217 catalog services older than 7 days. No direct main push, manual merge/deploy or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3620,17 +3677,17 @@
       "ai-ml",
       "webhooks-events",
       "app-hosting",
-      "queues-jobs"
+      "queues-jobs",
+      "static-hosting",
+      "feature-flags"
     ],
     "rotation_4_categories_remaining": [
-      "static-hosting",
       "databases",
       "storage",
       "developer-tools",
       "auth-security",
       "observability",
-      "analytics",
-      "feature-flags"
+      "analytics"
     ]
   }
 }
