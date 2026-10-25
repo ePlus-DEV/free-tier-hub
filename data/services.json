@@ -3519,5 +3519,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "nudgehost-free-static-hosting",
+    "name": "NudgeHost Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "10 active hosted links/sites on a free account; up to 25 MB per file or uploaded site ZIP; 2 API keys at 20 requests/minute; no visitor cap; hosted HTML and ZIP sites stay live until deleted.",
+    "watch_out": "A free account is required for permanent links; anonymous uploads expire after 7 days. Static HTML/CSS/JS hosting only, no server-side runtime. Custom domains and password protection require Pro; default site URLs may request no search indexing. Free is marketed for personal files, so commercial-use rights require confirmation.",
+    "pricing_url": "https://www.nudgehost.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-25"
   }
 ]
