@@ -3723,5 +3723,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "vllm-self-hosted",
+    "name": "vLLM Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source LLM inference and serving engine; unlimited self-hosted inference subject to own hardware capacity; no vendor-hosted free compute included.",
+    "watch_out": "Requires own compute (typically supported GPU or CPU build), storage and model weights. Infrastructure and model downloads may cost money; each model has separate license and commercial-use restrictions; no free hosted API credits.",
+    "pricing_url": "https://github.com/vllm-project/vllm",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
