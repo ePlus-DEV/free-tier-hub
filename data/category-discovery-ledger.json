@@ -2594,7 +2594,7 @@
           "status": "catalogued",
           "issue_number": 363,
           "pr_number": 364,
-          "reason": "Distinct from Redis Cloud and Upstash Redis: BSD-3-Clause self-hosted key/value datastore, free ongoing commercial use, no vendor-imposed quotas; own infrastructure required, no card. Canonical JSON-only Issue #363 -> queue #40165371350 SUCCESS -> PR #364 exact HEAD 8d7b8d0868579ebf8357e3386ae88ead708996e3 validation #40165386477 SUCCESS, Pages PR build #40165386678 SUCCESS (PR Deploy SKIPPED), auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation #40165418447 SUCCESS; production Pages #40165418457 pending at ledger update; NOT verified deployed."
+          "reason": "Distinct from Redis Cloud and Upstash Redis: BSD-3-Clause self-hosted key/value datastore, free ongoing commercial use, no vendor-imposed quotas; own infrastructure required, no card. Canonical JSON-only Issue #363 -> queue #40165371350 SUCCESS -> PR #364 exact HEAD 8d7b8d0868579ebf8357e3386ae88ead708996e3 validation #40165386477 SUCCESS, Pages PR build #40165386678 SUCCESS (PR Deploy SKIPPED), auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation #40165418447 SUCCESS; production Pages #40165418457 Build SUCCESS and Deploy SUCCESS at exact main cc00e2368497e84164a7c6fcf3f285df96d44f37."
         }
       ],
       "excluded": [
@@ -2684,7 +2684,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 14/19. Valkey Self-Hosted Issue #363 -> candidate queue #40165371350 SUCCESS -> PR #364 exact-head validation/build SUCCESS, auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation SUCCESS; Pages #40165418457 pending, NOT production-confirmed. No manual merge/deploy/force push.",
+    "note": "Rotation 3 14/19. Valkey Self-Hosted Issue #363 -> candidate queue #40165371350 SUCCESS -> PR #364 exact-head validation/build SUCCESS, auto-MERGED to main cc00e2368497e84164a7c6fcf3f285df96d44f37. Main validation #40165418447 SUCCESS; Pages #40165418457 Build and Deploy SUCCESS at exact main HEAD. No manual merge/deploy/force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
