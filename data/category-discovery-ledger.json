@@ -2803,7 +2803,7 @@
           "issue_number": 370,
           "pr_number": 371,
           "queue_run": 40176119335,
-          "reason": "New Apache-2.0 CNCF self-hosted tracing, no vendor-imposed quotas; no card, commercial allowed, own storage required. Canonical JSON-only Issue #370 -> queue #40176119335 SUCCESS -> PR #371 exact HEAD 0d9c5487e5e491aa123b1d75810aa26707b59cc5 validation #40176134910 SUCCESS and Pages PR build #40176136602 SUCCESS (Deploy SKIPPED, not counted PASS), bot APPROVED and auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64; production deployment pending verification."
+          "reason": "New Apache-2.0 CNCF self-hosted tracing, no vendor-imposed quotas; no card, commercial allowed, own storage required. Canonical JSON-only Issue #370 -> queue #40176119335 SUCCESS -> PR #371 exact HEAD 0d9c5487e5e491aa123b1d75810aa26707b59cc5 validation #40176134910 SUCCESS and Pages PR build #40176136602 SUCCESS (Deploy SKIPPED, not counted PASS), bot APPROVED and auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64; main validation #40176166450 SUCCESS and Pages #40176166433 Build SUCCESS plus Deploy SUCCESS at exact main 231a05649c88777e1e54b9c2d77ecbdf0675ee64."
         }
       ],
       "excluded": [
@@ -2897,7 +2897,7 @@
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 17/19; Jaeger Issue #370 -> queue SUCCESS -> PR #371 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64. Production deploy pending. Koyeb PR #292 reconciled non-force at 84bf0c6a9cd12861ebf1c7e8ceeee5783a62b112; exact-head CI/review pending.",
+    "note": "Rotation 3 17/19; Jaeger Issue #370 CLOSED, queue #40176119335 SUCCESS, PR #371 exact-head validation/build SUCCESS, APPROVED and auto-MERGED to main 231a05649c88777e1e54b9c2d77ecbdf0675ee64. Main validation #40176166450 SUCCESS, Pages #40176166433 Build and Deploy SUCCESS. Koyeb PR #292 reconciled by two-parent non-force commit 84bf0c6a9cd12861ebf1c7e8ceeee5783a62b112; exact-head validation #40176223604 and build #40176223567 SUCCESS, review APPROVED, still OPEN.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
