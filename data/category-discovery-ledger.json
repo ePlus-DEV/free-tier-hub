@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "ef369b6409132b89a2f95ff0220ac9ffdc64f873",
+  "source_main_sha": "bcfdfeeb3b8753ba92ec250507a48c2c578efbce",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,7 +58,9 @@
       "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -145,7 +147,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -3437,6 +3439,60 @@
         }
       ],
       "new_category_assessment": "No new category warranted; self-hosted PaaS fits app-hosting."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "queues-jobs",
+      "rotation": "4 (11/19)",
+      "searches": [
+        "Re-enumerated all 19 categories and 307 main catalog entries, 30 backlog records, 5 open PRs, candidate Issue #398 and GitHub branch/Actions state; no BullMQ ID/name/provider duplicate.",
+        "Verified BullMQ official free MIT license, no artificial OSS worker/concurrency limits, and separate paid BullMQ Pro features; compared Temporal self-hosted MIT and bunqueue MIT self-hosted as separate deferred candidates.",
+        "Reverified CloudAMQP Little Lemur free RabbitMQ 1M messages/month, 20 connections, 100 queues and Upstash QStash Free 1,000 delivery attempts/day, 50 GB/month from official pricing."
+      ],
+      "official_sources": [
+        "https://bullmq.io/",
+        "https://github.com/taskforcesh/bullmq/blob/master/LICENSE",
+        "https://docs.bullmq.io/guide/introduction",
+        "https://docs.bullmq.io/bullmq-pro/introduction",
+        "https://temporal.io/",
+        "https://bunqueue.dev/",
+        "https://www.cloudamqp.com/plans/",
+        "https://upstash.com/pricing/qstash"
+      ],
+      "candidates": [
+        {
+          "id": "bullmq-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 398,
+          "pr_number": 399,
+          "reason": "Official BullMQ MIT free OSS self-hosted with no worker/concurrency limits, commercial use allowed, no software card, own Redis-compatible datastore/worker compute cost; distinct from paid BullMQ Pro. Canonical Issue #398 -> catalog-candidate-queue -> PR #399 exact HEAD 48b12c14a5ba64966106cafa0eaeabfa989828d3 validation #40235033988 SUCCESS and PR build #40235034020 SUCCESS (Deploy SKIPPED), eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED to main bcfdfeeb3b8753ba92ec250507a48c2c578efbce; main 307 services. Main Pages/validation pending final verification at ledger write."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Temporal Self-Hosted",
+          "reason": "MIT self-hosted durable workflow platform, distinct from BullMQ; defer independent validation and duplicate review, not classified ineligible."
+        },
+        {
+          "name": "bunqueue Self-Hosted",
+          "reason": "MIT self-hosted queue and dashboard with no paid tier, distinct from BullMQ; defer independent verification and duplicate review, not classified ineligible."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "cloudamqp-little-lemur",
+          "status": "catalogued-reverified",
+          "official_source": "https://www.cloudamqp.com/plans/",
+          "reason": "Current Little Lemur free RabbitMQ tier lists 1M messages/month, 20 connections, 100 queues, 10K queued messages; unused free instances can be deleted after two months."
+        },
+        {
+          "id": "upstash-qstash",
+          "status": "catalogued-reverified",
+          "official_source": "https://upstash.com/pricing/qstash",
+          "reason": "Free 1,000 message delivery attempts/day and 50 GB monthly bandwidth; retries count as additional messages."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; OSS job queue library belongs to queues-jobs."
     }
   ],
   "pending_reverification": [
@@ -3498,14 +3554,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 306,
+    "total_services": 307,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
-    "note": "Rotation 4: 10/19 categories reviewed; Coolify Self-Hosted Issue #396 -> queue #40230165659 SUCCESS -> PR #397 exact HEAD 80bae76b4bec198d9b3bb04762f716cf44f9c523 validation/build SUCCESS, eplus-bot APPROVED at exact HEAD, auto-MERGED; main ef369b6409132b89a2f95ff0220ac9ffdc64f873 contains 306 services. Main validation SUCCESS; production Pages pending verification. No manual merge/deploy, direct main push or force push.",
+    "note": "Rotation 4: 11/19 categories reviewed; BullMQ OSS Issue #398 -> PR #399 exact HEAD 48b12c14a5ba64966106cafa0eaeabfa989828d3 validation/build SUCCESS, eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED; main bcfdfeeb3b8753ba92ec250507a48c2c578efbce contains 307 services. Main validation and Pages pending final verification at ledger write. No manual merge/deploy, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3563,7 +3619,8 @@
       "search",
       "ai-ml",
       "webhooks-events",
-      "app-hosting"
+      "app-hosting",
+      "queues-jobs"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3573,7 +3630,6 @@
       "auth-security",
       "observability",
       "analytics",
-      "queues-jobs",
       "feature-flags"
     ]
   }
