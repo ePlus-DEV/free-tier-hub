@@ -3711,5 +3711,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "quickwit-self-hosted",
+    "name": "Quickwit Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source search engine; no vendor-imposed search, indexing, or storage quotas for self-hosted software.",
+    "watch_out": "Operator supplies and pays for servers, object storage, backups and operations; officially supported on Linux; Quickwit targets log/observability search, not managed hosted search.",
+    "pricing_url": "https://quickwit.io/docs/get-started/installation",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-25"
   }
 ]
