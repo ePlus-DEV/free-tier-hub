@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "48336204b95a4ce419ab80e116846ab29075f68a",
+  "source_main_sha": "497e248b4920ee9bb5f581de3579ce2be84fb10f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,11 +25,11 @@
     },
     {
       "category": "serverless",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 9,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
@@ -58,7 +58,9 @@
       "service_count": 17,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
@@ -75,7 +77,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 7,
+      "service_count": 8,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -3128,6 +3130,65 @@
         }
       ],
       "new_category_assessment": "No new category warranted; bore belongs to the existing tunneling-networking category."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "serverless",
+      "rotation": "4 (4/19)",
+      "searches": [
+        "Read live main scripts/catalog.mjs categories, 299 pre-delivery catalog entries, 30 durable backlog entries, Issues and open/merged PRs; checked candidate IDs/provider names against existing catalog and Issues/PRs.",
+        "Compared official Modal Starter, Val Town Free, Upstash Workflow, Supabase Edge Functions, and Alibaba Function Compute; excluded previously catalogued Val Town, Upstash and Supabase, and Alibaba trial-only.",
+        "Verified Modal official $30 recurring monthly compute credit, 3 seats, 100 containers, 10 GPU concurrency, 5 scheduled crons, 1 TiB egress; overages and Shared Endpoints billed separately; card and commercial rights remain check."
+      ],
+      "official_sources": [
+        "https://modal.com/pricing",
+        "https://www.val.town/pricing",
+        "https://upstash.com/pricing/workflow",
+        "https://supabase.com/docs/guides/functions/pricing",
+        "https://www.alibabacloud.com/help/en/functioncompute"
+      ],
+      "candidates": [
+        {
+          "id": "modal-starter-free-compute",
+          "status": "catalogued",
+          "issue_number": 384,
+          "pr_number": 385,
+          "reason": "Official recurring Starter compute credit, not a trial. Canonical Issue #384 JSON-only -> automated PR #385 exact head 3e45072823a2d9e3f82aebea8a9c23c00e104e27; validation #40201795877 SUCCESS and PR build #40201795993 SUCCESS, bot APPROVED and GitHub-native auto-MERGED; main contains entry (300 services). PR deploy job SKIPPED as expected; do not claim production deployment until main Pages verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Val Town Free",
+          "reason": "Already catalogued as val-town-free in app-hosting; not a new provider."
+        },
+        {
+          "name": "Upstash Workflow Free",
+          "reason": "Already catalogued as upstash-workflow in queues-jobs; do not duplicate across categories."
+        },
+        {
+          "name": "Supabase Edge Functions",
+          "reason": "Already represented by Supabase Free in databases; provider-level duplicate, separate service assessment deferred."
+        },
+        {
+          "name": "Alibaba Cloud Function Compute trial",
+          "reason": "First-time free allowance lasts only three months; no verified permanent free compute tier."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "deno-deploy-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://deno.com/deploy/pricing",
+          "reason": "Official Free still includes 1 million requests/month and 20 GiB egress/month; card verification limits documented in existing entry."
+        },
+        {
+          "id": "cloudflare-workers",
+          "status": "catalogued-needs-reverification",
+          "official_source": "https://developers.cloudflare.com/workers/platform/pricing/",
+          "reason": "Existing 100,000 requests/day record; detailed CPU and commercial terms require targeted next review."
+        }
+      ],
+      "new_category_assessment": "No new category; Modal is managed serverless compute and belongs to existing serverless."
     }
   ],
   "pending_reverification": [
@@ -3189,12 +3250,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 298,
+    "total_services": 300,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
-    "unmatched_backlog": [],
-    "note": "Rotation 4: 3/19 categories reviewed. Main 48336204b95a4ce419ab80e116846ab29075f68a contains 298 services; 217 records older than seven days. bore Self-Hosted verified from official MIT license/README; Issue #380 -> queue #40196887774 SUCCESS -> PR #381 exact HEAD f21671b93bffc9780674b9e4c6ddeb5dcb0bb070, validation/build SUCCESS, bot APPROVED at exact HEAD and automatically MERGED. Main validation SUCCESS; production Pages #40196951487 first attempt failed due to prior in-progress deployment, then safe failed-job retry attempt 2 Build/Deploy SUCCESS at exact main HEAD. Underlying concurrency issue #272 / PR #328 remains open. No manual merge, direct main push or force push.",
+    "unmatched_backlog": [
+      "uploadthing-free"
+    ],
+    "note": "Rotation 4: 4/19 categories reviewed. Main contains 300 services after Semaphore Community Edition #383 and Modal Starter #385 were automatically merged. Modal #384 -> PR #385 exact-head validation #40201795877 SUCCESS, PR build #40201795993 SUCCESS (PR deploy SKIPPED), eplus-bot APPROVED, GitHub-native MERGED; production Pages main deployment not yet verified. Card and commercial eligibility remain check. No manual merge, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3245,12 +3308,12 @@
     "rotation_4_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "tunneling-networking"
+      "tunneling-networking",
+      "serverless"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "developer-tools",
