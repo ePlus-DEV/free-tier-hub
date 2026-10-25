@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "dc81a7b4670a487b4db62f1166d1ef1a8d1a0e13",
+  "source_main_sha": "e1db1c89782ee6cc2d19cc9728db56ae5293e2f2",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -137,11 +137,11 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 5,
       "open_catalog_candidate_issues": 0
     },
@@ -3246,6 +3246,52 @@
         }
       ],
       "new_category_assessment": "No new category: public recursive DNS belongs to dns-cdn; explicitly disclose that Quad9 is not authoritative DNS hosting."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "ai-assistants",
+      "rotation": "4 (6/19)",
+      "searches": [
+        "Enumerated all 19 categories dynamically from current main scripts/catalog.mjs and 302-service data/services.json; checked 30 durable backlog records, current open/merged PRs, all-state LibreChat Issues and prior discovery ledger for duplicates.",
+        "Compared official LibreChat self-hosted Docker documentation and MIT LICENSE against AnythingLLM self-hosted and Open WebUI licensing. LibreChat is new and distinct from existing cloud AI assistants; AnythingLLM held for separate provider verification, Open WebUI branding terms require careful classification.",
+        "Verified LibreChat ongoing MIT self-hosted app without vendor seat/message limits or signup card; hosting, MongoDB/other dependencies and model API charges remain operator responsibility. Confirmed Issue #388 JSON-only -> automated PR #389 exact-head checks/review -> GitHub-native auto-MERGED; issue closed and 302 services on main."
+      ],
+      "official_sources": [
+        "https://www.librechat.ai/docs/local/docker",
+        "https://github.com/LibreChat-AI/LibreChat/blob/main/LICENSE",
+        "https://www.librechat.ai/docs/quick_start/first_chat",
+        "https://anythingllm.com/",
+        "https://docs.openwebui.com/license/",
+        "https://duckduckgo.com/duckduckgo-help-pages/duckai/usage-limits"
+      ],
+      "candidates": [
+        {
+          "id": "librechat-self-hosted",
+          "status": "catalogued",
+          "issue_number": 388,
+          "pr_number": 389,
+          "reason": "Official MIT licensed free self-hosted assistant, no card for software and commercial use allowed; Issue #388 -> PR #389 exact HEAD efb9361fc0ebba1753fa31add20e2a5ae19b0686: validation #40211266565 SUCCESS; PR Pages build #40211266118 SUCCESS, Deploy SKIPPED; eplus-bot APPROVED; GitHub-native auto-MERGED at e1db1c89782ee6cc2d19cc9728db56ae5293e2f2; main contains service; production Pages deploy not yet verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "AnythingLLM Self-Hosted",
+          "reason": "Official provider and MIT licensing research started; defer canonical delivery to a later category rotation or distinct verified candidate after independent pricing/license check, not classified ineligible."
+        },
+        {
+          "name": "Open WebUI",
+          "reason": "Official current license has branding restrictions for larger deployments; not treated as ordinary OSI open-source; defer until product-specific license caveat and no-duplicate status are fully verified."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "duck-ai-free",
+          "status": "catalogued-reverified",
+          "official_source": "https://duckduckgo.com/duckduckgo-help-pages/duckai/usage-limits",
+          "reason": "Official Duck.ai usage-limit documentation confirms free tier with daily usage limit and higher paid subscription limits; no catalog correction needed."
+        }
+      ],
+      "new_category_assessment": "No new category warranted; self-hosted multi-model chat interface belongs to ai-assistants."
     }
   ],
   "pending_reverification": [
@@ -3307,14 +3353,14 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 301,
+    "total_services": 302,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [
       "uploadthing-free"
     ],
-    "note": "Rotation 4: 5/19 categories reviewed. Quad9 Public DNS Issue #386 -> PR #387 exact-head validation and build SUCCESS, review APPROVED, GitHub-native auto-MERGED. Main dc81a7b4670a487b4db62f1166d1ef1a8d1a0e13 contains 301 services. PR deploy SKIPPED; main production deployment awaits independent verification. No manual merge, direct main push, or force push.",
+    "note": "Rotation 4: 6/19 categories reviewed. LibreChat Self-Hosted Issue #388 -> PR #389 exact-head validation/build SUCCESS, review APPROVED, GitHub-native auto-MERGED; main e1db1c89782ee6cc2d19cc9728db56ae5293e2f2 has 302 services. PR Deploy SKIPPED; main production Pages deployment not yet verified. No manual merge, direct main push, or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3367,7 +3413,8 @@
       "ci-cd",
       "tunneling-networking",
       "serverless",
-      "dns-cdn"
+      "dns-cdn",
+      "ai-assistants"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3382,8 +3429,7 @@
       "queues-jobs",
       "search",
       "feature-flags",
-      "webhooks-events",
-      "ai-assistants"
+      "webhooks-events"
     ]
   }
 }
