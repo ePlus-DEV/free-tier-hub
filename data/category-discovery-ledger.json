@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-25",
-  "source_main_sha": "ae3818660fe410f4261a35241043cd7d9f91b113",
+  "source_main_sha": "4be4ed966a1e13156fe3f4b659d074911cd54d49",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,11 +75,11 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 6,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 7,
+      "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-25",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -3010,6 +3010,61 @@
         }
       ],
       "new_category_assessment": "No new category needed; IPv6-only container VPS belongs to existing cloud-vps."
+    },
+    {
+      "checked_utc": "2026-10-25",
+      "category": "ci-cd",
+      "rotation": "4 (2/19)",
+      "searches": [
+        "Enumerated all current site categories dynamically from main scripts/catalog.mjs; computed 296 catalog service counts, 30 reviewed backlog entries, open/closed Issues and PRs, branches and discovery history; checked Woodpecker against catalog, backlog, Issue/PR and ledger duplicates.",
+        "Researched official Woodpecker CI website, source README/license, installation and agents; compared independent Concourse CI and Drone CE as alternatives, deferred separate assessment.",
+        "Reverified existing GitHub Actions public-repository free standard runners and GitLab CI Free 400 compute minutes/month against official billing and pricing."
+      ],
+      "official_sources": [
+        "https://woodpecker-ci.org/",
+        "https://github.com/woodpecker-ci/woodpecker/blob/main/README.md",
+        "https://github.com/woodpecker-ci/woodpecker/blob/main/LICENSE",
+        "https://woodpecker-ci.org/docs/administration/installation/supported-platforms",
+        "https://concourse-ci.org/index.html",
+        "https://docs.drone.io/enterprise/",
+        "https://docs.github.com/en/actions/concepts/billing-and-usage",
+        "https://docs.gitlab.com/ci/pipelines/compute_minutes/"
+      ],
+      "candidates": [
+        {
+          "id": "woodpecker-ci-self-hosted",
+          "status": "catalogued",
+          "issue_number": 378,
+          "pr_number": 379,
+          "queue_run": 40192996956,
+          "reason": "Official ongoing free Apache-2.0 self-hosted CI/CD engine; no vendor-imposed build-minute/user quotas, no card, commercial allowed; self-hosted infrastructure and runners are required. Canonical Issue #378 JSON-only -> queue #40192996956 SUCCESS -> PR #379 exact HEAD e8bdf286b54f1bdab0dfc106c80bd4963603cc66 validation #40193022275 SUCCESS, PR Pages build #40193022282 SUCCESS (Deploy SKIPPED, not production PASS), bot APPROVED; verify normal merge and exact-main production deployment independently."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Concourse CI Self-Hosted",
+          "reason": "Apache-2.0 independent CI/CD alternative; deferred for a separate eligible candidate after this delivery, not rejected."
+        },
+        {
+          "name": "Drone Enterprise Edition",
+          "reason": "Enterprise use is subject to licensing and revenue restrictions; do not conflate with free Apache-2.0 Community Edition, which requires building from source."
+        }
+      ],
+      "reverified_existing": [
+        {
+          "id": "github-actions",
+          "status": "catalogued-reverified",
+          "official_source": "https://docs.github.com/en/actions/concepts/billing-and-usage",
+          "reason": "Standard GitHub-hosted runners free for public repos; private account allowances depend on plan."
+        },
+        {
+          "id": "gitlab-ci",
+          "status": "catalogued-reverified",
+          "official_source": "https://docs.gitlab.com/ci/pipelines/compute_minutes/",
+          "reason": "GitLab.com Free includes 400 compute minutes per month; runner cost factors apply."
+        }
+      ],
+      "new_category_assessment": "No new category warranted: Woodpecker and Concourse belong to existing ci-cd."
     }
   ],
   "pending_reverification": [
@@ -3071,12 +3126,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 296,
+    "total_services": 297,
     "total_categories": 19,
     "stale_over_7d": 217,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 4 began with lowest-coverage cloud-vps (3->4). EUserv VS2-free Issue #376 -> queue #40188449935 SUCCESS -> PR #377 exact-head validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED to main ae3818660fe410f4261a35241043cd7d9f91b113; main validation #40188504186 SUCCESS. Main Pages #40188504164 pending at update, not counted PASS. Next prioritize ci-cd (6), then least-recently-reviewed low-count categories; 217 catalog records older than 7 days. Durable backlog ID uploadthing-free is a catalogued product alias of uploadthing-2gb-app (not an unmatched candidate).",
+    "note": "Rotation 4: 2/19 categories reviewed. Latest main 4be4ed966a1e contains 297 services; 217 records older than seven days. Verified Woodpecker CI Self-Hosted official Apache-2.0 ongoing free software, commercial yes, no card; Issue #378 -> queue #40192996956 SUCCESS -> PR #379 exact head e8bdf286b54f1bdab0dfc106c80bd4963603cc66, validation #40193022275 SUCCESS and PR build #40193022282 SUCCESS (Deploy SKIPPED, not counted PASS), bot review APPROVED. Status at ledger update: catalogued; main deployment not claimed.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3125,7 +3180,8 @@
     "rotation_3_categories_remaining": [],
     "rotation_4_started_utc": "2026-10-25",
     "rotation_4_categories_reviewed": [
-      "cloud-vps"
+      "cloud-vps",
+      "ci-cd"
     ],
     "rotation_4_categories_remaining": [
       "static-hosting",
@@ -3134,7 +3190,6 @@
       "databases",
       "storage",
       "developer-tools",
-      "ci-cd",
       "auth-security",
       "observability",
       "analytics",
