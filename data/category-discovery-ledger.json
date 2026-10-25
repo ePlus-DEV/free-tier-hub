@@ -11,7 +11,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "app-hosting",
@@ -2435,11 +2435,11 @@
       "candidates": [
         {
           "id": "nudgehost-free-static-hosting",
-          "status": "PR",
+          "status": "catalogued",
           "issue": 357,
           "pr": 358,
           "queue_run": 40154122098,
-          "reason": "Genuinely new provider absent from main/backlog/Issues/PRs/branches/prior ledger. Official ongoing Free: 10 active links/sites, 25 MB file/ZIP, 2 API keys at 20 RPM, no visitor cap; free registered account keeps links permanently; no card. Commercial rights check because Free marketed for personal files despite provider comparison describing no restrictions. Canonical Issue #357 JSON-only -> queue #40154122098 SUCCESS -> PR #358 exact HEAD 026a8de6082e5c732afb0f7d4d2f0a2e17fe6190 validation #40154137147 SUCCESS, Pages PR build #40154137199 SUCCESS (Deploy SKIPPED, not PASS); review APPROVED. Merge and main production deployment not yet confirmed."
+          "reason": "Genuinely new provider, deduped across main/backlog/Issues/PRs/branches/prior ledger. Official ongoing Free 10 links/sites, 25MB file/ZIP, 2 API keys at 20 RPM, no visitor cap; registered links persist, no card; commercial rights check. Canonical Issue #357 JSON-only -> queue #40154122098 SUCCESS -> PR #358 exact HEAD 026a8de6082e5c732afb0f7d4d2f0a2e17fe6190 validation #40154137147 SUCCESS and Pages PR build #40154137199 SUCCESS (PR Deploy SKIPPED), eplus-bot APPROVED at exact HEAD -> auto-MERGED main df63cbc9a79dd7dc5c2052b695a9747edcdc9600; Issue CLOSED. Main validation #40154165347 SUCCESS, Pages #40154165355 Build SUCCESS + Deploy SUCCESS; confirmed service on main."
         }
       ],
       "excluded": [
@@ -2527,9 +2527,9 @@
     "total_services": 287,
     "total_categories": 19,
     "stale_over_7d": 217,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 3 11/19. NudgeHost Issue #357 -> queue SUCCESS -> PR #358 exact-head validation/build SUCCESS, approved, awaiting permitted auto-merge and independent main Pages verification. Static.app excluded: current official 7-day trial. Main df63cbc9a79dd7dc5c2052b695a9747edcdc9600 has 287 services; no direct main writes.",
+    "note": "Rotation 3 11/19. NudgeHost Issue #357 -> queue SUCCESS -> PR #358 exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED; main df63cbc9a79dd7dc5c2052b695a9747edcdc9600 contains 287 services; main validation and Pages build/deploy SUCCESS. Static.app excluded as 7-day trial. No manual main push, merge, force push, or deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
