@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "b4eb56e848f22200da1a71b287f44dd712a37e4c",
+  "source_main_sha": "ceb015366724cec960cc1d886d55823ca9cb3711",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -21,17 +21,17 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "serverless",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "cloud-vps",
@@ -51,7 +51,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 3
     },
     {
       "category": "storage",
@@ -60,7 +60,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 13,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -120,7 +120,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 4,
+      "stale_over_7d": 3,
       "open_catalog_candidate_issues": 1
     },
     {
@@ -6612,6 +6612,119 @@
           "reason": "12-month time-limited new-customer offer, not ongoing always-free VM"
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "serverless",
+      "rotation": 9,
+      "searches": [
+        "Apache OpenServerless official Apache 2.0 license self-hosted Kubernetes serverless",
+        "Apache OpenServerless official installation Linux Kubernetes"
+      ],
+      "official_sources": [
+        "https://openserverless.apache.org/docs/",
+        "https://openserverless.apache.org/docs/installation/install/",
+        "https://github.com/apache/openserverless"
+      ],
+      "candidates": [
+        {
+          "id": "apache-openserverless-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/644",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/650",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Apache OpenWhisk",
+          "reason": "Already catalogued as apache-openwhisk-self-hosted; OpenServerless is a distinct integrated distribution."
+        },
+        {
+          "name": "KEDA",
+          "reason": "Already catalogued as keda-self-hosted; no duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": 9,
+      "searches": [
+        "KubeVela official Kubernetes application delivery Apache 2.0 license",
+        "OpenChoreo official Apache 2.0 Kubernetes developer platform"
+      ],
+      "official_sources": [
+        "https://kubevela.io/",
+        "https://github.com/kubevela/kubevela",
+        "https://github.com/openchoreo/openchoreo"
+      ],
+      "candidates": [
+        {
+          "id": "kubevela-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/645",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/653",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        },
+        {
+          "id": "openchoreo-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/646",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/652",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Dokploy",
+          "reason": "Already catalogued as dokploy-self-hosted; not a new candidate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": 9,
+      "searches": [
+        "DuckDB official MIT license embedded analytical SQL free",
+        "Apache Cassandra official downloads Apache 2.0 self hosted",
+        "Apache CouchDB official open source Apache 2.0"
+      ],
+      "official_sources": [
+        "https://duckdb.org/",
+        "https://cassandra.apache.org/_/download.html",
+        "https://couchdb.apache.org/"
+      ],
+      "candidates": [
+        {
+          "id": "duckdb-open-source",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/647",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/651",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        },
+        {
+          "id": "apache-cassandra-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/648",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/654",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        },
+        {
+          "id": "apache-couchdb-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/649",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/655",
+          "reason": "Official free self-hosted software and commercial-use license verified; Issue and PR created; exact-head CI, approval and merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "MotherDuck Lite",
+          "reason": "Existing managed service motherduck-lite is not the same product as local DuckDB engine; avoid duplicate managed tier."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -6673,12 +6786,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 424,
+    "total_services": 425,
     "total_categories": 19,
-    "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 4,
+    "stale_over_7d": 220,
+    "open_catalog_candidate_issues": 9,
     "unmatched_backlog": [],
-    "note": "Rotation 9: 7/19 categories. This run: four new Issues #636-#638 and #642, four PRs #639-#641 and #643, all four now catalogued on main (424). Historical NSD PR #632 has exact-head CI SUCCESS but review/merge not yet verified; PRs #633-#635 still open. Cloud VPS checked: existing OCI/GCE always-free; AWS EC2/IBM Hyper Protect/Azure VM are time-limited. Do not conflate PR with merged.",
+    "note": "Rotation 9: 10/19 categories reviewed. Six new eligible services verified from official sources; Issues #644-#649 and PRs #650-#655 created. They are NOT counted as merged until exact-head CI/review/merge and latest main verify. Existing PRs #632-#635 remain under exact-head review. Source main baseline 424; no force push, no manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6842,18 +6955,18 @@
     "rotation_8_categories_remaining": [],
     "rotation_9_started_utc": "2026-10-26",
     "rotation_9_categories_reviewed": [
-      "dns-cdn",
-      "tunneling-networking",
-      "ci-cd",
-      "storage",
-      "auth-security",
       "static-hosting",
-      "cloud-vps"
-    ],
-    "rotation_9_categories_remaining": [
       "app-hosting",
       "serverless",
+      "cloud-vps",
       "databases",
+      "storage",
+      "ci-cd",
+      "auth-security",
+      "dns-cdn",
+      "tunneling-networking"
+    ],
+    "rotation_9_categories_remaining": [
       "developer-tools",
       "observability",
       "analytics",
