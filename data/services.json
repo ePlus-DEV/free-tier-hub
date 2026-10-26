@@ -4551,5 +4551,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "docsgpt-self-hosted",
+    "name": "DocsGPT Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted document-grounded AI agents and assistants, knowledge ingestion, cited answers, workflows and local-model support; no software license or seat fee for self-hosting.",
+    "watch_out": "Bring your own compute, storage, embeddings and language models. Paid cloud/managed/enterprise offerings and third-party model API usage are separate; review model and connector licenses and secure deployments.",
+    "pricing_url": "https://www.docsgpt.cloud/product",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
