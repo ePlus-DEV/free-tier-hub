@@ -4035,5 +4035,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "dokku-self-hosted",
+    "name": "Dokku Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed, Docker-powered self-hosted PaaS for Git-push application deployments and lifecycle management on your own Linux server; no vendor-imposed application, deployment or seat quota in the core software.",
+    "watch_out": "Not free managed hosting: supply and pay for Linux server, Docker, persistent volumes, networking, TLS, backups and operations. Core deployment is managed with CLI/SSH; plugins, hosting and connected services may have separate requirements or costs.",
+    "pricing_url": "https://github.com/dokku/dokku",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
