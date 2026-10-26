@@ -4215,5 +4215,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "localhost-run-free",
+    "name": "localhost.run Forever Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Forever-free SSH-based HTTPS tunnels without signup or client download; short-lived free subdomains with rate-limited transfer.",
+    "watch_out": "Free domain names rotate and throughput is speed-limited; persistent named domains and faster transfers require paid plans. Provider does not clearly specify commercial-use eligibility for free hosted tunnels.",
+    "pricing_url": "https://localhost.run/docs/forever-free/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
