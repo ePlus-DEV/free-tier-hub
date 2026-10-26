@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "fd8c9f4844aef98fd88bfb3a634e64d148c03891",
+  "source_main_sha": "0622b4d1ae96d8d94d1a19f266425c60e1efd9a7",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -135,7 +135,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 11,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -145,7 +145,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -155,7 +155,7 @@
     },
     {
       "category": "search",
-      "service_count": 14,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -4636,6 +4636,122 @@
         }
       ],
       "new_category_assessment": "Nuclio fits existing serverless category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-assistants",
+      "rotation": "6",
+      "queries": [
+        "GPT4All official GitHub MIT license local LLM chat commercial use and model licensing",
+        "Jan AI janhq/jan official LICENSE Apache-2.0 desktop offline AI assistant"
+      ],
+      "official_sources": [
+        "https://github.com/janhq/jan",
+        "https://github.com/janhq/jan/blob/main/LICENSE",
+        "https://github.com/nomic-ai/gpt4all"
+      ],
+      "candidates": [
+        {
+          "id": "jan-local-ai-assistant",
+          "status": "catalogued",
+          "issue_number": 484,
+          "pr_number": 489,
+          "reason": "Official Apache-2.0 Jan desktop assistant; local models have separate licenses. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED, GitHub workflow auto-MERGED; verified on main."
+        },
+        {
+          "id": "gpt4all-local-ai",
+          "status": "catalogued",
+          "issue_number": 488,
+          "pr_number": 493,
+          "reason": "Official MIT GPT4All desktop AI assistant and local inference; model license separate. Non-force two-parent branch reconciliation preserved all history; exact-head validation/build SUCCESS. pr-auto-approve concurrency caused a cancelled approval; safe exact-head @eplus-bot review and native validation job rerun triggered workflow auto-MERGE. Verified on main."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing ai-assistants category; no new category/schema."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": "6",
+      "queries": [
+        "Piku official GitHub MIT git-push self-hosted micro PaaS",
+        "CapRover current LICENSE custom Apache appendix restrictions commercial distribution"
+      ],
+      "official_sources": [
+        "https://github.com/piku/piku",
+        "https://github.com/piku/piku/blob/master/LICENSE",
+        "https://github.com/caprover/caprover/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "piku-self-hosted",
+          "status": "catalogued",
+          "issue_number": 485,
+          "pr_number": 490,
+          "reason": "Official MIT self-hosted git-push PaaS with multiple apps and optional HTTPS; self-managed infrastructure. Ancestry-preserving two-parent merge from latest main, exact-head validation/build SUCCESS, bot APPROVED, workflow auto-MERGED. Verified on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CapRover",
+          "reason": "Current LICENSE includes a custom appendix restricting modification/redistribution of paid features and requires separate terms; do not mislabel as unmodified Apache-2.0. Deferred commercial licensing review."
+        }
+      ],
+      "new_category_assessment": "Existing app-hosting category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "search",
+      "rotation": "6",
+      "queries": [
+        "ZincSearch official zincsearch/zincsearch LICENSE Apache-2.0 full text indexing self hosted",
+        "ZincSearch documentation Elasticsearch API partial compatibility high availability"
+      ],
+      "official_sources": [
+        "https://github.com/zincsearch/zincsearch",
+        "https://github.com/zincsearch/zincsearch/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "zincsearch-self-hosted",
+          "status": "catalogued",
+          "issue_number": 486,
+          "pr_number": 491,
+          "reason": "Official Apache-2.0 self-hosted full-text search; no software quota, no HA, own infrastructure. Ancestry-preserving two-parent merge, exact-head validation/build SUCCESS and bot APPROVED, workflow auto-MERGED. Verified on main."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing search category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "queues-jobs",
+      "rotation": "6",
+      "queries": [
+        "Temporal Server official MIT license self-hosted durable workflow orchestration",
+        "Temporal self-hosting persistent database versus Temporal Cloud free trial credits"
+      ],
+      "official_sources": [
+        "https://github.com/temporalio/temporal",
+        "https://github.com/temporalio/temporal/blob/main/LICENSE",
+        "https://temporal.io/"
+      ],
+      "candidates": [
+        {
+          "id": "temporal-server-self-hosted",
+          "status": "catalogued",
+          "issue_number": 487,
+          "pr_number": 492,
+          "reason": "Official MIT self-hosted workflow orchestration, requires database and infrastructure. Two-parent non-force merge preserved history, exact-head validation/build SUCCESS, bot APPROVED and workflow auto-MERGED. Verified on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Temporal Cloud signup credits",
+          "reason": "One-time signup credits are not the ongoing self-hosted software allowance; excluded as a separate trial listing."
+        }
+      ],
+      "new_category_assessment": "Existing queues-jobs category."
     }
   ],
   "pending_reverification": [
@@ -4697,12 +4813,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 348,
+    "total_services": 353,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 6 covers 5/19 categories. New Pinggy Free, localhost.run Forever Free and Nuclio Self-Hosted plus historical Argo CD delivered via canonical Issues #476/#477/#482/#478 -> PRs #479/#480/#483/#481; exact-head validation/build SUCCESS, bot approvals at final heads and GitHub auto-merges. Latest main fd8c9f4844aef98fd88bfb3a634e64d148c03891 has 348 services. Main Pages deployment must be verified separately; PR Deploy skipped is not production PASS. Existing concurrency fixes #328/#457 remain unmerged; no direct main push, force push or manual merge.",
+    "note": "Rotation 6 now covers 9/19 categories (added ai-assistants, app-hosting, search, queues-jobs). Five NEW verified services delivered through Issues #484-#488 and PRs #489-#493, all exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED. Main 0622b4d1ae96d8d94d1a19f266425c60e1efd9a7 contains 353 services (+5). Pages run #40307921063 Build/Deploy SUCCESS; earlier main Pages #40306821795 Deploy failed due in-progress deployment (evidence recorded in Issue #272). Backlog 30 entries: 29 catalogued, uploadthing-free is an alias of uploadthing-2gb-app. 220 services stale >7 days. Concurrency PRs #328/#457 remain open; no direct main push, force push or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4797,15 +4913,18 @@
     "rotation_5_categories_remaining": [],
     "rotation_6_started_utc": "2026-10-26",
     "rotation_6_categories_reviewed": [
+      "app-hosting",
+      "serverless",
       "cloud-vps",
       "ci-cd",
       "dns-cdn",
-      "tunneling-networking",
-      "serverless"
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "tunneling-networking"
     ],
     "rotation_6_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
       "storage",
       "developer-tools",
@@ -4813,9 +4932,6 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
-      "queues-jobs",
-      "search",
       "feature-flags",
       "webhooks-events"
     ]
