@@ -4023,5 +4023,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-openwhisk-self-hosted",
+    "name": "Apache OpenWhisk Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source event-driven serverless platform for running functions and triggers on self-managed Docker or Kubernetes infrastructure; no vendor-imposed function invocation or seat quota.",
+    "watch_out": "You operate and pay for compute, containers, orchestration, persistent services, logs, security and backups. OpenWhisk deployment requires platform configuration; any third-party cloud infrastructure and connected services are billed separately.",
+    "pricing_url": "https://openwhisk.apache.org/documentation.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
