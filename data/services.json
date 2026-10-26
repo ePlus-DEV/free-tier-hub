@@ -4515,5 +4515,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "forgejo-actions-self-hosted",
+    "name": "Forgejo Actions Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0-or-later self-hosted Git forge with integrated Forgejo Actions CI/CD workflows, repositories, pull requests and issues; no vendor-imposed software build-minute quota.",
+    "watch_out": "You must provide, configure and secure your own Forgejo instance and Actions runners; runner compute, storage and network costs are not included. Forgejo Actions is not guaranteed compatible with GitHub Actions and GPL obligations apply when redistributing modified binaries.",
+    "pricing_url": "https://forgejo.org/docs/latest/user/actions/overview/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
