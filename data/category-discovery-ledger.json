@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "9188905c28eb5c046e7e8d731711f4b0ce7d5a9b",
+  "source_main_sha": "be6bf8228b3bb0501c6c469bf25ee4e0116b5456",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "category": "databases",
-      "service_count": 32,
+      "service_count": 33,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
@@ -55,7 +55,7 @@
     },
     {
       "category": "storage",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -95,7 +95,7 @@
     },
     {
       "category": "observability",
-      "service_count": 30,
+      "service_count": 33,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -125,7 +125,7 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 14,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -4872,6 +4872,220 @@
         }
       ],
       "new_category_assessment": "Existing analytics category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-ml",
+      "rotation": "6",
+      "queries": [
+        "MLflow official Apache-2.0 self-hosted tracking server and model registry",
+        "BentoML official Apache-2.0 model inference framework and telemetry opt-out"
+      ],
+      "official_sources": [
+        "https://github.com/mlflow/mlflow",
+        "https://www.mlflow.org/docs/latest/self-hosting/architecture/tracking-server/",
+        "https://github.com/bentoml/BentoML"
+      ],
+      "candidates": [
+        {
+          "id": "mlflow-self-hosted",
+          "status": "catalogued",
+          "issue_number": 502,
+          "pr_number": 505,
+          "reason": "Official Apache-2.0 MLflow tracking/registry; own server and artifact storage; verified new service."
+        },
+        {
+          "id": "bentoml-self-hosted",
+          "status": "catalogued",
+          "issue_number": 508,
+          "pr_number": 512,
+          "reason": "Official Apache-2.0 AI inference API framework; own CPU/GPU and model licenses; verified new service."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing ai-ml category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "observability",
+      "rotation": "6",
+      "queries": [
+        "Netdata open-source GPLv3+ Agent unlimited self-hosted nodes versus 5-node personal Cloud Community",
+        "SigNoz Community self-hosted free versus Cloud trial",
+        "OpenTelemetry Collector Apache-2.0 collector vs storage backend"
+      ],
+      "official_sources": [
+        "https://www.netdata.cloud/open-source/",
+        "https://github.com/SigNoz/signoz",
+        "https://opentelemetry.io/docs/collector/",
+        "https://github.com/open-telemetry/opentelemetry-collector"
+      ],
+      "candidates": [
+        {
+          "id": "netdata-agent-self-hosted",
+          "status": "catalogued",
+          "issue_number": 503,
+          "pr_number": 506,
+          "reason": "GPLv3+ Agent unlimited self-hosted nodes; Cloud Community personal-only separately excluded."
+        },
+        {
+          "id": "signoz-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 509,
+          "pr_number": 513,
+          "reason": "Free community self-hosted metrics/logs/traces, enterprise features excluded; cloud trial not listed."
+        },
+        {
+          "id": "opentelemetry-collector-self-hosted",
+          "status": "catalogued",
+          "issue_number": 510,
+          "pr_number": 514,
+          "reason": "Apache-2.0 telemetry pipeline without backend storage; own infrastructure."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Netdata Cloud Community",
+          "reason": "5-node free plan is for personal/noncommercial use; only independent open-source Agent included."
+        },
+        {
+          "name": "SigNoz Cloud",
+          "reason": "30-day trial, not ongoing cloud free allowance."
+        }
+      ],
+      "new_category_assessment": "Existing observability category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": "6",
+      "queries": [
+        "SeaTable Cloud Free official 25 users 10000 rows 2GB storage 3000 monthly API calls",
+        "SeaTable Server separate self-hosted 3-user free plan"
+      ],
+      "official_sources": [
+        "https://seatable.com/prices/",
+        "https://seatable.com/help/is-seatable-free-can-i-try-plus-or-enterprise/"
+      ],
+      "candidates": [
+        {
+          "id": "seatable-cloud-free",
+          "status": "catalogued",
+          "issue_number": 504,
+          "pr_number": 507,
+          "reason": "Ongoing 25-user hosted table database, 10000 rows, 2GB; no card, commercial terms unconfirmed marked check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SeaTable Server Free",
+          "reason": "Different 3-user on-premises tier; not conflated with 25-user cloud Free; review separately."
+        }
+      ],
+      "new_category_assessment": "Existing databases category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "storage",
+      "rotation": "6",
+      "queries": [
+        "Nextcloud Server official AGPLv3+ self-hosted file sync and sharing",
+        "File Browser archived September 2026 unpatched vulnerabilities",
+        "SFTPGo Community AGPLv3 additional proprietary UI theme restrictions"
+      ],
+      "official_sources": [
+        "https://github.com/nextcloud/server",
+        "https://github.com/filebrowser/filebrowser",
+        "https://github.com/drakkan/sftpgo"
+      ],
+      "candidates": [
+        {
+          "id": "nextcloud-server-self-hosted",
+          "status": "catalogued",
+          "issue_number": 511,
+          "pr_number": 515,
+          "reason": "Maintained AGPLv3+ self-hosted file sync/storage; own infrastructure and license compliance."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "File Browser original",
+          "reason": "Upstream archived August/September 2026; no further security fixes and known unpatched vulnerabilities; avoid recommending as new service."
+        },
+        {
+          "name": "SFTPGo Community",
+          "reason": "AGPLv3 with additional proprietary UI theme terms; defer exact commercial redistribution rights review."
+        }
+      ],
+      "new_category_assessment": "Existing storage category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "static-hosting",
+      "rotation": "6",
+      "queries": [
+        "Mintlify Starter official free five editors custom domain documentation hosting no card",
+        "GitBook Free official single editor unlimited public views paid custom domain",
+        "Read the Docs Community free open source documentation hosting"
+      ],
+      "official_sources": [
+        "https://www.mintlify.com/pricing",
+        "https://www.gitbook.com/pricing",
+        "https://about.readthedocs.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "mintlify-starter-free",
+          "status": "pr",
+          "issue_number": 516,
+          "pr_number": 521,
+          "reason": "Ongoing hosted documentation Starter, 5 editors and custom domain; Pro AI trial excluded."
+        },
+        {
+          "id": "gitbook-free",
+          "status": "pr",
+          "issue_number": 517,
+          "pr_number": 519,
+          "reason": "Ongoing hosted public docs, one editor and unlimited page views; paid custom domain and collaboration excluded."
+        },
+        {
+          "id": "read-the-docs-community-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official free-forever hosted documentation for open-source projects; ads and public repositories; proprietary docs require paid Business. Not yet issued."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing static-hosting category; documentation hosting is static public site hosting."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "developer-tools",
+      "rotation": "6",
+      "queries": [
+        "Postman Free official API client individual plan and commercial terms",
+        "Swagger UI Apache-2.0 self-hosted interactive OpenAPI documentation"
+      ],
+      "official_sources": [
+        "https://www.postman.com/pricing/",
+        "https://support.postman.com/hc/en-us/articles/360003675853-Can-I-use-Postman-for-commercial-use",
+        "https://github.com/swagger-api/swagger-ui"
+      ],
+      "candidates": [
+        {
+          "id": "postman-free",
+          "status": "pr",
+          "issue_number": 518,
+          "pr_number": 520,
+          "reason": "Ongoing API client Free for individuals; official provider explicitly allows commercial use."
+        },
+        {
+          "id": "swagger-ui-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Apache-2.0 self-hosted interactive OpenAPI docs; no software license fee; infrastructure and hosting separate. Not yet issued."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing developer-tools category; no schema change."
     }
   ],
   "pending_reverification": [
@@ -4933,12 +5147,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 357,
+    "total_services": 364,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 6 covers 13/19 categories. Four newly verified services auto-MERGED: Featurevisor #494/#495, Knock #496/#497, Dex #498/#499, Shynet #500/#501. Exact-head validation/build SUCCESS and eplus-bot APPROVED; latest main 9188905c28eb5c046e7e8d731711f4b0ce7d5a9b has 357 services (+4). Historical merged Novu #39, OneSignal #166 and Bruno #284 are absent in current main and require removal audit, not duplicate Issues. FeatureHub actual license includes Commons Clause; excluded pending commercial-use review. 220 catalog services stale >7 days. Backlog 30: 29 catalogued, uploadthing-free alias. No force push, manual merge or direct main write.",
+    "note": "Rotation 6 complete 19/19 on 2026-10-26. 10 new verified candidates delivered to canonical Issues #502-#504, #508-#511, #516-#518 and PRs #505-#507, #512-#515, #519-#521; catalogued count computed from exact main be6bf8228b3bb0501c6c469bf25ee4e0116b5456 (364 services). PRs not yet merged remain status pr; never count as merged. Two more verified-awaiting-Issue: Read the Docs Community and Swagger UI. Exclusions: archived File Browser, SFTPGo proprietary UI restrictions, Netdata Cloud personal-only, SigNoz Cloud trial. 220 catalog rows >7d stale; backlog 30 with 0 unmatched after alias dedupe. All PR conflict reconciliations used ancestry-preserving non-force merge commits.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -5033,27 +5247,26 @@
     "rotation_5_categories_remaining": [],
     "rotation_6_started_utc": "2026-10-26",
     "rotation_6_categories_reviewed": [
+      "static-hosting",
       "app-hosting",
       "serverless",
       "cloud-vps",
-      "ci-cd",
-      "dns-cdn",
-      "ai-assistants",
-      "queues-jobs",
-      "search",
-      "tunneling-networking",
-      "feature-flags",
-      "webhooks-events",
-      "auth-security",
-      "analytics"
-    ],
-    "rotation_6_categories_remaining": [
-      "static-hosting",
       "databases",
       "storage",
       "developer-tools",
+      "ci-cd",
+      "auth-security",
       "observability",
-      "ai-ml"
-    ]
+      "analytics",
+      "dns-cdn",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ],
+    "rotation_6_categories_remaining": []
   }
 }
