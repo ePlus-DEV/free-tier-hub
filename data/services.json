@@ -3855,5 +3855,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "mailpit-self-hosted",
+    "name": "Mailpit Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local/self-hosted SMTP capture and email-testing server with a web inbox, message search, REST API, HTML/link checks and Docker or single-binary deployment; no vendor software quota.",
+    "watch_out": "For development and staging email testing, not a managed email delivery provider. Default automatic pruning retains the latest 500 messages; protect the SMTP and web UI with authentication/network controls, especially when using optional relay/forwarding. You operate any hosting infrastructure.",
+    "pricing_url": "https://mailpit.axllent.org/docs/install/docker/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
