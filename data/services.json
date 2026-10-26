@@ -4359,5 +4359,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "shynet-self-hosted",
+    "name": "Shynet Self-Hosted Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 privacy-focused web analytics for multiple websites and users, with pageviews, sessions, referrers and device metrics; self-hosted without software usage fees or monthly tracking quota.",
+    "watch_out": "Runs on your own server with Django and a database; configure HTTPS, backups, updates and privacy compliance yourself. JavaScript tracking is optional with a pixel fallback; no managed cloud hosting or support is included.",
+    "pricing_url": "https://github.com/milesmcc/shynet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
