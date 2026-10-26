@@ -4695,5 +4695,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ray-serve-self-hosted",
+    "name": "Ray Serve Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source model serving and inference APIs on Ray; run locally, on-premises or on your own Kubernetes/compute infrastructure with no software request quota.",
+    "watch_out": "Requires your own CPU/GPU capacity and Ray deployment; large models, accelerators, storage and external APIs cost extra. Ray Serve is not a fully managed free inference service.",
+    "pricing_url": "https://docs.ray.io/en/latest/serve/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
