@@ -4529,6 +4529,54 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "rathole-self-hosted",
+    "name": "rathole Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted reverse-proxy client/server for NAT traversal and TCP service exposure; no software-enforced tunnel or traffic quota.",
+    "watch_out": "Requires your own publicly reachable server and client configuration with shared authentication tokens; bandwidth, server hosting, IP address, security hardening and operations are not included. Not a free hosted tunnel service.",
+    "pricing_url": "https://github.com/rathole-org/rathole",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "tsuru-self-hosted",
+    "name": "Tsuru Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free BSD-3-Clause self-hosted PaaS for deploying applications from source or container images with add-ons, scaling and deployment management; no software-imposed app quota.",
+    "watch_out": "Requires your own Kubernetes infrastructure, networking, storage and operational maintenance; managed-cloud resources and third-party add-ons may cost money. License notices and third-party dependency terms apply.",
+    "pricing_url": "https://docs.tsuru.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "docsgpt-self-hosted",
+    "name": "DocsGPT Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted document-grounded AI agents and assistants, knowledge ingestion, cited answers, workflows and local-model support; no software license or seat fee for self-hosting.",
+    "watch_out": "Bring your own compute, storage, embeddings and language models. Paid cloud/managed/enterprise offerings and third-party model API usage are separate; review model and connector licenses and secure deployments.",
+    "pricing_url": "https://www.docsgpt.cloud/product",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "localtunnel-self-hosted",
+    "name": "LocalTunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed LocalTunnel client and server for exposing local HTTP services through a public URL; self-hosted deployment has no software-imposed session or traffic quota.",
+    "watch_out": "Self-hosted server requires your own public host, wildcard DNS, reverse proxy and TLS setup; hosting and bandwidth are not free. The public localtunnel.me relay is best-effort with ephemeral URLs and no guaranteed uptime or fixed subdomain.",
+    "pricing_url": "https://github.com/localtunnel/server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "kubero-self-hosted",
     "name": "Kubero Self-Hosted PaaS",
     "category": "app-hosting",
