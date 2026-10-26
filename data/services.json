@@ -4983,5 +4983,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "zenml-open-source-self-hosted",
+    "name": "ZenML Open-Source MLOps Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source ML/AI pipeline framework and self-managed metadata/orchestration stack for reproducible training, tracking and deployments; no vendor-imposed local pipeline-run quota.",
+    "watch_out": "The open-source framework and local/self-hosted deployment are distinct from paid ZenML Pro/Cloud offerings. You manage pipeline orchestrators, artifact stores, compute, metadata storage and integrations; external cloud/AI costs apply.",
+    "pricing_url": "https://github.com/zenml-io/zenml",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
