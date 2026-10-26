@@ -4179,5 +4179,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "gocd-self-hosted",
+    "name": "GoCD Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source continuous delivery server and build agents; self-hosted pipelines without a software license fee.",
+    "watch_out": "You operate and secure the GoCD server and agents; compute, storage, plugins and supporting infrastructure are not included.",
+    "pricing_url": "https://www.gocd.org/download/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
