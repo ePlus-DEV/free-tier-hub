@@ -4167,5 +4167,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "hoppscotch-community-self-hosted",
+    "name": "Hoppscotch Community Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted Community Edition API development platform for HTTP, REST, GraphQL and WebSocket testing, API collections and collaboration; no vendor subscription, request or seat quota for the community software.",
+    "watch_out": "Self-hosting requires your own application server, database, authentication setup, backups, TLS and ongoing security maintenance. Enterprise-only features (such as advanced SSO and audit logging) and hosted Cloud plans are separate; commercial use permitted under MIT license.",
+    "pricing_url": "https://docs.hoppscotch.io/documentation/self-host/getting-started",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
