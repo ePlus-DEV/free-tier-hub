@@ -4385,6 +4385,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "netdata-agent-self-hosted",
+    "name": "Netdata Agent Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPLv3+ open-source real-time host and container monitoring Agent, free on unlimited self-hosted nodes; local dashboard available under NCUL1.",
+    "watch_out": "Run your own monitoring infrastructure. Netdata Cloud Community is a separate personal/non-commercial plan capped at 5 active connected nodes; Cloud Business and enterprise features are not included.",
+    "pricing_url": "https://www.netdata.cloud/open-source/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "bentoml-self-hosted",
+    "name": "BentoML Open Source Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 framework for packaging and serving AI/ML model inference APIs, batch jobs and multi-model pipelines; no software license fee or per-model quota when self-hosted.",
+    "watch_out": "Supply and pay for your own CPU/GPU, network and model storage; model weights may have separate licenses. BentoCloud managed compute is not included; anonymous framework usage telemetry can be disabled.",
+    "pricing_url": "https://github.com/bentoml/BentoML",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "opentelemetry-collector-self-hosted",
     "name": "OpenTelemetry Collector Self-Hosted",
     "category": "observability",
