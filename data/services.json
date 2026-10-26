@@ -3951,5 +3951,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "knative-serving-self-hosted",
+    "name": "Knative Serving Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Kubernetes serverless serving layer for request-driven containers, automatic scale-to-zero, traffic splitting and revision management; no vendor-imposed application or request quota for the open-source software.",
+    "watch_out": "Requires a self-managed Kubernetes cluster, compatible networking/ingress and compute capacity; infrastructure, storage, logging and operations can cost money. This is not a hosted cloud free tier. Knative Eventing and Functions are separate components with their own setup.",
+    "pricing_url": "https://knative.dev/docs/serving/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
