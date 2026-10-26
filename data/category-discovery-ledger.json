@@ -119,9 +119,9 @@
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "ai-ml",
@@ -3903,6 +3903,51 @@
         }
       ],
       "new_category_assessment": "No new category or schema changes; current category already supported."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "rotation": "5 (5/19)",
+      "searches": [
+        "Read all 19 categories from current main scripts/catalog.mjs and services.json; dns-cdn has 9 services and is unreviewed in rotation 5.",
+        "Compare Technitium DNS Server, Blocky DNS Proxy, AdGuard Home and PowerDNS authoritative for perpetual self-hosted free use and commercial licensing.",
+        "Deduplicate exact IDs and provider names against 320-service main catalog, all-state Issues/PRs, current branches and 30-entry historical backlog."
+      ],
+      "official_sources": [
+        "https://technitium.com/dns/",
+        "https://github.com/TechnitiumSoftware/DnsServer",
+        "https://github.com/TechnitiumSoftware/DnsServer/blob/master/LICENSE",
+        "https://0xerr0r.github.io/blocky/latest/",
+        "https://github.com/0xERR0R/blocky",
+        "https://github.com/0xERR0R/blocky/blob/main/LICENSE",
+        "https://github.com/AdguardTeam/AdGuardHome",
+        "https://www.powerdns.com/powerdns-authoritative-server"
+      ],
+      "candidates": [
+        {
+          "id": "technitium-dns-server-self-hosted",
+          "status": "issue",
+          "issue_number": 427,
+          "reason": "Verified official GPL-3.0 self-hosted authoritative and recursive DNS software, no license fee/card, commercial use allowed with GPL redistribution obligations. Canonical Issue #427 created; queue and exact-head CI not yet confirmed."
+        },
+        {
+          "id": "blocky-dns-proxy-self-hosted",
+          "status": "issue",
+          "issue_number": 428,
+          "reason": "Verified official Apache-2.0 self-hosted DNS proxy, no software license fee/card, commercial use allowed. Canonical Issue #428 created; queue and exact-head CI not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "AdGuard Home Self-Hosted",
+          "reason": "Distinct GPL-3.0 open-source DNS filtering service verified at official source; eligible for independent next delivery, deferred to avoid concurrent PR conflicts."
+        },
+        {
+          "name": "PowerDNS Authoritative Server",
+          "reason": "Official free open-source authoritative DNS server with separately paid enterprise tools/support; licensing and product-specific limits to be checked before delivery."
+        }
+      ],
+      "new_category_assessment": "Existing dns-cdn category fits; no new category or schema changes."
     }
   ],
   "pending_reverification": [
@@ -3967,9 +4012,9 @@
     "total_services": 320,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 5: 4/19. Headscale #422→#424 and OpenZiti #423→#425 auto-merged after exact-head CI and review; main fa18e3625946106f8f651953f684b569120a8a51 has 320 services in 19 categories. 30 backlog entries deduped (29 exact IDs plus UploadThing alias). No force push, direct main write or manual merge.",
+    "note": "Rotation 5: 5/19. On 2026-10-26 verified Technitium DNS Server GPL-3.0 and Blocky DNS Proxy Apache-2.0 against official software/docs and GitHub licenses; created canonical Issues #427 and #428. Queue/PR/CI/merge pending; main still 320 services at fa18e3625946106f8f651953f684b569120a8a51. Never count issues as merges.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4044,7 +4089,8 @@
       "cloud-vps",
       "ci-cd",
       "analytics",
-      "tunneling-networking"
+      "tunneling-networking",
+      "dns-cdn"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
@@ -4055,7 +4101,6 @@
       "developer-tools",
       "auth-security",
       "observability",
-      "dns-cdn",
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
