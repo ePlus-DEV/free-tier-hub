@@ -4083,5 +4083,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "kserve-self-hosted",
+    "name": "KServe Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes inference platform for predictive and generative AI models, with standardized inference APIs and optional Knative scale-to-zero; no vendor-imposed model-serving request or seat quota in the self-hosted software.",
+    "watch_out": "You supply and pay for Kubernetes nodes, GPUs/CPUs, storage, network, observability, backups and model downloads; model weights have separate licenses. Knative-based serverless mode requires additional cluster components. No managed inference compute is included.",
+    "pricing_url": "https://github.com/kserve/kserve",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
