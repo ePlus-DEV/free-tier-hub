@@ -5021,6 +5021,66 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "aptabase-self-hosted",
+    "name": "Aptabase Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted privacy-first analytics server for web, mobile and desktop apps; no vendor-imposed event quota in the self-hosted edition.",
+    "watch_out": "Requires Docker Compose, your own compute, storage and maintenance. Server code is AGPL-3.0: network-service modifications trigger source-sharing obligations. Aptabase Cloud pricing and limits are separate.",
+    "pricing_url": "https://github.com/aptabase/aptabase",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ff4j-java-feature-flags",
+    "name": "FF4j Java Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Java feature-flag framework with toggle evaluation, audit and pluggable stores; no vendor-imposed flags, users or environment quotas.",
+    "watch_out": "Self-managed Java library and optional console, not a hosted SaaS. Application hosting, storage, monitoring and rollout safety remain your responsibility.",
+    "pricing_url": "https://github.com/ff4j/ff4j",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "framer-free-static",
+    "name": "Framer Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Framer-hosted website on a Framer subdomain with 1 GB bandwidth; up to 10 CMS collections, 1,000 pages and 5 MB file uploads.",
+    "watch_out": "Official FAQ positions Free for non-commercial use; custom domains require a paid plan. Initial 500 AI credits are one-time trial credits, not a recurring allowance. Hosting is subject to free-plan limits.",
+    "pricing_url": "https://www.framer.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ory-hydra-self-hosted",
+    "name": "Ory Hydra Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted OAuth 2.0 / OpenID Connect server core for issuing tokens, client management, consent and login integration; no hosted-user quota.",
+    "watch_out": "Requires a separate login/consent application, database and your own infrastructure. Ory recommends an enterprise agreement for business-critical deployments needing guaranteed CVE fixes, SLAs and advanced features; managed Ory Network is separate.",
+    "pricing_url": "https://github.com/ory/hydra",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "restic-open-source-backup",
+    "name": "Restic Open Source Backup",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local use of the BSD-2-Clause encrypted, deduplicating backup CLI; backup repositories can be stored on local disks or supported remote storage backends.",
+    "watch_out": "Restic is backup software, not a hosted storage quota. You supply storage, compute and any cloud-provider fees; configure retention, credentials and restores yourself.",
+    "pricing_url": "https://github.com/restic/restic",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "grafana-loki-self-hosted",
     "name": "Grafana Loki Self-Hosted",
     "category": "observability",
