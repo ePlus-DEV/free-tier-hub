@@ -4263,5 +4263,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "gpt4all-local-ai",
+    "name": "GPT4All Local AI",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local AI chat desktop application and developer bindings; download supported models, chat privately offline and use LocalDocs or a local API server without GPT4All software message or token fees.",
+    "watch_out": "Model weights have separate license and commercial-use terms; large downloads, RAM/CPU/GPU and disk space are required. Optional integrations and cloud services may have separate costs; local app is not a managed hosted API.",
+    "pricing_url": "https://github.com/nomic-ai/gpt4all",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
