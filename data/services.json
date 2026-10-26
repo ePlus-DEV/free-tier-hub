@@ -5163,5 +5163,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "caddy-static-self-hosted",
+    "name": "Caddy Static File Server",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-hosted static sites and HTTPS-capable file serving with the open-source Caddy web server; no hosted bandwidth or storage included",
+    "watch_out": "Apache-2.0 licensed software; requires your own server, domain/DNS, storage and networking; automatic public HTTPS certificates depend on CA eligibility and network reachability.",
+    "pricing_url": "https://caddyserver.com/docs/quick-starts/static-files",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
