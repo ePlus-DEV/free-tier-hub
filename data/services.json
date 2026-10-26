@@ -4647,5 +4647,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-kafka-self-hosted",
+    "name": "Apache Kafka Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted distributed event streaming platform with durable topics, consumer groups, Kafka Connect and Streams; no vendor-imposed software message or topic quota.",
+    "watch_out": "Requires your own Kafka brokers/KRaft controllers, compute, disks, networking, monitoring, security, upgrades and backups. Managed Kafka, cloud infrastructure and third-party connectors may have separate charges.",
+    "pricing_url": "https://kafka.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
