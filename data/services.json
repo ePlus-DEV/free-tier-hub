@@ -4829,6 +4829,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "dokploy-self-hosted",
+    "name": "Dokploy Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source core for self-hosting application, Docker Compose and database deployments on your own servers, without a per-app or per-deployment software subscription.",
+    "watch_out": "Provide and pay for VPS/bare-metal resources, storage, backups, domains and networking. Managed Dokploy Cloud is paid after a trial; enterprise features under proprietary/ use a separate paid source-available license. Only the open-source core is covered.",
+    "pricing_url": "https://dokploy.com/blog/we-are-updating-dokploys-open-source-license",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "pangolin-community-self-hosted",
+    "name": "Pangolin Community Edition Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted secure networking and reverse-proxy platform with WireGuard-based tunnels, sites, resources and users, using the Community Edition without a software subscription.",
+    "watch_out": "Requires your own server, DNS, TLS, networking and ongoing maintenance. Community Edition is AGPL-3.0 (comply with source-sharing obligations); SSO, advanced RBAC, audit logs, high availability and other enterprise controls are paid. The free Enterprise personal-use license has separate revenue and eligibility limits and is NOT this plan.",
+    "pricing_url": "https://pangolin.net/faq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "nebula-overlay-self-hosted",
     "name": "Nebula Overlay Network Self-Hosted",
     "category": "tunneling-networking",
