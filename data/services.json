@@ -5115,5 +5115,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nektos-act-local-ci",
+    "name": "act Local GitHub Actions Runner",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source CLI runs compatible GitHub Actions workflows locally in Docker, with no hosted CI minutes or software subscription quota.",
+    "watch_out": "Runs on your own computer or CI infrastructure and requires Docker images, disk space and compute. Not every GitHub-hosted runner feature or service is emulated; no free cloud runners are included.",
+    "pricing_url": "https://github.com/nektos/act",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
