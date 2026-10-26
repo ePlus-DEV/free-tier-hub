@@ -4011,5 +4011,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openflagr-self-hosted",
+    "name": "OpenFlagr Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Flagr service for feature flags, A/B experiments, dynamic configuration, and API-based variant evaluation; no vendor-imposed seat or evaluation quota when self-hosted.",
+    "watch_out": "You operate and pay for compute, database, backups, security, and availability. SQLite is suitable for a local demo; production deployments should configure a persistent MySQL/PostgreSQL database and TLS. Hosted demo is not a production service.",
+    "pricing_url": "https://openflagr.github.io/flagr/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
