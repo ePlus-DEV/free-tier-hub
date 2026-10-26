@@ -4395,5 +4395,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "bentoml-self-hosted",
+    "name": "BentoML Open Source Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 framework for packaging and serving AI/ML model inference APIs, batch jobs and multi-model pipelines; no software license fee or per-model quota when self-hosted.",
+    "watch_out": "Supply and pay for your own CPU/GPU, network and model storage; model weights may have separate licenses. BentoCloud managed compute is not included; anonymous framework usage telemetry can be disabled.",
+    "pricing_url": "https://github.com/bentoml/BentoML",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
