@@ -5019,5 +5019,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "framer-free-static",
+    "name": "Framer Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Framer-hosted website on a Framer subdomain with 1 GB bandwidth; up to 10 CMS collections, 1,000 pages and 5 MB file uploads.",
+    "watch_out": "Official FAQ positions Free for non-commercial use; custom domains require a paid plan. Initial 500 AI credits are one-time trial credits, not a recurring allowance. Hosting is subject to free-plan limits.",
+    "pricing_url": "https://www.framer.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-10-26"
   }
 ]
