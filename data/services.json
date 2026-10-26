@@ -4803,5 +4803,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "keda-self-hosted",
+    "name": "KEDA Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes event-driven autoscaler for containers and jobs; scales workloads from zero replicas based on queue lengths, events, and external metrics, without a software-side request or replica quota.",
+    "watch_out": "Requires an existing Kubernetes cluster, compatible metrics/event sources and operating capacity; worker nodes, cloud event services and monitoring can incur charges. KEDA is an autoscaling component, not a hosted function runtime.",
+    "pricing_url": "https://keda.sh/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
