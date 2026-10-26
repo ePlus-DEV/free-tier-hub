@@ -4347,5 +4347,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "dex-oidc-self-hosted",
+    "name": "Dex OIDC Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted OpenID Connect identity and OAuth 2.0 provider with pluggable LDAP, SAML, GitHub and other upstream identity connectors; no software usage or seat fee.",
+    "watch_out": "Dex federates to upstream identity providers rather than replacing user directories; configure TLS, secure token signing keys, storage and identity connectors yourself. Upstream identity services and hosting may charge separately.",
+    "pricing_url": "https://github.com/dexidp/dex",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
