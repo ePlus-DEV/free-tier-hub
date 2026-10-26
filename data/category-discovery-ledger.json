@@ -1,6 +1,6 @@
 {
-  "as_of_utc": "2026-10-25",
-  "source_main_sha": "3d56eb1382288546b776ed665bcecb1e4a606d75",
+  "as_of_utc": "2026-10-26",
+  "source_main_sha": "dee40151e66f1f6bf0a8ceb80a5ab707a7ceb802",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -20,7 +20,7 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
-      "stale_over_7d": 12,
+      "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -30,7 +30,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
-      "stale_over_7d": 3,
+      "stale_over_7d": 4,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -45,11 +45,11 @@
     },
     {
       "category": "databases",
-      "service_count": 30,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 31,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 27,
       "open_catalog_candidate_issues": 0
     },
@@ -65,11 +65,11 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 40,
-      "latest_catalog_verification": "2026-10-24",
+      "service_count": 41,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-24",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 36,
       "open_catalog_candidate_issues": 0
     },
@@ -95,21 +95,21 @@
     },
     {
       "category": "observability",
-      "service_count": 28,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 29,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 25,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "analytics",
-      "service_count": 17,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 18,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -120,7 +120,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
-      "stale_over_7d": 2,
+      "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -3604,6 +3604,157 @@
       ],
       "excluded": [],
       "new_category_assessment": "Existing category; no category or schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "analytics",
+      "rotation": "4 (16/19)",
+      "searches": [
+        "Re-enumerated all 19 main categories and deduped all-state Issues/PRs, 30 reviewed backlog entries and branches; selected analytics (17 services) as unreviewed rotation-4 category.",
+        "Checked Metabase Open Source versus Apache Superset, Shynet and existing Matomo/Plausible/GoatCounter; official pricing, AGPL obligations, commercial use and cloud trial exclusions."
+      ],
+      "official_sources": [
+        "https://www.metabase.com/pricing",
+        "https://www.metabase.com/license/agpl",
+        "https://www.metabase.com/articles/start-free-open-source-or-cloud",
+        "https://superset.apache.org/",
+        "https://superset.apache.org/docs/installation/docker-compose/",
+        "https://github.com/apache/superset/blob/master/LICENSE.txt"
+      ],
+      "candidates": [
+        {
+          "id": "metabase-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 408,
+          "pr_number": 409,
+          "reason": "Official ongoing free self-hosted AGPL core; unlimited users, questions and dashboards, no card, commercial allowed subject to AGPL. Canonical Issue #408 -> queue #40248910317 SUCCESS -> PR #409 exact HEAD f2a719c8f4a4b5dc525b14265b0877a4f0640e02 validation #40248930402 SUCCESS and build #40248930200 SUCCESS, exact-head eplus-bot APPROVED, GitHub-native auto-MERGED as 619d06b260c120a6a2cced32b6a5dcf7d32152e4; confirmed on main."
+        },
+        {
+          "id": "apache-superset-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official Apache-2.0 self-hosted analytics/BI, no software license quota/card, commercial use permitted. Docker Compose only for development; own production infrastructure and database drivers required. Dedupe against main/Issues/PRs/branches done; no Issue/PR created this run."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Shynet Self-Hosted",
+          "reason": "Previously identified Apache-2.0 alternative; deferred for full current production/security verification, not classified ineligible."
+        },
+        {
+          "name": "Metabase Cloud Starter",
+          "reason": "Paid plan after 14-day trial, not an ongoing free hosted tier."
+        }
+      ],
+      "new_category_assessment": "Existing analytics category fits both Metabase and Apache Superset; no category addition."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "observability",
+      "rotation": "4 (17/19)",
+      "searches": [
+        "Compared Apache SkyWalking, SigNoz Community and Coroot Community official self-hosted observability offerings, after all-state catalog/Issue/PR/branch deduplication.",
+        "Verified SkyWalking Apache-2.0 backend/UI, storage requirements and production versus quickstart distinction."
+      ],
+      "official_sources": [
+        "https://skywalking.apache.org/docs/main/latest/en/setup/backend/backend-setup/",
+        "https://skywalking.apache.org/docs/main/latest/en/setup/backend/backend-storage/",
+        "https://github.com/apache/skywalking/blob/master/LICENSE",
+        "https://signoz.io/pricing/",
+        "https://github.com/coroot/coroot"
+      ],
+      "candidates": [
+        {
+          "id": "apache-skywalking-self-hosted",
+          "status": "catalogued",
+          "issue_number": 410,
+          "pr_number": 411,
+          "reason": "Apache-2.0 self-hosted APM/tracing/metrics/logs with no vendor software quota/card; commercial permitted, infrastructure/storage costs extra. Issue #410 -> queue #40248960528 SUCCESS -> PR #411 exact HEAD 264bdacc0757c93df2b1ace777633d44e7a0e0f0 validation #40248985039 SUCCESS, build #40248984923 SUCCESS, eplus-bot APPROVED at exact HEAD, GitHub-native auto-MERGED as 44a38cf482a0ad447ddb342bb31a75395ed1dd37; confirmed on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SigNoz Community",
+          "reason": "Official free self-hosted edition, but licensing split and enterprise-feature boundaries require separate verification before a canonical Issue."
+        },
+        {
+          "name": "Coroot Community",
+          "reason": "Potential self-hosted candidate; separate product scope and licensing verification deferred, not marked ineligible."
+        }
+      ],
+      "new_category_assessment": "Fits existing observability category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": "4 (18/19)",
+      "searches": [
+        "Compared QuestDB Open Source, Apache CouchDB and FerretDB as self-hosted database candidates; deduped all-state GitHub history and reviewed backlog.",
+        "Verified QuestDB 2026-10-02 official Terms, Apache-2.0 free software, separate Enterprise trial and proprietary HA/RBAC/TLS features."
+      ],
+      "official_sources": [
+        "https://questdb.com/download/",
+        "https://questdb.com/docs/",
+        "https://questdb.com/terms/",
+        "https://github.com/questdb/questdb",
+        "https://couchdb.apache.org/",
+        "https://github.com/FerretDB/FerretDB"
+      ],
+      "candidates": [
+        {
+          "id": "questdb-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 412,
+          "pr_number": 413,
+          "reason": "Official free Apache-2.0 open-source time-series SQL engine; no vendor quotas or card; commercial use allowed, own hosting; Enterprise HA/security/replication excluded. Issue #412 -> queue #40249079205 SUCCESS -> PR #413 exact HEAD 835c108d0534fdb9c5186f30378973cecf887ad1 validation #40249101494 SUCCESS and build #40249101520 SUCCESS, eplus-bot exact-head APPROVED and GitHub-native auto-MERGED as 79a87d35cf466d2db7eb90f576aadc8e2c756a67; confirmed on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Apache CouchDB Self-Hosted",
+          "reason": "Open-source database alternative reserved for separate official deployment and license verification, not classified ineligible."
+        },
+        {
+          "name": "FerretDB Self-Hosted",
+          "reason": "Deferred for product scope, license and commercial terms verification, not classified ineligible."
+        }
+      ],
+      "new_category_assessment": "Fits existing databases category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "developer-tools",
+      "rotation": "4 (19/19)",
+      "searches": [
+        "Compared Mailpit, smtp4dev and MailDev for developer SMTP capture/testing; deduped current main, all-state Issues/PRs, branches and durable backlog.",
+        "Verified Mailpit MIT license, active official Docker deployment, REST API, default pruning, security/authentication and no managed email-delivery allowance."
+      ],
+      "official_sources": [
+        "https://github.com/axllent/mailpit",
+        "https://github.com/axllent/mailpit/blob/develop/LICENSE",
+        "https://mailpit.axllent.org/docs/install/docker/",
+        "https://github.com/rnwood/smtp4dev",
+        "https://github.com/maildev/maildev"
+      ],
+      "candidates": [
+        {
+          "id": "mailpit-self-hosted",
+          "status": "catalogued",
+          "issue_number": 414,
+          "pr_number": 415,
+          "reason": "Official MIT self-hosted SMTP testing with web UI and REST API, no vendor software quota/card, commercial allowed; default 500-message retention and self-managed network security. Issue #414 -> queue #40249195297 SUCCESS -> PR #415 exact HEAD 60cc02dfe6896ab774414f1536a9d6d10f38cac9 validation #40249220171 SUCCESS and build #40249220193 SUCCESS, eplus-bot APPROVED at exact HEAD and GitHub-native auto-MERGED as dee40151e66f1f6bf0a8ceb80a5ab707a7ceb802; confirmed on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "smtp4dev",
+          "reason": "Open-source alternative; independent current feature/maintenance verification deferred, not classified ineligible."
+        },
+        {
+          "name": "MailDev",
+          "reason": "Open-source alternative; independent current feature/maintenance verification deferred, not classified ineligible."
+        }
+      ],
+      "new_category_assessment": "Fits existing developer-tools category; testing sink is not an email-delivery service."
     }
   ],
   "pending_reverification": [
@@ -3665,12 +3816,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 311,
+    "total_services": 315,
     "total_categories": 19,
-    "stale_over_7d": 217,
+    "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 4: 15/19 categories; main 311 services. Kopia #404 -> PR #406 auto-merged after exact-head CI and approval. OpenBao #405 -> PR #407 safely reconciled with non-force two-parent merge commit 67a3f2157d866bf6f507e850955d686dfc5e8a8f, exact-head validation #40244606240 SUCCESS, build #40244606228 SUCCESS (Deploy SKIPPED), bot re-approved at 23:24 UTC and auto-MERGED as 3d56eb1382288546b776ed665bcecb1e4a606d75; both Issues CLOSED. Production main Pages deployment requires independent check.",
+    "note": "Rotation 4 completed 19/19 categories on 2026-10-26; main 315 services at dee40151e66f1f6bf0a8ceb80a5ab707a7ceb802. Four newly catalogued: Metabase #408/#409, SkyWalking #410/#411, QuestDB #412/#413, Mailpit #414/#415; each exact-head validation/build SUCCESS, bot APPROVED, GitHub-native auto-MERGED, independently confirmed on main. Apache Superset independently verified but only ledgered (no Issue/PR). Production Pages for latest main HEAD requires separate confirmation; no manual merge/deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3733,13 +3884,12 @@
       "static-hosting",
       "feature-flags",
       "storage",
-      "auth-security"
-    ],
-    "rotation_4_categories_remaining": [
-      "databases",
-      "developer-tools",
+      "auth-security",
+      "analytics",
       "observability",
-      "analytics"
-    ]
+      "databases",
+      "developer-tools"
+    ],
+    "rotation_4_categories_remaining": []
   }
 }
