@@ -4935,5 +4935,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "flagger-progressive-delivery",
+    "name": "Flagger Progressive Delivery Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes progressive delivery operator supporting automated canary, A/B, and blue/green rollouts with metrics-based promotion and rollback; no vendor-imposed software deployment quota.",
+    "watch_out": "Requires a Kubernetes cluster, compatible ingress controller/service mesh or Gateway API, monitoring metrics, and deployment operations. Cluster, load balancer, observability and network resources may cost extra; this is not a managed hosted CD plan.",
+    "pricing_url": "https://github.com/fluxcd/flagger",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
