@@ -4947,5 +4947,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "lancedb-open-source-embedded",
+    "name": "LanceDB Open-Source Embedded",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source embedded vector and multimodal database for Python, JavaScript and Rust; local/self-managed storage, vector/full-text search and metadata filtering with no vendor-imposed software query or document quota.",
+    "watch_out": "This is the self-managed open-source library, not managed LanceDB Cloud. You provide storage, indexing, compute, backups and operations; cloud object storage, embeddings and AI services may cost money. Observe Apache-2.0 notices.",
+    "pricing_url": "https://github.com/lancedb/lancedb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
