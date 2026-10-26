@@ -4335,5 +4335,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "knock-developer-free",
+    "name": "Knock Developer Free",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "10,000 notification messages/month, 500 guide active users/month and 500 AI agent credits/month; unlimited workflows, broadcasts, delivery channels and team members.",
+    "watch_out": "A message counts per recipient and channel; sending through email/SMS/push providers can incur their own charges. Developer tier is for evaluation or small-scale deployments; Knock does not hard-cap overages and may request billing setup if usage exceeds the free allowance.",
+    "pricing_url": "https://knock.app/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
