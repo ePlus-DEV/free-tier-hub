@@ -4383,5 +4383,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nextcloud-server-self-hosted",
+    "name": "Nextcloud Server Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "AGPLv3+ open-source file sync, sharing, WebDAV and collaboration server with no software license fee or fixed per-user storage allowance when self-hosted.",
+    "watch_out": "Provide and secure your own disk, server, database, backups and TLS; storage is limited by your infrastructure. Some apps, enterprise support and hosted plans cost extra; AGPL obligations apply.",
+    "pricing_url": "https://github.com/nextcloud/server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
