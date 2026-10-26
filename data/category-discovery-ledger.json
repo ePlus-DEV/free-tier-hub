@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "f5fc4ba41c6d4faea1b17eb956abd3c9ca4e24a6",
+  "source_main_sha": "1144bf4e1ef66f00662dc9a512447b60dbe791b2",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "category": "databases",
-      "service_count": 33,
+      "service_count": 35,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
@@ -105,7 +105,7 @@
     },
     {
       "category": "analytics",
-      "service_count": 20,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -145,7 +145,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 23,
+      "service_count": 26,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -155,7 +155,7 @@
     },
     {
       "category": "search",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 20,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -5298,6 +5298,187 @@
         }
       ],
       "new_category_assessment": "Existing ai-assistants category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": "7",
+      "searches": [
+        "Milvus Apache-2.0 official self-hosted vector database standalone Docker and Kubernetes",
+        "Chroma Apache-2.0 embedded and self-hosted server versus Chroma Cloud metered credits",
+        "Deduplicated all main IDs, 30 backlog entries, Issues and PRs including historical Chroma Cloud exclusion"
+      ],
+      "official_sources": [
+        "https://milvus.io/solutions/open-source-vector-database",
+        "https://github.com/milvus-io/milvus",
+        "https://github.com/chroma-core/chroma",
+        "https://www.trychroma.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "milvus-self-hosted",
+          "status": "catalogued",
+          "issue_number": 538,
+          "pr_number": 543,
+          "reason": "New Apache-2.0 self-hosted vector database; exact HEAD b8dc2bf3c776954ee3843a962f1c2a5aa61ab481 validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED; present on main."
+        },
+        {
+          "id": "chroma-self-hosted",
+          "status": "catalogued",
+          "issue_number": 539,
+          "pr_number": 544,
+          "reason": "New Apache-2.0 self-hosted vector database distinct from Chroma Cloud; exact HEAD a33399e6fe9456842e68f4eedad97aa3612d1693 validation/build SUCCESS, APPROVED, automatically MERGED; present on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Chroma Cloud Starter",
+          "reason": "Metered hosted offering with introductory $5 credits, not the ongoing free self-hosted edition."
+        }
+      ],
+      "new_category_assessment": "Both are self-hosted vector databases in existing databases category; no schema/category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "feature-flags",
+      "rotation": "7",
+      "searches": [
+        "FeatBit Foundation self-hosted forever-free official pricing no MAU/project/seat limits",
+        "FeatBit MIT core versus licensed enterprise features",
+        "FeatureHub Commons Clause historical exclusion and existing flagd dedupe"
+      ],
+      "official_sources": [
+        "https://home.featbit.co/pricing",
+        "https://github.com/featbit/featbit",
+        "https://github.com/featurehub-io/featurehub/blob/main/LICENSE.txt"
+      ],
+      "candidates": [
+        {
+          "id": "featbit-foundation-self-hosted",
+          "status": "catalogued",
+          "issue_number": 540,
+          "pr_number": 545,
+          "reason": "New ongoing free self-hosted Foundation plan, core MIT, licensed premium features excluded; exact HEAD aabd2474dc3a7f1a9637f918c97255083ad49ea1 validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub unrestricted open-source claim",
+          "reason": "Commons Clause restriction remains, not eligible for unrestricted commercial catalog entry."
+        }
+      ],
+      "new_category_assessment": "Existing feature-flags category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "analytics",
+      "rotation": "7",
+      "searches": [
+        "Open Web Analytics official GPL-2.0-or-later active self-hosted PHP analytics unlimited websites",
+        "Countly Lite modified AGPL Section 7 branding/rebranding and resale restrictions",
+        "Deduped Ackee, Offen, Rybbit and Shynet already in catalog"
+      ],
+      "official_sources": [
+        "https://github.com/Open-Web-Analytics/Open-Web-Analytics",
+        "https://github.com/Countly/countly-server/blob/master/LICENSE.md",
+        "https://support.countly.com/hc/en-us/articles/360037501312-countly-licensing-faq"
+      ],
+      "candidates": [
+        {
+          "id": "open-web-analytics-self-hosted",
+          "status": "catalogued",
+          "issue_number": 541,
+          "pr_number": 546,
+          "reason": "New GPL-2.0-or-later self-hosted web analytics with unlimited websites; exact HEAD 1a73029054f35b5dec2aa4d5d9a53875af4d5f1d validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Countly Lite unrestricted resale",
+          "reason": "Modified AGPL Section 7 imposes branding and resale restrictions; defer rather than claim unrestricted commercial service."
+        }
+      ],
+      "new_category_assessment": "Existing analytics category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "search",
+      "rotation": "7",
+      "searches": [
+        "Apache Solr 10 official Apache-2.0 self-hosted full-text, vector, geospatial search",
+        "SolrCloud distributed search, Docker and Kubernetes installation",
+        "Deduped OpenSearch, Meilisearch, Typesense, Vespa, Sonic and ZincSearch in main"
+      ],
+      "official_sources": [
+        "https://solr.apache.org/",
+        "https://solr.apache.org/features.html",
+        "https://github.com/apache/solr"
+      ],
+      "candidates": [
+        {
+          "id": "apache-solr-self-hosted",
+          "status": "catalogued",
+          "issue_number": 542,
+          "pr_number": 547,
+          "reason": "New Apache-2.0 self-hosted enterprise search; exact HEAD 97c2df8cc2f593dd56889cc1d2ad970df3c100a7 validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Apache Lucene as separate hosted service",
+          "reason": "Library powering Solr rather than a separately hosted search server; not treated as equivalent service."
+        }
+      ],
+      "new_category_assessment": "Existing search category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "queues-jobs",
+      "rotation": "7",
+      "searches": [
+        "NATS JetStream Apache-2.0 official self-hosted messaging persistence and streams",
+        "Apache Pulsar Apache-2.0 official durable pub/sub, queues and streaming",
+        "Apache Kafka Apache-2.0 official distributed event streaming, KRaft",
+        "Deduped all 383 main entries, 30 backlog entries, open/closed Issues and PRs"
+      ],
+      "official_sources": [
+        "https://github.com/nats-io/nats-server",
+        "https://docs.nats.io/",
+        "https://github.com/apache/pulsar",
+        "https://pulsar.apache.org/",
+        "https://kafka.apache.org/",
+        "https://github.com/apache/kafka"
+      ],
+      "candidates": [
+        {
+          "id": "apache-pulsar-self-hosted",
+          "status": "catalogued",
+          "issue_number": 549,
+          "pr_number": 551,
+          "reason": "New Apache-2.0 self-hosted distributed messaging; exact HEAD b870635cc8c41d099e3066d06ff7728d0f3e632f validation/build SUCCESS, APPROVED, auto-MERGED. Post-merge close-linked-catalog-issue job failed but main-push issue closer succeeded; Issue #549 CLOSED."
+        },
+        {
+          "id": "nats-jetstream-self-hosted",
+          "status": "catalogued",
+          "issue_number": 548,
+          "pr_number": 552,
+          "reason": "New Apache-2.0 self-hosted durable messaging; exact HEAD 1bc6a55205437c4035413c2da1fe5a0797523f46 validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED after safe retry of exact-head validation job."
+        },
+        {
+          "id": "apache-kafka-self-hosted",
+          "status": "catalogued",
+          "issue_number": 550,
+          "pr_number": 553,
+          "reason": "New Apache-2.0 self-hosted event streaming; exact HEAD 867715b036ca8087ce96e1ea2a52bb12896878ce validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Managed Kafka, Pulsar and NATS cloud plans",
+          "reason": "Separate paid/limited hosted services, not interchangeable with the ongoing free self-hosted software."
+        }
+      ],
+      "new_category_assessment": "Existing queues-jobs category; no schema change."
     }
   ],
   "pending_reverification": [
@@ -5359,12 +5540,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 375,
+    "total_services": 383,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 7 now 6/19 categories on 2026-10-26: five genuinely new eligible services rathole (#528/#531), Tsuru (#529/#532), DocsGPT (#530/#533), LocalTunnel (#534/#536), Kubero (#535/#537). All five were automatically MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED; original branch commits preserved without force push. Main f5fc4ba41c6d4faea1b17eb956abd3c9ca4e24a6: 375 services (+5 from 370), 220 older than seven days. Existing backlog 30 records, only uploadthing-free alias to uploadthing-2gb-app. CapRover custom license deferred. No direct main push, manual merge or production deploy.",
+    "note": "Rotation 7 now 11/19 categories on 2026-10-26. Eight genuinely new verified services (Milvus, Chroma, FeatBit Foundation, Open Web Analytics, Apache Solr, Apache Pulsar, NATS JetStream, Apache Kafka) delivered through canonical Issues #538-#542 and #548-#550 -> PRs #543-#547 and #551-#553, exact-head validation/build SUCCESS, eplus-bot APPROVED and automatically MERGED. Main 1144bf4e1ef66f00662dc9a512447b60dbe791b2 contains 383 services (+8 from 375). Main validation SUCCESS and Pages #40351340156 build/deploy SUCCESS at exact main HEAD. No direct main push, manual merge, force push or manual deploy. Historical backlog 30 records reconciled; 220 services older than seven days.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -5487,21 +5668,21 @@
       "dns-cdn",
       "tunneling-networking",
       "app-hosting",
-      "ai-assistants"
+      "ai-assistants",
+      "databases",
+      "feature-flags",
+      "analytics",
+      "search",
+      "queues-jobs"
     ],
     "rotation_7_categories_remaining": [
       "static-hosting",
       "serverless",
-      "databases",
       "storage",
       "developer-tools",
       "auth-security",
       "observability",
-      "analytics",
       "ai-ml",
-      "queues-jobs",
-      "search",
-      "feature-flags",
       "webhooks-events"
     ]
   }
