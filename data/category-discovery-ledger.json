@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "3c109cd0c9e51606633bedea3aadd3983b8975d1",
+  "source_main_sha": "1c93638148969cd8bd9418b283fee3dfb8be5400",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -11,7 +11,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "app-hosting",
@@ -55,13 +55,13 @@
     },
     {
       "category": "storage",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0
+      "stale_over_7d": 13,
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "developer-tools",
@@ -91,7 +91,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "observability",
@@ -120,7 +120,7 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 3,
+      "stale_over_7d": 4,
       "open_catalog_candidate_issues": 1
     },
     {
@@ -6487,6 +6487,87 @@
         }
       ],
       "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "storage",
+      "rotation": 9,
+      "searches": [
+        "rclone MIT license official",
+        "BorgBackup BSD 3-Clause official documentation",
+        "free open-source backup storage software"
+      ],
+      "official_sources": [
+        "https://rclone.org/licence/",
+        "https://borgbackup.readthedocs.io/en/stable/index.html"
+      ],
+      "candidates": [
+        {
+          "id": "rclone-self-hosted",
+          "status": "catalogued",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/636",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/639",
+          "reason": "Verified in latest main catalog; PR merged; deployment requires separate proof"
+        },
+        {
+          "id": "borgbackup-self-hosted",
+          "status": "PR",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/637",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/640",
+          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "auth-security",
+      "rotation": 9,
+      "searches": [
+        "OAuth2 Proxy MIT license official",
+        "self-hosted OIDC authentication reverse proxy"
+      ],
+      "official_sources": [
+        "https://github.com/oauth2-proxy/oauth2-proxy"
+      ],
+      "candidates": [
+        {
+          "id": "oauth2-proxy-self-hosted",
+          "status": "PR",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/638",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/641",
+          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "static-hosting",
+      "rotation": 9,
+      "searches": [
+        "Caddy static file server Apache 2.0 official",
+        "free static site hosting self-hosted Caddy",
+        "Hugo Apache 2.0 static site generator"
+      ],
+      "official_sources": [
+        "https://caddyserver.com/docs/quick-starts/static-files"
+      ],
+      "candidates": [
+        {
+          "id": "caddy-static-self-hosted",
+          "status": "PR",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/642",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/643",
+          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hugo",
+          "reason": "Static site generator rather than a hosting/server service; excluded from static-hosting classification pending category review"
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -6548,12 +6629,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 420,
+    "total_services": 421,
     "total_categories": 19,
-    "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 4,
+    "stale_over_7d": 222,
+    "open_catalog_candidate_issues": 8,
     "unmatched_backlog": [],
-    "note": "Rotation 9 started with five officially verified new services in DNS/CDN, tunneling/networking and CI/CD. Canonical Issues #626-#630 created and PRs #631-#635 generated. Do not count as merged until each PR has exact-head validation/build SUCCESS, approved review and GitHub merged state; re-read current main for catalog delta. Prior GitHub Pages global concurrency can cancel pending PR previews; ACTION_REQUIRED/cancelled are not PASS. Historical ledger PR remains review-only.",
+    "note": "Rotation 9: 6/19 categories reviewed. New candidate Issues #636-#638, #642; PRs #639-#641, #643. Rclone merged to main, remaining PRs require exact-head validation/build SUCCESS and approved review. Earlier PRs #632-#635 remain open with cancelled build/conflicts; do not count as PASS. Main deployment for latest commit must be verified separately. No manual merge, force push, or approval bypass.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6719,25 +6800,25 @@
     "rotation_9_categories_reviewed": [
       "dns-cdn",
       "tunneling-networking",
-      "ci-cd"
+      "ci-cd",
+      "storage",
+      "auth-security",
+      "static-hosting"
     ],
     "rotation_9_categories_remaining": [
-      "static-hosting",
       "app-hosting",
       "serverless",
       "cloud-vps",
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
-      "webhooks-events"
+      "webhooks-events",
+      "ai-assistants"
     ]
   }
 }
