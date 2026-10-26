@@ -4145,6 +4145,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "dolt-self-hosted",
+    "name": "Dolt SQL Database Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted SQL database compatible with MySQL clients, supporting Git-style branching, commits, diffs and merges of versioned tables; no vendor-enforced database size, query or seat quotas in the open-source server.",
+    "watch_out": "Requires your own CPU, RAM, disk, backups and database operations. DoltHub sharing, Hosted Dolt and managed support are separate offerings; Git-style version control changes performance and storage considerations versus conventional MySQL.",
+    "pricing_url": "https://github.com/dolthub/dolt",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "graphile-worker-self-hosted",
+    "name": "Graphile Worker Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js PostgreSQL-backed background job queue with task scheduling, retries, concurrency and PostgreSQL transaction integration; no vendor-enforced job, worker or monthly execution quotas when self-managed.",
+    "watch_out": "Requires your own Node.js worker processes and PostgreSQL database; database, CPU, storage, backups and monitoring are not included. Tasks run at least once, so handlers should be idempotent; Graphile Worker is not a managed queue or free PostgreSQL service.",
+    "pricing_url": "https://github.com/graphile/worker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "hoppscotch-community-self-hosted",
     "name": "Hoppscotch Community Self-Hosted",
     "category": "developer-tools",
