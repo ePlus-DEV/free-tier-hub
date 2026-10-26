@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "df14c4a0ec313aab40f43b973bcb49eb28684436",
+  "source_main_sha": "ce59e54237bf05d7d211347a662c6cb3172e9367",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,17 +15,17 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "serverless",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -55,11 +55,11 @@
     },
     {
       "category": "storage",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -85,21 +85,21 @@
     },
     {
       "category": "auth-security",
-      "service_count": 20,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 21,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
-      "service_count": 29,
+      "service_count": 30,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 25,
       "open_catalog_candidate_issues": 0
     },
@@ -125,11 +125,11 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
@@ -155,8 +155,8 @@
     },
     {
       "category": "search",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
@@ -165,8 +165,8 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 17,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 18,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-25",
@@ -3803,6 +3803,158 @@
         }
       ],
       "new_category_assessment": "Existing category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": "5",
+      "searches": [
+        "Dokku official MIT source and self-hosted Docker PaaS documentation; CapRover licensing restriction review; cross-checked 329-service catalog, backlog and all-state Issues/PRs."
+      ],
+      "official_sources": [
+        "https://github.com/dokku/dokku",
+        "https://dokku.com/docs/getting-started/installation/"
+      ],
+      "candidates": [
+        {
+          "id": "dokku-self-hosted",
+          "status": "catalogued",
+          "issue_number": 445,
+          "pr_number": 448,
+          "reason": "New verified eligible self-hosted free software; official source/license, no software card and commercial use confirmed. Canonical Issue -> queue -> PR -> exact-head validation/build, eplus-bot approval and automated merge into latest main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CapRover",
+          "reason": "Current custom-modified license and terms have restrictions; not classified as Apache-2.0 open source without independent current commercial-use review."
+        },
+        {
+          "name": "Coolify Self-Hosted",
+          "reason": "Already catalogued; distinct from Dokku, no duplicate."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "storage",
+      "rotation": "5",
+      "searches": [
+        "Official JuiceFS Community Free pricing, Apache-2.0 source, metadata engine and object storage costs; checked SeaweedFS, Garage, Ceph and RustFS catalog duplicates."
+      ],
+      "official_sources": [
+        "https://juicefs.com/en/pricing",
+        "https://juicefs.com/docs/community/introduction/",
+        "https://github.com/juicedata/juicefs"
+      ],
+      "candidates": [
+        {
+          "id": "juicefs-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 446,
+          "pr_number": 450,
+          "reason": "New verified eligible self-hosted free software; official source/license, no software card and commercial use confirmed. Canonical Issue -> queue -> PR -> exact-head validation/build, eplus-bot approval and automated merge into latest main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SeaweedFS, Garage, Ceph, RustFS",
+          "reason": "Already catalogued; JuiceFS Community is a distinct POSIX filesystem backed by separate object storage and metadata."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "auth-security",
+      "rotation": "5",
+      "searches": [
+        "Official OpenFGA Apache-2.0 authorization engine, self-hosted Docker deployment, production persistent database requirements; deduped against Cerbos PDP and current catalog."
+      ],
+      "official_sources": [
+        "https://github.com/openfga/openfga",
+        "https://openfga.dev/docs/getting-started/setup-openfga"
+      ],
+      "candidates": [
+        {
+          "id": "openfga-self-hosted",
+          "status": "catalogued",
+          "issue_number": 447,
+          "pr_number": 449,
+          "reason": "New verified eligible self-hosted free software; official source/license, no software card and commercial use confirmed. Canonical Issue -> queue -> PR -> exact-head validation/build, eplus-bot approval and automated merge into latest main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Cerbos PDP Self-Hosted",
+          "reason": "Already catalogued; policy decision engine distinct from OpenFGA relationship authorization."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-ml",
+      "rotation": "5",
+      "searches": [
+        "Official KServe Apache-2.0 Kubernetes inference source, standalone/Knative modes, model/GPU infrastructure costs; checked existing vLLM entry and new SGLang."
+      ],
+      "official_sources": [
+        "https://github.com/kserve/kserve",
+        "https://kserve.github.io/website/"
+      ],
+      "candidates": [
+        {
+          "id": "kserve-self-hosted",
+          "status": "catalogued",
+          "issue_number": 451,
+          "pr_number": 454,
+          "reason": "New verified eligible self-hosted free software; official source/license, no software card and commercial use confirmed. Canonical Issue -> queue -> PR -> exact-head validation/build, eplus-bot approval and automated merge into latest main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "vLLM Self-Hosted",
+          "reason": "Already catalogued; KServe is distinct Kubernetes model-serving control plane."
+        },
+        {
+          "name": "SGLang",
+          "reason": "Deferred for independent product-scope and deployment/compatibility verification."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "observability",
+      "rotation": "5",
+      "searches": [
+        "Official Gatus Apache-2.0 self-hosted status page, endpoint health checks and alert integrations; deduped against existing Beszel listing."
+      ],
+      "official_sources": [
+        "https://github.com/TwiN/gatus"
+      ],
+      "candidates": [
+        {
+          "id": "gatus-self-hosted",
+          "status": "catalogued",
+          "issue_number": 452,
+          "pr_number": 453,
+          "reason": "New verified eligible self-hosted free software; official source/license, no software card and commercial use confirmed. Canonical Issue -> queue -> PR -> exact-head validation/build, eplus-bot approval and automated merge into latest main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Beszel Self-Hosted",
+          "reason": "Already catalogued; Gatus provides a distinct configurable endpoint status page."
+        },
+        {
+          "name": "Uptrace Self-Hosted",
+          "reason": "Deferred for separate current license, feature-scope and commercial-use verification."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema or category changes."
     }
   ],
   "pending_reverification": [
@@ -3864,12 +4016,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 325,
+    "total_services": 334,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 7/19 categories; 3 newly verified Fission, AnythingLLM, Knative self-hosted services delivered via Issues #431/#432/#435 and PRs #433/#434/#436, exact-head CI and automatic merges. Apache OpenWhisk verified-awaiting-Issue. Main df14c4a0ec313aab40f43b973bcb49eb28684436: 325 services. 30 historical backlog entries deduped (including UploadThing alias). No manual merge, direct main push or force push.",
+    "note": "Rotation 5 12/19 categories. Five genuinely new services delivered: Dokku #445/#448, JuiceFS #446/#450, OpenFGA #447/#449, Gatus #452/#453, KServe #451/#454. Exact-head CI/reviews and automated merges verified. Main ce59e54237bf05d7d211347a662c6cb3172e9367: 334 services. 30 historical backlog entries deduped (UploadThing alias); no manual merge, direct main push or force-push. Pages and approval concurrency blocker PRs remain separate and unmerged.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3948,17 +4100,17 @@
       "tunneling-networking",
       "dns-cdn",
       "serverless",
-      "ai-assistants"
+      "ai-assistants",
+      "app-hosting",
+      "storage",
+      "auth-security",
+      "ai-ml",
+      "observability"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
-      "observability",
-      "ai-ml",
       "queues-jobs",
       "search",
       "feature-flags",
