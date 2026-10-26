@@ -1,17 +1,17 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "d23ce55fd6237b8117da73eea10cf1a58bd9fa54",
+  "source_main_sha": "d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "app-hosting",
@@ -55,25 +55,23 @@
     },
     {
       "category": "storage",
-      "service_count": 20,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 44,
+      "service_count": 45,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ci-cd",
@@ -87,23 +85,23 @@
     },
     {
       "category": "auth-security",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
-      "service_count": 33,
+      "service_count": 34,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "analytics",
@@ -127,13 +125,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 16,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-assistants",
@@ -193,7 +191,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     }
   ],
   "discovery_log": [
@@ -5496,10 +5494,10 @@
       "candidates": [
         {
           "id": "read-the-docs-community",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 556,
           "pr_number": 562,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #562 auto-MERGED after exact-head 9f7bb2af84f2957ea5f61aca274a12651d94939f validation run #40359903313 SUCCESS, build run #40359903318 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5555,10 +5553,10 @@
       "candidates": [
         {
           "id": "openstack-swift-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 558,
           "pr_number": 563,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #563 auto-MERGED after exact-head 5a35d4529d710bebae0ef643e9571bc7e91f864e validation run #40360158521 SUCCESS, build run #40360158557 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5592,14 +5590,15 @@
           "id": "swagger-ui-self-hosted",
           "status": "catalogued",
           "pr_number": 564,
-          "reason": "Confirmed in current main and PR merged; exact-head CI/review must be checked separately."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #564 auto-MERGED after exact-head a38b45c659732d49fccd32f81e6fc4b6d42e24c8 validation run #40358735153 SUCCESS, build run #40358734593 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge.",
+          "issue_number": 557
         },
         {
           "id": "redoc-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 560,
           "pr_number": 565,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #565 auto-MERGED after exact-head 2fc7bc39681abb6e3d8e25d54e1e71d9336ff07b validation run #40360688362 SUCCESS, build run #40360688492 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         },
         {
           "id": "swagger-editor-self-hosted",
@@ -5629,10 +5628,10 @@
       "candidates": [
         {
           "id": "ory-kratos-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 554,
           "pr_number": 559,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #559 auto-MERGED after exact-head 1f52253fcc8c67e1abb09a249367f2c3264dc631 validation run #40359327558 SUCCESS, build run #40359327781 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5657,10 +5656,10 @@
       "candidates": [
         {
           "id": "grafana-alloy-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 555,
           "pr_number": 561,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #561 auto-MERGED after exact-head c0c5d2ff548054d7f71908b598080f38b7b65a94 validation run #40359618844 SUCCESS, build run #40359618358 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5688,17 +5687,17 @@
       "candidates": [
         {
           "id": "ray-serve-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 566,
           "pr_number": 569,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #569 auto-MERGED after exact-head 02fa3d9d70b72de606fefe9a5f6bc0e8336e4bcf validation run #40361150298 SUCCESS, build run #40361149951 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         },
         {
           "id": "kubeflow-community-distribution",
-          "status": "PR",
+          "status": "catalogued",
           "issue_number": 567,
           "pr_number": 570,
-          "reason": "Delivery PR exists; do not count merged until exact-head validation/build and review succeed."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #570 auto-MERGED after exact-head d6c5084cda975fea28b64b18f0f2af09eb61fd8b validation run #40361507849 SUCCESS, build run #40361507942 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5727,7 +5726,7 @@
           "status": "catalogued",
           "issue_number": 568,
           "pr_number": 571,
-          "reason": "Confirmed in current main and PR merged; exact-head CI/review must be checked separately."
+          "reason": "Confirmed on main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e; PR #571 auto-MERGED after exact-head a4ead2f47c183d3ff3dd19b746c6492bc78405c1 validation run #40358893968 SUCCESS, build run #40358894012 SUCCESS and eplus-bot APPROVED for that HEAD. No manual merge."
         }
       ],
       "excluded": [
@@ -5802,14 +5801,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 385,
+    "total_services": 392,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 8,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "Rotation 7 discovery review completed 19/19 categories on 2026-10-26; canonical candidate Issues #554-#558, #560, #566-#568 opened. Candidate PR/merge/CI statuses are tracked separately and not assumed successful. Main HEAD d23ce55fd6237b8117da73eea10cf1a58bd9fa54 has 385 services at snapshot. Existing historical backlog remains subject to deduplication and freshness checks; no direct main push, force push or manual merge.",
+    "open_catalog_candidate_issues": 0,
+    "unmatched_backlog": [],
+    "note": "Rotation 7 completed all 19/19 categories. Nine newly verified services were delivered through canonical Issues #554-#558, #560, #566-#568 and auto-MERGED PRs #559, #561-#565 (excluding #560 issue), #569-#571. All 9 had exact-head validation/build SUCCESS and eplus-bot APPROVED; all 9 IDs are present on latest main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e with 392 total services (+9 from 383). Backlog alias uploadthing-free matches existing uploadthing-2gb-app; no unmatched unique backlog entry. One verified prospect swagger-editor-self-hosted awaits Issue. PR #291 remains review-only; no direct main push, manual merge or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
