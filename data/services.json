@@ -4923,5 +4923,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "adnanh-webhook-self-hosted",
+    "name": "adnanh/webhook Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted HTTP webhook receiver that maps configurable JSON/YAML hook rules to local commands or scripts; no vendor-imposed webhook, endpoint, or event quota.",
+    "watch_out": "Executes server-side commands: secure every exposed hook with signatures, trigger rules, least-privilege accounts and HTTPS/reverse proxy before production use. Requires your own host and operations; compute, bandwidth, TLS infrastructure and integrations may cost extra. No hosted delivery/retry service is included.",
+    "pricing_url": "https://github.com/adnanh/webhook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
