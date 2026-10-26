@@ -4911,5 +4911,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "orama-js-open-source",
+    "name": "Orama Open-Source JavaScript Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source @orama/orama search library for browser, Node.js, and edge runtimes, with full-text, vector and hybrid search, filtering, and facets; no vendor-imposed query or document quota for the self-managed library.",
+    "watch_out": "This is an embedded library, not the managed Orama Cloud plan. You manage indexes, persistence, deployment and compute; optional embeddings, AI models, hosting, or commercial cloud features may incur separate costs. See repository LICENSE.md for Apache-2.0 terms.",
+    "pricing_url": "https://github.com/oramasearch/orama",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
