@@ -4251,5 +4251,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "argo-cd-self-hosted",
+    "name": "Argo CD Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 GitOps continuous delivery for Kubernetes, with declarative application synchronization, drift detection, rollback and multi-cluster deployment.",
+    "watch_out": "Requires a self-managed Kubernetes cluster, Git repository access, secured credentials and ongoing operational maintenance; cluster and infrastructure costs are not included. Managed commercial distributions are separate.",
+    "pricing_url": "https://github.com/argoproj/argo-cd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
