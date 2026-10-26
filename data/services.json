@@ -4215,5 +4215,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "pinggy-free",
+    "name": "Pinggy Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free-for-life HTTP(S), TCP, UDP and TLS tunnels; unlimited data transfer with a 60-minute timeout per tunnel and random subdomains.",
+    "watch_out": "Free tunnel URLs change when restarted or after the 60-minute timeout; persistent tunnels, custom domains/subdomains and priority support require paid Pro. Provider does not clearly state commercial-use eligibility for hosted Free.",
+    "pricing_url": "https://pinggy.io/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
