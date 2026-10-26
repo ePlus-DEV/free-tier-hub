@@ -4095,5 +4095,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "bucketeer-self-hosted",
+    "name": "Bucketeer Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted feature flag management and A/B experimentation with unlimited team members, environments and evaluations; no vendor software seat or evaluation quota.",
+    "watch_out": "You operate and pay for MySQL, Redis, compute, storage, TLS, backups and any Kubernetes/cloud integrations. Docker Compose Lite is for smaller deployments; production requires proper security and operational setup. No managed hosting included.",
+    "pricing_url": "https://github.com/bucketeer-io/bucketeer",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
