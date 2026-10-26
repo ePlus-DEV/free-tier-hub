@@ -4563,5 +4563,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "localtunnel-self-hosted",
+    "name": "LocalTunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed LocalTunnel client and server for exposing local HTTP services through a public URL; self-hosted deployment has no software-imposed session or traffic quota.",
+    "watch_out": "Self-hosted server requires your own public host, wildcard DNS, reverse proxy and TLS setup; hosting and bandwidth are not free. The public localtunnel.me relay is best-effort with ephemeral URLs and no guaranteed uptime or fixed subdomain.",
+    "pricing_url": "https://github.com/localtunnel/server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
