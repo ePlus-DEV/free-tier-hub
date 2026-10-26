@@ -4431,5 +4431,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "signoz-community-self-hosted",
+    "name": "SigNoz Community Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free open-source community observability platform for logs, traces, metrics, dashboards and application performance monitoring on self-managed infrastructure.",
+    "watch_out": "Operate your own Docker/Kubernetes deployment and ClickHouse storage; advanced enterprise features and support are separate. SigNoz Cloud offers a 30-day trial, not an ongoing free cloud plan.",
+    "pricing_url": "https://github.com/SigNoz/signoz",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
