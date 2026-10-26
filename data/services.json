@@ -3831,5 +3831,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-skywalking-self-hosted",
+    "name": "Apache SkyWalking Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source observability/APM platform with distributed tracing, metrics, logs, service maps, alerting, backend and web UI; no vendor software quotas for self-hosting.",
+    "watch_out": "Self-managed Java OAP server, agents, UI and persistent storage (such as BanyanDB) require infrastructure and maintenance. Quickstart/default storage is not a production deployment; production needs appropriate storage, security and clustering. No managed cloud allowance is included.",
+    "pricing_url": "https://skywalking.apache.org/docs/main/latest/en/setup/backend/backend-setup/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
