@@ -4383,5 +4383,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "netdata-agent-self-hosted",
+    "name": "Netdata Agent Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPLv3+ open-source real-time host and container monitoring Agent, free on unlimited self-hosted nodes; local dashboard available under NCUL1.",
+    "watch_out": "Run your own monitoring infrastructure. Netdata Cloud Community is a separate personal/non-commercial plan capped at 5 active connected nodes; Cloud Business and enterprise features are not included.",
+    "pricing_url": "https://www.netdata.cloud/open-source/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
