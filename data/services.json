@@ -4683,5 +4683,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ory-kratos-self-hosted",
+    "name": "Ory Kratos Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source identity server: self-host login, registration, recovery, verification, MFA and identity APIs without a per-user software license fee.",
+    "watch_out": "Requires your own infrastructure, database, UI and email/SMS services; Ory Enterprise License is separate for enterprise features, guaranteed security patches, support and SLAs. Not the hosted Ory Network plan.",
+    "pricing_url": "https://www.ory.com/kratos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
