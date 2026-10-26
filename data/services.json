@@ -4491,5 +4491,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "powerdns-authoritative-self-hosted",
+    "name": "PowerDNS Authoritative Server Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-2.0 licensed authoritative DNS server with DNSSEC, zone management, API automation and zone-file or database backends; no vendor-imposed software query or zone quota.",
+    "watch_out": "Self-hosted authoritative DNS requires your own public servers, DNS delegation, networking, updates and monitoring; infrastructure and optional vendor support are not included. PowerDNS Recursor and dnsdist are separate products.",
+    "pricing_url": "https://www.powerdns.com/powerdns-authoritative-server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
