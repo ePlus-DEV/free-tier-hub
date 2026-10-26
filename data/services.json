@@ -5127,5 +5127,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "rclone-self-hosted",
+    "name": "Rclone Open Source",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local software use for syncing, copying, mounting and encrypting files across supported storage backends; no hosted storage included",
+    "watch_out": "MIT-licensed software only; remote storage quotas, API calls, bandwidth, hosting and provider charges are separate.",
+    "pricing_url": "https://rclone.org/licence/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
