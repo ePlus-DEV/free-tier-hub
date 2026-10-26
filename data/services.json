@@ -4133,6 +4133,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "wasmer-edge-hobby-static",
+    "name": "Wasmer Edge Hobby Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Hobby plan is advertised as free forever with static-site deployment, 150 GB bandwidth, 1 GB volume/package storage, 1 million requests and 1,000 build minutes per month; custom domains and managed HTTPS/SSL supported.",
+    "watch_out": "Shared Hobby limits also cover app compute (6 active CPU hours), memory and other resources; usage above allowances may incur listed charges or require upgrade. Card requirement and commercial-use eligibility for the Hobby plan are not independently confirmed; verify before production use.",
+    "pricing_url": "https://wasmer.io/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "dolt-self-hosted",
+    "name": "Dolt SQL Database Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted SQL database compatible with MySQL clients, supporting Git-style branching, commits, diffs and merges of versioned tables; no vendor-enforced database size, query or seat quotas in the open-source server.",
+    "watch_out": "Requires your own CPU, RAM, disk, backups and database operations. DoltHub sharing, Hosted Dolt and managed support are separate offerings; Git-style version control changes performance and storage considerations versus conventional MySQL.",
+    "pricing_url": "https://github.com/dolthub/dolt",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "graphile-worker-self-hosted",
     "name": "Graphile Worker Self-Hosted",
     "category": "queues-jobs",
