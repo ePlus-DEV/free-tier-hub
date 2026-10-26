@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "2bd9bfed9f151817b839e617418da90dd3bad212",
+  "source_main_sha": "07b8f64298106d839d61dabaee4f038d750f345d",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "category": "databases",
-      "service_count": 35,
+      "service_count": 36,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
@@ -125,7 +125,7 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 18,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -145,7 +145,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 26,
+      "service_count": 29,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -6065,6 +6065,132 @@
         }
       ],
       "new_category_assessment": "Existing webhooks-events category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": 8,
+      "searches": [
+        "LanceDB official Apache-2.0 OSS embedded vector database no hosted quotas",
+        "DuckDB MIT embedded analytical database official",
+        "Apache Cassandra Apache-2.0 self-managed distributed database official"
+      ],
+      "official_sources": [
+        "https://github.com/lancedb/lancedb",
+        "https://github.com/duckdb/duckdb",
+        "https://github.com/apache/cassandra"
+      ],
+      "candidates": [
+        {
+          "id": "lancedb-open-source-embedded",
+          "status": "catalogued",
+          "issue_number": 598,
+          "pr_number": 601,
+          "reason": "Apache-2.0 local vector/multimodal database, no managed allowance claimed; Issue #598 -> PR #601 exact HEAD 980f2c60ad643c36cf52b8215a9b12f825a2552d validation/build SUCCESS, eplus-bot APPROVED; automatically MERGED and present on main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "duckdb-embedded-open-source",
+          "reason": "MIT self-managed analytics database identified; further scope/feature verification deferred, not classified ineligible."
+        },
+        {
+          "id": "apache-cassandra-self-hosted",
+          "reason": "Apache-2.0 distributed database identified; deployment/operational caveats and catalog scope need review before Issue."
+        }
+      ],
+      "new_category_assessment": "Existing databases category; no schema/category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-ml",
+      "rotation": 8,
+      "searches": [
+        "Label Studio Community Apache-2.0 annotation official",
+        "ZenML Apache-2.0 open-source self-hosted MLOps official",
+        "DVC Apache-2.0 local data version control official",
+        "Flyte 2 Apache-2.0 Kubernetes workflow runtime official"
+      ],
+      "official_sources": [
+        "https://github.com/HumanSignal/label-studio",
+        "https://github.com/zenml-io/zenml",
+        "https://github.com/iterative/dvc",
+        "https://github.com/flyteorg/flyte"
+      ],
+      "candidates": [
+        {
+          "id": "label-studio-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 599,
+          "pr_number": 602,
+          "reason": "Apache-2.0 community data labeling, managed enterprise excluded; Issue #599 -> PR #602 exact HEAD 6dbf388ed08a6f79124894f093cc3d20857377d5 validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED and in main."
+        },
+        {
+          "id": "zenml-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 605,
+          "pr_number": 607,
+          "reason": "Apache-2.0 self-managed ML/AI pipeline framework, ZenML Pro excluded; Issue #605 -> PR #607 exact HEAD b0e1d3037503ee3ef56319ee004c9b8766976070 validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED and in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "dvc-open-source",
+          "reason": "Apache-2.0 CLI/data versioning, not a hosted service; defer scope assessment."
+        },
+        {
+          "id": "flyte-2-self-hosted",
+          "reason": "Apache-2.0 Kubernetes ML workflow runtime found; additional operational verification deferred, not ineligible."
+        }
+      ],
+      "new_category_assessment": "Both fit existing ai-ml; no new category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "queues-jobs",
+      "rotation": 8,
+      "searches": [
+        "Prefect Apache-2.0 self-hosted workflow server official",
+        "Dagster Apache-2.0 open-source orchestration official",
+        "Apache Airflow Apache-2.0 scheduler DAGs official",
+        "Conductor OSS Apache-2.0 durable workflows official"
+      ],
+      "official_sources": [
+        "https://github.com/PrefectHQ/prefect",
+        "https://github.com/dagster-io/dagster",
+        "https://github.com/apache/airflow",
+        "https://github.com/conductor-oss/conductor"
+      ],
+      "candidates": [
+        {
+          "id": "prefect-server-self-hosted",
+          "status": "catalogued",
+          "issue_number": 600,
+          "pr_number": 603,
+          "reason": "Apache-2.0 local orchestration server; Issue #600 -> PR #603 exact HEAD 6e2d6b8c9835430f44dbb27da325f403bf2ce914 validation/build SUCCESS, eplus-bot APPROVED; auto-MERGED and in main."
+        },
+        {
+          "id": "dagster-open-source-self-hosted",
+          "status": "catalogued",
+          "issue_number": 604,
+          "pr_number": 609,
+          "reason": "Apache-2.0 data asset orchestration; Issue #604 -> PR #609 exact HEAD 0bd2b798262cfc7a66084c2c0778293ca4c5cead validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED and in main."
+        },
+        {
+          "id": "apache-airflow-self-hosted",
+          "status": "catalogued",
+          "issue_number": 606,
+          "pr_number": 608,
+          "reason": "Apache-2.0 DAG scheduler; Issue #606 -> PR #608 exact HEAD b0b9b9046321a37db56adf3da08788a98380dfd0 validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED and in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "conductor-oss-self-hosted",
+          "reason": "Official Apache-2.0 self-hosted workflow engine found; defer deployment/security caveat verification before canonical Issue."
+        }
+      ],
+      "new_category_assessment": "Existing queues-jobs category; no new category."
     }
   ],
   "pending_reverification": [
@@ -6126,12 +6252,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 405,
+    "total_services": 411,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 8 9/19; 5 genuinely new verified services auto-MERGED from Issues #588/#590/#592/#594/#596 and PRs #589/#591/#593/#595/#597 after exact-head validation/build and eplus-bot review. Latest main 2bd9bfed9f151817b839e617418da90dd3bad212 contains 405 services (+5 from 400). Canonical issue queue and PR workflow verified; no direct main push, force push or manual merge. PR #291 remains review-only.",
+    "note": "Rotation 8 12/19; six genuinely new eligible services auto-MERGED from Issues #598/#599/#600/#604/#605/#606 and PRs #601/#602/#603/#609/#607/#608 after exact-head validation/build SUCCESS and eplus-bot APPROVED. Latest main 07b8f64298106d839d61dabaee4f038d750f345d has 411 services (+6 from 405). Conflict/cancelled-preview recovery used ancestry-preserving non-force commits, no manual merge, no main push. Ledger PR #291 remains review-only; production Pages deployment requires separate successful main run.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6280,18 +6406,18 @@
       "ai-assistants",
       "ci-cd",
       "search",
-      "webhooks-events"
+      "webhooks-events",
+      "databases",
+      "ai-ml",
+      "queues-jobs"
     ],
     "rotation_8_categories_remaining": [
       "static-hosting",
-      "databases",
       "storage",
       "developer-tools",
       "auth-security",
       "observability",
       "analytics",
-      "ai-ml",
-      "queues-jobs",
       "feature-flags"
     ]
   }
