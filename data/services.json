@@ -3843,5 +3843,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "questdb-open-source-self-hosted",
+    "name": "QuestDB Open Source Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source time-series SQL database with high-throughput ingestion, Parquet support and a built-in web console; no vendor-imposed software quotas or license fee.",
+    "watch_out": "You supply compute, storage, backups and operational security. High availability/replication, role-based access control, TLS, audit logs and automated tiering are Enterprise features; the Enterprise trial is not an ongoing free tier.",
+    "pricing_url": "https://questdb.com/download/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
