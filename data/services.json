@@ -4323,5 +4323,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "featurevisor-self-hosted",
+    "name": "Featurevisor Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Git-based feature flags, A/B experiments and remote configuration; unlimited definitions evaluated locally by SDKs using self-hosted static JSON datafiles.",
+    "watch_out": "Requires your own Git repository, CI build and hosting/CDN for generated datafiles; no managed dashboard or hosted allowance. Infrastructure and delivery costs are separate; retain MIT license notices.",
+    "pricing_url": "https://featurevisor.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
