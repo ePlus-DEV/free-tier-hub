@@ -4493,6 +4493,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "gitea-self-hosted",
+    "name": "Gitea Open Source Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-managed Git service with unlimited users and repositories; includes Git hosting, pull requests, issues, package registry and Gitea Actions CI/CD with self-hosted runners.",
+    "watch_out": "No vendor-hosted CI minutes or compute are included; you operate and secure the server, storage and Actions runners. Enterprise support, SAML SSO and advanced features are paid. This is not the separate Gitea Cloud free trial.",
+    "pricing_url": "https://about.gitea.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "powerdns-authoritative-self-hosted",
     "name": "PowerDNS Authoritative Server Self-Hosted",
     "category": "dns-cdn",
