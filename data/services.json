@@ -4899,5 +4899,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "pagefind-static-search",
+    "name": "Pagefind Static Site Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed fully static full-text search indexer and browser-side search UI for built HTML websites; no vendor-imposed query, site, or document quota and no hosted search server required.",
+    "watch_out": "You must run indexing during your site build and host the generated static search bundle yourself. Hosting/CDN bandwidth and CI build resources may cost money; large indexes increase build and client download costs. This is software, not a managed hosted search plan.",
+    "pricing_url": "https://github.com/Pagefind/pagefind",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
