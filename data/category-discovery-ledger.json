@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "78213f3d60d5c120cc05a4e827c2fbbc06e77cc2",
+  "source_main_sha": "f5fc4ba41c6d4faea1b17eb956abd3c9ca4e24a6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 20,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -135,7 +135,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 13,
+      "service_count": 14,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -175,7 +175,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 12,
+      "service_count": 14,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -5191,6 +5191,113 @@
       ],
       "excluded": [],
       "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "tunneling-networking",
+      "rotation": "7",
+      "searches": [
+        "rathole Rust Apache-2.0 reverse proxy official self-hosted",
+        "LocalTunnel MIT client and self-hosted server official",
+        "catalog/Issue/PR/backlog duplicate checks"
+      ],
+      "official_sources": [
+        "https://github.com/rathole-org/rathole",
+        "https://github.com/localtunnel/localtunnel",
+        "https://github.com/localtunnel/server"
+      ],
+      "candidates": [
+        {
+          "id": "rathole-self-hosted",
+          "status": "catalogued",
+          "issue_number": 528,
+          "pr_number": 531,
+          "reason": "New Apache-2.0 self-hosted NAT reverse proxy; canonical Issue #528 -> PR #531, exact-head validation/build SUCCESS, eplus-bot APPROVED, automatically MERGED and present on main."
+        },
+        {
+          "id": "localtunnel-self-hosted",
+          "status": "catalogued",
+          "issue_number": 534,
+          "pr_number": 536,
+          "reason": "New MIT client/server self-hosted HTTP tunnels; Issue #534 -> PR #536, safe ancestry-preserving merge commit, exact-head validation/build SUCCESS, approved and automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "LocalTunnel public hosted relay",
+          "reason": "Not catalogued as an unlimited hosted service: ephemeral URLs, best-effort availability; self-hosted server is the verified offering."
+        }
+      ],
+      "new_category_assessment": "Existing tunneling-networking category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": "7",
+      "searches": [
+        "Tsuru BSD-3-Clause official self-hosted Kubernetes PaaS",
+        "Kubero GPL-3.0 official self-hosted Kubernetes PaaS",
+        "CapRover LICENSE custom Apache appendix commercial restrictions"
+      ],
+      "official_sources": [
+        "https://docs.tsuru.io/",
+        "https://github.com/tsuru/tsuru",
+        "https://github.com/kubero-dev/kubero",
+        "https://github.com/caprover/caprover/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "tsuru-self-hosted",
+          "status": "catalogued",
+          "issue_number": 529,
+          "pr_number": 532,
+          "reason": "New BSD-3-Clause PaaS, Issue #529 -> PR #532; cancelled Pages preview safely retried, non-force two-parent merge, exact-head CI SUCCESS and bot approval; automatically MERGED."
+        },
+        {
+          "id": "kubero-self-hosted",
+          "status": "catalogued",
+          "issue_number": 535,
+          "pr_number": 537,
+          "reason": "New GPL-3.0 Kubernetes PaaS, Issue #535 -> PR #537; preserved original commits through two-parent merge, exact-head validation/build SUCCESS, approved and automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CapRover self-hosted",
+          "reason": "Official LICENSE adds appendix restrictions on paid features, paid-version redistribution and modifications to free features; deferred pending legal/eligibility classification, not represented as unrestricted Apache-2.0."
+        }
+      ],
+      "new_category_assessment": "Existing app-hosting category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-assistants",
+      "rotation": "7",
+      "searches": [
+        "DocsGPT MIT self-hosted AI agents official free licensing and deployment",
+        "DocsGPT managed cloud vs self-hosted eligibility",
+        "catalog and Issues/PRs dedupe"
+      ],
+      "official_sources": [
+        "https://www.docsgpt.cloud/product",
+        "https://github.com/arc53/DocsGPT"
+      ],
+      "candidates": [
+        {
+          "id": "docsgpt-self-hosted",
+          "status": "catalogued",
+          "issue_number": 530,
+          "pr_number": 533,
+          "reason": "New MIT self-hosted document-grounded AI assistant; Issue #530 -> PR #533, cancelled preview safely retried, ancestry-preserving merge, exact-head CI SUCCESS and bot approval; automatically MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "DocsGPT Cloud/Managed",
+          "reason": "Paid service distinct from free MIT self-hosted software; external model API usage not included."
+        }
+      ],
+      "new_category_assessment": "Existing ai-assistants category; no schema change."
     }
   ],
   "pending_reverification": [
@@ -5252,12 +5359,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 370,
+    "total_services": 375,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 7 3/19 categories on 2026-10-26: three genuinely new services Gitea (#522/#524), PowerDNS Authoritative (#523/#526), Forgejo Actions (#525/#527) auto-MERGED after exact-head CI and eplus-bot reviews. Main 78213f3d60d5c120cc05a4e827c2fbbc06e77cc2: 370 services (+3 from 367), 220 older than seven days. Three Issue/PR deliveries confirmed; no direct main push, manual merge, force-push or manual production deploy. Cloud-vps: GCE already catalogued, Fly.io trial excluded; AdGuard Home and Unbound remain verified-awaiting-Issue.",
+    "note": "Rotation 7 now 6/19 categories on 2026-10-26: five genuinely new eligible services rathole (#528/#531), Tsuru (#529/#532), DocsGPT (#530/#533), LocalTunnel (#534/#536), Kubero (#535/#537). All five were automatically MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED; original branch commits preserved without force push. Main f5fc4ba41c6d4faea1b17eb956abd3c9ca4e24a6: 375 services (+5 from 370), 220 older than seven days. Existing backlog 30 records, only uploadthing-free alias to uploadthing-2gb-app. CapRover custom license deferred. No direct main push, manual merge or production deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -5377,11 +5484,13 @@
     "rotation_7_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "dns-cdn"
+      "dns-cdn",
+      "tunneling-networking",
+      "app-hosting",
+      "ai-assistants"
     ],
     "rotation_7_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "serverless",
       "databases",
       "storage",
@@ -5390,11 +5499,9 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
