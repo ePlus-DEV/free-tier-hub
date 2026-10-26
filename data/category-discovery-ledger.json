@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "eb7785e9b2dfda08e63f330d81cc4e188c63d06d",
+  "source_main_sha": "3c109cd0c9e51606633bedea3aadd3983b8975d1",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -81,7 +81,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "auth-security",
@@ -115,13 +115,13 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 14,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-ml",
@@ -181,7 +181,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "webhooks-events",
@@ -6404,6 +6404,89 @@
         }
       ],
       "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "queries": [
+        "Unbound official open source BSD license recursive DNS free",
+        "NLnet Labs NSD authoritative DNS BSD license free"
+      ],
+      "official_sources": [
+        "https://nlnetlabs.nl/projects/unbound/about/",
+        "https://nsd.docs.nlnetlabs.nl/en/latest/index.html"
+      ],
+      "candidates": [
+        {
+          "id": "unbound-recursive-dns-self-hosted",
+          "status": "catalogued",
+          "issue": 626,
+          "pr": 631,
+          "reason": "Confirmed in current main"
+        },
+        {
+          "id": "nsd-authoritative-dns-self-hosted",
+          "status": "PR",
+          "issue": 628,
+          "pr": 632,
+          "reason": "Verified from official provider source; Issue created and PR generated; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "knot-dns-authoritative",
+          "reason": "Not selected this rotation; version-specific GPL license wording differs between old and new documentation; requires current release license verification."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "tunneling-networking",
+      "queries": [
+        "SoftEther official Apache 2.0 free commercial VPN",
+        "WireGuard official open source GPLv2 VPN commercial use"
+      ],
+      "official_sources": [
+        "https://www.softether.org/",
+        "https://www.wireguard.com/"
+      ],
+      "candidates": [
+        {
+          "id": "softether-vpn-self-hosted",
+          "status": "PR",
+          "issue": 627,
+          "pr": 633,
+          "reason": "Verified from official provider source; Issue created and PR generated; exact-head CI/review/merge pending."
+        },
+        {
+          "id": "wireguard-self-hosted",
+          "status": "PR",
+          "issue": 630,
+          "pr": 635,
+          "reason": "Verified from official provider source; Issue created and PR generated; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ci-cd",
+      "queries": [
+        "nektos act local GitHub Actions runner MIT license"
+      ],
+      "official_sources": [
+        "https://github.com/nektos/act"
+      ],
+      "candidates": [
+        {
+          "id": "nektos-act-local-ci",
+          "status": "PR",
+          "issue": 629,
+          "pr": 634,
+          "reason": "Verified from official provider source; Issue created and PR generated; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": []
     }
   ],
   "pending_reverification": [
@@ -6465,12 +6548,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 419,
+    "total_services": 420,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 4,
     "unmatched_backlog": [],
-    "note": "Rotation 8 COMPLETE 19/19. Eight genuinely new eligible services delivered through canonical Issues #610/#612/#613/#614/#615/#616/#618/#619 -> PRs #611/#617/#621/#625/#620/#622/#623/#624, all exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED and present on main eb7785e9b2dfda08e63f330d81cc4e188c63d06d (411 -> 419, +8). Safe two-parent non-force branch reconciliation preserved unique commits; cancelled preview retried with a non-force commit. Ledger PR #291 remains review-only.",
+    "note": "Rotation 9 started with five officially verified new services in DNS/CDN, tunneling/networking and CI/CD. Canonical Issues #626-#630 created and PRs #631-#635 generated. Do not count as merged until each PR has exact-head validation/build SUCCESS, approved review and GitHub merged state; re-read current main for catalog delta. Prior GitHub Pages global concurrency can cancel pending PR previews; ACTION_REQUIRED/cancelled are not PASS. Historical ledger PR remains review-only.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6631,6 +6714,30 @@
       "tunneling-networking",
       "webhooks-events"
     ],
-    "rotation_8_categories_remaining": []
+    "rotation_8_categories_remaining": [],
+    "rotation_9_started_utc": "2026-10-26",
+    "rotation_9_categories_reviewed": [
+      "dns-cdn",
+      "tunneling-networking",
+      "ci-cd"
+    ],
+    "rotation_9_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "cloud-vps",
+      "databases",
+      "storage",
+      "developer-tools",
+      "auth-security",
+      "observability",
+      "analytics",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "webhooks-events"
+    ]
   }
 }
