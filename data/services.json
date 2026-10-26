@@ -4265,6 +4265,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "jan-local-ai-assistant",
+    "name": "Jan Local AI Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 desktop AI assistant for Windows, macOS and Linux; run supported open-weight language models locally and offline, or connect optional external model providers. No Jan software seat or message quota.",
+    "watch_out": "Local inference requires sufficient CPU/GPU, RAM and disk space; downloaded model weights have separate licenses and commercial-use conditions. Optional hosted model APIs can charge fees. Attribution requested where appropriate.",
+    "pricing_url": "https://github.com/janhq/jan",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "piku-self-hosted",
+    "name": "Piku Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed micro-PaaS for git-push deployment of multiple apps to your own Linux/Unix server, with Procfile workers, virtual hosts and optional HTTPS; no Piku software usage or seat limits.",
+    "watch_out": "You provide and secure your own server, SSH access, Python, nginx and uWSGI; compute, bandwidth, storage, DNS and TLS operations are not included. Best suited to small self-managed deployments.",
+    "pricing_url": "https://github.com/piku/piku",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "zincsearch-self-hosted",
     "name": "ZincSearch Self-Hosted",
     "category": "search",
