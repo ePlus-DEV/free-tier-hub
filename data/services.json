@@ -4589,6 +4589,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "chroma-self-hosted",
+    "name": "Chroma Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source vector database for embeddings and similarity search, available as an embedded local store or self-hosted client/server; no vendor-imposed software vector or query quota.",
+    "watch_out": "Self-hosted Chroma is distinct from metered Chroma Cloud with introductory $5 credits. You provide storage, backups, access controls, hosting and any external embedding-model/API costs; production scaling and security are your responsibility.",
+    "pricing_url": "https://github.com/chroma-core/chroma",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "milvus-self-hosted",
     "name": "Milvus Self-Hosted",
     "category": "databases",
