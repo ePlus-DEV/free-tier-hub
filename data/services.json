@@ -4265,6 +4265,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "jan-local-ai-assistant",
+    "name": "Jan Local AI Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 desktop AI assistant for Windows, macOS and Linux; run supported open-weight language models locally and offline, or connect optional external model providers. No Jan software seat or message quota.",
+    "watch_out": "Local inference requires sufficient CPU/GPU, RAM and disk space; downloaded model weights have separate licenses and commercial-use conditions. Optional hosted model APIs can charge fees. Attribution requested where appropriate.",
+    "pricing_url": "https://github.com/janhq/jan",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "piku-self-hosted",
     "name": "Piku Self-Hosted",
     "category": "app-hosting",
