@@ -4191,5 +4191,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "coredns-self-hosted",
+    "name": "CoreDNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source DNS server with configurable plugins for forwarding, caching, zone serving and Kubernetes service discovery; no software usage quota.",
+    "watch_out": "Self-hosting requires DNS configuration, port 53 access and ongoing security/availability management; infrastructure, upstream DNS and cloud costs are not included.",
+    "pricing_url": "https://coredns.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
