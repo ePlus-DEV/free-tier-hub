@@ -4397,6 +4397,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "bentoml-self-hosted",
+    "name": "BentoML Open Source Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 framework for packaging and serving AI/ML model inference APIs, batch jobs and multi-model pipelines; no software license fee or per-model quota when self-hosted.",
+    "watch_out": "Supply and pay for your own CPU/GPU, network and model storage; model weights may have separate licenses. BentoCloud managed compute is not included; anonymous framework usage telemetry can be disabled.",
+    "pricing_url": "https://github.com/bentoml/BentoML",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "opentelemetry-collector-self-hosted",
+    "name": "OpenTelemetry Collector Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source telemetry pipeline to receive, process and export traces, metrics and logs without per-host or telemetry volume license charges.",
+    "watch_out": "Collector is a pipeline, not a hosted storage/search dashboard; provide your own telemetry backend, compute and network. Individual collector components have differing stability levels.",
+    "pricing_url": "https://opentelemetry.io/docs/collector/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "signoz-community-self-hosted",
     "name": "SigNoz Community Self-Hosted",
     "category": "observability",
