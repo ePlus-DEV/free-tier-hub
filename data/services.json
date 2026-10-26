@@ -4685,6 +4685,54 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "swagger-ui-self-hosted",
+    "name": "Swagger UI Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OpenAPI/Swagger interactive API documentation renderer; self-host the static UI assets or embed its npm modules with no software license or usage quota.",
+    "watch_out": "Requires an OpenAPI specification and your own hosting; CORS and authentication configuration may be necessary. SwaggerHub hosted collaboration products are separate paid offerings.",
+    "pricing_url": "https://github.com/swagger-api/swagger-ui",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "centrifugo-self-hosted",
+    "name": "Centrifugo Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source real-time pub/sub messaging server for WebSocket, SSE, HTTP streaming and gRPC clients; self-host without a software message quota.",
+    "watch_out": "This is real-time event delivery, not a managed webhook SaaS; requires your own servers and optional Redis/PostgreSQL/NATS brokers. Secure production authentication and TLS; infrastructure costs apply.",
+    "pricing_url": "https://centrifugal.dev/docs/getting-started/introduction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ory-kratos-self-hosted",
+    "name": "Ory Kratos Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source identity server: self-host login, registration, recovery, verification, MFA and identity APIs without a per-user software license fee.",
+    "watch_out": "Requires your own infrastructure, database, UI and email/SMS services; Ory Enterprise License is separate for enterprise features, guaranteed security patches, support and SLAs. Not the hosted Ory Network plan.",
+    "pricing_url": "https://www.ory.com/kratos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "grafana-alloy-self-hosted",
+    "name": "Grafana Alloy Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source OpenTelemetry collector for metrics, logs, traces and profiles; self-host collectors without a software usage quota.",
+    "watch_out": "Alloy is a telemetry collector, not a durable storage, query or dashboard backend; storage, processing, managed Grafana Cloud and infrastructure can cost extra.",
+    "pricing_url": "https://grafana.com/docs/alloy/latest/introduction/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "read-the-docs-community",
     "name": "Read the Docs Community",
     "category": "static-hosting",
