@@ -5187,5 +5187,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nsd-authoritative-dns-self-hosted",
+    "name": "NSD Authoritative DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-licensed open-source authoritative DNS server for hosting your own primary or secondary DNS zones; no software subscription or per-query license fee.",
+    "watch_out": "Authoritative-only: no recursive caching resolver. DNS infrastructure, public IP addresses, bandwidth, monitoring and maintenance are self-funded; optional SLA support costs extra.",
+    "pricing_url": "https://nsd.docs.nlnetlabs.nl/en/latest/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
