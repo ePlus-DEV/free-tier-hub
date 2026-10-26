@@ -4659,5 +4659,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nats-jetstream-self-hosted",
+    "name": "NATS JetStream Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted NATS messaging server with JetStream durable streams, queue consumers, replay, key-value and object storage; no vendor-imposed software message or stream quota.",
+    "watch_out": "You must operate your own NATS server/cluster and configure JetStream persistence, storage limits, authentication, replication and backups. Infrastructure, bandwidth and managed NATS/Synadia offerings are separate and may cost money.",
+    "pricing_url": "https://github.com/nats-io/nats-server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
