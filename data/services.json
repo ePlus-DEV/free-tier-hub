@@ -4647,5 +4647,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-pulsar-self-hosted",
+    "name": "Apache Pulsar Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted distributed publish-subscribe messaging and streaming platform with durable topics, subscriptions, queue semantics, multi-tenancy and geo-replication; no vendor-imposed software message quota.",
+    "watch_out": "Requires self-managed brokers, persistent storage/BookKeeper, metadata services, network security, monitoring and operational expertise. Cloud infrastructure, managed Pulsar and optional connectors can incur charges.",
+    "pricing_url": "https://pulsar.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
