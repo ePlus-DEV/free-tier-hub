@@ -5211,5 +5211,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "duckdb-open-source",
+    "name": "DuckDB Open Source",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed in-process analytical SQL database with local CSV, JSON and Parquet querying; all open-source engine features available without a subscription or query quota.",
+    "watch_out": "Embedded analytics engine, not a managed multi-user database service; users provide their own compute, storage and any external object-storage credentials.",
+    "pricing_url": "https://duckdb.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
