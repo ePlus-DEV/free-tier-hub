@@ -4455,5 +4455,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "gitbook-free",
+    "name": "GitBook Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free hosted public documentation for one individual editor, GitHub/GitLab sync, interactive API documentation, previews and unlimited public page views.",
+    "watch_out": "Custom domains, additional collaborators, AI Assistant and analytics require paid plans; the 14-day trial shown for Essential/Ultimate is separate from Free.",
+    "pricing_url": "https://www.gitbook.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
