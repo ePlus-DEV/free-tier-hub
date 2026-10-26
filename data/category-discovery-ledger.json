@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "451e4a84a219a0f6c8deb122511555ce76fa2e2a",
+  "source_main_sha": "78213f3d60d5c120cc05a4e827c2fbbc06e77cc2",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,13 +75,13 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 14,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "auth-security",
@@ -115,13 +115,13 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 12,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
@@ -5137,14 +5137,14 @@
           "status": "catalogued",
           "issue_number": 522,
           "pr_number": 524,
-          "reason": "New verified MIT self-hosted CI/CD service; Issue #522, PR #524 automatically merged after exact-head CI."
+          "reason": "Canonical Issue #522 -> PR #524 automatically MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED; verified in main 78213f3d60d5c120cc05a4e827c2fbbc06e77cc2."
         },
         {
           "id": "forgejo-actions-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 525,
           "pr_number": 527,
-          "reason": "New verified GPL-3.0+ Forgejo Actions self-hosted CI; no free hosted runner. CI/review/merge must be checked at exact HEAD."
+          "reason": "Canonical Issue #525 -> PR #527 automatically MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED; verified in main 78213f3d60d5c120cc05a4e827c2fbbc06e77cc2."
         }
       ],
       "excluded": [
@@ -5173,10 +5173,10 @@
       "candidates": [
         {
           "id": "powerdns-authoritative-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 523,
           "pr_number": 526,
-          "reason": "New verified GPL-2.0 authoritative DNS service, self-hosted; exact-head CI/merge must be checked before catalogued."
+          "reason": "Canonical Issue #523 -> PR #526 automatically MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED; verified in main 78213f3d60d5c120cc05a4e827c2fbbc06e77cc2."
         },
         {
           "id": "adguard-home-self-hosted",
@@ -5252,12 +5252,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 368,
+    "total_services": 370,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 7 started 3/19 categories (cloud-vps, ci-cd, dns-cdn) on 2026-10-26; Gitea Issue #522/PR #524 merged; PowerDNS #523/#526 and Forgejo #525/#527 pending exact-head CI/auto-merge. Main 451e4a84a219a0f6c8deb122511555ce76fa2e2a: 368 services. No direct main push, manual merge or force-push; candidate delivery via canonical Issues. Fly.io trial excluded.",
+    "note": "Rotation 7 3/19 categories on 2026-10-26: three genuinely new services Gitea (#522/#524), PowerDNS Authoritative (#523/#526), Forgejo Actions (#525/#527) auto-MERGED after exact-head CI and eplus-bot reviews. Main 78213f3d60d5c120cc05a4e827c2fbbc06e77cc2: 370 services (+3 from 367), 220 older than seven days. Three Issue/PR deliveries confirmed; no direct main push, manual merge, force-push or manual production deploy. Cloud-vps: GCE already catalogued, Fly.io trial excluded; AdGuard Home and Unbound remain verified-awaiting-Issue.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
