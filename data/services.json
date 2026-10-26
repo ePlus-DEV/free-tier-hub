@@ -4239,5 +4239,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nuclio-self-hosted",
+    "name": "Nuclio Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source event-driven serverless function framework; run functions with HTTP and data-stream triggers on self-managed Docker or Kubernetes, including CPU/GPU workloads.",
+    "watch_out": "Requires a self-managed Docker host or Kubernetes cluster, image builds and registry, secure network configuration and operations; compute/GPU/storage and infrastructure are not included. Commercial managed Nuclio services are separate.",
+    "pricing_url": "https://github.com/nuclio/nuclio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
