@@ -4839,5 +4839,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "pangolin-community-self-hosted",
+    "name": "Pangolin Community Edition Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted secure networking and reverse-proxy platform with WireGuard-based tunnels, sites, resources and users, using the Community Edition without a software subscription.",
+    "watch_out": "Requires your own server, DNS, TLS, networking and ongoing maintenance. Community Edition is AGPL-3.0 (comply with source-sharing obligations); SSO, advanced RBAC, audit logs, high availability and other enterprise controls are paid. The free Enterprise personal-use license has separate revenue and eligibility limits and is NOT this plan.",
+    "pricing_url": "https://pangolin.net/faq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
