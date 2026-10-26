@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "07b8f64298106d839d61dabaee4f038d750f345d",
+  "source_main_sha": "eb7785e9b2dfda08e63f330d81cc4e188c63d06d",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 20,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -55,7 +55,7 @@
     },
     {
       "category": "storage",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -65,7 +65,7 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 45,
+      "service_count": 46,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
@@ -85,7 +85,7 @@
     },
     {
       "category": "auth-security",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
@@ -95,7 +95,7 @@
     },
     {
       "category": "observability",
-      "service_count": 34,
+      "service_count": 35,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -105,7 +105,7 @@
     },
     {
       "category": "analytics",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 21,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -6191,6 +6191,219 @@
         }
       ],
       "new_category_assessment": "Existing queues-jobs category; no new category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "static-hosting",
+      "rotation": 8,
+      "searches": [
+        "Framer official Free hosted website 1 GB bandwidth non-commercial 2026",
+        "Nekoweb free static hosting official storage limits"
+      ],
+      "official_sources": [
+        "https://www.framer.com/pricing",
+        "https://nekoweb.org/"
+      ],
+      "candidates": [
+        {
+          "id": "framer-free-static",
+          "status": "catalogued",
+          "issue_number": 612,
+          "pr_number": 617,
+          "reason": "Official ongoing Framer Free hosting (1 GB bandwidth, free subdomain, non-commercial restriction; 500 AI credits are not recurring). Exact-head validation/build SUCCESS, eplus-bot APPROVED and PR auto-MERGED; present in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "nekoweb-free",
+          "reason": "Third-party descriptions of 500 MB free storage found, but current official primary-source terms and commercial permissions not sufficiently verified for canonical Issue."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "storage",
+      "rotation": 8,
+      "searches": [
+        "Restic BSD-2-Clause encrypted deduplicated backups official",
+        "Duplicati MIT core and proprietary subfolder official",
+        "File Browser Apache-2.0 discontinued security advisories official"
+      ],
+      "official_sources": [
+        "https://github.com/restic/restic",
+        "https://github.com/duplicati/duplicati",
+        "https://github.com/filebrowser/filebrowser"
+      ],
+      "candidates": [
+        {
+          "id": "restic-open-source-backup",
+          "status": "catalogued",
+          "issue_number": 613,
+          "pr_number": 621,
+          "reason": "Official BSD-2-Clause self-managed encrypted backups; storage-provider costs excluded. Cancelled preview recovered with non-force empty commit and exact-head validation/build SUCCESS; eplus-bot APPROVED, PR auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "filebrowser-self-hosted",
+          "reason": "Official repository marks software unmaintained and documents unresolved command-execution and JWT/session security issues; excluded from safe new delivery."
+        },
+        {
+          "id": "duplicati-open-source",
+          "reason": "MIT-licensed core confirmed, but proprietary/ folder requires edition/scope diligence before delivery."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "developer-tools",
+      "rotation": 8,
+      "searches": [
+        "Hurl official Apache-2.0 HTTP CLI testing unlimited local runs",
+        "DBeaver Community Apache-2.0 free SQL client"
+      ],
+      "official_sources": [
+        "https://github.com/Orange-OpenSource/hurl",
+        "https://dbeaver.io/about/"
+      ],
+      "candidates": [
+        {
+          "id": "hurl-open-source-http-testing",
+          "status": "catalogued",
+          "issue_number": 614,
+          "pr_number": 625,
+          "reason": "Apache-2.0 local HTTP API and integration test runner; no vendor-hosted quota claimed. Exact-head validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED and present on main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "dbeaver-community",
+          "reason": "Official Apache-2.0 free Community SQL client verified as a potential additional service; deferred for next rotation to balance categories, not ineligible."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "auth-security",
+      "rotation": 8,
+      "searches": [
+        "Ory Hydra official Apache-2.0 self-hosted OAuth2 OIDC commercial caveats",
+        "Wazuh OSS licensing and self-hosted security platform"
+      ],
+      "official_sources": [
+        "https://github.com/ory/hydra",
+        "https://github.com/wazuh/wazuh"
+      ],
+      "candidates": [
+        {
+          "id": "ory-hydra-self-hosted",
+          "status": "catalogued",
+          "issue_number": 615,
+          "pr_number": 620,
+          "reason": "Official Apache-2.0 OAuth2/OIDC core, self-hosted without vendor usage quota. Documented login/consent app requirement and enterprise CVE/SLA caveat; exact-head CI SUCCESS, eplus-bot APPROVED and auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "wazuh-self-hosted",
+          "reason": "Official repo documents multiple GPLv2/AGPLv3 licenses across components; requires precise edition and scope caveats before delivery."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "observability",
+      "rotation": 8,
+      "searches": [
+        "Grafana Loki official AGPL-3.0 self-hosted log aggregation",
+        "Wazuh open-source SIEM licensing official"
+      ],
+      "official_sources": [
+        "https://github.com/grafana/loki",
+        "https://github.com/wazuh/wazuh"
+      ],
+      "candidates": [
+        {
+          "id": "grafana-loki-self-hosted",
+          "status": "catalogued",
+          "issue_number": 616,
+          "pr_number": 622,
+          "reason": "Official AGPL-3.0 log aggregation server, self-managed with no hosted ingest quota; infrastructure and copyleft caveats recorded. Exact-head CI SUCCESS, eplus-bot APPROVED and auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "wazuh-self-hosted",
+          "reason": "Complex mixed component licenses and operational caveats need additional verification; not marked ineligible."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "analytics",
+      "rotation": 8,
+      "searches": [
+        "Aptabase official AGPLv3 self-hosted free privacy analytics",
+        "Aptabase Docker Compose self hosting guide official"
+      ],
+      "official_sources": [
+        "https://github.com/aptabase/aptabase",
+        "https://github.com/aptabase/self-hosting"
+      ],
+      "candidates": [
+        {
+          "id": "aptabase-self-hosted",
+          "status": "catalogued",
+          "issue_number": 610,
+          "pr_number": 611,
+          "reason": "Official AGPLv3 self-hosted analytics with Docker Compose; hosted cloud plan excluded. Exact-head CI SUCCESS, eplus-bot APPROVED and auto-MERGED."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "feature-flags",
+      "rotation": 8,
+      "searches": [
+        "Togglz Apache-2.0 Java feature toggles official",
+        "FF4j Apache-2.0 Java feature flags official",
+        "FeatureHub Commons Clause license review"
+      ],
+      "official_sources": [
+        "https://github.com/togglz/togglz",
+        "https://github.com/ff4j/ff4j",
+        "https://github.com/featurehub-io/featurehub/blob/main/LICENSE.txt"
+      ],
+      "candidates": [
+        {
+          "id": "togglz-java-feature-flags",
+          "status": "catalogued",
+          "issue_number": 618,
+          "pr_number": 623,
+          "reason": "Official Apache-2.0 Java feature toggles; exact-head CI SUCCESS, eplus-bot APPROVED, auto-MERGED."
+        },
+        {
+          "id": "ff4j-java-feature-flags",
+          "status": "catalogued",
+          "issue_number": 619,
+          "pr_number": 624,
+          "reason": "Official Apache-2.0 Java feature-flag framework; exact-head CI SUCCESS, eplus-bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "featurehub-self-hosted",
+          "reason": "Official license adds Commons Clause; not represented as unrestricted commercial OSS."
+        }
+      ],
+      "new_category_assessment": "Existing catalog category; no schema or category change."
     }
   ],
   "pending_reverification": [
@@ -6252,12 +6465,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 411,
+    "total_services": 419,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 8 12/19; six genuinely new eligible services auto-MERGED from Issues #598/#599/#600/#604/#605/#606 and PRs #601/#602/#603/#609/#607/#608 after exact-head validation/build SUCCESS and eplus-bot APPROVED. Latest main 07b8f64298106d839d61dabaee4f038d750f345d has 411 services (+6 from 405). Conflict/cancelled-preview recovery used ancestry-preserving non-force commits, no manual merge, no main push. Ledger PR #291 remains review-only; production Pages deployment requires separate successful main run.",
+    "note": "Rotation 8 COMPLETE 19/19. Eight genuinely new eligible services delivered through canonical Issues #610/#612/#613/#614/#615/#616/#618/#619 -> PRs #611/#617/#621/#625/#620/#622/#623/#624, all exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED and present on main eb7785e9b2dfda08e63f330d81cc4e188c63d06d (411 -> 419, +8). Safe two-parent non-force branch reconciliation preserved unique commits; cancelled preview retried with a non-force commit. Ledger PR #291 remains review-only.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6398,27 +6611,26 @@
     "rotation_7_categories_remaining": [],
     "rotation_8_started_utc": "2026-10-26",
     "rotation_8_categories_reviewed": [
-      "cloud-vps",
-      "dns-cdn",
-      "serverless",
-      "app-hosting",
-      "tunneling-networking",
-      "ai-assistants",
-      "ci-cd",
-      "search",
-      "webhooks-events",
-      "databases",
-      "ai-ml",
-      "queues-jobs"
-    ],
-    "rotation_8_categories_remaining": [
       "static-hosting",
+      "app-hosting",
+      "serverless",
+      "cloud-vps",
+      "databases",
       "storage",
       "developer-tools",
+      "ci-cd",
       "auth-security",
       "observability",
       "analytics",
-      "feature-flags"
-    ]
+      "dns-cdn",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ],
+    "rotation_8_categories_remaining": []
   }
 }
