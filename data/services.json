@@ -5019,5 +5019,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "togglz-java-feature-flags",
+    "name": "Togglz Java Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Java feature-toggle framework with runtime flag evaluation and user-specific activation strategies; no vendor-imposed flag or seat quotas.",
+    "watch_out": "Library for Java applications, not a managed feature-flag cloud service. Host and operate your own application and state storage; feature management and rollout integration are your responsibility.",
+    "pricing_url": "https://github.com/togglz/togglz",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
