@@ -4887,5 +4887,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "fluxcd-gitops-self-hosted",
+    "name": "Flux CD GitOps Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source GitOps continuous delivery controllers and CLI for Kubernetes; reconcile Git/OCI/Helm sources, deploy Kustomize and Helm resources, and automate image updates without a vendor-imposed software usage quota.",
+    "watch_out": "Requires a user-managed Kubernetes cluster, registry/source repositories, and operations; cluster compute, storage, network, registry, and external integrations may cost money. Flux v1 is end-of-life; this listing covers actively maintained Flux v2 only.",
+    "pricing_url": "https://github.com/fluxcd/flux2",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
