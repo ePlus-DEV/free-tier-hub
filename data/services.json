@@ -4121,6 +4121,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "svix-server-self-hosted",
+    "name": "Svix Webhook Server Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted Rust webhook delivery server with message signing, retries, endpoint management and delivery handling; no vendor-enforced monthly webhook or endpoint quota for the open-source server.",
+    "watch_out": "Requires self-operated PostgreSQL, server/worker compute, network, backups and optional Redis; Docker Compose is a development-friendly deployment, not managed hosting. Open-source server differs from hosted Svix in some features and optimizations; hosted Svix Free is a separate catalog entry.",
+    "pricing_url": "https://github.com/svix/svix-webhooks",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "graphile-worker-self-hosted",
     "name": "Graphile Worker Self-Hosted",
     "category": "queues-jobs",
