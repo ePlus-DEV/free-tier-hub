@@ -3819,5 +3819,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-25"
+  },
+  {
+    "id": "metabase-open-source-self-hosted",
+    "name": "Metabase Open Source Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted business intelligence with unlimited users, questions and dashboards, a visual query builder and SQL editor, and connections to 20+ data sources.",
+    "watch_out": "You provide and maintain the server, metadata database, backups and data-source connections. AGPL-3.0 obligations apply to modified/distributed versions and network use; advanced SSO, row/column security and white-label embedding are paid. Metabase Cloud is not a free ongoing plan.",
+    "pricing_url": "https://www.metabase.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
