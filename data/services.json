@@ -3903,5 +3903,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openziti-self-hosted",
+    "name": "OpenZiti Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-managed zero-trust overlay network with controllers, edge routers, identity-based policies, tunnelers and SDKs; no vendor-imposed seat or traffic quota for the OSS software.",
+    "watch_out": "Operators must host and maintain controllers, routers, PKI, identities and network connectivity; infrastructure and operations cost extra. NetFoundry hosted, managed and commercially licensed management/support products are separate paid offerings.",
+    "pricing_url": "https://netfoundry.io/openziti/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
