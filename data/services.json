@@ -5117,6 +5117,66 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "unbound-recursive-dns-self-hosted",
+    "name": "Unbound Recursive DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source validating, recursive and caching DNS resolver; self-host on supported systems without a software subscription or per-query license quota.",
+    "watch_out": "Not an authoritative managed DNS hosting plan. You provide and secure the server, networking, updates and DNSSEC trust anchors; bandwidth and hosting may cost money. Paid support is optional.",
+    "pricing_url": "https://nlnetlabs.nl/projects/unbound/about/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "rclone-self-hosted",
+    "name": "Rclone Open Source",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local software use for syncing, copying, mounting and encrypting files across supported storage backends; no hosted storage included",
+    "watch_out": "MIT-licensed software only; remote storage quotas, API calls, bandwidth, hosting and provider charges are separate.",
+    "pricing_url": "https://rclone.org/licence/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "borgbackup-self-hosted",
+    "name": "BorgBackup Open Source",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-managed deduplicated, compressed and encrypted backup archives; no hosted storage quota included",
+    "watch_out": "BSD 3-Clause licensed backup software; requires your own backup storage and infrastructure; remote hosting or transfer may cost extra.",
+    "pricing_url": "https://borgbackup.readthedocs.io/en/stable/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "oauth2-proxy-self-hosted",
+    "name": "OAuth2 Proxy Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-hosted OAuth2/OIDC authentication proxy instances and applications; no hosted identity-provider quota included",
+    "watch_out": "MIT-licensed software; requires compatible OAuth2/OIDC provider, correct proxy/cookie configuration and self-managed infrastructure; identity-provider charges may apply.",
+    "pricing_url": "https://github.com/oauth2-proxy/oauth2-proxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "caddy-static-self-hosted",
+    "name": "Caddy Static File Server",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-hosted static sites and HTTPS-capable file serving with the open-source Caddy web server; no hosted bandwidth or storage included",
+    "watch_out": "Apache-2.0 licensed software; requires your own server, domain/DNS, storage and networking; automatic public HTTPS certificates depend on CA eligibility and network reachability.",
+    "pricing_url": "https://caddyserver.com/docs/quick-starts/static-files",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "nsd-authoritative-dns-self-hosted",
     "name": "NSD Authoritative DNS Self-Hosted",
     "category": "dns-cdn",
