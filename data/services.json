@@ -5115,5 +5115,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "softether-vpn-self-hosted",
+    "name": "SoftEther VPN Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source VPN Server, Client and Bridge for commercial or personal use; supports SSL-VPN, OpenVPN, L2TP/IPsec and site-to-site VPN without software license fees.",
+    "watch_out": "Requires your own server, public network access, secure configuration and patching. Bandwidth, VPS and any external services are not included; no managed VPN service or SLA is provided.",
+    "pricing_url": "https://www.softether.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
