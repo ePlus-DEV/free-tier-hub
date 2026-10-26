@@ -4107,5 +4107,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "asynq-self-hosted",
+    "name": "Asynq Self-Hosted (Go Redis Task Queue)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Go library for Redis-backed distributed background tasks, worker concurrency, retries, delayed/periodic scheduling and priority queues; no vendor-imposed task, worker or monthly execution quota for self-managed use.",
+    "watch_out": "Requires your own Go application workers and Redis-compatible broker, plus compute, monitoring, backups and operations. At-least-once task execution requires idempotent handlers; not a hosted queue or free Redis instance. Asynq API is pre-1.0 and Redis Cluster compatibility requires review.",
+    "pricing_url": "https://github.com/hibiken/asynq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
