@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "fa18e3625946106f8f651953f684b569120a8a51",
+  "source_main_sha": "9f00bbeb95dee11191682a68da0bcd79bd8e3f3c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -115,13 +115,13 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
@@ -3926,15 +3926,17 @@
       "candidates": [
         {
           "id": "technitium-dns-server-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 427,
-          "reason": "Verified official GPL-3.0 self-hosted authoritative and recursive DNS software, no license fee/card, commercial use allowed with GPL redistribution obligations. Canonical Issue #427 created; queue and exact-head CI not yet confirmed."
+          "reason": "Official GPL-3.0 self-hosted authoritative and recursive DNS; Issue #427 -> queue #40263933687 SUCCESS -> PR #430. After #429 merge, safely reconciled using non-force two-parent merge 67bd6278df98d39bb33b1d80beb796cfb24dc1d2; exact-head validation #40264068153 and build #40264068149 SUCCESS, bot APPROVED at exact HEAD, automatically MERGED as 9f00bbeb95dee11191682a68da0bcd79bd8e3f3c; verified in main.",
+          "pr_number": 430
         },
         {
           "id": "blocky-dns-proxy-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 428,
-          "reason": "Verified official Apache-2.0 self-hosted DNS proxy, no software license fee/card, commercial use allowed. Canonical Issue #428 created; queue and exact-head CI not yet confirmed."
+          "reason": "Official Apache-2.0 self-hosted DNS proxy; Issue #428 -> queue #40263935097 SUCCESS -> PR #429 exact HEAD 27b968c28b5ab46d440680df14f098514e8f0365 validation #40263957138 and build #40263957120 SUCCESS, bot APPROVED, automatically MERGED as cb8819416977c9eefcd1ac346513526aeb427965; verified in main.",
+          "pr_number": 429
         }
       ],
       "excluded": [
@@ -4009,12 +4011,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 320,
+    "total_services": 322,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5: 5/19. On 2026-10-26 verified Technitium DNS Server GPL-3.0 and Blocky DNS Proxy Apache-2.0 against official software/docs and GitHub licenses; created canonical Issues #427 and #428. Queue/PR/CI/merge pending; main still 320 services at fa18e3625946106f8f651953f684b569120a8a51. Never count issues as merges.",
+    "note": "Rotation 5: 5/19. Blocky #428→PR #429 and Technitium #427→PR #430 verified from official Apache-2.0/GPL-3.0 sources, both queue SUCCESS, exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED. PR #430 safely reconciled via non-force two-parent merge 67bd6278df98d39bb33b1d80beb796cfb24dc1d2; main 9f00bbeb95dee11191682a68da0bcd79bd8e3f3c now contains 322 services. GitHub Pages production deployment status is tracked separately.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
