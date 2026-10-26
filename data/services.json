@@ -3891,5 +3891,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "dagger-engine-self-hosted",
+    "name": "Dagger Engine Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0-licensed open-source CI/CD automation engine for local or self-hosted container-based build, test and delivery pipelines, with multi-language SDKs, caching and tracing; no vendor software usage quota.",
+    "watch_out": "Runs on your own Linux container runtime and compute; you pay for infrastructure and external services. Dagger Cloud remote engines, distributed caching, access control and hosted observability are separately billed; this entry covers only the open-source engine.",
+    "pricing_url": "https://dagger.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
