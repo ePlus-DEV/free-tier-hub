@@ -4863,5 +4863,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "aider-local-ai-coding",
+    "name": "Aider Local AI Coding Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source terminal AI pair-programming tool with repository mapping, Git integration and code editing; run with your own Ollama/local models without an Aider software subscription or vendor-imposed message quota.",
+    "watch_out": "No free hosted model credits are bundled. Local models require suitable RAM/GPU and may produce lower-quality edits; paid LLM APIs, compute and third-party services cost extra. Review each model's separate commercial license and security before granting file/command access.",
+    "pricing_url": "https://aider.chat/docs/llms/ollama.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
