@@ -4683,5 +4683,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openstack-swift-self-hosted",
+    "name": "OpenStack Swift Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed object/blob storage service with an HTTP object-storage API; no software storage or request quota when self-hosted.",
+    "watch_out": "Requires your own storage nodes, networking, capacity planning, operations and often an authentication service; disk, bandwidth and infrastructure are not free. Not a hosted storage allowance.",
+    "pricing_url": "https://docs.openstack.org/swift/latest/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
