@@ -4155,5 +4155,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "graphile-worker-self-hosted",
+    "name": "Graphile Worker Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js PostgreSQL-backed background job queue with task scheduling, retries, concurrency and PostgreSQL transaction integration; no vendor-enforced job, worker or monthly execution quotas when self-managed.",
+    "watch_out": "Requires your own Node.js worker processes and PostgreSQL database; database, CPU, storage, backups and monitoring are not included. Tasks run at least once, so handlers should be idempotent; Graphile Worker is not a managed queue or free PostgreSQL service.",
+    "pricing_url": "https://github.com/graphile/worker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
