@@ -1,15 +1,15 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "497acff902a9f7371ae95605321746a992e93419",
+  "source_main_sha": "7e827c1f600c2076b94bef86646be744d635e256",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 10,
       "open_catalog_candidate_issues": 0
     },
@@ -45,7 +45,7 @@
     },
     {
       "category": "databases",
-      "service_count": 31,
+      "service_count": 32,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
@@ -65,7 +65,7 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 41,
+      "service_count": 42,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
@@ -145,11 +145,11 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 20,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 22,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 15,
       "open_catalog_candidate_issues": 0
     },
@@ -185,11 +185,11 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 14,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 15,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 0
     }
@@ -4310,6 +4310,165 @@
         }
       ],
       "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "queues-jobs",
+      "rotation": "5",
+      "searches": [
+        "Official GitHub README and licenses for Asynq Redis/Go, Graphile Worker PostgreSQL/Node.js, Taskiq Python async workers and River Postgres/SQLite queue; deduped 341 catalog IDs and historical Issues/PRs/branches."
+      ],
+      "official_sources": [
+        "https://github.com/hibiken/asynq",
+        "https://github.com/hibiken/asynq/blob/master/LICENSE",
+        "https://github.com/graphile/worker",
+        "https://github.com/graphile/worker/blob/main/LICENSE.md",
+        "https://github.com/taskiq-python/taskiq",
+        "https://riverqueue.com/"
+      ],
+      "candidates": [
+        {
+          "id": "asynq-self-hosted",
+          "status": "catalogued",
+          "issue_number": 458,
+          "pr_number": 459,
+          "reason": "MIT self-managed Redis-backed Go jobs. Canonical Issue/queue/PR exact-head validation/build and eplus-bot review, auto-MERGED; confirmed in main."
+        },
+        {
+          "id": "graphile-worker-self-hosted",
+          "status": "catalogued",
+          "issue_number": 460,
+          "pr_number": 461,
+          "reason": "MIT self-managed PostgreSQL jobs. Non-force ancestry-preserving merge commits resolved successive catalog conflicts; exact-head validation/build and eplus-bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Taskiq, River",
+          "reason": "Promising distinct open-source queues; independently reviewed license and functionality, defer operational/runtime caveat verification and canonical Issue to next rotation rather than batch risky PRs."
+        }
+      ],
+      "new_category_assessment": "Existing queues-jobs category; no new category/schema."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "webhooks-events",
+      "rotation": "5",
+      "searches": [
+        "Official Svix MIT open-source webhook server deployment, Postgres/optional Redis and hosted feature differences; checked Convoy community restrictions and existing Svix hosted Free entry."
+      ],
+      "official_sources": [
+        "https://github.com/svix/svix-webhooks",
+        "https://www.svix.com/open-source-webhook-service/",
+        "https://github.com/frain-dev/convoy"
+      ],
+      "candidates": [
+        {
+          "id": "svix-server-self-hosted",
+          "status": "catalogued",
+          "issue_number": 462,
+          "pr_number": 463,
+          "reason": "Distinct MIT self-hosted Svix server (not hosted Svix Free); Issue/queue/PR exact-head validation/build APPROVED and auto-MERGED; confirmed in main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Convoy Self-Hosted",
+          "reason": "Elastic License 2.0 source-available community edition has 1 organisation, 2 projects and 1 user caps plus premium feature gates; defer licensing and commercial-use review."
+        }
+      ],
+      "new_category_assessment": "Existing webhooks-events category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "static-hosting",
+      "rotation": "5",
+      "searches": [
+        "Official Wasmer Hobby Free Forever pricing and static hosting limits; compared Static.app official pricing with third-party claims; searched Fleek static hosting terms."
+      ],
+      "official_sources": [
+        "https://wasmer.io/pricing",
+        "https://wasmer.io/static-site-hosting",
+        "https://static.app/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "wasmer-edge-hobby-static",
+          "status": "catalogued",
+          "issue_number": 464,
+          "pr_number": 465,
+          "reason": "Official ongoing free Hobby hosting 150GB bandwidth and 1GB storage; card/commercial terms marked check rather than guessed; exact-head CI/review and auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Static.app Free Trial",
+          "reason": "Official pricing explicitly says 7-day free trial, despite third-party articles calling it an ongoing Free plan; ineligible until official evidence changes."
+        },
+        {
+          "name": "Fleek",
+          "reason": "Current free plan, card/commercial and limits not independently verified."
+        }
+      ],
+      "new_category_assessment": "Existing static-hosting category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "databases",
+      "rotation": "5",
+      "searches": [
+        "Official Dolt Apache-2.0 version-controlled SQL server and self-hosting; inspected FerretDB and Microsoft Garnet open-source alternatives."
+      ],
+      "official_sources": [
+        "https://github.com/dolthub/dolt",
+        "https://github.com/FerretDB/FerretDB",
+        "https://github.com/microsoft/garnet"
+      ],
+      "candidates": [
+        {
+          "id": "dolt-self-hosted",
+          "status": "catalogued",
+          "issue_number": 466,
+          "pr_number": 468,
+          "reason": "Apache-2.0 version-controlled MySQL-compatible database self-hosted; exact-head validation/build and eplus-bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FerretDB, Microsoft Garnet",
+          "reason": "Distinct promising Apache-2.0/MIT self-hosted database/cache products; defer independent production/dependency caveat review and Issue creation to next rotation."
+        }
+      ],
+      "new_category_assessment": "Existing databases category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "developer-tools",
+      "rotation": "5",
+      "searches": [
+        "Official Hoppscotch Community self-hosted MIT pricing/commercial rights and feature split; reviewed Yaade self-hosted API client."
+      ],
+      "official_sources": [
+        "https://docs.hoppscotch.io/documentation/self-host/getting-started",
+        "https://github.com/hoppscotch/hoppscotch",
+        "https://github.com/EsperoTech/yaade"
+      ],
+      "candidates": [
+        {
+          "id": "hoppscotch-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 467,
+          "pr_number": 469,
+          "reason": "Official free MIT Community Edition with commercial use. Non-force merge preserved history; Markdown table orphan row fixed after failed CI; exact-head validation/build and eplus-bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Yaade",
+          "reason": "Distinct self-hosted API collaboration tool; licensing, release cadence and security caveats require additional independent review."
+        }
+      ],
+      "new_category_assessment": "Existing developer-tools category."
     }
   ],
   "pending_reverification": [
@@ -4371,12 +4530,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 335,
+    "total_services": 341,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 14/19 categories. Six eligible self-hosted services delivered via Issues #445/#446/#447/#451/#452/#455 and PRs #448/#450/#449/#454/#453/#456, with exact-head validation/build, bot approval and automated merge. Main 497acff902a9f7371ae95605321746a992e93419: 335 services. 30 backlog entries deduped (UploadThing alias); no manual merge, direct main push or force push. CI concurrency fix PR #328 and separate approval isolation branch await reviewed merge.",
+    "note": "Rotation 5 completed 19/19 categories on 2026-10-26; six new services (Asynq, Graphile Worker, Svix Server, Wasmer Hobby Static, Dolt, Hoppscotch Community) auto-MERGED via canonical Issues #458/#460/#462/#464/#466/#467 and PRs #459/#461/#463/#465/#468/#469. Main 7e827c1f600c2076b94bef86646be744d635e256: 341 services. Exact-head CI/review verified; non-force conflict resolution and strict failed-check handling. 30 backlog entries deduped including UploadThing alias. CI concurrency fixes PRs #328/#457 remain open for authorized review.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4448,27 +4607,26 @@
     "rotation_4_categories_remaining": [],
     "rotation_5_started_utc": "2026-10-26",
     "rotation_5_categories_reviewed": [
+      "static-hosting",
+      "app-hosting",
       "serverless",
       "cloud-vps",
+      "databases",
+      "storage",
+      "developer-tools",
       "ci-cd",
+      "auth-security",
+      "observability",
       "analytics",
       "dns-cdn",
+      "ai-ml",
       "ai-assistants",
+      "queues-jobs",
       "search",
       "feature-flags",
       "tunneling-networking",
-      "app-hosting",
-      "storage",
-      "auth-security",
-      "ai-ml",
-      "observability"
-    ],
-    "rotation_5_categories_remaining": [
-      "static-hosting",
-      "databases",
-      "developer-tools",
-      "queues-jobs",
       "webhooks-events"
-    ]
+    ],
+    "rotation_5_categories_remaining": []
   }
 }
