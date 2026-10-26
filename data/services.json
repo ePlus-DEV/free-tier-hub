@@ -3869,6 +3869,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "apache-superset-self-hosted",
+    "name": "Apache Superset Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0-licensed self-hosted data exploration and visualization platform with SQL Lab, charts, dashboards, database connectors and role-based access; no vendor software usage quota.",
+    "watch_out": "You operate and pay for compute, metadata database, cache and any connected data services. Official Docker Compose quickstart is not production-ready; production requires hardened configuration, backups and an appropriate deployment (for example Kubernetes). Database drivers may require separate installation.",
+    "pricing_url": "https://superset.apache.org/admin-docs/installation/installation-methods/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "tekton-pipelines-self-hosted",
     "name": "Tekton Pipelines Self-Hosted",
     "category": "ci-cd",
