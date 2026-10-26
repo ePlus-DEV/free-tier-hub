@@ -4203,5 +4203,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "concourse-ci-self-hosted",
+    "name": "Concourse CI Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source container-based CI/CD automation with declarative pipelines, resources, jobs and workers; no license-based job quota.",
+    "watch_out": "Requires self-managed web and worker nodes plus PostgreSQL; container runtime, infrastructure, maintenance and secrets security are your responsibility.",
+    "pricing_url": "https://concourse-ci.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
