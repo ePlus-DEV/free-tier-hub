@@ -3927,5 +3927,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "technitium-dns-server-self-hosted",
+    "name": "Technitium DNS Server Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 self-hosted authoritative and recursive DNS server with web console, DNS-over-HTTPS/TLS/QUIC and blocklists; no vendor-imposed query or zone quota for the software.",
+    "watch_out": "Self-hosting, DNS/network bandwidth, domain registration and operations are not included. Secure the admin console and public resolver against abuse; GPL-3.0 distribution obligations apply when redistributing modified software. Not a managed free DNS hosting plan.",
+    "pricing_url": "https://technitium.com/dns/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
