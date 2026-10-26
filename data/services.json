@@ -4791,5 +4791,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "hurricane-electric-free-dns",
+    "name": "Hurricane Electric Free DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free authoritative forward and reverse DNS hosting with IPv4/IPv6 support, dynamic DNS updates, secondary/slave zones, and A, AAAA, CNAME, MX, TXT, CAA, SRV and other record types.",
+    "watch_out": "Bring your own registered domain; reverse DNS delegation depends on the IP allocation holder. The provider labels this an open beta and does not publish a guaranteed DNS query quota or commercial SLA; account/card and commercial-use terms require confirmation.",
+    "pricing_url": "https://dns.he.net/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
