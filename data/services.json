@@ -4371,5 +4371,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "seatable-cloud-free",
+    "name": "SeaTable Cloud Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Up to 25 users, unlimited bases/tables, 10,000 total rows, 2 GB file storage, 3,000 API calls/month and one month of snapshots.",
+    "watch_out": "Limits are shared per team; paid Plus/Enterprise needed for higher row/storage/API allowances and advanced features. Separate self-hosted server plans have different user limits.",
+    "pricing_url": "https://seatable.com/prices/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
