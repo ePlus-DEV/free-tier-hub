@@ -4959,5 +4959,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "label-studio-community-self-hosted",
+    "name": "Label Studio Community Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source multi-type data annotation for text, images, audio, video and time series; run community edition on your own infrastructure without a vendor-imposed labeling task quota.",
+    "watch_out": "Self-hosting, annotation storage and machine-learning backends are your responsibility and may incur costs. Enterprise collaboration, advanced review, governance and managed cloud features are separate paid offerings; this listing is community software only.",
+    "pricing_url": "https://github.com/HumanSignal/label-studio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
