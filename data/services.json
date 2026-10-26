@@ -4695,5 +4695,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "centrifugo-self-hosted",
+    "name": "Centrifugo Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source real-time pub/sub messaging server for WebSocket, SSE, HTTP streaming and gRPC clients; self-host without a software message quota.",
+    "watch_out": "This is real-time event delivery, not a managed webhook SaaS; requires your own servers and optional Redis/PostgreSQL/NATS brokers. Secure production authentication and TLS; infrastructure costs apply.",
+    "pricing_url": "https://centrifugal.dev/docs/getting-started/introduction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
