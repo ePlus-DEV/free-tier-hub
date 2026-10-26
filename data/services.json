@@ -4731,5 +4731,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "read-the-docs-community",
+    "name": "Read the Docs Community",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free ongoing hosted public documentation builds and versioned sites for eligible open-source software projects, supported by ads.",
+    "watch_out": "Community hosting is for free/open-source projects using public repositories and public docs; commercial/non-free projects and private docs require Read the Docs Business (paid after trial).",
+    "pricing_url": "https://about.readthedocs.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "no",
+    "last_checked": "2026-10-26"
   }
 ]
