@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e",
+  "source_main_sha": "566920a8fe26672fc91a9ca038c789bb6c852fc0",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 13,
+      "service_count": 15,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -115,7 +115,7 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 13,
+      "service_count": 14,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -5740,6 +5740,112 @@
         }
       ],
       "new_category_assessment": "Fits existing webhooks-events category; no schema or new category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "cloud-vps",
+      "rotation": 8,
+      "searches": [
+        "Fly.io 2026 VM free tier versus 7-day trial official",
+        "Alibaba Cloud ECS free trial official",
+        "Google Compute Engine e2-micro Always Free 2026 official"
+      ],
+      "official_sources": [
+        "https://fly.io/docs/about/free-trial/",
+        "https://fly.io/pricing/",
+        "https://help.aliyun.com/en/ecs/user-guide/ecs-free-trial",
+        "https://docs.cloud.google.com/free/docs/free-cloud-features"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "id": "fly-io-machines",
+          "reason": "Only 2 machine-hours or 7-day one-time trial; no ongoing free VM."
+        },
+        {
+          "id": "alibaba-ecs-free-trial",
+          "reason": "Three-month new-user ECS trial; no ongoing free VM allowance."
+        },
+        {
+          "id": "gce-e2-micro",
+          "reason": "Existing catalog entry; monthly Always Free e2-micro allowance already represented."
+        }
+      ],
+      "new_category_assessment": "No eligible new cloud-vps service; rotate to least-covered unreviewed category next."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "rotation": 8,
+      "searches": [
+        "Hurricane Electric free authoritative DNS dual-stack free signup",
+        "deSEC DNS free commercial terms",
+        "Hurricane Electric Free DNS hosted DNS features"
+      ],
+      "official_sources": [
+        "https://dns.he.net/",
+        "https://desec.io/"
+      ],
+      "candidates": [
+        {
+          "id": "hurricane-electric-free-dns",
+          "status": "catalogued",
+          "issue_number": 572,
+          "pr_number": 574,
+          "reason": "Official free hosted DNS verified 2026-10-26; Issue #572 -> PR #574; auto-MERGED at exact head acfaf61d37cab11491714a73110161170f32e9f7 with validation/build SUCCESS and eplus-bot APPROVED. Present on latest main. Card/commercial terms marked check."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "desec-free-dns",
+          "reason": "Already catalogued; no duplicate."
+        },
+        {
+          "id": "dynv6-free-dynamic-dns",
+          "reason": "Already catalogued; no duplicate."
+        }
+      ],
+      "new_category_assessment": "Uses existing dns-cdn category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "serverless",
+      "rotation": 8,
+      "searches": [
+        "KEDA Kubernetes event-driven autoscaler Apache 2.0 official",
+        "OpenFunction CNCF Apache 2.0 self hosted FaaS official",
+        "OpenFaaS Community Edition commercial use 60-day limit official"
+      ],
+      "official_sources": [
+        "https://github.com/kedacore/keda",
+        "https://keda.sh/",
+        "https://github.com/OpenFunction/OpenFunction",
+        "https://v0-7.openfunction.dev/docs/introduction/",
+        "https://www.openfaas.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "keda-self-hosted",
+          "status": "catalogued",
+          "issue_number": 573,
+          "pr_number": 576,
+          "reason": "Apache-2.0 self-hosted event-driven autoscaler; Issue #573 -> PR #576; auto-MERGED after ancestry-preserving non-force two-parent merge e4e32196ae604d0bbda509f876ca43216b3834bc, exact-head validation/build SUCCESS and eplus-bot APPROVED. Present on latest main."
+        },
+        {
+          "id": "openfunction-self-hosted",
+          "status": "catalogued",
+          "issue_number": 575,
+          "pr_number": 577,
+          "reason": "Apache-2.0 self-hosted FaaS; Issue #575 -> PR #577; auto-MERGED after ancestry-preserving non-force two-parent merge 23d740d27e9c6a2101ddfc597c0ca5242068a2fa, exact-head validation/build SUCCESS and eplus-bot APPROVED. Present on latest main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "openfaas-community-edition",
+          "reason": "Community Edition free for noncommercial/hobby use, but commercial use limited to 60 days; not selected for this discovery pass."
+        }
+      ],
+      "new_category_assessment": "Uses existing serverless category; no schema changes."
     }
   ],
   "pending_reverification": [
@@ -5801,12 +5907,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 392,
+    "total_services": 395,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 7 completed all 19/19 categories. Nine newly verified services were delivered through canonical Issues #554-#558, #560, #566-#568 and auto-MERGED PRs #559, #561-#565 (excluding #560 issue), #569-#571. All 9 had exact-head validation/build SUCCESS and eplus-bot APPROVED; all 9 IDs are present on latest main d26f53a06c4406b84b2f4c4e0b84ebbc44d12a3e with 392 total services (+9 from 383). Backlog alias uploadthing-free matches existing uploadthing-2gb-app; no unmatched unique backlog entry. One verified prospect swagger-editor-self-hosted awaits Issue. PR #291 remains review-only; no direct main push, manual merge or force push.",
+    "note": "Rotation 8 at 3/19 categories. Three new verified services auto-MERGED via Issues #572, #573, #575 and PRs #574, #576, #577 after exact-head CI and eplus-bot review; all three appear in latest main 566920a8fe26672fc91a9ca038c789bb6c852fc0, total 395 (+3 from 392). No force push or manual main merge. Cloud-vps research excluded trials/duplicates. 29/30 backlog IDs catalogued; uploadthing-free is a duplicate alias of uploadthing-2gb-app. PR #291 remains review-only.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -5944,6 +6050,30 @@
       "tunneling-networking",
       "webhooks-events"
     ],
-    "rotation_7_categories_remaining": []
+    "rotation_7_categories_remaining": [],
+    "rotation_8_started_utc": "2026-10-26",
+    "rotation_8_categories_reviewed": [
+      "cloud-vps",
+      "dns-cdn",
+      "serverless"
+    ],
+    "rotation_8_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "databases",
+      "storage",
+      "developer-tools",
+      "ci-cd",
+      "auth-security",
+      "observability",
+      "analytics",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ]
   }
 }
