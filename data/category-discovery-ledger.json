@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "dd4cbe53c8720004bedc7b5ca14ad6933617cfe1",
+  "source_main_sha": "fa18e3625946106f8f651953f684b569120a8a51",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -175,11 +175,11 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0
     },
@@ -3862,6 +3862,47 @@
       ],
       "excluded": [],
       "new_category_assessment": "Existing analytics category; historical candidate delivered, not counted as genuinely newly discovered."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "tunneling-networking",
+      "rotation": "5 (4/19)",
+      "searches": [
+        "Enumerated all 19 categories and deduped current main, historical 30-item backlog, all-state Issues/PRs, branch refs and discovery ledger; selected underrepresented tunneling-networking (8 before, 10 after).",
+        "Verified Headscale from official BSD-3-Clause LICENSE, current documentation and commercial-use FAQ; checked NetBird Self-Hosted Community as alternate.",
+        "Verified OpenZiti from Apache-2.0 LICENSE, official OpenZiti/NetFoundry page and self-hosted deployment documentation; distinguished paid managed products."
+      ],
+      "official_sources": [
+        "https://headscale.net/stable/",
+        "https://headscale.net/stable/about/faq/",
+        "https://github.com/juanfont/headscale/blob/main/LICENSE",
+        "https://netfoundry.io/openziti/",
+        "https://github.com/openziti/ziti/blob/main/LICENSE",
+        "https://docs.netbird.io/selfhosted/enterprise"
+      ],
+      "candidates": [
+        {
+          "id": "headscale-self-hosted",
+          "status": "catalogued",
+          "issue_number": 422,
+          "pr_number": 424,
+          "reason": "BSD-3-Clause, ongoing free single-tailnet self-hosted coordination, commercial allowed, no software card or vendor quota; Issue #422 → PR #424 exact-head validation/build and bot approval, automatically merged into main."
+        },
+        {
+          "id": "openziti-self-hosted",
+          "status": "catalogued",
+          "issue_number": 423,
+          "pr_number": 425,
+          "reason": "Apache-2.0 free self-hosted zero-trust overlay, commercial allowed, no software card or vendor quota; Issue #423 → PR #425. Preserved unique PR commits with non-force two-parent merge, fixed orphan Markdown row, exact-head validation/build and bot approval, automatically merged into main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "NetBird Self-Hosted Community",
+          "reason": "Distinct from catalogued NetBird Cloud Free, but AGPLv3 server-side relicensing and commercial-only feature separation need independent detailed review before publishing a second NetBird entry."
+        }
+      ],
+      "new_category_assessment": "No new category or schema changes; current category already supported."
     }
   ],
   "pending_reverification": [
@@ -3923,12 +3964,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 318,
+    "total_services": 320,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5: cloud-vps, ci-cd, analytics reviewed (3/19). 318 catalog services on main dd4cbe53c8720004bedc7b5ca14ad6933617cfe1. New Tekton (#418/#419) and Dagger (#420/#421), plus historical Superset (#416/#417), each auto-merged with exact-head validation/build SUCCESS and bot approval. Cloud VPS candidate exclusions based on contradictory free terms or independent reliability concerns. 30 backlog records deduplicated; 220 existing services older than seven days. Main Pages deployment for latest head must be verified separately. No direct main push, manual PR merge or force-push.",
+    "note": "Rotation 5: 4/19. Headscale #422→#424 and OpenZiti #423→#425 auto-merged after exact-head CI and review; main fa18e3625946106f8f651953f684b569120a8a51 has 320 services in 19 categories. 30 backlog entries deduped (29 exact IDs plus UploadThing alias). No force push, direct main write or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4002,7 +4043,8 @@
     "rotation_5_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "analytics"
+      "analytics",
+      "tunneling-networking"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
@@ -4019,7 +4061,6 @@
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
