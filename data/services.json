@@ -5177,6 +5177,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "apache-openserverless-self-hosted",
+    "name": "Apache OpenServerless Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 serverless platform with OpenWhisk functions, integrated storage, databases and scheduling; unlimited software usage on self-managed Linux or Kubernetes infrastructure.",
+    "watch_out": "Apache Incubator project; production deployment requires a suitably provisioned Kubernetes cluster and the bundled services need their own storage and operations; hosting costs are not included.",
+    "pricing_url": "https://openserverless.apache.org/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nsd-authoritative-dns-self-hosted",
+    "name": "NSD Authoritative DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-licensed open-source authoritative DNS server for hosting your own primary or secondary DNS zones; no software subscription or per-query license fee.",
+    "watch_out": "Authoritative-only: no recursive caching resolver. DNS infrastructure, public IP addresses, bandwidth, monitoring and maintenance are self-funded; optional SLA support costs extra.",
+    "pricing_url": "https://nsd.docs.nlnetlabs.nl/en/latest/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "apache-couchdb-self-hosted",
     "name": "Apache CouchDB Self-Hosted",
     "category": "databases",
