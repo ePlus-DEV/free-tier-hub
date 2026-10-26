@@ -5115,5 +5115,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "unbound-recursive-dns-self-hosted",
+    "name": "Unbound Recursive DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source validating, recursive and caching DNS resolver; self-host on supported systems without a software subscription or per-query license quota.",
+    "watch_out": "Not an authoritative managed DNS hosting plan. You provide and secure the server, networking, updates and DNSSEC trust anchors; bandwidth and hosting may cost money. Paid support is optional.",
+    "pricing_url": "https://nlnetlabs.nl/projects/unbound/about/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
