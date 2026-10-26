@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "0622b4d1ae96d8d94d1a19f266425c60e1efd9a7",
+  "source_main_sha": "9188905c28eb5c046e7e8d731711f4b0ce7d5a9b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -85,7 +85,7 @@
     },
     {
       "category": "auth-security",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
@@ -105,7 +105,7 @@
     },
     {
       "category": "analytics",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -185,7 +185,7 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -4752,6 +4752,126 @@
         }
       ],
       "new_category_assessment": "Existing queues-jobs category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "feature-flags",
+      "rotation": "6",
+      "queries": [
+        "Featurevisor Git-managed feature flags MIT license official",
+        "FeatureHub self-hosted Apache-2.0 Commons Clause actual LICENSE.txt"
+      ],
+      "official_sources": [
+        "https://featurevisor.com/",
+        "https://github.com/featurevisor/featurevisor/blob/main/LICENSE",
+        "https://github.com/featurehub-io/featurehub/blob/main/LICENSE.txt"
+      ],
+      "candidates": [
+        {
+          "id": "featurevisor-self-hosted",
+          "status": "catalogued",
+          "issue_number": 494,
+          "pr_number": 495,
+          "reason": "New MIT-licensed Git-based feature flags/experiments; Issue -> queue -> PR exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED; verified on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub Open Source",
+          "reason": "Repository LICENSE.txt imposes Commons Clause prohibition on selling hosted or derivative software services, despite Apache-2.0 marketing; do not misclassify as unrestricted Apache-2.0 commercial use; defer eligibility/license review."
+        }
+      ],
+      "new_category_assessment": "Existing feature-flags category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "webhooks-events",
+      "rotation": "6",
+      "queries": [
+        "Knock Developer official free monthly messages, credit card and overage FAQ",
+        "Novu Free historical PR and OneSignal historical PR dedupe"
+      ],
+      "official_sources": [
+        "https://knock.app/pricing",
+        "https://www.novu.co/pricing/",
+        "https://onesignal.com/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "knock-developer-free",
+          "status": "catalogued",
+          "issue_number": 496,
+          "pr_number": 497,
+          "reason": "New ongoing hosted notification workflow tier, 10,000 messages/month, no initial card; free limits and provider pass-through costs disclosed. Exact-head CI/review SUCCESS, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Novu Free / OneSignal Free",
+          "reason": "Historical PR #39 and PR #166 respectively were MERGED but records are absent in current main; investigate removal/replacement before re-adding, do not duplicate prior delivery."
+        }
+      ],
+      "new_category_assessment": "Event-triggered notification workflows fit current webhooks-events category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "auth-security",
+      "rotation": "6",
+      "queries": [
+        "Dex OIDC official Apache-2.0 federated identity connectors",
+        "Ory Kratos OSS production CVE patch support restrictions"
+      ],
+      "official_sources": [
+        "https://github.com/dexidp/dex",
+        "https://github.com/dexidp/dex/blob/master/LICENSE",
+        "https://github.com/ory/kratos"
+      ],
+      "candidates": [
+        {
+          "id": "dex-oidc-self-hosted",
+          "status": "catalogued",
+          "issue_number": 498,
+          "pr_number": 499,
+          "reason": "New Apache-2.0 federated OIDC provider with self-managed connectors and storage; exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Ory Kratos",
+          "reason": "Official documentation recommends commercial agreement for business-critical systems and guarantees CVE patches/SLA only for enterprise builds; requires separate eligibility assessment."
+        }
+      ],
+      "new_category_assessment": "Existing auth-security category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "analytics",
+      "rotation": "6",
+      "queries": [
+        "Shynet official Apache-2.0 privacy web analytics self-hosted",
+        "Shynet Docker deployment and cookie-free tracking"
+      ],
+      "official_sources": [
+        "https://github.com/milesmcc/shynet",
+        "https://github.com/milesmcc/shynet/blob/master/LICENSE",
+        "https://github.com/milesmcc/shynet/blob/master/README.md"
+      ],
+      "candidates": [
+        {
+          "id": "shynet-self-hosted",
+          "status": "catalogued",
+          "issue_number": 500,
+          "pr_number": 501,
+          "reason": "New Apache-2.0 cookie-free self-hosted analytics; multiple sites and users, own infrastructure. Exact-head CI/review SUCCESS and auto-MERGED, verified on main."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Shyweb / Insight forks",
+          "reason": "Additional independent analytics candidates discovered; maintenance/security maturity and licensing not yet independently reviewed; defer to next rotation."
+        }
+      ],
+      "new_category_assessment": "Existing analytics category."
     }
   ],
   "pending_reverification": [
@@ -4813,12 +4933,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 353,
+    "total_services": 357,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 6 now covers 9/19 categories (added ai-assistants, app-hosting, search, queues-jobs). Five NEW verified services delivered through Issues #484-#488 and PRs #489-#493, all exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED. Main 0622b4d1ae96d8d94d1a19f266425c60e1efd9a7 contains 353 services (+5). Pages run #40307921063 Build/Deploy SUCCESS; earlier main Pages #40306821795 Deploy failed due in-progress deployment (evidence recorded in Issue #272). Backlog 30 entries: 29 catalogued, uploadthing-free is an alias of uploadthing-2gb-app. 220 services stale >7 days. Concurrency PRs #328/#457 remain open; no direct main push, force push or manual merge.",
+    "note": "Rotation 6 covers 13/19 categories. Four newly verified services auto-MERGED: Featurevisor #494/#495, Knock #496/#497, Dex #498/#499, Shynet #500/#501. Exact-head validation/build SUCCESS and eplus-bot APPROVED; latest main 9188905c28eb5c046e7e8d731711f4b0ce7d5a9b has 357 services (+4). Historical merged Novu #39, OneSignal #166 and Bruno #284 are absent in current main and require removal audit, not duplicate Issues. FeatureHub actual license includes Commons Clause; excluded pending commercial-use review. 220 catalog services stale >7 days. Backlog 30: 29 catalogued, uploadthing-free alias. No force push, manual merge or direct main write.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4921,19 +5041,19 @@
       "ai-assistants",
       "queues-jobs",
       "search",
-      "tunneling-networking"
+      "tunneling-networking",
+      "feature-flags",
+      "webhooks-events",
+      "auth-security",
+      "analytics"
     ],
     "rotation_6_categories_remaining": [
       "static-hosting",
       "databases",
       "storage",
       "developer-tools",
-      "auth-security",
       "observability",
-      "analytics",
-      "ai-ml",
-      "feature-flags",
-      "webhooks-events"
+      "ai-ml"
     ]
   }
 }
