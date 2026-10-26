@@ -3999,5 +3999,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "sonic-search-self-hosted",
+    "name": "Sonic Search Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source lightweight search backend with full-text term indexing, autocomplete, and typo correction; self-hosted software has no vendor-enforced query, document, or seat quota.",
+    "watch_out": "Sonic stores a term index and returns object identifiers, not full source documents; your application must retain source records separately. Operate and back up its RocksDB store yourself; no built-in clustering or automatic failover. Hosting costs are separate.",
+    "pricing_url": "https://github.com/valeriansaliou/sonic",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
