@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "70756d2b2d7bb513d525bf5d7a01fc3329e36e8b",
+  "source_main_sha": "451e4a84a219a0f6c8deb122511555ce76fa2e2a",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,13 +75,13 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 13,
+      "service_count": 14,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "auth-security",
@@ -121,7 +121,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-ml",
@@ -5086,6 +5086,111 @@
       ],
       "excluded": [],
       "new_category_assessment": "Existing developer-tools category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "cloud-vps",
+      "rotation": "7",
+      "searches": [
+        "2026 free VPS forever official provider pricing; Fly.io free trial vs ongoing; Google Cloud Always Free e2-micro"
+      ],
+      "official_sources": [
+        "https://docs.cloud.google.com/free/docs/free-cloud-features",
+        "https://fly.io/pricing/",
+        "https://fly.io/docs/about/free-trial/"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Google Compute Engine e2-micro",
+          "reason": "Already catalogued as gce-e2-micro; no duplicate."
+        },
+        {
+          "name": "Fly.io Machines",
+          "reason": "Official pricing bills machine runtime; 2-hour/7-day free trial is not an ongoing tier."
+        },
+        {
+          "name": "Unverified free VPS marketing offers",
+          "reason": "Insufficient independent provider reliability/eligibility evidence; no candidate created."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ci-cd",
+      "rotation": "7",
+      "searches": [
+        "official Gitea self-managed open-source pricing MIT Gitea Actions",
+        "official Forgejo Actions runner documentation GPL-3.0 commercial self hosting",
+        "dedupe main catalog, backlog, all Issues and PRs"
+      ],
+      "official_sources": [
+        "https://about.gitea.com/pricing/",
+        "https://github.com/go-gitea/gitea",
+        "https://forgejo.org/docs/latest/user/actions/overview/",
+        "https://forgejo.org/2024-08-gpl/"
+      ],
+      "candidates": [
+        {
+          "id": "gitea-self-hosted",
+          "status": "catalogued",
+          "issue_number": 522,
+          "pr_number": 524,
+          "reason": "New verified MIT self-hosted CI/CD service; Issue #522, PR #524 automatically merged after exact-head CI."
+        },
+        {
+          "id": "forgejo-actions-self-hosted",
+          "status": "pr",
+          "issue_number": 525,
+          "pr_number": 527,
+          "reason": "New verified GPL-3.0+ Forgejo Actions self-hosted CI; no free hosted runner. CI/review/merge must be checked at exact HEAD."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Gitea Cloud trial",
+          "reason": "Trial is not the free self-managed open-source software plan."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "rotation": "7",
+      "searches": [
+        "PowerDNS Authoritative Server GPL-2.0 official source and DNSSEC",
+        "AdGuard Home GPL-3.0 DNS blocker official repo",
+        "Unbound BSD recursive DNS resolver official NLnet Labs"
+      ],
+      "official_sources": [
+        "https://www.powerdns.com/powerdns-authoritative-server",
+        "https://github.com/PowerDNS/pdns",
+        "https://github.com/AdguardTeam/AdGuardHome",
+        "https://nlnetlabs.nl/projects/unbound/about/index.html"
+      ],
+      "candidates": [
+        {
+          "id": "powerdns-authoritative-self-hosted",
+          "status": "pr",
+          "issue_number": 523,
+          "pr_number": 526,
+          "reason": "New verified GPL-2.0 authoritative DNS service, self-hosted; exact-head CI/merge must be checked before catalogued."
+        },
+        {
+          "id": "adguard-home-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Previously verified GPL-3.0 free open-source self-hosted network DNS ad blocker; needs canonical Issue and exact-head delivery."
+        },
+        {
+          "id": "unbound-dns-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Previously verified BSD-licensed recursive validating caching DNS resolver; needs canonical Issue and exact-head delivery."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema changes."
     }
   ],
   "pending_reverification": [
@@ -5147,12 +5252,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 367,
+    "total_services": 368,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 6 COMPLETE 19/19 on 2026-10-26: 10 newly verified canonical Issues (#502-#504, #508-#511, #516-#518) and 10 catalog PRs (#505-#507, #512-#515, #519-#521) all auto-MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED. Latest main 70756d2b2d7bb513d525bf5d7a01fc3329e36e8b: 367 services (+10 vs baseline 357), 220 records >7d stale, 30 reviewed backlog records, 0 unmatched after alias dedupe. Two additional verified-awaiting-Issue prospects: Read the Docs Community, Swagger UI. Excluded archived File Browser and SFTPGo licensing uncertainty. All conflict fixes were ancestry-preserving two-parent non-force merges; no direct main push, manual merge or deployment.",
+    "note": "Rotation 7 started 3/19 categories (cloud-vps, ci-cd, dns-cdn) on 2026-10-26; Gitea Issue #522/PR #524 merged; PowerDNS #523/#526 and Forgejo #525/#527 pending exact-head CI/auto-merge. Main 451e4a84a219a0f6c8deb122511555ce76fa2e2a: 368 services. No direct main push, manual merge or force-push; candidate delivery via canonical Issues. Fly.io trial excluded.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -5267,6 +5372,30 @@
       "tunneling-networking",
       "webhooks-events"
     ],
-    "rotation_6_categories_remaining": []
+    "rotation_6_categories_remaining": [],
+    "rotation_7_started_utc": "2026-10-26",
+    "rotation_7_categories_reviewed": [
+      "cloud-vps",
+      "ci-cd",
+      "dns-cdn"
+    ],
+    "rotation_7_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "databases",
+      "storage",
+      "developer-tools",
+      "auth-security",
+      "observability",
+      "analytics",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ]
   }
 }
