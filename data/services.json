@@ -5019,5 +5019,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "restic-open-source-backup",
+    "name": "Restic Open Source Backup",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local use of the BSD-2-Clause encrypted, deduplicating backup CLI; backup repositories can be stored on local disks or supported remote storage backends.",
+    "watch_out": "Restic is backup software, not a hosted storage quota. You supply storage, compute and any cloud-provider fees; configure retention, credentials and restores yourself.",
+    "pricing_url": "https://github.com/restic/restic",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
