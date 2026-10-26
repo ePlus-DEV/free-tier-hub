@@ -4683,5 +4683,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "redoc-self-hosted",
+    "name": "Redoc Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed OpenAPI/Swagger API reference documentation renderer; self-host or embed the open-source Redoc UI with no software usage quota.",
+    "watch_out": "This is the free open-source renderer, not Redocly's paid hosted API documentation platform; requires an OpenAPI specification and your own hosting/integration.",
+    "pricing_url": "https://github.com/Redocly/redoc",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
