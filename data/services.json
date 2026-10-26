@@ -4373,6 +4373,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "mlflow-self-hosted",
+    "name": "MLflow Open Source Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source ML/GenAI experiment tracking, model registry, evaluation and tracing; no software license, seat or experiment quota when self-hosted.",
+    "watch_out": "Operate and secure your own tracking server, database and artifact storage; cloud infrastructure and third-party model/API calls are not included. This is not a managed hosting allowance.",
+    "pricing_url": "https://www.mlflow.org/docs/latest/self-hosting/architecture/tracking-server/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "netdata-agent-self-hosted",
     "name": "Netdata Agent Self-Hosted",
     "category": "observability",
