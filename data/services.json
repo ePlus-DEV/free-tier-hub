@@ -3905,6 +3905,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "headscale-self-hosted",
+    "name": "Headscale Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source self-hosted Tailscale-compatible coordination server for a single tailnet; no vendor-imposed device, user or traffic quota for the software.",
+    "watch_out": "Runs on your own server; designed for self-hosters and small organisations, not an enterprise-scale Tailscale SaaS replacement. Requires compatible Tailscale clients and self-managed HTTPS, upgrades and optional relay infrastructure; hardware and network costs apply.",
+    "pricing_url": "https://headscale.net/stable/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "openziti-self-hosted",
     "name": "OpenZiti Self-Hosted",
     "category": "tunneling-networking",
