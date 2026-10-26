@@ -4695,5 +4695,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "kubeflow-community-distribution",
+    "name": "Kubeflow Community Distribution",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 community-maintained Kubernetes-native AI/ML platform distribution; self-host training, notebooks and ML pipeline components without a software subscription.",
+    "watch_out": "Requires a Kubernetes cluster and substantial infrastructure and operational resources; managed vendor distributions and enterprise support may cost extra. Some experimental subprojects are not production-ready.",
+    "pricing_url": "https://www.kubeflow.org/docs/started/installing-kubeflow/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
