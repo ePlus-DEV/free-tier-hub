@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "be6bf8228b3bb0501c6c469bf25ee4e0116b5456",
+  "source_main_sha": "70756d2b2d7bb513d525bf5d7a01fc3329e36e8b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 17,
+      "service_count": 19,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -65,7 +65,7 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 42,
+      "service_count": 43,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
@@ -4576,14 +4576,14 @@
           "status": "catalogued",
           "issue_number": 476,
           "pr_number": 479,
-          "reason": "New verified ongoing free hosted tunnels with 60-minute session timeout; card=no, commercial=check. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED."
+          "reason": "New verified ongoing free hosted tunnels with 60-minute session timeout; card=no, commercial=check. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "localhost-run-free",
           "status": "catalogued",
           "issue_number": 477,
           "pr_number": 480,
-          "reason": "New verified forever-free SSH tunnels with rotating domains and throttling; card=no, commercial=check. Safe two-parent non-force merge preserved PR commits after Pinggy merged; exact-head CI/review SUCCESS and auto-MERGED."
+          "reason": "New verified forever-free SSH tunnels with rotating domains and throttling; card=no, commercial=check. Safe two-parent non-force merge preserved PR commits after Pinggy merged; exact-head CI/review SUCCESS and auto-MERGED. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4618,7 +4618,7 @@
           "status": "catalogued",
           "issue_number": 482,
           "pr_number": 483,
-          "reason": "New verified Apache-2.0 self-hosted event-driven functions, Docker/Kubernetes. Canonical Issue -> PR exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED."
+          "reason": "New verified Apache-2.0 self-hosted event-driven functions, Docker/Kubernetes. Canonical Issue -> PR exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4656,14 +4656,14 @@
           "status": "catalogued",
           "issue_number": 484,
           "pr_number": 489,
-          "reason": "Official Apache-2.0 Jan desktop assistant; local models have separate licenses. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED, GitHub workflow auto-MERGED; verified on main."
+          "reason": "Official Apache-2.0 Jan desktop assistant; local models have separate licenses. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED, GitHub workflow auto-MERGED; verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "gpt4all-local-ai",
           "status": "catalogued",
           "issue_number": 488,
           "pr_number": 493,
-          "reason": "Official MIT GPT4All desktop AI assistant and local inference; model license separate. Non-force two-parent branch reconciliation preserved all history; exact-head validation/build SUCCESS. pr-auto-approve concurrency caused a cancelled approval; safe exact-head @eplus-bot review and native validation job rerun triggered workflow auto-MERGE. Verified on main."
+          "reason": "Official MIT GPT4All desktop AI assistant and local inference; model license separate. Non-force two-parent branch reconciliation preserved all history; exact-head validation/build SUCCESS. pr-auto-approve concurrency caused a cancelled approval; safe exact-head @eplus-bot review and native validation job rerun triggered workflow auto-MERGE. Verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [],
@@ -4688,7 +4688,7 @@
           "status": "catalogued",
           "issue_number": 485,
           "pr_number": 490,
-          "reason": "Official MIT self-hosted git-push PaaS with multiple apps and optional HTTPS; self-managed infrastructure. Ancestry-preserving two-parent merge from latest main, exact-head validation/build SUCCESS, bot APPROVED, workflow auto-MERGED. Verified on main."
+          "reason": "Official MIT self-hosted git-push PaaS with multiple apps and optional HTTPS; self-managed infrastructure. Ancestry-preserving two-parent merge from latest main, exact-head validation/build SUCCESS, bot APPROVED, workflow auto-MERGED. Verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4717,7 +4717,7 @@
           "status": "catalogued",
           "issue_number": 486,
           "pr_number": 491,
-          "reason": "Official Apache-2.0 self-hosted full-text search; no software quota, no HA, own infrastructure. Ancestry-preserving two-parent merge, exact-head validation/build SUCCESS and bot APPROVED, workflow auto-MERGED. Verified on main."
+          "reason": "Official Apache-2.0 self-hosted full-text search; no software quota, no HA, own infrastructure. Ancestry-preserving two-parent merge, exact-head validation/build SUCCESS and bot APPROVED, workflow auto-MERGED. Verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [],
@@ -4742,7 +4742,7 @@
           "status": "catalogued",
           "issue_number": 487,
           "pr_number": 492,
-          "reason": "Official MIT self-hosted workflow orchestration, requires database and infrastructure. Two-parent non-force merge preserved history, exact-head validation/build SUCCESS, bot APPROVED and workflow auto-MERGED. Verified on main."
+          "reason": "Official MIT self-hosted workflow orchestration, requires database and infrastructure. Two-parent non-force merge preserved history, exact-head validation/build SUCCESS, bot APPROVED and workflow auto-MERGED. Verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4772,7 +4772,7 @@
           "status": "catalogued",
           "issue_number": 494,
           "pr_number": 495,
-          "reason": "New MIT-licensed Git-based feature flags/experiments; Issue -> queue -> PR exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED; verified on main."
+          "reason": "New MIT-licensed Git-based feature flags/experiments; Issue -> queue -> PR exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED; verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4802,7 +4802,7 @@
           "status": "catalogued",
           "issue_number": 496,
           "pr_number": 497,
-          "reason": "New ongoing hosted notification workflow tier, 10,000 messages/month, no initial card; free limits and provider pass-through costs disclosed. Exact-head CI/review SUCCESS, auto-MERGED."
+          "reason": "New ongoing hosted notification workflow tier, 10,000 messages/month, no initial card; free limits and provider pass-through costs disclosed. Exact-head CI/review SUCCESS, auto-MERGED. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4832,7 +4832,7 @@
           "status": "catalogued",
           "issue_number": 498,
           "pr_number": 499,
-          "reason": "New Apache-2.0 federated OIDC provider with self-managed connectors and storage; exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED."
+          "reason": "New Apache-2.0 federated OIDC provider with self-managed connectors and storage; exact-head validation/build SUCCESS, eplus-bot APPROVED, auto-MERGED. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4862,7 +4862,7 @@
           "status": "catalogued",
           "issue_number": 500,
           "pr_number": 501,
-          "reason": "New Apache-2.0 cookie-free self-hosted analytics; multiple sites and users, own infrastructure. Exact-head CI/review SUCCESS and auto-MERGED, verified on main."
+          "reason": "New Apache-2.0 cookie-free self-hosted analytics; multiple sites and users, own infrastructure. Exact-head CI/review SUCCESS and auto-MERGED, verified on main. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4892,14 +4892,14 @@
           "status": "catalogued",
           "issue_number": 502,
           "pr_number": 505,
-          "reason": "Official Apache-2.0 MLflow tracking/registry; own server and artifact storage; verified new service."
+          "reason": "Official Apache-2.0 MLflow tracking/registry; own server and artifact storage; verified new service. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "bentoml-self-hosted",
           "status": "catalogued",
           "issue_number": 508,
           "pr_number": 512,
-          "reason": "Official Apache-2.0 AI inference API framework; own CPU/GPU and model licenses; verified new service."
+          "reason": "Official Apache-2.0 AI inference API framework; own CPU/GPU and model licenses; verified new service. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [],
@@ -4926,21 +4926,21 @@
           "status": "catalogued",
           "issue_number": 503,
           "pr_number": 506,
-          "reason": "GPLv3+ Agent unlimited self-hosted nodes; Cloud Community personal-only separately excluded."
+          "reason": "GPLv3+ Agent unlimited self-hosted nodes; Cloud Community personal-only separately excluded. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "signoz-community-self-hosted",
           "status": "catalogued",
           "issue_number": 509,
           "pr_number": 513,
-          "reason": "Free community self-hosted metrics/logs/traces, enterprise features excluded; cloud trial not listed."
+          "reason": "Free community self-hosted metrics/logs/traces, enterprise features excluded; cloud trial not listed. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "opentelemetry-collector-self-hosted",
           "status": "catalogued",
           "issue_number": 510,
           "pr_number": 514,
-          "reason": "Apache-2.0 telemetry pipeline without backend storage; own infrastructure."
+          "reason": "Apache-2.0 telemetry pipeline without backend storage; own infrastructure. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -4973,7 +4973,7 @@
           "status": "catalogued",
           "issue_number": 504,
           "pr_number": 507,
-          "reason": "Ongoing 25-user hosted table database, 10000 rows, 2GB; no card, commercial terms unconfirmed marked check."
+          "reason": "Ongoing 25-user hosted table database, 10000 rows, 2GB; no card, commercial terms unconfirmed marked check. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -5004,7 +5004,7 @@
           "status": "catalogued",
           "issue_number": 511,
           "pr_number": 515,
-          "reason": "Maintained AGPLv3+ self-hosted file sync/storage; own infrastructure and license compliance."
+          "reason": "Maintained AGPLv3+ self-hosted file sync/storage; own infrastructure and license compliance. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         }
       ],
       "excluded": [
@@ -5036,17 +5036,17 @@
       "candidates": [
         {
           "id": "mintlify-starter-free",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 516,
           "pr_number": 521,
-          "reason": "Ongoing hosted documentation Starter, 5 editors and custom domain; Pro AI trial excluded."
+          "reason": "Ongoing hosted documentation Starter, 5 editors and custom domain; Pro AI trial excluded. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "gitbook-free",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 517,
           "pr_number": 519,
-          "reason": "Ongoing hosted public docs, one editor and unlimited page views; paid custom domain and collaboration excluded."
+          "reason": "Ongoing hosted public docs, one editor and unlimited page views; paid custom domain and collaboration excluded. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "read-the-docs-community-free",
@@ -5073,10 +5073,10 @@
       "candidates": [
         {
           "id": "postman-free",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 518,
           "pr_number": 520,
-          "reason": "Ongoing API client Free for individuals; official provider explicitly allows commercial use."
+          "reason": "Ongoing API client Free for individuals; official provider explicitly allows commercial use. Verified present on main 70756d2b2d7b; exact-head CI/review and auto-merge confirmed."
         },
         {
           "id": "swagger-ui-self-hosted",
@@ -5147,12 +5147,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 364,
+    "total_services": 367,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 6 complete 19/19 on 2026-10-26. 10 new verified candidates delivered to canonical Issues #502-#504, #508-#511, #516-#518 and PRs #505-#507, #512-#515, #519-#521; catalogued count computed from exact main be6bf8228b3bb0501c6c469bf25ee4e0116b5456 (364 services). PRs not yet merged remain status pr; never count as merged. Two more verified-awaiting-Issue: Read the Docs Community and Swagger UI. Exclusions: archived File Browser, SFTPGo proprietary UI restrictions, Netdata Cloud personal-only, SigNoz Cloud trial. 220 catalog rows >7d stale; backlog 30 with 0 unmatched after alias dedupe. All PR conflict reconciliations used ancestry-preserving non-force merge commits.",
+    "note": "Rotation 6 COMPLETE 19/19 on 2026-10-26: 10 newly verified canonical Issues (#502-#504, #508-#511, #516-#518) and 10 catalog PRs (#505-#507, #512-#515, #519-#521) all auto-MERGED after exact-head validation/build SUCCESS and eplus-bot APPROVED. Latest main 70756d2b2d7bb513d525bf5d7a01fc3329e36e8b: 367 services (+10 vs baseline 357), 220 records >7d stale, 30 reviewed backlog records, 0 unmatched after alias dedupe. Two additional verified-awaiting-Issue prospects: Read the Docs Community, Swagger UI. Excluded archived File Browser and SFTPGo licensing uncertainty. All conflict fixes were ancestry-preserving two-parent non-force merges; no direct main push, manual merge or deployment.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
