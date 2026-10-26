@@ -4851,5 +4851,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nebula-overlay-self-hosted",
+    "name": "Nebula Overlay Network Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source encrypted peer-to-peer overlay network using certificate-based identity, built-in firewall rules and self-managed lighthouse discovery; no vendor-imposed node or traffic quota in the software.",
+    "watch_out": "You must provision and maintain lighthouse/peer nodes, certificates, networking, routing and any relay infrastructure. Cloud servers, egress, mobile platform dependencies and operations can cost extra; no hosted free VPN service or managed SLA is included.",
+    "pricing_url": "https://github.com/slackhq/nebula",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
