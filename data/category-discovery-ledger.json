@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "1be7ee63a5221b7cee08539bf5ba22b4b2e0d366",
+  "source_main_sha": "fd8c9f4844aef98fd88bfb3a634e64d148c03891",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 12,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -75,7 +75,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 12,
+      "service_count": 13,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -175,7 +175,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 10,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -4502,8 +4502,10 @@
         },
         {
           "id": "argo-cd-self-hosted",
-          "status": "verified-awaiting-Issue",
-          "reason": "Apache-2.0 open-source GitOps CD for self-managed Kubernetes; distinct from CI runners; official project and install docs verified, not yet delivered."
+          "status": "catalogued",
+          "reason": "Apache-2.0 self-hosted GitOps CD. Canonical Issue #478 -> PR #481; ancestry-preserving non-force branch merge twice after concurrent catalog merges, exact-head validation/build SUCCESS, bot APPROVED at final HEAD, auto-MERGED; verified on main.",
+          "issue_number": 478,
+          "pr_number": 481
         }
       ],
       "excluded": [
@@ -4554,6 +4556,86 @@
         }
       ],
       "new_category_assessment": "Existing dns-cdn category is appropriate."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "tunneling-networking",
+      "rotation": "6",
+      "queries": [
+        "Pinggy official Free forever 60-minute tunnel pricing and commercial terms; localhost.run official Forever Free SSH tunneling limits; NetBird Community licensing; tunnl.gg dedupe against closed Issue #285."
+      ],
+      "official_sources": [
+        "https://pinggy.io/",
+        "https://localhost.run/docs/forever-free/",
+        "https://docs.netbird.io/selfhosted/enterprise",
+        "https://tunnl.gg/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "pinggy-free",
+          "status": "catalogued",
+          "issue_number": 476,
+          "pr_number": 479,
+          "reason": "New verified ongoing free hosted tunnels with 60-minute session timeout; card=no, commercial=check. Canonical Issue -> PR exact-head validation/build SUCCESS and eplus-bot APPROVED; auto-MERGED."
+        },
+        {
+          "id": "localhost-run-free",
+          "status": "catalogued",
+          "issue_number": 477,
+          "pr_number": 480,
+          "reason": "New verified forever-free SSH tunnels with rotating domains and throttling; card=no, commercial=check. Safe two-parent non-force merge preserved PR commits after Pinggy merged; exact-head CI/review SUCCESS and auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "tunnl.gg Free",
+          "reason": "Closed historical Issue #285 exists; do not create a duplicate without examining closure reason and delivery state."
+        },
+        {
+          "name": "NetBird Self-Hosted Community",
+          "reason": "Official free Community Edition exists, but repository licensing reports NOASSERTION and commercial-license feature boundaries need separate verification; defer."
+        }
+      ],
+      "new_category_assessment": "Existing tunneling-networking category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "serverless",
+      "rotation": "6",
+      "queries": [
+        "Nuclio official Apache-2.0 license, Docker/Kubernetes deployment and recent maintenance; OpenFunction activity; KEDA autoscaling classification; OpenFaaS Community EULA 60-day commercial restriction."
+      ],
+      "official_sources": [
+        "https://github.com/nuclio/nuclio",
+        "https://nuclio.io/",
+        "https://github.com/OpenFunction/OpenFunction",
+        "https://keda.sh/",
+        "https://www.openfaas.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "nuclio-self-hosted",
+          "status": "catalogued",
+          "issue_number": 482,
+          "pr_number": 483,
+          "reason": "New verified Apache-2.0 self-hosted event-driven functions, Docker/Kubernetes. Canonical Issue -> PR exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenFaaS Community Edition",
+          "reason": "Official EULA limits commercial use to 60 days and production use to evaluation; not eligible as ongoing commercially usable free software."
+        },
+        {
+          "name": "OpenFunction",
+          "reason": "Apache-2.0 but main project last pushed 2024; defer maintenance and dependency suitability review."
+        },
+        {
+          "name": "KEDA",
+          "reason": "Event-driven autoscaling component rather than standalone FaaS; defer classification/dedupe review."
+        }
+      ],
+      "new_category_assessment": "Nuclio fits existing serverless category; no schema change."
     }
   ],
   "pending_reverification": [
@@ -4615,12 +4697,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 344,
+    "total_services": 348,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 6 begins with cloud-vps (no independently reliable ongoing new free VPS), ci-cd and dns-cdn. Three newly eligible services GoCD, Concourse CI and CoreDNS delivered via Issues #470/#474/#472 -> PRs #471/#475/#473, exact-head validation/build SUCCESS and bot approval, auto-MERGED. Main 1be7ee63a5221b7cee08539bf5ba22b4b2e0d366 has 344 services. Cancelled PR build runs required safe non-force exact-head retrigger; concurrency PR #328 and approval PR #457 remain open, no manual merge.",
+    "note": "Rotation 6 covers 5/19 categories. New Pinggy Free, localhost.run Forever Free and Nuclio Self-Hosted plus historical Argo CD delivered via canonical Issues #476/#477/#482/#478 -> PRs #479/#480/#483/#481; exact-head validation/build SUCCESS, bot approvals at final heads and GitHub auto-merges. Latest main fd8c9f4844aef98fd88bfb3a634e64d148c03891 has 348 services. Main Pages deployment must be verified separately; PR Deploy skipped is not production PASS. Existing concurrency fixes #328/#457 remain unmerged; no direct main push, force push or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4717,12 +4799,13 @@
     "rotation_6_categories_reviewed": [
       "cloud-vps",
       "ci-cd",
-      "dns-cdn"
+      "dns-cdn",
+      "tunneling-networking",
+      "serverless"
     ],
     "rotation_6_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "developer-tools",
@@ -4734,7 +4817,6 @@
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
