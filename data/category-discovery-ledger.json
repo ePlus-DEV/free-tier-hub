@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "7e827c1f600c2076b94bef86646be744d635e256",
+  "source_main_sha": "1be7ee63a5221b7cee08539bf5ba22b4b2e0d366",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,7 +75,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 10,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -115,7 +115,7 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -4469,6 +4469,91 @@
         }
       ],
       "new_category_assessment": "Existing developer-tools category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ci-cd",
+      "queries": [
+        "GoCD Apache-2.0 free self-hosted server agent",
+        "Concourse CI Apache-2.0 Docker Compose official docs",
+        "Argo CD Apache-2.0 Kubernetes GitOps official"
+      ],
+      "official_sources": [
+        "https://www.gocd.org/download/",
+        "https://concourse-ci.org/",
+        "https://github.com/concourse/concourse/blob/master/LICENSE.md",
+        "https://argo-cd.readthedocs.io/en/stable/getting_started/",
+        "https://github.com/argoproj"
+      ],
+      "candidates": [
+        {
+          "id": "gocd-self-hosted",
+          "status": "catalogued",
+          "issue_number": 470,
+          "pr_number": 471,
+          "reason": "Apache-2.0, ongoing self-hosted GoCD server and agents. Issue -> queue -> PR exact-head validation/build SUCCESS, bot APPROVED and auto-MERGED to main."
+        },
+        {
+          "id": "concourse-ci-self-hosted",
+          "status": "catalogued",
+          "issue_number": 474,
+          "pr_number": 475,
+          "reason": "Apache-2.0 self-hosted CI/CD with web/worker nodes and PostgreSQL. Cancelled exact-head build was not accepted; ancestry-preserving empty commit retriggered checks, validation/build SUCCESS, bot APPROVED and auto-MERGED."
+        },
+        {
+          "id": "argo-cd-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Apache-2.0 open-source GitOps CD for self-managed Kubernetes; distinct from CI runners; official project and install docs verified, not yet delivered."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Zuul CI",
+          "reason": "Official site confirms free open-source CI, but exact license/deployment caveats not independently checked in this run."
+        }
+      ],
+      "new_category_assessment": "All fit current ci-cd; no category change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "queries": [
+        "CoreDNS Apache-2.0 official plugins and self-hosted license",
+        "AdGuard Home GPL-3.0 free DNS server official",
+        "Unbound BSD-3-Clause DNS recursive caching official"
+      ],
+      "official_sources": [
+        "https://coredns.io/",
+        "https://github.com/coredns/coredns",
+        "https://github.com/AdguardTeam/AdGuardHome",
+        "https://github.com/NLnetLabs/unbound"
+      ],
+      "candidates": [
+        {
+          "id": "coredns-self-hosted",
+          "status": "catalogued",
+          "issue_number": 472,
+          "pr_number": 473,
+          "reason": "Apache-2.0 open-source plugin-based DNS. Cancelled PR build retriggered with non-force fast-forward commit; exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED."
+        },
+        {
+          "id": "adguard-home-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official GPL-3.0 repository confirms free open-source self-hosted DNS filtering, no software card requirement; not yet delivered."
+        },
+        {
+          "id": "unbound-dns-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official BSD-3-Clause recursive validating caching DNS resolver; self-hosted free software, not yet delivered."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Technitium DNS Server / Blocky",
+          "reason": "Already catalogued in prior rotation."
+        }
+      ],
+      "new_category_assessment": "Existing dns-cdn category is appropriate."
     }
   ],
   "pending_reverification": [
@@ -4530,12 +4615,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 341,
+    "total_services": 344,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 completed 19/19 categories on 2026-10-26; six new services (Asynq, Graphile Worker, Svix Server, Wasmer Hobby Static, Dolt, Hoppscotch Community) auto-MERGED via canonical Issues #458/#460/#462/#464/#466/#467 and PRs #459/#461/#463/#465/#468/#469. Main 7e827c1f600c2076b94bef86646be744d635e256: 341 services. Exact-head CI/review verified; non-force conflict resolution and strict failed-check handling. 30 backlog entries deduped including UploadThing alias. CI concurrency fixes PRs #328/#457 remain open for authorized review.",
+    "note": "Rotation 6 begins with cloud-vps (no independently reliable ongoing new free VPS), ci-cd and dns-cdn. Three newly eligible services GoCD, Concourse CI and CoreDNS delivered via Issues #470/#474/#472 -> PRs #471/#475/#473, exact-head validation/build SUCCESS and bot approval, auto-MERGED. Main 1be7ee63a5221b7cee08539bf5ba22b4b2e0d366 has 344 services. Cancelled PR build runs required safe non-force exact-head retrigger; concurrency PR #328 and approval PR #457 remain open, no manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4627,6 +4712,30 @@
       "tunneling-networking",
       "webhooks-events"
     ],
-    "rotation_5_categories_remaining": []
+    "rotation_5_categories_remaining": [],
+    "rotation_6_started_utc": "2026-10-26",
+    "rotation_6_categories_reviewed": [
+      "cloud-vps",
+      "ci-cd",
+      "dns-cdn"
+    ],
+    "rotation_6_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "databases",
+      "storage",
+      "developer-tools",
+      "auth-security",
+      "observability",
+      "analytics",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ]
   }
 }
