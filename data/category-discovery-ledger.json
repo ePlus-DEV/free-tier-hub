@@ -3955,6 +3955,82 @@
         }
       ],
       "new_category_assessment": "Existing category; no schema or category changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "search",
+      "rotation": "5",
+      "searches": [
+        "Prior rotation verified Vespa and Sonic self-hosted search platforms against official Apache-2.0/MPL-2.0 sources, catalog, backlog and Issues/PRs."
+      ],
+      "official_sources": [
+        "https://docs.vespa.ai/en/operations/self-managed/docker-containers.html",
+        "https://github.com/valeriansaliou/sonic"
+      ],
+      "candidates": [
+        {
+          "id": "vespa-search-self-hosted",
+          "status": "catalogued",
+          "issue_number": 437,
+          "pr_number": 438,
+          "reason": "Previously verified and automatically merged at exact-head CI; confirmed in current main."
+        },
+        {
+          "id": "sonic-search-self-hosted",
+          "status": "catalogued",
+          "issue_number": 439,
+          "pr_number": 440,
+          "reason": "Previously verified and automatically merged at exact-head CI; confirmed in current main."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "feature-flags",
+      "rotation": "5",
+      "searches": [
+        "Prior rotation verified OpenFlagr; current official Bucketeer Apache-2.0 source and self-hosted Docker/Kubernetes deployment reverified 2026-10-26."
+      ],
+      "official_sources": [
+        "https://openflagr.github.io/flagr/",
+        "https://github.com/bucketeer-io/bucketeer",
+        "https://docs.bucketeer.io/"
+      ],
+      "candidates": [
+        {
+          "id": "openflagr-self-hosted",
+          "status": "catalogued",
+          "issue_number": 441,
+          "pr_number": 442,
+          "reason": "Previously verified and automatically merged at exact-head CI; confirmed in current main."
+        },
+        {
+          "id": "bucketeer-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official Apache-2.0 self-hosted feature flag and experimentation platform; no software seat/evaluation quotas, no software card, commercial allowed. Requires canonical Issue/PR/CI before catalogued.",
+          "candidate": {
+            "id": "bucketeer-self-hosted",
+            "name": "Bucketeer Self-Hosted",
+            "category": "feature-flags",
+            "plan": "ongoing",
+            "free_limit": "Apache-2.0 open-source self-hosted feature flag management and A/B experimentation with unlimited team members, environments and evaluations; no vendor software seat or evaluation quota.",
+            "watch_out": "You operate and pay for MySQL, Redis, compute, storage, TLS, backups and any Kubernetes/cloud integrations. Docker Compose Lite is for smaller deployments; production requires proper security and operational setup. No managed hosting included.",
+            "pricing_url": "https://github.com/bucketeer-io/bucketeer",
+            "credit_card": "no",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-26"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub / Featurevisor",
+          "reason": "Deferred separate product, license and scope review; not classified ineligible."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
     }
   ],
   "pending_reverification": [
@@ -4021,7 +4097,7 @@
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 12/19 categories. Five genuinely new services delivered: Dokku #445/#448, JuiceFS #446/#450, OpenFGA #447/#449, Gatus #452/#453, KServe #451/#454. Exact-head CI/reviews and automated merges verified. Main ce59e54237bf05d7d211347a662c6cb3172e9367: 334 services. 30 historical backlog entries deduped (UploadThing alias); no manual merge, direct main push or force-push. Pages and approval concurrency blocker PRs remain separate and unmerged.",
+    "note": "Rotation 5 14/19 categories. Five genuinely new services delivered: Dokku #445/#448, JuiceFS #446/#450, OpenFGA #447/#449, Gatus #452/#453, KServe #451/#454. Exact-head CI/reviews and automated merges verified. Main ce59e54237bf05d7d211347a662c6cb3172e9367: 334 services. 30 historical backlog entries deduped (UploadThing alias); no manual merge, direct main push or force-push. Pages and approval concurrency blocker PRs remain separate and unmerged. Previously verified Vespa/Sonic/OpenFlagr and Bucketeer pending canonical Issue reflected in ledger.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4084,14 +4160,13 @@
       "static-hosting",
       "feature-flags",
       "storage",
-      "auth-security"
-    ],
-    "rotation_4_categories_remaining": [
+      "auth-security",
       "databases",
       "developer-tools",
       "observability",
       "analytics"
     ],
+    "rotation_4_categories_remaining": [],
     "rotation_5_started_utc": "2026-10-26",
     "rotation_5_categories_reviewed": [
       "cloud-vps",
@@ -4105,15 +4180,15 @@
       "storage",
       "auth-security",
       "ai-ml",
-      "observability"
+      "observability",
+      "search",
+      "feature-flags"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
       "databases",
       "developer-tools",
       "queues-jobs",
-      "search",
-      "feature-flags",
       "webhooks-events"
     ]
   }
