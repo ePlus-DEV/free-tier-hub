@@ -4635,5 +4635,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-solr-self-hosted",
+    "name": "Apache Solr Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source full-text, vector and geospatial search server with HTTP APIs, indexing, facets, replication and distributed SolrCloud; no vendor-imposed software index or query quota.",
+    "watch_out": "Self-hosting requires JVM resources, storage, network security, patching, backups and operational expertise; optional cloud infrastructure, managed services and third-party integrations cost extra.",
+    "pricing_url": "https://solr.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
