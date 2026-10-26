@@ -3987,5 +3987,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "vespa-search-self-hosted",
+    "name": "Vespa Search Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Vespa search and vector retrieval software for self-managed deployments, with no vendor-enforced query, index-size, or seat quota.",
+    "watch_out": "You provide compute, persistent storage, operations, backups and security; local Docker setup requires at least 4 GB RAM. Internal protocols are not authenticated by default: isolate hosts and configure access controls/TLS. Vespa Cloud is a separate managed service.",
+    "pricing_url": "https://docs.vespa.ai/en/operations/self-managed/docker-containers.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
