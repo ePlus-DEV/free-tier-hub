@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "566920a8fe26672fc91a9ca038c789bb6c852fc0",
+  "source_main_sha": "094f7b972d674d768b8ac2587078a52aaf037cb9",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -135,7 +135,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 14,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -175,7 +175,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 14,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -5846,6 +5846,111 @@
         }
       ],
       "new_category_assessment": "Uses existing serverless category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": 8,
+      "searches": [
+        "Dokploy 2026 license Apache 2.0 open source core vs paid proprietary features",
+        "Dokploy self hosted PaaS unlimited applications databases official"
+      ],
+      "official_sources": [
+        "https://dokploy.com/blog/we-are-updating-dokploys-open-source-license",
+        "https://dokploy.com/self-hosted-paas",
+        "https://docs.dokploy.com/docs/core"
+      ],
+      "candidates": [
+        {
+          "id": "dokploy-self-hosted",
+          "status": "catalogued",
+          "issue_number": 578,
+          "pr_number": 581,
+          "reason": "Official Apache-2.0 free self-hosted core; managed cloud and proprietary features excluded. Auto-MERGED PR #581 at HEAD 4a8124e178db2e528ee335608e8414004f81c43d after exact-head validation/build and eplus-bot approval; verified in latest main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "dokploy-cloud-hobby",
+          "reason": "Managed cloud plan is paid after a short trial, not an ongoing free tier."
+        }
+      ],
+      "new_category_assessment": "Existing app-hosting category fits; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "tunneling-networking",
+      "rotation": 8,
+      "searches": [
+        "Nebula Slack MIT license free self-managed encrypted overlay network",
+        "Pangolin Community AGPLv3 free self-hosted vs paid enterprise"
+      ],
+      "official_sources": [
+        "https://github.com/slackhq/nebula",
+        "https://pangolin.net/faq",
+        "https://pangolin.net/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "nebula-overlay-self-hosted",
+          "status": "catalogued",
+          "issue_number": 579,
+          "pr_number": 582,
+          "reason": "MIT open-source self-managed overlay network; auto-MERGED PR #582 at HEAD ec3333cde3f97316257ee298b66e0a1f37af13fa after non-force two-parent merge and exact-head validation/build, eplus-bot review; present on latest main."
+        },
+        {
+          "id": "pangolin-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 580,
+          "pr_number": 584,
+          "reason": "AGPLv3 free Community Edition self-hosted, enterprise restrictions disclosed; auto-MERGED PR #584 at HEAD 061186ba6e62ddcd4b81f7d36bd74a864391bcfd after exact-head validation/build and eplus-bot review; present on latest main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "pangolin-enterprise-edition",
+          "reason": "Not the free Community Edition; paid/commercial and revenue-based eligibility rules apply."
+        }
+      ],
+      "new_category_assessment": "Both fit existing tunneling-networking category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-assistants",
+      "rotation": 8,
+      "searches": [
+        "Aider open source Apache-2.0 local Ollama coding assistant",
+        "Cline Apache-2.0 IDE CLI agent local models vs paid APIs",
+        "Continue open-source assistant maintenance status"
+      ],
+      "official_sources": [
+        "https://github.com/Aider-AI/aider",
+        "https://aider.chat/docs/llms/ollama.html",
+        "https://github.com/cline/cline"
+      ],
+      "candidates": [
+        {
+          "id": "aider-local-ai-coding",
+          "status": "catalogued",
+          "issue_number": 583,
+          "pr_number": 586,
+          "reason": "Apache-2.0 local coding assistant with optional Ollama models; auto-MERGED PR #586 at exact HEAD 7cf22b8541754a3524ebbb01889d0afafc0957ad after non-force merge, re-triggered validation/build SUCCESS and eplus-bot APPROVED."
+        },
+        {
+          "id": "cline-open-source-coding-agent",
+          "status": "catalogued",
+          "issue_number": 585,
+          "pr_number": 587,
+          "reason": "Apache-2.0 IDE/CLI coding agent, local model option; auto-MERGED PR #587 at HEAD a7e44b8fa6e31da1d9d9cea65346237de7907d4c after non-force merge, exact-head validation/build SUCCESS and eplus-bot APPROVED."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "continue-open-source",
+          "reason": "Deferred due to reported cessation of active maintenance; verify repository status before adding."
+        }
+      ],
+      "new_category_assessment": "Both fit existing ai-assistants category; no new category."
     }
   ],
   "pending_reverification": [
@@ -5907,12 +6012,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 395,
+    "total_services": 400,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 8 at 3/19 categories. Three new verified services auto-MERGED via Issues #572, #573, #575 and PRs #574, #576, #577 after exact-head CI and eplus-bot review; all three appear in latest main 566920a8fe26672fc91a9ca038c789bb6c852fc0, total 395 (+3 from 392). No force push or manual main merge. Cloud-vps research excluded trials/duplicates. 29/30 backlog IDs catalogued; uploadthing-free is a duplicate alias of uploadthing-2gb-app. PR #291 remains review-only.",
+    "note": "Rotation 8 6/19; 5 genuinely new verified services auto-MERGED from Issues #578/#579/#580/#583/#585 and PRs #581/#582/#584/#586/#587, after exact-head CI and eplus-bot review. Main 094f7b972d674d768b8ac2587078a52aaf037cb9 contains 400 services (+5 from 395). Non-force branch ancestry preserved. 29/30 historical backlog IDs catalogued; uploadthing-free aliases existing uploadthing-2gb-app. PR #291 is review-only.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6055,11 +6160,13 @@
     "rotation_8_categories_reviewed": [
       "cloud-vps",
       "dns-cdn",
-      "serverless"
+      "serverless",
+      "app-hosting",
+      "tunneling-networking",
+      "ai-assistants"
     ],
     "rotation_8_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
       "storage",
       "developer-tools",
@@ -6068,11 +6175,9 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
