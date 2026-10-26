@@ -4539,5 +4539,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "tsuru-self-hosted",
+    "name": "Tsuru Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free BSD-3-Clause self-hosted PaaS for deploying applications from source or container images with add-ons, scaling and deployment management; no software-imposed app quota.",
+    "watch_out": "Requires your own Kubernetes infrastructure, networking, storage and operational maintenance; managed-cloud resources and third-party add-ons may cost money. License notices and third-party dependency terms apply.",
+    "pricing_url": "https://docs.tsuru.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
