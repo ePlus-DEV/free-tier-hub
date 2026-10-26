@@ -5115,5 +5115,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "wireguard-self-hosted",
+    "name": "WireGuard Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free self-managed encrypted VPN tunnels using open-source WireGuard kernel and userspace implementations; no software subscription, seat or tunnel license quota.",
+    "watch_out": "Not a hosted VPN or automatic device-management service. Requires your own endpoints, key rotation, networking and infrastructure; Linux kernel components use GPLv2 while other platform components have different open-source licenses.",
+    "pricing_url": "https://www.wireguard.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
