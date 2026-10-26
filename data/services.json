@@ -3879,5 +3879,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "tekton-pipelines-self-hosted",
+    "name": "Tekton Pipelines Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0-licensed Kubernetes-native CI/CD framework with reusable Tasks, Pipelines, PipelineRuns and container-based execution; no vendor software usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, compute, container registry, storage and maintenance. Tekton is a framework rather than a turnkey hosted CI service; configure RBAC, secrets, task provenance and triggers separately. Infrastructure and external services may incur costs.",
+    "pricing_url": "https://tekton.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
