@@ -4455,5 +4455,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "mintlify-starter-free",
+    "name": "Mintlify Starter Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free hosted documentation site with 5 editor seats, Git sync, a custom domain, web editor, search, MCP server and API playground.",
+    "watch_out": "Pro AI Assistant/Agent, automations, preview deployments and advanced security are paid; 14-day Pro trial credits are not part of the ongoing Starter allowance.",
+    "pricing_url": "https://www.mintlify.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-26"
   }
 ]
