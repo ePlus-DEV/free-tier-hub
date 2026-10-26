@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "094f7b972d674d768b8ac2587078a52aaf037cb9",
+  "source_main_sha": "2bd9bfed9f151817b839e617418da90dd3bad212",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -75,7 +75,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 15,
+      "service_count": 17,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -155,7 +155,7 @@
     },
     {
       "category": "search",
-      "service_count": 16,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -185,7 +185,7 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -5951,6 +5951,120 @@
         }
       ],
       "new_category_assessment": "Both fit existing ai-assistants category; no new category."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ci-cd",
+      "rotation": 8,
+      "searches": [
+        "Flux CD v2 Apache-2.0 official GitOps source and no software usage quota",
+        "Flagger CNCF progressive delivery Apache-2.0 official",
+        "Spinnaker Apache-2.0 self-managed CD official"
+      ],
+      "official_sources": [
+        "https://github.com/fluxcd/flux2",
+        "https://github.com/fluxcd/flagger",
+        "https://github.com/spinnaker/spinnaker"
+      ],
+      "candidates": [
+        {
+          "id": "fluxcd-gitops-self-hosted",
+          "status": "catalogued",
+          "issue_number": 588,
+          "pr_number": 589,
+          "reason": "Official Apache-2.0 Flux v2 self-hosted GitOps; Issue #588 -> PR #589 exact-head validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED; confirmed in main."
+        },
+        {
+          "id": "flagger-progressive-delivery",
+          "status": "catalogued",
+          "issue_number": 596,
+          "pr_number": 597,
+          "reason": "Official Apache-2.0 progressive delivery operator; Issue #596 -> PR #597 exact-head validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED; confirmed in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "spinnaker-self-hosted",
+          "reason": "Official Apache-2.0 open-source platform found; defer full infrastructure and eligibility verification to a later round, not classified ineligible."
+        }
+      ],
+      "new_category_assessment": "Existing ci-cd category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "search",
+      "rotation": 8,
+      "searches": [
+        "Pagefind MIT static full-text search library official",
+        "Orama @orama/orama Apache-2.0 open-source search library official",
+        "SearXNG and Sonic existing catalog deduplication"
+      ],
+      "official_sources": [
+        "https://github.com/Pagefind/pagefind",
+        "https://pagefind.app/",
+        "https://github.com/oramasearch/orama",
+        "https://github.com/oramasearch/orama/blob/main/packages/orama/LICENSE.md"
+      ],
+      "candidates": [
+        {
+          "id": "pagefind-static-search",
+          "status": "catalogued",
+          "issue_number": 590,
+          "pr_number": 591,
+          "reason": "MIT static-site search, no hosted backend; Issue #590 -> PR #591 exact-head validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED; confirmed in main."
+        },
+        {
+          "id": "orama-js-open-source",
+          "status": "catalogued",
+          "issue_number": 592,
+          "pr_number": 593,
+          "reason": "Apache-2.0 embedded search library (LICENSE.md verified); Issue #592 -> PR #593 exact-head validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED; confirmed in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "searxng-self-hosted",
+          "reason": "Already catalogued."
+        },
+        {
+          "id": "sonic-search-self-hosted",
+          "reason": "Already catalogued."
+        }
+      ],
+      "new_category_assessment": "Existing search category supports self-managed search tools; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "webhooks-events",
+      "rotation": 8,
+      "searches": [
+        "adnanh/webhook MIT incoming webhook self-hosted receiver shell execution official",
+        "Svix open-source and Hook0 existing catalog deduplication"
+      ],
+      "official_sources": [
+        "https://github.com/adnanh/webhook",
+        "https://github.com/svix/svix-webhooks"
+      ],
+      "candidates": [
+        {
+          "id": "adnanh-webhook-self-hosted",
+          "status": "catalogued",
+          "issue_number": 594,
+          "pr_number": 595,
+          "reason": "MIT self-hosted incoming webhook receiver with command execution security caveats; Issue #594 -> PR #595 exact-head validation/build SUCCESS and eplus-bot APPROVED, automatically MERGED; confirmed in main."
+        }
+      ],
+      "excluded": [
+        {
+          "id": "svix-server-self-hosted",
+          "reason": "Already catalogued; no duplicate."
+        },
+        {
+          "id": "hook0-developer",
+          "reason": "Already catalogued; no duplicate."
+        }
+      ],
+      "new_category_assessment": "Existing webhooks-events category; no schema changes."
     }
   ],
   "pending_reverification": [
@@ -6012,12 +6126,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 400,
+    "total_services": 405,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 8 6/19; 5 genuinely new verified services auto-MERGED from Issues #578/#579/#580/#583/#585 and PRs #581/#582/#584/#586/#587, after exact-head CI and eplus-bot review. Main 094f7b972d674d768b8ac2587078a52aaf037cb9 contains 400 services (+5 from 395). Non-force branch ancestry preserved. 29/30 historical backlog IDs catalogued; uploadthing-free aliases existing uploadthing-2gb-app. PR #291 is review-only.",
+    "note": "Rotation 8 9/19; 5 genuinely new verified services auto-MERGED from Issues #588/#590/#592/#594/#596 and PRs #589/#591/#593/#595/#597 after exact-head validation/build and eplus-bot review. Latest main 2bd9bfed9f151817b839e617418da90dd3bad212 contains 405 services (+5 from 400). Canonical issue queue and PR workflow verified; no direct main push, force push or manual merge. PR #291 remains review-only.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6163,22 +6277,22 @@
       "serverless",
       "app-hosting",
       "tunneling-networking",
-      "ai-assistants"
+      "ai-assistants",
+      "ci-cd",
+      "search",
+      "webhooks-events"
     ],
     "rotation_8_categories_remaining": [
       "static-hosting",
       "databases",
       "storage",
       "developer-tools",
-      "ci-cd",
       "auth-security",
       "observability",
       "analytics",
       "ai-ml",
       "queues-jobs",
-      "search",
-      "feature-flags",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
