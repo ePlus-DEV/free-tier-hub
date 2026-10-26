@@ -4587,5 +4587,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "open-web-analytics-self-hosted",
+    "name": "Open Web Analytics Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-2.0-or-later self-hosted web analytics server for unlimited websites, pageviews, events, e-commerce tracking and reporting; no vendor-imposed software analytics quota.",
+    "watch_out": "You must host and maintain the PHP application and database, secure admin access, configure privacy/consent and cookie retention as applicable, and comply with GPL obligations for redistribution. Infrastructure and maintenance costs are not included.",
+    "pricing_url": "https://github.com/Open-Web-Analytics/Open-Web-Analytics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
