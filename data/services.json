@@ -5175,5 +5175,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-couchdb-self-hosted",
+    "name": "Apache CouchDB Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 document database with HTTP/JSON API, replication and offline synchronization; free self-managed software with no license-based record quota.",
+    "watch_out": "Database replication and storage use your own servers, disk and bandwidth; hosted CouchDB services are billed separately.",
+    "pricing_url": "https://couchdb.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
