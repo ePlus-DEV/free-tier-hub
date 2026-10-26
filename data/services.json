@@ -4575,5 +4575,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "kubero-self-hosted",
+    "name": "Kubero Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 self-hosted Kubernetes PaaS with app deployments, CI/CD pipelines, staging environments, GitOps review apps and add-on integration; no software-imposed application quota.",
+    "watch_out": "Requires a Kubernetes cluster and your own compute, storage, networking and maintenance. GPL-3.0 obligations apply when redistributing modified software; external add-ons and cloud infrastructure can incur charges.",
+    "pricing_url": "https://github.com/kubero-dev/kubero",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
