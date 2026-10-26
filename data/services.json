@@ -5055,5 +5055,17 @@
     "credit_card": "check",
     "commercial_use": "no",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ory-hydra-self-hosted",
+    "name": "Ory Hydra Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted OAuth 2.0 / OpenID Connect server core for issuing tokens, client management, consent and login integration; no hosted-user quota.",
+    "watch_out": "Requires a separate login/consent application, database and your own infrastructure. Ory recommends an enterprise agreement for business-critical deployments needing guaranteed CVE fixes, SLAs and advanced features; managed Ory Network is separate.",
+    "pricing_url": "https://github.com/ory/hydra",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
