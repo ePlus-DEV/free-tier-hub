@@ -3927,5 +3927,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "blocky-dns-proxy-self-hosted",
+    "name": "Blocky DNS Proxy Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted DNS proxy with DNS-over-HTTPS/TLS upstreams, configurable blocklists, per-client rules, caching and Prometheus metrics; no vendor software query quota.",
+    "watch_out": "Requires self-managed server, upstream DNS resolvers and network access; upstream provider limits and infrastructure costs may apply. Primarily a forwarding proxy, not a managed authoritative DNS service; configuration is YAML-based.",
+    "pricing_url": "https://0xerr0r.github.io/blocky/latest/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
