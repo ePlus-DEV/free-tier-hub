@@ -4035,5 +4035,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openfga-self-hosted",
+    "name": "OpenFGA Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source fine-grained authorization server supporting relationship-based and attribute-based access control via HTTP/gRPC APIs; no vendor-imposed authorization-check or seat quota for self-hosted software.",
+    "watch_out": "Provide and secure your own compute, persistent database, backups, TLS, monitoring and availability. In-memory storage is for development; use PostgreSQL or MySQL for production. Managed authorization offerings and infrastructure cost extra.",
+    "pricing_url": "https://github.com/openfga/openfga",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
