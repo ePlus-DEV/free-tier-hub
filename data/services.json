@@ -3953,6 +3953,30 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "fission-self-hosted",
+    "name": "Fission Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Kubernetes-native serverless framework for HTTP and event-triggered functions, autoscaling and custom runtimes; no vendor-imposed execution or function-count quota for the self-hosted software.",
+    "watch_out": "Requires an existing self-managed Kubernetes cluster and ongoing compute, networking, storage and operations costs. This is software for running your own functions, not a hosted FaaS free allowance; external services and infrastructure may charge separately.",
+    "pricing_url": "https://fission.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "anythingllm-self-hosted",
+    "name": "AnythingLLM Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted Docker AI workspace with document chat/RAG, configurable LLM providers, agents and developer API; no vendor-imposed chat or document quota for the core software.",
+    "watch_out": "Runs on your own compute and storage. Local model hardware, paid cloud LLM APIs, vector databases and managed AnythingLLM Cloud plans are separate costs. Secure internet-facing instances, review third-party model licenses and disable optional telemetry if desired.",
+    "pricing_url": "https://anythingllm.com/cloud",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "knative-serving-self-hosted",
     "name": "Knative Serving Self-Hosted",
     "category": "serverless",
