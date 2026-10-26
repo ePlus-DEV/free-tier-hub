@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "df14c4a0ec313aab40f43b973bcb49eb28684436",
+  "source_main_sha": "9c30fd0883431e759bf41e8279d5e99439a79ee6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,7 +25,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 11,
+      "service_count": 12,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -155,21 +155,21 @@
     },
     {
       "category": "search",
-      "service_count": 12,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "feature-flags",
-      "service_count": 17,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 18,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -4046,6 +4046,116 @@
         }
       ],
       "new_category_assessment": "Existing category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "search",
+      "rotation": "5",
+      "searches": [
+        "Vespa search self-managed Apache-2.0 Docker minimum RAM and security official",
+        "Sonic search Rust MPL-2.0 official GitHub deployment and limitations",
+        "ZincSearch self-hosted custom license maintenance check",
+        "Cross-check full main catalog, all-state Issues/PRs, branches, 30-item backlog and discovery ledger"
+      ],
+      "official_sources": [
+        "https://github.com/vespa-engine/vespa",
+        "https://docs.vespa.ai/en/operations/self-managed/docker-containers.html",
+        "https://docs.vespa.ai/en/security/securing-your-vespa-installation.html",
+        "https://github.com/valeriansaliou/sonic"
+      ],
+      "discovery_sources": [
+        "https://www.ossean.com/zincsearch/zincsearch"
+      ],
+      "candidates": [
+        {
+          "id": "vespa-search-self-hosted",
+          "status": "catalogued",
+          "issue_number": 437,
+          "pr_number": 438,
+          "reason": "New Apache-2.0 self-managed vector/text search; no software quota/card, commercial use permitted. Exact-head validation/build SUCCESS, bot APPROVED, GitHub-native auto-MERGED."
+        },
+        {
+          "id": "sonic-search-self-hosted",
+          "status": "catalogued",
+          "issue_number": 439,
+          "pr_number": 440,
+          "reason": "New MPL-2.0 self-hosted Rust search backend; term index and autocomplete, no vendor software quota/card; exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "ZincSearch",
+          "reason": "Conflicting descriptions of custom vs Apache license and limited maintenance; do not claim eligibility until direct license and support scope reverified."
+        }
+      ],
+      "new_category_assessment": "Existing search category fits both; no category/schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "feature-flags",
+      "rotation": "5",
+      "searches": [
+        "OpenFlagr maintained Apache-2.0 feature flag server Docker official",
+        "Bucketeer self-hosted open source Apache-2.0 no license fees",
+        "FeatureHub open source license and SaaS trial separation",
+        "Featurevisor MIT GitOps feature flag configuration"
+      ],
+      "official_sources": [
+        "https://github.com/openflagr/flagr",
+        "https://openflagr.github.io/flagr/",
+        "https://github.com/bucketeer-io/bucketeer",
+        "https://github.com/featurehub-io/featurehub",
+        "https://github.com/featurevisor/featurevisor"
+      ],
+      "candidates": [
+        {
+          "id": "openflagr-self-hosted",
+          "status": "catalogued",
+          "issue_number": 441,
+          "pr_number": 442,
+          "reason": "New Apache-2.0 self-hosted feature flag/A-B service, no vendor evaluation quota/card, commercial use permitted. Exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED."
+        },
+        {
+          "id": "bucketeer-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official Apache-2.0 self-hosted platform explicitly states zero license fees and no evaluation/seat quotas; commercial use allowed; not in main, candidate Issue/PR, or backlog. Needs canonical Issue and exact-head CI before catalog claim."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub",
+          "reason": "Official README claims Apache-2.0 but GitHub license metadata is NOASSERTION; verify exact current license and self-hosted edition boundaries."
+        },
+        {
+          "name": "Featurevisor",
+          "reason": "MIT repository identified, but need independent review of product deployment mode and limits before delivery."
+        }
+      ],
+      "new_category_assessment": "Existing feature-flags category fits; no new category needed."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "serverless",
+      "rotation": "5 (historical verified backlog delivery; category previously reviewed)",
+      "searches": [
+        "Reverify Apache OpenWhisk self-hosted deployment and Apache-2.0 license",
+        "Dedupe historical verified-awaiting-Issue against latest catalog and all-state Issues/PRs"
+      ],
+      "official_sources": [
+        "https://openwhisk.apache.org/documentation.html",
+        "https://github.com/apache/openwhisk"
+      ],
+      "candidates": [
+        {
+          "id": "apache-openwhisk-self-hosted",
+          "status": "catalogued",
+          "issue_number": 443,
+          "pr_number": 444,
+          "reason": "Historical verified-awaiting-Issue completed via canonical Issue and queue; Apache-2.0 free self-managed serverless, exact-head validation/build SUCCESS, bot APPROVED, auto-MERGED."
+        }
+      ],
+      "excluded": [],
+      "new_category_assessment": "Already covered this rotation; no extra rotation count."
     }
   ],
   "pending_reverification": [
@@ -4107,12 +4217,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 325,
+    "total_services": 329,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 7/19 categories. New Fission, AnythingLLM, Knative services delivered via canonical Issues #431/#432/#435 and auto-merged PRs #433/#434/#436 after exact-head CI/review. Apache OpenWhisk verified-awaiting-Issue. Main df14c4a0ec313aab40f43b973bcb49eb28684436: 325 services. 30 backlog entries deduped (including UploadThing alias). No manual merge or force push.",
+    "note": "Rotation 5 9/19; 3 newly discovered services (Vespa, Sonic, OpenFlagr) and 1 previously verified backlog service (Apache OpenWhisk) delivered through Issues #437/#439/#441/#443 and auto-merged PRs #438/#440/#442/#444 after exact-head validation/build/review. Bucketeer verified-awaiting-Issue. Main 9c30fd0883431e759bf41e8279d5e99439a79ee6: 329 services; 220 stale >7d; 30 backlog entries deduplicated including UploadThing alias. No direct main push, manual merge or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4184,13 +4294,15 @@
     "rotation_4_categories_remaining": [],
     "rotation_5_started_utc": "2026-10-26",
     "rotation_5_categories_reviewed": [
+      "serverless",
       "cloud-vps",
       "ci-cd",
       "analytics",
-      "tunneling-networking",
       "dns-cdn",
-      "serverless",
-      "ai-assistants"
+      "ai-assistants",
+      "search",
+      "feature-flags",
+      "tunneling-networking"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
@@ -4202,8 +4314,6 @@
       "observability",
       "ai-ml",
       "queues-jobs",
-      "search",
-      "feature-flags",
       "webhooks-events"
     ]
   }
