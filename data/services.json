@@ -4263,5 +4263,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "temporal-server-self-hosted",
+    "name": "Temporal Server Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed durable workflow orchestration server for self-managed deployments; run application workflows, activities, task queues and retries without Temporal software usage fees or managed-cloud quotas.",
+    "watch_out": "Requires operating and securing the Temporal cluster, workers and persistence database (for example PostgreSQL or MySQL); high availability, backups, monitoring and infrastructure incur costs. Temporal Cloud is a separate paid service.",
+    "pricing_url": "https://github.com/temporalio/temporal",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
