@@ -5031,5 +5031,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ff4j-java-feature-flags",
+    "name": "FF4j Java Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Java feature-flag framework with toggle evaluation, audit and pluggable stores; no vendor-imposed flags, users or environment quotas.",
+    "watch_out": "Self-managed Java library and optional console, not a hosted SaaS. Application hosting, storage, monitoring and rollout safety remain your responsibility.",
+    "pricing_url": "https://github.com/ff4j/ff4j",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
