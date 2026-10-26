@@ -4947,5 +4947,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "prefect-server-self-hosted",
+    "name": "Prefect Open-Source Server Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Python workflow orchestration with self-hosted Prefect server/UI, scheduled deployments, retries, caching and event-driven flows; no vendor-imposed local server run quota.",
+    "watch_out": "Self-host the API/server, workers, database and task infrastructure; hosting, compute, storage and third-party integrations can cost money. Prefect Cloud managed plans and enterprise features are separate; this is not a free managed cloud allowance.",
+    "pricing_url": "https://github.com/PrefectHQ/prefect",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
