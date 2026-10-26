@@ -4827,5 +4827,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "cline-open-source-coding-agent",
+    "name": "Cline Open-Source Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source AI coding agent for IDE, CLI and SDK, with code editing, terminal tools and support for locally hosted models; no subscription or software usage quota for the open-source agent.",
+    "watch_out": "Requires a compatible model: hosted LLM APIs, optional Cline credits, local inference hardware and external tools may cost extra. Agent access to repositories and terminal commands requires careful approvals and sandboxing; enterprise/team services are separate paid products.",
+    "pricing_url": "https://github.com/cline/cline",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
