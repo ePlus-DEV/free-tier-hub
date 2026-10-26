@@ -5079,5 +5079,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "grafana-loki-self-hosted",
+    "name": "Grafana Loki Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted log aggregation and query engine, with label-based indexing, compression and single-node or distributed deployment; no vendor-hosted ingestion allowance.",
+    "watch_out": "Provide and pay for compute, storage, networking and operations; log collection and visualization commonly require Grafana Alloy and Grafana. AGPL-3.0 network-use/source-sharing obligations apply to modified deployments.",
+    "pricing_url": "https://github.com/grafana/loki",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
