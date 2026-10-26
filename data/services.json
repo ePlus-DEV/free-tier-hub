@@ -4287,5 +4287,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "zincsearch-self-hosted",
+    "name": "ZincSearch Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 full-text search engine you can self-host, with schema-less indexing, REST APIs, bulk ingestion, a built-in UI and disk-backed indexes; no software query or index quota.",
+    "watch_out": "Self-hosted compute, disk, backup, access control and maintenance are your responsibility. The project documents no built-in high availability; Elasticsearch API compatibility is partial and not a drop-in Kibana replacement.",
+    "pricing_url": "https://github.com/zincsearch/zincsearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
