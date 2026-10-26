@@ -4791,5 +4791,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openfunction-self-hosted",
+    "name": "OpenFunction Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes Function-as-a-Service platform for synchronous and asynchronous functions, OCI image builds and event-driven scale-to-zero, with no software subscription or invocation quota.",
+    "watch_out": "Requires self-managed Kubernetes and supporting build, event and runtime components (including dependencies such as Dapr); compute, networking, registries and third-party event sources may cost extra. CNCF Sandbox project; no managed free cloud hosting is included.",
+    "pricing_url": "https://github.com/OpenFunction/OpenFunction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
