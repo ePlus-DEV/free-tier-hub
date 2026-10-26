@@ -4611,5 +4611,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "featbit-foundation-self-hosted",
+    "name": "FeatBit Foundation Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free-forever self-hosted Foundation feature flag platform with feature toggles, targeting, SDKs and integrations; official pricing states no limits on seats, MAU, projects or service connections.",
+    "watch_out": "Open-core product: some enterprise capabilities, advanced RBAC, support and licensed features require a paid key; the core code is MIT licensed but not all repository features are unrestricted. Requires your own infrastructure, database, upgrades and security operations.",
+    "pricing_url": "https://home.featbit.co/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
