@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "dd4cbe53c8720004bedc7b5ca14ad6933617cfe1",
+  "source_main_sha": "df14c4a0ec313aab40f43b973bcb49eb28684436",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -25,11 +25,11 @@
     },
     {
       "category": "serverless",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 4,
       "open_catalog_candidate_issues": 0
     },
@@ -115,11 +115,11 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 9,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0
     },
@@ -135,11 +135,11 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 10,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 11,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 5,
       "open_catalog_candidate_issues": 0
     },
@@ -175,13 +175,13 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 8,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 10,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "webhooks-events",
@@ -3670,6 +3670,139 @@
         }
       ],
       "new_category_assessment": "Existing category, no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "dns-cdn",
+      "rotation": "5",
+      "searches": [
+        "Reviewed official Blocky DNS proxy documentation, Apache-2.0 source and Technitium DNS Server GPL-3.0 source; checked current catalog, backlog and issue/PR duplication."
+      ],
+      "official_sources": [
+        "https://0xerr0r.github.io/blocky/latest/",
+        "https://github.com/0xERR0R/blocky",
+        "https://technitium.com/dns/",
+        "https://github.com/TechnitiumSoftware/DnsServer"
+      ],
+      "candidates": [
+        {
+          "id": "blocky-dns-proxy-self-hosted",
+          "status": "catalogued",
+          "issue_number": 428,
+          "pr_number": 429,
+          "reason": "Apache-2.0 self-hosted DNS proxy, no vendor software query quota, free commercial use; automatically merged after exact-head CI."
+        },
+        {
+          "id": "technitium-dns-server-self-hosted",
+          "status": "catalogued",
+          "issue_number": 427,
+          "pr_number": 430,
+          "reason": "GPL-3.0 self-hosted recursive/authoritative DNS, free commercial use; automatically merged after exact-head CI."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "AdGuard Home / PowerDNS",
+          "reason": "Distinct products; deferred independent license, product-scope and duplicate checks, not marked ineligible."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "serverless",
+      "rotation": "5",
+      "searches": [
+        "Fission Apache-2.0 Kubernetes functions self-hosted free",
+        "Knative Serving Apache-2.0 scale-to-zero Kubernetes",
+        "Apache OpenWhisk Apache-2.0 self-hosted Kubernetes",
+        "Cross-checked current main catalog, all-state Issues/PRs, backlog, branches and discovery ledger."
+      ],
+      "official_sources": [
+        "https://fission.io/",
+        "https://github.com/fission/fission",
+        "https://knative.dev/docs/serving/",
+        "https://github.com/knative/serving",
+        "https://openwhisk.apache.org/",
+        "https://github.com/apache/openwhisk"
+      ],
+      "candidates": [
+        {
+          "id": "fission-self-hosted",
+          "status": "catalogued",
+          "issue_number": 431,
+          "pr_number": 433,
+          "reason": "New Apache-2.0 Kubernetes-native FaaS; no software fee or card, commercial allowed; exact-head CI/review and automatic merge confirmed."
+        },
+        {
+          "id": "knative-serving-self-hosted",
+          "status": "catalogued",
+          "issue_number": 435,
+          "pr_number": 436,
+          "reason": "New Apache-2.0 Kubernetes serverless serving with scale-to-zero; no software fee or card, commercial allowed; exact-head CI/review and automatic merge confirmed."
+        },
+        {
+          "id": "apache-openwhisk-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Distinct Apache-2.0 event-driven self-hosted serverless functions platform; official Apache documentation and repo confirm no software fee, Kubernetes/Docker deployment. Requires separate canonical Issue and full CI before cataloguing.",
+          "candidate": {
+            "id": "apache-openwhisk-self-hosted",
+            "name": "Apache OpenWhisk Self-Hosted",
+            "category": "serverless",
+            "plan": "ongoing",
+            "free_limit": "Apache-2.0 open-source self-managed event-driven serverless functions platform with triggers, rules and Docker/Kubernetes deployment; no vendor-imposed invocation quota for the software.",
+            "watch_out": "Requires self-managed Docker or Kubernetes cluster and operations; cloud compute, storage and networking can incur costs. Upgrades from pre-Pekko versions may require cluster redeployment; this is not a managed free FaaS tier.",
+            "pricing_url": "https://openwhisk.apache.org/",
+            "credit_card": "no",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-26"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenFaaS Community Edition",
+          "reason": "Deferred due license and commercial-edition feature boundary requiring independent current verification."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema change."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-assistants",
+      "rotation": "5",
+      "searches": [
+        "AnythingLLM MIT license self-hosted Docker free commercial use",
+        "Jan AI official current local model licensing",
+        "Open WebUI current branding and licensing terms",
+        "Checked main catalog, all-state Issues/PRs, backlog and discovery ledger for product duplicates."
+      ],
+      "official_sources": [
+        "https://anythingllm.com/cloud",
+        "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+        "https://github.com/Mintplex-Labs/anything-llm/blob/master/TERMS_SELF_HOSTED.md",
+        "https://jan.ai/docs"
+      ],
+      "candidates": [
+        {
+          "id": "anythingllm-self-hosted",
+          "status": "catalogued",
+          "issue_number": 432,
+          "pr_number": 434,
+          "reason": "New verified MIT-licensed free Docker AI workspace with RAG/agents; commercial allowed, no software card; exact-head CI/review and automatic merge confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Jan AI",
+          "reason": "Deferred: repository license includes additional attribution language; confirm exact current license and model constraints before classification."
+        },
+        {
+          "name": "Open WebUI",
+          "reason": "Deferred: current branding and enterprise licensing boundaries require independent product-scope review."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema change."
     }
   ],
   "pending_reverification": [
@@ -3731,12 +3864,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 318,
+    "total_services": 325,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 reviewed 4/19 categories. New verified Headscale and OpenZiti Issues #422/#423; do not count as catalogued until automated PR merges and main confirms. All 30 reviewed backlog entries are existing IDs or UploadThing equivalent. Main source SHA dd4cbe53c8720004bedc7b5ca14ad6933617cfe1.",
+    "note": "Rotation 5 7/19 categories; 3 newly verified Fission, AnythingLLM, Knative self-hosted services delivered via Issues #431/#432/#435 and PRs #433/#434/#436, exact-head CI and automatic merges. Apache OpenWhisk verified-awaiting-Issue. Main df14c4a0ec313aab40f43b973bcb49eb28684436: 325 services. 30 historical backlog entries deduped (including UploadThing alias). No manual merge, direct main push or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -3812,20 +3945,20 @@
       "cloud-vps",
       "ci-cd",
       "analytics",
-      "tunneling-networking"
+      "tunneling-networking",
+      "dns-cdn",
+      "serverless",
+      "ai-assistants"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "developer-tools",
       "auth-security",
       "observability",
-      "dns-cdn",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
       "search",
       "feature-flags",
