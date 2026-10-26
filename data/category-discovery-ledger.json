@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "9c30fd0883431e759bf41e8279d5e99439a79ee6",
+  "source_main_sha": "497acff902a9f7371ae95605321746a992e93419",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -15,11 +15,11 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0
     },
@@ -55,11 +55,11 @@
     },
     {
       "category": "storage",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -85,17 +85,17 @@
     },
     {
       "category": "auth-security",
-      "service_count": 20,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 21,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
       "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
-      "service_count": 29,
+      "service_count": 30,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -125,11 +125,11 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 13,
-      "latest_catalog_verification": "2026-10-25",
+      "service_count": 14,
+      "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-25",
+      "last_discovery_review": "2026-10-26",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0
     },
@@ -165,7 +165,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 18,
+      "service_count": 19,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -4117,8 +4117,10 @@
         },
         {
           "id": "bucketeer-self-hosted",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official Apache-2.0 self-hosted platform explicitly states zero license fees and no evaluation/seat quotas; commercial use allowed; not in main, candidate Issue/PR, or backlog. Needs canonical Issue and exact-head CI before catalog claim."
+          "status": "catalogued",
+          "reason": "Reverified Apache-2.0 self-hosted feature flag platform; canonical Issue #455, PR #456, exact-head validation/build and bot review, automatic merge confirmed on current main.",
+          "issue_number": 455,
+          "pr_number": 456
         }
       ],
       "excluded": [
@@ -4156,6 +4158,158 @@
       ],
       "excluded": [],
       "new_category_assessment": "Already covered this rotation; no extra rotation count."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "app-hosting",
+      "rotation": "5",
+      "searches": [
+        "Verified Dokku MIT self-hosted Docker PaaS; assessed CapRover restrictive custom license and checked catalog/backlog/all-state Issues/PRs."
+      ],
+      "official_sources": [
+        "https://github.com/dokku/dokku",
+        "https://dokku.com/docs/getting-started/installation/"
+      ],
+      "candidates": [
+        {
+          "id": "dokku-self-hosted",
+          "status": "catalogued",
+          "issue_number": 445,
+          "pr_number": 448,
+          "reason": "New eligible service independently verified on official HTTPS sources; canonical Issue -> queue -> PR -> exact-head CI/review -> automatic merge confirmed. No direct main push or force-push."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "CapRover",
+          "reason": "Custom-modified license/terms require separate commercial-use review; not classified as unrestricted Apache-2.0."
+        },
+        {
+          "name": "Coolify Self-Hosted",
+          "reason": "Already catalogued, distinct product."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "storage",
+      "rotation": "5",
+      "searches": [
+        "Verified JuiceFS Community Edition Free and Apache-2.0 license, underlying object storage and metadata engine costs; deduped SeaweedFS, Garage, Ceph and RustFS."
+      ],
+      "official_sources": [
+        "https://juicefs.com/en/pricing",
+        "https://juicefs.com/docs/community/introduction/",
+        "https://github.com/juicedata/juicefs"
+      ],
+      "candidates": [
+        {
+          "id": "juicefs-community-self-hosted",
+          "status": "catalogued",
+          "issue_number": 446,
+          "pr_number": 450,
+          "reason": "New eligible service independently verified on official HTTPS sources; canonical Issue -> queue -> PR -> exact-head CI/review -> automatic merge confirmed. No direct main push or force-push."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SeaweedFS, Garage, Ceph, RustFS",
+          "reason": "Already catalogued; JuiceFS is a distinct POSIX filesystem over separate object storage and metadata."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "auth-security",
+      "rotation": "5",
+      "searches": [
+        "Verified OpenFGA Apache-2.0 authorization engine, Docker self-hosting and production persistent database requirements; deduped existing Cerbos PDP."
+      ],
+      "official_sources": [
+        "https://github.com/openfga/openfga",
+        "https://openfga.dev/docs/getting-started/setup-openfga"
+      ],
+      "candidates": [
+        {
+          "id": "openfga-self-hosted",
+          "status": "catalogued",
+          "issue_number": 447,
+          "pr_number": 449,
+          "reason": "New eligible service independently verified on official HTTPS sources; canonical Issue -> queue -> PR -> exact-head CI/review -> automatic merge confirmed. No direct main push or force-push."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Cerbos PDP Self-Hosted",
+          "reason": "Already catalogued; distinct policy decision engine."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "ai-ml",
+      "rotation": "5",
+      "searches": [
+        "Verified KServe Apache-2.0 Kubernetes inference source and deployment modes; model/GPU cost caveats; checked vLLM duplicate."
+      ],
+      "official_sources": [
+        "https://github.com/kserve/kserve",
+        "https://kserve.github.io/website/"
+      ],
+      "candidates": [
+        {
+          "id": "kserve-self-hosted",
+          "status": "catalogued",
+          "issue_number": 451,
+          "pr_number": 454,
+          "reason": "New eligible service independently verified on official HTTPS sources; canonical Issue -> queue -> PR -> exact-head CI/review -> automatic merge confirmed. No direct main push or force-push."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "vLLM Self-Hosted",
+          "reason": "Already catalogued, distinct inference runtime."
+        },
+        {
+          "name": "SGLang",
+          "reason": "Deferred independent scope and deployment verification."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "observability",
+      "rotation": "5",
+      "searches": [
+        "Verified Gatus Apache-2.0 self-hosted endpoint monitoring/status page and alerting; deduped Beszel."
+      ],
+      "official_sources": [
+        "https://github.com/TwiN/gatus"
+      ],
+      "candidates": [
+        {
+          "id": "gatus-self-hosted",
+          "status": "catalogued",
+          "issue_number": 452,
+          "pr_number": 453,
+          "reason": "New eligible service independently verified on official HTTPS sources; canonical Issue -> queue -> PR -> exact-head CI/review -> automatic merge confirmed. No direct main push or force-push."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Beszel Self-Hosted",
+          "reason": "Already catalogued, distinct monitoring focus."
+        },
+        {
+          "name": "Uptrace Self-Hosted",
+          "reason": "Deferred independent licensing and feature-scope verification."
+        }
+      ],
+      "new_category_assessment": "Existing category; no schema changes."
     }
   ],
   "pending_reverification": [
@@ -4217,12 +4371,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 329,
+    "total_services": 335,
     "total_categories": 19,
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 5 9/19; 3 newly discovered services (Vespa, Sonic, OpenFlagr) and 1 previously verified backlog service (Apache OpenWhisk) delivered through Issues #437/#439/#441/#443 and auto-merged PRs #438/#440/#442/#444 after exact-head validation/build/review. Bucketeer verified-awaiting-Issue. Main 9c30fd0883431e759bf41e8279d5e99439a79ee6: 329 services; 220 stale >7d; 30 backlog entries deduplicated including UploadThing alias. No direct main push, manual merge or force push.",
+    "note": "Rotation 5 14/19 categories. Six eligible self-hosted services delivered via Issues #445/#446/#447/#451/#452/#455 and PRs #448/#450/#449/#454/#453/#456, with exact-head validation/build, bot approval and automated merge. Main 497acff902a9f7371ae95605321746a992e93419: 335 services. 30 backlog entries deduped (UploadThing alias); no manual merge, direct main push or force push. CI concurrency fix PR #328 and separate approval isolation branch await reviewed merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -4302,17 +4456,17 @@
       "ai-assistants",
       "search",
       "feature-flags",
-      "tunneling-networking"
+      "tunneling-networking",
+      "app-hosting",
+      "storage",
+      "auth-security",
+      "ai-ml",
+      "observability"
     ],
     "rotation_5_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
-      "observability",
-      "ai-ml",
       "queues-jobs",
       "webhooks-events"
     ]
