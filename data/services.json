@@ -5175,5 +5175,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "apache-cassandra-self-hosted",
+    "name": "Apache Cassandra Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed wide-column database with replication, CQL and multi-node scaling; unrestricted open-source software use on self-managed servers.",
+    "watch_out": "Clusters require ongoing capacity planning, backups and operations; CPU, storage and network costs are not included and managed Cassandra offerings have separate pricing.",
+    "pricing_url": "https://cassandra.apache.org/_/download.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
