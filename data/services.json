@@ -4589,6 +4589,42 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "chroma-self-hosted",
+    "name": "Chroma Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source vector database for embeddings and similarity search, available as an embedded local store or self-hosted client/server; no vendor-imposed software vector or query quota.",
+    "watch_out": "Self-hosted Chroma is distinct from metered Chroma Cloud with introductory $5 credits. You provide storage, backups, access controls, hosting and any external embedding-model/API costs; production scaling and security are your responsibility.",
+    "pricing_url": "https://github.com/chroma-core/chroma",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "milvus-self-hosted",
+    "name": "Milvus Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source vector database for semantic, hybrid and full-text search, with standalone Docker and distributed Kubernetes deployment; no vendor-imposed software vector or query quota.",
+    "watch_out": "Self-hosted edition only; compute, RAM, storage, networking, backups and operations are your responsibility. Zilliz managed cloud is a separate paid/limited service; infrastructure and optional model/embedding API usage may cost money.",
+    "pricing_url": "https://milvus.io/solutions/open-source-vector-database",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "featbit-foundation-self-hosted",
+    "name": "FeatBit Foundation Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free-forever self-hosted Foundation feature flag platform with feature toggles, targeting, SDKs and integrations; official pricing states no limits on seats, MAU, projects or service connections.",
+    "watch_out": "Open-core product: some enterprise capabilities, advanced RBAC, support and licensed features require a paid key; the core code is MIT licensed but not all repository features are unrestricted. Requires your own infrastructure, database, upgrades and security operations.",
+    "pricing_url": "https://home.featbit.co/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "open-web-analytics-self-hosted",
     "name": "Open Web Analytics Self-Hosted",
     "category": "analytics",
