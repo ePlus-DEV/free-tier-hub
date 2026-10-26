@@ -4529,6 +4529,18 @@
     "last_checked": "2026-10-26"
   },
   {
+    "id": "rathole-self-hosted",
+    "name": "rathole Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted reverse-proxy client/server for NAT traversal and TCP service exposure; no software-enforced tunnel or traffic quota.",
+    "watch_out": "Requires your own publicly reachable server and client configuration with shared authentication tokens; bandwidth, server hosting, IP address, security hardening and operations are not included. Not a free hosted tunnel service.",
+    "pricing_url": "https://github.com/rathole-org/rathole",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "tsuru-self-hosted",
     "name": "Tsuru Self-Hosted PaaS",
     "category": "app-hosting",
