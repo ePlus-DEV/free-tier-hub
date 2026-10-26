@@ -4587,5 +4587,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "milvus-self-hosted",
+    "name": "Milvus Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source vector database for semantic, hybrid and full-text search, with standalone Docker and distributed Kubernetes deployment; no vendor-imposed software vector or query quota.",
+    "watch_out": "Self-hosted edition only; compute, RAM, storage, networking, backups and operations are your responsibility. Zilliz managed cloud is a separate paid/limited service; infrastructure and optional model/embedding API usage may cost money.",
+    "pricing_url": "https://milvus.io/solutions/open-source-vector-database",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
