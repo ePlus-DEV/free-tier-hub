@@ -5127,5 +5127,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "borgbackup-self-hosted",
+    "name": "BorgBackup Open Source",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-managed deduplicated, compressed and encrypted backup archives; no hosted storage quota included",
+    "watch_out": "BSD 3-Clause licensed backup software; requires your own backup storage and infrastructure; remote hosting or transfer may cost extra.",
+    "pricing_url": "https://borgbackup.readthedocs.io/en/stable/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
