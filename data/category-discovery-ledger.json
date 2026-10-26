@@ -1,17 +1,17 @@
 {
   "as_of_utc": "2026-10-26",
-  "source_main_sha": "1c93638148969cd8bd9418b283fee3dfb8be5400",
+  "source_main_sha": "b4eb56e848f22200da1a71b287f44dd712a37e4c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "app-hosting",
@@ -55,13 +55,13 @@
     },
     {
       "category": "storage",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "developer-tools",
@@ -85,13 +85,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 24,
+      "service_count": 25,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "observability",
@@ -6507,14 +6507,14 @@
           "status": "catalogued",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/636",
           "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/639",
-          "reason": "Verified in latest main catalog; PR merged; deployment requires separate proof"
+          "reason": "Verified present in latest main; Issue and PR delivered through exact-head CI and approved automated merge."
         },
         {
           "id": "borgbackup-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/637",
           "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/640",
-          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+          "reason": "Verified present in latest main; Issue and PR delivered through exact-head CI and approved automated merge."
         }
       ],
       "excluded": []
@@ -6533,10 +6533,10 @@
       "candidates": [
         {
           "id": "oauth2-proxy-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/638",
           "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/641",
-          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+          "reason": "Verified present in latest main; Issue and PR delivered through exact-head CI and approved automated merge."
         }
       ],
       "excluded": []
@@ -6556,16 +6556,60 @@
       "candidates": [
         {
           "id": "caddy-static-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/642",
           "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/643",
-          "reason": "Official license and ongoing self-hosted free use verified; canonical Issue and PR created; exact-head CI/review/merge not yet verified"
+          "reason": "Verified present in latest main; Issue and PR delivered through exact-head CI and approved automated merge."
         }
       ],
       "excluded": [
         {
           "name": "Hugo",
           "reason": "Static site generator rather than a hosting/server service; excluded from static-hosting classification pending category review"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-26",
+      "category": "cloud-vps",
+      "rotation": 9,
+      "searches": [
+        "2026 always-free VPS official cloud compute without time-limited trial",
+        "Google Compute Engine Always Free e2-micro official",
+        "Oracle OCI Always Free A1 E2 Micro official",
+        "AWS EC2 Free Tier 2026 six-month credits",
+        "IBM Cloud Hyper Protect Virtual Server free duration"
+      ],
+      "official_sources": [
+        "https://docs.cloud.google.com/free/docs/free-cloud-features",
+        "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-free-tier-usage.html",
+        "https://www.ibm.com/products/cloud/free/kubernetes"
+      ],
+      "candidates": [
+        {
+          "id": "gce-e2-micro",
+          "status": "catalogued",
+          "reason": "Google e2-micro ongoing Free Tier already in main; no duplicate"
+        },
+        {
+          "id": "oracle-cloud",
+          "status": "catalogued",
+          "reason": "OCI Always Free compute already in main; current official A1 allowance 1500 OCPU-hours/9000 GB-hours per month (2 OCPUs/12 GB); separate correction PR #367 open"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "AWS EC2 new account Free Plan",
+          "reason": "6-month credits / account-duration eligibility, not an ongoing no-expiry EC2 VPS free tier"
+        },
+        {
+          "name": "IBM Cloud Hyper Protect Virtual Server",
+          "reason": "Official English IBM page says 1 vCPU for 30 days; not an ongoing free VM despite broad IBM Lite marketing"
+        },
+        {
+          "name": "Azure B-series VM free offer",
+          "reason": "12-month time-limited new-customer offer, not ongoing always-free VM"
         }
       ]
     }
@@ -6629,12 +6673,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 421,
+    "total_services": 424,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 8,
+    "open_catalog_candidate_issues": 4,
     "unmatched_backlog": [],
-    "note": "Rotation 9: 6/19 categories reviewed. New candidate Issues #636-#638, #642; PRs #639-#641, #643. Rclone merged to main, remaining PRs require exact-head validation/build SUCCESS and approved review. Earlier PRs #632-#635 remain open with cancelled build/conflicts; do not count as PASS. Main deployment for latest commit must be verified separately. No manual merge, force push, or approval bypass.",
+    "note": "Rotation 9: 7/19 categories. This run: four new Issues #636-#638 and #642, four PRs #639-#641 and #643, all four now catalogued on main (424). Historical NSD PR #632 has exact-head CI SUCCESS but review/merge not yet verified; PRs #633-#635 still open. Cloud VPS checked: existing OCI/GCE always-free; AWS EC2/IBM Hyper Protect/Azure VM are time-limited. Do not conflate PR with merged.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6803,12 +6847,12 @@
       "ci-cd",
       "storage",
       "auth-security",
-      "static-hosting"
+      "static-hosting",
+      "cloud-vps"
     ],
     "rotation_9_categories_remaining": [
       "app-hosting",
       "serverless",
-      "cloud-vps",
       "databases",
       "developer-tools",
       "observability",
