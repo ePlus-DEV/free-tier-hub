@@ -6147,5 +6147,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "freedns-afraid-free",
+    "name": "FreeDNS Afraid.org Free",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free static and dynamic DNS hosting, subdomains on shared public domains or own domains; Starter tier allows up to 5 subdomains with one-hour TTL.",
+    "watch_out": "Free Starter has captchas and lacks wildcard DNS, stealth flags and premium propagation. Paid plans offer 50+ subdomains and 60-second TTL. Payment-card and commercial-use terms are not clearly stated on official free-plan pages.",
+    "pricing_url": "https://freedns.afraid.org/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
