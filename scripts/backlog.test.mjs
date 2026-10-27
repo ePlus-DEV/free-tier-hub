@@ -100,3 +100,15 @@ test('backlog consumer resumes one queued Issue after a trusted main merge', () 
   assert.match(workflow, /gh', \['workflow', 'run', 'catalog-candidate-queue\.yml'/);
   assert.match(workflow, /if \(prs\.some\(pr => pr\.head\?\.ref === branch\)\) continue/);
 });
+
+test('manual candidate queue uses trusted REST issue author association', () => {
+  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
+  assert.match(workflow, /\[\[ "\$ISSUE_NUMBER" =~ \^\[0-9\]\+\$ \]\]/);
+  assert.match(workflow, /gh api "repos\/\$GITHUB_REPOSITORY\/issues\/\$ISSUE_NUMBER" > \/tmp\/issue\.json/);
+  assert.doesNotMatch(workflow, /gh issue view "[^"]+" --json[^\n]*authorAssociation/);
+  assert.match(workflow, /issue\.state !== 'open' \|\| issue\.pull_request/);
+  assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]\.includes\(issue\.author_association\)/);
+  assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]\.includes\(issue\.author_association\)/);
+  assert.match(workflow, /if: steps\.capacity\.outputs\.available == 'true'/);
+  assert.match(workflow, /open_count" -ge 3/);
+});
