@@ -6003,5 +6003,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "opentofu-open-source",
+    "name": "OpenTofu Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source infrastructure-as-code CLI with declarative plans, resource graph and providers; no software subscription or execution quota.",
+    "watch_out": "Infrastructure provisioned through providers is billed separately; remote state, cloud runners and commercial support may carry charges. MPL file-level obligations apply when distributing modifications.",
+    "pricing_url": "https://github.com/opentofu/opentofu",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
