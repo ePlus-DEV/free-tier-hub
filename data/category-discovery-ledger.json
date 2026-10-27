@@ -9162,13 +9162,13 @@
         },
         {
           "id": "hookbin-free",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official HookBin page advertises 3 endpoints, 200 requests/day, 7-day history and no credit card. Commercial-use restrictions not explicitly published; use commercial_use=check and verify current terms before Issue."
+          "status": "reverify",
+          "reason": "Official HookBin page advertises 3 endpoints, 200 requests/day, 7-day history and no credit card. Commercial-use restrictions not explicitly published; commercial eligibility remains unverified; no Issue until terms are checked."
         },
         {
           "id": "webhooks-app-free",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official pricing lists free forever 3 named endpoints with account, 500 payloads/day and 1-day retention. Commercial use not explicit; use commercial_use=check and verify before Issue."
+          "status": "reverify",
+          "reason": "Official pricing lists free forever 3 named endpoints with account, 500 payloads/day and 1-day retention. Commercial use not explicit; commercial eligibility remains unverified; no Issue until terms are checked."
         }
       ],
       "excluded": [
@@ -9243,7 +9243,7 @@
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 13 5/19; main 541 at 07e887f0. Chisel #885 and GOST #886 auto-merged, sish #887 exact-head CI+bot approved but merge conflict pending non-force reconciliation. Hooklistener free docs conflict on 50 stored requests cap; HookBin and webhooks.app are verified awaiting Issue after commercial terms check. 220 existing entries stale >7 days. No force push or direct main write.",
+    "note": "Rotation 13 5/19; main 541 at 07e887f0. Chisel #885 and GOST #886 auto-merged, sish #887 exact-head CI+bot approved but merge conflict pending non-force reconciliation. Hooklistener free docs conflict on 50 stored requests cap; HookBin and webhooks.app have verified free limits but unresolved commercial eligibility (reverify, no Issue). 220 existing entries stale >7 days. No force push or direct main write.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
