@@ -5595,5 +5595,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apache-http-server-self-hosted",
+    "name": "Apache HTTP Server Self-Hosted",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed self-hosted HTTP server with DocumentRoot-based static website and file hosting, virtual hosts and extensible modules; no vendor software quota on websites or requests.",
+    "watch_out": "Infrastructure, domains, bandwidth, TLS configuration and operations are your responsibility; Apache HTTP Server does not include free hosted compute or managed support.",
+    "pricing_url": "https://httpd.apache.org/docs/current/en/getting-started.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
