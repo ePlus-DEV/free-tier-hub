@@ -5631,5 +5631,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "heliohost-johnny-free",
+    "name": "HelioHost Johnny Free Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Community-operated ongoing free Johnny shared web hosting with 1,000 MB storage, up to 5 domains and published daily 200 GB memory / 10k CPU resource allowances; bandwidth is fair-use unmetered.",
+    "watch_out": "Free Johnny registrations open only in limited capacity/time windows and may be unavailable when full; not guaranteed immediately. Heavy resource use can be suspended. Business hosting is restricted to micro-businesses under the provider's March 2026 terms; larger businesses must upgrade. Tommy requires a donation and is not this free tier.",
+    "pricing_url": "https://heliohost.org/signup/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
