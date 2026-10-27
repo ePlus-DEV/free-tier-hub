@@ -6459,5 +6459,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "influxdb-3-core-self-hosted",
+    "name": "InfluxDB 3 Core Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free MIT/Apache-2.0 open-source single-node time-series database software with no license fees, usage fees, or telemetry requirement; self-hosted storage and compute are user-provided.",
+    "watch_out": "Core queries approximately 72 hours of data by default due to Parquet query-file limits; high availability, multi-node and enterprise features require paid products. Own server, storage and object-storage costs apply; not a free managed cloud tier.",
+    "pricing_url": "https://www.influxdata.com/products/influxdb-core/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
