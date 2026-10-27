@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "b3cd9395915aed17ee37dc870f14ede18249533f",
+  "source_main_sha": "6da1a6a9203f2ee39cdec3f8662a54496b06ce0b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -149,15 +149,15 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ai-assistants",
@@ -8920,7 +8920,7 @@
           "id": "kamal-skiff-static-self-hosted",
           "status": "catalogued",
           "issue": 868,
-          "reason": "Verified on latest main b3cd9395915a; canonical Issue #868 → PR #870 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "reason": "Catalogued on verified main 6da1a6a9203f via canonical Issue #868 → auto-merged PR #870, exact-head CI and eplus-bot approval verified.",
           "pr": 870
         }
       ],
@@ -8944,7 +8944,7 @@
           "id": "kamal-deploy-self-hosted",
           "status": "catalogued",
           "issue": 867,
-          "reason": "Verified on latest main b3cd9395915a; canonical Issue #867 → PR #874 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "reason": "Catalogued on verified main 6da1a6a9203f via canonical Issue #867 → auto-merged PR #874, exact-head CI and eplus-bot approval verified.",
           "pr": 874
         }
       ],
@@ -8969,7 +8969,7 @@
           "id": "influxdb-3-core-self-hosted",
           "status": "catalogued",
           "issue": 866,
-          "reason": "Verified on latest main b3cd9395915a; canonical Issue #866 → PR #869 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "reason": "Catalogued on verified main 6da1a6a9203f via canonical Issue #866 → auto-merged PR #869, exact-head CI and eplus-bot approval verified.",
           "pr": 869
         }
       ],
@@ -8994,9 +8994,9 @@
       "candidates": [
         {
           "id": "sglang-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 871,
-          "reason": "Canonical Issue #871 → PR #873 remains open; exact-head CI/review/mergeability must be rechecked after any reconciliation; not yet on main.",
+          "reason": "Catalogued on verified main 6da1a6a9203f via canonical Issue #871 → auto-merged PR #873, exact-head CI and eplus-bot approval verified.",
           "pr": 873
         }
       ],
@@ -9015,7 +9015,7 @@
           "id": "wiremock-open-source-self-hosted",
           "status": "pr",
           "issue": 872,
-          "reason": "Canonical Issue #872 → PR #875 remains open; exact-head CI/review/mergeability must be rechecked after any reconciliation; not yet on main.",
+          "reason": "Canonical Issue #872 → PR #875 remains open; exact-head CI and review must be rechecked after reconciliation. Not merged or deployed.",
           "pr": 875
         }
       ],
@@ -9086,12 +9086,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 534,
+    "total_services": 535,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 19/19 current categories researched. Main b3cd9395915a contains 534 services. Newly merged: Kamal Skiff #868→#870 and Kamal Deploy #867→#874 (exact-head CI and eplus-bot approvals verified). InfluxDB Core #866→#869, SGLang #871→#873, WireMock #872→#875 remain open and must pass exact-head checks after any safe reconciliation. The first Issues failed because last_checked was UTC-future; corrected to 2026-10-27, no tests bypassed. Backlog 29/30 IDs catalogued, uploadthing-free aliases existing uploadthing-2gb-app. No manual merge, direct main push, production deploy or force push.",
+    "note": "Rotation 12: 19/19 categories covered. Snapshot main 6da1a6a9203f contains 535 services. Four verified candidates now catalogued: Kamal Skiff Issue #868 PR #870, Kamal Deploy #867 PR #874, InfluxDB 3 Core #866 PR #869, SGLang #871 PR #873. WireMock Issue #872 PR #875 remains open; exact-head CI/approval passed before latest main changed, reconciliation must preserve ancestry without force. All merged PRs passed exact-head CI and eplus-bot review; no manual merge. Original issue attempts used future UTC date and failed closed; corrected last_checked to 2026-10-27. Backlog 29/30 IDs present; uploadthing-free aliases uploadthing-2gb-app. No main push, production deploy, force push or hourly cadence change.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
