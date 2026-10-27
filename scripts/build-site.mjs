@@ -10,6 +10,7 @@ import {
 } from './site-data.mjs';
 
 import { FONT_AWESOME_ICONS } from './fontawesome.mjs';
+import { serviceAddedDates } from './service-added-at.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
@@ -263,6 +264,7 @@ function detailPage(item, absolute) {
     ['Plan', PLAN_NAMES[item.plan]],
     ['Credit card', CARD_NAMES[item.credit_card]],
     ['Commercial use', COMMERCIAL_NAMES[item.commercial_use]],
+    ...(item.added_at ? [['Added to directory (UTC)', item.added_at]] : []),
     ['Last checked', item.last_checked],
   ];
   const specs = fields.map(([key, value]) =>
@@ -320,7 +322,22 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   catalogPath = path.join(ROOT, 'data/services.json')) {
   const base = normalizeURL(siteURL);
   const absolute = (relative = '') => base + relative;
-  const items = validateData(JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
+  const source = validateData(JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
+  const publishedDates = serviceAddedDates(ROOT);
+  // Derive dates from the commit when each service first became visible on
+  // the current branch. In particular, an old PR merged today is new today.
+  // Never use last_checked or build time: both would corrupt Newest added.
+  const items = source.map(item => ({
+    ...item, ...(publishedDates.has(item.id) ? { added_at: publishedDates.get(item.id) } : {}),
+  }));
+  // A preview using a synthetic custom catalog may contain IDs absent from Git.
+  // The published source catalog must never silently ship undated services.
+  if (path.resolve(catalogPath) === path.join(ROOT, 'data/services.json')) {
+    const missing = items.filter(item => !item.added_at).map(item => item.id);
+    if (missing.length) {
+      throw Error('Services missing original Git addition dates: ' + missing.join(', '));
+    }
+  }
   if (CATEGORIES.some(c => !(c in CATEGORY_NAMES) || !(c in CATEGORY_ICONS))) {
     throw Error('Missing category presentation metadata');
   }
