@@ -6579,5 +6579,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "pi-hole-dns-self-hosted",
+    "name": "Pi-hole DNS Sinkhole Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free EUPL-licensed self-hosted DNS sinkhole for network-wide ad and tracker blocking, local DNS caching and optional DHCP; no vendor-imposed DNS-query or client quota.",
+    "watch_out": "Requires your own Linux/Docker host and DNS configuration, upkeep and blocklist management. Avoid exposing an open public resolver; DNS filtering can break legitimate sites. EUPL license conditions apply; hosting and bandwidth are not included.",
+    "pricing_url": "https://github.com/pi-hole/pi-hole",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
