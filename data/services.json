@@ -5691,5 +5691,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "fluent-bit-self-hosted",
+    "name": "Fluent Bit Open Source Telemetry Collector",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source log, metric and trace collector/processor with configurable input, filter and output plugins, self-hosted without a software-imposed event or host quota.",
+    "watch_out": "Fluent Bit is a telemetry pipeline component, not a free hosted monitoring dashboard or long-term log store. You provide runtime resources and downstream storage/analytics; external log destinations may charge for ingestion and retention.",
+    "pricing_url": "https://github.com/fluent/fluent-bit",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
