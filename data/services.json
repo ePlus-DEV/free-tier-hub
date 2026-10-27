@@ -5727,5 +5727,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "httpie-cli-open-source",
+    "name": "HTTPie Open Source CLI",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source command-line HTTP client for sending API requests, testing endpoints, working with JSON, sessions, authentication and downloads on your own machine, with no vendor-imposed request quota in the CLI.",
+    "watch_out": "This is a local command-line client, not a hosted API testing service. Your network, target API and infrastructure may have independent rate limits or costs. HTTPie desktop, web and cloud collaboration products have separate terms.",
+    "pricing_url": "https://github.com/httpie/cli",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
