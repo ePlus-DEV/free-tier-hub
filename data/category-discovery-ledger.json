@@ -71,9 +71,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "developer-tools",
@@ -8554,6 +8554,48 @@
           "reason": "Already catalogued; no duplicate."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "storage",
+      "queries": [
+        "zot OCI registry Apache-2.0 official repository self-hosted",
+        "Harbor CNCF registry Apache-2.0 official repository self-hosted",
+        "SFTPGo Community AGPLv3 license official self-hosted",
+        "Kopia, RustFS, SeaweedFS, PocketBase and Garage existing catalog dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/project-zot/zot",
+        "https://github.com/goharbor/harbor",
+        "https://github.com/drakkan/sftpgo"
+      ],
+      "candidates": [
+        {
+          "id": "zot-oci-registry-self-hosted",
+          "status": "pr",
+          "issue_number": 824,
+          "pr_number": 827,
+          "reason": "Apache-2.0 self-hosted OCI registry; commercial permitted, no card, no vendor quota; exact-head CI/review pending."
+        },
+        {
+          "id": "harbor-container-registry-self-hosted",
+          "status": "issue",
+          "issue_number": 825,
+          "reason": "Apache-2.0 CNCF self-hosted OCI registry; commercial permitted; awaiting canonical queue PR."
+        },
+        {
+          "id": "sftpgo-community-self-hosted",
+          "status": "issue",
+          "issue_number": 826,
+          "reason": "Free AGPLv3 self-hosted file transfer Community edition; commercial use subject to copyleft obligations; awaiting queue PR."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "RustFS, SeaweedFS, Garage, PocketBase, Kopia, Restic, BorgBackup",
+          "reason": "Already catalogued in latest main; no duplicate candidate created."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8618,9 +8660,9 @@
     "total_services": 511,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 6/19 categories reviewed 2026-10-27 UTC. Five new eligible services delivered through canonical Issues #813–#817, PRs #818–#822, exact-head validation/build SUCCESS, eplus-bot approval and GitHub auto-merge. All five IDs read back from main d540777154db99938a5acda89b549bda92b19e64; total 511 services (+5 from 506 at run start). No open candidate Issues or catalog PRs. Main production Pages deployment requires separate exact-head confirmation. No direct main push, force-push, manual merge, manual deployment or schedule changes.",
+    "note": "Rotation 12: 7/19 categories reviewed. Storage discovery identified three new eligible self-hosted services, created canonical Issues #824-#826; PR #827 exists for zot and requires exact-head CI/review; Harbor and SFTPGo remain Issue-only at this snapshot. Main still 511 services, no new merge confirmed. Never conflate Issues/PRs with merged catalog.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8858,13 +8900,13 @@
       "dns-cdn",
       "webhooks-events",
       "search",
-      "serverless"
+      "serverless",
+      "storage"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
       "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
       "ci-cd",
       "auth-security",
