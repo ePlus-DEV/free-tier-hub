@@ -5309,6 +5309,66 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "khoj-self-hosted",
+    "name": "Khoj Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted AI second brain for searching personal documents, chatting with local or external LLMs, and creating custom agents; no software-license query or agent-count quota.",
+    "watch_out": "Self-hosting requires your own compute, storage and optional model/API credentials; paid model APIs and hosted Khoj plans are separate. AGPL-3.0 network-use and source-sharing obligations apply.",
+    "pricing_url": "https://github.com/khoj-ai/khoj",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "softether-vpn-self-hosted",
+    "name": "SoftEther VPN Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source VPN Server, Client and Bridge for commercial or personal use; supports SSL-VPN, OpenVPN, L2TP/IPsec and site-to-site VPN without software license fees.",
+    "watch_out": "Requires your own server, public network access, secure configuration and patching. Bandwidth, VPS and any external services are not included; no managed VPN service or SLA is provided.",
+    "pricing_url": "https://www.softether.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "nektos-act-local-ci",
+    "name": "act Local GitHub Actions Runner",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source CLI runs compatible GitHub Actions workflows locally in Docker, with no hosted CI minutes or software subscription quota.",
+    "watch_out": "Runs on your own computer or CI infrastructure and requires Docker images, disk space and compute. Not every GitHub-hosted runner feature or service is emulated; no free cloud runners are included.",
+    "pricing_url": "https://github.com/nektos/act",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "wireguard-self-hosted",
+    "name": "WireGuard Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free self-managed encrypted VPN tunnels using open-source WireGuard kernel and userspace implementations; no software subscription, seat or tunnel license quota.",
+    "watch_out": "Not a hosted VPN or automatic device-management service. Requires your own endpoints, key rotation, networking and infrastructure; Linux kernel components use GPLv2 while other platform components have different open-source licenses.",
+    "pricing_url": "https://www.wireguard.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "kubevela-self-hosted",
+    "name": "KubeVela Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 application delivery platform for Kubernetes with deployment workflows, multi-cluster orchestration and progressive delivery; no software usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, networking and deployment infrastructure; this is a platform controller, not a free managed hosting account.",
+    "pricing_url": "https://kubevela.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "apache-cassandra-self-hosted",
     "name": "Apache Cassandra Self-Hosted",
     "category": "databases",
