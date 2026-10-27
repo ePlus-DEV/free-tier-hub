@@ -6099,5 +6099,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "zerotier-personal-free",
+    "name": "ZeroTier Personal Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free hosted ZeroTier Central Personal plan: up to 10 devices, 1 network, 1 network administrator; CLI, web UI and webhooks; community support.",
+    "watch_out": "Personal, non-commercial use only; paid Essential plan required for commercial licensing, additional networks/devices and advanced API. Pricing effective August 4, 2026; older docs may show outdated 25-device limits.",
+    "pricing_url": "https://www.zerotier.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-10-27"
   }
 ]
