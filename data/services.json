@@ -6219,5 +6219,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "zot-oci-registry-self-hosted",
+    "name": "zot OCI Registry Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted OCI image and artifact registry with no software subscription or fixed vendor storage quota; capacity depends on self-managed infrastructure.",
+    "watch_out": "Self-hosting, storage, backups, TLS, network and operations are user-funded; no free managed hosting is included. Follow Apache-2.0 notices and security maintenance.",
+    "pricing_url": "https://github.com/project-zot/zot",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
