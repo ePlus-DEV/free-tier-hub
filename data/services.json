@@ -5439,5 +5439,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "tantivy-open-source-search",
+    "name": "Tantivy Open-Source Search Library",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local full-text indexing and querying with the MIT-licensed Rust search engine library; supports BM25, phrase and faceted search without a hosted subscription.",
+    "watch_out": "Tantivy is a Rust library rather than a managed or distributed search server; applications must provide their own API, index storage and hosting. Distributed search is outside its scope.",
+    "pricing_url": "https://github.com/quickwit-oss/tantivy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
