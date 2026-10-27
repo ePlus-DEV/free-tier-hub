@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "89609f156c41b9fcf72bfb3c8f12001627f8948d",
+  "source_main_sha": "07e887f0846398c9ec0b4cf32bdd913339012850",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -209,13 +209,13 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 1,
       "open_catalog_candidate_prs": 1
     },
@@ -9123,19 +9123,60 @@
         },
         {
           "id": "sish-ssh-tunnel-self-hosted",
-          "status": "issue",
+          "status": "pr-conflict",
           "issue": 883,
-          "reason": "Canonical Issue #883 created; no PR/branch found at retry, re-edited JSON body safely to retrigger queue."
+          "reason": "Issue #883 retriggered safely; PR #887 exact-head CI SUCCESS and bot APPROVED but mergeable=false after main advanced; await non-force reconciliation and re-run checks.",
+          "pr": 887
         },
         {
           "id": "gost-simple-tunnel-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 884,
           "pr": 886,
-          "reason": "PR #886 open; after conflict reconciliation requires fresh exact-head CI and review; not merged."
+          "reason": "GitHub auto-merged PR #886; verified present in main 07e887f0 after exact-head CI and eplus-bot approval."
         }
       ],
       "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "webhooks-events",
+      "official_sources": [
+        "https://www.hooklistener.com/pricing",
+        "https://docs.hooklistener.com/platform/plans-and-billing/",
+        "https://hookbin.pro/",
+        "https://webhooks.app/pricing",
+        "https://docs.webhook.site/pro.html"
+      ],
+      "queries": [
+        "free hosted webhook debugging endpoint plan Hooklistener",
+        "HookBin free 200 requests per day 3 endpoints",
+        "webhooks.app free plan 500 payloads per day",
+        "Webhook.site free temporary URL 7 days"
+      ],
+      "candidates": [
+        {
+          "id": "hooklistener-free",
+          "status": "reverify",
+          "reason": "Official Free $0, 1 endpoint, 50 stored requests, 1-day history, no card. Official docs say HTTP 403 once 50 stored; marketing pricing claims soft cap and never rejects. Confirm live enforcement and commercial eligibility before Issue."
+        },
+        {
+          "id": "hookbin-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official HookBin page advertises 3 endpoints, 200 requests/day, 7-day history and no credit card. Commercial-use restrictions not explicitly published; use commercial_use=check and verify current terms before Issue."
+        },
+        {
+          "id": "webhooks-app-free",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official pricing lists free forever 3 named endpoints with account, 500 payloads/day and 1-day retention. Commercial use not explicit; use commercial_use=check and verify before Issue."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Webhook.site Free URLs",
+          "reason": "Official documentation says free endpoints expire after 7 days; temporary URLs are not durable recurring free hosted endpoints, so not selected for catalog delivery."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -9197,12 +9238,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 540,
+    "total_services": 541,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 13: 4/19 categories reviewed. Main 540 services at 89609f15; Chisel Issue #882 → PR #885 auto-merged after exact-head CI/review; GOST PR #886 awaiting exact-head checks after reconciliation; sish Issue #883 retriggered safely with no existing PR. Do not count pending PRs as merged. 220 older than seven days; no main push, manual merge/deploy, force push or cadence changes.",
+    "note": "Rotation 13 5/19; main 541 at 07e887f0. Chisel #885 and GOST #886 auto-merged, sish #887 exact-head CI+bot approved but merge conflict pending non-force reconciliation. Hooklistener free docs conflict on 50 stored requests cap; HookBin and webhooks.app are verified awaiting Issue after commercial terms check. 220 existing entries stale >7 days. No force push or direct main write.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9461,7 +9502,8 @@
       "cloud-vps",
       "serverless",
       "search",
-      "tunneling-networking"
+      "tunneling-networking",
+      "webhooks-events"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
@@ -9477,8 +9519,7 @@
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
-      "feature-flags",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
