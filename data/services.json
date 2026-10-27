@@ -5933,6 +5933,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "caprover-self-hosted-paas",
+    "name": "CapRover Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-forever self-hosted Docker-based app deployment platform with HTTPS and one-click app deployment; no vendor-imposed app or deployment quota in the free self-hosted software.",
+    "watch_out": "Requires your own server, Docker/Swarm, domain and infrastructure; these costs are not included. The CapRover license appendix requires modifications of free features to remain free/open-source and restricts redistribution of paid versions; paid hosted features are separate.",
+    "pricing_url": "https://caprover.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "cherry-studio-community",
+    "name": "Cherry Studio Community Edition",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 community desktop AI assistant supporting multiple model providers and local models; no vendor-imposed limit on locally running the community software.",
+    "watch_out": "Cloud model API subscriptions, tokens and local compute may cost extra. Commercial use is allowed under AGPL-3.0 obligations; a separate commercial license is offered for exemption from AGPL terms.",
+    "pricing_url": "https://github.com/CherryHQ/cherry-studio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "huginn-self-hosted-automation",
     "name": "Huginn Self-Hosted Automation Agents",
     "category": "queues-jobs",
