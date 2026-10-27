@@ -5907,5 +5907,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "spinnaker-open-source-cd",
+    "name": "Spinnaker Open Source CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted multi-cloud continuous delivery pipelines, deployment strategies, application management and rollback tooling; no vendor-imposed software deployment quota.",
+    "watch_out": "Requires substantial operator-managed infrastructure and integrations with cloud/Kubernetes providers. Cloud compute, storage, network and optional external services may incur charges; retain Apache-2.0 notices.",
+    "pricing_url": "https://spinnaker.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
