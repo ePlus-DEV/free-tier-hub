@@ -97,6 +97,7 @@ export const SERVICE_LOGO_DOMAINS = {
   'azure-static-web-apps': 'azure.microsoft.com',
   'aws-free-plan': 'aws.amazon.com',
   'tinyfish-search-fetch': 'tinyfish.io',
+  'litlyx-self-hosted': 'litlyx.com',
   'github-pages': 'github.com',
   'github-actions': 'github.com',
   'github-codespaces': 'github.com',
