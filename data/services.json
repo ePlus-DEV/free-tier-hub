@@ -5825,6 +5825,18 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "vald-vector-search-self-hosted",
+    "name": "Vald Self-Hosted Vector Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed approximate nearest-neighbor vector search with automatic indexing, replication and backup; no vendor-imposed index, query or vector quota for self-hosting.",
+    "watch_out": "Kubernetes and AVX2-capable CPUs are required for the documented NGT agent. Infrastructure, object storage and operations are not free; Vald focuses on dense-vector similarity rather than keyword search.",
+    "pricing_url": "https://vald.vdaas.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "dnsmasq-self-hosted",
     "name": "dnsmasq Self-Hosted DNS/DHCP",
     "category": "dns-cdn",
