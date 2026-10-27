@@ -6471,5 +6471,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "kamal-deploy-self-hosted",
+    "name": "Kamal Deploy Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed open-source Docker web application deployment tool for self-managed servers; no software deployment-minute, application or server-count quota.",
+    "watch_out": "Not a free hosted PaaS: requires your own Docker-capable servers, SSH access, registry and infrastructure, which may cost money. App/runtime and third-party services are billed separately.",
+    "pricing_url": "https://kamal-deploy.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
