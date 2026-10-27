@@ -5789,6 +5789,18 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "falco-runtime-security-oss",
+    "name": "Falco Runtime Security OSS",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source runtime threat detection for Linux, containers and Kubernetes using configurable rules; no vendor software event quota for self-managed deployments.",
+    "watch_out": "Requires host or cluster privileges and compatible kernel event collection; rule tuning, alert delivery, retention, SIEM integrations and infrastructure are operator-managed. Managed security services may charge separately.",
+    "pricing_url": "https://github.com/falcosecurity/falco",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "wazuh-self-hosted-siem",
     "name": "Wazuh Self-Hosted SIEM/XDR",
     "category": "auth-security",
