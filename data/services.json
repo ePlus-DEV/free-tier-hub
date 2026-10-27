@@ -6581,6 +6581,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "knot-resolver-self-hosted",
+    "name": "Knot Resolver Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-licensed open-source caching, DNSSEC-validating recursive DNS resolver with modular policy and DNS privacy support; no vendor-imposed DNS-query, zone, or client quota when self-hosted.",
+    "watch_out": "Requires your own server, network bandwidth, security updates and correct resolver access controls. Avoid exposing an unrestricted public recursive resolver. GPL redistribution obligations apply; managed DNS hosting is not included.",
+    "pricing_url": "https://www.knot-resolver.cz/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "sish-ssh-tunnel-self-hosted",
+    "name": "sish SSH Tunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source SSH tunneling server for HTTP(S), WebSockets and TCP forwarding with public/private aliases and SNI routing; no vendor-imposed tunnel or traffic quota when self-hosted.",
+    "watch_out": "Self-hosting requires a reachable server, DNS, SSH keys and optionally TLS certificates; compute, domains and bandwidth are not free. The separately offered managed tuns.sh service has its own terms and is not included.",
+    "pricing_url": "https://github.com/antoniomika/sish",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "pi-hole-dns-self-hosted",
     "name": "Pi-hole DNS Sinkhole Self-Hosted",
     "category": "dns-cdn",
