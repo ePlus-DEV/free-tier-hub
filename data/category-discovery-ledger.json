@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "4923acdb0d0de541f92fa25f172a116998ae04e9",
+  "source_main_sha": "1ea954fbb59daa9d4e2f90362bb385910a880ac8",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -22,20 +22,20 @@
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 13,
+      "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "serverless",
-      "service_count": 17,
+      "service_count": 19,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -46,20 +46,20 @@
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 3,
+      "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "databases",
-      "service_count": 39,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 40,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -77,13 +77,13 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 48,
+      "service_count": 50,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -95,21 +95,21 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "auth-security",
-      "service_count": 25,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 30,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 5,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 2
     },
     {
       "category": "observability",
@@ -191,7 +191,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -7963,6 +7963,78 @@
           "reason": "Already catalogued as ntfy-self-hosted."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ci-cd",
+      "rotation": 11,
+      "searches": [
+        "Buildbot official GPL-2.0 continuous integration self-hosted",
+        "Spinnaker Apache-2.0 open source continuous delivery",
+        "Zuul CI free open source project gating Ansible",
+        "Jenkins X JayeX rename 2026"
+      ],
+      "official_sources": [
+        "https://www.buildbot.net/about.html",
+        "https://github.com/buildbot/buildbot",
+        "https://spinnaker.io/",
+        "https://github.com/spinnaker/spinnaker",
+        "https://www.zuul-ci.org/"
+      ],
+      "candidates": [
+        {
+          "id": "buildbot-self-hosted-ci",
+          "status": "Issue-open-await-PR",
+          "issue": 762,
+          "reason": "GPL-2.0 open-source self-hosted CI, no software build-minute quota; commercial use with license obligations."
+        },
+        {
+          "id": "spinnaker-open-source-cd",
+          "status": "Issue-open-await-PR",
+          "issue": 763,
+          "reason": "Apache-2.0 multi-cloud self-managed CD, no software deployment quota."
+        },
+        {
+          "id": "zuul-ci-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 765,
+          "reason": "Free open-source Zuul CI/CD and project gating, no software build-minute quota."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Jenkins X / JayeX",
+          "reason": "Project rename in 2026 requires new canonical name and current official documentation verification before candidate creation."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "search",
+      "rotation": 11,
+      "searches": [
+        "Vald Kubernetes ANN vector search Apache 2.0",
+        "Marqo open-source self-hosted vector search deprecation"
+      ],
+      "official_sources": [
+        "https://vald.vdaas.org/",
+        "https://github.com/vdaas/vald",
+        "https://github.com/marqo-ai/marqo"
+      ],
+      "candidates": [
+        {
+          "id": "vald-vector-search-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 767,
+          "reason": "Apache-2.0 self-managed distributed vector similarity search; Kubernetes and AVX2 required."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Marqo Open Source",
+          "reason": "Maintainer explicitly deprecated the open-source edition and states it will receive no further updates; excluded from new-service delivery."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8024,12 +8096,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 468,
+    "total_services": 478,
     "total_categories": 19,
-    "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 15,
+    "stale_over_7d": 220,
+    "open_catalog_candidate_issues": 10,
     "unmatched_backlog": [],
-    "note": "Snapshot from main 4923acdb0d0d on 2026-10-27 UTC: 468 catalog services, 15 open canonical candidate Issues, 0 catalog delivery PRs and 222 entries with last_checked older than 7 days. Rotations 1–10 are preserved; rotation 11 remains 7/19 (no new discovery review claimed). Issue→PR auto-delivery resumed following PR #729; #735 was closed as duplicate. Live counts change as catalog PRs merge; rerun census before relying on this snapshot.",
+    "note": "Live main 1ea954fbb59d on 2026-10-27: 478 catalog services; 10 open canonical candidate Issues; 2 open catalog PRs. Rotation 11 9/19; new Issues #762, #763, #765, #767. Main and PR status must be rechecked after queue runs; no CI pass inferred.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8245,7 +8317,9 @@
       "dns-cdn",
       "tunneling-networking",
       "analytics",
-      "webhooks-events"
+      "webhooks-events",
+      "ci-cd",
+      "search"
     ],
     "rotation_11_categories_remaining": [
       "static-hosting",
@@ -8253,13 +8327,11 @@
       "databases",
       "storage",
       "developer-tools",
-      "ci-cd",
       "observability",
       "ai-ml",
-      "ai-assistants",
       "queues-jobs",
-      "search",
-      "feature-flags"
+      "feature-flags",
+      "ai-assistants"
     ]
   }
 }
