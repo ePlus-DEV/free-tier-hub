@@ -5813,6 +5813,42 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "trivy-open-source-scanner",
+    "name": "Trivy Open Source Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source scanner for vulnerabilities, misconfigurations, secrets and software bills of materials across container images, code repositories, filesystems and Kubernetes, with no software-imposed scan quota.",
+    "watch_out": "Requires your own compute, network access and vulnerability database updates; scanning results depend on available advisory data and require human triage. Hosted security services and optional integrations may be separately priced.",
+    "pricing_url": "https://github.com/aquasecurity/trivy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "vald-vector-search-self-hosted",
+    "name": "Vald Self-Hosted Vector Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed approximate nearest-neighbor vector search with automatic indexing, replication and backup; no vendor-imposed index, query or vector quota for self-hosting.",
+    "watch_out": "Kubernetes and AVX2-capable CPUs are required for the documented NGT agent. Infrastructure, object storage and operations are not free; Vald focuses on dense-vector similarity rather than keyword search.",
+    "pricing_url": "https://vald.vdaas.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "dnsmasq-self-hosted",
+    "name": "dnsmasq Self-Hosted DNS/DHCP",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPLv2-or-v3 self-hosted DNS caching/forwarding, DHCP/DHCPv6 and router advertisement for small networks; no vendor-side DNS query or device allowance.",
+    "watch_out": "Runs on your own network/server; DNS forwarding depends on upstream resolvers and their policies. DNSSEC and network configuration require operator maintenance. GPL distribution obligations apply; hosting and networking costs are separate.",
+    "pricing_url": "https://dnsmasq.org/doc.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "dnsdist-self-hosted",
     "name": "dnsdist Self-Hosted DNS Load Balancer",
     "category": "dns-cdn",
