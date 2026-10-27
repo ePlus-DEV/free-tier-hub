@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "6cf1c056791f6f3eb53660de96d61dda7fd0f323",
+  "source_main_sha": "233d6c26bdf6fe2f2b02aa7023cd9812154511cc",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -58,7 +58,9 @@
       "service_count": 24,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
-      "uncatalogued_backlog": [],
+      "uncatalogued_backlog": [
+        "uploadthing-free"
+      ],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0
@@ -151,7 +153,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 6
     },
     {
       "category": "search",
@@ -171,7 +173,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "tunneling-networking",
@@ -7237,6 +7239,127 @@
           "reason": "Historical merged PR #39; cannot call a genuinely new provider without investigating later removal and changed plan."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "queues-jobs",
+      "rotation": 10,
+      "searches": [
+        "Hatchet self-hosted MIT workflow engine versus card-required Hatchet Cloud",
+        "JobRunr OSS free commercial use and practical recurring-job limits",
+        "Celery BSD-3 distributed task queue official",
+        "Oban Open Source Apache-2.0 versus paid Pro",
+        "Netflix Conductor archived status"
+      ],
+      "official_sources": [
+        "https://github.com/hatchet-dev/hatchet",
+        "https://github.com/hatchet-dev/hatchet/blob/main/LICENSE",
+        "https://www.jobrunr.io/en/",
+        "https://github.com/celery/celery",
+        "https://github.com/celery/celery/blob/main/LICENSE",
+        "https://oban.pro/pricing",
+        "https://github.com/oban-bg/oban"
+      ],
+      "candidates": [
+        {
+          "id": "hatchet-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue": 697,
+          "reason": "MIT self-hosted durable workflows, separate from Hatchet Cloud pay-as-you-go/card. Canonical Issue created; 23 existing catalog PRs exceed safe limit of 3, so no new PR or exact-head CI claimed."
+        },
+        {
+          "id": "jobrunr-oss-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue": 698,
+          "reason": "LGPL-3.0 JobRunr OSS free commercial, practical ~100 recurring jobs; Pro advanced features paid. Await queue capacity."
+        },
+        {
+          "id": "celery-open-source-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue": 699,
+          "reason": "BSD-3 Python distributed task queue, broker and workers self-managed; await queue capacity."
+        },
+        {
+          "id": "oban-open-source-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue": 700,
+          "reason": "Apache-2.0 Oban open-source jobs/cron, Pro workflows/limits paid; await queue capacity."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hatchet Cloud",
+          "reason": "Managed pay-as-you-go plan requires payment card; only self-hosted MIT version eligible here."
+        },
+        {
+          "name": "Netflix Conductor OSS",
+          "reason": "Original Netflix repository archived December 2023; do not represent archived distribution as new maintained free service."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "feature-flags",
+      "rotation": 10,
+      "searches": [
+        "Flipper Cloudless free self-hosted Ruby feature flags MIT",
+        "Flipper Pro paid hosted versus cloudless core",
+        "FeatureHub Apache claim versus Commons Clause LICENSE"
+      ],
+      "official_sources": [
+        "https://www.flippercloud.io/docs/get-started/self-hosted",
+        "https://www.flippercloud.io/pricing",
+        "https://github.com/flippercloud/flipper",
+        "https://github.com/featurehub-io/featurehub/blob/main/LICENSE.txt"
+      ],
+      "candidates": [
+        {
+          "id": "flipper-cloudless-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue": 701,
+          "reason": "MIT Ruby self-hosted flags, no cloud subscription; paid Pro/Cloud capabilities excluded. Issue created; await queue capacity."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub Open Source",
+          "reason": "Prior ledger license review found Commons Clause restrictions despite Apache README; do not reclassify without legal verification."
+        },
+        {
+          "name": "FeatBit, Togglz, FF4j, Featurevisor",
+          "reason": "Already present on latest main, no duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "analytics",
+      "rotation": 10,
+      "searches": [
+        "Countly Lite modified AGPL section 7 branding and service resale",
+        "RudderStack ELv2 source available self hosting commercial restrictions",
+        "Self-hosted analytics alternatives existing catalog"
+      ],
+      "official_sources": [
+        "https://github.com/Countly/countly-server/blob/master/LICENSE.md",
+        "https://www.rudderstack.com/blog/rudderstacks-licensing-explained/",
+        "https://github.com/Countly/countly-server"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "Countly Lite",
+          "reason": "Modified AGPL-3.0 section 7 mandates branding and restricts resale/rebranding; earlier ledger excluded unrestricted resale. Defer until full commercial-use scope reviewed."
+        },
+        {
+          "name": "RudderStack",
+          "reason": "Elastic License 2.0 source-available restrictions prohibit competing managed service; no unrestricted commercial-use claim."
+        },
+        {
+          "name": "Matomo, Plausible, GoatCounter, Shynet, Ackee",
+          "reason": "Already in current catalog; no new eligible distinct plan verified."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7301,9 +7424,11 @@
     "total_services": 430,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 23,
-    "unmatched_backlog": [],
-    "note": "Rotation 10: 6/19 categories. Five new Issues #685-#689 and auto-generated PRs #690-#694. All open; initial exact-head validation SUCCESS, Pages builds CANCELLED or PENDING, no approval or merge. Search libraries #693/#694 require scope review against prior Tantivy exclusion. Existing CodeRabbit skipped gate #684 and global Pages concurrency #328 remain unresolved; no bypass. Catalog 430 unchanged.",
+    "open_catalog_candidate_issues": 28,
+    "unmatched_backlog": [
+      "uploadthing-free"
+    ],
+    "note": "Rotation 10: 9/19 categories reviewed. New verified self-hosted candidates Hatchet, JobRunr OSS, Celery, Oban and Flipper Cloudless in canonical Issues #697-#701. Existing 23 catalog PRs exceed approved 3-PR capacity gate; Issues remain queued, no new PR or merge claimed. #695, #328, #457 merged through normal review; #696 remains open and proposes safe backlog reactivation. Main 430 services at 233d6c26bdf6fe2f2b02aa7023cd9812154511cc.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -7495,7 +7620,10 @@
       "ai-assistants",
       "ci-cd",
       "search",
-      "webhooks-events"
+      "webhooks-events",
+      "queues-jobs",
+      "feature-flags",
+      "analytics"
     ],
     "rotation_10_categories_remaining": [
       "static-hosting",
@@ -7506,10 +7634,7 @@
       "developer-tools",
       "auth-security",
       "observability",
-      "analytics",
       "ai-ml",
-      "queues-jobs",
-      "feature-flags",
       "tunneling-networking"
     ]
   }
