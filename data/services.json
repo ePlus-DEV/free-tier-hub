@@ -6567,5 +6567,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "sish-ssh-tunnel-self-hosted",
+    "name": "sish SSH Tunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source SSH tunneling server for HTTP(S), WebSockets and TCP forwarding with public/private aliases and SNI routing; no vendor-imposed tunnel or traffic quota when self-hosted.",
+    "watch_out": "Self-hosting requires a reachable server, DNS, SSH keys and optionally TLS certificates; compute, domains and bandwidth are not free. The separately offered managed tuns.sh service has its own terms and is not included.",
+    "pricing_url": "https://github.com/antoniomika/sish",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
