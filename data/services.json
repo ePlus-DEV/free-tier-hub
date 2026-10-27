@@ -6461,6 +6461,42 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "kamal-skiff-static-self-hosted",
+    "name": "Kamal Skiff Self-Hosted Static Sites",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed open-source static-site deployment tool built on Kamal and nginx with Git-based content updates; no software-hosting quotas when self-hosted.",
+    "watch_out": "Requires your own server, Docker, Git repository and networking; hosting, domain and bandwidth may cost money. Skiff is a deployment stack, not a free hosted static-site service.",
+    "pricing_url": "https://github.com/basecamp/kamal-skiff",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "kamal-deploy-self-hosted",
+    "name": "Kamal Deploy Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed open-source Docker web application deployment tool for self-managed servers; no software deployment-minute, application or server-count quota.",
+    "watch_out": "Not a free hosted PaaS: requires your own Docker-capable servers, SSH access, registry and infrastructure, which may cost money. App/runtime and third-party services are billed separately.",
+    "pricing_url": "https://kamal-deploy.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "influxdb-3-core-self-hosted",
+    "name": "InfluxDB 3 Core Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free MIT/Apache-2.0 open-source single-node time-series database software with no license fees, usage fees, or telemetry requirement; self-hosted storage and compute are user-provided.",
+    "watch_out": "Core queries approximately 72 hours of data by default due to Parquet query-file limits; high availability, multi-node and enterprise features require paid products. Own server, storage and object-storage costs apply; not a free managed cloud tier.",
+    "pricing_url": "https://www.influxdata.com/products/influxdb-core/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "sglang-self-hosted",
     "name": "SGLang Self-Hosted LLM Serving",
     "category": "ai-ml",
