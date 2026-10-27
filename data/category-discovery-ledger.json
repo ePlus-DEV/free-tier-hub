@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "31577b550d44214726b16a1aa64bac9306fb2350",
+  "source_main_sha": "604863cb428c32eab806637dd61f763007969185",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -53,9 +53,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 1
     },
     {
@@ -64,9 +64,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0
     },
     {
@@ -77,7 +77,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 1
     },
     {
@@ -97,9 +97,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0
     },
     {
@@ -110,19 +110,19 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0
     },
     {
       "category": "analytics",
-      "service_count": 22,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 23,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "dns-cdn",
@@ -143,19 +143,19 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0
     },
     {
       "category": "ai-assistants",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 3
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 2
     },
     {
       "category": "queues-jobs",
@@ -192,14 +192,14 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 16,
+      "service_count": 17,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2
+      "open_catalog_prs": 1
     },
     {
       "category": "webhooks-events",
@@ -7500,6 +7500,215 @@
           "reason": "Already catalogued; no duplicate listing."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "databases",
+      "rotation": 10,
+      "searches": [
+        "Apache Pinot Apache-2.0 license",
+        "Apache Pinot real-time OLAP deployment",
+        "DuckDB and Cassandra dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/apache/pinot",
+        "https://pinot.apache.org/"
+      ],
+      "candidates": [
+        {
+          "id": "apache-pinot-self-hosted",
+          "status": "Issue-open-await-capacity",
+          "issue": 714,
+          "reason": "Apache-2.0 self-managed real-time OLAP; hosted infrastructure excluded"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "DuckDB",
+          "reason": "DuckDB already catalogued; Cassandra already has PR #654"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "storage",
+      "rotation": 10,
+      "searches": [
+        "Syncthing official MPL-2.0 and encryption",
+        "Duplicati hosted Free versus OSS",
+        "Restic Kopia Rclone dedupe"
+      ],
+      "official_sources": [
+        "https://syncthing.net/",
+        "https://github.com/syncthing/syncthing",
+        "https://duplicati.com/"
+      ],
+      "candidates": [
+        {
+          "id": "syncthing-self-hosted-sync",
+          "status": "Issue-open-await-capacity",
+          "issue": 710,
+          "reason": "MPL-2.0 encrypted P2P file sync; not hosted storage or backup"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Duplicati",
+          "reason": "Duplicati hosted plan and OSS scope need further verification; Restic/Kopia/Rclone already catalogued"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "developer-tools",
+      "rotation": 10,
+      "searches": [
+        "HTTPie CLI BSD-3-Clause free",
+        "mise MIT tool manager",
+        "Hurl Bruno Postman dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/httpie/cli",
+        "https://github.com/jdx/mise"
+      ],
+      "candidates": [
+        {
+          "id": "httpie-cli-open-source",
+          "status": "Issue-open-await-capacity",
+          "issue": 717,
+          "reason": "BSD-3-Clause local HTTP client; no hosted API service"
+        },
+        {
+          "id": "mise-dev-tool-manager",
+          "status": "Issue-open-await-capacity",
+          "issue": 718,
+          "reason": "MIT local dev version/environment/task manager"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hurl,",
+          "reason": "Hurl, Bruno, Postman already catalogued"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "auth-security",
+      "rotation": 10,
+      "searches": [
+        "Gitleaks MIT secret scanner",
+        "Trivy Apache-2.0 vulnerability scanner",
+        "Authelia Authentik OpenFGA dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/gitleaks/gitleaks",
+        "https://github.com/aquasecurity/trivy"
+      ],
+      "candidates": [
+        {
+          "id": "gitleaks-open-source",
+          "status": "Issue-open-await-capacity",
+          "issue": 715,
+          "reason": "MIT local secret scanning with false-positive caveat"
+        },
+        {
+          "id": "trivy-open-source-scanner",
+          "status": "Issue-open-await-capacity",
+          "issue": 716,
+          "reason": "Apache-2.0 container/repo security scanner"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Authelia,",
+          "reason": "Authelia, Authentik, OpenFGA already catalogued"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "observability",
+      "rotation": 10,
+      "searches": [
+        "Fluent Bit Apache-2.0 license",
+        "Fluent Bit logs metrics traces pipeline",
+        "Grafana Alloy OpenTelemetry Collector dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/fluent/fluent-bit"
+      ],
+      "candidates": [
+        {
+          "id": "fluent-bit-self-hosted",
+          "status": "Issue-open-await-capacity",
+          "issue": 713,
+          "reason": "Apache-2.0 telemetry collector; storage not included"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Grafana",
+          "reason": "Grafana Alloy and OpenTelemetry Collector already catalogued"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ai-ml",
+      "rotation": 10,
+      "searches": [
+        "Ollama MIT local inference",
+        "Ollama official docs local models",
+        "Flowise official EOL 2026"
+      ],
+      "official_sources": [
+        "https://github.com/ollama/ollama",
+        "https://docs.ollama.com/",
+        "https://flowiseai.com/sunset"
+      ],
+      "candidates": [
+        {
+          "id": "ollama-local-model-runner",
+          "status": "Issue-open-await-capacity",
+          "issue": 712,
+          "reason": "MIT local model runner; model weights have separate licenses"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Flowise",
+          "reason": "Flowise archived/EOL August 2026; vLLM already catalogued"
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "tunneling-networking",
+      "rotation": 10,
+      "searches": [
+        "strongSwan official GPLv2 license",
+        "strongSwan IKEv2 features",
+        "OpenVPN Community Edition current terms"
+      ],
+      "official_sources": [
+        "https://www.strongswan.org/license.html",
+        "https://strongswan.org/"
+      ],
+      "candidates": [
+        {
+          "id": "strongswan-self-hosted-vpn",
+          "status": "Issue-open-await-capacity",
+          "issue": 711,
+          "reason": "GPLv2 IPsec VPN self-hosted; optional commercial support separate"
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenVPN",
+          "reason": "OpenVPN Community Edition official page inaccessible, reverify; WireGuard PR #635 already exists"
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7561,12 +7770,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 434,
+    "total_services": 437,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 30,
+    "open_catalog_candidate_issues": 36,
     "unmatched_backlog": [],
-    "note": "Rotation 10: 12/19 categories reviewed. New verified candidates NGINX OSS #703, Apache HTTP Server #704, lighttpd #705, YunoHost #706, HelioHost Johnny #707 and Fn Project #708 are canonical Issues, queued because 19 existing catalog PRs exceed the 3-PR capacity gate. Main 434 services at 31577b550d44214726b16a1aa64bac9306fb2350; 222 entries older than 7 days. All 19 categories refreshed from main. No new PR or merge claimed. Existing reviewed backlog consumer and non-force PR recovery remain active; exact-head CI/review are required.",
+    "note": "Rotation 10: 19/19 categories reviewed on 2026-10-27 UTC. Nine new canonical Issues #710-#718 verified across seven categories; all await queue capacity, no new PR or merge claimed. Main 437 services at 604863cb428c32eab806637dd61f763007969185; 222 entries older than seven days. 16 existing catalog PRs exceed the three-PR capacity gate. Main Pages deployment #40450269068 failed due to an in-progress deployment; production not verified at this HEAD.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -7764,9 +7973,7 @@
       "analytics",
       "static-hosting",
       "app-hosting",
-      "serverless"
-    ],
-    "rotation_10_categories_remaining": [
+      "serverless",
       "databases",
       "storage",
       "developer-tools",
@@ -7774,6 +7981,7 @@
       "observability",
       "ai-ml",
       "tunneling-networking"
-    ]
+    ],
+    "rotation_10_categories_remaining": []
   }
 }
