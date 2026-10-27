@@ -5261,6 +5261,42 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "apache-dolphinscheduler-self-hosted",
+    "name": "Apache DolphinScheduler Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 distributed workflow scheduler with visual DAG authoring, task dependencies and supported SQL, shell and data-processing tasks; no software license quota.",
+    "watch_out": "Self-hosting needs a database, compute and operational maintenance. External execution engines, cloud resources and managed hosting may incur costs.",
+    "pricing_url": "https://dolphinscheduler.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "grafana-tempo-self-hosted",
+    "name": "Grafana Tempo Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source distributed tracing backend with OpenTelemetry ingestion and TraceQL queries; self-managed deployments have no vendor-imposed trace-count license quota.",
+    "watch_out": "You supply object storage, compute, networking and Grafana visualization; hosted Grafana Cloud plans are separate. AGPL-3.0 obligations apply; check Apache-2.0 exceptions in LICENSING.md.",
+    "pricing_url": "https://github.com/grafana/tempo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "openchoreo-self-hosted",
+    "name": "OpenChoreo Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes developer platform with self-service application deployment, CI/CD, GitOps, developer portal and observability; no software subscription fee.",
+    "watch_out": "Requires Kubernetes and operational resources for control, data, CI and observability planes; external cloud services and compute are not included.",
+    "pricing_url": "https://github.com/openchoreo/openchoreo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
     "id": "mitmproxy-open-source",
     "name": "mitmproxy Open Source",
     "category": "developer-tools",
