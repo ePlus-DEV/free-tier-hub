@@ -10,7 +10,7 @@ on:
       - tests/**
       - package.json
       - .nvmrc
-      - .github/workflows/validate-catalog.yml
+      - .github/workflows/**
   push:
     branches: [main, 'catalog/**']
     paths:
