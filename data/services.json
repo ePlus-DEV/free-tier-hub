@@ -5607,5 +5607,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "lighttpd-self-hosted",
+    "name": "lighttpd Self-Hosted Static Server",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Revised-BSD-licensed lightweight self-hosted HTTP server for static files and websites, with virtual hosts, TLS and optional FastCGI/CGI; no vendor software quota on traffic or websites.",
+    "watch_out": "Requires your own server, network, certificates and maintenance. No managed hosting, free bandwidth or guaranteed uptime is included; advanced dynamic applications require separate components.",
+    "pricing_url": "https://www.lighttpd.net/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
