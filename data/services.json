@@ -5751,5 +5751,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apache-camel-k-self-hosted",
+    "name": "Apache Camel K Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes-native integration operator; run Camel DSL integrations and event-driven workloads on self-managed Kubernetes without a vendor software usage quota.",
+    "watch_out": "Requires a Kubernetes cluster and container build/deployment infrastructure; hosting, networking, observability and third-party integration costs are separate. This is self-managed serverless integration, not a free managed cloud function allowance.",
+    "pricing_url": "https://camel.apache.org/camel-k/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
