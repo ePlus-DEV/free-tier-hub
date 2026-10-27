@@ -5523,5 +5523,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "hatchet-self-hosted",
+    "name": "Hatchet Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted MIT-licensed workflow orchestration engine for durable background tasks, scheduled jobs, retries and event-driven workflows; no software subscription or published per-run quota for the self-hosted deployment.",
+    "watch_out": "Requires operating Hatchet server, PostgreSQL, workers and infrastructure. Hatchet Cloud pricing and payment-card requirements are separate; this entry does not include managed cloud runs.",
+    "pricing_url": "https://github.com/hatchet-dev/hatchet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
