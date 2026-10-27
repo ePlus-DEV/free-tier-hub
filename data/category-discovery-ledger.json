@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "d3a2b3ddce329ba67c0fabd41b65ea29514a29ac",
+  "source_main_sha": "6cf1c056791f6f3eb53660de96d61dda7fd0f323",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -79,9 +79,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 3
     },
     {
       "category": "auth-security",
@@ -161,7 +161,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "feature-flags",
@@ -191,7 +191,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     }
   ],
   "discovery_log": [
@@ -7139,6 +7139,104 @@
           "reason": "Extension sunset and archived in May 2026; do not publish as new active service."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ci-cd",
+      "queries": [
+        "open source Kubernetes progressive delivery Argo Rollouts Apache-2.0",
+        "Agola CI Apache-2.0 self-hosted license maintenance"
+      ],
+      "official_sources": [
+        "https://github.com/argoproj/argo-rollouts",
+        "https://github.com/argoproj/argo-rollouts/blob/master/LICENSE",
+        "https://github.com/agola-io/agola",
+        "https://github.com/agola-io/agola/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "argo-rollouts-self-hosted",
+          "status": "PR-open-exact-head-CI-incomplete",
+          "issue": 685,
+          "pr": 691,
+          "reason": "Apache-2.0 Kubernetes progressive delivery; requires own cluster; validation succeeded but Pages build cancelled at initial HEAD."
+        },
+        {
+          "id": "agola-ci-self-hosted",
+          "status": "PR-open-exact-head-CI-incomplete",
+          "issue": 686,
+          "pr": 690,
+          "reason": "Apache-2.0 self-hosted CI/CD; 2025 last upstream update disclosed; validation succeeded, Pages build cancelled."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Argo CD and Flagger",
+          "reason": "Already catalogued; separate Argo Rollouts controller has distinct blue-green/canary deployment capabilities."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "search",
+      "queries": [
+        "Tantivy MIT Rust full text indexing search library",
+        "Bleve Apache 2 Go full text search library"
+      ],
+      "official_sources": [
+        "https://github.com/quickwit-oss/tantivy",
+        "https://github.com/quickwit-oss/tantivy/blob/main/LICENSE",
+        "https://github.com/blevesearch/bleve",
+        "https://github.com/blevesearch/bleve/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "tantivy-open-source-search",
+          "status": "PR-open-scope-review-required",
+          "issue": 687,
+          "pr": 693,
+          "reason": "MIT embedded Rust search library; previously excluded as not a hosted server; reconsidered as explicitly labelled library alongside existing Orama library, requires scope review. Validation passed, Pages build cancelled."
+        },
+        {
+          "id": "bleve-open-source-search",
+          "status": "PR-open-scope-review-required",
+          "issue": 688,
+          "pr": 694,
+          "reason": "Apache-2.0 embedded Go search library, not managed search; requires category-scope review. Validation passed; Pages build queued."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Novu Free",
+          "reason": "Previously merged in PR #39, absent from current catalog; investigate removal history before treating as new."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "webhooks-events",
+      "queries": [
+        "Apprise API self-hosted notification REST gateway MIT license"
+      ],
+      "official_sources": [
+        "https://github.com/caronc/apprise-api",
+        "https://github.com/caronc/apprise-api/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "apprise-api-self-hosted",
+          "status": "PR-open-exact-head-CI-incomplete",
+          "issue": 689,
+          "pr": 692,
+          "reason": "MIT self-hosted REST notification fanout gateway; free software, downstream services may charge, auth off by default. Validation succeeded, Pages build cancelled."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Novu hosted Free",
+          "reason": "Historical merged PR #39; cannot call a genuinely new provider without investigating later removal and changed plan."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7203,9 +7301,9 @@
     "total_services": 430,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 18,
+    "open_catalog_candidate_issues": 23,
     "unmatched_backlog": [],
-    "note": "Rotation 10: 3/19 categories, 5 new Issues #674-#676 #678-#679 and PRs #677 #680-#683. All five exact-head validation/build SUCCESS and bot APPROVED but no GitHub-confirmed merge; suspected CodeRabbit SKIPPED gate failure documented in Issue #684. Main source snapshot remains 430; no direct main push or bypass.",
+    "note": "Rotation 10: 6/19 categories. Five new Issues #685-#689 and auto-generated PRs #690-#694. All open; initial exact-head validation SUCCESS, Pages builds CANCELLED or PENDING, no approval or merge. Search libraries #693/#694 require scope review against prior Tantivy exclusion. Existing CodeRabbit skipped gate #684 and global Pages concurrency #328 remain unresolved; no bypass. Catalog 430 unchanged.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -7394,7 +7492,10 @@
     "rotation_10_categories_reviewed": [
       "cloud-vps",
       "dns-cdn",
-      "ai-assistants"
+      "ai-assistants",
+      "ci-cd",
+      "search",
+      "webhooks-events"
     ],
     "rotation_10_categories_remaining": [
       "static-hosting",
@@ -7403,16 +7504,13 @@
       "databases",
       "storage",
       "developer-tools",
-      "ci-cd",
       "auth-security",
       "observability",
       "analytics",
       "ai-ml",
       "queues-jobs",
-      "search",
       "feature-flags",
-      "tunneling-networking",
-      "webhooks-events"
+      "tunneling-networking"
     ]
   }
 }
