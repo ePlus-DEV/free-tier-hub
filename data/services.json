@@ -6377,6 +6377,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "dozzle-self-hosted",
+    "name": "Dozzle Self-Hosted Docker Log Viewer",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted real-time container log viewer for Docker, Docker Swarm, Kubernetes and Podman; free forever with no vendor-imposed log-viewing quota or account requirement.",
+    "watch_out": "Live log viewer, not a long-term log archive. Requires your own container host; Docker socket access is privileged and must be secured. Hosting and storage costs are separate.",
+    "pricing_url": "https://dozzle.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "victorialogs-self-hosted",
+    "name": "VictoriaLogs Community Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source single-node and cluster log database with LogsQL search, binary/Docker releases and no vendor-set ingestion or retention quota in Community binaries.",
+    "watch_out": "Self-hosted storage, compute, backups and access protection are your responsibility. VictoriaMetrics Enterprise binaries, enterprise support and additional enterprise features require a separate paid license.",
+    "pricing_url": "https://docs.victoriametrics.com/victorialogs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "hyperdx-self-hosted",
     "name": "HyperDX Open-Source Self-Hosted Observability",
     "category": "observability",
