@@ -6111,5 +6111,17 @@
     "credit_card": "check",
     "commercial_use": "no",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "cloudflare-zero-trust-free",
+    "name": "Cloudflare Zero Trust Free",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free-forever Cloudflare Zero Trust / Access and Gateway for teams up to 50 users; includes private-app access and secure web gateway with up to 24-hour standard log retention.",
+    "watch_out": "Cloudflare requires payment details during Zero Trust onboarding even for Free, with no charge for the free subscription. No paid-plan SLA; 24-hour log retention, community support and product-specific quotas. Separate from Cloudflare DNS, Workers and Pages.",
+    "pricing_url": "https://www.cloudflare.com/plans/zero-trust-services/",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
