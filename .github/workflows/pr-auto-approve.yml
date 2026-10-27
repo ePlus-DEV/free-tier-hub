@@ -230,7 +230,9 @@ jobs:
           jq -e 'any(.[]; .workflow == "Validate free tier catalog" and .name == "validate" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
           jq -e 'any(.[]; .workflow == "Build and deploy GitHub Pages" and .name == "Test and build static site" and .bucket == "pass")' <<<"$CHECKS" >/dev/null
           # Skip only known optional checks; never interpret skipped as PASS.
-          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or (.workflow == "Build and deploy GitHub Pages" and .name == "Deploy" and .bucket == "skipping") or (.workflow == "Request eplus-bot review" and .name == "request-review" and .bucket == "skipping"))' <<<"$CHECKS" >/dev/null
+          # Skip is safe only for allowlisted non-required checks. Never waive failed checks
+          # or the required exact-head catalog validation and site build passes above.
+          jq -e 'all(.[]; .workflow == "pr-auto-approve" or .bucket == "pass" or (.workflow == "Build and deploy GitHub Pages" and .name == "Deploy" and .bucket == "skipping") or (.name == "CodeRabbit" and .bucket == "skipping") or (.workflow == "Request eplus-bot review" and .name == "request-review" and .bucket == "skipping"))' <<<"$CHECKS" >/dev/null
           APPROVED="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/reviews" --paginate \
             --jq ".[] | select(.user.login == \"eplus-bot\" and .state == \"APPROVED\" and .commit_id == \"$EXPECTED_HEAD\") | .id" | tail -n 1)"
           test -n "$APPROVED"
