@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "07e887f0846398c9ec0b4cf32bdd913339012850",
+  "source_main_sha": "37de8c626dbb2e25dd1117c1819badba4b047ae2",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -125,27 +125,27 @@
     },
     {
       "category": "analytics",
-      "service_count": 26,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "dns-cdn",
-      "service_count": 24,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ai-ml",
@@ -209,15 +209,15 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 24,
+      "service_count": 25,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "webhooks-events",
@@ -9123,9 +9123,9 @@
         },
         {
           "id": "sish-ssh-tunnel-self-hosted",
-          "status": "pr-conflict",
+          "status": "catalogued",
           "issue": 883,
-          "reason": "Issue #883 retriggered safely; PR #887 exact-head CI SUCCESS and bot APPROVED but mergeable=false after main advanced; await non-force reconciliation and re-run checks.",
+          "reason": "Official free/open-source terms verified; canonical Issue and PR, exact-head validation/build SUCCESS, eplus-bot APPROVED at final HEAD; GitHub auto-merged. ID confirmed in main 37de8c626dbb. Self-hosted infrastructure not included.",
           "pr": 887
         },
         {
@@ -9195,21 +9195,24 @@
       "candidates": [
         {
           "id": "knot-resolver-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 888,
-          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+          "reason": "Official free/open-source terms verified; canonical Issue and PR, exact-head validation/build SUCCESS, eplus-bot APPROVED at final HEAD; GitHub auto-merged. ID confirmed in main 37de8c626dbb. Self-hosted infrastructure not included.",
+          "pr": 892
         },
         {
           "id": "yadifa-authoritative-dns-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 889,
-          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+          "reason": "Official free/open-source terms verified; canonical Issue and PR, exact-head validation/build SUCCESS, eplus-bot APPROVED at final HEAD; GitHub auto-merged. ID confirmed in main 37de8c626dbb. Self-hosted infrastructure not included.",
+          "pr": 894
         },
         {
           "id": "pi-hole-dns-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 891,
-          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+          "reason": "Official free/open-source terms verified; canonical Issue and PR, exact-head validation/build SUCCESS, eplus-bot APPROVED at final HEAD; GitHub auto-merged. ID confirmed in main 37de8c626dbb. Self-hosted infrastructure not included.",
+          "pr": 893
         }
       ],
       "excluded": [
@@ -9233,9 +9236,10 @@
       "candidates": [
         {
           "id": "openreplay-open-source-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 890,
-          "reason": "Official Open-Source plan is free to self-host for low traffic, AGPLv3 with separately licensed Enterprise; no free managed hosting implied. Deduplicated against current catalog and historical Issues/PRs/branches."
+          "reason": "Official free/open-source terms verified; canonical Issue and PR, exact-head validation/build SUCCESS, eplus-bot APPROVED at final HEAD; GitHub auto-merged. ID confirmed in main 37de8c626dbb. Self-hosted infrastructure not included.",
+          "pr": 895
         }
       ],
       "excluded": [
@@ -9305,12 +9309,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 541,
+    "total_services": 546,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 13 7/19. Four new official-source verified candidates created as canonical Issues #888–#891; queue delivery and exact-head CI must be checked independently. Main snapshot 541 at 07e887f0. PR #887 remains conflicting and must reconcile without force push. No manual merge/deploy; no schedule changes.",
+    "note": "Rotation 13 7/19; main 546 at 37de8c626dbb. Four NEW services delivered via Issues #888–#891 and PRs #892–#895, all exact-head CI+bot approval and GitHub auto-merged. Prior conflicting sish PR #887 safely reconciled and auto-merged. Catalog delta +5 from 541. 220 stale >7d. No catalog Issue/PR open. Ledger PR is review-only; no direct main push, manual merge, deployment or cadence change.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
