@@ -5499,5 +5499,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "agola-ci-self-hosted",
+    "name": "Agola CI/CD Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-hosted CI/CD pipelines and runs using the Apache-2.0 Agola server and executors; no software license fee or hosted compute included.",
+    "watch_out": "Operator must provision compute, storage and runners; project activity is relatively infrequent (last official repository update in 2025), so evaluate maintenance and security before production.",
+    "pricing_url": "https://github.com/agola-io/agola",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
