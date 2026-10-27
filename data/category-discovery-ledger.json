@@ -7065,21 +7065,27 @@
       "candidates": [
         {
           "id": "bind9-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/674",
-          "reason": "Official free open-source license and self-hosted limits verified; canonical Issue created, awaiting queue PR exact-head CI and review."
+          "reason": "Canonical Issue and queue PR created. Exact-head validation/build SUCCESS and eplus-bot APPROVED; PR still OPEN. Auto-merge blocked by unexpected CodeRabbit SKIPPED check; see Issue #684. Do not count as merged.",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/677",
+          "exact_head": "a10753b2ab4bb9aaeffc08f79a79038de862397d"
         },
         {
           "id": "knot-dns-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/675",
-          "reason": "Official free open-source license and self-hosted limits verified; canonical Issue created, awaiting queue PR exact-head CI and review."
+          "reason": "Canonical Issue and queue PR created. Exact-head validation/build SUCCESS and eplus-bot APPROVED; PR still OPEN. Auto-merge blocked by unexpected CodeRabbit SKIPPED check; see Issue #684. Do not count as merged.",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/680",
+          "exact_head": "289fcf5d76e29af1a1547b4c0a6ee8c78c001a34"
         },
         {
           "id": "adguard-home-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/676",
-          "reason": "Official free open-source license and self-hosted limits verified; canonical Issue created, awaiting queue PR exact-head CI and review."
+          "reason": "Canonical Issue and queue PR created. Exact-head validation/build SUCCESS and eplus-bot APPROVED; PR still OPEN. Auto-merge blocked by unexpected CodeRabbit SKIPPED check; see Issue #684. Do not count as merged.",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/681",
+          "exact_head": "78c20241588e5be2086a4f3598386152d6f105ad"
         }
       ],
       "excluded": [
@@ -7108,15 +7114,19 @@
       "candidates": [
         {
           "id": "opencode-open-source",
-          "status": "issue",
+          "status": "pr",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/678",
-          "reason": "Official recurring free software or browser assistant verified; canonical Issue created, awaiting queue PR exact-head CI and review."
+          "reason": "Canonical Issue and queue PR created. Exact-head validation/build SUCCESS and eplus-bot APPROVED; PR still OPEN. Auto-merge blocked by unexpected CodeRabbit SKIPPED check; see Issue #684. Do not count as merged.",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/682",
+          "exact_head": "d03dd15110783e245fbebe7a41499d5e81daab7e"
         },
         {
           "id": "brave-leo-free",
-          "status": "issue",
+          "status": "pr",
           "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/679",
-          "reason": "Official recurring free software or browser assistant verified; canonical Issue created, awaiting queue PR exact-head CI and review."
+          "reason": "Canonical Issue and queue PR created. Exact-head validation/build SUCCESS and eplus-bot APPROVED; PR still OPEN. Auto-merge blocked by unexpected CodeRabbit SKIPPED check; see Issue #684. Do not count as merged.",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/683",
+          "exact_head": "8f56d589f5536f531b15a034fcf4847f676d656f"
         }
       ],
       "excluded": [
@@ -7195,7 +7205,7 @@
     "stale_over_7d": 222,
     "open_catalog_candidate_issues": 18,
     "unmatched_backlog": [],
-    "note": "Rotation 10 started; 5 new verified candidates filed as canonical Issues #674-#676, #678-#679. No new service counted merged until latest main catalog, exact-head CI, approval and GitHub merge confirmed. Current source main d3a2b3ddce329ba67c0fabd41b65ea29514a29ac. Existing open PR blockers unchanged; preserve branch ancestry, no force pushes.",
+    "note": "Rotation 10: 3/19 categories, 5 new Issues #674-#676 #678-#679 and PRs #677 #680-#683. All five exact-head validation/build SUCCESS and bot APPROVED but no GitHub-confirmed merge; suspected CodeRabbit SKIPPED gate failure documented in Issue #684. Main source snapshot remains 430; no direct main push or bypass.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
