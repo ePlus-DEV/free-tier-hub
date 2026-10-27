@@ -63,6 +63,17 @@ function breadcrumb(crumbs) {
     itemListElement: crumbs.map(([name, item], i) =>
       ({ '@type': 'ListItem', position: i + 1, name, item })) };
 }
+// Preview-only explicit classification. Unlisted entries remain unclassified rather than guessed.
+const HOSTING_MODELS = {
+  'cloudflare-pages': 'cloud', 'vercel': 'cloud', 'netlify': 'cloud',
+  'github-pages': 'cloud', 'firebase-hosting': 'cloud', 'azure-static-web-apps': 'cloud',
+  'postgresql': 'self-hosted', 'mariadb': 'self-hosted', 'clickhouse': 'self-hosted',
+  'pi-hole-dns': 'self-hosted', 'open-webui': 'self-hosted',
+  'appwrite': 'hybrid', 'sentry': 'hybrid'
+};
+const hostingModel = item => HOSTING_MODELS[item.id] || 'unclassified';
+const HOSTING_LABELS = {cloud: 'Cloud free tier', 'self-hosted': 'Self-hosted', hybrid: 'Hybrid', unclassified: 'Not yet classified'};
+
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
   const group = CATEGORY_NAMES[item.category];
@@ -70,6 +81,7 @@ function card(item, absolute) {
   return [
     '<article class="service-card" data-service-id="', tag(item.id),
     '" data-category="', tag(item.category),
+    '" data-hosting-model="', hostingModel(item),
     '" data-added-at="', tag(item.added_at || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
@@ -78,7 +90,8 @@ function card(item, absolute) {
     '<div class="card-top"><span class="service-icon" aria-hidden="true">',
     serviceLogo(item), '</span><div class="card-identity"><h3><a href="', tag(dest),
     '">', tag(item.name), '</a></h3><span class="eyebrow">',
-    tag(CATEGORY_LABELS[item.category]), '</span></div>',
+    tag(CATEGORY_LABELS[item.category]), '</span><span class="hosting-model-label" data-mode="', hostingModel(item), '">',
+    HOSTING_LABELS[hostingModel(item)], '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
@@ -192,6 +205,15 @@ function homePage(items, absolute, counts) {
     '<div class="catalog-main"><div class="catalog-toolbar">',
     '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
     '</div>',
+    '<div class="hosting-model-bar" role="group" aria-label="Hosting model">',
+    '<span class="hosting-model-title">Deployment model</span>',
+    '<button type="button" class="hosting-model-chip" data-hosting-filter="" aria-pressed="true">All</button>',
+    '<button type="button" class="hosting-model-chip" data-hosting-filter="cloud" aria-pressed="false">Cloud free</button>',
+    '<button type="button" class="hosting-model-chip" data-hosting-filter="self-hosted" aria-pressed="false">Self-hosted</button>',
+    '<button type="button" class="hosting-model-chip" data-hosting-filter="hybrid" aria-pressed="false">Hybrid</button>',
+    '<button type="button" class="hosting-model-chip" data-hosting-filter="unclassified" aria-pressed="false">Unclassified</button>',
+    '</div>',
+    '<p class="hosting-model-note">Self-hosted software may be free, but infrastructure is not included. Classification is being verified progressively.</p>',
     '<div class="search-filter-row">',
     '<form class="hero-search directory-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
