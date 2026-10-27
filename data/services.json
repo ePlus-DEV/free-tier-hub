@@ -5931,5 +5931,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "caprover-self-hosted-paas",
+    "name": "CapRover Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-forever self-hosted Docker-based app deployment platform with HTTPS and one-click app deployment; no vendor-imposed app or deployment quota in the free self-hosted software.",
+    "watch_out": "Requires your own server, Docker/Swarm, domain and infrastructure; these costs are not included. The CapRover license appendix requires modifications of free features to remain free/open-source and restricts redistribution of paid versions; paid hosted features are separate.",
+    "pricing_url": "https://caprover.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
