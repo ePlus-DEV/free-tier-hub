@@ -1,29 +1,29 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "93628ae353b01337dc5ba3adb56c5b6aad9ca63e",
+  "source_main_sha": "b3cd9395915aed17ee37dc870f14ede18249533f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 27,
+      "service_count": 28,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "app-hosting",
-      "service_count": 28,
+      "service_count": 29,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -53,13 +53,13 @@
     },
     {
       "category": "databases",
-      "service_count": 43,
+      "service_count": 44,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -84,8 +84,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "ci-cd",
@@ -156,8 +156,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "ai-assistants",
@@ -8918,9 +8918,10 @@
       "candidates": [
         {
           "id": "kamal-skiff-static-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 868,
-          "reason": "MIT-licensed self-hosted nginx/static-site deployer; hosting infrastructure not included; canonical Issue #868, delivery PR/CI not yet confirmed."
+          "reason": "Verified on latest main b3cd9395915a; canonical Issue #868 → PR #870 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "pr": 870
         }
       ],
       "excluded": [
@@ -8941,9 +8942,10 @@
       "candidates": [
         {
           "id": "kamal-deploy-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 867,
-          "reason": "MIT-licensed Docker app deployer, self-hosted only; Issue #867 created; PR/CI pending."
+          "reason": "Verified on latest main b3cd9395915a; canonical Issue #867 → PR #874 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "pr": 874
         }
       ],
       "excluded": [
@@ -8965,9 +8967,10 @@
       "candidates": [
         {
           "id": "influxdb-3-core-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 866,
-          "reason": "Free MIT/Apache-2.0 self-hosted time-series engine; approx 72-hour default query window, not retention; Issue #866 created, delivery PR/CI pending."
+          "reason": "Verified on latest main b3cd9395915a; canonical Issue #866 → PR #869 merged via GitHub automation; exact-head CI and bot approval confirmed for delivered PR.",
+          "pr": 869
         }
       ],
       "excluded": [
@@ -8991,9 +8994,10 @@
       "candidates": [
         {
           "id": "sglang-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue": 871,
-          "reason": "Apache-2.0 self-hosted LLM inference framework; model licenses and GPU costs separate. Issue #871 created; PR/CI pending."
+          "reason": "Canonical Issue #871 → PR #873 remains open; exact-head CI/review/mergeability must be rechecked after any reconciliation; not yet on main.",
+          "pr": 873
         }
       ],
       "excluded": []
@@ -9009,9 +9013,10 @@
       "candidates": [
         {
           "id": "wiremock-open-source-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue": 872,
-          "reason": "Apache-2.0 standalone API mocking server; distinct from hosted WireMock Cloud. Issue #872 created; PR/CI pending."
+          "reason": "Canonical Issue #872 → PR #875 remains open; exact-head CI/review/mergeability must be rechecked after any reconciliation; not yet on main.",
+          "pr": 875
         }
       ],
       "excluded": [
@@ -9081,12 +9086,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 531,
+    "total_services": 534,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 19/19 categories reviewed from actual main 93628ae353b0 (531 services). Five new verified open-source software candidates submitted as canonical Issues #866-#868 and #871-#872. Queue jobs, PRs, exact-head CI and merges are independently tracked; do not count these Issues as merged. The first Issue attempts failed due to UTC date mismatch (future last_checked); corrected to 2026-10-27 without weakening validation. Pending candidates remain open for queue retry.",
+    "note": "Rotation 12: 19/19 current categories researched. Main b3cd9395915a contains 534 services. Newly merged: Kamal Skiff #868→#870 and Kamal Deploy #867→#874 (exact-head CI and eplus-bot approvals verified). InfluxDB Core #866→#869, SGLang #871→#873, WireMock #872→#875 remain open and must pass exact-head checks after any safe reconciliation. The first Issues failed because last_checked was UTC-future; corrected to 2026-10-27, no tests bypassed. Backlog 29/30 IDs catalogued, uploadthing-free aliases existing uploadthing-2gb-app. No manual merge, direct main push, production deploy or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
