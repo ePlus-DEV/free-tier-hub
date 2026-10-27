@@ -6327,5 +6327,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "pomerium-core-self-hosted",
+    "name": "Pomerium Core Self-Hosted Identity-Aware Proxy",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-managed identity-aware reverse proxy for application access policies and OIDC identity-provider integration; no software subscription or per-user vendor quota for Core.",
+    "watch_out": "Operate TLS, DNS, IdP, certificates and deployment infrastructure yourself. Pomerium Zero managed control plane and Pomerium Enterprise governance features are separate offerings with their own terms and fees.",
+    "pricing_url": "https://www.pomerium.com/docs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
