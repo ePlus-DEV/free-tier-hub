@@ -2,6 +2,10 @@ name: Consume reviewed catalog backlog
 
 on:
   workflow_dispatch:
+  # Restore one queued candidate when a trusted PR merges into main.
+  # Does not change the hourly fallback cadence or the 3-PR limit.
+  pull_request:
+    types: [closed]
   schedule:
     - cron: '23 * * * *'
 
@@ -16,11 +20,15 @@ concurrency:
 
 jobs:
   consume:
+    # Never run on PR closure without a merge, on forks, or into other bases.
+    # The job only checks out reviewed main (never the proposed PR branch).
+    if: ${{ github.event_name != 'pull_request' || (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.repo.full_name == github.repository) }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@v7
