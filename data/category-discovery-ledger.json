@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "233d6c26bdf6fe2f2b02aa7023cd9812154511cc",
+  "source_main_sha": "31577b550d44214726b16a1aa64bac9306fb2350",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -9,19 +9,21 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 0
     },
     {
       "category": "app-hosting",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 1
     },
     {
       "category": "serverless",
@@ -29,9 +31,10 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 0
     },
     {
       "category": "cloud-vps",
@@ -41,7 +44,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "databases",
@@ -51,19 +55,19 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1
     },
     {
       "category": "storage",
       "service_count": 24,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
-      "uncatalogued_backlog": [
-        "uploadthing-free"
-      ],
+      "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "developer-tools",
@@ -73,7 +77,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1
     },
     {
       "category": "ci-cd",
@@ -83,7 +88,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 3
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 3
     },
     {
       "category": "auth-security",
@@ -93,17 +99,19 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "observability",
-      "service_count": 35,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 36,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "analytics",
@@ -113,7 +121,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1
     },
     {
       "category": "dns-cdn",
@@ -123,7 +132,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 3
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 3
     },
     {
       "category": "ai-ml",
@@ -133,27 +143,30 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "ai-assistants",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 4
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 3
     },
     {
       "category": "queues-jobs",
-      "service_count": 29,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 30,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 6
+      "open_catalog_candidate_issues": 5,
+      "open_catalog_prs": 1
     },
     {
       "category": "search",
@@ -163,7 +176,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 2
     },
     {
       "category": "feature-flags",
@@ -173,7 +187,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 0
     },
     {
       "category": "tunneling-networking",
@@ -183,7 +198,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 2
     },
     {
       "category": "webhooks-events",
@@ -193,7 +209,8 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1
     }
   ],
   "discovery_log": [
@@ -7360,6 +7377,129 @@
           "reason": "Already in current catalog; no new eligible distinct plan verified."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "static-hosting",
+      "rotation": 10,
+      "searches": [
+        "NGINX OSS BSD-2-Clause static hosting current official docs",
+        "Apache HTTP Server 2.4 DocumentRoot Apache-2.0 static hosting",
+        "lighttpd revised BSD license and official static server docs",
+        "Dedupe main services, historical ledger, Issues, PRs and catalog/add branches"
+      ],
+      "official_sources": [
+        "https://nginx.org/en/",
+        "https://github.com/nginx/nginx",
+        "https://httpd.apache.org/docs/current/en/getting-started.html",
+        "https://www.apache.org/licenses/",
+        "https://www.lighttpd.net/"
+      ],
+      "candidates": [
+        {
+          "id": "nginx-oss-static",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 703,
+          "reason": "Verified BSD-2-Clause self-hosted static web server; no vendor traffic quota, no card, commercial permitted; distinct from Caddy and hosted NGINX Plus."
+        },
+        {
+          "id": "apache-http-server-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 704,
+          "reason": "Apache-2.0 self-hosted static DocumentRoot hosting; no vendor traffic quota or card; distinct from Caddy/NGINX."
+        },
+        {
+          "id": "lighttpd-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 705,
+          "reason": "Revised BSD lightweight static web server; no vendor traffic quota or card; infrastructure separate."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "NGINX Plus",
+          "reason": "Commercial paid product, not the OSS static server entry."
+        },
+        {
+          "name": "Hugo",
+          "reason": "Static-site generator alone does not provide hosting; excluded from static-hosting as separate listing."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "app-hosting",
+      "rotation": 10,
+      "searches": [
+        "YunoHost AGPLv3 free Debian-based app hosting current official FAQ",
+        "HelioHost Johnny free hosting official signup availability quotas and March 2026 commercial terms",
+        "Dedupe main catalog, all-state Issues/PRs, branches and backlog"
+      ],
+      "official_sources": [
+        "https://doc.yunohost.org/en/community/faq/",
+        "https://doc.yunohost.org/en/admin/what_is_yunohost/",
+        "https://heliohost.org/signup/",
+        "https://wiki.helionet.org/What_HelioHost_Offers",
+        "https://helionet.org/index/topic/67237-terms-update/"
+      ],
+      "candidates": [
+        {
+          "id": "yunohost-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 706,
+          "reason": "Free AGPL-3.0 self-hosted multi-app platform with no vendor app-count quota; requires own infrastructure and checking licenses of packaged apps."
+        },
+        {
+          "id": "heliohost-johnny-free",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 707,
+          "reason": "Official free Johnny shared hosting with 1 GB storage and five domains; signup windows capacity-limited, business use conditional, card status unverified (check)."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "HelioHost Tommy",
+          "reason": "One-time donation required to obtain account; not counted as zero-payment free hosting."
+        },
+        {
+          "name": "HelioHost Morty",
+          "reason": "Monthly paid hosting, not an ongoing zero-cost tier."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "serverless",
+      "rotation": 10,
+      "searches": [
+        "Fn Project Apache-2.0 container-native FaaS official repository and 2026 maintenance",
+        "OpenFaaS Community commercial 60-day restriction versus self-hosted alternatives",
+        "Dedupe existing Fission, Knative, Apache OpenWhisk, Nuclio, KEDA and OpenFunction"
+      ],
+      "official_sources": [
+        "https://github.com/fnproject/fn",
+        "https://fnproject.io/",
+        "https://github.com/fnproject/docs",
+        "https://www.openfaas.com/pricing/"
+      ],
+      "candidates": [
+        {
+          "id": "fn-project-self-hosted",
+          "status": "Issue-queued-capacity-blocked",
+          "issue_number": 708,
+          "reason": "Apache-2.0 self-hosted Docker/Podman FaaS with 2026 code activity, no software execution quota or card; own infrastructure required."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenFaaS Community",
+          "reason": "Previously verified production/commercial evaluation restriction; do not list as perpetual commercial free tier."
+        },
+        {
+          "name": "Fission, Knative Serving, Apache OpenWhisk, Nuclio, KEDA, OpenFunction",
+          "reason": "Already catalogued; no duplicate listing."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7421,12 +7561,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 430,
+    "total_services": 434,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 28,
+    "open_catalog_candidate_issues": 30,
     "unmatched_backlog": [],
-    "note": "Rotation 10: 9/19 categories reviewed. New verified self-hosted candidates Hatchet, JobRunr OSS, Celery, Oban and Flipper Cloudless in canonical Issues #697-#701. Existing 23 catalog PRs exceed approved 3-PR capacity gate; Issues remain queued, no new PR or merge claimed. #695, #328, #457 merged through normal review; #696 remains open and proposes safe backlog reactivation. Main 430 services at 233d6c26bdf6fe2f2b02aa7023cd9812154511cc. The backlog ID uploadthing-free is a documented alias of catalogued uploadthing-2gb-app, not an unmatched service.",
+    "note": "Rotation 10: 12/19 categories reviewed. New verified candidates NGINX OSS #703, Apache HTTP Server #704, lighttpd #705, YunoHost #706, HelioHost Johnny #707 and Fn Project #708 are canonical Issues, queued because 19 existing catalog PRs exceed the 3-PR capacity gate. Main 434 services at 31577b550d44214726b16a1aa64bac9306fb2350; 222 entries older than 7 days. All 19 categories refreshed from main. No new PR or merge claimed. Existing reviewed backlog consumer and non-force PR recovery remain active; exact-head CI/review are required.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -7621,12 +7761,12 @@
       "webhooks-events",
       "queues-jobs",
       "feature-flags",
-      "analytics"
-    ],
-    "rotation_10_categories_remaining": [
+      "analytics",
       "static-hosting",
       "app-hosting",
-      "serverless",
+      "serverless"
+    ],
+    "rotation_10_categories_remaining": [
       "databases",
       "storage",
       "developer-tools",
