@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "e055cad615d38f1f6c805c01d9b7fe44f43a3d4f",
+  "source_main_sha": "93628ae353b01337dc5ba3adb56c5b6aad9ca63e",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -125,15 +125,15 @@
     },
     {
       "category": "analytics",
-      "service_count": 24,
+      "service_count": 26,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "dns-cdn",
@@ -197,15 +197,15 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 25,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "tunneling-networking",
@@ -8842,15 +8842,17 @@
       "candidates": [
         {
           "id": "aptabase-cloud-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 858,
-          "reason": "Official hosted Free 20k events/month, unlimited apps, no card; distinct from catalogued aptabase-self-hosted; commercial use marked check pending explicit confirmation."
+          "reason": "Official hosted Free 20k events/month, unlimited apps, no card; distinct from catalogued aptabase-self-hosted; commercial use marked check pending explicit confirmation. GitHub confirmed auto-merge after exact-head validation/build SUCCESS and eplus-bot APPROVED.",
+          "pr_number": 864
         },
         {
           "id": "logsnag-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 859,
-          "reason": "Official Free forever hosted plan with 2,500 events/month, 3 seats, no card; commercial terms marked check."
+          "reason": "Official Free forever hosted plan with 2,500 events/month, 3 seats, no card; commercial terms marked check. GitHub confirmed auto-merge after exact-head validation/build SUCCESS and eplus-bot APPROVED.",
+          "pr_number": 862
         }
       ],
       "excluded": [
@@ -8882,16 +8884,17 @@
       "candidates": [
         {
           "id": "featureprobe-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 857,
           "pr_number": 860,
-          "reason": "Apache-2.0, official Docker Compose self-hosting and feature flags; no vendor usage cap. PR created; exact-head CI/review/merge not yet verified."
+          "reason": "Apache-2.0, official Docker Compose self-hosting and feature flags; no vendor usage cap. GitHub auto-merged after exact-head CI and eplus-bot approval."
         },
         {
           "id": "featureflow-free",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 861,
-          "reason": "Official hosted Free forever after 14-day Business trial; 1M SDK requests/month, 5 seats, 1 project, 2 environments; no card. Commercial terms marked check."
+          "reason": "Official hosted Free forever after 14-day Business trial; 1M SDK requests/month, 5 seats, 1 project, 2 environments; no card. Commercial terms marked check. GitHub confirmed auto-merge after exact-head validation/build SUCCESS and eplus-bot APPROVED.",
+          "pr_number": 863
         }
       ],
       "excluded": [
@@ -8965,12 +8968,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 527,
+    "total_services": 531,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 4,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 14/19. Main e055cad615d38f1f6c805c01d9b7fe44f43a3d4f has 527 services. New candidate Issues #857 #858 #859 #861; PR #860 created for FeatureProbe, pending exact-head CI/review/merge verification. No new catalog merge counted in this ledger update. Analytics/feature-flags researched from official sources; TelemetryDeck deferred for auto-upgrade risk.",
+    "note": "Rotation 12: 14/19 categories. Main 93628ae353b01337dc5ba3adb56c5b6aad9ca63e contains 531 services. Four new verified deliveries auto-merged: FeatureProbe #857→#860, LogSnag #859→#862, Featureflow #861→#863, Aptabase Cloud #858→#864. Each final PR HEAD passed catalog validation/build and eplus-bot APPROVED. Reconciler preserved ancestry without force-push. Issue #858 queue run was cancelled by concurrency, safely retried through an Issue edit; PR #864 delivered. No direct main push, manual merge, or manual deployment. Production Pages success at this exact main HEAD must be verified separately.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
