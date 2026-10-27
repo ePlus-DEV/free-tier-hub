@@ -132,7 +132,7 @@ jobs:
         run: |
           set -euo pipefail
           npm run catalog:sync
-          npm run verify
+          npm run catalog:check
           git diff --check
 
       - name: Prepare delivery branch and commit
@@ -152,6 +152,11 @@ jobs:
           git switch -c "$DELIVERY_BRANCH"
           git add data/services.json README.md docs/
           git commit -m "catalog: add $SERVICE_ID"
+          # The added-date site tests inspect committed Git history. Run the
+          # complete verification only after the local commit exists, but
+          # always before publishing the branch to the remote.
+          npm run verify
+          git show --format= --check HEAD
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       - name: Open or reuse PR
