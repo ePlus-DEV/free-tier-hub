@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "1ea954fbb59daa9d4e2f90362bb385910a880ac8",
+  "source_main_sha": "68c5bb3e7383f2a17d5aa2083c59c060177ac1a7",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,15 +185,15 @@
     },
     {
       "category": "search",
-      "service_count": 20,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "feature-flags",
@@ -216,8 +216,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "webhooks-events",
@@ -8024,9 +8024,9 @@
       "candidates": [
         {
           "id": "vald-vector-search-self-hosted",
-          "status": "PR-open-exact-head-CI-pending",
+          "status": "catalogued",
           "issue": 767,
-          "reason": "PR #768 created by queue; earlier ACTION_REQUIRED check is not pass, exact-head validation/build still pending at time of ledger update.",
+          "reason": "PR #768 merged by eplus-bot after exact-head validation/build SUCCESS and approval; confirmed present in latest main.",
           "pr": 768
         }
       ],
@@ -8097,12 +8097,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 478,
+    "total_services": 479,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 9,
+    "open_catalog_candidate_issues": 8,
     "unmatched_backlog": [],
-    "note": "Live main 1ea954fbb59d on 2026-10-27: 478 catalog services; 9 open canonical candidate Issues; 3 open catalog PRs. Rotation 11 9/19; new Issues #762, #763, #765, #767. Main and PR status must be rechecked after queue runs; no CI pass inferred.",
+    "note": "Snapshot from main 68c5bb3e7383 on 2026-10-27: 479 services, 8 open candidate Issues, 3 open catalog PRs. Rotation 11 9/19. New Vald Issue #767 -> PR #768 merged automatically at 2026-10-27T08:19:49Z after exact-head validation/build SUCCESS and eplus-bot approval; other new Issues #762/#763/#765 await queue.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
