@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "8638b5725e957984003946c79715a7de98c25e79",
+  "source_main_sha": "af05a14cc76707b258dc1a79a0e8917086abae1a",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,15 +185,15 @@
     },
     {
       "category": "search",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "feature-flags",
@@ -9073,21 +9073,23 @@
       "candidates": [
         {
           "id": "yacy-search-server-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue": 876,
-          "reason": "GPL-2.0-or-later self-hosted search, no vendor usage quota; verify canonical queue PR and exact-head CI before counting as merged."
+          "reason": "Auto-merged PR #879 with exact-head validation/build success and eplus-bot approval; entry confirmed in latest main 537.",
+          "pr": 879
         },
         {
           "id": "fess-search-server-self-hosted",
-          "status": "issue",
+          "status": "issue-awaiting-pr",
           "issue": 877,
-          "reason": "Apache-licensed free self-hosted search; requires OpenSearch, infrastructure and maintenance; commercial use allowed."
+          "reason": "Issue #877 remains open with no PR after one safe Issue edit retry; queue run status not accessible through connector."
         },
         {
           "id": "apache-lucene-core-open-source",
-          "status": "issue",
+          "status": "pr-conflict",
           "issue": 878,
-          "reason": "Apache-2.0 Java embedded search library, no hosted quota; not a managed service."
+          "reason": "PR #880 exact-head validation/build success and bot approval; merge conflict after main changed; not merged.",
+          "pr": 880
         }
       ],
       "excluded": [
@@ -9157,12 +9159,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 536,
+    "total_services": 537,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 13 started: cloud-vps (4), serverless (20), search (22) reviewed. New search candidates YaCy #876, Fess #877, Apache Lucene #878 verified from official sources and queued as Issues, NOT yet merged. Cloud VPS trials Fly.io/Azure excluded. Current main has 536 services; keep 3 Issues distinct from PRs/merges. Rotation 12 complete.",
+    "note": "Rotation 13: 3/19 categories reviewed (cloud-vps, serverless, search). YaCy #876 → PR #879 auto-merged after exact-head validation/build success and eplus-bot approval, confirmed on main (537 services, +1). Apache Lucene #878 → PR #880 CI success and approval but conflicting; requires safe non-force reconciliation and fresh exact-head checks. Fess #877 remains Issue-only; retried by Issue edit, queue PR not yet observed. No manual merge, direct main push, production deploy, or schedule changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
