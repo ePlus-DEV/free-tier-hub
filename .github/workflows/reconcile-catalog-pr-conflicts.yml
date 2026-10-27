@@ -2,6 +2,11 @@ name: Reconcile catalog PR conflicts
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/services.json'
+      - '.github/workflows/reconcile-catalog-pr-conflicts.yml'
   schedule:
     - cron: '*/30 * * * *'
 
@@ -57,6 +62,17 @@ jobs:
 
           while IFS=$'\t' read -r number branch expected_head; do
             pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
+            # GitHub may return mergeable=null while it recomputes mergeability
+            # immediately after a main push. Wait briefly, but fail closed:
+            # never reconcile unless GitHub explicitly reports false (dirty).
+            for attempt in 1 2 3 4 5; do
+              if jq -e '.mergeable != null' <<<"$pr" >/dev/null; then
+                break
+              fi
+              echo "::notice::PR #$number mergeability pending (attempt $attempt/5)"
+              sleep 2
+              pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
+            done
             if ! jq -e --arg head "$expected_head" --arg branch "$branch" \
               '.state == "open" and .draft == false and .mergeable == false and
                .user.login == "github-actions[bot]" and
