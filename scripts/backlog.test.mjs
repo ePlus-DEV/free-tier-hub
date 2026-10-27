@@ -112,3 +112,23 @@ test('manual candidate queue uses trusted REST issue author association', () => 
   assert.match(workflow, /if: steps\.capacity\.outputs\.available == 'true'/);
   assert.match(workflow, /open_count" -ge 3/);
 });
+
+test('candidate delivery validates the committed service before branch push', () => {
+  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
+  const precommit = workflow.split('      - name: Generate and validate')[1]
+    ?.split('      - name: Prepare delivery branch and commit')[0];
+  const delivery = workflow.split('      - name: Prepare delivery branch and commit')[1]
+    ?.split('      - name: Open or reuse PR')[0];
+  assert.ok(precommit && delivery, 'expected generator and commit steps');
+  assert.match(precommit, /npm run catalog:sync/);
+  assert.match(precommit, /npm run catalog:check/);
+  assert.doesNotMatch(precommit, /npm run verify/, 'full site tests require an ID committed into Git history');
+  const commit = delivery.indexOf('git commit -m "catalog: add $SERVICE_ID"');
+  const verify = delivery.indexOf('npm run verify');
+  const checked = delivery.indexOf('git show --format= --check HEAD');
+  const push = delivery.indexOf('git push origin');
+  assert.ok(commit >= 0 && commit < verify && verify < checked && checked < push,
+    'verify the actual local commit before pushing the candidate branch');
+  assert.match(delivery, /git ls-remote --exit-code --heads origin/);
+  assert.match(workflow, /\[ "\$open_count" -ge 3 \]/);
+});
