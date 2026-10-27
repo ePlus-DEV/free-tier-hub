@@ -24,11 +24,11 @@ test("Pages deploy remains restricted to main and requires a successful build", 
 
 test("Pages deployment retries once but never masks a failed deployment", () => {
   assert.match(yaml, /continue-on-error: true/);
-  assert.match(yaml, /if: steps\\.deployment\\.outcome == 'failure'/);
+  assert.match(yaml, /if: steps\.deployment\.outcome == 'failure'/);
   assert.match(yaml, /id: retry_deployment/);
   assert.match(yaml, /Require a successful Pages deployment/);
   assert.match(yaml, /Both GitHub Pages deployment attempts failed/);
-  assert.match(yaml, /steps\\.deployment\\.outputs\\.page_url \\|\\| steps\\.retry_deployment\\.outputs\\.page_url/);
+  assert.match(yaml, /steps\.deployment\.outputs\.page_url \|\| steps\.retry_deployment\.outputs\.page_url/);
 });
 
 test("PR preview checkout uses one safe with block and full main history", () => {
