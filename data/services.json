@@ -5979,5 +5979,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "featurehub-open-source-self-hosted",
+    "name": "FeatureHub Open Source Self-Hosted",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted FeatureHub Open Source edition with unlimited users, flags, applications, environments and feature requests according to the project's official repository.",
+    "watch_out": "Current LICENSE.txt includes Commons Clause on top of Apache-2.0: selling/hosting the software itself as a paid service is restricted; ordinary internal commercial use differs from resale. SaaS is paid after its 30-day trial. Self-hosted infrastructure is not free.",
+    "pricing_url": "https://github.com/featurehub-io/featurehub",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
