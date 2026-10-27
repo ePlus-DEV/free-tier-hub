@@ -5847,5 +5847,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "countly-lite-self-hosted",
+    "name": "Countly Lite Self-Hosted Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free-forever self-hosted Countly Lite product analytics for tracking your own web, mobile and desktop apps; 20+ community plugins and no vendor-hosted event quota.",
+    "watch_out": "Countly Lite uses modified AGPLv3 terms. Internal use within commercial organizations and analytics for your own paid apps are permitted, but providing Countly as a service or dashboard for customers requires an Enterprise license. Self-hosting and data operations are your responsibility.",
+    "pricing_url": "https://countly.com/lite",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
