@@ -5247,5 +5247,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apprise-api-self-hosted",
+    "name": "Apprise API Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-hosted REST notification requests and configurable destinations via MIT-licensed Apprise API; no software fee or vendor-side request allowance.",
+    "watch_out": "Requires your own server and downstream notification providers, which may charge separately. Authentication is disabled by default; enable it and TLS before exposing the API publicly.",
+    "pricing_url": "https://github.com/caronc/apprise-api",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
