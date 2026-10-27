@@ -35,13 +35,17 @@ jobs:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
         run: |
           set -euo pipefail
-          gh issue view "$ISSUE_NUMBER" --json title,body,authorAssociation > /tmp/issue.json
+          [[ "$ISSUE_NUMBER" =~ ^[0-9]+$ ]] || { echo "::error::Invalid candidate Issue number"; exit 1; }
+          # gh issue view --json does not expose authorAssociation.
+          # REST returns the authoritative author_association field.
+          gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER" > /tmp/issue.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import crypto from 'node:crypto';
           const issue = JSON.parse(fs.readFileSync('/tmp/issue.json', 'utf8'));
+          if (issue.state !== 'open' || issue.pull_request) throw Error('Candidate Issue is not an open Issue');
           if (!issue.title.startsWith('[catalog-candidate] ')) throw Error('Not a catalog candidate issue');
-          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.authorAssociation)) throw Error('Untrusted submitter');
+          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) throw Error('Untrusted submitter');
           const delimiter = 'BODY_' + crypto.randomUUID();
           fs.appendFileSync(process.env.GITHUB_OUTPUT, 'body<<' + delimiter + '\n' + issue.body + '\n' + delimiter + '\n');
           NODE
