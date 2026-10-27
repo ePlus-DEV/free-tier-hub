@@ -1,6 +1,6 @@
 {
-  "as_of_utc": "2026-10-26",
-  "source_main_sha": "ceb015366724cec960cc1d886d55823ca9cb3711",
+  "as_of_utc": "2026-10-27",
+  "source_main_sha": "a23e63940ea4864c4b8aa0b5fb9c1e1f7389b48b",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -31,7 +31,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 1
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "cloud-vps",
@@ -45,13 +45,13 @@
     },
     {
       "category": "databases",
-      "service_count": 36,
+      "service_count": 38,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 3
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "storage",
@@ -60,7 +60,7 @@
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 12,
+      "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0
     },
     {
@@ -99,9 +99,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "analytics",
@@ -115,23 +115,23 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 15,
+      "service_count": 16,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-26",
-      "stale_over_7d": 3,
-      "open_catalog_candidate_issues": 1
+      "stale_over_7d": 4,
+      "open_catalog_candidate_issues": 0
     },
     {
       "category": "ai-ml",
-      "service_count": 20,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 21,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 1
     },
     {
       "category": "ai-assistants",
@@ -139,9 +139,9 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 0
+      "open_catalog_candidate_issues": 2
     },
     {
       "category": "queues-jobs",
@@ -169,7 +169,7 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0
     },
@@ -189,7 +189,7 @@
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-26",
+      "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 0
     }
@@ -6725,6 +6725,160 @@
           "reason": "Existing managed service motherduck-lite is not the same product as local DuckDB engine; avoid duplicate managed tier."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ai-assistants",
+      "rotation": 9,
+      "searches": [
+        "Khoj self-hosted AGPL-3.0 AI second brain official repository",
+        "OpenHands MIT core CLI SDK self-hosted commercial license",
+        "AnythingLLM Aider Cline catalog deduplication"
+      ],
+      "official_sources": [
+        "https://github.com/khoj-ai/khoj",
+        "https://github.com/OpenHands/OpenHands"
+      ],
+      "candidates": [
+        {
+          "id": "khoj-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/656",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/661",
+          "reason": "Verified AGPL-3.0 self-hosted software; no software query quota; model/infrastructure charges separate; exact-head CI/review/merge pending."
+        },
+        {
+          "id": "openhands-open-source",
+          "status": "issue",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/659",
+          "reason": "Verified MIT core CLI/SDK/agent server, distinct from paid/time-limited OpenHands Cloud/Enterprise; queue PR not yet verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "AnythingLLM",
+          "reason": "Already catalogued as anythingllm-self-hosted; deduplicated."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ai-ml",
+      "rotation": 9,
+      "searches": [
+        "RAGFlow Apache-2.0 self-hosted RAG engine official deployment requirements",
+        "RAGFlow Docker recommended 4 CPU 16 GB 50 GB"
+      ],
+      "official_sources": [
+        "https://github.com/infiniflow/ragflow"
+      ],
+      "candidates": [
+        {
+          "id": "ragflow-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/657",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/660",
+          "reason": "Verified Apache-2.0 open-source self-hosted RAG engine, no vendor document quota; substantial own infrastructure/model costs; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Label Studio",
+          "reason": "Already catalogued as label-studio-community-self-hosted; not a new service."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "observability",
+      "rotation": 9,
+      "searches": [
+        "Grafana Tempo AGPL-3.0 distributed tracing backend self hosted official",
+        "Jaeger Prometheus VictoriaMetrics observability dedupe"
+      ],
+      "official_sources": [
+        "https://github.com/grafana/tempo"
+      ],
+      "candidates": [
+        {
+          "id": "grafana-tempo-self-hosted",
+          "status": "pr",
+          "issue_url": "https://github.com/ePlus-DEV/free-tier-hub/issues/658",
+          "pr_url": "https://github.com/ePlus-DEV/free-tier-hub/pull/662",
+          "reason": "Verified AGPL-3.0 self-hosted distributed tracing, no vendor trace-count license quota; object storage/compute and AGPL obligations apply; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Jaeger and VictoriaMetrics",
+          "reason": "Already catalogued as jaeger-self-hosted and victoriametrics-self-hosted."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "webhooks-events",
+      "rotation": 9,
+      "searches": [
+        "Hookdeck Outpost Apache-2.0 self-hosted outbound webhooks",
+        "hookdash MIT webhook gateway security roadmap dashboard authentication",
+        "hookrail Apache-2.0 pre-1.0 webhook delivery"
+      ],
+      "official_sources": [
+        "https://github.com/hookdeck/outpost",
+        "https://github.com/me-npm/hookdash",
+        "https://github.com/mit112/hookrail"
+      ],
+      "candidates": [
+        {
+          "id": "hookdeck-outpost-self-hosted",
+          "status": "catalogued",
+          "reason": "Already in main; not a new eligible addition."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "hookdash",
+          "reason": "MIT project but dashboard authentication is only on roadmap; deferred until safe access-control suitability is verified."
+        },
+        {
+          "name": "hookrail",
+          "reason": "Apache-2.0 but pre-1.0 and explicitly without compatibility guarantees; deferred for maturity review."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "feature-flags",
+      "rotation": 9,
+      "searches": [
+        "GO Feature Flag MIT self hosted official",
+        "OpenFlagr Apache-2.0 feature flag official",
+        "FlagBridge open core free feature entitlements"
+      ],
+      "official_sources": [
+        "https://github.com/thomaspoignant/go-feature-flag",
+        "https://github.com/openflagr/flagr",
+        "https://github.com/flagbridge/flagbridge"
+      ],
+      "candidates": [
+        {
+          "id": "go-feature-flag-self-hosted",
+          "status": "catalogued",
+          "reason": "Already in main; not new."
+        },
+        {
+          "id": "openflagr-self-hosted",
+          "status": "catalogued",
+          "reason": "Already in main; not new."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FlagBridge",
+          "reason": "Open-core self-hosted offering; free versus paid feature entitlements and current commercial terms not sufficiently verified."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -6786,12 +6940,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 425,
+    "total_services": 429,
     "total_categories": 19,
-    "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 9,
+    "stale_over_7d": 222,
+    "open_catalog_candidate_issues": 10,
     "unmatched_backlog": [],
-    "note": "Rotation 9: 10/19 categories reviewed. Six new eligible services verified from official sources; Issues #644-#649 and PRs #650-#655 created. They are NOT counted as merged until exact-head CI/review/merge and latest main verify. Existing PRs #632-#635 remain under exact-head review. Source main baseline 424; no force push, no manual merge.",
+    "note": "Rotation 9: 15/19 categories reviewed. New eligible issues #656-#659 (Khoj, RAGFlow, Grafana Tempo, OpenHands core); PRs #660-#662 observed but exact-head CI, review and merge are not yet confirmed; #659 queue pending. Latest main remains 429 services. No direct main writes, manual merge or force push.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -6963,19 +7117,19 @@
       "storage",
       "ci-cd",
       "auth-security",
+      "observability",
       "dns-cdn",
-      "tunneling-networking"
+      "ai-ml",
+      "ai-assistants",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
     ],
     "rotation_9_categories_remaining": [
       "developer-tools",
-      "observability",
       "analytics",
-      "ai-ml",
       "queues-jobs",
-      "search",
-      "feature-flags",
-      "webhooks-events",
-      "ai-assistants"
+      "search"
     ]
   }
 }
