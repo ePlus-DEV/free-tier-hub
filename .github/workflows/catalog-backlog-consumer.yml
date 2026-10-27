@@ -40,20 +40,50 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { execFileSync } from 'node:child_process';
-          import { loadCandidates, listCandidates } from './scripts/backlog.mjs';
+          import { loadCandidates, listCandidates, fresh } from './scripts/backlog.mjs';
 
           const repo = process.env.GITHUB_REPOSITORY;
+          const api = (endpoint) => JSON.parse(execFileSync(
+            'gh', ['api', '--paginate', '--slurp', 'repos/' + repo + '/' + endpoint],
+            { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
+          )).flat();
+          const openPRs = api('pulls?state=open&per_page=100');
+          const openCatalog = openPRs.filter(pr => pr.head?.ref?.startsWith('catalog/add-'));
+          if (openCatalog.length >= 3) {
+            console.log(openCatalog.length + ' catalog PRs already open; keep backlog queued.');
+            process.exit(0);
+          }
+          const issues = api('issues?state=all&per_page=100');
+          const prs = api('pulls?state=all&per_page=100');
+
+          // Resume the oldest trusted Issue skipped by the PR limit before opening
+          // a new one. Existing or closed PR branches are never regenerated.
+          for (const issue of issues.filter(item => item.state === 'open' &&
+              !item.pull_request && item.title?.startsWith('[catalog-candidate] '))
+              .sort((a, b) => a.number - b.number)) {
+            if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) continue;
+            const id = issue.title.slice('[catalog-candidate] '.length);
+            const branch = 'catalog/add-' + id;
+            if (prs.some(pr => pr.head?.ref === branch)) continue;
+            const existingBranch = execFileSync('git',
+              ['ls-remote', '--heads', 'origin', 'refs/heads/' + branch],
+              { encoding: 'utf8' }).trim();
+            if (existingBranch) continue;
+            let candidate;
+            try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
+            if (candidate?.id !== id || !fresh(candidate)) continue;
+            execFileSync('gh', ['workflow', 'run', 'catalog-candidate-queue.yml',
+              '--repo', repo, '--ref', 'main', '-f', 'issue_number=' + issue.number],
+              { stdio: 'inherit' });
+            console.log('Resumed queued candidate Issue #' + issue.number);
+            process.exit(0);
+          }
+
           const eligible = new Set(listCandidates());
           if (!eligible.size) {
             console.log('No fresh, uncatalogued backlog entries; no Issue created.');
             process.exit(0);
           }
-          const api = (endpoint) => JSON.parse(execFileSync(
-            'gh', ['api', '--paginate', '--slurp', 'repos/' + repo + '/' + endpoint],
-            { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
-          )).flat();
-          const issues = api('issues?state=all&per_page=100');
-          const prs = api('pulls?state=all&per_page=100');
           for (const candidate of loadCandidates()) {
             if (!eligible.has(candidate.id)) continue;
             const title = '[catalog-candidate] ' + candidate.id;
