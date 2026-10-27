@@ -6159,5 +6159,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "wasmcloud-self-hosted",
+    "name": "wasmCloud Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 CNCF WebAssembly application and function runtime; run WASI components locally or via Kubernetes operator; no software usage quota.",
+    "watch_out": "Requires own compute/cluster and optional NATS, OCI registry and ingress infrastructure. Host resources and external services may incur charges; separate from any managed cloud provider tier.",
+    "pricing_url": "https://github.com/wasmCloud/wasmCloud",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
