@@ -5715,5 +5715,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "gitleaks-open-source",
+    "name": "Gitleaks Open Source Secret Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI and CI tool to scan Git repositories, commits, files and history for accidentally exposed secrets, with no vendor-imposed repository or scan quota in the open-source tool.",
+    "watch_out": "Detection can produce false positives and miss secrets; configure rules and review findings. Local scanning requires your own compute/CI infrastructure; hosted enterprise monitoring, if used, is separate. Found credentials must be revoked or rotated, not merely removed from Git.",
+    "pricing_url": "https://github.com/gitleaks/gitleaks",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
