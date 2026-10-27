@@ -11,9 +11,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "app-hosting",
@@ -59,7 +59,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -71,7 +71,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -83,9 +83,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "ci-cd",
@@ -119,7 +119,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -155,7 +155,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8168,6 +8168,198 @@
         }
       ],
       "excluded": []
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "static-hosting",
+      "queries": [
+        "static-hosting free self-hosted OSS official license ongoing",
+        "static-hosting current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://www.litespeedtech.com/open-source/openlitespeed",
+        "https://openresty.org/en/about.html",
+        "https://openresty.org/en/download.html"
+      ],
+      "candidates": [
+        {
+          "id": "openlitespeed-self-hosted",
+          "status": "PR",
+          "issue": 785,
+          "pr": 794,
+          "reason": "OpenLiteSpeed GPLv3 proprietary embedding needs OEM licensing; PR created, exact-head checks/review and merge not yet confirmed"
+        },
+        {
+          "id": "openresty-self-hosted",
+          "status": "Issue",
+          "issue": 786,
+          "reason": "OpenResty bundle has component-specific licenses; canonical Issue created, awaiting queue/PR"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "OpenLiteSpeed Enterprise",
+            "Not an ongoing free license; separate commercial product"
+          ]
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "databases",
+      "queries": [
+        "databases free self-hosted OSS official license ongoing",
+        "databases current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://www.postgresql.org/about/licence/",
+        "https://mariadb.com/products/community-server/",
+        "https://github.com/ClickHouse/ClickHouse"
+      ],
+      "candidates": [
+        {
+          "id": "postgresql-self-hosted",
+          "status": "Issue",
+          "issue": 787,
+          "reason": "PostgreSQL permissive license; no software quota; canonical Issue created, awaiting queue/PR"
+        },
+        {
+          "id": "mariadb-community-self-hosted",
+          "status": "Issue",
+          "issue": 788,
+          "reason": "MariaDB GPLv2; own server required; canonical Issue created, awaiting queue/PR"
+        },
+        {
+          "id": "clickhouse-self-hosted",
+          "status": "Issue",
+          "issue": 789,
+          "reason": "ClickHouse Apache-2.0; cloud service separate; canonical Issue created, awaiting queue/PR"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "ClickHouse Cloud trial",
+            "A temporary managed-service trial is not a perpetual self-hosted free offering"
+          ]
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "storage",
+      "queries": [
+        "storage free self-hosted OSS official license ongoing",
+        "storage current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://www.seafile.com/en/product/seafile_on_premise/",
+        "https://www.seafile.com/en/pricing/",
+        "https://github.com/haiwen/seafile"
+      ],
+      "candidates": [
+        {
+          "id": "seafile-community-self-hosted",
+          "status": "Issue",
+          "issue": 790,
+          "reason": "Community Edition free; server core AGPLv3 and enterprise functions excluded; canonical Issue created, awaiting queue/PR"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "SFTPGo Community",
+            "AGPLv3 with additional proprietary UI and derivative-work restrictions; defer until licensing and category fit review"
+          ]
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "observability",
+      "queries": [
+        "observability free self-hosted OSS official license ongoing",
+        "observability current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://github.com/Icinga/icinga2",
+        "https://icinga.com/docs/"
+      ],
+      "candidates": [
+        {
+          "id": "icinga2-self-hosted",
+          "status": "Issue",
+          "issue": 791,
+          "reason": "GPLv3+ from Icinga 2 v2.16; self-hosted alerting and monitoring; canonical Issue created, awaiting queue/PR"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "Icinga paid support",
+            "Not included in the free self-managed server edition"
+          ]
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ai-ml",
+      "queries": [
+        "ai-ml free self-hosted OSS official license ongoing",
+        "ai-ml current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://github.com/langflow-ai/langflow",
+        "https://github.com/langflow-ai/langflow/blob/main/LICENSE",
+        "https://docs.langflow.org/deployment-docker"
+      ],
+      "candidates": [
+        {
+          "id": "langflow-self-hosted",
+          "status": "Issue",
+          "issue": 792,
+          "reason": "MIT OSS local/hosted deployment; LLM/API charges separate; canonical Issue created, awaiting queue/PR"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "Flowise Community",
+            "Reported upstream archive in August 2026; not delivered pending current maintenance verification"
+          ]
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "developer-tools",
+      "queries": [
+        "developer-tools free self-hosted OSS official license ongoing",
+        "developer-tools current commercial-use terms October 2026"
+      ],
+      "official_sources": [
+        "https://github.com/opentofu/opentofu",
+        "https://www.mozilla.org/en-US/MPL/"
+      ],
+      "candidates": [
+        {
+          "id": "opentofu-open-source",
+          "status": "PR",
+          "issue": 793,
+          "pr": 795,
+          "reason": "MPL-2.0 infrastructure as code; provisioned cloud resources billed separately; PR created, exact-head checks/review and merge not yet confirmed"
+        }
+      ],
+      "excluded": [
+        {
+          "name": [
+            "Terraform commercial SaaS",
+            "Separate paid service; not the OpenTofu OSS CLI"
+          ]
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8232,9 +8424,9 @@
     "total_services": 492,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 9,
     "unmatched_backlog": [],
-    "note": "Final 2026-10-27 UTC main snapshot ee76c67c5107: 492 services, five newly discovered candidates auto-merged via PRs #780-#784 (nonconsecutive issue mapping), zero open catalog Issues/PRs. Rotation 11 13/19; exact-head CI and review evidence is in the PRs.",
+    "note": "2026-10-27 UTC snapshot: 492 services across 19 categories at main ee76c67c5107; rotation 11 19/19. Nine new eligible OSS/self-hosted candidates created as Issues #785-#793, GitHub queue and exact-head CI/merge remain subject to live verification. No manual merge or production deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8456,15 +8648,14 @@
       "app-hosting",
       "ai-assistants",
       "feature-flags",
-      "queues-jobs"
-    ],
-    "rotation_11_categories_remaining": [
+      "queues-jobs",
       "static-hosting",
       "databases",
       "storage",
-      "developer-tools",
       "observability",
-      "ai-ml"
-    ]
+      "ai-ml",
+      "developer-tools"
+    ],
+    "rotation_11_categories_remaining": []
   }
 }
