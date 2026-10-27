@@ -5895,5 +5895,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "zuul-ci-self-hosted",
+    "name": "Zuul CI Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free and open-source self-managed CI and project-gating service with Ansible jobs, cross-project dependency testing and continuous delivery orchestration; no vendor-imposed build-minute quota.",
+    "watch_out": "Operators must provide Zuul services, executors, nodepool or other workers, persistent storage and security maintenance. Build resources and external cloud providers may incur charges; follow upstream license obligations.",
+    "pricing_url": "https://www.zuul-ci.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
