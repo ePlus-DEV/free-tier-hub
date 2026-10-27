@@ -5237,6 +5237,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "dbeaver-community",
+    "name": "DBeaver Community",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 desktop SQL client with database navigator, SQL/data editors, ER diagrams and data transfer for supported relational databases; no seat or time limit.",
+    "watch_out": "Community has fewer NoSQL, cloud, enterprise-auth and scheduler features than paid PRO. Database hosting, drivers requiring separate licenses, and external AI APIs are not included.",
+    "pricing_url": "https://dbeaver.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "brave-leo-free",
+    "name": "Brave Leo Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free browser-integrated AI assistant for chat, summaries, writing and translation with rate-limited default and selectable models; no account required.",
+    "watch_out": "Requires Brave browser; provider does not publish a fixed numerical free request allowance and models/rate limits can change. Premium subscription is separate; commercial-use terms require checking.",
+    "pricing_url": "https://support.brave.app/hc/en-us/articles/20958609786637-How-do-I-use-Brave-Leo",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "goaccess-self-hosted",
     "name": "GoAccess Open Source",
     "category": "analytics",
