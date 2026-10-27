@@ -6423,5 +6423,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "aptabase-cloud-free",
+    "name": "Aptabase Cloud Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "20,000 analytics events/month with unlimited apps, EU or US data residency, live dashboard, session timeline, CSV export and SDKs; no credit card required.",
+    "watch_out": "Each track call counts as an event; no overage fees. Analytics ingestion pauses once the 20,000-event monthly quota is exceeded and resumes next month. Cloud Free differs from catalogued self-hosted Aptabase; explicit commercial-use terms are not independently confirmed.",
+    "pricing_url": "https://aptabase.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
