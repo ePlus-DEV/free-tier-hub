@@ -6543,5 +6543,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apache-lucene-core-open-source",
+    "name": "Apache Lucene Core Open-Source",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed Java full-text and vector search library with unlimited self-managed indexing and queries; no hosted usage, document or query quota.",
+    "watch_out": "Lucene Core is an embeddable Java library, not a hosted search service or ready-to-run search server; applications provide APIs, infrastructure, indexing and operational support.",
+    "pricing_url": "https://lucene.apache.org/core/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
