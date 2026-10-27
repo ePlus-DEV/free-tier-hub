@@ -6495,5 +6495,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "sglang-self-hosted",
+    "name": "SGLang Self-Hosted LLM Serving",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source framework for self-hosted LLM and multimodal inference serving; no software license fees or hosted API request quota.",
+    "watch_out": "Requires your own GPU/CPU servers and model weights; compute, electricity, cloud GPU and storage may cost money. Model-specific licenses and commercial rights are separate from SGLang's Apache-2.0 code license.",
+    "pricing_url": "https://github.com/sgl-project/sglang",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
