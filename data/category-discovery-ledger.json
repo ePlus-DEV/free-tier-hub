@@ -107,9 +107,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "observability",
@@ -144,8 +144,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
       "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 2
     },
     {
       "category": "ai-ml",
@@ -192,8 +192,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "feature-flags",
@@ -8024,9 +8024,10 @@
       "candidates": [
         {
           "id": "vald-vector-search-self-hosted",
-          "status": "Issue-open-await-PR",
+          "status": "PR-open-exact-head-CI-pending",
           "issue": 767,
-          "reason": "Apache-2.0 self-managed distributed vector similarity search; Kubernetes and AVX2 required."
+          "reason": "PR #768 created by queue; earlier ACTION_REQUIRED check is not pass, exact-head validation/build still pending at time of ledger update.",
+          "pr": 768
         }
       ],
       "excluded": [
@@ -8099,9 +8100,9 @@
     "total_services": 478,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 10,
+    "open_catalog_candidate_issues": 9,
     "unmatched_backlog": [],
-    "note": "Live main 1ea954fbb59d on 2026-10-27: 478 catalog services; 10 open canonical candidate Issues; 2 open catalog PRs. Rotation 11 9/19; new Issues #762, #763, #765, #767. Main and PR status must be rechecked after queue runs; no CI pass inferred.",
+    "note": "Live main 1ea954fbb59d on 2026-10-27: 478 catalog services; 9 open canonical candidate Issues; 3 open catalog PRs. Rotation 11 9/19; new Issues #762, #763, #765, #767. Main and PR status must be rechecked after queue runs; no CI pass inferred.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
