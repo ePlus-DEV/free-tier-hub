@@ -6231,5 +6231,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "harbor-container-registry-self-hosted",
+    "name": "Harbor Container Registry Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted container and OCI artifact registry with no software subscription or fixed vendor storage quota; includes image scanning, access controls and replication.",
+    "watch_out": "Requires self-managed Docker/Kubernetes infrastructure, disk, bandwidth, TLS, database, backups and upgrades; infrastructure costs apply. Use stable releases rather than the development branch.",
+    "pricing_url": "https://github.com/goharbor/harbor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
