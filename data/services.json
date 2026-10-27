@@ -6423,5 +6423,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "logsnag-free",
+    "name": "LogSnag Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "2,500 event logs/month and 3 seats on a free-forever hosted event analytics plan; no credit card required.",
+    "watch_out": "Monthly event quota applies; higher event volumes and additional seats require paid plans. Explicit hosted Free commercial-use rights and over-quota behavior are not independently confirmed.",
+    "pricing_url": "https://logsnag.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
