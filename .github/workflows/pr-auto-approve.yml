@@ -4,9 +4,12 @@ on:
     workflows: [Validate free tier catalog]
     types: [completed]
 
+# Isolate approvals by the completed validation run, not its base branch.
+# workflow_run.head_branch is often 'main' for unrelated PRs; shared concurrency
+# previously cancelled exact-head approval jobs before they could merge catalog PRs.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.id }}
+  cancel-in-progress: false
 
 permissions:
   pull-requests: write
