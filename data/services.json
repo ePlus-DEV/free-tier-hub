@@ -5619,5 +5619,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "yunohost-self-hosted",
+    "name": "YunoHost Self-Hosted App Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 Debian-based self-hosting distribution with web administration, multi-domain hosting, user management, backups and a catalog of 500+ deployable apps; no YunoHost software subscription or app-count quota.",
+    "watch_out": "You supply the machine/VPS, storage, network and domain; no managed cloud hosting or SLA. Individual packaged apps have their own licenses and may impose separate commercial restrictions; AGPL source-sharing obligations apply when relevant.",
+    "pricing_url": "https://doc.yunohost.org/en/community/faq/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
