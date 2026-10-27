@@ -57,7 +57,7 @@ test('PR reconcile finds services merged into main on the second-parent path', (
     run(['config', 'user.email', 'test@example.com']);
     fs.mkdirSync(path.join(root, 'data'));
     const catalog = path.join(root, 'data/services.json');
-    const record = ids => JSON.stringify(ids.map(id => ({ id })), null, 2) + '\\n';
+    const record = ids => JSON.stringify(ids.map(id => ({ id })), null, 2) + '\n';
     fs.writeFileSync(catalog, record(['baseline']));
     run(['add', '.']);
     run(['commit', '-qm', 'seed'], { GIT_COMMITTER_DATE: '2026-10-19T10:00:00Z' });
