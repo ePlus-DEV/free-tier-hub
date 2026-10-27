@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "b0cfbca2bc8c38081d6249c61805645e13f1f72f",
+  "source_main_sha": "d540777154db99938a5acda89b549bda92b19e64",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -29,13 +29,13 @@
     },
     {
       "category": "serverless",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -185,13 +185,13 @@
     },
     {
       "category": "search",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -221,13 +221,13 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 20,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     }
@@ -8466,21 +8466,24 @@
       "candidates": [
         {
           "id": "argo-events-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 813,
-          "reason": "Apache-2.0 Argo event source/sensor/trigger system, 20+ event sources; Kubernetes infrastructure billed separately."
+          "reason": "Apache-2.0 Argo event source/sensor/trigger system, 20+ event sources; Kubernetes infrastructure billed separately. Delivered via canonical Issue → catalog PR → exact-head validation/build SUCCESS and eplus-bot approval → GitHub auto-merge; confirmed in main d540777154db.",
+          "pr_number": 818
         },
         {
           "id": "knative-eventing-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 814,
-          "reason": "Apache-2.0 CloudEvents event broker/trigger platform, distinct from catalogued Knative Serving."
+          "reason": "Apache-2.0 CloudEvents event broker/trigger platform, distinct from catalogued Knative Serving. Delivered via canonical Issue → catalog PR → exact-head validation/build SUCCESS and eplus-bot approval → GitHub auto-merge; confirmed in main d540777154db.",
+          "pr_number": 820
         },
         {
           "id": "convoy-community-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 815,
-          "reason": "Elastic-2.0 source-available free Community tier 1 org/2 projects/1 user; cannot resell as hosted managed service."
+          "reason": "Elastic-2.0 source-available free Community tier 1 org/2 projects/1 user; cannot resell as hosted managed service. Delivered via canonical Issue → catalog PR → exact-head validation/build SUCCESS and eplus-bot approval → GitHub auto-merge; confirmed in main d540777154db.",
+          "pr_number": 821
         }
       ],
       "excluded": [
@@ -8509,9 +8512,10 @@
       "candidates": [
         {
           "id": "zilliz-cloud-free",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 816,
-          "reason": "Hosted perpetual Free vector search cluster 5GB, 2.5M vCUs/month, max 5 collections; distinct from self-hosted Milvus and 30-day trial."
+          "reason": "Hosted perpetual Free vector search cluster 5GB, 2.5M vCUs/month, max 5 collections; distinct from self-hosted Milvus and 30-day trial. Delivered via canonical Issue → catalog PR → exact-head validation/build SUCCESS and eplus-bot approval → GitHub auto-merge; confirmed in main d540777154db.",
+          "pr_number": 822
         }
       ],
       "excluded": [
@@ -8538,9 +8542,10 @@
       "candidates": [
         {
           "id": "wasmcloud-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 817,
-          "reason": "Apache-2.0 CNCF Wasm runtime for functions/services on own hosts or Kubernetes; infrastructure billed separately."
+          "reason": "Apache-2.0 CNCF Wasm runtime for functions/services on own hosts or Kubernetes; infrastructure billed separately. Delivered via canonical Issue → catalog PR → exact-head validation/build SUCCESS and eplus-bot approval → GitHub auto-merge; confirmed in main d540777154db.",
+          "pr_number": 819
         }
       ],
       "excluded": [
@@ -8610,12 +8615,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 506,
+    "total_services": 511,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 6/19 categories reviewed on 2026-10-27 UTC; new canonical candidate Issues #813–#817 created after dedupe against main, Issues, PRs and branches. 5 verified eligible services, not yet counted as PR-created or merged. Main currently 506 services at b0cfbca2bc8c38081d6249c61805645e13f1f72f. No direct main push, force-push, manual merge, security bypass or manual deployment. PR and exact-head CI must be rechecked before declaring delivery.",
+    "note": "Rotation 12: 6/19 categories reviewed 2026-10-27 UTC. Five new eligible services delivered through canonical Issues #813–#817, PRs #818–#822, exact-head validation/build SUCCESS, eplus-bot approval and GitHub auto-merge. All five IDs read back from main d540777154db99938a5acda89b549bda92b19e64; total 511 services (+5 from 506 at run start). No open candidate Issues or catalog PRs. Main production Pages deployment requires separate exact-head confirmation. No direct main push, force-push, manual merge, manual deployment or schedule changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
