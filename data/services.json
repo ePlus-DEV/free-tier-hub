@@ -5415,5 +5415,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "adguard-home-self-hosted",
+    "name": "AdGuard Home Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 network-wide DNS server for ad/tracker blocking with configurable filtering and no vendor-imposed DNS query quota.",
+    "watch_out": "Self-hosted AdGuard Home is distinct from hosted AdGuard DNS; requires own server, network configuration and maintained blocklists. GPL-3.0 obligations apply on redistribution.",
+    "pricing_url": "https://github.com/AdguardTeam/AdGuardHome",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
