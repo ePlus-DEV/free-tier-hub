@@ -6555,5 +6555,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "chisel-tunnel-self-hosted",
+    "name": "Chisel HTTP Tunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source TCP/UDP tunnel over HTTP with SSH encryption, reverse port forwarding and SOCKS5 support; no vendor-imposed tunnel, user or traffic quota when self-hosted.",
+    "watch_out": "Requires your own reachable server, bandwidth and networking; VPS and egress may cost money. Configure authentication, server fingerprint validation and access controls before exposing services. Free software is not a free hosted relay.",
+    "pricing_url": "https://github.com/jpillora/chisel",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
