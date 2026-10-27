@@ -5655,5 +5655,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "syncthing-self-hosted-sync",
+    "name": "Syncthing Open Source File Sync",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source peer-to-peer file synchronization across your own computers; continuous encrypted transfers and local file storage, with no vendor-imposed per-device or transfer quota in the software.",
+    "watch_out": "This is synchronization software, not free hosted object storage or backup. You provide devices, disks, network connectivity and maintenance; synchronization propagates deletions unless file versioning or separate backups are configured. MPL-2.0 source obligations apply to modifications and redistribution.",
+    "pricing_url": "https://syncthing.net/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
