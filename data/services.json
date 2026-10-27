@@ -5765,6 +5765,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "spinkube-self-hosted",
+    "name": "SpinKube Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Spin Operator and Kubernetes WebAssembly runtime; deploy self-managed Spin applications without a vendor-hosted request or execution quota.",
+    "watch_out": "Requires a compatible Kubernetes cluster, Spin runtime components and infrastructure capacity; compute, networking and storage are not included. This is not a managed free cloud tier.",
+    "pricing_url": "https://www.spinkube.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "open-policy-agent-self-hosted",
+    "name": "Open Policy Agent Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source policy engine for API authorization, infrastructure and Kubernetes admission decisions; self-managed CLI, REST API and SDK use without vendor decision quotas.",
+    "watch_out": "Policy authoring, testing, enforcement integration and hosting are operator responsibilities; OPA makes policy decisions but the calling service must enforce them. Managed policy platforms are separate.",
+    "pricing_url": "https://github.com/open-policy-agent/opa",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "falco-runtime-security-oss",
     "name": "Falco Runtime Security OSS",
     "category": "auth-security",
