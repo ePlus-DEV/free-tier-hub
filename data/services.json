@@ -6051,5 +6051,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "seafile-community-self-hosted",
+    "name": "Seafile Community Edition Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free open-source file sync, versioning, sharing and team collaboration server with no Community Edition software subscription fee.",
+    "watch_out": "Self-hosting requires your own storage, database, backups and bandwidth. Server core uses AGPLv3; advanced search, compliance and enterprise functions require Professional Edition.",
+    "pricing_url": "https://www.seafile.com/en/product/seafile_on_premise/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
