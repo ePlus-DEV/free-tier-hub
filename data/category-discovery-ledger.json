@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "3b7eee20802ce2df48cd6c4372237e8abfe00c99",
+  "source_main_sha": "18427a4a54c64869ad38ede2dba728c63a7046c6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -71,7 +71,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 1,
       "open_catalog_candidate_prs": 1
     },
@@ -89,7 +89,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 23,
+      "service_count": 26,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -101,13 +101,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 30,
+      "service_count": 31,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -161,7 +161,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 22,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -8648,6 +8648,130 @@
           "reason": "Already catalogued; no duplicate Issue created."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ci-cd",
+      "queries": [
+        "Kargo GitOps Apache-2.0 self-hosted docs",
+        "Screwdriver CD BSD-3-Clause self-hosted",
+        "Prow Kubernetes Apache-2.0 CI/CD self-hosted"
+      ],
+      "official_sources": [
+        "https://docs.kargo.io/",
+        "https://screwdriver.cd/",
+        "https://docs.prow.k8s.io/docs/overview/"
+      ],
+      "candidates": [
+        {
+          "id": "kargo-gitops-self-hosted",
+          "status": "catalogued",
+          "issue_number": 836,
+          "pr_number": 839
+        },
+        {
+          "id": "screwdriver-cd-self-hosted",
+          "status": "catalogued",
+          "issue_number": 838,
+          "pr_number": 840
+        },
+        {
+          "id": "prow-ci-self-hosted",
+          "status": "catalogued",
+          "issue_number": 837,
+          "pr_number": 841
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Hosted CI minutes",
+          "reason": "Self-hosted open-source licenses do not include hosted runner/compute allowances."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "ai-assistants",
+      "queries": [
+        "NextChat MIT Docker self-hosted official GitHub",
+        "big-AGI MIT Docker self-hosted official GitHub",
+        "SillyTavern AGPL-3.0 self-hosted commercial obligations",
+        "LobeHub community license hosted vs self-hosted",
+        "RAGFlow dedupe existing main catalog"
+      ],
+      "official_sources": [
+        "https://github.com/ChatGPTNextWeb/NextChat",
+        "https://github.com/enricoros/big-AGI",
+        "https://github.com/SillyTavern/SillyTavern",
+        "https://github.com/infiniflow/ragflow"
+      ],
+      "candidates": [
+        {
+          "id": "nextchat-self-hosted",
+          "status": "catalogued",
+          "issue_number": 842,
+          "pr_number": 846,
+          "reason": "MIT-licensed Docker/Node self-hosted; API/infrastructure not included; exact-head CI and eplus-bot review passed for merged PR #846."
+        },
+        {
+          "id": "big-agi-self-hosted",
+          "status": "catalogued",
+          "issue_number": 843,
+          "pr_number": 848,
+          "reason": "MIT-licensed Docker self-hosted AI workspace; model/API costs separate; exact-head CI and eplus-bot review passed for merged PR #848."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "SillyTavern",
+          "reason": "AGPL-3.0 self-hosted software found; defer while evaluating network copyleft obligations and whether it belongs in this rotation."
+        },
+        {
+          "name": "LobeHub (formerly LobeChat)",
+          "reason": "Custom Community License and managed-versus-self-hosted feature differences need more precise rights review."
+        },
+        {
+          "name": "RAGFlow",
+          "reason": "Already catalogued as ragflow-self-hosted; Issue #657 and merged PR #660, no duplicate."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "auth-security",
+      "queries": [
+        "SpiceDB authzed Apache-2.0 self-hosted Zanzibar official",
+        "Pomerium Core Apache-2.0 identity-aware proxy official",
+        "Permify FusionAuth acquisition and self-hosted license"
+      ],
+      "official_sources": [
+        "https://github.com/authzed/spicedb",
+        "https://github.com/pomerium/pomerium",
+        "https://www.pomerium.com/docs",
+        "https://github.com/Permify"
+      ],
+      "candidates": [
+        {
+          "id": "pomerium-core-self-hosted",
+          "status": "catalogued",
+          "issue_number": 845,
+          "pr_number": 847,
+          "reason": "Apache-2.0 Pomerium Core self-managed proxy; Pomerium Zero and Enterprise excluded; non-force conflict reconciliation followed by exact-head CI and approval."
+        },
+        {
+          "id": "spicedb-self-hosted",
+          "status": "pr",
+          "issue_number": 844,
+          "pr_number": 849,
+          "reason": "Apache-2.0 SpiceDB self-managed fine-grained authorization; exact-head CI passed but PR #849 remains conflicted after main changes; awaiting safe reconciliation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Permify",
+          "reason": "Acquired by FusionAuth; current hosted/support terms and product differentiation require re-verification before Issue."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8709,12 +8833,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 517,
+    "total_services": 523,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 8/19 categories. Queues-jobs: 3 new verified OSS services, Issues #830–#832 → PRs #833–#835 all GitHub auto-MERGED; latest main 3b7eee20802c contains 517 services. PR #834 review was from previous head after non-force reconciliation; exact-head CI succeeded but do not claim exact-head approval. Candidate Issue #831 closure is pending cleanup. No direct main push, manual merge, force push or schedule change.",
+    "note": "Rotation 12: 11/19 categories. Main snapshot 18427a4a54c6 has 523 services. New candidates NextChat, big-AGI, SpiceDB, Pomerium: Issues #842-#845; PRs #846-#849. PRs #846/#848/#847 confirmed merged; #849 pending non-force reconciliation and exact-head CI/review. Historic backlog 29/30 exact IDs catalogued, remaining uploadthing-free aliases uploadthing-2gb-app. No direct main push or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8954,20 +9078,20 @@
       "search",
       "serverless",
       "storage",
-      "queues-jobs"
+      "queues-jobs",
+      "ci-cd",
+      "ai-assistants",
+      "auth-security"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
       "app-hosting",
       "databases",
       "developer-tools",
-      "ci-cd",
-      "auth-security",
       "observability",
       "analytics",
       "ai-ml",
-      "feature-flags",
-      "ai-assistants"
+      "feature-flags"
     ]
   }
 }
