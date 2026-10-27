@@ -5643,5 +5643,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "fn-project-self-hosted",
+    "name": "Fn Project Self-Hosted Serverless",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed container-native Functions-as-a-Service platform that runs on your own Docker/Podman infrastructure; supports functions in multiple languages, local deployment and an embedded single-server database and queue, without vendor function-invocation quotas.",
+    "watch_out": "Self-hosted software only: requires your own Docker/Podman host, container registry for nonlocal deployments, storage, security updates and operations. No free managed cloud execution, infrastructure or support is included.",
+    "pricing_url": "https://github.com/fnproject/fn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
