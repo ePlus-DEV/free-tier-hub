@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "6bda6c252fd64cb22eb7ad7d80dcb2043f54cb51",
+  "source_main_sha": "65a0798e3074214ce545341f99a53f68aee47719",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -89,15 +89,15 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 27,
+      "service_count": 29,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "auth-security",
@@ -161,15 +161,15 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 25,
+      "service_count": 26,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "queues-jobs",
@@ -9267,21 +9267,21 @@
           "status": "catalogued",
           "issue": 896,
           "pr": 899,
-          "reason": "Present in latest main at snapshot; GitHub confirmed merge."
+          "reason": "Canonical Issue #896 → PR #899: GitHub confirmed MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Present in main 65a0798e3074. Self-hosted infrastructure is not free."
         },
         {
           "id": "jenkins-x-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 897,
           "pr": 905,
-          "reason": "Canonical candidate Issue and catalog PR exist; not counted as merged until latest main includes ID."
+          "reason": "Canonical Issue #897 → PR #905: GitHub confirmed MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Present in main 65a0798e3074. Self-hosted infrastructure is not free."
         },
         {
           "id": "devtron-platform-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 898,
           "pr": 901,
-          "reason": "Canonical candidate Issue and catalog PR exist; not counted as merged until latest main includes ID."
+          "reason": "Canonical Issue #898 → PR #901: GitHub confirmed MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Present in main 65a0798e3074. Self-hosted infrastructure is not free."
         }
       ],
       "excluded": [
@@ -9305,17 +9305,17 @@
       "candidates": [
         {
           "id": "coze-studio-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 900,
           "pr": 902,
-          "reason": "Canonical candidate Issue and catalog PR exist; not counted as merged until latest main includes ID."
+          "reason": "Canonical Issue #900 → PR #902: GitHub confirmed MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Present in main 65a0798e3074. Self-hosted infrastructure is not free."
         },
         {
           "id": "sim-ai-self-hosted",
           "status": "catalogued",
           "issue": 903,
           "pr": 904,
-          "reason": "Present in latest main at snapshot; GitHub confirmed merge."
+          "reason": "Canonical Issue #903 → PR #904: GitHub confirmed MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Present in main 65a0798e3074. Self-hosted infrastructure is not free."
         }
       ],
       "excluded": [
@@ -9389,12 +9389,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 548,
+    "total_services": 551,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 13 9/19; main 548 at 6bda6c252fd6. Five verified Apache-2.0 self-hosted candidates: Issues #896 #897 #898 #900 #903, PR/merge states tracked per candidate; exact-head CI and approvals must be verified before any merge claim. Historical backlog 30 entries is already catalogued except UploadThing alias. MailerSend Free officially requires a card; main already states credit_card=yes. No direct main push, manual merge, deploy, force push, or schedule changes.",
+    "note": "Rotation 13 9/19 categories. Main 65a0798e3074214ce545341f99a53f68aee47719 contains 551 services (+5 from 546). Five newly discovered Apache-2.0 self-hosted services delivered: werf #896/#899, Jenkins X #897/#905, Devtron #898/#901, Coze Studio #900/#902, Sim #903/#904; each exact-final-head CI SUCCESS, eplus-bot APPROVED and GitHub MERGED. PR #901 and #902 safely reconciled without force-push. 220 catalog entries are >7 days old. Historical backlog 30 records already catalogued except UploadThing alias. MailerSend Free card requirement confirmed from official pricing and already correct on main. No direct main push, manual merge, deployment, weakening checks, or hourly cadence change.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
