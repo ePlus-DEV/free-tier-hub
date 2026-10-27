@@ -5667,5 +5667,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "strongswan-self-hosted-vpn",
+    "name": "strongSwan Open Source IPsec VPN",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 open-source IKEv2/IPsec VPN software for self-managed gateways and clients; no per-user, tunnel or bandwidth quota imposed by the free software.",
+    "watch_out": "Requires your own gateway/server, public connectivity, certificates or authentication, networking and security operations. ISP/cloud bandwidth and infrastructure may cost money. Optional commercial licensing and paid support are separate; GPLv2 conditions apply to redistribution.",
+    "pricing_url": "https://www.strongswan.org/license.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
