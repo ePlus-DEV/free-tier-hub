@@ -6663,5 +6663,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "jenkins-x-self-hosted",
+    "name": "Jenkins X (Self-Hosted)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes-native CI/CD with Tekton pipelines and pull-request preview environments; self-managed software without a Jenkins X license fee.",
+    "watch_out": "Requires Kubernetes, Git hosting, container registry and compatible pipeline infrastructure; cloud resources and associated usage can cost money. Distinct from Jenkins OSS and Tekton itself.",
+    "pricing_url": "https://github.com/jenkins-x/jx",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
