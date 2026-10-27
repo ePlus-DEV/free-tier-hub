@@ -5801,6 +5801,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "wazuh-self-hosted-siem",
+    "name": "Wazuh Self-Hosted SIEM/XDR",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free self-managed endpoint security, log analysis, threat detection and SIEM/XDR stack with Wazuh agent, server, indexer and dashboard; no hosted vendor event quota.",
+    "watch_out": "Self-hosted infrastructure, storage, updates and security operations are required. Components have GPLv2/Apache-2.0 licensing obligations; the separately managed Wazuh Cloud offering is a trial or paid service.",
+    "pricing_url": "https://documentation.wazuh.com/current/installation-guide/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "trivy-open-source-scanner",
+    "name": "Trivy Open Source Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source scanner for vulnerabilities, misconfigurations, secrets and software bills of materials across container images, code repositories, filesystems and Kubernetes, with no software-imposed scan quota.",
+    "watch_out": "Requires your own compute, network access and vulnerability database updates; scanning results depend on available advisory data and require human triage. Hosted security services and optional integrations may be separately priced.",
+    "pricing_url": "https://github.com/aquasecurity/trivy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "dnsmasq-self-hosted",
     "name": "dnsmasq Self-Hosted DNS/DHCP",
     "category": "dns-cdn",
