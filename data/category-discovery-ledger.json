@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "604863cb428c32eab806637dd61f763007969185",
+  "source_main_sha": "22e958bf7f7b48b36b910d61f05310e1cd15e6d5",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -16,14 +16,14 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 24,
+      "service_count": 25,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 0
     },
     {
       "category": "serverless",
@@ -33,7 +33,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0
     },
     {
@@ -49,14 +49,14 @@
     },
     {
       "category": "databases",
-      "service_count": 38,
+      "service_count": 39,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 0
     },
     {
       "category": "storage",
@@ -71,25 +71,25 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 47,
+      "service_count": 48,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 0
     },
     {
       "category": "ci-cd",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 3
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 2
     },
     {
       "category": "auth-security",
@@ -99,7 +99,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 5,
       "open_catalog_prs": 0
     },
     {
@@ -126,14 +126,14 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 3
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "ai-ml",
@@ -148,36 +148,36 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 18,
+      "service_count": 19,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1
     },
     {
       "category": "queues-jobs",
-      "service_count": 30,
+      "service_count": 31,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 5,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 4,
+      "open_catalog_prs": 0
     },
     {
       "category": "search",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 20,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0
     },
     {
       "category": "feature-flags",
@@ -192,14 +192,14 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 17,
+      "service_count": 18,
       "latest_catalog_verification": "2026-10-26",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 0
     },
     {
       "category": "webhooks-events",
@@ -7709,6 +7709,114 @@
           "reason": "OpenVPN Community Edition official page inaccessible, reverify; WireGuard PR #635 already exists"
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "cloud-vps",
+      "rotation": 11,
+      "searches": [
+        "2026 free VPS official always free no card",
+        "Free VPS provider 2026 no expiration",
+        "LightNode free VPS permanent credit"
+      ],
+      "official_sources": [
+        "https://go.lightnode.com/free-vps",
+        "https://freevps.info/",
+        "https://gratisvps.net/",
+        "https://alavps.com/vps.html"
+      ],
+      "candidates": [],
+      "excluded": [
+        {
+          "name": "LightNode Free VPS",
+          "reason": "Signup credit is one-time; billed hourly after credit exhaustion, not ongoing free."
+        },
+        {
+          "name": "FreeVPS.info",
+          "reason": "Free plan explicitly expires after 120 days."
+        },
+        {
+          "name": "GratisVPS and AlaVPS",
+          "reason": "Extraordinary free resource claims lack independent verification of provisioning and operational eligibility; not catalogued."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "serverless",
+      "rotation": 11,
+      "searches": [
+        "Apache Camel K Kubernetes serverless Apache 2 license",
+        "SpinKube Spin Operator license and current project",
+        "Fermyon Cloud free tier availability"
+      ],
+      "official_sources": [
+        "https://camel.apache.org/camel-k/",
+        "https://github.com/apache/camel-k",
+        "https://www.spinkube.dev/",
+        "https://github.com/spinframework/spin-operator"
+      ],
+      "candidates": [
+        {
+          "id": "spinkube-self-hosted",
+          "status": "Issue-open-await-queue-capacity",
+          "issue": 722,
+          "reason": "Apache-2.0 self-managed serverless runtime; no software quota, hosting infrastructure separate."
+        },
+        {
+          "id": "apache-camel-k-self-hosted",
+          "status": "Issue-open-await-queue-capacity",
+          "issue": 721,
+          "reason": "Apache-2.0 self-managed serverless runtime; no software quota, hosting infrastructure separate."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Fermyon Cloud",
+          "reason": "Free beta marketing page lacks a fresh numeric free quota and current signup availability verification; not delivered."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "auth-security",
+      "rotation": 11,
+      "searches": [
+        "Falco CNCF Apache 2 license runtime security",
+        "Open Policy Agent Apache 2 authorization",
+        "Wazuh open source SIEM licensing self-hosted"
+      ],
+      "official_sources": [
+        "https://github.com/falcosecurity/falco",
+        "https://github.com/open-policy-agent/opa",
+        "https://documentation.wazuh.com/current/installation-guide/index.html"
+      ],
+      "candidates": [
+        {
+          "id": "wazuh-self-hosted-siem",
+          "status": "Issue-open-await-queue-capacity",
+          "issue": 725,
+          "reason": "Ongoing free self-hosted security software; commercial use subject to open-source license obligations."
+        },
+        {
+          "id": "open-policy-agent-self-hosted",
+          "status": "Issue-open-await-queue-capacity",
+          "issue": 724,
+          "reason": "Ongoing free self-hosted security software; commercial use subject to open-source license obligations."
+        },
+        {
+          "id": "falco-runtime-security-oss",
+          "status": "Issue-open-await-queue-capacity",
+          "issue": 723,
+          "reason": "Ongoing free self-hosted security software; commercial use subject to open-source license obligations."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Wazuh Cloud",
+          "reason": "Managed cloud trial/paid service, distinct from eligible self-hosted open-source stack."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7770,12 +7878,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 437,
+    "total_services": 449,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 36,
+    "open_catalog_candidate_issues": 29,
     "unmatched_backlog": [],
-    "note": "Rotation 10: 19/19 categories reviewed on 2026-10-27 UTC. Nine new canonical Issues #710-#718 verified across seven categories; all await queue capacity, no new PR or merge claimed. Main 437 services at 604863cb428c32eab806637dd61f763007969185; 222 entries older than seven days. 16 existing catalog PRs exceed the three-PR capacity gate. Main Pages deployment #40450269068 failed due to an in-progress deployment; production not verified at this HEAD.",
+    "note": "Rotation 10 complete 19/19; rotation 11 3/19. Five new canonical verified Issues #721-#725, no new PR/merge claimed. Main 449 services at 22e958bf7f7b48b36b910d61f05310e1cd15e6d5; 222 entries older than 7 days; 4 catalog PRs remain open (queue cap 3).",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -7982,6 +8090,30 @@
       "ai-ml",
       "tunneling-networking"
     ],
-    "rotation_10_categories_remaining": []
+    "rotation_10_categories_remaining": [],
+    "rotation_11_started_utc": "2026-10-27",
+    "rotation_11_categories_reviewed": [
+      "cloud-vps",
+      "serverless",
+      "auth-security"
+    ],
+    "rotation_11_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "databases",
+      "storage",
+      "developer-tools",
+      "ci-cd",
+      "observability",
+      "analytics",
+      "dns-cdn",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "tunneling-networking",
+      "webhooks-events"
+    ]
   }
 }
