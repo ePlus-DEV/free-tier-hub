@@ -5547,5 +5547,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "celery-open-source-self-hosted",
+    "name": "Celery Open Source Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free BSD-3-Clause Python distributed task queue for asynchronous and scheduled jobs, workers, retries and task routing; no vendor-imposed task quota when self-managed.",
+    "watch_out": "Requires Python worker processes plus a message broker such as RabbitMQ or Redis; infrastructure, broker hosting and monitoring are not included. Native Microsoft Windows support is not maintained.",
+    "pricing_url": "https://github.com/celery/celery",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
