@@ -5679,5 +5679,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "ollama-local-model-runner",
+    "name": "Ollama Local Model Runner",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local model runner and API for downloading and running supported LLMs and embedding models on your own computer or server, with no vendor-imposed local inference request quota.",
+    "watch_out": "Local inference requires your own CPU/GPU, memory, storage and electricity. Individual model weights have their own licenses and commercial-use terms; hosted Ollama cloud models and third-party APIs may have separate limits and charges. MIT license covers the runner, not every model.",
+    "pricing_url": "https://github.com/ollama/ollama",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
