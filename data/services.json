@@ -5931,5 +5931,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "huginn-self-hosted-automation",
+    "name": "Huginn Self-Hosted Automation Agents",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted automation agents for scheduled jobs, event monitoring and conditional actions; no vendor-imposed number-of-agents or run quota in the open-source software.",
+    "watch_out": "Self-hosting and operational maintenance are required; external APIs, proxies and infrastructure may have separate charges and limits. Huginn is event/agent automation, not a managed queue service.",
+    "pricing_url": "https://github.com/huginn/huginn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
