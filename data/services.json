@@ -6015,5 +6015,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "postgresql-self-hosted",
+    "name": "PostgreSQL Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Open-source relational SQL database with ACID transactions, indexes, JSON and replication; PostgreSQL License imposes no software seat, row or query allowance.",
+    "watch_out": "Self-managed compute, storage, backups, high availability and support are not included; third-party managed PostgreSQL offerings charge separately.",
+    "pricing_url": "https://www.postgresql.org/about/licence/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
