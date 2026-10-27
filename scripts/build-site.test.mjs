@@ -33,9 +33,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.equal(result.service_count, entries.length);
     const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     assert.equal(published.length, entries.length);
-    assert.ok(published.every(item => /^\\d{4}-\\d{2}-\\d{2}$/.test(item.added_at)),
+    assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
-    assert.match(html, /data-added-at="\\d{4}-\\d{2}-\\d{2}"/);
+    assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
     assert.doesNotMatch(html, /data-added-at=""/);
     // The public added date is distinct from last_checked and also shown in details.
     const candidate = published.find(item => item.id === 'chatgpt-free');
