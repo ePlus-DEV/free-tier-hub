@@ -5223,5 +5223,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "grafana-tempo-self-hosted",
+    "name": "Grafana Tempo Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source distributed tracing backend with OpenTelemetry ingestion and TraceQL queries; self-managed deployments have no vendor-imposed trace-count license quota.",
+    "watch_out": "You supply object storage, compute, networking and Grafana visualization; hosted Grafana Cloud plans are separate. AGPL-3.0 obligations apply; check Apache-2.0 exceptions in LICENSING.md.",
+    "pricing_url": "https://github.com/grafana/tempo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
