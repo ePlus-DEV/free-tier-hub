@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "3a14d3238ba8bd29b951cfb7206e87f8e1c536a0",
+  "source_main_sha": "ee76c67c5107c43b8d9fcadcd99ee5330a4edb4c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -17,13 +17,13 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 27,
+      "service_count": 28,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -161,25 +161,25 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 20,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "queues-jobs",
-      "service_count": 35,
+      "service_count": 36,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -197,13 +197,13 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 24,
+      "service_count": 25,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8054,10 +8054,10 @@
       "candidates": [
         {
           "id": "caprover-self-hosted-paas",
-          "status": "Issue-created-PR-open-await-exact-head-CI",
+          "status": "catalogued",
           "issue": 775,
           "pr": 780,
-          "reason": "Free self-hosted PaaS; modified free features must remain open-source and paid edition redistribution restricted."
+          "reason": "Free self-hosted PaaS; modified free features must remain open-source and paid edition redistribution restricted. Delivered via exact-head CI, eplus-bot approval and GitHub auto-merge; verified present in main."
         }
       ],
       "excluded": [
@@ -8088,15 +8088,17 @@
       "candidates": [
         {
           "id": "cherry-studio-community",
-          "status": "Issue-created-await-queue",
+          "status": "catalogued",
           "issue": 776,
-          "reason": "AGPL-3.0 community desktop AI assistant; API/model costs separate."
+          "reason": "AGPL-3.0 community desktop AI assistant; API/model costs separate. Delivered via exact-head CI, eplus-bot approval and GitHub auto-merge; verified present in main.",
+          "pr": 782
         },
         {
           "id": "open-webui-self-hosted",
-          "status": "Issue-created-await-queue",
+          "status": "catalogued",
           "issue": 777,
-          "reason": "Free self-hosted AI UI; current non-OSI license requires retaining branding for larger deployments."
+          "reason": "Free self-hosted AI UI; current non-OSI license requires retaining branding for larger deployments. Delivered via exact-head CI, eplus-bot approval and GitHub auto-merge; verified present in main.",
+          "pr": 783
         }
       ],
       "excluded": [
@@ -8131,9 +8133,10 @@
       "candidates": [
         {
           "id": "featurehub-open-source-self-hosted",
-          "status": "Issue-created-await-queue",
+          "status": "catalogued",
           "issue": 778,
-          "reason": "Self-hosted free edition with unlimited users/flags/requests; Commons Clause prohibits selling software as a service, commercial_use=check."
+          "reason": "Self-hosted free edition with unlimited users/flags/requests; Commons Clause prohibits selling software as a service, commercial_use=check. Delivered via exact-head CI, eplus-bot approval and GitHub auto-merge; verified present in main.",
+          "pr": 784
         }
       ],
       "excluded": [
@@ -8158,9 +8161,10 @@
       "candidates": [
         {
           "id": "huginn-self-hosted-automation",
-          "status": "Issue-created-await-queue",
+          "status": "catalogued",
           "issue": 779,
-          "reason": "MIT self-hosted event/scheduled automation; not a managed queue and infrastructure costs separate."
+          "reason": "MIT self-hosted event/scheduled automation; not a managed queue and infrastructure costs separate. Delivered via exact-head CI, eplus-bot approval and GitHub auto-merge; verified present in main.",
+          "pr": 781
         }
       ],
       "excluded": []
@@ -8225,12 +8229,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 487,
+    "total_services": 492,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Refreshed from main 3a14d3238ba8 on 2026-10-27 UTC: 487 services, 5 open candidate Issues. Rotation 11: 13/19; snapshot only, CI/merge statuses must be rechecked at exact HEAD.",
+    "note": "Final 2026-10-27 UTC main snapshot ee76c67c5107: 492 services, five newly discovered candidates auto-merged via PRs #780-#784 (nonconsecutive issue mapping), zero open catalog Issues/PRs. Rotation 11 13/19; exact-head CI and review evidence is in the PRs.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
