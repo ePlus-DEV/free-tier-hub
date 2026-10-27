@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "22e958bf7f7b48b36b910d61f05310e1cd15e6d5",
+  "source_main_sha": "75cb8c2629c597a363693dd7161c513775f2e4e2",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -12,7 +12,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
       "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "app-hosting",
@@ -23,7 +24,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "serverless",
@@ -34,7 +36,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
       "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "cloud-vps",
@@ -45,7 +48,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 3,
       "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "databases",
@@ -56,7 +60,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "storage",
@@ -67,7 +72,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "developer-tools",
@@ -78,18 +84,20 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
       "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ci-cd",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 20,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "auth-security",
@@ -100,7 +108,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
       "open_catalog_candidate_issues": 5,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "observability",
@@ -111,7 +120,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "analytics",
@@ -121,8 +131,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "dns-cdn",
@@ -132,8 +143,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ai-ml",
@@ -144,18 +156,20 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ai-assistants",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "queues-jobs",
@@ -166,7 +180,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
       "open_catalog_candidate_issues": 4,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "search",
@@ -177,7 +192,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "feature-flags",
@@ -188,7 +204,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "tunneling-networking",
@@ -198,19 +215,21 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "webhooks-events",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 0
     }
   ],
   "discovery_log": [
@@ -7817,6 +7836,133 @@
           "reason": "Managed cloud trial/paid service, distinct from eligible self-hosted open-source stack."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "dns-cdn",
+      "queries": [
+        "dnsmasq official GPLv2 GPLv3 DNS DHCP documentation",
+        "dnsdist official PowerDNS GPLv2 load balancer"
+      ],
+      "official_sources": [
+        "https://dnsmasq.org/doc.html",
+        "https://www.dnsdist.org/index.html",
+        "https://www.dnsdist.org/common/license.html"
+      ],
+      "candidates": [
+        {
+          "id": "dnsmasq-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 730,
+          "reason": "GPLv2-or-v3 DNS cache/forwarder and DHCP for self-hosted networks; no vendor quota; no card, commercial use permitted subject to GPL."
+        },
+        {
+          "id": "dnsdist-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 731,
+          "reason": "GPLv2 DNS-aware proxy/load balancer; no hosted query allowance; requires operator-managed DNS backends."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Technitium DNS Server",
+          "reason": "Already catalogued as technitium-dns-server-self-hosted."
+        },
+        {
+          "name": "PowerDNS Authoritative Server",
+          "reason": "Already catalogued as powerdns-authoritative-self-hosted; dnsdist is a distinct DNS load balancer."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "tunneling-networking",
+      "queries": [
+        "NetBird official Community Edition selfhosted license 2026",
+        "NetBird Cloud Free vs self-hosted"
+      ],
+      "official_sources": [
+        "https://docs.netbird.io/selfhosted/enterprise",
+        "https://github.com/netbirdio/netbird"
+      ],
+      "candidates": [
+        {
+          "id": "netbird-community-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 732,
+          "reason": "Official provider confirms perpetual free self-hosted Community Edition; AGPLv3 server components and BSD-3 client, paid Enterprise features separate; distinct from netbird-cloud-free."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "NetBird Cloud Free",
+          "reason": "Already catalogued as netbird-cloud-free; distinct hosted service."
+        },
+        {
+          "name": "Headscale and Nebula",
+          "reason": "Already catalogued as headscale-self-hosted and nebula-overlay-self-hosted."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "analytics",
+      "queries": [
+        "Countly Lite official free forever self hosted analytics",
+        "Countly licensing FAQ commercial internal vs customers"
+      ],
+      "official_sources": [
+        "https://countly.com/lite",
+        "https://support.countly.com/hc/en-us/articles/360037501312-Countly-Licensing-FAQ"
+      ],
+      "candidates": [
+        {
+          "id": "countly-lite-self-hosted",
+          "status": "Issue-open-await-PR",
+          "issue": 733,
+          "reason": "Free-forever self-hosted product analytics for internal apps, including paid apps; modified AGPLv3 prohibits providing Countly to clients without Enterprise. commercial_use=check and restriction explicit."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Countly Flex",
+          "reason": "Official pricing starts at $175/month after a 14-day trial; not an ongoing free hosted tier."
+        },
+        {
+          "name": "Matomo On-Premise",
+          "reason": "Already catalogued as matomo-on-premise."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "webhooks-events",
+      "queries": [
+        "Novu Cloud free 10000 workflow runs monthly official pricing",
+        "Novu Free production environments and card requirements"
+      ],
+      "official_sources": [
+        "https://www.novu.co/pricing/",
+        "https://novu.co/changelog/new-tier-novu-pro/"
+      ],
+      "candidates": [
+        {
+          "id": "novu-cloud-free",
+          "status": "Issue-open-await-PR",
+          "issue": 734,
+          "reason": "Official $0 recurring 10,000 workflow runs/month, 20 workflows, two environments, three seats and no card; commercial terms marked check, downstream provider costs separate."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Novu Enterprise Self-Hosted",
+          "reason": "Enterprise self-hosted deployment requires a commercial contract, not the Novu Cloud Free tier."
+        },
+        {
+          "name": "ntfy Self-Hosted",
+          "reason": "Already catalogued as ntfy-self-hosted."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -7878,12 +8024,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 449,
+    "total_services": 453,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 29,
+    "open_catalog_candidate_issues": 30,
     "unmatched_backlog": [],
-    "note": "Rotation 10 complete 19/19; rotation 11 3/19. Five new canonical verified Issues #721-#725, no new PR/merge claimed. Main 449 services at 22e958bf7f7b48b36b910d61f05310e1cd15e6d5; 222 entries older than 7 days; 4 catalog PRs remain open (queue cap 3).",
+    "note": "Rotation 10 complete 19/19; rotation 11 7/19. Five newly verified canonical Issues #730-#734; queue Issue #730 failed pre-commit Git addition-date test (run #40466696559), safely addressed by reviewed PR #735 (OPEN, unverified); independent workflow_dispatch authorAssociation bug tracked by PR #729 (OPEN). No new merge claimed. Main 453 services at 75cb8c2629c597a363693dd7161c513775f2e4e2; 222 stale >7d; 30 open catalog candidate Issues.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8095,7 +8241,11 @@
     "rotation_11_categories_reviewed": [
       "cloud-vps",
       "serverless",
-      "auth-security"
+      "auth-security",
+      "dns-cdn",
+      "tunneling-networking",
+      "analytics",
+      "webhooks-events"
     ],
     "rotation_11_categories_remaining": [
       "static-hosting",
@@ -8105,15 +8255,11 @@
       "developer-tools",
       "ci-cd",
       "observability",
-      "analytics",
-      "dns-cdn",
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
       "search",
-      "feature-flags",
-      "tunneling-networking",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
