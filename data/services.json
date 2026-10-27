@@ -113,11 +113,11 @@
     "category": "app-hosting",
     "plan": "ongoing",
     "free_limit": "One Free instance: 512 MB RAM, 0.1 vCPU, 2 GB SSD",
-    "watch_out": "Limited regions; sleeps after an hour without traffic; no persistent volumes.",
-    "pricing_url": "https://www.koyeb.com/docs/reference/instances",
-    "credit_card": "check",
+    "watch_out": "Koyeb announced in February 2026 that new users must subscribe to a paid plan; existing Starter organizations retain their free instance. Some documentation still lists Starter, so confirm signup eligibility. Card required ($29 temporary authorization); limited regions, idle sleep and no persistent volumes.",
+    "pricing_url": "https://www.koyeb.com/pricing",
+    "credit_card": "yes",
     "commercial_use": "check",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-25"
   },
   {
     "id": "railway",
