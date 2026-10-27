@@ -5403,5 +5403,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "opencode-open-source",
+    "name": "OpenCode Open Source Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed terminal, desktop and IDE coding agent with unlimited local software use; supports local models and external LLM providers.",
+    "watch_out": "No free quota for paid LLM API inference is included; local model compute is user-provided. Optional OpenCode Zen/Go paid services are separate.",
+    "pricing_url": "https://github.com/anomalyco/opencode",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
