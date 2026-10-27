@@ -5895,5 +5895,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "buildbot-self-hosted-ci",
+    "name": "Buildbot Self-Hosted CI",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Open-source Buildbot master, workers and web UI for self-hosted continuous integration, build and test automation; no vendor-imposed software execution or build-minute quota.",
+    "watch_out": "Run and secure your own Buildbot controller, workers, build storage and integrations; compute, storage and networking may cost money. Buildbot is GPL-2.0 licensed, so distribution must comply with the license.",
+    "pricing_url": "https://www.buildbot.net/about.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
