@@ -195,9 +195,11 @@
       matched.sort(function (a, b) {
         var ad = a.getAttribute("data-added-at") || "";
         var bd = b.getAttribute("data-added-at") || "";
-        // Unknown historical dates retain catalog insertion order.
+        // Multiple services can be published on the same UTC day. Preserve
+        // the source insertion sequence for ties; newest additions go first.
         return (mode === "newest" ? bd.localeCompare(ad) : ad.localeCompare(bd)) ||
-          a.querySelector("h3").textContent.localeCompare(b.querySelector("h3").textContent, "en");
+          (mode === "newest" ? cards.indexOf(b) - cards.indexOf(a) :
+            cards.indexOf(a) - cards.indexOf(b));
       });
     } else if (mode === "verified") {
       matched.sort(function (a, b) {
