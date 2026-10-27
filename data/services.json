@@ -184,12 +184,12 @@
     "name": "Oracle Cloud Always Free Compute",
     "category": "cloud-vps",
     "plan": "ongoing",
-    "free_limit": "Eligible AMD and Arm Ampere A1 compute resources",
-    "watch_out": "Requires a valid payment card for identity verification; region capacity and inactivity policies apply.",
-    "pricing_url": "https://www.oracle.com/cloud/free/",
+    "free_limit": "Always Free: up to two AMD E2.1.Micro VMs (1/8 OCPU, 1 GB RAM each); Arm Ampere A1: 1,500 OCPU-hours and 9,000 GB-hours/month (equivalent to 2 OCPUs and 12 GB RAM for Always Free tenancies); 200 GB shared boot/block volume storage.",
+    "watch_out": "Compute must run in the home region; capacity may be unavailable and idle instances may be reclaimed. Payment card required for account verification. Boot volumes use the shared 200 GB allowance; paid account overages can incur charges. Verify tenancy-specific A1 limits.",
+    "pricing_url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
     "credit_card": "yes",
     "commercial_use": "check",
-    "last_checked": "2026-09-22"
+    "last_checked": "2026-10-21"
   },
   {
     "id": "gce-e2-micro",
