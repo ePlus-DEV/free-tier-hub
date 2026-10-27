@@ -5703,5 +5703,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apache-pinot-self-hosted",
+    "name": "Apache Pinot Self-Hosted Real-Time OLAP",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed real-time analytical database with SQL queries and batch/stream ingestion, deployable on your own infrastructure without a vendor-imposed storage or query quota in the software.",
+    "watch_out": "Self-hosted cluster compute, storage, networking, operations and streaming sources are not included. Managed Apache Pinot services are separate paid products; running a production cluster can require significant resources.",
+    "pricing_url": "https://github.com/apache/pinot",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
