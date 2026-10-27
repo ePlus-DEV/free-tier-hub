@@ -5487,5 +5487,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "argo-rollouts-self-hosted",
+    "name": "Argo Rollouts Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-managed Kubernetes progressive deployments with blue-green and canary rollout strategies; no software subscription or per-rollout quota.",
+    "watch_out": "Requires an existing Kubernetes cluster, compatible ingress or service-mesh integrations for advanced traffic shaping, and operator-managed infrastructure; cluster and metrics-provider costs are not included. Apache-2.0 core.",
+    "pricing_url": "https://github.com/argoproj/argo-rollouts",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
