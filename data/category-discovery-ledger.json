@@ -23,7 +23,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -167,7 +167,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -179,7 +179,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -203,7 +203,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8036,6 +8036,134 @@
           "reason": "Maintainer explicitly deprecated the open-source edition and states it will receive no further updates; excluded from new-service delivery."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "rotation": 11,
+      "category": "app-hosting",
+      "searches": [
+        "CapRover self-hosted free forever PaaS license 2026",
+        "Portainer Community Edition 2.45 LTS 2026 commercial production suitability"
+      ],
+      "official_sources": [
+        "https://caprover.com/",
+        "https://github.com/caprover/caprover/blob/master/LICENSE",
+        "https://www.portainer.io/blog/portainer-3-0-is-coming",
+        "https://github.com/portainer/portainer"
+      ],
+      "candidates": [
+        {
+          "id": "caprover-self-hosted-paas",
+          "status": "Issue-created-PR-open-await-exact-head-CI",
+          "issue": 775,
+          "pr": 780,
+          "reason": "Free self-hosted PaaS; modified free features must remain open-source and paid edition redistribution restricted."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Portainer Community Edition",
+          "reason": "Free zlib-licensed 2.45 LTS but current official README describes CE as intended for non-production/homelabs; defer as commercial-production recommendation pending category fit and policy review."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "rotation": 11,
+      "category": "ai-assistants",
+      "searches": [
+        "Cherry Studio Community Edition AGPL commercial use",
+        "Open WebUI 2026 license branding restriction commercial self-hosted",
+        "Roo Code shutdown 2026",
+        "Continue.dev archived 2026",
+        "LobeHub community license derivative restrictions"
+      ],
+      "official_sources": [
+        "https://github.com/CherryHQ/cherry-studio",
+        "https://docs.openwebui.com/license/",
+        "https://github.com/open-webui/open-webui/blob/main/LICENSE",
+        "https://github.com/RooCodeInc/Roo-Code",
+        "https://github.com/lobehub/lobehub"
+      ],
+      "candidates": [
+        {
+          "id": "cherry-studio-community",
+          "status": "Issue-created-await-queue",
+          "issue": 776,
+          "reason": "AGPL-3.0 community desktop AI assistant; API/model costs separate."
+        },
+        {
+          "id": "open-webui-self-hosted",
+          "status": "Issue-created-await-queue",
+          "issue": 777,
+          "reason": "Free self-hosted AI UI; current non-OSI license requires retaining branding for larger deployments."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Roo Code",
+          "reason": "Official repository archived and extension shut down May 15, 2026."
+        },
+        {
+          "name": "Continue.dev",
+          "reason": "Discontinued after 2026 acquisition; not a current maintained recommendation."
+        },
+        {
+          "name": "LobeHub",
+          "reason": "Current community license restricts commercial derivative distribution; commercial scope requires additional review."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "rotation": 11,
+      "category": "feature-flags",
+      "searches": [
+        "FeatureHub self-hosted open source unlimited feature flags",
+        "FeatureHub current LICENSE.txt Commons Clause resale restriction",
+        "FeatureHub SaaS pricing trial 30 days"
+      ],
+      "official_sources": [
+        "https://github.com/featurehub-io/featurehub",
+        "https://github.com/featurehub-io/featurehub/blob/main/LICENSE.txt",
+        "https://www.featurehub.io/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "featurehub-open-source-self-hosted",
+          "status": "Issue-created-await-queue",
+          "issue": 778,
+          "reason": "Self-hosted free edition with unlimited users/flags/requests; Commons Clause prohibits selling software as a service, commercial_use=check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatureHub SaaS",
+          "reason": "Paid after 30-day free trial; no perpetual free hosted plan verified."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "rotation": 11,
+      "category": "queues-jobs",
+      "searches": [
+        "Huginn MIT license open source event agents",
+        "Huginn self-hosted scheduled jobs monitoring automation"
+      ],
+      "official_sources": [
+        "https://github.com/huginn/huginn",
+        "https://github.com/huginn/huginn/blob/master/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "huginn-self-hosted-automation",
+          "status": "Issue-created-await-queue",
+          "issue": 779,
+          "reason": "MIT self-hosted event/scheduled automation; not a managed queue and infrastructure costs separate."
+        }
+      ],
+      "excluded": []
     }
   ],
   "pending_reverification": [
@@ -8100,9 +8228,9 @@
     "total_services": 487,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 5,
     "unmatched_backlog": [],
-    "note": "Refreshed catalog snapshot from main 3a14d3238ba8 on 2026-10-27: 487 services, 0 open candidate Issues and 0 open catalog PRs. Rotation 10: 19/19; rotation 11: 9/19. Preserve 204 historical discovery entries; per-entry statuses reflect their original review time, not current GitHub state.",
+    "note": "Refreshed from main 3a14d3238ba8 on 2026-10-27 UTC: 487 services, 5 open candidate Issues. Rotation 11: 13/19; snapshot only, CI/merge statuses must be rechecked at exact HEAD.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8320,19 +8448,19 @@
       "analytics",
       "webhooks-events",
       "ci-cd",
-      "search"
+      "search",
+      "app-hosting",
+      "ai-assistants",
+      "feature-flags",
+      "queues-jobs"
     ],
     "rotation_11_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
       "storage",
       "developer-tools",
       "observability",
-      "ai-ml",
-      "queues-jobs",
-      "feature-flags",
-      "ai-assistants"
+      "ai-ml"
     ]
   }
 }
