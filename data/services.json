@@ -6363,5 +6363,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "spicedb-self-hosted",
+    "name": "SpiceDB Self-Hosted Authorization",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Zanzibar-inspired fine-grained authorization database with self-managed API and relationship permissions; no per-check vendor quota in self-hosted software.",
+    "watch_out": "Requires operating your own SpiceDB instance, datastore and authentication/authorization integration; infrastructure, backups, monitoring and optional AuthZed managed services are separate costs.",
+    "pricing_url": "https://github.com/authzed/spicedb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
