@@ -5427,5 +5427,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "argo-workflows-self-hosted",
+    "name": "Argo Workflows Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Kubernetes-native DAG/steps workflow engine with container tasks, workflow templates and cron scheduling; no software license fee or task quota.",
+    "watch_out": "Requires your own Kubernetes cluster and operational maintenance; compute, container registry, object storage and networking can incur charges. Not a free hosted workflow service.",
+    "pricing_url": "https://argoproj.github.io/workflows/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
