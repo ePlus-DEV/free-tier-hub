@@ -6303,5 +6303,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "screwdriver-cd-self-hosted",
+    "name": "Screwdriver CD Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source continuous delivery platform; self-hosted build/test/deploy pipelines with Docker, Kubernetes or Nomad executors and no vendor-set build-minute quota.",
+    "watch_out": "Requires self-managed API, UI, log store, database, executors and SCM OAuth configuration; infrastructure and third-party integration costs are separate. Hosted free runner credits are not included.",
+    "pricing_url": "https://screwdriver.cd/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
