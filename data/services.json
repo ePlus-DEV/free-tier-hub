@@ -5247,5 +5247,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "brave-leo-free",
+    "name": "Brave Leo Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free browser-integrated AI assistant for chat, summaries, writing and translation with rate-limited default and selectable models; no account required.",
+    "watch_out": "Requires Brave browser; provider does not publish a fixed numerical free request allowance and models/rate limits can change. Premium subscription is separate; commercial-use terms require checking.",
+    "pricing_url": "https://support.brave.app/hc/en-us/articles/20958609786637-How-do-I-use-Brave-Leo",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
