@@ -5247,5 +5247,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "bleve-open-source-search",
+    "name": "Bleve Open-Source Search Library",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-managed text, numeric, geo and vector indexing/querying with the Apache-2.0 Go search library; no vendor-hosted usage quota.",
+    "watch_out": "Embedded Go library, not a turnkey hosted search service; storage, compute, API and index lifecycle are the operator's responsibility. Some optional vector features depend on build configuration.",
+    "pricing_url": "https://github.com/blevesearch/bleve",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
