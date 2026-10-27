@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "af05a14cc76707b258dc1a79a0e8917086abae1a",
+  "source_main_sha": "ecf909e0f3682b87875f011e547daef5a6fd74d8",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,15 +185,15 @@
     },
     {
       "category": "search",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "feature-flags",
@@ -9080,9 +9080,9 @@
         },
         {
           "id": "fess-search-server-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue": 877,
-          "reason": "Issue #877 was retried safely and GitHub created PR #881. Validation/build SUCCESS at head e615e279; bot review and merge pending, not counted on main.",
+          "reason": "Issue #877 → PR #881 auto-merged after exact-head validation/build SUCCESS and eplus-bot APPROVED; confirmed in main catalog.",
           "pr": 881
         },
         {
@@ -9160,12 +9160,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 537,
+    "total_services": 538,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 13: 3/19 categories reviewed. Main 537 (+1): YaCy #876→#879 auto-merged after exact-head CI and eplus-bot approval. Apache Lucene #878→#880 CI/approval success but merge conflict pending safe non-force reconciliation. Fess #877→#881 created after safe Issue edit retry; CI success, bot approval pending. Ledger PR exact-head CI not confirmed. No direct main push, manual merge, production deploy, force-push, or schedule changes.",
+    "note": "Rotation 13: 3/19 categories reviewed. Main 538 (+2): YaCy #879 and Fess #881 auto-merged with exact-head CI success and eplus-bot approval; both present in latest main. Apache Lucene #878→#880 CI/approval success but merge conflict pending non-force reconciliation and new exact-head CI. Discovery ledger PR remains open; exact-head CI not confirmed. No direct main push/manual merge/deploy/force-push or cadence change.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
