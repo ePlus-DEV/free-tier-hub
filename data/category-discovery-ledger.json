@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "d540777154db99938a5acda89b549bda92b19e64",
+  "source_main_sha": "1e04c5743508f520d9086b68fc259de6b53aaf86",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -65,13 +65,13 @@
     },
     {
       "category": "storage",
-      "service_count": 26,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 1,
       "open_catalog_candidate_prs": 1
     },
@@ -8572,10 +8572,10 @@
       "candidates": [
         {
           "id": "zot-oci-registry-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 824,
           "pr_number": 827,
-          "reason": "Apache-2.0 self-hosted OCI registry; commercial permitted, no card, no vendor quota; exact-head CI/review pending."
+          "reason": "Issue #824 → PR #827, exact-head validation/build SUCCESS and eplus-bot APPROVED, GitHub auto-merged; confirmed in main 1e04c574."
         },
         {
           "id": "harbor-container-registry-self-hosted",
@@ -8585,9 +8585,10 @@
         },
         {
           "id": "sftpgo-community-self-hosted",
-          "status": "issue",
+          "status": "pr",
           "issue_number": 826,
-          "reason": "Free AGPLv3 self-hosted file transfer Community edition; commercial use subject to copyleft obligations; awaiting queue PR."
+          "reason": "Issue #826 → PR #828, exact-head validation/build SUCCESS and eplus-bot APPROVED; mergeable=false after main advanced, awaiting safe reconciliation.",
+          "pr_number": 828
         }
       ],
       "excluded": [
@@ -8657,12 +8658,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 511,
+    "total_services": 512,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 7/19 categories reviewed. Storage discovery identified three new eligible self-hosted services, created canonical Issues #824-#826; PR #827 exists for zot and requires exact-head CI/review; Harbor and SFTPGo remain Issue-only at this snapshot. Main still 511 services, no new merge confirmed. Never conflate Issues/PRs with merged catalog.",
+    "note": "Rotation 12: 7/19 categories reviewed. Storage: Zot #824 → PR #827 MERGED (exact-head validation/build SUCCESS and eplus-bot APPROVED), confirmed in main 1e04c574 (512 services, +1 this run). SFTPGo #826 → PR #828 OPEN, exact-head validation/build SUCCESS and bot APPROVED, but mergeable=false after main advanced; wait for safe non-force reconciliation and revalidation. Harbor #825 remains Issue-only, requires queue/recovery inspection. Do not claim these two delivered. No direct main push or manual merge.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
