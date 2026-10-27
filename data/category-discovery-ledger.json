@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "6a0aa1a8ad6269da93112de9b6a0997f0c4864ec",
+  "source_main_sha": "b0cfbca2bc8c38081d6249c61805645e13f1f72f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -137,13 +137,13 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 21,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -209,13 +209,13 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 20,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8383,15 +8383,17 @@
       "candidates": [
         {
           "id": "zerotier-personal-free",
-          "status": "Issue-open-await-PR",
+          "status": "catalogued",
           "issue_number": 803,
-          "reason": "Current official Personal plan free 10 devices, 1 network, personal non-commercial license; new distinct provider."
+          "reason": "Current official Personal plan free 10 devices, 1 network, personal non-commercial license; new distinct provider. Delivered through canonical Issue → queue → PR, exact-head CI and eplus-bot review, GitHub auto-merge; verified in main b0cfbca2bc8c.",
+          "pr_number": 808
         },
         {
           "id": "cloudflare-zero-trust-free",
-          "status": "Issue-open-await-PR",
+          "status": "catalogued",
           "issue_number": 804,
-          "reason": "Cloudflare Zero Trust free for up to 50 users, 24h logs, payment details required. Distinct product from existing Cloudflare DNS/Workers."
+          "reason": "Cloudflare Zero Trust free for up to 50 users, 24h logs, payment details required. Distinct product from existing Cloudflare DNS/Workers. Delivered through canonical Issue → queue → PR, exact-head CI and eplus-bot review, GitHub auto-merge; verified in main b0cfbca2bc8c.",
+          "pr_number": 810
         }
       ],
       "excluded": [
@@ -8418,21 +8420,24 @@
       "candidates": [
         {
           "id": "noip-free-dynamic-dns",
-          "status": "Issue-open-await-PR",
+          "status": "catalogued",
           "issue_number": 805,
-          "reason": "1 hostname, 1 update client, confirmation every 30 days; no card; commercial-use check."
+          "reason": "1 hostname, 1 update client, confirmation every 30 days; no card; commercial-use check. Delivered through canonical Issue → queue → PR, exact-head CI and eplus-bot review, GitHub auto-merge; verified in main b0cfbca2bc8c.",
+          "pr_number": 811
         },
         {
           "id": "freedns-afraid-free",
-          "status": "Issue-open-await-PR",
+          "status": "catalogued",
           "issue_number": 806,
-          "reason": "Provider official free DNS, 5 Starter subdomains; card and commercial use check."
+          "reason": "Provider official free DNS, 5 Starter subdomains; card and commercial use check. Delivered through canonical Issue → queue → PR, exact-head CI and eplus-bot review, GitHub auto-merge; verified in main b0cfbca2bc8c.",
+          "pr_number": 812
         },
         {
           "id": "zoneedit-free-personal-dns",
-          "status": "Issue-open-await-PR",
+          "status": "catalogued",
           "issue_number": 807,
-          "reason": "1 personal DNS zone, 100000 queries/month, no commercial use; card check."
+          "reason": "1 personal DNS zone, 100000 queries/month, no commercial use; card check. Delivered through canonical Issue → queue → PR, exact-head CI and eplus-bot review, GitHub auto-merge; verified in main b0cfbca2bc8c.",
+          "pr_number": 809
         }
       ],
       "excluded": [
@@ -8502,12 +8507,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 501,
+    "total_services": 506,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 12 started 2026-10-27 UTC: 3/19 categories reviewed, five genuinely new hosted free candidates saved in canonical Issues #803-#807. At snapshot main 501 services (HEAD 6a0aa1a8), catalog delta 0; Issue queue may create PRs asynchronously. Cloud VPS: no new perpetual eligible VPS verified; exclude time-limited EC2. Existing catalog IDs and historical backlog deduplicated. No direct main push, force-push, manual merge or production deployment.",
+    "note": "Rotation 12: 3/19 categories reviewed on 2026-10-27 UTC. Five new eligible hosted free tiers Issue #803-#807 delivered by PR #808, #810, #811, #812, #809; all auto-merged after exact-head validation/build and eplus-bot approval. Latest main b0cfbca2bc8c38081d6249c61805645e13f1f72f contains 506 services (+5 from 501 at run start), all five new IDs read back. No open candidate Issues or catalog PRs at snapshot. Cloud VPS yielded no new perpetual verified provider; time-limited EC2 excluded. 220 older entries need re-verification. No direct main push, force-push, manual merge or manual deployment.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
