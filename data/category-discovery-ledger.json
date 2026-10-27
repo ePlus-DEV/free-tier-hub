@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "18427a4a54c64869ad38ede2dba728c63a7046c6",
+  "source_main_sha": "8638b5725e957984003946c79715a7de98c25e79",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -72,8 +72,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
       "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "developer-tools",
@@ -101,13 +101,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 31,
+      "service_count": 32,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -119,9 +119,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "analytics",
@@ -8772,6 +8772,55 @@
           "reason": "Acquired by FusionAuth; current hosted/support terms and product differentiation require re-verification before Issue."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "observability",
+      "queries": [
+        "Dozzle MIT free forever self-hosted official",
+        "VictoriaLogs Apache-2.0 community open source single node cluster official",
+        "HyperDX MIT open source ClickStack self-hosted official",
+        "Uptrace Community free forever 14 days retention individual official",
+        "VictoriaTraces Apache-2.0 community official"
+      ],
+      "official_sources": [
+        "https://dozzle.dev/",
+        "https://docs.victoriametrics.com/victorialogs/",
+        "https://github.com/hyperdxio/hyperdx",
+        "https://uptrace.dev/editions",
+        "https://docs.victoriametrics.com/victoriatraces/"
+      ],
+      "candidates": [
+        {
+          "id": "dozzle-self-hosted",
+          "status": "pr",
+          "issue_number": 850,
+          "pr_number": 853,
+          "reason": "Official Dozzle MIT and free forever; container log viewer; no paid hosted entitlement assumed. PR pending exact-head CI/review."
+        },
+        {
+          "id": "victorialogs-self-hosted",
+          "status": "issue",
+          "issue_number": 851,
+          "reason": "Official Apache-2.0 Community single-node and cluster log database; self-hosting costs separate; canonical queue pending."
+        },
+        {
+          "id": "hyperdx-self-hosted",
+          "status": "issue",
+          "issue_number": 852,
+          "reason": "Official MIT HyperDX self-hosted ClickStack; infrastructure and cloud plans separate; canonical queue pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Uptrace Community",
+          "reason": "Official free Community edition is for individuals with 14-day retention; defer detailed commercial-use rights check before a candidate Issue."
+        },
+        {
+          "name": "VictoriaTraces",
+          "reason": "Official Apache-2.0 Community appears eligible but deferred to next observability discovery turn for distinct product/license and deduplication verification."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8833,12 +8882,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 523,
+    "total_services": 524,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 11/19 categories. Main snapshot 18427a4a54c6 has 523 services. New candidates NextChat, big-AGI, SpiceDB, Pomerium: Issues #842-#845; PRs #846-#849. PRs #846/#848/#847 confirmed merged; #849 pending non-force reconciliation and exact-head CI/review. Historic backlog 29/30 exact IDs catalogued, remaining uploadthing-free aliases uploadthing-2gb-app. No direct main push or manual merge.",
+    "note": "Rotation 12 observability review: 12/19 categories. Main snapshot 8638b5725e957984003946c79715a7de98c25e79 has 524 services. Three new verified candidates Issues #850–#852; PR #853 exists, pending exact-head CI/review/merge. No new merged service counted yet. Existing 30-entry backlog largely catalogued; uploadthing-free is alias of uploadthing-2gb-app.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9081,14 +9130,14 @@
       "queues-jobs",
       "ci-cd",
       "ai-assistants",
-      "auth-security"
+      "auth-security",
+      "observability"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
       "app-hosting",
       "databases",
       "developer-tools",
-      "observability",
       "analytics",
       "ai-ml",
       "feature-flags"
