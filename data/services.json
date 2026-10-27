@@ -6399,5 +6399,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "hyperdx-self-hosted",
+    "name": "HyperDX Open-Source Self-Hosted Observability",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source HyperDX observability platform with logs, traces, metrics, errors and session replay; self-host on ClickHouse infrastructure without a HyperDX software subscription or vendor-set event quota.",
+    "watch_out": "Self-hosting requires ClickHouse and other deployment components; server, storage and telemetry processing costs are not included. Managed HyperDX/ClickStack cloud plans and their free limits are separate. Review anonymized usage-data setting.",
+    "pricing_url": "https://github.com/hyperdxio/hyperdx",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
