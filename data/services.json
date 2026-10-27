@@ -5559,5 +5559,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "oban-open-source-self-hosted",
+    "name": "Oban Open Source for Elixir",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Elixir background job processor with reliable persisted jobs, scheduled/cron jobs and community support; no software subscription for the open-source edition.",
+    "watch_out": "Requires an Elixir application and a supported database. Oban Pro features including durable workflows, global/rate limiting and queue partitioning are paid; infrastructure is not included.",
+    "pricing_url": "https://oban.pro/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
