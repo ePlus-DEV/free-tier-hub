@@ -35,7 +35,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -191,7 +191,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -227,7 +227,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     }
@@ -8446,6 +8446,109 @@
           "reason": "Already catalogued; no duplicates."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "webhooks-events",
+      "queries": [
+        "Argo Events Apache-2.0 Kubernetes event source official",
+        "Knative Eventing Apache-2.0 broker trigger official",
+        "Convoy Community self-hosted Elastic License 2.0 free limits"
+      ],
+      "official_sources": [
+        "https://github.com/argoproj/argo-events",
+        "https://github.com/argoproj/argo-events/blob/master/LICENSE",
+        "https://knative.dev/docs/eventing/",
+        "https://github.com/knative/eventing/blob/main/LICENSE",
+        "https://github.com/frain-dev/convoy",
+        "https://github.com/frain-dev/convoy/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "argo-events-self-hosted",
+          "status": "Issue",
+          "issue_number": 813,
+          "reason": "Apache-2.0 Argo event source/sensor/trigger system, 20+ event sources; Kubernetes infrastructure billed separately."
+        },
+        {
+          "id": "knative-eventing-self-hosted",
+          "status": "Issue",
+          "issue_number": 814,
+          "reason": "Apache-2.0 CloudEvents event broker/trigger platform, distinct from catalogued Knative Serving."
+        },
+        {
+          "id": "convoy-community-self-hosted",
+          "status": "Issue",
+          "issue_number": 815,
+          "reason": "Elastic-2.0 source-available free Community tier 1 org/2 projects/1 user; cannot resell as hosted managed service."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Argo Workflows / Argo CD / Argo Rollouts",
+          "reason": "Existing separate products in main; no duplicate."
+        },
+        {
+          "name": "Convoy Premium/Cloud",
+          "reason": "Paid hosted/enterprise features not included; Community source-available license restrictions recorded."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "search",
+      "queries": [
+        "Zilliz Cloud Free cluster 5GB 2.5M vCU monthly official",
+        "Zilliz free cluster payment method commercial limitations"
+      ],
+      "official_sources": [
+        "https://docs.zilliz.com/docs/free-trials",
+        "https://docs.zilliz.com/docs/limits",
+        "https://docs.zilliz.com/docs/free-and-serverless-clusters"
+      ],
+      "candidates": [
+        {
+          "id": "zilliz-cloud-free",
+          "status": "Issue",
+          "issue_number": 816,
+          "reason": "Hosted perpetual Free vector search cluster 5GB, 2.5M vCUs/month, max 5 collections; distinct from self-hosted Milvus and 30-day trial."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Zilliz Serverless/Dedicated $100 credits",
+          "reason": "Credits expire after 30 days; not the ongoing Free cluster."
+        },
+        {
+          "name": "Milvus self-hosted",
+          "reason": "Already catalogued; different product and hosting model."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "serverless",
+      "queries": [
+        "wasmCloud CNCF open source Apache-2.0 self-hosted WebAssembly functions"
+      ],
+      "official_sources": [
+        "https://github.com/wasmCloud/wasmCloud",
+        "https://github.com/wasmCloud/wasmCloud/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "wasmcloud-self-hosted",
+          "status": "Issue",
+          "issue_number": 817,
+          "reason": "Apache-2.0 CNCF Wasm runtime for functions/services on own hosts or Kubernetes; infrastructure billed separately."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Knative Serving",
+          "reason": "Already catalogued; no duplicate."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8510,9 +8613,9 @@
     "total_services": 506,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 5,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 3/19 categories reviewed on 2026-10-27 UTC. Five new eligible hosted free tiers Issue #803-#807 delivered by PR #808, #810, #811, #812, #809; all auto-merged after exact-head validation/build and eplus-bot approval. Latest main b0cfbca2bc8c38081d6249c61805645e13f1f72f contains 506 services (+5 from 501 at run start), all five new IDs read back. No open candidate Issues or catalog PRs at snapshot. Cloud VPS yielded no new perpetual verified provider; time-limited EC2 excluded. 220 older entries need re-verification. No direct main push, force-push, manual merge or manual deployment.",
+    "note": "Rotation 12: 6/19 categories reviewed on 2026-10-27 UTC; new canonical candidate Issues #813–#817 created after dedupe against main, Issues, PRs and branches. 5 verified eligible services, not yet counted as PR-created or merged. Main currently 506 services at b0cfbca2bc8c38081d6249c61805645e13f1f72f. No direct main push, force-push, manual merge, security bypass or manual deployment. PR and exact-head CI must be rechecked before declaring delivery.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8747,12 +8850,14 @@
     "rotation_12_categories_reviewed": [
       "cloud-vps",
       "tunneling-networking",
-      "dns-cdn"
+      "dns-cdn",
+      "webhooks-events",
+      "search",
+      "serverless"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
       "app-hosting",
-      "serverless",
       "databases",
       "storage",
       "developer-tools",
@@ -8763,9 +8868,7 @@
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
-      "search",
-      "feature-flags",
-      "webhooks-events"
+      "feature-flags"
     ]
   }
 }
