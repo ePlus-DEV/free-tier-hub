@@ -1,41 +1,41 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "75cb8c2629c597a363693dd7161c513775f2e4e2",
+  "source_main_sha": "4923acdb0d0de541f92fa25f172a116998ae04e9",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 22,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 25,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "app-hosting",
-      "service_count": 25,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 27,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "serverless",
-      "service_count": 16,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 17,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -65,13 +65,13 @@
     },
     {
       "category": "storage",
-      "service_count": 24,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 25,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -96,7 +96,7 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
       "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 2,
+      "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
@@ -113,13 +113,13 @@
     },
     {
       "category": "observability",
-      "service_count": 36,
+      "service_count": 37,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -149,13 +149,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 21,
+      "service_count": 22,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -168,18 +168,18 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 5,
       "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 1,
+      "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "queues-jobs",
-      "service_count": 31,
+      "service_count": 35,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 15,
-      "open_catalog_candidate_issues": 4,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -197,25 +197,25 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 23,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 24,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "tunneling-networking",
-      "service_count": 18,
-      "latest_catalog_verification": "2026-10-26",
+      "service_count": 19,
+      "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -228,7 +228,7 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
       "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
+      "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     }
   ],
@@ -8024,12 +8024,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 453,
+    "total_services": 468,
     "total_categories": 19,
     "stale_over_7d": 222,
-    "open_catalog_candidate_issues": 30,
+    "open_catalog_candidate_issues": 15,
     "unmatched_backlog": [],
-    "note": "Rotation 10 complete 19/19; rotation 11 7/19. Five newly verified canonical Issues #730-#734; queue Issue #730 failed pre-commit Git addition-date test (run #40466696559), safely addressed by reviewed PR #735 (OPEN, unverified); independent workflow_dispatch authorAssociation bug tracked by PR #729 (OPEN). No new merge claimed. Main 453 services at 75cb8c2629c597a363693dd7161c513775f2e4e2; 222 stale >7d; 30 open catalog candidate Issues.",
+    "note": "Snapshot from main 4923acdb0d0d on 2026-10-27 UTC: 468 catalog services, 15 open canonical candidate Issues, 0 catalog delivery PRs and 222 entries with last_checked older than 7 days. Rotations 1–10 are preserved; rotation 11 remains 7/19 (no new discovery review claimed). Issue→PR auto-delivery resumed following PR #729; #735 was closed as duplicate. Live counts change as catalog PRs merge; rerun census before relying on this snapshot.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
