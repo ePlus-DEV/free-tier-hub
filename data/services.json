@@ -5355,5 +5355,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "kubevela-self-hosted",
+    "name": "KubeVela Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 application delivery platform for Kubernetes with deployment workflows, multi-cluster orchestration and progressive delivery; no software usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, networking and deployment infrastructure; this is a platform controller, not a free managed hosting account.",
+    "pricing_url": "https://kubevela.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
