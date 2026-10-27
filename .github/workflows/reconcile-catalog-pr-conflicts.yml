@@ -2,6 +2,11 @@ name: Reconcile catalog PR conflicts
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/services.json'
+      - '.github/workflows/reconcile-catalog-pr-conflicts.yml'
   schedule:
     - cron: '*/30 * * * *'
 
