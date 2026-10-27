@@ -1,16 +1,16 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "9c77f6de194053d92a4767ac0bc8707197e29ae6",
+  "source_main_sha": "3b7eee20802ce2df48cd6c4372237e8abfe00c99",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 10,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -18,11 +18,11 @@
     {
       "category": "app-hosting",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -30,11 +30,11 @@
     {
       "category": "serverless",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 4,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -42,11 +42,11 @@
     {
       "category": "cloud-vps",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-25",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -54,11 +54,11 @@
     {
       "category": "databases",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 27,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -66,11 +66,11 @@
     {
       "category": "storage",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 13,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 1,
       "open_catalog_candidate_prs": 1
@@ -78,11 +78,11 @@
     {
       "category": "developer-tools",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 36,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -90,11 +90,11 @@
     {
       "category": "ci-cd",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -102,11 +102,11 @@
     {
       "category": "auth-security",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 16,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -114,11 +114,11 @@
     {
       "category": "observability",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 25,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -126,11 +126,11 @@
     {
       "category": "analytics",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -138,11 +138,11 @@
     {
       "category": "dns-cdn",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 4,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -150,11 +150,11 @@
     {
       "category": "ai-ml",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 7,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -162,11 +162,11 @@
     {
       "category": "ai-assistants",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 5,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -174,11 +174,11 @@
     {
       "category": "queues-jobs",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 15,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -186,11 +186,11 @@
     {
       "category": "search",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 7,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -198,11 +198,11 @@
     {
       "category": "feature-flags",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 12,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -210,11 +210,11 @@
     {
       "category": "tunneling-networking",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 2,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -222,11 +222,11 @@
     {
       "category": "webhooks-events",
       "service_count": 0,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": null,
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
-      "stale_over_7d": 9,
+      "stale_over_7d": 0,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
@@ -8618,21 +8618,24 @@
       "candidates": [
         {
           "id": "bunqueue-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 830,
-          "reason": "Official MIT license; no paid tier or job quota; Bun server required; card not required for self-hosting; commercial allowed; candidate Issue #830, PR/CI/merge not yet confirmed."
+          "reason": "Issue #830 → PR #833, exact-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-merged; confirmed on main.",
+          "pr_number": 833
         },
         {
           "id": "river-job-queue-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 831,
-          "reason": "MPL-2.0 self-hosted River queue, no managed quota; requires own Postgres or SQLite; Issue #831; PR/CI/merge not yet confirmed."
+          "reason": "Issue #831 requeued by idempotent issues.edited after no PR; PR #835, reconciled without force push; exact-head validation/build SUCCESS and eplus-bot APPROVED at reconciled HEAD; GitHub auto-merged; confirmed on main.",
+          "pr_number": 835
         },
         {
           "id": "automatisch-community-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 832,
-          "reason": "AGPL-3.0 Community Edition, Docker Compose self-hosted; enterprise features excluded; Issue #832; PR/CI/merge not yet confirmed."
+          "reason": "Issue #832 → PR #834, reconciled without force push; exact-head validation/build SUCCESS and GitHub auto-merged; review was APPROVED on preceding HEAD, so do not claim exact-head review for reconciled commit.",
+          "pr_number": 834
         }
       ],
       "excluded": [
@@ -8706,12 +8709,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 514,
+    "total_services": 517,
     "total_categories": 19,
-    "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "stale_over_7d": 0,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 8/19 categories. Queues-jobs: 3 verified official OSS candidates Issue #830–#832; PR, exact-head CI, review and merge not confirmed. Main 9c77f6de1940 contains 514 services. No direct main writes, no manual merges or schedule changes.",
+    "note": "Rotation 12: 8/19 categories. Queues-jobs: 3 new verified OSS services, Issues #830–#832 → PRs #833–#835 all GitHub auto-MERGED; latest main 3b7eee20802c contains 517 services. PR #834 review was from previous head after non-force reconciliation; exact-head CI succeeded but do not claim exact-head approval. Candidate Issue #831 closure is pending cleanup. No direct main push, manual merge, force push or schedule change.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
