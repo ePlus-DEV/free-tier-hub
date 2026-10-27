@@ -6303,5 +6303,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "prow-ci-self-hosted",
+    "name": "Prow Kubernetes CI/CD Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted Kubernetes CI/CD system with presubmit/postsubmit jobs, GitHub ChatOps, policy enforcement and merge automation; no vendor-imposed job-minute allowance.",
+    "watch_out": "Requires operating Kubernetes, build workers and artifact storage. Cloud compute, GitHub integration and storage costs are not included; configure bot permissions and webhook security carefully.",
+    "pricing_url": "https://docs.prow.k8s.io/docs/overview/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
