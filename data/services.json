@@ -5477,6 +5477,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "openhands-open-source",
+    "name": "OpenHands Open Source",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed OpenHands core AI coding agent, CLI, SDK and agent-server for local/self-managed use, without a software-license task quota.",
+    "watch_out": "LLM provider usage and local compute can cost money. OpenHands Cloud/Enterprise and the enterprise/ directory use separate commercial or time-limited licenses; this listing covers only the MIT core.",
+    "pricing_url": "https://github.com/OpenHands/OpenHands",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "argo-rollouts-self-hosted",
+    "name": "Argo Rollouts Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Unlimited self-managed Kubernetes progressive deployments with blue-green and canary rollout strategies; no software subscription or per-rollout quota.",
+    "watch_out": "Requires an existing Kubernetes cluster, compatible ingress or service-mesh integrations for advanced traffic shaping, and operator-managed infrastructure; cluster and metrics-provider costs are not included. Apache-2.0 core.",
+    "pricing_url": "https://github.com/argoproj/argo-rollouts",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "agola-ci-self-hosted",
     "name": "Agola CI/CD Self-Hosted",
     "category": "ci-cd",
