@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "8638b5725e957984003946c79715a7de98c25e79",
+  "source_main_sha": "e055cad615d38f1f6c805c01d9b7fe44f43a3d4f",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -113,15 +113,15 @@
     },
     {
       "category": "observability",
-      "service_count": 38,
+      "service_count": 41,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "analytics",
@@ -8793,22 +8793,24 @@
       "candidates": [
         {
           "id": "dozzle-self-hosted",
-          "status": "pr",
+          "status": "catalogued",
           "issue_number": 850,
           "pr_number": 853,
-          "reason": "Official Dozzle MIT and free forever; container log viewer; no paid hosted entitlement assumed. PR pending exact-head CI/review."
+          "reason": "Official Dozzle MIT and free forever; container log viewer; no paid hosted entitlement assumed.  GitHub confirmed auto-merge; final-head validation/build SUCCESS and eplus-bot APPROVED."
         },
         {
           "id": "victorialogs-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 851,
-          "reason": "Official Apache-2.0 Community single-node and cluster log database; self-hosting costs separate; canonical queue pending."
+          "reason": "Official Apache-2.0 Community single-node and cluster log database; self-hosting costs separate;  GitHub confirmed auto-merge; final-head validation/build SUCCESS and eplus-bot APPROVED.",
+          "pr_number": 856
         },
         {
           "id": "hyperdx-self-hosted",
-          "status": "issue",
+          "status": "catalogued",
           "issue_number": 852,
-          "reason": "Official MIT HyperDX self-hosted ClickStack; infrastructure and cloud plans separate; canonical queue pending."
+          "reason": "Official MIT HyperDX self-hosted ClickStack; infrastructure and cloud plans separate;  GitHub confirmed auto-merge; final-head validation/build SUCCESS and eplus-bot APPROVED.",
+          "pr_number": 854
         }
       ],
       "excluded": [
@@ -8882,12 +8884,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 524,
+    "total_services": 527,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 12 observability review: 12/19 categories. Main snapshot 8638b5725e957984003946c79715a7de98c25e79 has 524 services. Three new verified candidates Issues #850–#852; PR #853 exists, pending exact-head CI/review/merge. No new merged service counted yet. Existing 30-entry backlog largely catalogued; uploadthing-free is alias of uploadthing-2gb-app.",
+    "note": "Rotation 12: 12/19 categories. Main e055cad615d38f1f6c805c01d9b7fe44f43a3d4f contains 527 services. Observability discovery delivered 3 new services: Dozzle Issue #850 → PR #853, VictoriaLogs Issue #851 → PR #856, HyperDX Issue #852 → PR #854, all GitHub auto-merged with exact-head validation/build SUCCESS and eplus-bot approvals. HyperDX conflict reconciled without force push. Main production Pages deployment still requires separate exact-head verification.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
