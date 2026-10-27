@@ -6329,6 +6329,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "nextchat-self-hosted",
+    "name": "NextChat Self-Hosted AI Chat",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted AI chat interface for OpenAI-compatible, local and cloud model endpoints; Docker/Node deployment with no NextChat software subscription or vendor-set chat quota.",
+    "watch_out": "Self-hosted software is free, not the separately marketed hosted NextChat service. Cloud LLM API tokens, model inference, server/hosting and optional external services may cost money; secure access codes and API keys.",
+    "pricing_url": "https://github.com/ChatGPTNextWeb/NextChat",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "big-agi-self-hosted",
+    "name": "big-AGI Self-Hosted AI Workspace",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed multi-model AI chat workspace with personas, parallel Beam conversations and Docker/on-prem deployment; no vendor-imposed self-hosted software usage quota.",
+    "watch_out": "Requires your own server or compatible deployment platform and API keys for paid LLM providers; model usage and infrastructure are not included. Hosted big-AGI subscriptions are separate; preserve MIT license notices.",
+    "pricing_url": "https://github.com/enricoros/big-AGI",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "pomerium-core-self-hosted",
     "name": "Pomerium Core Self-Hosted Identity-Aware Proxy",
     "category": "auth-security",
