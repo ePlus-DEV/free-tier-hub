@@ -5993,6 +5993,18 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "openlitespeed-self-hosted",
+    "name": "OpenLiteSpeed Self-Hosted",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "GPLv3 open-source HTTP/3 web server with static file hosting, PHP support and caching; no software license-based traffic or site quota.",
+    "watch_out": "Requires your own server, storage and bandwidth. GPLv3 obligations apply on redistribution; embedding in a proprietary product may require a separate OEM license.",
+    "pricing_url": "https://www.litespeedtech.com/open-source/openlitespeed",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "opentofu-open-source",
     "name": "OpenTofu Open Source",
     "category": "developer-tools",
