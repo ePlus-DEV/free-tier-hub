@@ -143,7 +143,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -215,7 +215,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8367,6 +8367,80 @@
           ]
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "tunneling-networking",
+      "official_sources": [
+        "https://www.zerotier.com/pricing/",
+        "https://www.cloudflare.com/plans/zero-trust-services/",
+        "https://developers.cloudflare.com/cloudflare-one/setup/"
+      ],
+      "queries": [
+        "ZeroTier Personal free 10 devices license 2026",
+        "Cloudflare Zero Trust Free 50 users billing card"
+      ],
+      "candidates": [
+        {
+          "id": "zerotier-personal-free",
+          "status": "Issue-open-await-PR",
+          "issue_number": 803,
+          "reason": "Current official Personal plan free 10 devices, 1 network, personal non-commercial license; new distinct provider."
+        },
+        {
+          "id": "cloudflare-zero-trust-free",
+          "status": "Issue-open-await-PR",
+          "issue_number": 804,
+          "reason": "Cloudflare Zero Trust free for up to 50 users, 24h logs, payment details required. Distinct product from existing Cloudflare DNS/Workers."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Tailscale Personal and Twingate Starter",
+          "reason": "Already catalogued; not new candidates."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.noip.com/remote-access",
+        "https://freedns.afraid.org/",
+        "https://freedns.afraid.org/pricing/",
+        "https://www.zoneedit.com/free-dns/"
+      ],
+      "queries": [
+        "No-IP Free DDNS hostname confirmation 30 days",
+        "FreeDNS afraid.org Starter free 5 subdomains",
+        "ZoneEdit free personal DNS zone 100000 queries"
+      ],
+      "candidates": [
+        {
+          "id": "noip-free-dynamic-dns",
+          "status": "Issue-open-await-PR",
+          "issue_number": 805,
+          "reason": "1 hostname, 1 update client, confirmation every 30 days; no card; commercial-use check."
+        },
+        {
+          "id": "freedns-afraid-free",
+          "status": "Issue-open-await-PR",
+          "issue_number": 806,
+          "reason": "Provider official free DNS, 5 Starter subdomains; card and commercial use check."
+        },
+        {
+          "id": "zoneedit-free-personal-dns",
+          "status": "Issue-open-await-PR",
+          "issue_number": 807,
+          "reason": "1 personal DNS zone, 100000 queries/month, no commercial use; card check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "DuckDNS, ClouDNS, Dynu, dynv6",
+          "reason": "Already catalogued; no duplicates."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8431,9 +8505,9 @@
     "total_services": 501,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 5,
     "unmatched_backlog": [],
-    "note": "2026-10-27 UTC: rotation 11 complete (19/19). Nine new candidates Issue #785-#793 were delivered through PR #794-#802, all exact-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-merged, and all nine IDs verified in latest main 6a0aa1a8ad62. Main catalog 501 services (+9 from initial 492). No manual merge, force-push or deployment.",
+    "note": "Rotation 12 started 2026-10-27 UTC: 3/19 categories reviewed, five genuinely new hosted free candidates saved in canonical Issues #803-#807. At snapshot main 501 services (HEAD 6a0aa1a8), catalog delta 0; Issue queue may create PRs asynchronously. Cloud VPS: no new perpetual eligible VPS verified; exclude time-limited EC2. Existing catalog IDs and historical backlog deduplicated. No direct main push, force-push, manual merge or production deployment.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8663,6 +8737,30 @@
       "ai-ml",
       "developer-tools"
     ],
-    "rotation_11_categories_remaining": []
+    "rotation_11_categories_remaining": [],
+    "rotation_12_started_utc": "2026-10-27",
+    "rotation_12_categories_reviewed": [
+      "cloud-vps",
+      "tunneling-networking",
+      "dns-cdn"
+    ],
+    "rotation_12_categories_remaining": [
+      "static-hosting",
+      "app-hosting",
+      "serverless",
+      "databases",
+      "storage",
+      "developer-tools",
+      "ci-cd",
+      "auth-security",
+      "observability",
+      "analytics",
+      "ai-ml",
+      "ai-assistants",
+      "queues-jobs",
+      "search",
+      "feature-flags",
+      "webhooks-events"
+    ]
   }
 }
