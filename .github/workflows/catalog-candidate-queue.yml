@@ -123,21 +123,18 @@ jobs:
           fs.writeFileSync(catalog, JSON.stringify([...services, candidate], null, 2) + '\n');
           NODE
 
-      - name: Generate and validate
-        if: steps.capacity.outputs.available == 'true'
-        run: |
-          set -euo pipefail
-          npm run catalog:sync
-          npm run verify
-          git diff --check
-
-      - name: Prepare delivery branch and commit
+      # Create the candidate commit locally before running build tests. The
+      # added-date parser reads Git history, so uncommitted candidates cannot
+      # pass; publishing the branch is still forbidden until all tests pass.
+      - name: Generate, commit locally and validate
         if: steps.capacity.outputs.available == 'true'
         env:
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
         run: |
           set -euo pipefail
+          npm run catalog:sync
+          git diff --check
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Fail closed if a branch already exists. Never rewrite contributor history.
@@ -148,6 +145,17 @@ jobs:
           git switch -c "$DELIVERY_BRANCH"
           git add data/services.json README.md docs/
           git commit -m "catalog: add $SERVICE_ID"
+          # The first-parent Git log now includes this local candidate commit.
+          # Main still derives the real publication date from the eventual merge.
+          npm run verify
+          git diff --check
+
+      - name: Publish verified delivery branch
+        if: steps.capacity.outputs.available == 'true'
+        env:
+          DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
+        run: |
+          set -euo pipefail
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       - name: Open or reuse PR
