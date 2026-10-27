@@ -5235,5 +5235,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "apache-dolphinscheduler-self-hosted",
+    "name": "Apache DolphinScheduler Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 distributed workflow scheduler with visual DAG authoring, task dependencies and supported SQL, shell and data-processing tasks; no software license quota.",
+    "watch_out": "Self-hosting needs a database, compute and operational maintenance. External execution engines, cloud resources and managed hosting may incur costs.",
+    "pricing_url": "https://dolphinscheduler.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
