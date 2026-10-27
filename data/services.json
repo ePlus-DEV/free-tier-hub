@@ -6605,6 +6605,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "pi-hole-dns-self-hosted",
+    "name": "Pi-hole DNS Sinkhole Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free EUPL-licensed self-hosted DNS sinkhole for network-wide ad and tracker blocking, local DNS caching and optional DHCP; no vendor-imposed DNS-query or client quota.",
+    "watch_out": "Requires your own Linux/Docker host and DNS configuration, upkeep and blocklist management. Avoid exposing an open public resolver; DNS filtering can break legitimate sites. EUPL license conditions apply; hosting and bandwidth are not included.",
+    "pricing_url": "https://github.com/pi-hole/pi-hole",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "yadifa-authoritative-dns-self-hosted",
+    "name": "YADIFA Authoritative DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD 3-Clause licensed authoritative DNS name server with DNSSEC and dynamic DNS updates; free to download and self-host with no software licensing fee or vendor-imposed zone/query allowance.",
+    "watch_out": "Authoritative DNS software, not free managed DNS hosting or a general recursive resolver. Requires servers, redundant nameservers, public connectivity, maintenance and DNSSEC key management; infrastructure costs are separate.",
+    "pricing_url": "https://yadifa.eu/about.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "openreplay-open-source-self-hosted",
     "name": "OpenReplay Open-Source Self-Hosted",
     "category": "analytics",
