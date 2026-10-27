@@ -6075,5 +6075,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "langflow-self-hosted",
+    "name": "Langflow Open Source Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed visual AI agent and LLM workflow builder with local Python/Docker deployment, API and MCP server capabilities; no Langflow software usage cap.",
+    "watch_out": "Own compute, database and hosting required; third-party model/API calls and vector databases may charge separately. Secure deployments require authentication and patching.",
+    "pricing_url": "https://github.com/langflow-ai/langflow",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
