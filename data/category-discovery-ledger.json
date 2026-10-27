@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "ecf909e0f3682b87875f011e547daef5a6fd74d8",
+  "source_main_sha": "89609f156c41b9fcf72bfb3c8f12001627f8948d",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -185,15 +185,15 @@
     },
     {
       "category": "search",
-      "service_count": 24,
+      "service_count": 25,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "feature-flags",
@@ -209,15 +209,15 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "webhooks-events",
@@ -9099,6 +9099,43 @@
           "reason": "Third-party source indicates OSS engine deprecated; exclude pending current official confirmation."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "tunneling-networking",
+      "official_sources": [
+        "https://github.com/jpillora/chisel",
+        "https://github.com/antoniomika/sish",
+        "https://github.com/go-gost/gost"
+      ],
+      "queries": [
+        "open-source self-hosted TCP UDP HTTP SSH tunnel MIT license Chisel",
+        "sish SSH reverse tunnel MIT",
+        "GO Simple Tunnel GOST MIT proxy forwarding"
+      ],
+      "candidates": [
+        {
+          "id": "chisel-tunnel-self-hosted",
+          "status": "catalogued",
+          "issue": 882,
+          "pr": 885,
+          "reason": "GitHub auto-merged PR #885; present in main 89609f15; exact-head validation/build SUCCESS and eplus-bot APPROVED."
+        },
+        {
+          "id": "sish-ssh-tunnel-self-hosted",
+          "status": "issue",
+          "issue": 883,
+          "reason": "Canonical Issue #883 created; no PR/branch found at retry, re-edited JSON body safely to retrigger queue."
+        },
+        {
+          "id": "gost-simple-tunnel-self-hosted",
+          "status": "pr",
+          "issue": 884,
+          "pr": 886,
+          "reason": "PR #886 open; after conflict reconciliation requires fresh exact-head CI and review; not merged."
+        }
+      ],
+      "excluded": []
     }
   ],
   "pending_reverification": [
@@ -9160,12 +9197,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 538,
+    "total_services": 540,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 13: 3/19 categories reviewed. Main 538 (+2): YaCy #879 and Fess #881 auto-merged with exact-head CI success and eplus-bot approval; both present in latest main. Apache Lucene #878→#880 CI/approval success but merge conflict pending non-force reconciliation and new exact-head CI. Discovery ledger PR remains open; exact-head CI not confirmed. No direct main push/manual merge/deploy/force-push or cadence change.",
+    "note": "Rotation 13: 4/19 categories reviewed. Main 540 services at 89609f15; Chisel Issue #882 → PR #885 auto-merged after exact-head CI/review; GOST PR #886 awaiting exact-head checks after reconciliation; sish Issue #883 retriggered safely with no existing PR. Do not count pending PRs as merged. 220 older than seven days; no main push, manual merge/deploy, force push or cadence changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9423,7 +9460,8 @@
     "rotation_13_categories_reviewed": [
       "cloud-vps",
       "serverless",
-      "search"
+      "search",
+      "tunneling-networking"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
@@ -9440,7 +9478,6 @@
       "ai-assistants",
       "queues-jobs",
       "feature-flags",
-      "tunneling-networking",
       "webhooks-events"
     ]
   }
