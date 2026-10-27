@@ -5849,6 +5849,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "dnsdist-self-hosted",
+    "name": "dnsdist Self-Hosted DNS Load Balancer",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 self-hosted DNS-aware traffic load balancing, backend health checks, abuse/DoS filtering and Prometheus/HTTP metrics; no vendor-side DNS request quota.",
+    "watch_out": "dnsdist is a DNS proxy/load balancer, not a hosted authoritative DNS service or standalone resolver; requires configured upstream DNS backends, infrastructure and secure operations. GPL obligations apply; commercial support is separate.",
+    "pricing_url": "https://www.dnsdist.org/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "netbird-community-self-hosted",
+    "name": "NetBird Community Edition Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free ongoing self-hosted WireGuard mesh networking with control plane, peer connectivity, policies and routing; no Community Edition license fee or time limit.",
+    "watch_out": "Requires self-managed management/signal/relay servers and identity/network configuration. Server components use AGPLv3 and clients BSD-3-Clause; active-active HA, SCIM, peer approval and some enterprise logging require a paid commercial license. Distinct from NetBird Cloud Free.",
+    "pricing_url": "https://docs.netbird.io/selfhosted/enterprise",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "countly-lite-self-hosted",
     "name": "Countly Lite Self-Hosted Analytics",
     "category": "analytics",
