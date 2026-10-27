@@ -6483,5 +6483,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "wiremock-open-source-self-hosted",
+    "name": "WireMock Open Source Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source HTTP API mocking and stubbing server, available as standalone Java JAR, Docker container or library; no software request or project quotas.",
+    "watch_out": "Self-hosted software only: server compute, storage and networking may cost money. WireMock Cloud hosted mocking and enterprise features are separate offerings; no hosted cloud allowance is included.",
+    "pricing_url": "https://wiremock.org/docs/download-and-installation/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
