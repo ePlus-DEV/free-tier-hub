@@ -1,19 +1,19 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "ee76c67c5107c43b8d9fcadcd99ee5330a4edb4c",
+  "source_main_sha": "6a0aa1a8ad6269da93112de9b6a0997f0c4864ec",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 25,
+      "service_count": 27,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 10,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "app-hosting",
@@ -53,39 +53,39 @@
     },
     {
       "category": "databases",
-      "service_count": 40,
+      "service_count": 43,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 27,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "storage",
-      "service_count": 25,
+      "service_count": 26,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "developer-tools",
-      "service_count": 50,
+      "service_count": 51,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 36,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ci-cd",
@@ -113,13 +113,13 @@
     },
     {
       "category": "observability",
-      "service_count": 37,
+      "service_count": 38,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 25,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -149,13 +149,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 22,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -8184,16 +8184,17 @@
       "candidates": [
         {
           "id": "openlitespeed-self-hosted",
-          "status": "PR",
+          "status": "catalogued",
           "issue": 785,
           "pr": 794,
-          "reason": "OpenLiteSpeed GPLv3 proprietary embedding needs OEM licensing; PR created, exact-head checks/review and merge not yet confirmed"
+          "reason": "OpenLiteSpeed GPLv3 proprietary embedding needs OEM licensing; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #794."
         },
         {
           "id": "openresty-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 786,
-          "reason": "OpenResty bundle has component-specific licenses; canonical Issue created, awaiting queue/PR"
+          "reason": "OpenResty bundle has component-specific licenses; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #796.",
+          "pr": 796
         }
       ],
       "excluded": [
@@ -8220,21 +8221,24 @@
       "candidates": [
         {
           "id": "postgresql-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 787,
-          "reason": "PostgreSQL permissive license; no software quota; canonical Issue created, awaiting queue/PR"
+          "reason": "PostgreSQL permissive license; no software quota; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #797.",
+          "pr": 797
         },
         {
           "id": "mariadb-community-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 788,
-          "reason": "MariaDB GPLv2; own server required; canonical Issue created, awaiting queue/PR"
+          "reason": "MariaDB GPLv2; own server required; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #798.",
+          "pr": 798
         },
         {
           "id": "clickhouse-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 789,
-          "reason": "ClickHouse Apache-2.0; cloud service separate; canonical Issue created, awaiting queue/PR"
+          "reason": "ClickHouse Apache-2.0; cloud service separate; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #799.",
+          "pr": 799
         }
       ],
       "excluded": [
@@ -8261,9 +8265,10 @@
       "candidates": [
         {
           "id": "seafile-community-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 790,
-          "reason": "Community Edition free; server core AGPLv3 and enterprise functions excluded; canonical Issue created, awaiting queue/PR"
+          "reason": "Community Edition free; server core AGPLv3 and enterprise functions excluded; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #800.",
+          "pr": 800
         }
       ],
       "excluded": [
@@ -8289,9 +8294,10 @@
       "candidates": [
         {
           "id": "icinga2-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 791,
-          "reason": "GPLv3+ from Icinga 2 v2.16; self-hosted alerting and monitoring; canonical Issue created, awaiting queue/PR"
+          "reason": "GPLv3+ from Icinga 2 v2.16; self-hosted alerting and monitoring; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #801.",
+          "pr": 801
         }
       ],
       "excluded": [
@@ -8318,9 +8324,10 @@
       "candidates": [
         {
           "id": "langflow-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 792,
-          "reason": "MIT OSS local/hosted deployment; LLM/API charges separate; canonical Issue created, awaiting queue/PR"
+          "reason": "MIT OSS local/hosted deployment; LLM/API charges separate; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #802.",
+          "pr": 802
         }
       ],
       "excluded": [
@@ -8346,10 +8353,10 @@
       "candidates": [
         {
           "id": "opentofu-open-source",
-          "status": "PR",
+          "status": "catalogued",
           "issue": 793,
           "pr": 795,
-          "reason": "MPL-2.0 infrastructure as code; provisioned cloud resources billed separately; PR created, exact-head checks/review and merge not yet confirmed"
+          "reason": "MPL-2.0 infrastructure as code; provisioned cloud resources billed separately; verified in main after exact-head validation/build SUCCESS, eplus-bot APPROVED, and GitHub auto-merge via PR #795."
         }
       ],
       "excluded": [
@@ -8421,12 +8428,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 492,
+    "total_services": 501,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 9,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "2026-10-27 UTC snapshot: 492 services across 19 categories at main ee76c67c5107; rotation 11 19/19. Nine new eligible OSS/self-hosted candidates created as Issues #785-#793, GitHub queue and exact-head CI/merge remain subject to live verification. No manual merge or production deploy.",
+    "note": "2026-10-27 UTC: rotation 11 complete (19/19). Nine new candidates Issue #785-#793 were delivered through PR #794-#802, all exact-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-merged, and all nine IDs verified in latest main 6a0aa1a8ad62. Main catalog 501 services (+9 from initial 492). No manual merge, force-push or deployment.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
