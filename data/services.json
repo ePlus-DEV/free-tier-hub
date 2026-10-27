@@ -6135,5 +6135,17 @@
     "credit_card": "check",
     "commercial_use": "no",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "noip-free-dynamic-dns",
+    "name": "No-IP Free Dynamic DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "1 free Dynamic DNS hostname on a No-IP-owned domain, 1 update client and a choice of 30 No-IP domains; no credit card required.",
+    "watch_out": "Must reconfirm hostname every 30 days or it may expire/be deleted; no included SSL certificate, custom-domain DNS or paid Public Tunnels. Free tier is marketed for home users; commercial-use eligibility requires provider confirmation.",
+    "pricing_url": "https://www.noip.com/remote-access",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
   }
 ]
