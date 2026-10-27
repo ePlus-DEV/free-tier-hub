@@ -6053,6 +6053,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "mariadb-community-self-hosted",
+    "name": "MariaDB Community Server Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 open-source relational SQL database server with transactions, replication and community storage engines; no per-user or database license cap.",
+    "watch_out": "Hosting, maintenance and backup costs are yours; GPLv2 distribution obligations apply. MariaDB Enterprise Platform and paid support are separate.",
+    "pricing_url": "https://mariadb.com/products/community-server/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "icinga2-self-hosted",
+    "name": "Icinga 2 Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free self-managed infrastructure and service monitoring with health checks, distributed monitoring, alerting and REST API; no software host-based fee.",
+    "watch_out": "Compute, storage and notification channels are your responsibility; Icinga 2 v2.16+ uses GPLv3+ and commercial support is separate.",
+    "pricing_url": "https://github.com/Icinga/icinga2",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "seafile-community-self-hosted",
     "name": "Seafile Community Edition Self-Hosted",
     "category": "storage",
