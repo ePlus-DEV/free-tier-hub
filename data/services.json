@@ -6531,5 +6531,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "fess-search-server-self-hosted",
+    "name": "Fess Search Server Self-Hosted",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-licensed open-source full-text enterprise search server with crawling, search UI and admin console; no vendor-imposed query, user or indexed-document quota when self-hosted.",
+    "watch_out": "Requires a compatible OpenSearch backend and Java/Docker infrastructure; hosting, storage, indexing and operations cost extra. Community edition has no guaranteed support; paid commercial support is optional.",
+    "pricing_url": "https://fess.codelibs.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
