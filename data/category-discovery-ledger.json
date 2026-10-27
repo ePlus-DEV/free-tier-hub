@@ -131,9 +131,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "dns-cdn",
@@ -203,9 +203,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "tunneling-networking",
@@ -8823,6 +8823,87 @@
           "reason": "Official Apache-2.0 Community appears eligible but deferred to next observability discovery turn for distinct product/license and deduplication verification."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "analytics",
+      "queries": [
+        "Aptabase Cloud Free official 20,000 events/month no credit card",
+        "LogSnag Free official 2,500 events/month 3 seats",
+        "TelemetryDeck July 2026 free allowance and auto-upgrade policy"
+      ],
+      "official_sources": [
+        "https://aptabase.com/",
+        "https://aptabase.com/docs",
+        "https://logsnag.com/pricing",
+        "https://telemetrydeck.com/blog/pricing-update-2026/",
+        "https://telemetrydeck.com/blog/free-3-apps/"
+      ],
+      "candidates": [
+        {
+          "id": "aptabase-cloud-free",
+          "status": "issue",
+          "issue_number": 858,
+          "reason": "Official hosted Free 20k events/month, unlimited apps, no card; distinct from catalogued aptabase-self-hosted; commercial use marked check pending explicit confirmation."
+        },
+        {
+          "id": "logsnag-free",
+          "status": "issue",
+          "issue_number": 859,
+          "reason": "Official Free forever hosted plan with 2,500 events/month, 3 seats, no card; commercial terms marked check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "TelemetryDeck Free",
+          "reason": "July 2026 policy cut new-account free volume to 50k events/month and describes automatic paid-plan upgrades for recurring overages; defer until free-account billing and card protections verified."
+        },
+        {
+          "name": "Aptabase Self-Hosted",
+          "reason": "Already catalogued under aptabase-self-hosted; cloud plan is a separately documented hosted tier."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "feature-flags",
+      "queries": [
+        "FeatureProbe official GitHub Apache-2.0 self-hosted Docker Compose",
+        "Featureflow Cloud Free current pricing 1M SDK requests no credit card",
+        "Flipper Cloud Free official 2 collaborators pricing",
+        "Flagsmith Cloud Free hosted 50k API requests vs self-hosted"
+      ],
+      "official_sources": [
+        "https://github.com/FeatureProbe/FeatureProbe",
+        "https://www.featureflow.com/pricing",
+        "https://www.flippercloud.io/pricing",
+        "https://docs.flagsmith.com/administration-and-security/billing-api-usage"
+      ],
+      "candidates": [
+        {
+          "id": "featureprobe-self-hosted",
+          "status": "pr",
+          "issue_number": 857,
+          "pr_number": 860,
+          "reason": "Apache-2.0, official Docker Compose self-hosting and feature flags; no vendor usage cap. PR created; exact-head CI/review/merge not yet verified."
+        },
+        {
+          "id": "featureflow-free",
+          "status": "issue",
+          "issue_number": 861,
+          "reason": "Official hosted Free forever after 14-day Business trial; 1M SDK requests/month, 5 seats, 1 project, 2 environments; no card. Commercial terms marked check."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Flipper Cloud Free",
+          "reason": "Official cloud free tier appears available, but separate card/commercial conditions and differentiation from catalogued flipper-cloudless-self-hosted need verification before Issue."
+        },
+        {
+          "name": "Flagsmith Self-Hosted",
+          "reason": "Already catalogued as flagsmith-self-hosted; hosted Cloud tier considered separately for later verification."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8887,9 +8968,9 @@
     "total_services": 527,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 4,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 12/19 categories. Main e055cad615d38f1f6c805c01d9b7fe44f43a3d4f contains 527 services. Observability discovery delivered 3 new services: Dozzle Issue #850 → PR #853, VictoriaLogs Issue #851 → PR #856, HyperDX Issue #852 → PR #854, all GitHub auto-merged with exact-head validation/build SUCCESS and eplus-bot approvals. HyperDX conflict reconciled without force push. Main production Pages deployment still requires separate exact-head verification.",
+    "note": "Rotation 12: 14/19. Main e055cad615d38f1f6c805c01d9b7fe44f43a3d4f has 527 services. New candidate Issues #857 #858 #859 #861; PR #860 created for FeatureProbe, pending exact-head CI/review/merge verification. No new catalog merge counted in this ledger update. Analytics/feature-flags researched from official sources; TelemetryDeck deferred for auto-upgrade risk.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9133,16 +9214,16 @@
       "ci-cd",
       "ai-assistants",
       "auth-security",
-      "observability"
+      "observability",
+      "analytics",
+      "feature-flags"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
       "app-hosting",
       "databases",
       "developer-tools",
-      "analytics",
-      "ai-ml",
-      "feature-flags"
+      "ai-ml"
     ]
   }
 }
