@@ -6387,5 +6387,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "victorialogs-self-hosted",
+    "name": "VictoriaLogs Community Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source single-node and cluster log database with LogsQL search, binary/Docker releases and no vendor-set ingestion or retention quota in Community binaries.",
+    "watch_out": "Self-hosted storage, compute, backups and access protection are your responsibility. VictoriaMetrics Enterprise binaries, enterprise support and additional enterprise features require a separate paid license.",
+    "pricing_url": "https://docs.victoriametrics.com/victorialogs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
