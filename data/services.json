@@ -6411,5 +6411,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "featureprobe-self-hosted",
+    "name": "FeatureProbe Open Source Self-Hosted Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed open-source feature management service; self-host feature toggles, progressive rollouts, targeting and A/B experiments using Docker Compose with no vendor-set software subscription or usage quota.",
+    "watch_out": "Self-hosting requires your own compute, database and operations; change the documented default admin password before exposure. Hosting costs and any managed service are separate. Project's latest code push was June 2026.",
+    "pricing_url": "https://github.com/FeatureProbe/FeatureProbe",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
