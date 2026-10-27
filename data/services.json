@@ -6639,5 +6639,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "coze-studio-self-hosted",
+    "name": "Coze Studio (Self-Hosted)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source platform to build and deploy AI agents, workflows, plugins and knowledge bases on your own infrastructure using Docker Compose; no Coze Studio software license fee.",
+    "watch_out": "Self-hosting requires at least 2 CPU cores, 4 GB RAM and Docker Compose. LLM API usage, hosting, databases and integrations can incur charges; Coze's managed platform is separate.",
+    "pricing_url": "https://github.com/coze-dev/coze-studio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
