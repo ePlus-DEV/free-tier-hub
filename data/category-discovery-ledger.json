@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "68c5bb3e7383f2a17d5aa2083c59c060177ac1a7",
+  "source_main_sha": "3a14d3238ba8bd29b951cfb7206e87f8e1c536a0",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -89,13 +89,13 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 20,
+      "service_count": 23,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -125,27 +125,27 @@
     },
     {
       "category": "analytics",
-      "service_count": 23,
+      "service_count": 24,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
     {
       "category": "dns-cdn",
-      "service_count": 19,
+      "service_count": 21,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "ai-ml",
@@ -209,25 +209,25 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 2,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "webhooks-events",
-      "service_count": 19,
+      "service_count": 20,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 9,
-      "open_catalog_candidate_issues": 1,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     }
@@ -8097,12 +8097,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 479,
+    "total_services": 487,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 8,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Snapshot from main 68c5bb3e7383 on 2026-10-27: 479 services, 8 open candidate Issues, 3 open catalog PRs. Rotation 11 9/19. New Vald Issue #767 -> PR #768 merged automatically at 2026-10-27T08:19:49Z after exact-head validation/build SUCCESS and eplus-bot approval; other new Issues #762/#763/#765 await queue.",
+    "note": "Refreshed catalog snapshot from main 3a14d3238ba8 on 2026-10-27: 487 services, 0 open candidate Issues and 0 open catalog PRs. Rotation 10: 19/19; rotation 11: 9/19. Preserve 204 historical discovery entries; per-entry statuses reflect their original review time, not current GitHub state.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
