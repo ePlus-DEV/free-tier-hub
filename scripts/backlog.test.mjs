@@ -100,3 +100,18 @@ test('backlog consumer resumes one queued Issue after a trusted main merge', () 
   assert.match(workflow, /gh', \['workflow', 'run', 'catalog-candidate-queue\.yml'/);
   assert.match(workflow, /if \(prs\.some\(pr => pr\.head\?\.ref === branch\)\) continue/);
 });
+
+test('candidate queue commits locally before tests and only publishes after success', () => {
+  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
+  const generated = workflow.indexOf('npm run catalog:sync');
+  const committed = workflow.indexOf('git commit -m "catalog: add $SERVICE_ID"');
+  const verified = workflow.indexOf('npm run verify');
+  const published = workflow.indexOf('git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"');
+  assert.ok(generated >= 0 && generated < committed, 'Generate docs before local commit');
+  assert.ok(committed < verified && verified < published,
+    'Validate Git-backed addition dates before publishing any delivery branch');
+  assert.match(workflow, /if git ls-remote --exit-code --heads origin "\$DELIVERY_BRANCH"/);
+  assert.match(workflow, /open_count" -ge 3/);
+  assert.match(workflow, /if: steps\.capacity\.outputs\.available == 'true'/);
+  assert.equal((workflow.match(/git push origin "HEAD:refs\/heads\/\$DELIVERY_BRANCH"/g) || []).length, 1);
+});
