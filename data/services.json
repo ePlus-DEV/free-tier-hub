@@ -6039,5 +6039,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "clickhouse-self-hosted",
+    "name": "ClickHouse Open Source Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source columnar SQL analytics database with real-time analytical queries and distributed processing; no software query or row cap.",
+    "watch_out": "Own infrastructure, storage, operations and cluster management are required; ClickHouse Cloud is a separately billed managed service.",
+    "pricing_url": "https://github.com/ClickHouse/ClickHouse",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
