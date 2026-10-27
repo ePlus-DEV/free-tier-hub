@@ -7425,10 +7425,8 @@
     "total_categories": 19,
     "stale_over_7d": 222,
     "open_catalog_candidate_issues": 28,
-    "unmatched_backlog": [
-      "uploadthing-free"
-    ],
-    "note": "Rotation 10: 9/19 categories reviewed. New verified self-hosted candidates Hatchet, JobRunr OSS, Celery, Oban and Flipper Cloudless in canonical Issues #697-#701. Existing 23 catalog PRs exceed approved 3-PR capacity gate; Issues remain queued, no new PR or merge claimed. #695, #328, #457 merged through normal review; #696 remains open and proposes safe backlog reactivation. Main 430 services at 233d6c26bdf6fe2f2b02aa7023cd9812154511cc.",
+    "unmatched_backlog": [],
+    "note": "Rotation 10: 9/19 categories reviewed. New verified self-hosted candidates Hatchet, JobRunr OSS, Celery, Oban and Flipper Cloudless in canonical Issues #697-#701. Existing 23 catalog PRs exceed approved 3-PR capacity gate; Issues remain queued, no new PR or merge claimed. #695, #328, #457 merged through normal review; #696 remains open and proposes safe backlog reactivation. Main 430 services at 233d6c26bdf6fe2f2b02aa7023cd9812154511cc. The backlog ID uploadthing-free is a documented alias of catalogued uploadthing-2gb-app, not an unmatched service.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
