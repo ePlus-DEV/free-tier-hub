@@ -5955,5 +5955,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "open-webui-self-hosted",
+    "name": "Open WebUI Self-Hosted",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted browser interface for local and OpenAI-compatible AI models; no vendor-imposed usage quota when running the software with required branding intact.",
+    "watch_out": "Current Open WebUI License (v0.6.6+) is source-available, not OSI-approved: keep Open WebUI branding intact unless the documented <=50-user exception or explicit permission/license applies. Hosting, model inference and third-party API costs are separate.",
+    "pricing_url": "https://docs.openwebui.com/license/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
