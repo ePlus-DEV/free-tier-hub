@@ -5273,6 +5273,42 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "grafana-tempo-self-hosted",
+    "name": "Grafana Tempo Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source distributed tracing backend with OpenTelemetry ingestion and TraceQL queries; self-managed deployments have no vendor-imposed trace-count license quota.",
+    "watch_out": "You supply object storage, compute, networking and Grafana visualization; hosted Grafana Cloud plans are separate. AGPL-3.0 obligations apply; check Apache-2.0 exceptions in LICENSING.md.",
+    "pricing_url": "https://github.com/grafana/tempo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "openchoreo-self-hosted",
+    "name": "OpenChoreo Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes developer platform with self-service application deployment, CI/CD, GitOps, developer portal and observability; no software subscription fee.",
+    "watch_out": "Requires Kubernetes and operational resources for control, data, CI and observability planes; external cloud services and compute are not included.",
+    "pricing_url": "https://github.com/openchoreo/openchoreo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
+  },
+  {
+    "id": "goaccess-self-hosted",
+    "name": "GoAccess Open Source",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed real-time web access-log analytics with terminal dashboard and HTML, JSON or CSV reports; self-hosted without a vendor request quota.",
+    "watch_out": "Requires access to web-server logs and your own machine/storage; no hosted analytics service or traffic retention is included. Visitor counts depend on log format and available data.",
+    "pricing_url": "https://goaccess.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "apache-cassandra-self-hosted",
     "name": "Apache Cassandra Self-Hosted",
     "category": "databases",
