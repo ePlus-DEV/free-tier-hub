@@ -5391,5 +5391,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "bind9-self-hosted",
+    "name": "BIND 9 Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free MPL-2.0 authoritative and recursive DNS server software with DNSSEC, DNS-over-TLS/HTTPS and no vendor-imposed query or zone quota.",
+    "watch_out": "Requires self-managed server, network and security updates; hosting and bandwidth are not free. Commercial BIND -S edition and paid support are separate.",
+    "pricing_url": "https://www.isc.org/bind/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
