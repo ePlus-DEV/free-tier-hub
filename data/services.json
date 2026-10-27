@@ -6651,5 +6651,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "sim-ai-self-hosted",
+    "name": "Sim AI Workspace (Self-Hosted)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted AI agent and workflow builder with integrations, run logs and knowledge resources; run the software on your own infrastructure without a Sim Cloud subscription.",
+    "watch_out": "Self-hosted production Docker Compose stack requires substantial RAM (project setup guidance notes 12 GB or more) and local secrets. Model API, hosting, storage and third-party integrations may incur fees; Sim Cloud is separate.",
+    "pricing_url": "https://github.com/simstudioai/sim",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
