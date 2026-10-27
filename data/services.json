@@ -6243,5 +6243,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "sftpgo-community-self-hosted",
+    "name": "SFTPGo Community Edition Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free AGPLv3 Community Edition for self-hosted SFTP, HTTP/S, FTP/S and WebDAV file transfer with local, S3-compatible, GCS and Azure storage backends; no vendor-hosted quota.",
+    "watch_out": "AGPLv3 copyleft obligations apply, including relevant source-disclosure duties for modified network-accessible deployments. Enterprise-only features/support and all hosting/storage/bandwidth are excluded.",
+    "pricing_url": "https://github.com/drakkan/sftpgo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
