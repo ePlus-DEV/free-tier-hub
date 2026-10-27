@@ -6183,5 +6183,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "convoy-community-self-hosted",
+    "name": "Convoy Community Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted webhook gateway Community mode: 1 organization, 2 projects and 1 user; inbound/outbound webhook routing and delivery retries.",
+    "watch_out": "Elastic License 2.0 source-available, NOT OSI open source; prohibits offering Convoy as a competing hosted/managed service and bypassing license gates. Premium features need paid license; Postgres/Redis/hosting cost extra.",
+    "pricing_url": "https://github.com/frain-dev/convoy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
