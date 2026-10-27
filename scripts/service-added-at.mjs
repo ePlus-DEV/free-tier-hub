@@ -39,12 +39,30 @@ export function serviceAddedDates(repoRoot) {
   if (shallow === 'true') {
     throw Error('Cannot determine service addition dates from a shallow clone; checkout with fetch-depth: 0');
   }
-  // A diff of merges against their first parent captures exactly what became
-  // public on main; normal git log -p may omit additions from merge commits.
-  const log = execFileSync('git', [
+  // In a pull-request checkout, the first-parent chain belongs to the PR
+  // branch. A non-force merge of main into that branch puts newly published
+  // catalog records on the SECOND parent, where --first-parent alone cannot
+  // see them. Read the published main lineage first, then fill only records
+  // unique to this PR from its own first-parent lineage.
+  const readDates = (ref) => parseAddedDates(execFileSync('git', [
     'log', '--first-parent', '--diff-merges=first-parent', '--reverse',
     '--no-ext-diff', '--no-color', `--format=${COMMIT_MARKER}%cI`,
-    '-p', '--', 'data/services.json',
-  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-  return parseAddedDates(log);
+    '-p', ref, '--', 'data/services.json',
+  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+  let publishedRef = 'HEAD';
+  try {
+    execFileSync('git', ['rev-parse', '--verify', 'refs/remotes/origin/main'], {
+      cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    publishedRef = 'refs/remotes/origin/main';
+  } catch {
+    // Local repositories without a remote still retain the original behavior.
+  }
+  const dates = readDates(publishedRef);
+  if (publishedRef !== 'HEAD') {
+    for (const [id, date] of readDates('HEAD')) {
+      if (!dates.has(id)) dates.set(id, date);
+    }
+  }
+  return dates;
 }

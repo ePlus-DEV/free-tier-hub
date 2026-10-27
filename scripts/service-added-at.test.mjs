@@ -45,3 +45,38 @@ test('published added_at uses merge day rather than candidate PR creation day', 
     fs.rmSync(root, { recursive: true, force: true });
   }
 });
+
+test('PR reconcile finds services merged into main on the second-parent path', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'added-date-pr-'));
+  const run = (args, env = {}) => execFileSync('git', args, {
+    cwd: root, env: { ...process.env, ...env }, encoding: 'utf8',
+  }).trim();
+  try {
+    run(['init', '-q', '-b', 'main']);
+    run(['config', 'user.name', 'Test']);
+    run(['config', 'user.email', 'test@example.com']);
+    fs.mkdirSync(path.join(root, 'data'));
+    const catalog = path.join(root, 'data/services.json');
+    const record = ids => JSON.stringify(ids.map(id => ({ id })), null, 2) + '\n';
+    fs.writeFileSync(catalog, record(['baseline']));
+    run(['add', '.']);
+    run(['commit', '-qm', 'seed'], { GIT_COMMITTER_DATE: '2026-10-19T10:00:00Z' });
+    run(['checkout', '-qb', 'catalog-candidate']);
+    fs.writeFileSync(catalog, record(['baseline', 'pending']));
+    run(['commit', '-qam', 'candidate'], { GIT_COMMITTER_DATE: '2026-10-20T10:00:00Z' });
+    run(['checkout', '-q', 'main']);
+    fs.writeFileSync(catalog, record(['baseline', 'published']));
+    run(['commit', '-qam', 'publish independent service'], { GIT_COMMITTER_DATE: '2026-10-25T10:00:00Z' });
+    run(['update-ref', 'refs/remotes/origin/main', 'HEAD']);
+    run(['checkout', '-q', 'catalog-candidate']);
+    // A safe two-parent reconciliation retains the published main lineage
+    // on the second parent. This test isolates date ancestry from merge content.
+    run(['merge', '--no-ff', '-s', 'ours', '-m', 'reconcile main', 'main'],
+      { GIT_COMMITTER_DATE: '2026-10-27T10:00:00Z' });
+    assert.deepEqual(Object.fromEntries(serviceAddedDates(root)), {
+      baseline: '2026-10-19', published: '2026-10-25', pending: '2026-10-20',
+    });
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
