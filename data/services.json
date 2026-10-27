@@ -5847,5 +5847,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "dnsdist-self-hosted",
+    "name": "dnsdist Self-Hosted DNS Load Balancer",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 self-hosted DNS-aware traffic load balancing, backend health checks, abuse/DoS filtering and Prometheus/HTTP metrics; no vendor-side DNS request quota.",
+    "watch_out": "dnsdist is a DNS proxy/load balancer, not a hosted authoritative DNS service or standalone resolver; requires configured upstream DNS backends, infrastructure and secure operations. GPL obligations apply; commercial support is separate.",
+    "pricing_url": "https://www.dnsdist.org/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
