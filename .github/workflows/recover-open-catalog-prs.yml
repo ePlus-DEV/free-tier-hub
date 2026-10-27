@@ -1,0 +1,132 @@
+name: Recover existing catalog PRs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 * * * *'
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+
+concurrency:
+  group: recover-existing-catalog-prs
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Reactivate one verified non-conflicting catalog PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$BOT_TOKEN" || { echo "::error::Missing EPLUS_BOT_TOKEN"; exit 1; }
+
+          # GitHub REST uses github-actions[bot]; GraphQL/gh pr list can
+          # represent the same actor differently. Read REST directly.
+          candidates="$(gh api --paginate --slurp \
+            "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" |
+            jq -r '[.[][]] | sort_by(.number)[] |
+              select(.user.login == "github-actions[bot]" and
+                     .draft == false and
+                     .base.ref == "main" and
+                     .head.repo.full_name == env.GITHUB_REPOSITORY and
+                     (.head.ref | startswith("catalog/add-")) and
+                     (.body | startswith("Automated delivery from candidate issue #"))) |
+              [.number, .head.ref, .head.sha] | @tsv')"
+
+          if [ -z "$candidates" ]; then
+            echo "No trusted catalog backlog PRs."
+            exit 0
+          fi
+
+          while IFS=$'\t' read -r number branch expected_head; do
+            echo "::group::Inspect PR #$number ($branch)"
+
+            # Validate the current PR snapshot; never work from a stale list.
+            pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
+            if ! jq -e --arg head "$expected_head" --arg branch "$branch" \
+              '.state == "open" and .mergeable == true and .draft == false and
+               .user.login == "github-actions[bot]" and
+               .head.sha == $head and .head.ref == $branch and
+               .base.ref == "main"' <<<"$pr" >/dev/null; then
+              echo "::notice::PR #$number is conflicted, stale, or ineligible."
+              echo "::endgroup::"
+              continue
+            fi
+
+            issue_number="$(jq -r '.body | capture("^Automated delivery from candidate issue #(?<n>[0-9]+)\\.").n // empty' <<<"$pr")"
+            [[ "$issue_number" =~ ^[0-9]+$ ]] || { echo "::endgroup::"; continue; }
+            id="${branch#catalog/add-}"
+            issue="$(gh api "repos/$GITHUB_REPOSITORY/issues/$issue_number")"
+            if ! jq -e --arg title "[catalog-candidate] $id" --arg id "$id" \
+              '.state == "open" and .title == $title and .pull_request == null and
+               (.author_association == "OWNER" or .author_association == "MEMBER" or .author_association == "COLLABORATOR") and
+               ((.body | fromjson).id == $id)' <<<"$issue" >/dev/null; then
+              echo "::notice::Candidate Issue validation failed for #$number"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Do not deliver stale terms or a service already on main.
+            checked="$(jq -r '.body | fromjson | .last_checked' <<<"$issue")"
+            checked_sec="$(date -u -d "$checked" +%s 2>/dev/null || echo 0)"
+            now_sec="$(date -u +%s)"
+            if [ "$checked_sec" -eq 0 ] || [ "$checked_sec" -gt "$now_sec" ] ||
+               [ "$((now_sec - checked_sec))" -gt 604800 ] ||
+               jq -e --arg id "$id" 'any(.[]; .id == $id)' data/services.json >/dev/null; then
+              echo "::notice::PR #$number needs renewed pricing verification or is already catalogued."
+              echo "::endgroup::"
+              continue
+            fi
+
+            changed="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls/$number/files?per_page=100" --jq '.[].filename')"
+            if [ -z "$changed" ] ||
+               grep -Ev '^(data/services\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$changed"; then
+              echo "::notice::PR #$number has files outside catalog allowlist."
+              echo "::endgroup::"
+              continue
+            fi
+
+            last_message="$(gh api "repos/$GITHUB_REPOSITORY/commits/$expected_head" --jq '.commit.message')"
+            if [[ "$last_message" == "ci: reactivate catalog PR #"* ]]; then
+              echo "::notice::PR #$number was already reactivated; no duplicate commits."
+              echo "::endgroup::"
+              continue
+            fi
+
+            git fetch --no-tags origin "refs/heads/$branch"
+            actual_head="$(git rev-parse FETCH_HEAD)"
+            if [ "$actual_head" != "$expected_head" ]; then
+              echo "::notice::PR #$number changed concurrently; will retry later."
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Empty, ancestry-preserving commit triggers exact-head PR CI using
+            # eplus-bot PAT (GITHUB_TOKEN pushes do not trigger new workflows).
+            # Existing review/security rules and auto-merge workflow decide merge.
+            git switch -C "recover-$number" "$actual_head"
+            git -c user.name='eplus-bot' -c user.email='eplus-bot@users.noreply.github.com' \
+              commit --allow-empty -m "ci: reactivate catalog PR #$number"
+            git -c credential.helper= push \
+              "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
+              "HEAD:refs/heads/$branch"
+            echo "::notice::Reactivated PR #$number; exact-head CI and bot approval must pass."
+            echo "::endgroup::"
+            exit 0
+          done <<<"$candidates"
+
+          echo "No safely reactivatable PR found. Conflicted PRs require separate reconciliation."
