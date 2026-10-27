@@ -131,7 +131,7 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 1,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -143,9 +143,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 4,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 2
     },
     {
       "category": "ai-ml",
@@ -9177,6 +9177,73 @@
           "reason": "Official documentation says free endpoints expire after 7 days; temporary URLs are not durable recurring free hosted endpoints, so not selected for catalog delivery."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "dns-cdn",
+      "official_sources": [
+        "https://www.knot-resolver.cz/",
+        "https://yadifa.eu/about.html",
+        "https://github.com/pi-hole/pi-hole",
+        "https://github.com/pi-hole/docker-pi-hole/blob/master/LICENSE"
+      ],
+      "queries": [
+        "Knot Resolver official free GPL DNSSEC caching resolver 2026",
+        "YADIFA authoritative DNS BSD 3-Clause no license fees",
+        "Pi-hole official EUPL free self hosted DNS sinkhole"
+      ],
+      "candidates": [
+        {
+          "id": "knot-resolver-self-hosted",
+          "status": "pr",
+          "issue": 888,
+          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+        },
+        {
+          "id": "yadifa-authoritative-dns-self-hosted",
+          "status": "issue",
+          "issue": 889,
+          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+        },
+        {
+          "id": "pi-hole-dns-self-hosted",
+          "status": "pr",
+          "issue": 891,
+          "reason": "Official current free/open-source license and self-hosting verified; deduplicated against 541-entry main catalog and open/closed Issue/PR title search plus branch search. Self-hosted infrastructure costs extra; no merge claimed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Managed DNS hosting from self-hosted projects",
+          "reason": "No hosted free DNS zone/query allowance implied by the free software licenses."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "analytics",
+      "official_sources": [
+        "https://openreplay.com/pricing/",
+        "https://github.com/openreplay/openreplay"
+      ],
+      "queries": [
+        "OpenReplay Open-Source Free self-hosted pricing 2026",
+        "OpenReplay AGPLv3 session replay product analytics low traffic self hosted"
+      ],
+      "candidates": [
+        {
+          "id": "openreplay-open-source-self-hosted",
+          "status": "issue",
+          "issue": 890,
+          "reason": "Official Open-Source plan is free to self-host for low traffic, AGPLv3 with separately licensed Enterprise; no free managed hosting implied. Deduplicated against current catalog and historical Issues/PRs/branches."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "OpenReplay Dedicated 7-day trial",
+          "reason": "Paid managed service after trial, not an ongoing free hosted plan."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -9241,9 +9308,9 @@
     "total_services": 541,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 5,
     "unmatched_backlog": [],
-    "note": "Rotation 13 5/19; main 541 at 07e887f0. Chisel #885 and GOST #886 auto-merged, sish #887 exact-head CI+bot approved but merge conflict pending non-force reconciliation. Hooklistener free docs conflict on 50 stored requests cap; HookBin and webhooks.app have verified free limits but unresolved commercial eligibility (reverify, no Issue). 220 existing entries stale >7 days. No force push or direct main write.",
+    "note": "Rotation 13 7/19. Four new official-source verified candidates created as canonical Issues #888–#891; queue delivery and exact-head CI must be checked independently. Main snapshot 541 at 07e887f0. PR #887 remains conflicting and must reconcile without force push. No manual merge/deploy; no schedule changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9503,7 +9570,9 @@
       "serverless",
       "search",
       "tunneling-networking",
-      "webhooks-events"
+      "webhooks-events",
+      "dns-cdn",
+      "analytics"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
@@ -9514,8 +9583,6 @@
       "ci-cd",
       "auth-security",
       "observability",
-      "analytics",
-      "dns-cdn",
       "ai-ml",
       "ai-assistants",
       "queues-jobs",
