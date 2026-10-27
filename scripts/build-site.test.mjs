@@ -31,6 +31,18 @@ test('directory exposes unique search/category controls and official sources for
     const raw = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
     const entries = Array.isArray(raw) ? raw : raw.services;
     assert.equal(result.service_count, entries.length);
+    const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
+    assert.equal(published.length, entries.length);
+    assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
+      'All published service dates must come from Git history');
+    assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
+    assert.doesNotMatch(html, /data-added-at=""/);
+    // The public added date is distinct from last_checked and also shown in details.
+    const candidate = published.find(item => item.id === 'chatgpt-free');
+    const detail = fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8');
+    assert.ok(detail.includes('Added to directory (UTC)'));
+    assert.ok(detail.includes(candidate.added_at));
+    assert.ok(published.some(item => item.added_at !== item.last_checked));
     for (const id of ['search', 'category-filter', 'service-grid', 'sort', 'filter-no-card', 'filter-commercial']) {
       assert.equal(html.split(`id="${id}"`).length - 1, 1, `${id} must have one owner`);
     }

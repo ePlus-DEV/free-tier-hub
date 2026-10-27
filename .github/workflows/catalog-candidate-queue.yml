@@ -15,8 +15,10 @@ permissions:
   pull-requests: write
   issues: write
 
+# Serialize delivery capacity decisions across candidate issues. Superseded pending
+# workflow runs remain recoverable from their canonical candidate Issues.
 concurrency:
-  group: catalog-candidate-${{ github.event.issue.number || inputs.issue_number }}
+  group: catalog-candidate-delivery
   cancel-in-progress: false
 
 jobs:
@@ -33,13 +35,17 @@ jobs:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
         run: |
           set -euo pipefail
-          gh issue view "$ISSUE_NUMBER" --json title,body,authorAssociation > /tmp/issue.json
+          [[ "$ISSUE_NUMBER" =~ ^[0-9]+$ ]] || { echo "::error::Invalid candidate Issue number"; exit 1; }
+          # gh issue view --json does not expose authorAssociation.
+          # REST returns the authoritative author_association field.
+          gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER" > /tmp/issue.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import crypto from 'node:crypto';
           const issue = JSON.parse(fs.readFileSync('/tmp/issue.json', 'utf8'));
+          if (issue.state !== 'open' || issue.pull_request) throw Error('Candidate Issue is not an open Issue');
           if (!issue.title.startsWith('[catalog-candidate] ')) throw Error('Not a catalog candidate issue');
-          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.authorAssociation)) throw Error('Untrusted submitter');
+          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) throw Error('Untrusted submitter');
           const delimiter = 'BODY_' + crypto.randomUUID();
           fs.appendFileSync(process.env.GITHUB_OUTPUT, 'body<<' + delimiter + '\n' + issue.body + '\n' + delimiter + '\n');
           NODE
@@ -90,7 +96,24 @@ jobs:
             'id=' + candidate.id + '\nbranch=catalog/add-' + candidate.id + '\n');
           NODE
 
+      - name: Enforce active catalog PR limit
+        id: capacity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          open_count="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
+            --jq '.[] | select(.head.ref | startswith("catalog/add-")) | .number' \
+            | wc -l | tr -d '[:space:]')"
+          if [ "$open_count" -ge 3 ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::$open_count catalog PRs open; leave this candidate Issue queued for later retry."
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Update source data
+        if: steps.capacity.outputs.available == 'true'
         run: |
           set -euo pipefail
           node --input-type=module <<'NODE'
@@ -105,13 +128,15 @@ jobs:
           NODE
 
       - name: Generate and validate
+        if: steps.capacity.outputs.available == 'true'
         run: |
           set -euo pipefail
           npm run catalog:sync
-          npm run verify
+          npm run catalog:check
           git diff --check
 
       - name: Prepare delivery branch and commit
+        if: steps.capacity.outputs.available == 'true'
         env:
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
@@ -127,9 +152,15 @@ jobs:
           git switch -c "$DELIVERY_BRANCH"
           git add data/services.json README.md docs/
           git commit -m "catalog: add $SERVICE_ID"
+          # The added-date site tests inspect committed Git history. Run the
+          # complete verification only after the local commit exists, but
+          # always before publishing the branch to the remote.
+          npm run verify
+          git show --format= --check HEAD
           git push origin "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       - name: Open or reuse PR
+        if: steps.capacity.outputs.available == 'true'
         id: pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -144,6 +175,7 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Trigger PR checks with bot token
+        if: steps.capacity.outputs.available == 'true'
         env:
           BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
@@ -159,6 +191,7 @@ jobs:
 
 
       - name: Link delivery PR to issue
+        if: steps.capacity.outputs.available == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.pr.outputs.url }}
