@@ -5897,6 +5897,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "buildbot-self-hosted-ci",
+    "name": "Buildbot Self-Hosted CI",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Open-source Buildbot master, workers and web UI for self-hosted continuous integration, build and test automation; no vendor-imposed software execution or build-minute quota.",
+    "watch_out": "Run and secure your own Buildbot controller, workers, build storage and integrations; compute, storage and networking may cost money. Buildbot is GPL-2.0 licensed, so distribution must comply with the license.",
+    "pricing_url": "https://www.buildbot.net/about.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "spinnaker-open-source-cd",
+    "name": "Spinnaker Open Source CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted multi-cloud continuous delivery pipelines, deployment strategies, application management and rollback tooling; no vendor-imposed software deployment quota.",
+    "watch_out": "Requires substantial operator-managed infrastructure and integrations with cloud/Kubernetes providers. Cloud compute, storage, network and optional external services may incur charges; retain Apache-2.0 notices.",
+    "pricing_url": "https://spinnaker.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "zuul-ci-self-hosted",
     "name": "Zuul CI Self-Hosted",
     "category": "ci-cd",
