@@ -192,8 +192,8 @@
       "last_discovery_review": "2026-10-27",
       "stale_over_7d": 7,
       "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 2
     },
     {
       "category": "feature-flags",
@@ -9080,9 +9080,10 @@
         },
         {
           "id": "fess-search-server-self-hosted",
-          "status": "issue-awaiting-pr",
+          "status": "pr",
           "issue": 877,
-          "reason": "Issue #877 remains open with no PR after one safe Issue edit retry; queue run status not accessible through connector."
+          "reason": "Issue #877 was retried safely and GitHub created PR #881. Validation/build SUCCESS at head e615e279; bot review and merge pending, not counted on main.",
+          "pr": 881
         },
         {
           "id": "apache-lucene-core-open-source",
@@ -9164,7 +9165,7 @@
     "stale_over_7d": 220,
     "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 13: 3/19 categories reviewed (cloud-vps, serverless, search). YaCy #876 → PR #879 auto-merged after exact-head validation/build success and eplus-bot approval, confirmed on main (537 services, +1). Apache Lucene #878 → PR #880 CI success and approval but conflicting; requires safe non-force reconciliation and fresh exact-head checks. Fess #877 remains Issue-only; retried by Issue edit, queue PR not yet observed. No manual merge, direct main push, production deploy, or schedule changes.",
+    "note": "Rotation 13: 3/19 categories reviewed. Main 537 (+1): YaCy #876→#879 auto-merged after exact-head CI and eplus-bot approval. Apache Lucene #878→#880 CI/approval success but merge conflict pending safe non-force reconciliation. Fess #877→#881 created after safe Issue edit retry; CI success, bot approval pending. Ledger PR exact-head CI not confirmed. No direct main push, manual merge, production deploy, force-push, or schedule changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
