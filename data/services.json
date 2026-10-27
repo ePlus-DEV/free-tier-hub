@@ -6267,5 +6267,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "river-job-queue-self-hosted",
+    "name": "River Self-Hosted Job Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source job queue running with PostgreSQL or SQLite; no hosted usage quota; includes transactional enqueueing, retries, scheduled/periodic jobs and multiple queues.",
+    "watch_out": "Self-managed database and worker compute are required; hosting costs are not included. MPL-2.0 obligations apply when distributing modified source files; managed support is separate.",
+    "pricing_url": "https://github.com/riverqueue/river",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
