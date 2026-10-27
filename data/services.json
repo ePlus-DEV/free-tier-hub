@@ -6027,5 +6027,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "openresty-self-hosted",
+    "name": "OpenResty Self-Hosted",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free self-managed Nginx/LuaJIT-based web platform supporting static files, reverse proxying and programmable HTTP handlers; no software subscription or request cap.",
+    "watch_out": "Own hosting and operational costs apply. Bundled modules carry their respective BSD-style or other licenses; managed OpenResty commercial services are separate.",
+    "pricing_url": "https://openresty.org/en/about.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
