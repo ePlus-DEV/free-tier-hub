@@ -6425,6 +6425,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "logsnag-free",
+    "name": "LogSnag Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "2,500 event logs/month and 3 seats on a free-forever hosted event analytics plan; no credit card required.",
+    "watch_out": "Monthly event quota applies; higher event volumes and additional seats require paid plans. Explicit hosted Free commercial-use rights and over-quota behavior are not independently confirmed.",
+    "pricing_url": "https://logsnag.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "featureflow-free",
+    "name": "Featureflow Cloud Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free forever hosted feature flags: up to 5 seats, 1 project, 2 environments, unlimited feature flags and 1 million SDK requests/month; targeting, segments and progressive rollouts; no credit card.",
+    "watch_out": "7-day audit trail and community support. New accounts start with a 14-day Business trial, then automatically move to the ongoing Free plan without deleting flags. The 1M SDK request allowance is described as fair use; explicit commercial-use terms are not independently confirmed.",
+    "pricing_url": "https://www.featureflow.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "aptabase-cloud-free",
     "name": "Aptabase Cloud Free",
     "category": "analytics",
