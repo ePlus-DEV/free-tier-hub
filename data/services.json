@@ -6099,5 +6099,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "zoneedit-free-personal-dns",
+    "name": "ZoneEdit Free Personal DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "1 free personal DNS zone with up to 100,000 DNS queries/month, 5 email forwarders, Dynamic DNS and DNS-01 ACME/LEGO support.",
+    "watch_out": "Strictly for personal, academic, non-commercial use; no SLA, community support only; failover, backup MX, additional nameservers and business use require paid credits. Provider requires email verification; card requirement not explicitly stated.",
+    "pricing_url": "https://www.zoneedit.com/free-dns/",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-10-27"
   }
 ]
