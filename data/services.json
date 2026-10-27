@@ -6255,5 +6255,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "bunqueue-self-hosted",
+    "name": "bunqueue Self-Hosted Job Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted job queue with no paid tier or per-job quota; supports retries, delayed/priority jobs, cron scheduling, SQLite or PostgreSQL persistence and multi-language clients.",
+    "watch_out": "The queue server requires Bun; run it on your own infrastructure and pay any VPS/database costs. No managed hosting or SLA is included.",
+    "pricing_url": "https://bunqueue.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
