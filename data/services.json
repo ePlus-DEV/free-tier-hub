@@ -5739,5 +5739,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "mise-dev-tool-manager",
+    "name": "mise Open Source Dev Tool Manager",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local developer tool/version manager, environment-variable manager and task runner for reproducible development environments, with no vendor-imposed project, command or tool-install quota in the open-source CLI.",
+    "watch_out": "Installed runtimes and plugins are separate software with their own licenses. Download bandwidth, registries, remote services and CI runners may cost money. mise does not include a hosted build environment.",
+    "pricing_url": "https://github.com/jdx/mise",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
