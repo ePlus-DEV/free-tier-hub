@@ -5247,5 +5247,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "knot-dns-self-hosted",
+    "name": "Knot DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0-or-later authoritative DNS server with DNSSEC signing, zone transfers, dynamic updates and response-rate limiting; no vendor-imposed zone or query quota.",
+    "watch_out": "Authoritative DNS only, not a recursive resolver; self-hosted servers, bandwidth and DNS operations cost extra. GPL redistribution obligations apply.",
+    "pricing_url": "https://www.knot-dns.cz/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
