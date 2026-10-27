@@ -6615,5 +6615,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "yadifa-authoritative-dns-self-hosted",
+    "name": "YADIFA Authoritative DNS Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD 3-Clause licensed authoritative DNS name server with DNSSEC and dynamic DNS updates; free to download and self-host with no software licensing fee or vendor-imposed zone/query allowance.",
+    "watch_out": "Authoritative DNS software, not free managed DNS hosting or a general recursive resolver. Requires servers, redundant nameservers, public connectivity, maintenance and DNSSEC key management; infrastructure costs are separate.",
+    "pricing_url": "https://yadifa.eu/about.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
