@@ -6641,6 +6641,18 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "werf-kubernetes-cicd-self-hosted",
+    "name": "werf Kubernetes CI/CD (Self-Hosted)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI for building, publishing, testing and deploying container applications to Kubernetes with Git, Buildah and Helm; self-managed use without a werf license fee.",
+    "watch_out": "Requires your own CI runner, container registry and Kubernetes cluster; compute, registry storage, bandwidth and other infrastructure are not included. This is not a free hosted CI service.",
+    "pricing_url": "https://github.com/werf/werf",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "coze-studio-self-hosted",
     "name": "Coze Studio (Self-Hosted)",
     "category": "ai-assistants",
