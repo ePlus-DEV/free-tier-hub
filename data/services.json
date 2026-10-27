@@ -5751,5 +5751,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "spinkube-self-hosted",
+    "name": "SpinKube Self-Hosted",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Spin Operator and Kubernetes WebAssembly runtime; deploy self-managed Spin applications without a vendor-hosted request or execution quota.",
+    "watch_out": "Requires a compatible Kubernetes cluster, Spin runtime components and infrastructure capacity; compute, networking and storage are not included. This is not a managed free cloud tier.",
+    "pricing_url": "https://www.spinkube.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
