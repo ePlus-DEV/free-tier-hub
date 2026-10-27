@@ -153,6 +153,8 @@
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
   var category = "";
+  var hostingModel = "";
+  var hostingButtons = Array.prototype.slice.call(document.querySelectorAll("[data-hosting-filter]"));
   var pageSize = 12;
   var visible = pageSize;
 
@@ -280,6 +282,13 @@
     var next = activeChips.querySelector("button");
     (next || search).focus();
   });
+  hostingButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      hostingModel = button.getAttribute("data-hosting-filter");
+      visible = pageSize;
+      render();
+    });
+  });
   function render() {
     syncURL();
     document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
@@ -288,11 +297,15 @@
         : mode === "no-card" ? noCard.checked : commercial.checked;
       button.setAttribute("aria-pressed", String(active));
     });
+    hostingButtons.forEach(function (button) {
+      button.setAttribute("aria-pressed", String(button.getAttribute("data-hosting-filter") === hostingModel));
+    });
     var term = normalize(search.value);
     var matched = cards.filter(function (card) {
       var words = normalize(card.getAttribute("data-search"));
       return (!term || words.indexOf(term) !== -1) &&
         (!category || card.getAttribute("data-category") === category) &&
+        (!hostingModel || card.getAttribute("data-hosting-model") === hostingModel) &&
         (!noCard || !noCard.checked || card.getAttribute("data-credit-card") === "no") &&
         (!commercial || !commercial.checked || card.getAttribute("data-commercial-use") === "yes");
     });
