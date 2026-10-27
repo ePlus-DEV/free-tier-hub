@@ -2,15 +2,17 @@ name: Reconcile catalog PR conflicts
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/30 * * * *'
   push:
     branches: [main]
     paths:
+      - 'data/services.json'
       - '.github/workflows/reconcile-catalog-pr-conflicts.yml'
+  schedule:
+    - cron: '*/30 * * * *'
 
 permissions:
   contents: read
+  issues: read
   pull-requests: read
 
 concurrency:
@@ -20,67 +22,173 @@ concurrency:
 jobs:
   reconcile:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
+          ref: main
           fetch-depth: 0
           persist-credentials: false
+
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
-      - name: Reconcile only by non-force ancestry-preserving merges
+
+      - name: Reconcile one verified data-only conflicting catalog PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+        shell: bash
         run: |
           set -euo pipefail
           test -n "$BOT_TOKEN" || { echo "::error::EPLUS_BOT_TOKEN missing"; exit 1; }
-          git config user.name "eplus-bot"
-          git config user.email "eplus-bot@users.noreply.github.com"
-          gh pr list --state open --limit 200 --json number,author,headRefName,baseRefName,isDraft,body |
-          jq -c '.[] | select(.author.login == "github-actions[bot]" and .baseRefName == "main" and .isDraft == false and (.headRefName | startswith("catalog/add-")) and (.body | startswith("Automated delivery from candidate issue #")))' > /tmp/eligible-catalog-prs.jsonl
-          failed=0
-          while IFS= read -r pr; do
-            number="$(jq -r '.number' <<<"$pr")"
-            branch="$(jq -r '.headRefName' <<<"$pr")"
-            echo "::group::Reconcile PR #$number ($branch)"
-            git fetch origin main "$branch"
-            old_head="$(git rev-parse "origin/$branch")"
-            if git merge-base --is-ancestor origin/main "origin/$branch"; then
-              echo "::notice::PR #$number already includes current main"
-              echo "::endgroup::"
-              continue
-            fi
-            # Start from the actual PR head; never rebuild from main or discard unique commits.
-            git switch -C "reconcile-$number" "origin/$branch"
-            # Conflicts are not auto-resolved: fail closed for human review.
-            if ! git merge --no-commit --no-ff origin/main; then
-              git merge --abort || true
-              echo "::error::PR #$number conflicts with main; head $old_head unchanged"
-              failed=$((failed + 1))
-              echo "::endgroup::"
-              continue
-            fi
-            if ! npm run catalog:sync || ! npm run verify || ! git diff --check; then
-              git merge --abort || true
-              echo "::error::PR #$number failed verification; no remote update"
-              failed=$((failed + 1))
-              echo "::endgroup::"
-              continue
-            fi
-            git add data/services.json README.md docs/
-            git commit -m "catalog: merge latest main into PR #$number (preserve ancestry)"
-            # Normal push is fast-forward from the original head. Concurrent edits reject it.
-            if ! git -c credential.helper= push \
-              "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
-              "HEAD:refs/heads/$branch"; then
-              echo "::error::PR #$number moved or push denied; no force retry"
-              failed=$((failed + 1))
-            fi
-            echo "::endgroup::"
-          done < /tmp/eligible-catalog-prs.jsonl
-          if [ "$failed" -gt 0 ]; then
-            echo "::error::$failed PR(s) require safe manual reconciliation"
-            exit 1
+
+          # Use REST login for bot-authored PRs. GitHub's GraphQL bot
+          # representation differs and previously selected zero PRs.
+          candidates="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" |
+            jq -r '[.[][]] | sort_by(.number)[] |
+              select(.user.login == "github-actions[bot]" and .draft == false and
+                     .base.ref == "main" and
+                     .head.repo.full_name == env.GITHUB_REPOSITORY and
+                     (.head.ref | startswith("catalog/add-")) and
+                     (.body | startswith("Automated delivery from candidate issue #"))) |
+              [.number, .head.ref, .head.sha] | @tsv')"
+
+          if [ -z "$candidates" ]; then
+            echo "No eligible catalog PRs found."
+            exit 0
           fi
+
+          while IFS=$'\t' read -r number branch expected_head; do
+            pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
+            # GitHub may return mergeable=null while it recomputes mergeability
+            # immediately after a main push. Wait briefly, but fail closed:
+            # never reconcile unless GitHub explicitly reports false (dirty).
+            for attempt in 1 2 3 4 5; do
+              if jq -e '.mergeable != null' <<<"$pr" >/dev/null; then
+                break
+              fi
+              echo "::notice::PR #$number mergeability pending (attempt $attempt/5)"
+              sleep 2
+              pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
+            done
+            if ! jq -e --arg head "$expected_head" --arg branch "$branch" \
+              '.state == "open" and .draft == false and .mergeable == false and
+               .user.login == "github-actions[bot]" and
+               .head.ref == $branch and .head.sha == $head and
+               .head.repo.full_name == env.GITHUB_REPOSITORY and
+               .base.ref == "main"' <<<"$pr" >/dev/null; then
+              continue
+            fi
+            echo "::group::Reconcile catalog PR #$number"
+
+            # Only the source record and generated docs may be modified.
+            changed="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls/$number/files?per_page=100" --jq '.[].filename')"
+            if [ -z "$changed" ] ||
+               grep -Ev '^(data/services\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$changed"; then
+              echo "::notice::PR #$number has non-catalog changes; manual review required"
+              echo "::endgroup::"
+              continue
+            fi
+
+            issue_number="$(jq -r '.body | capture("^Automated delivery from candidate issue #(?<n>[0-9]+)\\.").n // empty' <<<"$pr")"
+            if ! [[ "$issue_number" =~ ^[0-9]+$ ]]; then
+              echo "::endgroup::"
+              continue
+            fi
+            id="$(printf '%s' "$branch" | sed 's|^catalog/add-||')"
+            issue="$(gh api "repos/$GITHUB_REPOSITORY/issues/$issue_number")"
+            if ! jq -e --arg title "[catalog-candidate] $id" --arg id "$id" \
+              '.state == "open" and .pull_request == null and .title == $title and
+               (.author_association == "OWNER" or .author_association == "MEMBER" or .author_association == "COLLABORATOR") and
+               ((.body | fromjson).id == $id)' <<<"$issue" >/dev/null; then
+              echo "::notice::Candidate Issue for PR #$number needs manual review"
+              echo "::endgroup::"
+              continue
+            fi
+
+            git fetch --no-tags origin main "refs/heads/$branch"
+            old_head="$(git rev-parse "origin/$branch")"
+            if [ "$old_head" != "$expected_head" ]; then
+              echo "::notice::PR #$number changed while inspecting; retry later"
+              echo "::endgroup::"
+              continue
+            fi
+            base="$(git merge-base origin/main "$old_head")"
+            git show "$base:data/services.json" > /tmp/catalog-base.json
+            git show "$old_head:data/services.json" > /tmp/catalog-branch.json
+            git show "origin/main:data/services.json" > /tmp/catalog-main.json
+            jq -r '.body' <<<"$issue" > /tmp/catalog-candidate.json
+
+            # Confirm that the branch's ONLY data change versus its original base
+            # is the exact candidate recorded in the trusted Issue. Reject stale
+            # pricing and already-delivered IDs. No service entry is discarded.
+            if ! node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateData } from './scripts/catalog.mjs';
+          const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+          const original = read('/tmp/catalog-base.json');
+          const branch = read('/tmp/catalog-branch.json');
+          const main = read('/tmp/catalog-main.json');
+          const candidate = read('/tmp/catalog-candidate.json');
+          const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+          const date = Date.parse(candidate.last_checked + 'T00:00:00Z');
+          const now = Date.now();
+          if (!Number.isFinite(date) || date > now || now - date > 8 * 86400000) {
+            throw Error('Stale or future candidate verification date');
+          }
+          if (branch.length !== original.length + 1 ||
+              !original.every((entry, i) => same(entry, branch[i])) ||
+              !same(branch.at(-1), candidate) ||
+              main.some(item => item.id === candidate.id)) {
+            throw Error('Branch contains more changes than the canonical candidate, or candidate is delivered');
+          }
+          validateData([...main, candidate]);
+          NODE
+            then
+              echo "::notice::PR #$number contains an unsafe or stale change; manual review required"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Preserve BOTH branch and latest main ancestry using a merge commit.
+            # An 'ours' merge alone is not enough: restore the complete latest main
+            # tree and reapply only the verified candidate, then regenerate docs.
+            git switch -C "catalog-reconcile-$number" "$old_head"
+            git -c user.name='eplus-bot' -c user.email='eplus-bot@users.noreply.github.com' \
+              merge --no-ff --no-commit -s ours origin/main
+            git restore --source=origin/main --staged --worktree -- .
+            node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateData } from './scripts/catalog.mjs';
+          const catalog = 'data/services.json';
+          const services = JSON.parse(fs.readFileSync(catalog, 'utf8'));
+          const candidate = JSON.parse(fs.readFileSync('/tmp/catalog-candidate.json', 'utf8'));
+          validateData([...services, candidate]);
+          fs.writeFileSync(catalog, JSON.stringify([...services, candidate], null, 2) + '\n');
+          NODE
+            npm run catalog:sync
+            npm run verify
+            node --check site/assets/site.js
+            git add -A
+            git diff --cached --check
+
+            # Reject any resulting file outside the data/generated-docs scope.
+            diff_files="$(git diff --name-only origin/main)"
+            if [ -z "$diff_files" ] ||
+               grep -Ev '^(data/services\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$diff_files"; then
+              echo "::error::Unexpected files after reconciliation; no push"
+              exit 1
+            fi
+            git -c user.name='eplus-bot' -c user.email='eplus-bot@users.noreply.github.com' \
+              commit -m "catalog: safely reconcile PR #$number with latest main"
+            git -c credential.helper= push \
+              "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" \
+              "HEAD:refs/heads/$branch"
+            echo "::notice::Reconciled PR #$number; exact-head CI and bot approval must still pass"
+            echo "::endgroup::"
+            exit 0
+          done <<<"$candidates"
+
+          echo "No safely reconcilable PR. Other PRs require manual inspection."
