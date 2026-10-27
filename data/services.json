@@ -6569,6 +6569,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "gost-simple-tunnel-self-hosted",
+    "name": "GOST Simple Tunnel Self-Hosted",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source GO Simple Tunnel proxy and tunneling software supporting TCP/UDP port forwarding, reverse tunnels, multi-hop forwarding, SOCKS and HTTP proxies; no vendor-imposed connection or bandwidth quota when self-hosted.",
+    "watch_out": "You supply and pay for servers, networking and bandwidth. Configure authentication, TLS, firewall rules and access controls; do not expose an unrestricted public proxy. No managed free relay is included.",
+    "pricing_url": "https://github.com/go-gost/gost",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
+    "id": "knot-resolver-self-hosted",
+    "name": "Knot Resolver Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-licensed open-source caching, DNSSEC-validating recursive DNS resolver with modular policy and DNS privacy support; no vendor-imposed DNS-query, zone, or client quota when self-hosted.",
+    "watch_out": "Requires your own server, network bandwidth, security updates and correct resolver access controls. Avoid exposing an unrestricted public recursive resolver. GPL redistribution obligations apply; managed DNS hosting is not included.",
+    "pricing_url": "https://www.knot-resolver.cz/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "sish-ssh-tunnel-self-hosted",
     "name": "sish SSH Tunnel Self-Hosted",
     "category": "tunneling-networking",
