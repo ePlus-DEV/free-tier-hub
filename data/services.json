@@ -5223,5 +5223,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "openhands-open-source",
+    "name": "OpenHands Open Source",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed OpenHands core AI coding agent, CLI, SDK and agent-server for local/self-managed use, without a software-license task quota.",
+    "watch_out": "LLM provider usage and local compute can cost money. OpenHands Cloud/Enterprise and the enterprise/ directory use separate commercial or time-limited licenses; this listing covers only the MIT core.",
+    "pricing_url": "https://github.com/OpenHands/OpenHands",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
