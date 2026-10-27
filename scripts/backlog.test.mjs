@@ -82,3 +82,21 @@ test('stale candidate remains in backlog but cannot be applied', () => {
     assert.throws(() => applyCandidate('backlog-test-service', root, today), /stale/);
   });
 });
+
+
+// A merged PR frees queue capacity immediately; merely closing a PR does not.
+// This must not weaken the trusted-source and exact catalog PR capacity gates.
+test('backlog consumer resumes one queued Issue after a trusted main merge', () => {
+  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-backlog-consumer.yml'), 'utf8');
+  assert.match(workflow, /pull_request:\s*\n\s*types: \[closed\]/);
+  assert.match(workflow, /github\.event\.pull_request\.merged == true/);
+  assert.match(workflow, /github\.event\.pull_request\.base\.ref == 'main'/);
+  assert.match(workflow, /github\.event\.pull_request\.head\.repo\.full_name == github\.repository/);
+  assert.match(workflow, /ref: main\s*\n\s*fetch-depth: 0/);
+  assert.match(workflow, /persist-credentials: false/);
+  assert.match(workflow, /cron: '23 \* \* \* \*'/);
+  assert.match(workflow, /openCatalog\.length >= 3/);
+  assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]/);
+  assert.match(workflow, /gh', \['workflow', 'run', 'catalog-candidate-queue\.yml'/);
+  assert.match(workflow, /if \(prs\.some\(pr => pr\.head\?\.ref === branch\)\) continue/);
+});
