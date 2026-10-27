@@ -5283,5 +5283,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "openchoreo-self-hosted",
+    "name": "OpenChoreo Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes developer platform with self-service application deployment, CI/CD, GitOps, developer portal and observability; no software subscription fee.",
+    "watch_out": "Requires Kubernetes and operational resources for control, data, CI and observability planes; external cloud services and compute are not included.",
+    "pricing_url": "https://github.com/openchoreo/openchoreo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-26"
   }
 ]
