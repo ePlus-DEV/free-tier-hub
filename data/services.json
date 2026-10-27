@@ -6603,5 +6603,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "openreplay-open-source-self-hosted",
+    "name": "OpenReplay Open-Source Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free AGPLv3-licensed self-hosted edition for low-traffic session replay, developer tools, product analytics and co-browsing; recordings and storage run on your own infrastructure, without a hosted free-usage credit.",
+    "watch_out": "Requires your own infrastructure (official starting guide suggests at least 2 vCPUs, 8 GB RAM and 50 GB disk), privacy consent and sensitive-data masking. AGPL source-sharing obligations may apply; paid Dedicated and Enterprise capabilities are separate.",
+    "pricing_url": "https://openreplay.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
