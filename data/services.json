@@ -6269,6 +6269,18 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "automatisch-community-self-hosted",
+    "name": "Automatisch Community Edition Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 Community Edition self-hosted workflow automation; no metered cloud free-tier quota; install and run the community features using Docker Compose.",
+    "watch_out": "You provide hosting, storage and external API accounts. Enterprise-only features are excluded; AGPL-3.0 network-source-sharing obligations apply to modified deployments.",
+    "pricing_url": "https://github.com/automatisch/automatisch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
+  },
+  {
     "id": "river-job-queue-self-hosted",
     "name": "River Self-Hosted Job Queue",
     "category": "queues-jobs",
