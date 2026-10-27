@@ -6291,5 +6291,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "kargo-gitops-self-hosted",
+    "name": "Kargo GitOps Promotion Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Open-source Apache-2.0 Kubernetes-native GitOps promotion controller; self-hosted stages, warehouses and promotion workflows without vendor-imposed software usage quotas.",
+    "watch_out": "Requires your own Kubernetes cluster and deployment infrastructure; cluster, image registry and CI provider charges are separate. Akuity's managed enterprise offering is distinct from the free self-hosted project.",
+    "pricing_url": "https://docs.kargo.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
