@@ -5583,5 +5583,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-27"
+  },
+  {
+    "id": "nginx-oss-static",
+    "name": "NGINX Open Source Static Server",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted BSD-2-Clause open-source HTTP server for static HTML, CSS, images and files, with virtual hosts, caching and reverse proxy; no vendor-imposed site, traffic or request quota in the OSS software.",
+    "watch_out": "You provide and pay for hosting, storage, bandwidth, DNS, TLS configuration and maintenance. F5 NGINX Plus and enterprise support are separate paid offerings; the free software is not a hosted plan.",
+    "pricing_url": "https://nginx.org/en/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
