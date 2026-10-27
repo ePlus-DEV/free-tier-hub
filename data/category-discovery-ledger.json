@@ -1,11 +1,11 @@
 {
   "as_of_utc": "2026-10-27",
-  "source_main_sha": "1e04c5743508f520d9086b68fc259de6b53aaf86",
+  "source_main_sha": "9c77f6de194053d92a4767ac0bc8707197e29ae6",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
       "category": "static-hosting",
-      "service_count": 27,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -17,7 +17,7 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 28,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -29,7 +29,7 @@
     },
     {
       "category": "serverless",
-      "service_count": 20,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -41,7 +41,7 @@
     },
     {
       "category": "cloud-vps",
-      "service_count": 4,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-25",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -53,7 +53,7 @@
     },
     {
       "category": "databases",
-      "service_count": 43,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 2,
       "uncatalogued_backlog": [],
@@ -65,7 +65,7 @@
     },
     {
       "category": "storage",
-      "service_count": 27,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -77,7 +77,7 @@
     },
     {
       "category": "developer-tools",
-      "service_count": 51,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 9,
       "uncatalogued_backlog": [],
@@ -89,7 +89,7 @@
     },
     {
       "category": "ci-cd",
-      "service_count": 23,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -101,7 +101,7 @@
     },
     {
       "category": "auth-security",
-      "service_count": 30,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
@@ -113,7 +113,7 @@
     },
     {
       "category": "observability",
-      "service_count": 38,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -125,7 +125,7 @@
     },
     {
       "category": "analytics",
-      "service_count": 24,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -137,7 +137,7 @@
     },
     {
       "category": "dns-cdn",
-      "service_count": 24,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -149,7 +149,7 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 23,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -161,7 +161,7 @@
     },
     {
       "category": "ai-assistants",
-      "service_count": 22,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -173,7 +173,7 @@
     },
     {
       "category": "queues-jobs",
-      "service_count": 36,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
@@ -185,7 +185,7 @@
     },
     {
       "category": "search",
-      "service_count": 22,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -197,7 +197,7 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 25,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -209,7 +209,7 @@
     },
     {
       "category": "tunneling-networking",
-      "service_count": 22,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
@@ -221,7 +221,7 @@
     },
     {
       "category": "webhooks-events",
-      "service_count": 23,
+      "service_count": 0,
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
@@ -8597,6 +8597,54 @@
           "reason": "Already catalogued in latest main; no duplicate candidate created."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-27",
+      "category": "queues-jobs",
+      "queries": [
+        "bunqueue MIT no paid tier self hosted Bun SQLite PostgreSQL official",
+        "River MPL-2.0 job queue PostgreSQL SQLite transactional official",
+        "Automatisch Community Edition AGPL-3.0 self-hosted Docker Compose official",
+        "Sidekiq LGPLv3 open source free community edition official",
+        "River, bunqueue, Automatisch, Sidekiq historical catalog Issue PR branch dedupe"
+      ],
+      "official_sources": [
+        "https://bunqueue.dev/",
+        "https://github.com/egeominotti/bunqueue",
+        "https://github.com/riverqueue/river",
+        "https://github.com/automatisch/automatisch",
+        "https://github.com/sidekiq/sidekiq"
+      ],
+      "candidates": [
+        {
+          "id": "bunqueue-self-hosted",
+          "status": "issue",
+          "issue_number": 830,
+          "reason": "Official MIT license; no paid tier or job quota; Bun server required; card not required for self-hosting; commercial allowed; candidate Issue #830, PR/CI/merge not yet confirmed."
+        },
+        {
+          "id": "river-job-queue-self-hosted",
+          "status": "issue",
+          "issue_number": 831,
+          "reason": "MPL-2.0 self-hosted River queue, no managed quota; requires own Postgres or SQLite; Issue #831; PR/CI/merge not yet confirmed."
+        },
+        {
+          "id": "automatisch-community-self-hosted",
+          "status": "issue",
+          "issue_number": 832,
+          "reason": "AGPL-3.0 Community Edition, Docker Compose self-hosted; enterprise features excluded; Issue #832; PR/CI/merge not yet confirmed."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Sidekiq Open Source",
+          "reason": "Verified LGPLv3 community core and separate paid Pro/Enterprise; deferred candidate this run to limit concurrent queue congestion; recheck against historical catalog before creating Issue."
+        },
+        {
+          "name": "Temporal, Celery, Hatchet, Graphile Worker, BullMQ, NATS, Argo Workflows",
+          "reason": "Already catalogued; no duplicate Issue created."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -8658,12 +8706,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 512,
+    "total_services": 514,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 12: 7/19 categories reviewed. Storage: Zot #824 → PR #827 MERGED (exact-head validation/build SUCCESS and eplus-bot APPROVED), confirmed in main 1e04c574 (512 services, +1 this run). SFTPGo #826 → PR #828 OPEN, exact-head validation/build SUCCESS and bot APPROVED, but mergeable=false after main advanced; wait for safe non-force reconciliation and revalidation. Harbor #825 remains Issue-only, requires queue/recovery inspection. Do not claim these two delivered. No direct main push or manual merge.",
+    "note": "Rotation 12: 8/19 categories. Queues-jobs: 3 verified official OSS candidates Issue #830–#832; PR, exact-head CI, review and merge not confirmed. Main 9c77f6de1940 contains 514 services. No direct main writes, no manual merges or schedule changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -8902,7 +8950,8 @@
       "webhooks-events",
       "search",
       "serverless",
-      "storage"
+      "storage",
+      "queues-jobs"
     ],
     "rotation_12_categories_remaining": [
       "static-hosting",
@@ -8914,9 +8963,8 @@
       "observability",
       "analytics",
       "ai-ml",
-      "ai-assistants",
-      "queues-jobs",
-      "feature-flags"
+      "feature-flags",
+      "ai-assistants"
     ]
   }
 }
