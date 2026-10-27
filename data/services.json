@@ -5223,5 +5223,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-26"
+  },
+  {
+    "id": "ragflow-self-hosted",
+    "name": "RAGFlow Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source retrieval-augmented generation and document-ingestion engine with self-hosted Docker deployment; no software subscription or per-document vendor quota.",
+    "watch_out": "Recommended starting resources are 4 CPU cores, 16 GB RAM and 50 GB disk; Elasticsearch/Infinity and database dependencies require maintenance. LLM/embedding API and infrastructure costs are separate.",
+    "pricing_url": "https://github.com/infiniflow/ragflow",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-27"
   }
 ]
