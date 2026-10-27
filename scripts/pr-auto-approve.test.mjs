@@ -95,3 +95,12 @@ test("approval tolerates delayed check registration, not arbitrary CLI errors", 
   assert.ok(waitStep.includes('VALIDATION_PASS_COUNT'));
   assert.ok(waitStep.includes('BUILD_PASS_COUNT'));
 });
+
+
+test("approval workflow isolates independent completed validation runs without cancellation", () => {
+  const concurrency = yaml.match(/^concurrency:\n(?:  .*\n)+/m)?.[0];
+  assert.ok(concurrency, "workflow-level concurrency must be defined");
+  assert.match(concurrency, /group: \$\{\{ github\.workflow \}\}-\$\{\{ github\.event\.workflow_run\.id \}\}/);
+  assert.match(concurrency, /cancel-in-progress: false/);
+  assert.doesNotMatch(concurrency, /cancel-in-progress: true/);
+});
