@@ -7539,5 +7539,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "scaleway-serverless-containers-free",
+    "name": "Scaleway Serverless Containers Free Tier",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "400,000 GB-seconds of memory and 200,000 vCPU-seconds of compute per account each month",
+    "watch_out": "Free usage is metered on allocated CPU/RAM; overages and always-on provisioning can incur charges. A valid payment card is required.",
+    "pricing_url": "https://www.scaleway.com/en/pricing/serverless/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
