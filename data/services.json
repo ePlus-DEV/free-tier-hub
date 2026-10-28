@@ -8459,6 +8459,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "parca-self-hosted",
+    "name": "Parca Open-Source Continuous Profiling",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source continuous CPU and memory profiling with self-hosted Parca server, web UI and eBPF agent; no vendor-enforced profiling quota for the self-managed edition.",
+    "watch_out": "Requires your own compute, storage, network security, Kubernetes or Linux host setup, and operations. eBPF profiling needs compatible Linux kernel and permissions. Managed profiling, infrastructure, and optional third-party services may cost extra; not a free hosted cloud plan.",
+    "pricing_url": "https://www.parca.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kener-status-page-self-hosted",
+    "name": "Kener Open-Source Status Pages",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted status pages with service monitoring, incidents, maintenance notices and public status communication; no vendor-enforced site or monitor quota for the open-source edition.",
+    "watch_out": "You must deploy and maintain the Node.js/Svelte application, database, Redis/cache where required, HTTPS, backups and monitoring. Email, SMS, infrastructure and third-party integrations may incur separate charges; no managed service SLA is included.",
+    "pricing_url": "https://kener.ing/docs/v4/getting-started/introduction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "pglite-embedded-postgres",
     "name": "PGlite Embedded PostgreSQL (WASM)",
     "category": "databases",
