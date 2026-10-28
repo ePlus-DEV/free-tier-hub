@@ -23,9 +23,9 @@
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-28",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 1,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "serverless",
@@ -9540,7 +9540,7 @@
           "issue": 929,
           "pr": 931,
           "status": "catalogued",
-          "reason": "Official zlib CE for self-managed containers; provider states CE intended for homelabs/nonproduction, no support or SLA; commercial terms marked check. Issue #929 -> PR #931; exact-head validation/build succeeded and bot approved but main update caused merge conflict; await safe reconciliation."
+          "reason": "Canonical Issue #929 -> PR #931. Original exact-head CI passed and bot approved; subsequent main changes caused a conflict. Trusted reconciliation preserved commits without force-push, new head 96a731e9bbf30fede55dd5e1785270a4dae10e7f passed validation/build and received current-head bot approval; GitHub auto-MERGED and ID verified in main. CE is intended for non-production; commercial-use terms remain check."
         }
       ],
       "excluded": [
@@ -9621,9 +9621,9 @@
     "total_services": 564,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 1,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 13 14/19; main 37bb71c1efba7d90ccdf9ae7607283d95804e69c has 564 services, +3 this run. FlagBridge #927/#930 and CasaOS #928/#932 auto-MERGED after exact-head CI and bot approval; both confirmed on main. Portainer CE #929/#931 exact-head CI SUCCESS at 96a731e9bbf30fede55dd5e1785270a4dae10e7f after safe no-force conflict reconciliation; current-head bot review/merge pending. 220 existing entries remain >7 days old. Self-hosted infrastructure is not free.",
+    "note": "Rotation 13 14/19; main 37bb71c1efba7d90ccdf9ae7607283d95804e69c has 564 services (+3 this run from 561). New FlagBridge #927/#930, CasaOS #928/#932, Portainer CE #929/#931 all auto-MERGED after exact-head validation/build SUCCESS and bot approval; all IDs verified in main. CasaOS cancelled queue was recovered by reviewed backlog consumer. Portainer conflict was reconciled without force-push, preserving commits. 220 existing entries >7 days old; remaining categories: static-hosting, databases, developer-tools, observability, queues-jobs. Self-hosted software does not include free infrastructure.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
