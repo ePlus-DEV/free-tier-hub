@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-28",
-  "source_main_sha": "757c0ba2236a8d91ae145fb71c731f3787f26ad0",
+  "source_main_sha": "b1623263036a9c03a08dd44f9c74a1b7bba9aafe",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -149,13 +149,13 @@
     },
     {
       "category": "ai-ml",
-      "service_count": 24,
-      "latest_catalog_verification": "2026-10-27",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-28",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-28",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 3,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -9445,38 +9445,31 @@
       "candidates": [
         {
           "id": "sambanova-cloud-free",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 919,
-          "reason": "Official docs confirm ongoing free tier without linked payment method, 20 RPM/20 RPD/200k TPD per production model; commercial terms marked check. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+          "reason": "Official docs confirm ongoing free tier without linked payment method, 20 RPM/20 RPD/200k TPD per production model; commercial terms marked check.  Canonical Issue #919 -> PR #922; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED; confirmed in latest main.",
+          "pr_number": 922
         },
         {
           "id": "localai-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 920,
-          "reason": "MIT-licensed self-hosted engine, no software-enforced quota; infrastructure and model licensing separate. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+          "reason": "MIT-licensed self-hosted engine, no software-enforced quota; infrastructure and model licensing separate.  Canonical Issue #920 -> PR #924; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED; confirmed in latest main.",
+          "pr_number": 924
         },
         {
           "id": "xinference-community-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue_number": 921,
-          "reason": "Apache-2.0 self-hosted community model serving, no software-enforced quota; infrastructure and model licensing separate. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+          "reason": "Apache-2.0 self-hosted community model serving, no software-enforced quota; infrastructure and model licensing separate.  Canonical Issue #921 -> PR #923; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED; confirmed in latest main.",
+          "pr_number": 923
         },
         {
           "id": "llama-cpp-self-hosted",
-          "status": "verified-awaiting-Issue",
-          "reason": "Official ggml-org/llama.cpp MIT license and self-hosted llama-server verified; defer canonical Issue until queue drains and ensure no duplicate provider/product alias.",
-          "candidate": {
-            "id": "llama-cpp-self-hosted",
-            "name": "llama.cpp Self-Hosted LLM Inference",
-            "category": "ai-ml",
-            "plan": "ongoing",
-            "free_limit": "MIT-licensed local LLM inference engine and OpenAI-compatible llama-server with no software-enforced request quota; runs on local CPU/GPU hardware.",
-            "watch_out": "Bring your own hardware, storage and energy; model weights have separate licensing and usage restrictions; commercial rights of software do not imply commercial rights of models.",
-            "pricing_url": "https://github.com/ggml-org/llama.cpp",
-            "credit_card": "no",
-            "commercial_use": "yes",
-            "last_checked": "2026-10-28"
-          }
+          "status": "catalogued",
+          "reason": "Official ggml-org/llama.cpp MIT license and self-hosted llama-server verified;  Canonical Issue #925 -> PR #926; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED; confirmed in latest main.",
+          "issue_number": 925,
+          "pr_number": 926
         }
       ],
       "excluded": [
@@ -9552,12 +9545,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 557,
+    "total_services": 561,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 3,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 13 12/19. Main contains 557 services at inspection; three new verified ai-ml candidates have canonical Issues #919-#921, pending queue/PR/CI/merge; llama.cpp verified-awaiting-Issue. No new merges claimed; cloud free vs self-hosted costs distinguished. Cerebras one-time trial excluded.",
+    "note": "Rotation 13 12/19. Main b1623263036a9c03a08dd44f9c74a1b7bba9aafe contains 561 services, +4 from 557 at this run start. Four new ai-ml services delivered via canonical Issues #919, #920, #921, #925 and catalog PRs #922, #924, #923, #926. All four exact-final-head validation/build SUCCESS and eplus-bot APPROVED; all auto-MERGED. LocalAI issue queue event was cancelled and recovered by reviewed backlog consumer dispatch. Xinference and LocalAI conflicts reconciled by no-force workflow. Cerebras one-time credit excluded. 220 entries older than seven days. Seven categories remain this rotation; no direct main push or manual merge/deploy.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
