@@ -434,7 +434,7 @@
       }
     });
     document.addEventListener("click", function (event) {
-      if (!advancedFilters.hidden && !advancedFilters.contains(event.target) &&
+      if (window.matchMedia("(max-width: 680px)").matches && !advancedFilters.hidden && !advancedFilters.contains(event.target) &&
           !filterToggle.contains(event.target) && !sheetBackdrop.contains(event.target)) {
         closeFilters(false);
       }
