@@ -6701,6 +6701,30 @@
     "last_checked": "2026-10-27"
   },
   {
+    "id": "pocket-id-self-hosted",
+    "name": "Pocket ID Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause self-hosted OpenID Connect and OAuth 2.0 identity provider with passkey-only sign-in; no vendor-imposed user or login quota.",
+    "watch_out": "Passkeys are required (no password fallback); deploy and secure your own server, HTTPS, backups and identity configuration. Hosting costs are not included.",
+    "pricing_url": "https://github.com/pocket-id/pocket-id",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "kanidm-self-hosted",
+    "name": "Kanidm Identity Management Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 self-hosted identity management with OAuth2/OIDC SSO, passkeys, LDAP gateway and Unix integration; no vendor-imposed user quota.",
+    "watch_out": "Self-hosting requires your own infrastructure and operational security; LDAP gateway is read-only, and deployment/replication require configuration. MPL-2.0 obligations apply.",
+    "pricing_url": "https://github.com/kanidm/kanidm",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "urbackup-self-hosted-backup",
     "name": "UrBackup Self-Hosted Server",
     "category": "storage",
