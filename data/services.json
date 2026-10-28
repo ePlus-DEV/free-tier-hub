@@ -8457,5 +8457,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "parca-self-hosted",
+    "name": "Parca Open-Source Continuous Profiling",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source continuous CPU and memory profiling with self-hosted Parca server, web UI and eBPF agent; no vendor-enforced profiling quota for the self-managed edition.",
+    "watch_out": "Requires your own compute, storage, network security, Kubernetes or Linux host setup, and operations. eBPF profiling needs compatible Linux kernel and permissions. Managed profiling, infrastructure, and optional third-party services may cost extra; not a free hosted cloud plan.",
+    "pricing_url": "https://www.parca.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
