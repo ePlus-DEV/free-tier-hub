@@ -6783,5 +6783,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "xinference-community-self-hosted",
+    "name": "Xinference Community Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted model-serving software for language, speech and multimodal models; no software-enforced monthly request quota; OpenAI-compatible API, CLI and web UI.",
+    "watch_out": "Self-hosting requires your own CPU/GPU, RAM, storage and operations; some model weights, runtimes or integrations have separate licenses and costs. Enterprise features and support are separate.",
+    "pricing_url": "https://github.com/xorbitsai/inference",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
