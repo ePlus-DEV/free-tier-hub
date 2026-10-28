@@ -8213,5 +8213,17 @@
     "credit_card": "yes",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "fermyon-cloud-starter-free",
+    "name": "Fermyon Cloud Starter Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 serverless WebAssembly Spin apps, 100,000 requests/month, 1 GB key-value storage, 1 GB SQLite storage and 5 GB bandwidth",
+    "watch_out": "Requires WebAssembly/Spin deployment; Starter is an ongoing open-beta free tier with no SLA. Paid Growth raises limits; custom domains may require paid tier and card/commercial terms are not explicitly confirmed.",
+    "pricing_url": "https://www.fermyon.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
