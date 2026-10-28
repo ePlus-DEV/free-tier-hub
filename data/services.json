@@ -7445,6 +7445,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "openobserve-community-self-hosted",
+    "name": "OpenObserve Community Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 OpenObserve open-source edition for self-hosted logs, metrics, traces, dashboards, alerts and OpenTelemetry ingestion; no vendor-hosted monthly ingestion allowance or software seat quota.",
+    "watch_out": "Bring your own compute, storage and object storage; infrastructure costs and AGPL-3.0 network-source obligations apply. SSO, enterprise RBAC, audit trails and some security features require the paid Enterprise edition. This is NOT the discontinued OpenObserve Cloud free tier.",
+    "pricing_url": "https://github.com/openobserve/openobserve",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "coroot-community-self-hosted",
     "name": "Coroot Community Edition Self-Hosted",
     "category": "observability",
