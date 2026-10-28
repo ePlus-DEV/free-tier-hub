@@ -8600,5 +8600,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "goreleaser-oss-local",
+    "name": "GoReleaser OSS",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed GoReleaser OSS command-line release automation for building, packaging and publishing Go project releases on local machines or existing CI runners.",
+    "watch_out": "GoReleaser Pro premium features are not included. GitHub Actions or other CI minutes, package registries, signing, cloud resources and third-party release services can cost extra; this entry covers the OSS CLI only.",
+    "pricing_url": "https://goreleaser.com/getting-started/install/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
