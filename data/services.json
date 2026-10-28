@@ -7937,5 +7937,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "pushpin-self-hosted",
+    "name": "Pushpin Open-Source Realtime Proxy",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted proxy for WebSocket, HTTP streaming, and long-polling push to existing APIs; no vendor software quota.",
+    "watch_out": "Requires your own server and backend publisher; scaling and connection capacity depend on infrastructure. Fastly Fanout managed hosting is separate.",
+    "pricing_url": "https://github.com/fastly/pushpin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
