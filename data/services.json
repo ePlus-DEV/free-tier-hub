@@ -7665,5 +7665,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "tabby-community-self-hosted",
+    "name": "Tabby Community Self-Hosted AI Coding Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free Community license for a self-hosted AI code-completion and assistant server, with Apache-2.0 core software, IDE extensions and support for locally run coding LLMs.",
+    "watch_out": "Community features and seats differ from paid Team/Enterprise; repository ee/ code has a separate commercial license. You provide CPU/GPU, storage and model inference; model licenses and paid remote APIs are separate.",
+    "pricing_url": "https://tabby.tabbyml.com/docs/administration/license/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
