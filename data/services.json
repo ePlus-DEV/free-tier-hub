@@ -7691,5 +7691,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "wirehook-self-hosted",
+    "name": "Wirehook Self-Hosted Webhook Tester",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted stateless webhook tester with real-time request inspection; no vendor request quota or paid software license; Docker deployment supported.",
+    "watch_out": "You supply hosting, public endpoint, networking and TLS; Wirehook is stateless and does not retain incoming webhook payloads, so it is not a durable event queue or managed relay.",
+    "pricing_url": "https://github.com/runabol/wirehook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
