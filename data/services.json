@@ -8141,5 +8141,17 @@
     "credit_card": "yes",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "nubbo-free-storage-manager",
+    "name": "Nubbo Free Cloud Storage Manager",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Connect 2 S3-compatible storage providers; 3 galleries and 3 file requests; unlimited shares and encrypted provider credentials",
+    "watch_out": "Nubbo manages third-party storage and does NOT include storage capacity or bandwidth; your S3 provider may charge separately. Public API and advanced features are planned for paid plans; card and commercial terms unconfirmed.",
+    "pricing_url": "https://nubbo.app/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
