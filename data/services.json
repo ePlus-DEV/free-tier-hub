@@ -8213,5 +8213,17 @@
     "credit_card": "yes",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "emailjs-free",
+    "name": "EmailJS Free Email API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "200 email API requests/month; 2 templates, 1 user seat, 500 contacts and 7-day email history",
+    "watch_out": "Free tier is positioned for testing and small projects; requests over monthly limit are dropped. No attachments or custom domain whitelist on Free; commercial-use terms require confirmation.",
+    "pricing_url": "https://www.emailjs.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
