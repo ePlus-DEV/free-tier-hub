@@ -7769,5 +7769,17 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "filebrowser-quantum-self-hosted",
+    "name": "FileBrowser Quantum Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted web file manager with multi-source browsing, user permissions, file sharing, preview, WebDAV and API; no hosted storage quota or subscription for the software.",
+    "watch_out": "Bring your own filesystem, TLS, identity configuration and backup; the v2 line is described as beta by maintainers, so evaluate release stability and security before internet exposure. Distinct maintained fork of archived original File Browser.",
+    "pricing_url": "https://github.com/gtsteffaniak/filebrowser",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
