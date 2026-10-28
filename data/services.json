@@ -7527,5 +7527,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "scaleway-serverless-functions-free",
+    "name": "Scaleway Serverless Functions Free Tier",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "1,000,000 requests/month and 400,000 GB-seconds/month of function execution, per account",
+    "watch_out": "Pay-as-you-go overages billed automatically; provisioned warm instances billed separately; requires a valid payment card to order resources.",
+    "pricing_url": "https://www.scaleway.com/en/pricing/serverless/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
