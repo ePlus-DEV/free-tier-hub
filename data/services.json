@@ -7479,5 +7479,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "jetify-devbox-open-source",
+    "name": "Jetify Devbox Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI for reproducible local development environments; no per-user or project limits in the open-source tool.",
+    "watch_out": "Requires Nix and locally provisioned compute/storage; third-party packages and any separately purchased Jetify cloud services have their own terms.",
+    "pricing_url": "https://github.com/jetify-com/devbox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
