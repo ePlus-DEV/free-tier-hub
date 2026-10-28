@@ -8129,5 +8129,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "gedo-free-authoritative-dns",
+    "name": "Gedo Free Authoritative DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Unlimited DNS zones, records and queries with DNSSEC, IPv4/IPv6, REST API, dynamic DNS, primary/secondary zones and TSIG transfers",
+    "watch_out": "Authoritative DNS hosting only; domain registration and any website infrastructure are separate. Provider offers email support without a paid SLA; commercial and small-business use is supported.",
+    "pricing_url": "https://www.gedo.se/en/dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
