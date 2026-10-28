@@ -8288,5 +8288,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "webhookd-self-hosted",
+    "name": "webhookd Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted HTTP webhook server that triggers local shell scripts/processes, supports signed requests, TLS and Docker or Go deployment; no vendor-imposed event or endpoint quota.",
+    "watch_out": "Runs local commands in response to HTTP requests: enforce request signatures, network restrictions and least privilege. Requires your own server, TLS, monitoring and operational security; compute and networking costs are separate. Not a hosted managed webhook delivery tier.",
+    "pricing_url": "https://github.com/ncarlier/webhookd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
