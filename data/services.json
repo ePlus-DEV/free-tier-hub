@@ -8704,5 +8704,18 @@
     "commercial_use": "yes",
     "deployment_model": "local",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "gemini-cli-free",
+    "name": "Google Gemini CLI (Free Individual)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Open-source terminal AI agent; personal Google-account free access currently lists up to 1,000 model requests per user per day (capacity limits apply).",
+    "watch_out": "Free access is for eligible individual Google accounts and may be restricted to Flash models; commercial eligibility for the free account must be checked. Paid API keys, Vertex AI billing, and higher tiers are separate.",
+    "pricing_url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
