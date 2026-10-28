@@ -6795,5 +6795,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "llama-cpp-self-hosted",
+    "name": "llama.cpp Self-Hosted LLM Inference",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local LLM inference engine and OpenAI-compatible llama-server with no software-enforced request quota; runs on your own CPU/GPU hardware.",
+    "watch_out": "Bring your own hardware, storage and energy; model weights have separate licensing and usage restrictions. Commercial rights for the MIT software do not imply commercial rights for every model.",
+    "pricing_url": "https://github.com/ggml-org/llama.cpp",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
