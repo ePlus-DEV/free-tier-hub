@@ -8535,5 +8535,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "huggingface-transformers-local",
+    "name": "Hugging Face Transformers Open Source Library",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Python model-definition library for local inference and training across text, image, audio and multimodal models; no library subscription or per-inference vendor charge.",
+    "watch_out": "Model weights and datasets have their own licenses, access gates and commercial restrictions; check each model separately. Local CPU/GPU, storage, cloud hosting and optional paid model/API endpoints are not included.",
+    "pricing_url": "https://github.com/huggingface/transformers",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
