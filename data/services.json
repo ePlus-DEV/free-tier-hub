@@ -7793,5 +7793,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "bunkerweb-open-source-waf",
+    "name": "BunkerWeb Open-Source WAF",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 open-source self-hosted web application firewall and reverse proxy with ModSecurity OWASP CRS, HTTPS automation and Docker/Kubernetes integrations; no vendor software usage quota.",
+    "watch_out": "Bring your own server, networking and storage; secure WAF configuration, rule tuning, updates and operations remain your responsibility. Professional support and managed infrastructure are separate; AGPL-3.0 obligations apply.",
+    "pricing_url": "https://github.com/bunkerity/bunkerweb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
