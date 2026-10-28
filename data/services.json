@@ -6819,5 +6819,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "flagbridge-self-hosted",
+    "name": "FlagBridge Open-Source Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted feature flag API and admin dashboard with targeting rules, percentage rollouts, SSE updates, audit logs and OpenFeature integration; no vendor-imposed request or seat quota for the self-hosted core.",
+    "watch_out": "Requires your own Docker or Kubernetes hosting, PostgreSQL, storage, operations and security maintenance. Open-core product; optional proprietary features and managed infrastructure are not included.",
+    "pricing_url": "https://github.com/flagbridge/flagbridge",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
