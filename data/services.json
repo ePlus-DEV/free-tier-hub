@@ -8511,6 +8511,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "pglite-embedded-postgres",
+    "name": "PGlite Embedded PostgreSQL (WASM)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Open-source Apache-2.0/PostgreSQL-licensed PostgreSQL-compatible WebAssembly database for browser, Node.js, Bun and Deno; in-memory or local filesystem/IndexedDB persistence with no vendor-enforced local query quota.",
+    "watch_out": "Embedded single-user/local database, not a managed cloud PostgreSQL service or drop-in multi-client server. Storage, browser resource limits, sync services, and remote hosting are separate; some integrations may have their own costs.",
+    "pricing_url": "https://pglite.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "openvpn-community-self-hosted",
+    "name": "OpenVPN Community Open-Source VPN",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0 open-source VPN daemon and community server/client software with no vendor-imposed connection or seat quota for self-managed deployments.",
+    "watch_out": "Users must supply and secure their own VPN host, network bandwidth, TLS keys, updates, routing and client configurations. GPL-2.0 obligations apply to redistribution; commercial OpenVPN Access Server features, support and hosting are separate paid offerings.",
+    "pricing_url": "https://github.com/OpenVPN/openvpn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "huggingface-transformers-local",
     "name": "Hugging Face Transformers Open Source Library",
     "category": "ai-ml",
