@@ -8496,5 +8496,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openvpn-community-self-hosted",
+    "name": "OpenVPN Community Open-Source VPN",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0 open-source VPN daemon and community server/client software with no vendor-imposed connection or seat quota for self-managed deployments.",
+    "watch_out": "Users must supply and secure their own VPN host, network bandwidth, TLS keys, updates, routing and client configurations. GPL-2.0 obligations apply to redistribution; commercial OpenVPN Access Server features, support and hosting are separate paid offerings.",
+    "pricing_url": "https://github.com/OpenVPN/openvpn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
