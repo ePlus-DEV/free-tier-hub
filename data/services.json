@@ -8496,5 +8496,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sqlite-embedded-database",
+    "name": "SQLite Embedded SQL Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Public-domain, in-process SQL database engine for local applications with no vendor subscription, seat limit, database-size quota imposed by a hosted plan, or per-query charge for the core library.",
+    "watch_out": "Runs embedded in the application rather than as a managed multi-user database server. Local disk, memory, backup, concurrency and hosting limits still apply; optional commercial SQLite extensions, support and warranty-of-title are separately priced.",
+    "pricing_url": "https://www.sqlite.org/copyright.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
