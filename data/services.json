@@ -8613,5 +8613,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "spinframework-spin-oss",
+    "name": "Spin Open-Source WebAssembly Serverless Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Spin CLI and runtime to build and run WebAssembly serverless applications locally or on self-managed infrastructure; no software subscription, app count or invocation quota in the open-source runtime.",
+    "watch_out": "Spin OSS is not a free managed cloud deployment. Running production apps requires your own infrastructure and operational work; Fermyon Cloud and other providers have separate plans and usage limits. Language toolchains, databases, registries and cloud resources may cost extra. Distinct from SpinKube and Fermyon Cloud Starter.",
+    "pricing_url": "https://github.com/spinframework/spin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
