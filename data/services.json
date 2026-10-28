@@ -8327,5 +8327,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "pydio-cells-home-self-hosted",
+    "name": "Pydio Cells Home (Self-Hosted File Sharing)",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Official free Cells Home edition for self-hosted file sharing with filesystem/S3-compatible storage, document previews, sharing, WebDAV, REST API and desktop/mobile sync; no published expiration for the Home edition.",
+    "watch_out": "Free Home tier is marketed for home use and evaluation; suitability for production business use should be confirmed. Paid Connect/Enterprise add SSO, LDAP, compliance and support. Hosting, storage and backups are user-funded; AGPLv3 source-sharing obligations may apply.",
+    "pricing_url": "https://pydio.com/en/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
