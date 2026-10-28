@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Static HTML directory builder. Node.js 24, zero runtime dependencies.
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
@@ -13,6 +14,7 @@ import { FONT_AWESOME_ICONS } from './fontawesome.mjs';
 import { serviceAddedDates } from './service-added-at.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'site/assets', name))).digest('hex').slice(0, 12);
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
 const GA_ID = 'G-9YPGG0XEZV';
@@ -127,15 +129,15 @@ function document(absolute, title, description, relative, content, structuredDat
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">',
-    '<link rel="stylesheet" href="', tag(absolute('assets/site.css')), '">',
+    '<link rel="stylesheet" href="', tag(absolute('assets/site.css?v=' + assetVersion('site.css'))), '">',
     '<link rel="alternate" type="text/plain" title="LLM overview" href="', tag(absolute('llms.txt')), '">',
     '<link rel="alternate" type="text/markdown" title="Agent discovery" href="', tag(absolute('agents.md')), '">',
     '<script type="application/ld+json">', safeJSON(structuredData), '</script>',
     '<script async src="https://www.googletagmanager.com/gtag/js?id=', GA_ID, '"></script>',
     '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}',
     "gtag('js',new Date());gtag('config','", GA_ID, "');</script>",
-    '<script src="', tag(absolute('assets/directory-url.js')), '" defer></script>',
-    '<script src="', tag(absolute('assets/site.js')), '" defer></script>',
+    '<script src="', tag(absolute('assets/directory-url.js?v=' + assetVersion('directory-url.js'))), '" defer></script>',
+    '<script src="', tag(absolute('assets/site.js?v=' + assetVersion('site.js'))), '" defer></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
     '<header class="site-header"><div class="container header-inner">',
     '<a class="brand" href="', tag(absolute()), '" aria-label="Free Tier Hub home">',
