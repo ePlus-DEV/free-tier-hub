@@ -8613,5 +8613,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "statping-ng-self-hosted",
+    "name": "Statping-ng Self-Hosted Status Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 open-source uptime and status-page server with HTTP/TCP/UDP/ICMP/gRPC monitoring, status graphs and notification integrations; no software subscription or monitored-endpoint quota.",
+    "watch_out": "Self-managed deployment, database, TLS, backups and server resources are not included; SMS or other third-party alerting services may charge. GPL-3.0 obligations apply when distributing modified software; this is the statping-ng fork, not a hosted free plan.",
+    "pricing_url": "https://github.com/statping-ng/statping-ng",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
