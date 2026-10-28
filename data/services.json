@@ -8021,5 +8021,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "better-auth-managed-starter",
+    "name": "Better Auth Managed Infrastructure Starter",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free $0/month managed infrastructure Starter for a self-hosted Better Auth application: 1 dashboard seat, 10,000 audit logs/month with 1-day retention and 1,000 security detections/month.",
+    "watch_out": "This is optional managed infrastructure, not free hosting for your application or database. Starter is intended for evaluation and side projects; production-oriented features and longer retention require Pro. Card and commercial-use terms are not explicit.",
+    "pricing_url": "https://better-auth.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
