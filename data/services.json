@@ -8095,6 +8095,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "tuzzle-hobby-free",
+    "name": "Tuzzle Hobby Free Media CDN",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "30,000 image transformations/month; 20 GB bandwidth and 10 GB media storage; WebP/AVIF and URL-based transforms",
+    "watch_out": "Hobby is positioned for side projects; advanced video/audio/document features, signed URLs and smart cropping require paid plans. Overage may be billed unless hard caps are configured; commercial-use terms unconfirmed.",
+    "pricing_url": "https://tzzl.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "statichost-eu-hobby",
     "name": "statichost.eu Hobby Free Static Hosting",
     "category": "static-hosting",
