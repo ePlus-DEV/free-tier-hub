@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { CATEGORIES } from './catalog.mjs';
+import { CATEGORIES, validateCandidate } from './catalog.mjs';
 import { applyCandidate, listCandidates, loadCandidates } from './backlog.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -131,4 +131,37 @@ test('candidate delivery validates the committed service before branch push', ()
     'verify the actual local commit before pushing the candidate branch');
   assert.match(delivery, /git ls-remote --exit-code --heads origin/);
   assert.match(workflow, /\[ "\$open_count" -ge 3 \]/);
+});
+
+test('candidate schema accepts reviewed deployment metadata without rewriting legacy input', () => {
+  const legacy = example();
+  assert.equal(validateCandidate(legacy, today), legacy);
+  assert.equal(Object.hasOwn(legacy, 'deployment_model'), false);
+  for (const deployment_model of ['cloud', 'self-hosted', 'hybrid', 'local', 'unclassified']) {
+    const candidate = {...example(), deployment_model};
+    assert.equal(validateCandidate(candidate, today), candidate);
+  }
+  for (const deployment_model of ['invalid', null, 1, '']) {
+    assert.throws(() => validateCandidate({...example(), deployment_model}, today), /invalid deployment_model/);
+  }
+  assert.throws(() => validateCandidate({...example(), unrelated: true}, today), /exactly the catalog schema/);
+});
+
+test('backlog delivery preserves deployment model and reviewed verification date', () => {
+  fixture((root, write) => {
+    const candidate = {...example(), deployment_model:'self-hosted'};
+    write([candidate]);
+    applyCandidate(candidate.id, root, today);
+    const stored = JSON.parse(fs.readFileSync(path.join(root,'data/services.json'),'utf8')).at(-1);
+    assert.deepEqual(stored, candidate);
+  });
+});
+
+test('candidate Issue intake and conflict recovery share deployment-aware validation', () => {
+  for (const file of ['catalog-candidate-queue.yml','reconcile-catalog-pr-conflicts.yml']) {
+    const workflow = fs.readFileSync(path.join(ROOT,'.github/workflows',file),'utf8');
+    assert.match(workflow, /import \{ validateData, validateCandidate \} from '\.\/scripts\/catalog\.mjs'/);
+    assert.match(workflow, /validateCandidate\(/);
+    assert.doesNotMatch(workflow, /const fields = \[/);
+  }
 });

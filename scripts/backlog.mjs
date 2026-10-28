@@ -3,13 +3,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CATEGORIES, sync, validateData } from './catalog.mjs';
+import { CATEGORIES, sync, validateData, validateCandidate } from './catalog.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const FIELDS = [
-  'id', 'name', 'category', 'plan', 'free_limit', 'watch_out',
-  'pricing_url', 'credit_card', 'commercial_use', 'last_checked',
-].sort();
 const isoToday = () => new Date().toISOString().slice(0, 10);
 const readJSON = (root, filename) =>
   JSON.parse(fs.readFileSync(path.join(root, filename), 'utf8'));
@@ -19,11 +15,7 @@ export function loadCandidates(root = DEFAULT_ROOT, today = isoToday()) {
   if (!Array.isArray(candidates)) throw Error('Backlog must be a JSON array');
   const ids = new Set();
   for (const candidate of candidates) {
-    if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate) ||
-        Object.keys(candidate).sort().join() !== FIELDS.join()) {
-      throw Error('Candidate must contain exactly the catalog schema fields');
-    }
-    validateData([candidate], today);
+    validateCandidate(candidate, today);
     if (!CATEGORIES.includes(candidate.category)) throw Error('Unsupported category');
     if (ids.has(candidate.id)) throw Error('Duplicate backlog candidate ID: ' + candidate.id);
     ids.add(candidate.id);

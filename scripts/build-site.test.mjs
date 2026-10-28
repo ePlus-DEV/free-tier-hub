@@ -108,15 +108,15 @@ test('every service gets an actual provider favicon, including previously unmapp
 test('URL filters round trip, reject unknown values, preserve unrelated params and hash', async () => {
   await import('../site/assets/directory-url.js');
   const api = globalThis.FreeTierDirectoryURL;
-  const state = {q: 'AI & cloud', category: 'databases', sort: 'name', noCard: true, commercial: true};
+  const state = {hosting: 'self-hosted', q: 'AI & cloud', category: 'databases', sort: 'name', noCard: true, commercial: true};
   const href = api.write('https://free-tier.eplus.dev/?utm_source=test#explore', state);
   assert.deepEqual(api.read(href, ['', 'databases'], ['default', 'name']), state);
   assert.equal(new URL(href).searchParams.get('utm_source'), 'test');
   assert.equal(new URL(href).hash, '#explore');
   const reset = new URL(api.write(href, {q:'', category:'', sort:'default', noCard:false, commercial:false}));
   assert.equal(reset.search, '?utm_source=test');
-  assert.deepEqual(api.read('https://free-tier.eplus.dev/?category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
-    {q:'', category:'', sort:'default', noCard:false, commercial:false});
+  assert.deepEqual(api.read('https://free-tier.eplus.dev/?hosting=bad&category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
+    {hosting:'', q:'', category:'', sort:'default', noCard:false, commercial:false});
 });
 
 test('header search opens and keyboard shortcuts work without a directory grid', async () => {
@@ -154,4 +154,28 @@ test('header search opens and keyboard shortcuts work without a directory grid',
   }
   document.listeners.keydown.forEach(fn => fn({ key: 'Escape', preventDefault() {} }));
   assert.equal(panel.hidden, true);
+});
+
+test('deployment filtering reads offer metadata rather than ID or product-name guesses', async () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'deployment-data-'));
+  try {
+    const source = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'))[0];
+    const modes = ['cloud', 'self-hosted', 'hybrid', 'local'];
+    const entries = modes.map((deployment_model, i) => ({...source, id:'unmapped-offer-'+i, deployment_model}));
+    const legacy = {...source, id:'vercel'}; delete legacy.deployment_model;
+    entries.push(legacy);
+    const catalog = path.join(tmp, 'catalog.json'), output = path.join(tmp, 'site');
+    fs.writeFileSync(catalog, JSON.stringify(entries));
+    build(output, undefined, catalog);
+    const html = fs.readFileSync(path.join(output,'index.html'),'utf8');
+    for (const [i, mode] of modes.entries()) {
+      assert.ok(html.includes('data-service-id="unmapped-offer-'+i+'" data-category="'+source.category+'" data-hosting-model="'+mode+'"'));
+    }
+    assert.ok(html.includes('data-service-id="vercel" data-category="'+source.category+'" data-hosting-model="unclassified"'));
+    assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output,'catalog.json'),'utf8')).map(x=>x.deployment_model), [...modes,undefined]);
+    await import('../site/assets/directory-url.js');
+    const api = globalThis.FreeTierDirectoryURL;
+    const state = {hosting:'local',q:'',category:'',sort:'default',noCard:false,commercial:false};
+    assert.deepEqual(api.read(api.write('https://example.com/',state),[''],['default']),state);
+  } finally {fs.rmSync(tmp,{recursive:true,force:true});}
 });
