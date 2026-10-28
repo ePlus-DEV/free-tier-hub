@@ -72,7 +72,7 @@ const HOSTING_MODELS = {
   'appwrite': 'hybrid', 'sentry': 'hybrid'
 };
 const hostingModel = item => HOSTING_MODELS[item.id] || 'unclassified';
-const HOSTING_LABELS = {cloud: 'Cloud free tier', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', unclassified: 'Not yet classified'};
+const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', unclassified: 'Not specified'};
 
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
@@ -90,10 +90,9 @@ function card(item, absolute) {
     '<div class="card-top"><span class="service-icon" aria-hidden="true">',
     serviceLogo(item), '</span><div class="card-identity"><h3><a href="', tag(dest),
     '">', tag(item.name), '</a></h3><span class="eyebrow">',
-    tag(CATEGORY_LABELS[item.category]), '</span></div>',
+    tag(CATEGORY_LABELS[item.category]), hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"> · ' + HOSTING_LABELS[hostingModel(item)] + '</span>' : '', '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
-    hostingModel(item) !== 'unclassified' ? '<p class="hosting-model-label">' + HOSTING_LABELS[hostingModel(item)] + '</p>' : '',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
@@ -224,22 +223,22 @@ function homePage(items, absolute, counts) {
     '<div class="filter-popover-wrap">',
     '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" ',
     'aria-expanded="false" aria-controls="advanced-filters">',
-    glyph('filters'), ' <span>Filters</span><span id="active-filter-count" class="active-filter-count" hidden>0</span></button>',
+    glyph('filters'), ' <span>Filters</span><span id="active-filter-count" class="active-filter-count" hidden>0</span></button></div></div></div>',
     '<div class="filter-checks" id="advanced-filters" role="group" aria-label="Additional filters" hidden>',
-    '<div class="filter-popover-heading"><strong>Refine results</strong><span>Only show services that match</span>',
+    '<div class="filter-popover-heading"><strong>Refine results</strong><span>Results update as you choose</span>',
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
-    '<option value="">All deployment models</option><option value="cloud">Cloud free tier</option>',
+    '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
     '<option value="self-hosted">Self-hosted</option><option value="hybrid">Cloud + self-hosted</option>',
-    '<option value="unclassified">Not yet classified</option></select></label>',
-    '<p class="hosting-model-note" id="hosting-model-note">Classification is in progress. Self-hosted infrastructure costs are not included.</p>',
+    '<option value="unclassified">Not specified</option></select></label>',
+    '<p class="hosting-model-note" id="hosting-model-note">Deployment specified for ' + items.filter(item => hostingModel(item) !== 'unclassified').length + ' of ' + items.length + ' services. Self-hosting may incur infrastructure costs.</p>',
     '<label><input id="filter-no-card" type="checkbox"><span class="filter-option-copy">',
     '<strong>No credit card</strong><small>Start without adding a payment card</small></span></label>',
     '<label><input id="filter-commercial" type="checkbox"><span class="filter-option-copy">',
     '<strong>Commercial use</strong><small>Permitted for commercial projects</small></span></label>',
     '<button type="button" class="filter-show-results" id="filter-show-results">Show results</button>',
-    '</div></div></div></div>',
+    '</div>',
     '<div class="active-filters" id="active-filters" hidden><div id="active-filter-chips" class="active-filter-chips" aria-label="Active filters"></div>',
     '<button id="clear-filters" class="clear-filters" type="button">Clear</button></div></div>',
     '<div class="directory-heading">',

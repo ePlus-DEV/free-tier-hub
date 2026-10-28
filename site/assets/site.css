@@ -357,5 +357,30 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 .hosting-model-field select{width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
 .hosting-model-field select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 .hosting-model-note{margin:0 0 8px;font-size:12px;line-height:1.5;color:var(--muted)}
-.hosting-model-label{align-self:flex-start;margin:0 0 12px;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink-soft);font-size:11px;line-height:1.5}
 @media(max-width:680px){.hosting-model-field select{font-size:16px}}
+
+/* Expanded filters occupy their own row; results remain visible below. */
+.catalog-toolbar>.filter-checks{position:static;order:3;width:100%;max-width:none;max-height:none;overflow:visible;box-shadow:none;margin:0 0 14px;padding:16px;display:grid;grid-template-columns:minmax(220px,1.2fr) repeat(2,minmax(160px,1fr));gap:12px 20px}
+.catalog-toolbar>.filter-checks[hidden]{display:none}
+.catalog-toolbar>.filter-checks .filter-popover-heading{grid-column:1/-1;position:relative;padding-right:40px}
+.catalog-toolbar>.filter-checks .filter-popover-heading>span{display:none}
+.catalog-toolbar>.filter-checks .filter-sheet-close{display:grid;position:absolute;right:0;top:-6px;width:32px;height:32px}
+.catalog-toolbar>.filter-checks .hosting-model-field{grid-column:1;grid-row:2}
+.catalog-toolbar>.filter-checks .hosting-model-note{grid-column:1;grid-row:3;margin:0;font-size:11px}
+.catalog-toolbar>.filter-checks>label:has(input[type=checkbox]){align-self:start;margin-top:20px;border:0;padding:12px 0}
+.catalog-toolbar>.active-filters{order:4}
+.deployment-meta{color:var(--muted)}
+.service-card .card-top{margin-bottom:18px}
+.service-card .allowance-block{padding:12px;border-radius:8px;margin-bottom:14px}
+.service-card .allowance{min-height:0;-webkit-line-clamp:3}
+.service-card .restriction-block{background:transparent;padding:0;border:0;border-radius:0;margin-bottom:18px}
+.service-card .restriction{min-height:0;-webkit-line-clamp:3}
+.service-card .card-bottom{margin-top:auto;padding-top:14px}
+@media(min-width:681px){.catalog-toolbar:has(>.filter-checks:not([hidden])){position:relative;top:auto}}
+@media(min-width:681px) and (max-width:980px){
+.catalog-toolbar>.filter-checks{grid-template-columns:repeat(2,minmax(0,1fr))}
+.catalog-toolbar>.filter-checks .hosting-model-field{grid-column:1/-1;grid-row:auto}
+.catalog-toolbar>.filter-checks .hosting-model-note{grid-column:1/-1;grid-row:auto}
+.catalog-toolbar>.filter-checks>label:has(input[type=checkbox]){margin-top:0}
+}
+@media(max-width:680px){.service-card .card-top{grid-template-columns:36px minmax(0,1fr) auto;gap:10px}.service-card .service-icon{width:36px;height:36px}.service-card .allowance-block{padding:12px}.service-card .restriction-block{padding:0}.mobile-filter-sheet .hosting-model-note{margin-bottom:8px}}
