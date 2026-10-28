@@ -6821,6 +6821,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "flagbridge-self-hosted",
+    "name": "FlagBridge Open-Source Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted feature flag API and admin dashboard with targeting rules, percentage rollouts, SSE updates, audit logs and OpenFeature integration; no vendor-imposed request or seat quota for the self-hosted core.",
+    "watch_out": "Requires your own Docker or Kubernetes hosting, PostgreSQL, storage, operations and security maintenance. Open-core product; optional proprietary features and managed infrastructure are not included.",
+    "pricing_url": "https://github.com/flagbridge/flagbridge",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "casaos-self-hosted",
+    "name": "CasaOS Personal Cloud Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source personal cloud dashboard and Docker application manager for running self-hosted apps on Linux hardware; no software-imposed monthly app deployment quota.",
+    "watch_out": "CasaOS is a self-managed software platform, not a free cloud server. You supply and maintain Linux hardware, Docker, disks, networking and electricity; individual apps may have their own licensing and costs.",
+    "pricing_url": "https://github.com/IceWhaleTech/CasaOS",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "portainer-community-self-hosted",
     "name": "Portainer Community Edition",
     "category": "app-hosting",
