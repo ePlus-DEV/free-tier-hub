@@ -7853,5 +7853,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "go-task-open-source",
+    "name": "Taskfile (go-task) Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local cross-platform YAML-based build and automation tasks with the MIT-licensed Task CLI; no seat or execution quota.",
+    "watch_out": "Runs on your own machines or CI runners; compute, paid CI minutes and external integrations are not included.",
+    "pricing_url": "https://github.com/go-task/task",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
