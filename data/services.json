@@ -7467,5 +7467,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "lefthook-git-hooks-manager",
+    "name": "Lefthook Git Hooks Manager",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed cross-platform Git hooks manager; free local binary with parallel command execution and no software-enforced repository or hook limits.",
+    "watch_out": "Requires Git and local/CI execution resources; configured hooks and third-party tools may incur their own costs. No managed hosting is included.",
+    "pricing_url": "https://github.com/evilmartians/lefthook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
