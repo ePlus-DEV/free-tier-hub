@@ -8472,6 +8472,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kener-status-page-self-hosted",
+    "name": "Kener Open-Source Status Pages",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted status pages with service monitoring, incidents, maintenance notices and public status communication; no vendor-enforced site or monitor quota for the open-source edition.",
+    "watch_out": "You must deploy and maintain the Node.js/Svelte application, database, Redis/cache where required, HTTPS, backups and monitoring. Email, SMS, infrastructure and third-party integrations may incur separate charges; no managed service SLA is included.",
+    "pricing_url": "https://kener.ing/docs/v4/getting-started/introduction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "teamcity-professional-free",
+    "name": "JetBrains TeamCity Professional (On-Premises Free)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free-forever on-premises Professional CI/CD server with unlimited users, 3 build agents, up to 100 build configurations and 10 pipelines; no recurring TeamCity server license fee within those limits.",
+    "watch_out": "Self-hosted server and build-agent infrastructure are not included. Extra agents and Enterprise features cost money; TeamCity Cloud has no ongoing free tier (trial only). The free edition's build configuration and pipeline limits still apply.",
+    "pricing_url": "https://www.jetbrains.com/teamcity/buy/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "sqlite-embedded-database",
     "name": "SQLite Embedded SQL Database",
     "category": "databases",
