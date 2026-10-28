@@ -8717,5 +8717,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "restfox-open-source-api-client",
+    "name": "Restfox Open-Source API Client",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed offline-first HTTP, GraphQL and WebSocket testing client; free desktop builds and self-run web edition.",
+    "watch_out": "The browser/web edition requires your own runtime or server; external APIs and hosting may charge separately. No vendor-operated hosted free tier is included.",
+    "pricing_url": "https://github.com/flawiddsouza/Restfox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
