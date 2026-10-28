@@ -8379,5 +8379,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "telemetrydeck-free",
+    "name": "TelemetryDeck Free Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "50,000 analytics events per month free for accounts created on or after July 1, 2026; older free accounts retain 100,000 events/month.",
+    "watch_out": "Usage above the allowance can stop ingestion; TelemetryDeck describes automatic subscription upgrades after repeated overages, so check billing controls and current dashboard terms. Paid features and higher event volumes cost extra.",
+    "pricing_url": "https://telemetrydeck.com/blog/pricing-update-2026/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
