@@ -6725,6 +6725,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "urbackup-self-hosted-backup",
+    "name": "UrBackup Self-Hosted Server",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "AGPLv3+ open-source client/server file and image backups with incremental backups and a web admin UI; no vendor-imposed device or storage quota.",
+    "watch_out": "Your server, disks and network capacity determine practical limits; configure backup retention and restore testing. AGPLv3+ obligations apply to modified network-served software.",
+    "pricing_url": "https://www.urbackup.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "smallstep-step-ca-self-hosted",
     "name": "Smallstep step-ca Self-Hosted",
     "category": "auth-security",
