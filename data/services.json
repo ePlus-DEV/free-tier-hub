@@ -7807,6 +7807,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "alwaysdata-free-web-hosting",
+    "name": "alwaysdata Free Web Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-for-life personal website hosting: 1 GB shared SSD space, 256 MB RAM, quarter CPU core, and 3 days of backups on an alwaysdata.net address.",
+    "watch_out": "Free plan is non-commercial and websites are restricted to the alwaysdata.net address; cannot run independent services. Disk quota is shared by website files, mail and databases. Paid Plus is separate; card requirement not confirmed.",
+    "pricing_url": "https://www.alwaysdata.com/en/offers/",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "bunkerweb-open-source-waf",
+    "name": "BunkerWeb Open-Source WAF",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 open-source self-hosted web application firewall and reverse proxy with ModSecurity OWASP CRS, HTTPS automation and Docker/Kubernetes integrations; no vendor software usage quota.",
+    "watch_out": "Bring your own server, networking and storage; secure WAF configuration, rule tuning, updates and operations remain your responsibility. Professional support and managed infrastructure are separate; AGPL-3.0 obligations apply.",
+    "pricing_url": "https://github.com/bunkerity/bunkerweb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "openmediavault-self-hosted-nas",
     "name": "OpenMediaVault Self-Hosted NAS",
     "category": "storage",
