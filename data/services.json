@@ -7841,5 +7841,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "litellm-open-source",
+    "name": "LiteLLM Open Source AI Gateway",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed LiteLLM SDK and self-hosted gateway outside enterprise/; OpenAI-compatible routing to multiple LLM providers without LiteLLM software usage fees.",
+    "watch_out": "enterprise/ code and paid enterprise features require a separate license; upstream LLM API tokens and self-hosted infrastructure are not free.",
+    "pricing_url": "https://github.com/BerriAI/litellm/blob/main/LICENSE",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
