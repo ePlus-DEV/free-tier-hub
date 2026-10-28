@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-28",
-  "source_main_sha": "9122a8528121dcd9600e6ce1f95366aded9d3194",
+  "source_main_sha": "37bb71c1efba7d90ccdf9ae7607283d95804e69c",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -17,15 +17,15 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 30,
+      "service_count": 31,
       "latest_catalog_verification": "2026-10-28",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-28",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 2,
-      "open_catalog_prs": 2,
-      "open_catalog_candidate_prs": 2
+      "open_catalog_candidate_issues": 1,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "serverless",
@@ -9533,13 +9533,13 @@
           "issue": 928,
           "pr": 932,
           "status": "catalogued",
-          "reason": "Official Apache-2.0 personal cloud Docker app manager. Issue queue initial event cancelled; trusted backlog consumer resumed existing Issue #928 and created PR #932. Exact-head CI/review/merge still pending; do not count as delivered."
+          "reason": "Issue #928 queue event cancelled; trusted backlog consumer resumed and created PR #932. Exact-final-head validation/build SUCCESS and eplus-bot approved; GitHub auto-MERGED, confirmed in latest main. Apache-2.0 software; infrastructure not included."
         },
         {
           "id": "portainer-community-self-hosted",
           "issue": 929,
           "pr": 931,
-          "status": "pr",
+          "status": "catalogued",
           "reason": "Official zlib CE for self-managed containers; provider states CE intended for homelabs/nonproduction, no support or SLA; commercial terms marked check. Issue #929 -> PR #931; exact-head validation/build succeeded and bot approved but main update caused merge conflict; await safe reconciliation."
         }
       ],
@@ -9618,12 +9618,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 563,
+    "total_services": 564,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 2,
+    "open_catalog_candidate_issues": 1,
     "unmatched_backlog": [],
-    "note": "Rotation 13 14/19; main 9122a8528121dcd9600e6ce1f95366aded9d3194 has 563 services. This run discovered and verified FlagBridge, CasaOS, Portainer CE. FlagBridge Issue #927 -> PR #930 auto-MERGED, main verified. CasaOS #928 -> PR #932 resumed after cancelled queue; pending exact-head CI/merge. Portainer #929 -> PR #931 exact-head CI SUCCESS and bot APPROVED but conflict after main changed; safe no-force reconciliation pending. Self-hosted infrastructure is not free. Do not count pending PRs as merged.",
+    "note": "Rotation 13 14/19; main 37bb71c1efba7d90ccdf9ae7607283d95804e69c has 564 services, +3 this run. FlagBridge #927/#930 and CasaOS #928/#932 auto-MERGED after exact-head CI and bot approval; both confirmed on main. Portainer CE #929/#931 exact-head CI SUCCESS at 96a731e9bbf30fede55dd5e1785270a4dae10e7f after safe no-force conflict reconciliation; current-head bot review/merge pending. 220 existing entries remain >7 days old. Self-hosted infrastructure is not free.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
