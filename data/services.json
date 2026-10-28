@@ -8706,6 +8706,32 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "gemini-cli-free",
+    "name": "Google Gemini CLI (Free Individual)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Open-source terminal AI agent; personal Google-account free access currently lists up to 1,000 model requests per user per day (capacity limits apply).",
+    "watch_out": "Free access is for eligible individual Google accounts and may be restricted to Flash models; commercial eligibility for the free account must be checked. Paid API keys, Vertex AI billing, and higher tiers are separate.",
+    "pricing_url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "microsoft-inshellisense-local",
+    "name": "Microsoft inshellisense (Open Source)",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed terminal-native autocomplete for 600+ command-line tools; free local installation via npm or Homebrew.",
+    "watch_out": "Runs locally on Windows, Linux and macOS; no managed hosting or bundled cloud service is included. Shell setup and local tooling are required.",
+    "pricing_url": "https://github.com/microsoft/inshellisense",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "sillytavern-local-ai-interface",
     "name": "SillyTavern Open-Source AI Interface",
     "category": "ai-assistants",
