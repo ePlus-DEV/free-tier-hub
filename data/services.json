@@ -8485,6 +8485,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "teamcity-professional-free",
+    "name": "JetBrains TeamCity Professional (On-Premises Free)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free-forever on-premises Professional CI/CD server with unlimited users, 3 build agents, up to 100 build configurations and 10 pipelines; no recurring TeamCity server license fee within those limits.",
+    "watch_out": "Self-hosted server and build-agent infrastructure are not included. Extra agents and Enterprise features cost money; TeamCity Cloud has no ongoing free tier (trial only). The free edition's build configuration and pipeline limits still apply.",
+    "pricing_url": "https://www.jetbrains.com/teamcity/buy/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sqlite-embedded-database",
+    "name": "SQLite Embedded SQL Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Public-domain, in-process SQL database engine for local applications with no vendor subscription, seat limit, database-size quota imposed by a hosted plan, or per-query charge for the core library.",
+    "watch_out": "Runs embedded in the application rather than as a managed multi-user database server. Local disk, memory, backup, concurrency and hosting limits still apply; optional commercial SQLite extensions, support and warranty-of-title are separately priced.",
+    "pricing_url": "https://www.sqlite.org/copyright.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "pglite-embedded-postgres",
     "name": "PGlite Embedded PostgreSQL (WASM)",
     "category": "databases",
