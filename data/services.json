@@ -8730,5 +8730,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "filen-cloud-storage-free",
+    "name": "Filen Free Encrypted Cloud Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "10 GB zero-knowledge encrypted cloud storage granted at signup to eligible new accounts; free allocation remains available after signup.",
+    "watch_out": "Free 10 GB is a one-time eligibility-checked signup grant: VPN/proxy or anonymization-network signups may receive no free storage, with no later manual grant. Business use and card requirements need confirmation.",
+    "pricing_url": "https://filen.io/hub/an-update-on-free-account-creation/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
