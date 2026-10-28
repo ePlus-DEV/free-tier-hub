@@ -8587,5 +8587,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "flexsearch-local",
+    "name": "FlexSearch Open Source",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 JavaScript full-text search library for browsers and Node.js; no library usage quota.",
+    "watch_out": "The free Apache-2.0 library runs in your own browser or Node.js application; server-side deployment and optional persistent database connectors incur separate infrastructure or database costs.",
+    "pricing_url": "https://github.com/nextapps-de/flexsearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
