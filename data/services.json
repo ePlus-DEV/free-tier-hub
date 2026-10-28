@@ -8275,5 +8275,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "webhook-site-self-hosted",
+    "name": "Webhook.site Open Source Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook and HTTP request inspection server, with unique test URLs and realtime request viewing; no vendor-imposed request quota for the open-source edition.",
+    "watch_out": "Run your own Docker/PHP hosting, storage, TLS and networking; infrastructure costs are separate. Open-source edition does not include cloud/Pro-only Custom Actions and other paid features; configure access controls and retention before exposing captured payloads.",
+    "pricing_url": "https://docs.webhook.site/open-source.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
