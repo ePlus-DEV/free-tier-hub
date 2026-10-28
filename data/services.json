@@ -8262,5 +8262,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cronicle-open-source-self-hosted",
+    "name": "Cronicle Open Source Scheduler",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted distributed job scheduler and runner with web UI, multi-server scheduling, cron-style repeating/on-demand jobs, logs and REST API; no software license fee or vendor job quota.",
+    "watch_out": "Requires your own Node.js hosts, storage and operations; infrastructure costs are not included. Maintainers now focus new features on successor xyOps; Cronicle receives primarily maintenance and security fixes.",
+    "pricing_url": "https://github.com/jhuckaby/Cronicle",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
