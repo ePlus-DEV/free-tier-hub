@@ -8678,5 +8678,18 @@
     "commercial_use": "yes",
     "deployment_model": "self-hosted",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "webhook-tester-self-hosted",
+    "name": "WebHook Tester (tarampampam)",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted webhook inspection and testing app with unique request URLs, configurable responses and WebSocket live updates; no vendor request quota.",
+    "watch_out": "Requires your own host and network access; hosting and optional ngrok tunneling may cost money. In-memory storage loses captured requests on restart; configure filesystem or Redis for persistence and Redis for multi-instance deployments.",
+    "pricing_url": "https://github.com/tarampampam/webhook-tester",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-10-28"
   }
 ]
