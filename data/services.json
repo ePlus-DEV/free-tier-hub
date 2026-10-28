@@ -7515,5 +7515,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "uploadthing-free",
+    "name": "UploadThing 2GB App",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "2 GB storage shared across apps; unlimited uploads/downloads; 7-day audit logs",
+    "watch_out": "Free 2 GB storage is shared across all apps; 7-day audit logs; private files and region choice require paid plans. Official pricing does not explicitly confirm card requirement or commercial-use terms, so both remain check.",
+    "pricing_url": "https://uploadthing.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
