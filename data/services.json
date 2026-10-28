@@ -8498,6 +8498,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "sqlite-embedded-database",
+    "name": "SQLite Embedded SQL Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Public-domain, in-process SQL database engine for local applications with no vendor subscription, seat limit, database-size quota imposed by a hosted plan, or per-query charge for the core library.",
+    "watch_out": "Runs embedded in the application rather than as a managed multi-user database server. Local disk, memory, backup, concurrency and hosting limits still apply; optional commercial SQLite extensions, support and warranty-of-title are separately priced.",
+    "pricing_url": "https://www.sqlite.org/copyright.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "pglite-embedded-postgres",
+    "name": "PGlite Embedded PostgreSQL (WASM)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Open-source Apache-2.0/PostgreSQL-licensed PostgreSQL-compatible WebAssembly database for browser, Node.js, Bun and Deno; in-memory or local filesystem/IndexedDB persistence with no vendor-enforced local query quota.",
+    "watch_out": "Embedded single-user/local database, not a managed cloud PostgreSQL service or drop-in multi-client server. Storage, browser resource limits, sync services, and remote hosting are separate; some integrations may have their own costs.",
+    "pricing_url": "https://pglite.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "openvpn-community-self-hosted",
     "name": "OpenVPN Community Open-Source VPN",
     "category": "tunneling-networking",
