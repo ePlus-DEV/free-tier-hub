@@ -6747,5 +6747,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "duplicati-open-source-backup",
+    "name": "Duplicati Open-Source Backup",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source encrypted incremental and compressed backups to S3, SFTP, WebDAV and cloud storage providers; no software backup-volume quota.",
+    "watch_out": "Backup destination storage, bandwidth and cloud API charges are separate; optional proprietary Duplicati features and paid services are not included. Test restore procedures.",
+    "pricing_url": "https://github.com/duplicati/duplicati",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
