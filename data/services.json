@@ -7975,6 +7975,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "qdrant-self-hosted",
+    "name": "Qdrant Open-Source Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source vector database with vector similarity, hybrid search, payload filtering and a self-managed Docker deployment; no vendor-imposed software vector or query quota.",
+    "watch_out": "Self-hosted Qdrant only, distinct from Qdrant Cloud. You provide compute, persistent storage, security, backups and operations; embedding/model APIs and infrastructure may cost money.",
+    "pricing_url": "https://github.com/qdrant/qdrant",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "pgvector-postgresql-extension",
+    "name": "pgvector Open-Source PostgreSQL Extension",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free PostgreSQL-licensed extension for exact and approximate vector similarity search inside PostgreSQL 13+; supports HNSW and IVFFlat indexes, multiple vector types and distance metrics without a vendor-imposed software quota.",
+    "watch_out": "Requires a PostgreSQL installation with extension support; some managed Postgres providers may not enable it or may charge for database compute and storage. Embedding generation and operations are separate.",
+    "pricing_url": "https://github.com/pgvector/pgvector",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "weaviate-open-source-self-hosted",
     "name": "Weaviate Open-Source Self-Hosted",
     "category": "databases",
