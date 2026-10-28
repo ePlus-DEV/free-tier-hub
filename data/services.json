@@ -8275,5 +8275,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "nitric-framework-self-hosted",
+    "name": "Nitric Open-Source Backend Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source backend/serverless framework with APIs, functions, resource declarations, local development and deployment providers for AWS, Azure, GCP or user-managed infrastructure; no vendor license or per-function fee for the framework.",
+    "watch_out": "Nitric is developer software, not a free hosted compute allowance. Deployed functions, databases, buckets, networks and cloud provider resources incur their own costs; a cloud account may require billing details. Plugin/provider compatibility and runtime quotas depend on the selected infrastructure.",
+    "pricing_url": "https://github.com/nitrictech/nitric",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
