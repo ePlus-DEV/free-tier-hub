@@ -155,3 +155,27 @@ test('header search opens and keyboard shortcuts work without a directory grid',
   document.listeners.keydown.forEach(fn => fn({ key: 'Escape', preventDefault() {} }));
   assert.equal(panel.hidden, true);
 });
+
+test('deployment filtering reads offer metadata rather than ID or product-name guesses', async () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'deployment-data-'));
+  try {
+    const source = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'))[0];
+    const modes = ['cloud', 'self-hosted', 'hybrid', 'local'];
+    const entries = modes.map((deployment_model, i) => ({...source, id:'unmapped-offer-'+i, deployment_model}));
+    const legacy = {...source, id:'vercel'}; delete legacy.deployment_model;
+    entries.push(legacy);
+    const catalog = path.join(tmp, 'catalog.json'), output = path.join(tmp, 'site');
+    fs.writeFileSync(catalog, JSON.stringify(entries));
+    build(output, undefined, catalog);
+    const html = fs.readFileSync(path.join(output,'index.html'),'utf8');
+    for (const [i, mode] of modes.entries()) {
+      assert.ok(html.includes('data-service-id="unmapped-offer-'+i+'" data-category="'+source.category+'" data-hosting-model="'+mode+'"'));
+    }
+    assert.ok(html.includes('data-service-id="vercel" data-category="'+source.category+'" data-hosting-model="unclassified"'));
+    assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output,'catalog.json'),'utf8')).map(x=>x.deployment_model), [...modes,undefined]);
+    await import('../site/assets/directory-url.js');
+    const api = globalThis.FreeTierDirectoryURL;
+    const state = {hosting:'local',q:'',category:'',sort:'default',noCard:false,commercial:false};
+    assert.deepEqual(api.read(api.write('https://example.com/',state),[''],['default']),state);
+  } finally {fs.rmSync(tmp,{recursive:true,force:true});}
+});

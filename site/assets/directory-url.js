@@ -7,7 +7,7 @@
       var category = params.get("category") || "";
       var sort = params.get("sort") || "default";
       return {
-        hosting: ["cloud", "self-hosted", "hybrid", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
+        hosting: ["cloud", "self-hosted", "hybrid", "local", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",

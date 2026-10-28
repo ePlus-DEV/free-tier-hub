@@ -65,16 +65,9 @@ function breadcrumb(crumbs) {
     itemListElement: crumbs.map(([name, item], i) =>
       ({ '@type': 'ListItem', position: i + 1, name, item })) };
 }
-// Preview-only explicit classification. Unlisted entries remain unclassified rather than guessed.
-const HOSTING_MODELS = {
-  'cloudflare-pages': 'cloud', 'vercel': 'cloud', 'netlify': 'cloud',
-  'github-pages': 'cloud', 'firebase-hosting': 'cloud', 'azure-static-web-apps': 'cloud',
-  'postgresql': 'self-hosted', 'mariadb': 'self-hosted', 'clickhouse': 'self-hosted',
-  'pi-hole-dns': 'self-hosted', 'open-webui': 'self-hosted',
-  'appwrite': 'hybrid', 'sentry': 'hybrid'
-};
-const hostingModel = item => HOSTING_MODELS[item.id] || 'unclassified';
-const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', unclassified: 'Not specified'};
+// Classify the listed offer, not every edition sold by the same vendor.
+const hostingModel = item => item.deployment_model || 'unclassified';
+const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', local: 'Local / embedded', unclassified: 'Not specified'};
 
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
@@ -233,7 +226,7 @@ function homePage(items, absolute, counts) {
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
     '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
     '<option value="self-hosted">Self-hosted</option><option value="hybrid">Cloud + self-hosted</option>',
-    '<option value="unclassified">Not specified</option></select></label>',
+    '<option value="local">Local / embedded</option><option value="unclassified">Not specified</option></select></label>',
     '<p class="hosting-model-note" id="hosting-model-note">Deployment specified for ' + items.filter(item => hostingModel(item) !== 'unclassified').length + ' of ' + items.length + ' services. Self-hosting may incur infrastructure costs.</p>',
     '<label><input id="filter-no-card" type="checkbox"><span class="filter-option-copy">',
     '<strong>No credit card</strong><small>Start without adding a payment card</small></span></label>',
@@ -282,6 +275,7 @@ function detailPage(item, absolute) {
   const categoryURL = absolute('category/' + item.category + '/');
   const fields = [
     ['Plan', PLAN_NAMES[item.plan]],
+    ['Deployment model', HOSTING_LABELS[hostingModel(item)]],
     ['Credit card', CARD_NAMES[item.credit_card]],
     ['Commercial use', COMMERCIAL_NAMES[item.commercial_use]],
     ...(item.added_at ? [['Added to directory (UTC)', item.added_at]] : []),
@@ -459,7 +453,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '- LLM summary: ' + absolute('llms.txt'), '',
     '## Data model',
     'Each catalog entry includes id, name, category, plan, free_limit, watch_out, pricing_url,',
-    'credit_card, commercial_use and last_checked. Treat the official pricing_url as the source',
+    'credit_card, commercial_use, optional deployment_model and last_checked. Treat the official pricing_url as the source',
     'of truth when checking current quotas, billing requirements and commercial eligibility.', '',
     '## Access and attribution',
     "- Follow the origin's authoritative /robots.txt and applicable service terms.",
