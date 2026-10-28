@@ -6831,5 +6831,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "casaos-self-hosted",
+    "name": "CasaOS Personal Cloud Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source personal cloud dashboard and Docker application manager for running self-hosted apps on Linux hardware; no software-imposed monthly app deployment quota.",
+    "watch_out": "CasaOS is a self-managed software platform, not a free cloud server. You supply and maintain Linux hardware, Docker, disks, networking and electricity; individual apps may have their own licensing and costs.",
+    "pricing_url": "https://github.com/IceWhaleTech/CasaOS",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
