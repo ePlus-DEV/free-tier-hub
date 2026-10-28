@@ -8665,5 +8665,18 @@
     "commercial_use": "yes",
     "deployment_model": "local",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "wstunnel-self-hosted",
+    "name": "wstunnel",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source WebSocket, HTTP/2 and WebTransport tunnel client/server; no software-imposed tunnel or bandwidth quota.",
+    "watch_out": "Requires your own reachable server and bandwidth; infrastructure and data transfer may cost money. Not a privacy tool: use trusted TLS and protect tunneled traffic end to end. Embedded self-signed certificate is unsuitable for production trust; WebTransport additionally requires reachable UDP.",
+    "pricing_url": "https://wstunnel.erebe.dev/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-10-28"
   }
 ]
