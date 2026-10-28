@@ -8509,5 +8509,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "pglite-embedded-postgres",
+    "name": "PGlite Embedded PostgreSQL (WASM)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Open-source Apache-2.0/PostgreSQL-licensed PostgreSQL-compatible WebAssembly database for browser, Node.js, Bun and Deno; in-memory or local filesystem/IndexedDB persistence with no vendor-enforced local query quota.",
+    "watch_out": "Embedded single-user/local database, not a managed cloud PostgreSQL service or drop-in multi-client server. Storage, browser resource limits, sync services, and remote hosting are separate; some integrations may have their own costs.",
+    "pricing_url": "https://pglite.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
