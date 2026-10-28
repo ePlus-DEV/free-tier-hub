@@ -7889,5 +7889,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "haystack-open-source",
+    "name": "Haystack Open Source AI Framework",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python framework for building RAG, agent and search pipelines; unlimited local framework use without a hosted service quota.",
+    "watch_out": "Models, inference APIs, vector stores and hosting are not included and may incur charges; commercial deepset products are separate.",
+    "pricing_url": "https://github.com/deepset-ai/haystack",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
