@@ -7587,5 +7587,18 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "octodns-open-source",
+    "name": "octoDNS Open-Source DNS Management",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source Python DNS infrastructure-as-code tool for managing DNS records across multiple provider integrations; no software license fee, account cap or managed usage quota.",
+    "watch_out": "Runs locally or in your own CI, not as a hosted DNS service. DNS providers, domains, API calls and CI infrastructure can incur separate charges; install and configure the relevant provider plugins.",
+    "pricing_url": "https://github.com/octodns/octodns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
