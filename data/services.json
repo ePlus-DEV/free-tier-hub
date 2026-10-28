@@ -7613,5 +7613,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "powerdns-recursor-self-hosted",
+    "name": "PowerDNS Recursor Self-Hosted",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0 open-source recursive DNS resolver with caching, DNSSEC validation and Lua scripting; free to deploy and run on your own infrastructure without vendor query quotas.",
+    "watch_out": "Not an authoritative DNS hosting plan or provider-managed free DNS service; requires your own server, public-network/security configuration and operational resources. Commercial support and PowerDNS enterprise add-ons cost extra.",
+    "pricing_url": "https://docs.powerdns.com/recursor/index.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
