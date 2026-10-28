@@ -8732,6 +8732,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "sillytavern-local-ai-interface",
+    "name": "SillyTavern Open-Source AI Interface",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 licensed local AI chat frontend with no software subscription or fixed usage quota.",
+    "watch_out": "Does not provide hosted AI inference or model credits; paid model APIs and local GPU/server resources are separate. AGPL obligations apply when modifying or distributing the software.",
+    "pricing_url": "https://github.com/SillyTavern/SillyTavern",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "restfox-open-source-api-client",
+    "name": "Restfox Open-Source API Client",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed offline-first HTTP, GraphQL and WebSocket testing client; free desktop builds and self-run web edition.",
+    "watch_out": "The browser/web edition requires your own runtime or server; external APIs and hosting may charge separately. No vendor-operated hosted free tier is included.",
+    "pricing_url": "https://github.com/flawiddsouza/Restfox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "filen-cloud-storage-free",
     "name": "Filen Free Encrypted Cloud Storage",
     "category": "storage",
