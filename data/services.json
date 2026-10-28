@@ -6807,5 +6807,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "localai-self-hosted",
+    "name": "LocalAI Self-Hosted AI Engine",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted model inference engine with OpenAI-compatible API and no software-enforced request or token quota; supports CPU-only or GPU hardware.",
+    "watch_out": "You supply and pay for hardware, compute, electricity, storage and model weights. Individual model licenses and optional external services may restrict commercial use or add charges; the MIT core license is separate.",
+    "pricing_url": "https://github.com/mudler/LocalAI",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
