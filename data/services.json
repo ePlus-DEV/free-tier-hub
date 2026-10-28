@@ -7901,5 +7901,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "apache-hertzbeat-self-hosted",
+    "name": "Apache HertzBeat Self-Hosted Observability",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 agentless self-hosted monitoring and alerting for infrastructure, services, metrics and logs; no software license fee or hosted quota.",
+    "watch_out": "Requires own compute and storage for metrics/logs and any notification delivery costs; change the documented default admin password before exposing the service; managed hosting is not included.",
+    "pricing_url": "https://github.com/apache/hertzbeat",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
