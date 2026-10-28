@@ -8561,5 +8561,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "huey-python-task-queue",
+    "name": "Huey Open Source Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python task queue with scheduling, retries and Redis, PostgreSQL, SQLite, file or in-memory backends; no software usage quota.",
+    "watch_out": "Self-managed worker processes and optional Redis/PostgreSQL brokers are not hosted for free; production operation, monitoring and infrastructure costs remain your responsibility.",
+    "pricing_url": "https://github.com/coleifer/huey",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
