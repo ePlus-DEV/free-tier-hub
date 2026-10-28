@@ -8548,5 +8548,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "carrd-basic-free",
+    "name": "Carrd Basic Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Up to 3 responsive one-page sites per account on Carrd subdomains with core site-building features.",
+    "watch_out": "Free Basic sites retain Carrd branding; custom domains, forms, embeds and analytics require paid Pro. Commercial-use restrictions for the Basic offering are not independently confirmed; check the current terms.",
+    "pricing_url": "https://carrd.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
