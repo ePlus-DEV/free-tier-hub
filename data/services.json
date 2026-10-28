@@ -7925,5 +7925,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "fusejs-open-source-search",
+    "name": "Fuse.js Open-Source Fuzzy Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 JavaScript fuzzy-search library for browser or Node.js; free local indexing and matching with no vendor request cap.",
+    "watch_out": "Client-side/in-process library, not a hosted search API or server. Supply your own dataset and application compute; performance depends on index size.",
+    "pricing_url": "https://github.com/krisk/Fuse",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
