@@ -8177,5 +8177,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "goose-open-source-ai-agent",
+    "name": "Goose Open-Source Local AI Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source desktop/CLI/API agent with local execution, MCP extensions, skills and configurable LLM providers",
+    "watch_out": "Agent software is free; paid LLM APIs/subscriptions and local hardware are not included. Choose an available local model for no provider usage charges; review model licenses separately.",
+    "pricing_url": "https://github.com/aaif-goose/goose",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
