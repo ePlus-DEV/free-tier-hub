@@ -8119,6 +8119,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "stow-media-library-free",
+    "name": "Stow Free Media Library",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "500 assets, 1 GB storage, 10,000 API requests/day, 2 applications; shared content-addressed media library",
+    "watch_out": "Free plan is positioned for side projects/experimentation; AI processing and larger limits require Pro. Media library is hosted by Stow; commercial-use terms are not explicit.",
+    "pricing_url": "https://usestow.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "google-cloud-scheduler-free",
+    "name": "Google Cloud Scheduler Free Allowance",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "3 scheduled jobs free per Google Cloud billing account each month; individual job executions are not billed by Cloud Scheduler",
+    "watch_out": "Billing account required; free allowance is shared across projects and paused jobs count. Each additional job costs $0.10 per 31 days, and target services may bill separately.",
+    "pricing_url": "https://cloud.google.com/scheduler/pricing",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "sheetdb-free",
     "name": "SheetDB Free Google Sheets REST API",
     "category": "developer-tools",
