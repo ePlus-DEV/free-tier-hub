@@ -18,7 +18,7 @@ There are **two ways to contribute**. You do not need to know Git, Node.js, or J
 Use this route if you want to edit the catalog yourself. **You do not need Node.js or a terminal**: GitHub Actions automatically generates category documentation and validates contributions when you open a PR. You may edit your fork directly in GitHub's web interface.
 
 1. [Fork this repository](https://github.com/ePlus-DEV/free-tier-hub/fork). Create a feature branch from its latest `main`, such as `catalog/add-example-free`. You can edit in GitHub's website or clone your fork if preferred.
-2. In **`data/services.json`**, add or update one entry, using the [fields](#catalog-fields) below and the provider's current official source. Check whether the entry already exists, even under a slightly different name. Use the actual verification date in `last_checked`.
+2. In **`data/services.json`**, add or update one entry, using the [fields](#catalog-fields) below and the provider's current official source. Check whether the entry already exists, even under a slightly different name. Use the actual verification date in `last_checked`. Include `deployment_model` for new or updated entries; use `unclassified` when the official evidence is inconclusive.
 3. **Only edit `data/services.json` by hand for a standard service addition.** README totals and category counts use automatic badges. GitHub Actions regenerates the category-page tables in `docs/*.md`; do not edit those files or badge URLs manually. Provider logos are resolved automatically from the official `pricing_url` domain; standard additions do not require a logo file or mapping.
 4. **No local commands are required.** GitHub Actions runs the equivalent of `npm run catalog:sync` and `npm run verify` automatically on your PR. The generated category files are used to validate the PR in CI, but the workflow **does not push changes back to contributor forks**. If you prefer local checks, Node.js 24 LTS needs no `npm install`:
 
@@ -57,8 +57,8 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - **Logos:** the site displays provider website favicons through Google's favicon cache. Keep `pricing_url` pointed at the official plan evidence, even if that page is hosted on a documentation or corporate domain. Do not change a pricing source just to change its logo.
 - If a shared domain displays the wrong product logo, report the service ID/name and its official product homepage. Maintainers can add a `SERVICE_LOGO_DOMAINS` override in `scripts/site-data.mjs`. Do not add an unsupported `logo_url` field to the catalog. A generic icon can mean the provider has no indexed favicon; initials are a network-error fallback.
 - **Categories:** use an existing category from `scripts/catalog.mjs` for normal additions. The site generates the full category dropdown automatically. New categories require coordinated updates to catalog validation, site labels/icons and generated documentation; propose them in an Issue first.
-- **Share a filtered view:** select the relevant category and filters, then copy the current URL. Query parameters are `category`, `q`, `sort`, `no_card=1`, and `commercial=1`. The site restores these selections when a shared link is opened or reloaded. Include this URL when reporting a filtering problem.
-- For website UI changes, also run `npm run build` after `npm run verify`. Check desktop/mobile, light/dark themes, category and billing filters, URL restoration after reload, and sticky toolbar behavior before considering visual review complete.
+- **Share a filtered view:** select the relevant category and filters, then copy the current URL. Query parameters are `category`, `q`, `sort`, `no_card=1`, `commercial=1`, and `hosting=cloud|self-hosted|hybrid|local|unclassified`. The site restores these selections when a shared link is opened or reloaded. Include this URL when reporting a filtering problem.
+- For website UI changes, also run `npm run build` after `npm run verify`. Check desktop/mobile, light/dark themes, category, billing and deployment filters, URL restoration after reload, and desktop popover/mobile bottom-sheet behavior before considering visual review complete.
 
 ## Catalog fields
 
@@ -73,6 +73,7 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 | `pricing_url` | Official provider pricing/docs page, HTTPS only |
 | `credit_card` | `yes`, `no`, or `check` (unconfirmed) |
 | `commercial_use` | `yes`, `no`, or `check` (unconfirmed) |
+| `deployment_model` | `cloud`, `self-hosted`, `hybrid`, `local`, or `unclassified`; include for new/updated entries. Legacy omission remains supported. |
 | `last_checked` | Date that you actually verified the provider source, `YYYY-MM-DD` |
 
 For `plan`, use `ongoing` only when the free allowance has no announced fixed end date. A database that expires after 30 days is a `temporary-resource`; a 30-day account-level trial is `limited-duration`.
@@ -89,19 +90,20 @@ For `plan`, use `ongoing` only when the free allowance has no announced fixed en
 - [ ] Official provider source confirms that the described tier currently exists.
 - [ ] The free quotas, reset periods, regional eligibility, and pricing are accurate.
 - [ ] Expiration, sleep, billing, payment-card, and commercial-use caveats are appropriately disclosed or marked unconfirmed.
+- [ ] Deployment model describes this specific listed offer, backed by the official source. Separate cloud/self-hosted editions are not automatically hybrid; unclear evidence uses `unclassified`.
 - [ ] No duplicated provider/product entry is being added.
 - [ ] CI generated matching category tables from `data/services.json`, and README dynamic badge URLs remain intact (no manual count edits).
 - [ ] `npm run verify` passes (CI also runs the existing site tests).
 
 ### Deployment model
 
-Set optional `deployment_model` in each catalog entry to classify the **listed offer**:
+Include `deployment_model` when adding or updating a catalog entry to classify the **listed offer** (the parser remains backward-compatible with legacy entries):
 `cloud` (vendor-hosted allowance), `self-hosted` (operate your own server),
 `hybrid` (the listed offer includes cloud and self-hosted modes),
 `local` (desktop, CLI, SDK or embedded library), or `unclassified`.
 Use the linked official source and the entry's allowance/caveat as evidence. A separately
 sold self-hosted edition does not make a Cloud Free entry hybrid. Missing metadata
-remains unclassified; the UI never guesses from a service name or category.
+remains unclassified; the UI never guesses from a service name or category. Candidate intake, backlog delivery and conflict recovery use the same validator. Delivery preserves the original reviewed JSON, including this field; it does not infer values or refresh verification dates.
 
 The initial metadata migration uses the existing catalog descriptions and source links;
 it does not reverify pricing or change `last_checked`.

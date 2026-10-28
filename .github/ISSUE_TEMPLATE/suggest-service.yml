@@ -28,10 +28,21 @@ body:
         - Correct category or provider logo
     validations:
       required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment model of this specific offer
+      description: Choose based on the official source, not other editions sold by the vendor.
+      options:
+        - Not confirmed
+        - Cloud (provider-hosted)
+        - Self-hosted (your server)
+        - Cloud + self-hosted (both in this offer)
+        - Local / embedded (desktop, CLI, SDK, library)
   - type: textarea
     id: details
     attributes:
       label: Evidence and important restrictions
-      description: For plan changes, include allowance, expiry, card, commercial use, and the date verified. For logo/category corrections, include the service name or ID, expected category or official product homepage, and a filtered directory URL if relevant.
+      description: For plan changes, include allowance, expiry, card, commercial use, deployment evidence, and the date verified. For logo/category corrections, include the service name or ID, expected category or official product homepage, and a filtered directory URL if relevant.
     validations:
       required: true

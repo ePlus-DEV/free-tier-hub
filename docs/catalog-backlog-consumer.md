@@ -11,3 +11,16 @@ The consumer uses `EPLUS_BOT_TOKEN` to create the Issue so the normal GitHub `is
 **Fail closed:** Missing token, invalid catalog/backlog, API errors or existing Issue/PR/branch stop or skip delivery without overwriting anything. Review logs and fix the underlying cause; do not bypass approvals or relax CI. A green consumer run with zero eligible candidates is not evidence of end-to-end delivery.
 
 Current historical backlog note: `uploadthing-free` is a product alias of the already catalogued `uploadthing-2gb-app`; it must not generate a duplicate Issue. Existing backlog records dated 2026-10-08 are stale as of 2026-10-23 and require fresh official verification before they can be consumed.
+
+## Deployment metadata through the queue
+
+New or updated candidates should include `deployment_model`: `cloud`, `self-hosted`,
+`hybrid`, `local`, or `unclassified`, supported by the official source for the
+specific listed offer. A separate self-hosted edition does not make a cloud plan hybrid.
+Use `unclassified` when evidence is inconclusive.
+
+The backlog loader, candidate Issue parser and conflict-recovery workflow call
+`validateCandidate` from `scripts/catalog.mjs`. Invalid values and unrelated JSON
+fields are rejected. Existing reviewed candidates without deployment metadata remain
+valid and appear under Not specified. Delivery preserves the canonical Issue JSON
+and never guesses a deployment model, rewrites evidence or advances `last_checked`.
