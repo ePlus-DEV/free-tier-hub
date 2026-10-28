@@ -7793,5 +7793,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "northflank-sandbox-free",
+    "name": "Northflank Sandbox Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Sandbox free plan: 2 application services, 2 jobs and 1 database, with up to $20/month of Northflank Cloud resources; always-on services without sleeping.",
+    "watch_out": "For testing and hobby projects, not production workloads. Beyond sandbox resources, usage is billed; BYOC provider costs are separate. Official pricing currently says no card needed but an older billing help page says a payment method is required for all plans, so card requirement needs confirmation.",
+    "pricing_url": "https://northflank.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
