@@ -8444,5 +8444,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "togglely-self-hosted",
+    "name": "Togglely Open-Source Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted feature-flag management with targeting, environments, organizations, audit logs and Docker Compose deployment; no software usage quota stated.",
+    "watch_out": "Self-hosted open-source edition; server, database, security, backups and operations are not provided free. Hosted Togglely service has separate terms and is not included.",
+    "pricing_url": "https://github.com/nuvooo/togglely",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
