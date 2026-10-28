@@ -83,13 +83,9 @@ jobs:
           printf '%s' "$ISSUE_BODY" > /tmp/candidate.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
-          import { validateData } from './scripts/catalog.mjs';
+          import { validateData, validateCandidate } from './scripts/catalog.mjs';
           const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
-          const fields = ['id', 'name', 'category', 'plan', 'free_limit', 'watch_out',
-            'pricing_url', 'credit_card', 'commercial_use', 'last_checked'];
-          if (Object.keys(candidate).sort().join() !== fields.sort().join()) {
-            throw Error('Candidate must contain exactly the catalog schema fields');
-          }
+          validateCandidate(candidate);
           const services = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
           validateData([...services, candidate]);
           fs.appendFileSync(process.env.GITHUB_OUTPUT,

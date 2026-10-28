@@ -30,6 +30,7 @@ const PLANS = {
   "limited-duration": "Time-limited",
   "temporary-resource": "Temporary resource",
 };
+export const DEPLOYMENT_MODELS = ["cloud", "self-hosted", "hybrid", "local", "unclassified"];
 const CARDS = { yes: "Required", no: "Not required", check: "Check provider" };
 const COMMERCIAL = { yes: "Allowed", no: "Restricted / personal use", check: "Check provider" };
 const FIELDS = [
@@ -99,6 +100,9 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     for (const key of ["credit_card", "commercial_use"]) {
       if (!Object.hasOwn(CARDS, item[key])) errors.push(String(id) + ": invalid " + key);
     }
+    if (Object.hasOwn(item, "deployment_model") && !DEPLOYMENT_MODELS.includes(item.deployment_model)) {
+      errors.push(String(id) + ": invalid deployment_model");
+    }
     try {
       const u = new URL(item.pricing_url);
       if (u.protocol !== "https:" || !u.hostname || u.username || u.password) throw Error();
@@ -110,6 +114,19 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
   }
   if (errors.length) throw Error(errors.join("\n"));
   return data;
+}
+
+
+/** Shared intake schema for the backlog and trusted candidate workflows.
+ * Legacy candidates may omit deployment_model; never infer it during delivery.
+ */
+export function validateCandidate(candidate, today = new Date().toISOString().slice(0, 10)) {
+  if (!candidate || typeof candidate !== "object" || Array.isArray(candidate) ||
+      Object.keys(candidate).filter(key => key !== "deployment_model").sort().join() !== [...FIELDS].sort().join()) {
+    throw Error("Candidate must contain exactly the catalog schema fields (optional deployment_model allowed)");
+  }
+  validateData([candidate], today);
+  return candidate;
 }
 
 export function render(root = DEFAULT_ROOT) {

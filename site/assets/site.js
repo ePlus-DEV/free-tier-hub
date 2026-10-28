@@ -132,7 +132,7 @@
   var filterCount = document.getElementById("active-filter-count");
   function updateFilterCount() {
     if (!filterCount) return;
-    var count = Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value)) + Number(!!(sort && sort.value !== "default"));
+    var count = Number(!!hostingModel) + Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value)) + Number(!!(sort && sort.value !== "default"));
     filterCount.textContent = String(count);
     filterCount.hidden = count === 0;
   }
@@ -153,6 +153,8 @@
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
   var category = "";
+  var hostingModel = "";
+  var hostingSelect = document.getElementById("hosting-filter");
   var pageSize = 12;
   var visible = pageSize;
 
@@ -161,6 +163,8 @@
     var state = urlState.read(window.location.href,
       Array.from(mobileCategory.options, function (option) { return option.value; }),
       Array.from(sort.options, function (option) { return option.value; }));
+    hostingModel = state.hosting;
+    if (hostingSelect) hostingSelect.value = hostingModel;
     category = state.category;
     search.value = state.q;
     if (headerSearch) headerSearch.value = state.q;
@@ -173,7 +177,7 @@
   }
   function syncURL() {
     var next = urlState.write(window.location.href, {
-      q: search.value, category: category, sort: sort.value,
+      q: search.value, category: category, sort: sort.value, hosting: hostingModel,
       noCard: noCard.checked, commercial: commercial.checked
     });
     if (next !== window.location.href) window.history.replaceState(window.history.state, "", next);
@@ -225,27 +229,13 @@
   var activeFilters = document.getElementById("active-filters");
   var activeChips = document.getElementById("active-filter-chips");
   var showResults = document.getElementById("filter-show-results");
-  // On phones only the search row and slim category tabs stay sticky.
-  // Keep selected chips in normal flow so a long filter set cannot cover cards.
-  if (activeFilters && window.matchMedia) {
-    var chipHome = document.createComment("expanded active filters position");
-    activeFilters.parentNode.insertBefore(chipHome, activeFilters);
-    var compactSticky = window.matchMedia("(max-width: 680px)");
-    function placeActiveFilters() {
-      var toolbar = chipHome.parentNode;
-      if (compactSticky.matches) toolbar.insertAdjacentElement("afterend", activeFilters);
-      else toolbar.insertBefore(activeFilters, chipHome.nextSibling);
-    }
-    placeActiveFilters();
-    if (compactSticky.addEventListener) compactSticky.addEventListener("change", placeActiveFilters);
-    else compactSticky.addListener(placeActiveFilters);
-  }
   function renderActiveFilters() {
     if (!activeChips) return;
     activeChips.replaceChildren();
     var selected = [];
     if (search.value.trim()) selected.push(["q", 'Search: ' + search.value.trim()]);
     if (category) selected.push(["category", mobileCategory.options[mobileCategory.selectedIndex].text]);
+    if (hostingModel) selected.push(["hosting", hostingSelect.options[hostingSelect.selectedIndex].text]);
     if (noCard.checked) selected.push(["no-card", "No credit card"]);
     if (commercial.checked) selected.push(["commercial", "Commercial use"]);
     if (sort.value !== "default") selected.push(["sort", sort.options[sort.selectedIndex].text]);
@@ -272,6 +262,7 @@
       search.value = "";
       if (headerSearch) headerSearch.value = "";
     } else if (key === "category") category = "";
+    else if (key === "hosting") { hostingModel = ""; hostingSelect.value = ""; }
     else if (key === "sort") sort.value = "default";
     else if (key === "no-card") noCard.checked = false;
     else if (key === "commercial") commercial.checked = false;
@@ -279,6 +270,11 @@
     render();
     var next = activeChips.querySelector("button");
     (next || search).focus();
+  });
+  if (hostingSelect) hostingSelect.addEventListener("change", function () {
+    hostingModel = hostingSelect.value;
+    visible = pageSize;
+    render();
   });
   function render() {
     syncURL();
@@ -293,6 +289,7 @@
       var words = normalize(card.getAttribute("data-search"));
       return (!term || words.indexOf(term) !== -1) &&
         (!category || card.getAttribute("data-category") === category) &&
+        (!hostingModel || card.getAttribute("data-hosting-model") === hostingModel) &&
         (!noCard || !noCard.checked || card.getAttribute("data-credit-card") === "no") &&
         (!commercial || !commercial.checked || card.getAttribute("data-commercial-use") === "yes");
     });
@@ -309,7 +306,7 @@
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
-    if (clear) clear.hidden = !term && !category && (!sort || sort.value === "default") &&
+    if (clear) clear.hidden = !hostingModel && !term && !category && (!sort || sort.value === "default") &&
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
@@ -349,102 +346,87 @@
     visible = pageSize; render();
     document.getElementById("explore").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
-  // Move the existing category/sort controls into the panel on compact screens.
-  // One set of controls retains URL state, values and event listeners on resize.
-  if (advancedFilters && mobileCategory && sort && window.matchMedia) {
-    var controlHomes = [mobileCategory, sort].map(function (control) {
-      var label = control.closest("label");
-      var home = document.createComment("expanded filter position");
-      label.parentNode.insertBefore(home, label);
-      return { label: label, home: home };
-    });
-    var compactControls = window.matchMedia("(max-width: 980px)");
-    function placeCompactControls() {
-      controlHomes.forEach(function (item) {
-        if (compactControls.matches) advancedFilters.insertBefore(item.label, advancedFilters.querySelector("label:has(input[type=checkbox])"));
-        else item.home.parentNode.insertBefore(item.label, item.home.nextSibling);
-      });
-      if (!compactControls.matches) {
-        advancedFilters.hidden = true;
-        filterToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("filter-sheet-open");
-      }
-    }
-    placeCompactControls();
-    if (compactControls.addEventListener) compactControls.addEventListener("change", placeCompactControls);
-    else compactControls.addListener(placeCompactControls);
-  }
+  // Anchor the desktop dialog to Filters; use a modal sheet on phones.
   if (filterToggle && advancedFilters) {
-    var closeSheetButton = advancedFilters.querySelector(".filter-sheet-close");
-    var sheetBackdrop = document.createElement("div");
-    sheetBackdrop.className = "filter-sheet-backdrop";
-    sheetBackdrop.hidden = true;
-    document.body.appendChild(sheetBackdrop);
-    // Portal the sheet to <body> on mobile. A fixed panel inside the sticky
-    // toolbar inherits its stacking context and gets clipped/overlaid.
-    var sheetHome = document.createComment("filter sheet original position");
-    advancedFilters.parentNode.insertBefore(sheetHome, advancedFilters);
-    function placeFilterSheet() {
-      var isMobile = window.matchMedia("(max-width: 680px)").matches;
-      if (isMobile && advancedFilters.parentNode !== document.body) {
-        document.body.appendChild(advancedFilters);
-        advancedFilters.classList.add("mobile-filter-sheet");
-      } else if (!isMobile && advancedFilters.parentNode === document.body) {
-        sheetHome.parentNode.insertBefore(advancedFilters, sheetHome.nextSibling);
-        advancedFilters.classList.remove("mobile-filter-sheet");
-      }
+    var closePanel = advancedFilters.querySelector(".filter-sheet-close");
+    var panelHome = document.createComment("filter dialog home");
+    advancedFilters.parentNode.insertBefore(panelHome, advancedFilters);
+    var backdrop = document.createElement("div");
+    backdrop.className = "filter-sheet-backdrop";
+    backdrop.hidden = true;
+    document.body.appendChild(backdrop);
+    var sheetMedia = window.matchMedia("(max-width: 680px)");
+    var inerted = [];
+    function positionFilters() {
+      if (advancedFilters.hidden || sheetMedia.matches) return;
+      var anchor = filterToggle.getBoundingClientRect();
+      var width = Math.min(360, window.innerWidth - 32);
+      var top = anchor.bottom + 8;
+      if (window.innerHeight - top < 240) top = 16;
+      advancedFilters.style.left = Math.max(16, Math.min(anchor.right - width, window.innerWidth - width - 16)) + "px";
+      advancedFilters.style.top = top + "px";
+      advancedFilters.style.maxHeight = Math.max(120, window.innerHeight - top - 16) + "px";
     }
-    placeFilterSheet();
-    window.addEventListener("resize", placeFilterSheet);
-
     function closeFilters(restoreFocus) {
+      if (advancedFilters.hidden) return;
       advancedFilters.hidden = true;
+      advancedFilters.removeAttribute("aria-modal");
+      advancedFilters.removeAttribute("style");
       filterToggle.setAttribute("aria-expanded", "false");
-      sheetBackdrop.hidden = true;
+      backdrop.hidden = true;
       document.body.classList.remove("filter-sheet-open");
+      inerted.forEach(function (node) { node.inert = false; });
+      inerted = [];
+      panelHome.parentNode.insertBefore(advancedFilters, panelHome.nextSibling);
       if (restoreFocus) filterToggle.focus();
     }
     function openFilters() {
+      document.body.appendChild(advancedFilters);
       advancedFilters.hidden = false;
       filterToggle.setAttribute("aria-expanded", "true");
-      if (window.matchMedia("(max-width: 680px)").matches) {
-        sheetBackdrop.hidden = false;
+      if (sheetMedia.matches) {
+        advancedFilters.setAttribute("aria-modal", "true");
+        backdrop.hidden = false;
         document.body.classList.add("filter-sheet-open");
-        closeSheetButton.focus();
+        Array.prototype.forEach.call(document.body.children, function (node) {
+          if (node !== advancedFilters && node !== backdrop && !node.inert) {
+            node.inert = true; inerted.push(node);
+          }
+        });
       }
+      positionFilters();
+      closePanel.focus();
     }
-    if (showResults) showResults.addEventListener("click", function () { closeFilters(true); });
-    closeSheetButton.addEventListener("click", function () { closeFilters(true); });
-    sheetBackdrop.addEventListener("click", function () { closeFilters(true); });
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && !advancedFilters.hidden) {
-        event.preventDefault(); closeFilters(true);
-      }
-    });
-    document.addEventListener("click", function (event) {
-      if (!advancedFilters.hidden && !advancedFilters.contains(event.target) &&
-          !filterToggle.contains(event.target) && !sheetBackdrop.contains(event.target)) {
-        closeFilters(false);
-      }
-    });
     filterToggle.addEventListener("click", function () {
-      if (advancedFilters.hidden) openFilters();
-      else closeFilters(false);
+      if (advancedFilters.hidden) openFilters(); else closeFilters(true);
     });
-    if (window.matchMedia) {
-      var sheetMedia = window.matchMedia("(max-width: 680px)");
-      var syncSheet = function () {
-        if (!sheetMedia.matches) {
-          sheetBackdrop.hidden = true;
-          document.body.classList.remove("filter-sheet-open");
-        } else if (!advancedFilters.hidden) {
-          sheetBackdrop.hidden = false;
-          document.body.classList.add("filter-sheet-open");
-        }
-      };
-      if (sheetMedia.addEventListener) sheetMedia.addEventListener("change", syncSheet);
-      else sheetMedia.addListener(syncSheet);
-    }
+    closePanel.addEventListener("click", function () { closeFilters(true); });
+    backdrop.addEventListener("click", function () { closeFilters(true); });
+    if (showResults) showResults.addEventListener("click", function () { closeFilters(true); });
+    document.addEventListener("click", function (event) {
+      if (!advancedFilters.hidden && !sheetMedia.matches &&
+          !advancedFilters.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(false);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (advancedFilters.hidden) return;
+      if (event.key === "Escape") { event.preventDefault(); closeFilters(true); return; }
+      if (event.key !== "Tab") return;
+      var focusable = Array.prototype.slice.call(advancedFilters.querySelectorAll("button, select, input")).filter(function (node) {
+        return !node.disabled && node.getClientRects().length;
+      });
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        if (sheetMedia.matches) last.focus(); else closeFilters(true);
+      } else if (!event.shiftKey && document.activeElement === last) {
+        if (sheetMedia.matches) { event.preventDefault(); first.focus(); } else closeFilters(false);
+      }
+    });
+    window.addEventListener("resize", positionFilters);
+    window.addEventListener("scroll", positionFilters, true);
+    var closeOnBreakpoint = function () { closeFilters(true); };
+    if (sheetMedia.addEventListener) sheetMedia.addEventListener("change", closeOnBreakpoint);
+    else sheetMedia.addListener(closeOnBreakpoint);
   }
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
@@ -471,6 +453,8 @@
   });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
+    hostingModel = "";
+    if (hostingSelect) hostingSelect.value = "";
     search.value = "";
     if (headerSearch) headerSearch.value = "";
     if (heroSearch) heroSearch.value = "";

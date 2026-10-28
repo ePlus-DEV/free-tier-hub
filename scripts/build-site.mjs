@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Static HTML directory builder. Node.js 24, zero runtime dependencies.
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
@@ -13,6 +14,7 @@ import { FONT_AWESOME_ICONS } from './fontawesome.mjs';
 import { serviceAddedDates } from './service-added-at.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'site/assets', name))).digest('hex').slice(0, 12);
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
 const GA_ID = 'G-9YPGG0XEZV';
@@ -63,6 +65,10 @@ function breadcrumb(crumbs) {
     itemListElement: crumbs.map(([name, item], i) =>
       ({ '@type': 'ListItem', position: i + 1, name, item })) };
 }
+// Classify the listed offer, not every edition sold by the same vendor.
+const hostingModel = item => item.deployment_model || 'unclassified';
+const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', local: 'Local / embedded', unclassified: 'Not specified'};
+
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
   const group = CATEGORY_NAMES[item.category];
@@ -70,6 +76,7 @@ function card(item, absolute) {
   return [
     '<article class="service-card" data-service-id="', tag(item.id),
     '" data-category="', tag(item.category),
+    '" data-hosting-model="', hostingModel(item),
     '" data-added-at="', tag(item.added_at || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
@@ -78,7 +85,7 @@ function card(item, absolute) {
     '<div class="card-top"><span class="service-icon" aria-hidden="true">',
     serviceLogo(item), '</span><div class="card-identity"><h3><a href="', tag(dest),
     '">', tag(item.name), '</a></h3><span class="eyebrow">',
-    tag(CATEGORY_LABELS[item.category]), '</span></div>',
+    tag(CATEGORY_LABELS[item.category]), hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"> · ' + HOSTING_LABELS[hostingModel(item)] + '</span>' : '', '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
@@ -115,15 +122,15 @@ function document(absolute, title, description, relative, content, structuredDat
     '<link rel="preconnect" href="https://fonts.googleapis.com">',
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">',
-    '<link rel="stylesheet" href="', tag(absolute('assets/site.css')), '">',
+    '<link rel="stylesheet" href="', tag(absolute('assets/site.css?v=' + assetVersion('site.css'))), '">',
     '<link rel="alternate" type="text/plain" title="LLM overview" href="', tag(absolute('llms.txt')), '">',
     '<link rel="alternate" type="text/markdown" title="Agent discovery" href="', tag(absolute('agents.md')), '">',
     '<script type="application/ld+json">', safeJSON(structuredData), '</script>',
     '<script async src="https://www.googletagmanager.com/gtag/js?id=', GA_ID, '"></script>',
     '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}',
     "gtag('js',new Date());gtag('config','", GA_ID, "');</script>",
-    '<script src="', tag(absolute('assets/directory-url.js')), '" defer></script>',
-    '<script src="', tag(absolute('assets/site.js')), '" defer></script>',
+    '<script src="', tag(absolute('assets/directory-url.js?v=' + assetVersion('directory-url.js'))), '" defer></script>',
+    '<script src="', tag(absolute('assets/site.js?v=' + assetVersion('site.js'))), '" defer></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
     '<header class="site-header"><div class="container header-inner">',
     '<a class="brand" href="', tag(absolute()), '" aria-label="Free Tier Hub home">',
@@ -197,10 +204,17 @@ function homePage(items, absolute, counts) {
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
     'placeholder="Search services, categories, or keywords" aria-controls="service-grid">',
     '</form>',
-    '<label class="all-categories" for="category-filter"><span class="sr-only">All categories</span>',
-    '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
     '<div class="filters">',
-    '<label class="sort-field" for="sort"><span class="sr-only">Sort by</span><select id="sort">',
+    '<div class="filter-popover-wrap">',
+    '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" ',
+    'aria-expanded="false" aria-haspopup="dialog" aria-controls="advanced-filters">',
+    glyph('filters'), ' <span>Filters</span><span id="active-filter-count" class="active-filter-count" hidden>0</span></button></div></div></div>',
+    '<div class="filter-checks" id="advanced-filters" role="dialog" aria-labelledby="filter-dialog-title" hidden>',
+    '<div class="filter-popover-heading"><strong id="filter-dialog-title">Filters</strong><span>Results update as you choose</span>',
+    '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
+    '<label class="all-categories" for="category-filter"><span>Category</span>',
+    '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
+    '<label class="sort-field" for="sort"><span>Sort by</span><select id="sort">',
     '<option value="default">Catalog order</option>',
     '<option value="newest">Newest added</option>',
     '<option value="oldest">Oldest added</option>',
@@ -208,19 +222,18 @@ function homePage(items, absolute, counts) {
     '<option value="name">Name A–Z</option>',
     '<option value="name-desc">Name Z–A</option>',
     '<option value="category">Category</option></select></label>',
-    '<div class="filter-popover-wrap">',
-    '<button class="advanced-filter-toggle" id="advanced-filter-toggle" type="button" ',
-    'aria-expanded="false" aria-controls="advanced-filters">',
-    glyph('filters'), ' <span>Filters</span><span id="active-filter-count" class="active-filter-count" hidden>0</span></button>',
-    '<div class="filter-checks" id="advanced-filters" role="group" aria-label="Additional filters" hidden>',
-    '<div class="filter-popover-heading"><strong>Refine results</strong><span>Only show services that match</span>',
-    '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
+    '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
+    '<select id="hosting-filter" aria-describedby="hosting-model-note">',
+    '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
+    '<option value="self-hosted">Self-hosted</option><option value="hybrid">Cloud + self-hosted</option>',
+    '<option value="local">Local / embedded</option><option value="unclassified">Not specified</option></select></label>',
+    '<p class="hosting-model-note" id="hosting-model-note">Deployment specified for ' + items.filter(item => hostingModel(item) !== 'unclassified').length + ' of ' + items.length + ' services. Self-hosting may incur infrastructure costs.</p>',
     '<label><input id="filter-no-card" type="checkbox"><span class="filter-option-copy">',
     '<strong>No credit card</strong><small>Start without adding a payment card</small></span></label>',
     '<label><input id="filter-commercial" type="checkbox"><span class="filter-option-copy">',
     '<strong>Commercial use</strong><small>Permitted for commercial projects</small></span></label>',
     '<button type="button" class="filter-show-results" id="filter-show-results">Show results</button>',
-    '</div></div></div></div>',
+    '</div>',
     '<div class="active-filters" id="active-filters" hidden><div id="active-filter-chips" class="active-filter-chips" aria-label="Active filters"></div>',
     '<button id="clear-filters" class="clear-filters" type="button">Clear</button></div></div>',
     '<div class="directory-heading">',
@@ -262,6 +275,7 @@ function detailPage(item, absolute) {
   const categoryURL = absolute('category/' + item.category + '/');
   const fields = [
     ['Plan', PLAN_NAMES[item.plan]],
+    ['Deployment model', HOSTING_LABELS[hostingModel(item)]],
     ['Credit card', CARD_NAMES[item.credit_card]],
     ['Commercial use', COMMERCIAL_NAMES[item.commercial_use]],
     ...(item.added_at ? [['Added to directory (UTC)', item.added_at]] : []),
@@ -439,7 +453,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '- LLM summary: ' + absolute('llms.txt'), '',
     '## Data model',
     'Each catalog entry includes id, name, category, plan, free_limit, watch_out, pricing_url,',
-    'credit_card, commercial_use and last_checked. Treat the official pricing_url as the source',
+    'credit_card, commercial_use, optional deployment_model and last_checked. Treat the official pricing_url as the source',
     'of truth when checking current quotas, billing requirements and commercial eligibility.', '',
     '## Access and attribution',
     "- Follow the origin's authoritative /robots.txt and applicable service terms.",
