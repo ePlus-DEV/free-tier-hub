@@ -7717,5 +7717,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "bitbucket-pipelines-free",
+    "name": "Bitbucket Pipelines Free",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "50 hosted build minutes per month shared across a Bitbucket Cloud Free workspace of up to 5 users; 1 GB Git LFS storage.",
+    "watch_out": "Build minutes are pooled across repositories; additional build capacity and Standard/Premium plans cost extra. Card requirements for the free workspace are not explicitly confirmed.",
+    "pricing_url": "https://www.atlassian.com/software/bitbucket/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
