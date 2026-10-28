@@ -7706,6 +7706,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "fullstory-free",
+    "name": "FullstoryFree Behavioral Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "30,000 captured sessions per month, up to 10 users, with 12 months of session replay and analytics retention on the permanent FullstoryFree plan.",
+    "watch_out": "Core session replay, basic analytics and debugging are included; advanced dashboards and StoryAI require paid plans. Follow privacy and consent requirements for session recordings.",
+    "pricing_url": "https://www.fullstory.com/plans/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "bitbucket-pipelines-free",
+    "name": "Bitbucket Pipelines Free",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "50 hosted build minutes per month shared across a Bitbucket Cloud Free workspace of up to 5 users; 1 GB Git LFS storage.",
+    "watch_out": "Build minutes are pooled across repositories; additional build capacity and Standard/Premium plans cost extra. Card requirements for the free workspace are not explicitly confirmed.",
+    "pricing_url": "https://www.atlassian.com/software/bitbucket/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "firebase-remote-config-free",
     "name": "Firebase Remote Config No-Cost Tier",
     "category": "feature-flags",
