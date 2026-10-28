@@ -7949,5 +7949,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "backhaul-reverse-tunnel-self-hosted",
+    "name": "Backhaul Self-Hosted Reverse Tunnel",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted NAT reverse tunneling for TCP, UDP and WebSocket transports; no vendor software license fee or hosted traffic quota.",
+    "watch_out": "Needs a publicly reachable relay/server and networking setup; bandwidth, compute and TLS/security operations are your responsibility. AGPL obligations apply.",
+    "pricing_url": "https://github.com/Musixal/Backhaul",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
