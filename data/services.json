@@ -8143,6 +8143,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "sheetdb-free",
+    "name": "SheetDB Free Google Sheets REST API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "2 spreadsheet APIs and 500 API requests/month; CORS origin restrictions, IP allowlist and response caching",
+    "watch_out": "Google Sheets permissions and limits apply separately. Requests above the free quota return HTTP 429; IP rate limit is 30 requests per 10 seconds. Commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://sheetdb.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "gedo-free-authoritative-dns",
+    "name": "Gedo Free Authoritative DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Unlimited DNS zones, records and queries with DNSSEC, IPv4/IPv6, REST API, dynamic DNS, primary/secondary zones and TSIG transfers",
+    "watch_out": "Authoritative DNS hosting only; domain registration and any website infrastructure are separate. Provider offers email support without a paid SLA; commercial and small-business use is supported.",
+    "pricing_url": "https://www.gedo.se/en/dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "nubbo-free-storage-manager",
     "name": "Nubbo Free Cloud Storage Manager",
     "category": "storage",
