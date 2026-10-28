@@ -7551,5 +7551,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "ibm-cloud-code-engine-free",
+    "name": "IBM Cloud Code Engine Always-Free Usage",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "100,000 vCPU-seconds, 200,000 GB-seconds of memory, and 100,000 incoming HTTP requests per month, shared across Code Engine usage",
+    "watch_out": "Monthly free allocations renew; applications, functions, jobs and builds share compute quotas; pay-as-you-go overages are charged and an IBM Cloud billing card is required.",
+    "pricing_url": "https://cloud.ibm.com/codeengine/landing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
