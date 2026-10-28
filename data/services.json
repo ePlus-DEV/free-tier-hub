@@ -8131,6 +8131,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "google-cloud-scheduler-free",
+    "name": "Google Cloud Scheduler Free Allowance",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "3 scheduled jobs free per Google Cloud billing account each month; individual job executions are not billed by Cloud Scheduler",
+    "watch_out": "Billing account required; free allowance is shared across projects and paused jobs count. Each additional job costs $0.10 per 31 days, and target services may bill separately.",
+    "pricing_url": "https://cloud.google.com/scheduler/pricing",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "sheetdb-free",
+    "name": "SheetDB Free Google Sheets REST API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "2 spreadsheet APIs and 500 API requests/month; CORS origin restrictions, IP allowlist and response caching",
+    "watch_out": "Google Sheets permissions and limits apply separately. Requests above the free quota return HTTP 429; IP rate limit is 30 requests per 10 seconds. Commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://sheetdb.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "gedo-free-authoritative-dns",
     "name": "Gedo Free Authoritative DNS",
     "category": "dns-cdn",
