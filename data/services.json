@@ -8379,5 +8379,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "open-interpreter-local",
+    "name": "Open Interpreter (Open Source Agent)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local coding agent with CLI, model-provider selection and sandboxed command execution; no software subscription fee.",
+    "watch_out": "Hosted AI model providers may charge separately; agent-generated commands require careful permissions and approvals. Current Rust project differs from the older Python edition.",
+    "pricing_url": "https://github.com/openinterpreter/openinterpreter",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
