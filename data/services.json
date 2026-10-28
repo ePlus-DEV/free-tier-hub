@@ -7541,6 +7541,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "yugabytedb-aeon-sandbox",
+    "name": "YugabyteDB Aeon Sandbox Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One free-forever single-node YugabyteDB Aeon Sandbox cluster per account, up to 2 vCPU, 4 GB RAM and 10 GB storage depending on provider; no credit card required.",
+    "watch_out": "Development and tutorials only, not production or performance testing; up to 15 connections, no backups, no scaling or VPC networking. Inactive clusters may be paused after 10 days and deleted after 15 days; commercial production suitability requires provider confirmation.",
+    "pricing_url": "https://docs.yugabyte.com/stable/yugabyte-cloud/cloud-basics/create-clusters/create-clusters-free/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "ibm-cloud-code-engine-free",
+    "name": "IBM Cloud Code Engine Always-Free Usage",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "100,000 vCPU-seconds, 200,000 GB-seconds of memory, and 100,000 incoming HTTP requests per month, shared across Code Engine usage",
+    "watch_out": "Monthly free allocations renew; applications, functions, jobs and builds share compute quotas; pay-as-you-go overages are charged and an IBM Cloud billing card is required.",
+    "pricing_url": "https://cloud.ibm.com/codeengine/landing",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "scaleway-serverless-containers-free",
     "name": "Scaleway Serverless Containers Free Tier",
     "category": "serverless",
