@@ -8314,5 +8314,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "code-server-self-hosted",
+    "name": "code-server (Self-Hosted VS Code)",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source code-server runs a browser-accessible VS Code environment on your own Linux machine or server, with no software license fee or published usage quota for the self-hosted edition.",
+    "watch_out": "You supply and pay for compute, storage, networking, HTTPS and maintenance; code-server recommends at least 1 GB RAM and 2 vCPUs. This is not a free managed cloud workspace; secure remote access before exposing it publicly.",
+    "pricing_url": "https://github.com/coder/code-server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
