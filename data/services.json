@@ -8329,6 +8329,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "zenko-cloudserver-self-hosted",
+    "name": "Zenko CloudServer (Self-Hosted S3 API)",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source S3-compatible Node.js server for local/on-premises object storage and development/testing; no license fee or vendor-enforced object quota for self-hosted use.",
+    "watch_out": "This is software, not a free hosted S3 bucket. You provide disks, compute, backups and security; external cloud storage backends can incur charges. The upstream README documents example default access keys that must be replaced for real deployments.",
+    "pricing_url": "https://github.com/scality/cloudserver",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "devpod-local-open-source",
+    "name": "DevPod Open Source (Local Development Environments)",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MPL-2.0 client-only desktop/CLI tool to create devcontainer-based development environments on local Docker or user-selected remote infrastructure; no DevPod software subscription or usage quota for the open-source client.",
+    "watch_out": "DevPod is not a free cloud hosting provider: cloud VMs, Kubernetes clusters, remote hosts and container resources may incur third-party charges. MPL-2.0 file-level copyleft conditions apply to modified source files; local Docker must be provided separately.",
+    "pricing_url": "https://github.com/loft-sh/devpod",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "pydio-cells-home-self-hosted",
     "name": "Pydio Cells Home (Self-Hosted File Sharing)",
     "category": "storage",
