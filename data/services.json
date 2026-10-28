@@ -7575,5 +7575,17 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "scaleway-serverless-jobs-free",
+    "name": "Scaleway Serverless Jobs Free Tier",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "400,000 GB-seconds of memory and 200,000 vCPU-seconds of batch-job compute per account each month",
+    "watch_out": "Batch workloads are pay-as-you-go above both monthly resource allowances; requires a valid payment card; other Scaleway resources billed separately.",
+    "pricing_url": "https://www.scaleway.com/en/pricing/serverless/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
