@@ -7805,5 +7805,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "openmediavault-self-hosted-nas",
+    "name": "OpenMediaVault Self-Hosted NAS",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 Debian-based NAS software with SMB/CIFS, SFTP, rsync and plugin-based storage administration; usable with your own disks without vendor storage quotas.",
+    "watch_out": "Requires dedicated self-managed Debian host and physical/virtual disks; project expects exclusive control of OS configuration and cannot run in a container. Storage, backup hardware, electricity and maintenance are not included.",
+    "pricing_url": "https://github.com/openmediavault/openmediavault",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
