@@ -6843,5 +6843,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "portainer-community-self-hosted",
+    "name": "Portainer Community Edition",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free zlib-licensed self-hosted container management interface for Docker, Swarm, Podman and Kubernetes, including basic container deployment and management; no vendor software subscription for Community Edition.",
+    "watch_out": "Portainer explicitly positions Community Edition for homelabs, personal projects and non-production environments, with no support, SLA or guaranteed security fixes. Business-critical production should use Business Edition. You supply and pay for infrastructure.",
+    "pricing_url": "https://github.com/portainer/portainer",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
