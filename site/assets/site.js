@@ -132,7 +132,7 @@
   var filterCount = document.getElementById("active-filter-count");
   function updateFilterCount() {
     if (!filterCount) return;
-    var count = Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value)) + Number(!!(sort && sort.value !== "default"));
+    var count = Number(!!hostingModel) + Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value)) + Number(!!(sort && sort.value !== "default"));
     filterCount.textContent = String(count);
     filterCount.hidden = count === 0;
   }
@@ -154,7 +154,7 @@
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
   var category = "";
   var hostingModel = "";
-  var hostingButtons = Array.prototype.slice.call(document.querySelectorAll("[data-hosting-filter]"));
+  var hostingSelect = document.getElementById("hosting-filter");
   var pageSize = 12;
   var visible = pageSize;
 
@@ -163,6 +163,8 @@
     var state = urlState.read(window.location.href,
       Array.from(mobileCategory.options, function (option) { return option.value; }),
       Array.from(sort.options, function (option) { return option.value; }));
+    hostingModel = state.hosting;
+    if (hostingSelect) hostingSelect.value = hostingModel;
     category = state.category;
     search.value = state.q;
     if (headerSearch) headerSearch.value = state.q;
@@ -175,7 +177,7 @@
   }
   function syncURL() {
     var next = urlState.write(window.location.href, {
-      q: search.value, category: category, sort: sort.value,
+      q: search.value, category: category, sort: sort.value, hosting: hostingModel,
       noCard: noCard.checked, commercial: commercial.checked
     });
     if (next !== window.location.href) window.history.replaceState(window.history.state, "", next);
@@ -248,6 +250,7 @@
     var selected = [];
     if (search.value.trim()) selected.push(["q", 'Search: ' + search.value.trim()]);
     if (category) selected.push(["category", mobileCategory.options[mobileCategory.selectedIndex].text]);
+    if (hostingModel) selected.push(["hosting", hostingSelect.options[hostingSelect.selectedIndex].text]);
     if (noCard.checked) selected.push(["no-card", "No credit card"]);
     if (commercial.checked) selected.push(["commercial", "Commercial use"]);
     if (sort.value !== "default") selected.push(["sort", sort.options[sort.selectedIndex].text]);
@@ -274,6 +277,7 @@
       search.value = "";
       if (headerSearch) headerSearch.value = "";
     } else if (key === "category") category = "";
+    else if (key === "hosting") { hostingModel = ""; hostingSelect.value = ""; }
     else if (key === "sort") sort.value = "default";
     else if (key === "no-card") noCard.checked = false;
     else if (key === "commercial") commercial.checked = false;
@@ -282,12 +286,10 @@
     var next = activeChips.querySelector("button");
     (next || search).focus();
   });
-  hostingButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      hostingModel = button.getAttribute("data-hosting-filter");
-      visible = pageSize;
-      render();
-    });
+  if (hostingSelect) hostingSelect.addEventListener("change", function () {
+    hostingModel = hostingSelect.value;
+    visible = pageSize;
+    render();
   });
   function render() {
     syncURL();
@@ -296,9 +298,6 @@
       var active = mode === "all" ? !noCard.checked && !commercial.checked
         : mode === "no-card" ? noCard.checked : commercial.checked;
       button.setAttribute("aria-pressed", String(active));
-    });
-    hostingButtons.forEach(function (button) {
-      button.setAttribute("aria-pressed", String(button.getAttribute("data-hosting-filter") === hostingModel));
     });
     var term = normalize(search.value);
     var matched = cards.filter(function (card) {
@@ -322,7 +321,7 @@
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
-    if (clear) clear.hidden = !term && !category && (!sort || sort.value === "default") &&
+    if (clear) clear.hidden = !hostingModel && !term && !category && (!sort || sort.value === "default") &&
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
@@ -484,6 +483,8 @@
   });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
+    hostingModel = "";
+    if (hostingSelect) hostingSelect.value = "";
     search.value = "";
     if (headerSearch) headerSearch.value = "";
     if (heroSearch) heroSearch.value = "";

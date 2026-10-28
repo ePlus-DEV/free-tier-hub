@@ -72,7 +72,7 @@ const HOSTING_MODELS = {
   'appwrite': 'hybrid', 'sentry': 'hybrid'
 };
 const hostingModel = item => HOSTING_MODELS[item.id] || 'unclassified';
-const HOSTING_LABELS = {cloud: 'Cloud free tier', 'self-hosted': 'Self-hosted', hybrid: 'Hybrid', unclassified: 'Not yet classified'};
+const HOSTING_LABELS = {cloud: 'Cloud free tier', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', unclassified: 'Not yet classified'};
 
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
@@ -90,10 +90,10 @@ function card(item, absolute) {
     '<div class="card-top"><span class="service-icon" aria-hidden="true">',
     serviceLogo(item), '</span><div class="card-identity"><h3><a href="', tag(dest),
     '">', tag(item.name), '</a></h3><span class="eyebrow">',
-    tag(CATEGORY_LABELS[item.category]), '</span><span class="hosting-model-label" data-mode="', hostingModel(item), '">',
-    HOSTING_LABELS[hostingModel(item)], '</span></div>',
+    tag(CATEGORY_LABELS[item.category]), '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
+    hostingModel(item) !== 'unclassified' ? '<p class="hosting-model-label">' + HOSTING_LABELS[hostingModel(item)] + '</p>' : '',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
@@ -205,15 +205,6 @@ function homePage(items, absolute, counts) {
     '<div class="catalog-main"><div class="catalog-toolbar">',
     '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
     '</div>',
-    '<div class="hosting-model-bar" role="group" aria-label="Hosting model">',
-    '<span class="hosting-model-title">Deployment model</span>',
-    '<button type="button" class="hosting-model-chip" data-hosting-filter="" aria-pressed="true">All</button>',
-    '<button type="button" class="hosting-model-chip" data-hosting-filter="cloud" aria-pressed="false">Cloud free</button>',
-    '<button type="button" class="hosting-model-chip" data-hosting-filter="self-hosted" aria-pressed="false">Self-hosted</button>',
-    '<button type="button" class="hosting-model-chip" data-hosting-filter="hybrid" aria-pressed="false">Hybrid</button>',
-    '<button type="button" class="hosting-model-chip" data-hosting-filter="unclassified" aria-pressed="false">Unclassified</button>',
-    '</div>',
-    '<p class="hosting-model-note">Self-hosted software may be free, but infrastructure is not included. Classification is being verified progressively.</p>',
     '<div class="search-filter-row">',
     '<form class="hero-search directory-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
     glyph('search'), '<input id="search" type="search" autocomplete="off" ',
@@ -237,6 +228,12 @@ function homePage(items, absolute, counts) {
     '<div class="filter-checks" id="advanced-filters" role="group" aria-label="Additional filters" hidden>',
     '<div class="filter-popover-heading"><strong>Refine results</strong><span>Only show services that match</span>',
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
+    '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
+    '<select id="hosting-filter" aria-describedby="hosting-model-note">',
+    '<option value="">All deployment models</option><option value="cloud">Cloud free tier</option>',
+    '<option value="self-hosted">Self-hosted</option><option value="hybrid">Cloud + self-hosted</option>',
+    '<option value="unclassified">Not yet classified</option></select></label>',
+    '<p class="hosting-model-note" id="hosting-model-note">Classification is in progress. Self-hosted infrastructure costs are not included.</p>',
     '<label><input id="filter-no-card" type="checkbox"><span class="filter-option-copy">',
     '<strong>No credit card</strong><small>Start without adding a payment card</small></span></label>',
     '<label><input id="filter-commercial" type="checkbox"><span class="filter-option-copy">',
