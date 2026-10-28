@@ -7652,5 +7652,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "packetriot-free-tunnel",
+    "name": "Packetriot Free Tunnel",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "1 free tunnel with 1 GB of monthly bandwidth; the free plan does not include TCP port allocations.",
+    "watch_out": "Monthly 1 GB limit and one tunnel; reserved subdomains, port allocations, firewall features and higher bandwidth require a paid plan. Credit-card and commercial-use conditions for free accounts are not clearly specified.",
+    "pricing_url": "https://packetriot.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
