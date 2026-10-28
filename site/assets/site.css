@@ -352,12 +352,10 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 .header-search-submit:hover{background:var(--brand-hover)}
 @media(max-width:680px){.header-search-inner input{font-size:16px}.header-search-inner kbd{display:none}}
 
-/* Hosting model preview: independent of functional categories. */
-.hosting-model-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 0 4px}
-.hosting-model-title{font-size:.82rem;font-weight:700;margin-right:8px}
-.hosting-model-chip{border:1px solid var(--border,#cbd5e1);border-radius:999px;padding:7px 13px;background:transparent;color:inherit;cursor:pointer;font:inherit;font-size:.83rem}
-.hosting-model-chip[aria-pressed="true"]{background:var(--primary,#2563eb);color:#fff;border-color:transparent}
-.hosting-model-chip:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
-.hosting-model-note{font-size:.78rem;opacity:.8;margin:0 0 12px}
-.hosting-model-label{display:inline-block;font-size:.68rem;font-weight:650;margin-top:5px;padding:3px 7px;border-radius:6px;background:var(--surface-alt,#e2e8f0);color:var(--text,#334155)}
-.hosting-model-label[data-mode="unclassified"]{opacity:.7}
+/* Deployment metadata shares the directory's theme and filter panel. */
+.hosting-model-field{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--ink-soft)}
+.hosting-model-field select{width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+.hosting-model-field select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.hosting-model-note{margin:0 0 8px;font-size:12px;line-height:1.5;color:var(--muted)}
+.hosting-model-label{align-self:flex-start;margin:0 0 12px;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink-soft);font-size:11px;line-height:1.5}
+@media(max-width:680px){.hosting-model-field select{font-size:16px}}

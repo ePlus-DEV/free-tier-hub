@@ -7,6 +7,7 @@
       var category = params.get("category") || "";
       var sort = params.get("sort") || "default";
       return {
+        hosting: ["cloud", "self-hosted", "hybrid", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",
@@ -17,6 +18,7 @@
     write: function (href, state) {
       var url = new URL(href);
       var values = {
+        hosting: state.hosting || "",
         q: state.q || "",
         category: state.category || "",
         sort: state.sort === "default" ? "" : state.sort,
