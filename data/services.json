@@ -7997,5 +7997,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "weaviate-open-source-self-hosted",
+    "name": "Weaviate Open-Source Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted Weaviate core vector database supports vector and keyword/hybrid search, metadata filtering and collections without a vendor-imposed core software query quota; BSD-3-Clause code is free to run.",
+    "watch_out": "The repository has mixed licensing: code outside the wl directory is BSD-3-Clause; separately licensed enterprise features need a valid license key. Self-hosting, storage, backups, security and model APIs are not included; managed Weaviate Cloud is a separate plan.",
+    "pricing_url": "https://github.com/weaviate/weaviate",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
