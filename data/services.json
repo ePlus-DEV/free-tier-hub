@@ -8743,5 +8743,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "unsloth-open-source-local",
+    "name": "Unsloth Open-Source Local AI Training",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free local LLM inference and fine-tuning with Apache-2.0 core; Unsloth Studio components are AGPL-3.0, with no bundled paid GPU or hosted compute.",
+    "watch_out": "Local training/inference needs compatible hardware, GPU memory and model weights; cloud GPUs, hosted inference and third-party model APIs may charge separately. AGPL-3.0 Studio and model-license obligations apply.",
+    "pricing_url": "https://github.com/unslothai/unsloth",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
