@@ -8615,6 +8615,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "statping-ng-self-hosted",
+    "name": "Statping-ng Self-Hosted Status Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 open-source uptime and status-page server with HTTP/TCP/UDP/ICMP/gRPC monitoring, status graphs and notification integrations; no software subscription or monitored-endpoint quota.",
+    "watch_out": "Self-managed deployment, database, TLS, backups and server resources are not included; SMS or other third-party alerting services may charge. GPL-3.0 obligations apply when distributing modified software; this is the statping-ng fork, not a hosted free plan.",
+    "pricing_url": "https://github.com/statping-ng/statping-ng",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "goreleaser-oss-local",
+    "name": "GoReleaser OSS",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed GoReleaser OSS command-line release automation for building, packaging and publishing Go project releases on local machines or existing CI runners.",
+    "watch_out": "GoReleaser Pro premium features are not included. GitHub Actions or other CI minutes, package registries, signing, cloud resources and third-party release services can cost extra; this entry covers the OSS CLI only.",
+    "pricing_url": "https://goreleaser.com/getting-started/install/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "spinframework-spin-oss",
     "name": "Spin Open-Source WebAssembly Serverless Framework",
     "category": "serverless",
