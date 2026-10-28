@@ -8717,5 +8717,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "microsoft-inshellisense-local",
+    "name": "Microsoft inshellisense (Open Source)",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed terminal-native autocomplete for 600+ command-line tools; free local installation via npm or Homebrew.",
+    "watch_out": "Runs locally on Windows, Linux and macOS; no managed hosting or bundled cloud service is included. Shell setup and local tooling are required.",
+    "pricing_url": "https://github.com/microsoft/inshellisense",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
