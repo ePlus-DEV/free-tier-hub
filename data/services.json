@@ -7505,6 +7505,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "biome-open-source-toolchain",
+    "name": "Biome Open Source Toolchain",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT/Apache-2.0 licensed formatter and linter for JavaScript, TypeScript, JSX, JSON, CSS and GraphQL; free local CLI and CI usage without a hosted request quota.",
+    "watch_out": "Runs on your own development machine or CI runner; hosted CI resources are not included. Language support and rule coverage vary by release.",
+    "pricing_url": "https://github.com/biomejs/biome",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "uploadthing-free",
     "name": "UploadThing 2GB App",
     "category": "storage",
