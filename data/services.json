@@ -8602,6 +8602,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "upptime-github-monitor",
+    "name": "Upptime GitHub Actions Uptime Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed uptime monitoring and public status page using your GitHub repository: scheduled endpoint checks, incident Issues, history commits and GitHub Pages; no Upptime subscription or dedicated monitoring server.",
+    "watch_out": "You must configure and maintain a GitHub repository and workflows. GitHub Actions minutes, API/rate limits, repository visibility and GitHub Pages eligibility depend on your GitHub plan; private-repository workflows or excess usage can incur charges. Public monitoring history may expose endpoint details.",
+    "pricing_url": "https://github.com/upptime/upptime",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "statping-ng-self-hosted",
+    "name": "Statping-ng Self-Hosted Status Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 open-source uptime and status-page server with HTTP/TCP/UDP/ICMP/gRPC monitoring, status graphs and notification integrations; no software subscription or monitored-endpoint quota.",
+    "watch_out": "Self-managed deployment, database, TLS, backups and server resources are not included; SMS or other third-party alerting services may charge. GPL-3.0 obligations apply when distributing modified software; this is the statping-ng fork, not a hosted free plan.",
+    "pricing_url": "https://github.com/statping-ng/statping-ng",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "goreleaser-oss-local",
     "name": "GoReleaser OSS",
     "category": "ci-cd",
