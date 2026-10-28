@@ -7843,6 +7843,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "ferretdb-self-hosted",
+    "name": "FerretDB Open Source Self-Hosted",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 MongoDB-compatible document database proxy backed by PostgreSQL with DocumentDB extension; no software license fee or per-database quota when self-hosted.",
+    "watch_out": "Requires independently hosted PostgreSQL and DocumentDB extension; MongoDB compatibility is incomplete and infrastructure, storage, backups and operations cost extra. Evaluation Docker image is not production-persistent.",
+    "pricing_url": "https://github.com/FerretDB/FerretDB",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "go-task-open-source",
+    "name": "Taskfile (go-task) Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Unlimited local cross-platform YAML-based build and automation tasks with the MIT-licensed Task CLI; no seat or execution quota.",
+    "watch_out": "Runs on your own machines or CI runners; compute, paid CI minutes and external integrations are not included.",
+    "pricing_url": "https://github.com/go-task/task",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "litellm-open-source",
     "name": "LiteLLM Open Source AI Gateway",
     "category": "ai-ml",
