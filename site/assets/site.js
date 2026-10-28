@@ -229,21 +229,6 @@
   var activeFilters = document.getElementById("active-filters");
   var activeChips = document.getElementById("active-filter-chips");
   var showResults = document.getElementById("filter-show-results");
-  // On phones only the search row and slim category tabs stay sticky.
-  // Keep selected chips in normal flow so a long filter set cannot cover cards.
-  if (activeFilters && window.matchMedia) {
-    var chipHome = document.createComment("expanded active filters position");
-    activeFilters.parentNode.insertBefore(chipHome, activeFilters);
-    var compactSticky = window.matchMedia("(max-width: 680px)");
-    function placeActiveFilters() {
-      var toolbar = chipHome.parentNode;
-      if (compactSticky.matches) toolbar.insertAdjacentElement("afterend", activeFilters);
-      else toolbar.insertBefore(activeFilters, chipHome.nextSibling);
-    }
-    placeActiveFilters();
-    if (compactSticky.addEventListener) compactSticky.addEventListener("change", placeActiveFilters);
-    else compactSticky.addListener(placeActiveFilters);
-  }
   function renderActiveFilters() {
     if (!activeChips) return;
     activeChips.replaceChildren();
@@ -361,102 +346,29 @@
     visible = pageSize; render();
     document.getElementById("explore").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
-  // Move the existing category/sort controls into the panel on compact screens.
-  // One set of controls retains URL state, values and event listeners on resize.
-  if (advancedFilters && mobileCategory && sort && window.matchMedia) {
-    var controlHomes = [mobileCategory, sort].map(function (control) {
-      var label = control.closest("label");
-      var home = document.createComment("expanded filter position");
-      label.parentNode.insertBefore(home, label);
-      return { label: label, home: home };
-    });
-    var compactControls = window.matchMedia("(max-width: 980px)");
-    function placeCompactControls() {
-      controlHomes.forEach(function (item) {
-        if (compactControls.matches) advancedFilters.insertBefore(item.label, advancedFilters.querySelector("label:has(input[type=checkbox])"));
-        else item.home.parentNode.insertBefore(item.label, item.home.nextSibling);
-      });
-      if (!compactControls.matches) {
-        advancedFilters.hidden = true;
-        filterToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("filter-sheet-open");
-      }
-    }
-    placeCompactControls();
-    if (compactControls.addEventListener) compactControls.addEventListener("change", placeCompactControls);
-    else compactControls.addListener(placeCompactControls);
-  }
+  // One inline panel at every width: controls never move or overlay results.
   if (filterToggle && advancedFilters) {
-    var closeSheetButton = advancedFilters.querySelector(".filter-sheet-close");
-    var sheetBackdrop = document.createElement("div");
-    sheetBackdrop.className = "filter-sheet-backdrop";
-    sheetBackdrop.hidden = true;
-    document.body.appendChild(sheetBackdrop);
-    // Portal the sheet to <body> on mobile. A fixed panel inside the sticky
-    // toolbar inherits its stacking context and gets clipped/overlaid.
-    var sheetHome = document.createComment("filter sheet original position");
-    advancedFilters.parentNode.insertBefore(sheetHome, advancedFilters);
-    function placeFilterSheet() {
-      var isMobile = window.matchMedia("(max-width: 680px)").matches;
-      if (isMobile && advancedFilters.parentNode !== document.body) {
-        document.body.appendChild(advancedFilters);
-        advancedFilters.classList.add("mobile-filter-sheet");
-      } else if (!isMobile && advancedFilters.parentNode === document.body) {
-        sheetHome.parentNode.insertBefore(advancedFilters, sheetHome.nextSibling);
-        advancedFilters.classList.remove("mobile-filter-sheet");
-      }
-    }
-    placeFilterSheet();
-    window.addEventListener("resize", placeFilterSheet);
-
+    var closePanel = advancedFilters.querySelector(".filter-sheet-close");
     function closeFilters(restoreFocus) {
       advancedFilters.hidden = true;
       filterToggle.setAttribute("aria-expanded", "false");
-      sheetBackdrop.hidden = true;
-      document.body.classList.remove("filter-sheet-open");
       if (restoreFocus) filterToggle.focus();
     }
-    function openFilters() {
-      advancedFilters.hidden = false;
-      filterToggle.setAttribute("aria-expanded", "true");
-      if (window.matchMedia("(max-width: 680px)").matches) {
-        sheetBackdrop.hidden = false;
-        document.body.classList.add("filter-sheet-open");
-        closeSheetButton.focus();
-      }
-    }
-    if (showResults) showResults.addEventListener("click", function () { closeFilters(true); });
-    closeSheetButton.addEventListener("click", function () { closeFilters(true); });
-    sheetBackdrop.addEventListener("click", function () { closeFilters(true); });
+    filterToggle.addEventListener("click", function () {
+      var opening = advancedFilters.hidden;
+      advancedFilters.hidden = !opening;
+      filterToggle.setAttribute("aria-expanded", String(opening));
+    });
+    if (closePanel) closePanel.addEventListener("click", function () { closeFilters(true); });
+    if (showResults) showResults.addEventListener("click", function () {
+      closeFilters(true);
+      count.scrollIntoView({block: "nearest", behavior: "auto"});
+    });
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && !advancedFilters.hidden) {
         event.preventDefault(); closeFilters(true);
       }
     });
-    document.addEventListener("click", function (event) {
-      if (window.matchMedia("(max-width: 680px)").matches && !advancedFilters.hidden && !advancedFilters.contains(event.target) &&
-          !filterToggle.contains(event.target) && !sheetBackdrop.contains(event.target)) {
-        closeFilters(false);
-      }
-    });
-    filterToggle.addEventListener("click", function () {
-      if (advancedFilters.hidden) openFilters();
-      else closeFilters(false);
-    });
-    if (window.matchMedia) {
-      var sheetMedia = window.matchMedia("(max-width: 680px)");
-      var syncSheet = function () {
-        if (!sheetMedia.matches) {
-          sheetBackdrop.hidden = true;
-          document.body.classList.remove("filter-sheet-open");
-        } else if (!advancedFilters.hidden) {
-          sheetBackdrop.hidden = false;
-          document.body.classList.add("filter-sheet-open");
-        }
-      };
-      if (sheetMedia.addEventListener) sheetMedia.addEventListener("change", syncSheet);
-      else sheetMedia.addListener(syncSheet);
-    }
   }
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
