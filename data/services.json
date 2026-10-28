@@ -8165,5 +8165,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "azure-pipelines-free",
+    "name": "Azure Pipelines Free Parallel Jobs",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "1 Microsoft-hosted parallel CI/CD job with up to 1,800 minutes/month for private projects; 1 self-hosted parallel job with unlimited minutes",
+    "watch_out": "The free parallel-job grant requires Azure DevOps organization billing linked to a valid Azure subscription; hosted jobs have a 60-minute run limit. New public projects are retired, and additional capacity is paid. Azure subscription/payment-method requirements vary.",
+    "pricing_url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
