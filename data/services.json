@@ -7587,5 +7587,18 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "xapian-search-library",
+    "name": "Xapian Open-Source Search Library",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0-or-later open-source C++ full-text indexing and search library with language bindings, ranked retrieval, boolean and phrase queries; no vendor subscription, request quota, or hosted search allowance.",
+    "watch_out": "An embedded/local library, NOT a managed search cloud service; you supply indexing/storage/compute. GPL-2.0-or-later obligations may affect redistributed linked applications; check license compatibility before commercial distribution.",
+    "pricing_url": "https://xapian.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
