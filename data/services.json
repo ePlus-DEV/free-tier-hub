@@ -8600,5 +8600,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "upptime-github-monitor",
+    "name": "Upptime GitHub Actions Uptime Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed uptime monitoring and public status page using your GitHub repository: scheduled endpoint checks, incident Issues, history commits and GitHub Pages; no Upptime subscription or dedicated monitoring server.",
+    "watch_out": "You must configure and maintain a GitHub repository and workflows. GitHub Actions minutes, API/rate limits, repository visibility and GitHub Pages eligibility depend on your GitHub plan; private-repository workflows or excess usage can incur charges. Public monitoring history may expose endpoint details.",
+    "pricing_url": "https://github.com/upptime/upptime",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
