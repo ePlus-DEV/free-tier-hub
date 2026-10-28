@@ -8107,6 +8107,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "statichost-eu-hobby",
+    "name": "statichost.eu Hobby Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 static site, 10 GB bandwidth and 100 build minutes; custom domain, automatic HTTPS, private Git repositories and deployment webhooks",
+    "watch_out": "Free Hobby builds use a queue rather than immediate scheduling; hosting and build quotas are limited. Provider states no trial period and no credit card, but commercial-use terms and overage behavior require confirmation.",
+    "pricing_url": "https://www.statichost.eu/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "stow-media-library-free",
     "name": "Stow Free Media Library",
     "category": "storage",
