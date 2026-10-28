@@ -8251,6 +8251,19 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "dagu-community-self-hosted",
+    "name": "Dagu Community Self-Hosted",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 self-hosted workflow scheduler/orchestrator with YAML DAGs, cron scheduling, retries, run history and a built-in web UI; Community server needs no license key or per-run subscription.",
+    "watch_out": "Operate your own server, workers, storage and networking; hosting and external APIs cost extra. Paid self-host licensing adds SSO, RBAC and audit features. GPL-3.0 obligations and separate commercial embedding terms may apply.",
+    "pricing_url": "https://github.com/dagucloud/dagu",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cronicle-open-source-self-hosted",
     "name": "Cronicle Open Source Scheduler",
     "category": "queues-jobs",
