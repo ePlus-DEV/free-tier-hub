@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-28",
-  "source_main_sha": "ea1163443cc0c6bfd35e7bdb0e3e27f0fa39fedb",
+  "source_main_sha": "751d3bca3aa190181d09125487f983a7cb417a47",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -65,15 +65,15 @@
     },
     {
       "category": "storage",
-      "service_count": 29,
+      "service_count": 32,
       "latest_catalog_verification": "2026-10-28",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-28",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 3,
-      "open_catalog_prs": 1,
-      "open_catalog_candidate_prs": 1
+      "open_catalog_candidate_issues": 0,
+      "open_catalog_prs": 0,
+      "open_catalog_candidate_prs": 0
     },
     {
       "category": "developer-tools",
@@ -101,13 +101,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 33,
+      "service_count": 35,
       "latest_catalog_verification": "2026-10-28",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
       "last_discovery_review": "2026-10-28",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 2,
+      "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -9351,19 +9351,21 @@
           "status": "catalogued",
           "issue": 907,
           "pr": 913,
-          "reason": "BSD-2-Clause passkey OIDC self-hosted; GitHub auto-merged after exact-head validation/build SUCCESS and bot APPROVED; main confirms entry."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate."
         },
         {
           "id": "kanidm-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 908,
-          "reason": "MPL-2.0 identity provider with OIDC/LDAP gateway; queue run initially cancelled by concurrency; issue edited for safe retry."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate.",
+          "pr": 915
         },
         {
           "id": "smallstep-step-ca-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 909,
-          "reason": "Apache-2.0 private CA with ACME/SSH; queue run cancelled before jobs, retry when capacity allows."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate.",
+          "pr": 916
         },
         {
           "id": "passbolt-community-self-hosted",
@@ -9394,22 +9396,24 @@
       "candidates": [
         {
           "id": "opencloud-self-hosted",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 910,
-          "reason": "Apache-2.0 self-hosted file sync/share; queue run cancelled before jobs, pending safe retry."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate.",
+          "pr": 917
         },
         {
           "id": "duplicati-open-source-backup",
-          "status": "Issue",
+          "status": "catalogued",
           "issue": 911,
-          "reason": "MIT open-source encrypted backup; optional proprietary services excluded, queue cancelled before jobs, pending safe retry."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate.",
+          "pr": 918
         },
         {
           "id": "urbackup-self-hosted-backup",
-          "status": "PR",
+          "status": "catalogued",
           "issue": 912,
           "pr": 914,
-          "reason": "AGPLv3+ free server backup; canonical queue produced PR; exact-head CI/review/merge pending."
+          "reason": "Canonical Issue -> catalog PR; exact-final-head validation/build SUCCESS, eplus-bot APPROVED, GitHub auto-MERGED, ID verified in latest main. Self-hosted infrastructure costs separate."
         }
       ],
       "excluded": [
@@ -9479,12 +9483,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 552,
+    "total_services": 557,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 5,
+    "open_catalog_candidate_issues": 0,
     "unmatched_backlog": [],
-    "note": "Rotation 13 11/19. Main ea1163443cc0c6bfd35e7bdb0e3e27f0fa39fedb has 552 services. New official-source discovery in auth-security and storage: 6 canonical candidate Issues #907-#912, catalog PRs #913 (Pocket ID GitHub MERGED) and #914 (UrBackup pending). Four middle queue events were cancelled before jobs by GitHub concurrency; retry sequentially without rewriting branches or bypassing CI. Passbolt Community verified-awaiting-Issue. 220 existing entries are older than seven days. Review-only ledger; no direct main push, manual merge, force-push or automation cadence changes.",
+    "note": "Rotation 13 11/19. Main 751d3bca3aa190181d09125487f983a7cb417a47 contains 557 services, +6 from the 551-service start. Six new verified self-hosted services delivered from canonical Issues #907-#912 through catalog PRs #913-#918; all GitHub auto-MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Four issue queue events were initially cancelled before jobs; backlog consumer and one safe Issue edit recovered delivery. UrBackup, step-ca, OpenCloud and Duplicati PR conflicts were reconciled using the reviewed no-force merge workflow; Duplicati required a safe rerun of the successful reconciliation job after mergeability became known. Passbolt Community Edition remains verified-awaiting-Issue. 220 entries are >7 days old. No direct main push, manual merge/deploy, force-push, weakened checks or hourly cadence changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
