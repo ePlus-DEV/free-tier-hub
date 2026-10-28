@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-28",
-  "source_main_sha": "751d3bca3aa190181d09125487f983a7cb417a47",
+  "source_main_sha": "757c0ba2236a8d91ae145fb71c731f3787f26ad0",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -153,9 +153,9 @@
       "latest_catalog_verification": "2026-10-27",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-27",
+      "last_discovery_review": "2026-10-28",
       "stale_over_7d": 7,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 3,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -9422,6 +9422,75 @@
           "reason": "Not part of the free MIT-licensed open-source backup core; do not claim paid features as free."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-28",
+      "category": "ai-ml",
+      "queries": [
+        "SambaNova SambaCloud free API 20 requests/day no payment method",
+        "LocalAI MIT self-hosted OpenAI-compatible API",
+        "Xinference Community Apache 2.0 self-hosted model serving",
+        "llama.cpp MIT self-hosted llama-server",
+        "Cerebras Inference pricing one-time credit"
+      ],
+      "official_sources": [
+        "https://docs.sambanova.ai/docs/en/models/rate-limits",
+        "https://github.com/mudler/LocalAI",
+        "https://github.com/mudler/LocalAI/blob/master/LICENSE",
+        "https://github.com/xorbitsai/inference",
+        "https://github.com/xorbitsai/inference/blob/main/LICENSE",
+        "https://github.com/ggml-org/llama.cpp/blob/master/LICENSE",
+        "https://www.cerebras.ai/pricing"
+      ],
+      "candidates": [
+        {
+          "id": "sambanova-cloud-free",
+          "status": "Issue",
+          "issue_number": 919,
+          "reason": "Official docs confirm ongoing free tier without linked payment method, 20 RPM/20 RPD/200k TPD per production model; commercial terms marked check. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+        },
+        {
+          "id": "localai-self-hosted",
+          "status": "Issue",
+          "issue_number": 920,
+          "reason": "MIT-licensed self-hosted engine, no software-enforced quota; infrastructure and model licensing separate. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+        },
+        {
+          "id": "xinference-community-self-hosted",
+          "status": "Issue",
+          "issue_number": 921,
+          "reason": "Apache-2.0 self-hosted community model serving, no software-enforced quota; infrastructure and model licensing separate. Canonical JSON Issue created; awaiting queue and exact-head PR CI."
+        },
+        {
+          "id": "llama-cpp-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "Official ggml-org/llama.cpp MIT license and self-hosted llama-server verified; defer canonical Issue until queue drains and ensure no duplicate provider/product alias.",
+          "candidate": {
+            "id": "llama-cpp-self-hosted",
+            "name": "llama.cpp Self-Hosted LLM Inference",
+            "category": "ai-ml",
+            "plan": "ongoing",
+            "free_limit": "MIT-licensed local LLM inference engine and OpenAI-compatible llama-server with no software-enforced request quota; runs on local CPU/GPU hardware.",
+            "watch_out": "Bring your own hardware, storage and energy; model weights have separate licensing and usage restrictions; commercial rights of software do not imply commercial rights of models.",
+            "pricing_url": "https://github.com/ggml-org/llama.cpp",
+            "credit_card": "no",
+            "commercial_use": "yes",
+            "last_checked": "2026-10-28"
+          }
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Cerebras Inference Free",
+          "reason": "Official 2026 pricing says one-time $5 promotional credit, valid payment method and 30-day expiry; not an ongoing free tier."
+        },
+        {
+          "name": "LocalAI hosted compute",
+          "reason": "No free hosted GPU/compute included in MIT self-hosted engine; do not describe as cloud free tier."
+        }
+      ],
+      "exclusions": [],
+      "new_category_assessment": "No new category; all AI inference products fit existing ai-ml. Distinguish hosted free from self-hosted costs in card descriptions."
     }
   ],
   "pending_reverification": [
@@ -9486,9 +9555,9 @@
     "total_services": 557,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 3,
     "unmatched_backlog": [],
-    "note": "Rotation 13 11/19. Main 751d3bca3aa190181d09125487f983a7cb417a47 contains 557 services, +6 from the 551-service start. Six new verified self-hosted services delivered from canonical Issues #907-#912 through catalog PRs #913-#918; all GitHub auto-MERGED after exact-final-head validation/build SUCCESS and eplus-bot APPROVED. Four issue queue events were initially cancelled before jobs; backlog consumer and one safe Issue edit recovered delivery. UrBackup, step-ca, OpenCloud and Duplicati PR conflicts were reconciled using the reviewed no-force merge workflow; Duplicati required a safe rerun of the successful reconciliation job after mergeability became known. Passbolt Community Edition remains verified-awaiting-Issue. 220 entries are >7 days old. No direct main push, manual merge/deploy, force-push, weakened checks or hourly cadence changes.",
+    "note": "Rotation 13 12/19. Main contains 557 services at inspection; three new verified ai-ml candidates have canonical Issues #919-#921, pending queue/PR/CI/merge; llama.cpp verified-awaiting-Issue. No new merges claimed; cloud free vs self-hosted costs distinguished. Cerebras one-time trial excluded.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9754,7 +9823,8 @@
       "ci-cd",
       "ai-assistants",
       "storage",
-      "auth-security"
+      "auth-security",
+      "ai-ml"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
@@ -9762,7 +9832,6 @@
       "databases",
       "developer-tools",
       "observability",
-      "ai-ml",
       "queues-jobs",
       "feature-flags"
     ]
