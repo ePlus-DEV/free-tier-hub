@@ -7467,5 +7467,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "pg-boss-postgres-job-queue",
+    "name": "pg-boss PostgreSQL Job Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js job queue on PostgreSQL with no software-enforced job, worker, or queue quotas; supports scheduling, retries, dead-letter queues and transactional jobs.",
+    "watch_out": "Requires your own PostgreSQL 13+ database and Node.js 22.12+ or Bun; database, compute, storage, backups and operations are not included. Jobs are delivered at least once; handlers must be idempotent.",
+    "pricing_url": "https://pgboss.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
