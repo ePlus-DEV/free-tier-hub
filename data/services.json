@@ -8652,5 +8652,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "h2-database-embedded",
+    "name": "H2 Database Engine",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free Java SQL database engine (MPL 2.0 or EPL 1.0) with embedded, in-memory and TCP server modes; no software-enforced storage or query quota.",
+    "watch_out": "Runs inside your JVM or on infrastructure you operate; hosting, storage and operations are not included. Modified H2 source must meet license publication obligations; distributed binaries need license and disclaimer notices.",
+    "pricing_url": "https://h2database.github.io/html/license.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "local",
+    "last_checked": "2026-10-28"
   }
 ]
