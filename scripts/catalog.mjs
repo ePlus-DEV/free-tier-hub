@@ -30,6 +30,7 @@ const PLANS = {
   "limited-duration": "Time-limited",
   "temporary-resource": "Temporary resource",
 };
+export const DEPLOYMENT_MODELS = ["cloud", "self-hosted", "hybrid", "local", "unclassified"];
 const CARDS = { yes: "Required", no: "Not required", check: "Check provider" };
 const COMMERCIAL = { yes: "Allowed", no: "Restricted / personal use", check: "Check provider" };
 const FIELDS = [
@@ -98,6 +99,9 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     if (!Object.hasOwn(PLANS, item.plan)) errors.push(String(id) + ": unsupported plan");
     for (const key of ["credit_card", "commercial_use"]) {
       if (!Object.hasOwn(CARDS, item[key])) errors.push(String(id) + ": invalid " + key);
+    }
+    if (Object.hasOwn(item, "deployment_model") && !DEPLOYMENT_MODELS.includes(item.deployment_model)) {
+      errors.push(String(id) + ": invalid deployment_model");
     }
     try {
       const u = new URL(item.pricing_url);

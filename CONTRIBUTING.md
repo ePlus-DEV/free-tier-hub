@@ -92,3 +92,16 @@ For `plan`, use `ongoing` only when the free allowance has no announced fixed en
 - [ ] No duplicated provider/product entry is being added.
 - [ ] CI generated matching category tables from `data/services.json`, and README dynamic badge URLs remain intact (no manual count edits).
 - [ ] `npm run verify` passes (CI also runs the existing site tests).
+
+### Deployment model
+
+Set optional `deployment_model` in each catalog entry to classify the **listed offer**:
+`cloud` (vendor-hosted allowance), `self-hosted` (operate your own server),
+`hybrid` (the listed offer includes cloud and self-hosted modes),
+`local` (desktop, CLI, SDK or embedded library), or `unclassified`.
+Use the linked official source and the entry's allowance/caveat as evidence. A separately
+sold self-hosted edition does not make a Cloud Free entry hybrid. Missing metadata
+remains unclassified; the UI never guesses from a service name or category.
+
+The initial metadata migration uses the existing catalog descriptions and source links;
+it does not reverify pricing or change `last_checked`.

@@ -20,7 +20,7 @@ export function loadCandidates(root = DEFAULT_ROOT, today = isoToday()) {
   const ids = new Set();
   for (const candidate of candidates) {
     if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate) ||
-        Object.keys(candidate).sort().join() !== FIELDS.join()) {
+        Object.keys(candidate).filter(key => key !== 'deployment_model').sort().join() !== FIELDS.join()) {
       throw Error('Candidate must contain exactly the catalog schema fields');
     }
     validateData([candidate], today);

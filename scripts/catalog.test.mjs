@@ -108,3 +108,14 @@ test("sync updates category pages while preserving dynamic README counts", () =>
     assert.equal(sync(root), 0);
   });
 });
+
+test("deployment metadata validates all modes and preserves legacy entries", () => {
+  for (const deployment_model of ["cloud", "self-hosted", "hybrid", "local", "unclassified"]) {
+    assert.doesNotThrow(() => validateData([{...sourceData[0], deployment_model}]));
+  }
+  for (const deployment_model of ["bad", "", null, 42]) {
+    assert.throws(() => validateData([{...sourceData[0], deployment_model}]), /invalid deployment_model/);
+  }
+  const legacy = {...sourceData[0]}; delete legacy.deployment_model;
+  assert.doesNotThrow(() => validateData([legacy]));
+});
