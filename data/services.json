@@ -7455,5 +7455,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "coroot-community-self-hosted",
+    "name": "Coroot Community Edition Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Coroot Community Edition for application/infrastructure observability with metrics, logs, traces, service maps and eBPF monitoring; no Community software license fee.",
+    "watch_out": "Requires self-managed Linux/Kubernetes/Docker infrastructure and storage; kernel/eBPF compatibility matters. Enterprise features, support and AI root-cause analysis require separate paid plans; Apache-2.0 license obligations apply.",
+    "pricing_url": "https://coroot.com/blog/140x-cheaper-than-datadog-why-storing-observability-data-on-prem-makes-sense/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
