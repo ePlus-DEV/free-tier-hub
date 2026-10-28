@@ -7678,5 +7678,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "unhook-self-hosted",
+    "name": "Unhook Open-Source Webhook Development",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source webhook testing and routing toolkit with CLI, editor integrations, replay, event inspection and a documented self-hosted Docker deployment; no software license fee.",
+    "watch_out": "Self-hosted operation requires your own server, public URL, database/Redis and maintenance. Do not assume the hosted unhook.sh service or team cloud features have unlimited free usage; verify cloud limits separately.",
+    "pricing_url": "https://github.com/unhook-sh/unhook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
