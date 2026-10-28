@@ -8069,5 +8069,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "render-key-value-free",
+    "name": "Render Key Value Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One Free Render Key Value (Redis-compatible) instance per workspace, in-memory data store with no monthly software subscription charge.",
+    "watch_out": "Free instance has no disk persistence: all data is lost on restarts, upgrades and some maintenance. Not recommended for production; free instance may restart without notice. Card and commercial terms not independently confirmed.",
+    "pricing_url": "https://render.com/docs/free",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
