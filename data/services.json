@@ -8011,6 +8011,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "dify-community-self-hosted",
+    "name": "Dify Community Self-Hosted",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Self-hostable community platform for AI workflows, agents, RAG pipelines and LLM applications using Docker Compose; no vendor-imposed community software workflow quota.",
+    "watch_out": "Modified Apache-2.0 Dify Open Source License: multi-tenant workspace hosting requires commercial authorization, and frontend logos/copyright must remain intact. Minimum documented setup 2 CPU cores and 4 GiB RAM; infrastructure, external models and APIs cost extra. Distinct from Dify Cloud.",
+    "pricing_url": "https://github.com/langgenius/dify",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "oneuptime-cloud-free",
     "name": "OneUptime Cloud Free",
     "category": "observability",
