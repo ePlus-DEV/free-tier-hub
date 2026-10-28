@@ -8035,6 +8035,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "atlassian-forge-free-usage",
+    "name": "Atlassian Forge Monthly Free Allowance",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Per Forge app per month: 200,000 GB-seconds of Functions duration, 0.1 GB Key-Value reads and 0.1 GB writes, 1 GB log writes, 100,000 SQL compute requests and 730 GB-hours SQL data storage.",
+    "watch_out": "Consumption above free allowances is billed monthly; LLM and container compute have zero free allowance. Atlassian's pricing FAQ asks for billing details, while Developer Space billing docs allow continued within-free usage without a payment method; confirm account requirements. Applies to Forge apps, not standalone serverless hosting.",
+    "pricing_url": "https://developer.atlassian.com/platform/forge/forge-platform-pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "better-auth-managed-starter",
+    "name": "Better Auth Managed Infrastructure Starter",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free $0/month managed infrastructure Starter for a self-hosted Better Auth application: 1 dashboard seat, 10,000 audit logs/month with 1-day retention and 1,000 security detections/month.",
+    "watch_out": "This is optional managed infrastructure, not free hosting for your application or database. Starter is intended for evaluation and side projects; production-oriented features and longer retention require Pro. Card and commercial-use terms are not explicit.",
+    "pricing_url": "https://better-auth.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "cabin-analytics-free",
     "name": "Cabin Analytics Free",
     "category": "analytics",
