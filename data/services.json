@@ -7469,6 +7469,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "pg-boss-postgres-job-queue",
+    "name": "pg-boss PostgreSQL Job Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js job queue on PostgreSQL with no software-enforced job, worker, or queue quotas; supports scheduling, retries, dead-letter queues and transactional jobs.",
+    "watch_out": "Requires your own PostgreSQL 13+ database and Node.js 22.12+ or Bun; database, compute, storage, backups and operations are not included. Jobs are delivered at least once; handlers must be idempotent.",
+    "pricing_url": "https://pgboss.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "jetify-devbox-open-source",
+    "name": "Jetify Devbox Open Source",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI for reproducible local development environments; no per-user or project limits in the open-source tool.",
+    "watch_out": "Requires Nix and locally provisioned compute/storage; third-party packages and any separately purchased Jetify cloud services have their own terms.",
+    "pricing_url": "https://github.com/jetify-com/devbox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "lefthook-git-hooks-manager",
     "name": "Lefthook Git Hooks Manager",
     "category": "developer-tools",
