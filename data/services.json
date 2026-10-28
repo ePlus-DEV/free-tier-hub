@@ -8009,5 +8009,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "atlassian-forge-free-usage",
+    "name": "Atlassian Forge Monthly Free Allowance",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Per Forge app per month: 200,000 GB-seconds of Functions duration, 0.1 GB Key-Value reads and 0.1 GB writes, 1 GB log writes, 100,000 SQL compute requests and 730 GB-hours SQL data storage.",
+    "watch_out": "Consumption above free allowances is billed monthly; LLM and container compute have zero free allowance. Atlassian's pricing FAQ asks for billing details, while Developer Space billing docs allow continued within-free usage without a payment method; confirm account requirements. Applies to Forge apps, not standalone serverless hosting.",
+    "pricing_url": "https://developer.atlassian.com/platform/forge/forge-platform-pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
