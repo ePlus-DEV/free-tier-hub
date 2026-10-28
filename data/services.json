@@ -8431,5 +8431,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "googiehost-free-hosting",
+    "name": "GoogieHost Free Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-forever managed hosting for 1 website with 1,000 MB NVMe storage, SSL, a free subdomain, one MySQL database, one email account and FTP access.",
+    "watch_out": "Shared hosting subject to provider terms and resource limits; provider may suspend accounts that do not respond to notifications for an extended period. Domain registration is separate; commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://googiehost.com/freehosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
