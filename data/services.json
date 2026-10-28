@@ -8033,5 +8033,17 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "cabin-analytics-free",
+    "name": "Cabin Analytics Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free privacy-first website analytics for 1 domain, 10,000 pageviews/month and 30-day retention; public dashboards, data export and MCP access included.",
+    "watch_out": "Free plan is positioned for personal projects, portfolios and hobby sites; custom events, API access and extended retention require paid plans. Credit-card and commercial-use terms were not explicitly confirmed.",
+    "pricing_url": "https://withcabin.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
