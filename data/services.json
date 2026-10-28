@@ -8327,5 +8327,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zenko-cloudserver-self-hosted",
+    "name": "Zenko CloudServer (Self-Hosted S3 API)",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source S3-compatible Node.js server for local/on-premises object storage and development/testing; no license fee or vendor-enforced object quota for self-hosted use.",
+    "watch_out": "This is software, not a free hosted S3 bucket. You provide disks, compute, backups and security; external cloud storage backends can incur charges. The upstream README documents example default access keys that must be replaced for real deployments.",
+    "pricing_url": "https://github.com/scality/cloudserver",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
