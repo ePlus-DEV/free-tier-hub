@@ -7704,5 +7704,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "fullstory-free",
+    "name": "FullstoryFree Behavioral Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "30,000 captured sessions per month, up to 10 users, with 12 months of session replay and analytics retention on the permanent FullstoryFree plan.",
+    "watch_out": "Core session replay, basic analytics and debugging are included; advanced dashboards and StoryAI require paid plans. Follow privacy and consent requirements for session recordings.",
+    "pricing_url": "https://www.fullstory.com/plans/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
