@@ -1,6 +1,6 @@
 {
-  "as_of_utc": "2026-10-27",
-  "source_main_sha": "65a0798e3074214ce545341f99a53f68aee47719",
+  "as_of_utc": "2026-10-28",
+  "source_main_sha": "ea1163443cc0c6bfd35e7bdb0e3e27f0fa39fedb",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -66,14 +66,14 @@
     {
       "category": "storage",
       "service_count": 29,
-      "latest_catalog_verification": "2026-10-27",
+      "latest_catalog_verification": "2026-10-28",
       "backlog_total": 3,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-27",
+      "last_discovery_review": "2026-10-28",
       "stale_over_7d": 13,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 3,
+      "open_catalog_prs": 1,
+      "open_catalog_candidate_prs": 1
     },
     {
       "category": "developer-tools",
@@ -101,13 +101,13 @@
     },
     {
       "category": "auth-security",
-      "service_count": 32,
-      "latest_catalog_verification": "2026-10-27",
+      "service_count": 33,
+      "latest_catalog_verification": "2026-10-28",
       "backlog_total": 5,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-27",
+      "last_discovery_review": "2026-10-28",
       "stale_over_7d": 16,
-      "open_catalog_candidate_issues": 0,
+      "open_catalog_candidate_issues": 2,
       "open_catalog_prs": 0,
       "open_catalog_candidate_prs": 0
     },
@@ -9328,6 +9328,96 @@
           "reason": "Official repo last pushed in 2024; not prioritized over maintained alternatives."
         }
       ]
+    },
+    {
+      "checked_utc": "2026-10-28",
+      "category": "auth-security",
+      "official_sources": [
+        "https://github.com/pocket-id/pocket-id",
+        "https://github.com/kanidm/kanidm",
+        "https://github.com/smallstep/certificates",
+        "https://github.com/passbolt/passbolt_api",
+        "https://github.com/ory/keto"
+      ],
+      "queries": [
+        "passkey self-hosted OIDC provider open source BSD-2",
+        "MPL-2.0 Kanidm identity self host",
+        "Apache-2.0 step-ca ACME server",
+        "AGPL Passbolt Community Edition"
+      ],
+      "candidates": [
+        {
+          "id": "pocket-id-self-hosted",
+          "status": "catalogued",
+          "issue": 907,
+          "pr": 913,
+          "reason": "BSD-2-Clause passkey OIDC self-hosted; GitHub auto-merged after exact-head validation/build SUCCESS and bot APPROVED; main confirms entry."
+        },
+        {
+          "id": "kanidm-self-hosted",
+          "status": "Issue",
+          "issue": 908,
+          "reason": "MPL-2.0 identity provider with OIDC/LDAP gateway; queue run initially cancelled by concurrency; issue edited for safe retry."
+        },
+        {
+          "id": "smallstep-step-ca-self-hosted",
+          "status": "Issue",
+          "issue": 909,
+          "reason": "Apache-2.0 private CA with ACME/SSH; queue run cancelled before jobs, retry when capacity allows."
+        },
+        {
+          "id": "passbolt-community-self-hosted",
+          "status": "verified-awaiting-Issue",
+          "reason": "AGPL-3.0 Passbolt Community Edition is a distinct self-hosted password manager; defer issue until queue clears."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Ory Keto managed free tier",
+          "reason": "Self-hosted open-source core and managed cloud are different; commercial support and security releases require separate review; no managed free allowance inferred."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-28",
+      "category": "storage",
+      "official_sources": [
+        "https://github.com/opencloud-eu/opencloud",
+        "https://github.com/duplicati/duplicati",
+        "https://www.urbackup.org/"
+      ],
+      "queries": [
+        "Apache-2.0 OpenCloud self hosted file sharing",
+        "Duplicati MIT encrypted backup",
+        "UrBackup AGPL commercial self hosted backup"
+      ],
+      "candidates": [
+        {
+          "id": "opencloud-self-hosted",
+          "status": "Issue",
+          "issue": 910,
+          "reason": "Apache-2.0 self-hosted file sync/share; queue run cancelled before jobs, pending safe retry."
+        },
+        {
+          "id": "duplicati-open-source-backup",
+          "status": "Issue",
+          "issue": 911,
+          "reason": "MIT open-source encrypted backup; optional proprietary services excluded, queue cancelled before jobs, pending safe retry."
+        },
+        {
+          "id": "urbackup-self-hosted-backup",
+          "status": "PR",
+          "issue": 912,
+          "pr": 914,
+          "reason": "AGPLv3+ free server backup; canonical queue produced PR; exact-head CI/review/merge pending."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "Duplicati paid console/proprietary features",
+          "reason": "Not part of the free MIT-licensed open-source backup core; do not claim paid features as free."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -9389,12 +9479,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 551,
+    "total_services": 552,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 5,
     "unmatched_backlog": [],
-    "note": "Rotation 13 9/19 categories. Main 65a0798e3074214ce545341f99a53f68aee47719 contains 551 services (+5 from 546). Five newly discovered Apache-2.0 self-hosted services delivered: werf #896/#899, Jenkins X #897/#905, Devtron #898/#901, Coze Studio #900/#902, Sim #903/#904; each exact-final-head CI SUCCESS, eplus-bot APPROVED and GitHub MERGED. PR #901 and #902 safely reconciled without force-push. 220 catalog entries are >7 days old. Historical backlog 30 records already catalogued except UploadThing alias. MailerSend Free card requirement confirmed from official pricing and already correct on main. No direct main push, manual merge, deployment, weakening checks, or hourly cadence change.",
+    "note": "Rotation 13 11/19. Main ea1163443cc0c6bfd35e7bdb0e3e27f0fa39fedb has 552 services. New official-source discovery in auth-security and storage: 6 canonical candidate Issues #907-#912, catalog PRs #913 (Pocket ID GitHub MERGED) and #914 (UrBackup pending). Four middle queue events were cancelled before jobs by GitHub concurrency; retry sequentially without rewriting branches or bypassing CI. Passbolt Community verified-awaiting-Issue. 220 existing entries are older than seven days. Review-only ledger; no direct main push, manual merge, force-push or automation cadence changes.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9658,15 +9748,15 @@
       "dns-cdn",
       "analytics",
       "ci-cd",
-      "ai-assistants"
+      "ai-assistants",
+      "storage",
+      "auth-security"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
       "app-hosting",
       "databases",
-      "storage",
       "developer-tools",
-      "auth-security",
       "observability",
       "ai-ml",
       "queues-jobs",
