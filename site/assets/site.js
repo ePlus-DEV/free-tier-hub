@@ -346,29 +346,87 @@
     visible = pageSize; render();
     document.getElementById("explore").scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
-  // One inline panel at every width: controls never move or overlay results.
+  // Anchor the desktop dialog to Filters; use a modal sheet on phones.
   if (filterToggle && advancedFilters) {
     var closePanel = advancedFilters.querySelector(".filter-sheet-close");
+    var panelHome = document.createComment("filter dialog home");
+    advancedFilters.parentNode.insertBefore(panelHome, advancedFilters);
+    var backdrop = document.createElement("div");
+    backdrop.className = "filter-sheet-backdrop";
+    backdrop.hidden = true;
+    document.body.appendChild(backdrop);
+    var sheetMedia = window.matchMedia("(max-width: 680px)");
+    var inerted = [];
+    function positionFilters() {
+      if (advancedFilters.hidden || sheetMedia.matches) return;
+      var anchor = filterToggle.getBoundingClientRect();
+      var width = Math.min(360, window.innerWidth - 32);
+      var top = anchor.bottom + 8;
+      if (window.innerHeight - top < 240) top = 16;
+      advancedFilters.style.left = Math.max(16, Math.min(anchor.right - width, window.innerWidth - width - 16)) + "px";
+      advancedFilters.style.top = top + "px";
+      advancedFilters.style.maxHeight = Math.max(120, window.innerHeight - top - 16) + "px";
+    }
     function closeFilters(restoreFocus) {
+      if (advancedFilters.hidden) return;
       advancedFilters.hidden = true;
+      advancedFilters.removeAttribute("aria-modal");
+      advancedFilters.removeAttribute("style");
       filterToggle.setAttribute("aria-expanded", "false");
+      backdrop.hidden = true;
+      document.body.classList.remove("filter-sheet-open");
+      inerted.forEach(function (node) { node.inert = false; });
+      inerted = [];
+      panelHome.parentNode.insertBefore(advancedFilters, panelHome.nextSibling);
       if (restoreFocus) filterToggle.focus();
     }
+    function openFilters() {
+      document.body.appendChild(advancedFilters);
+      advancedFilters.hidden = false;
+      filterToggle.setAttribute("aria-expanded", "true");
+      if (sheetMedia.matches) {
+        advancedFilters.setAttribute("aria-modal", "true");
+        backdrop.hidden = false;
+        document.body.classList.add("filter-sheet-open");
+        Array.prototype.forEach.call(document.body.children, function (node) {
+          if (node !== advancedFilters && node !== backdrop && !node.inert) {
+            node.inert = true; inerted.push(node);
+          }
+        });
+      }
+      positionFilters();
+      closePanel.focus();
+    }
     filterToggle.addEventListener("click", function () {
-      var opening = advancedFilters.hidden;
-      advancedFilters.hidden = !opening;
-      filterToggle.setAttribute("aria-expanded", String(opening));
+      if (advancedFilters.hidden) openFilters(); else closeFilters(true);
     });
-    if (closePanel) closePanel.addEventListener("click", function () { closeFilters(true); });
-    if (showResults) showResults.addEventListener("click", function () {
-      closeFilters(true);
-      count.scrollIntoView({block: "nearest", behavior: "auto"});
+    closePanel.addEventListener("click", function () { closeFilters(true); });
+    backdrop.addEventListener("click", function () { closeFilters(true); });
+    if (showResults) showResults.addEventListener("click", function () { closeFilters(true); });
+    document.addEventListener("click", function (event) {
+      if (!advancedFilters.hidden && !sheetMedia.matches &&
+          !advancedFilters.contains(event.target) && !filterToggle.contains(event.target)) closeFilters(false);
     });
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && !advancedFilters.hidden) {
-        event.preventDefault(); closeFilters(true);
+      if (advancedFilters.hidden) return;
+      if (event.key === "Escape") { event.preventDefault(); closeFilters(true); return; }
+      if (event.key !== "Tab") return;
+      var focusable = Array.prototype.slice.call(advancedFilters.querySelectorAll("button, select, input")).filter(function (node) {
+        return !node.disabled && node.getClientRects().length;
+      });
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        if (sheetMedia.matches) last.focus(); else closeFilters(true);
+      } else if (!event.shiftKey && document.activeElement === last) {
+        if (sheetMedia.matches) { event.preventDefault(); first.focus(); } else closeFilters(false);
       }
     });
+    window.addEventListener("resize", positionFilters);
+    window.addEventListener("scroll", positionFilters, true);
+    var closeOnBreakpoint = function () { closeFilters(true); };
+    if (sheetMedia.addEventListener) sheetMedia.addEventListener("change", closeOnBreakpoint);
+    else sheetMedia.addListener(closeOnBreakpoint);
   }
   if (mobileCategory) {
     mobileCategory.addEventListener("change", function () {
