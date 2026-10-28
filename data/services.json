@@ -7985,5 +7985,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "pgvector-postgresql-extension",
+    "name": "pgvector Open-Source PostgreSQL Extension",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Free PostgreSQL-licensed extension for exact and approximate vector similarity search inside PostgreSQL 13+; supports HNSW and IVFFlat indexes, multiple vector types and distance metrics without a vendor-imposed software quota.",
+    "watch_out": "Requires a PostgreSQL installation with extension support; some managed Postgres providers may not enable it or may charge for database compute and storage. Embedding generation and operations are separate.",
+    "pricing_url": "https://github.com/pgvector/pgvector",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
