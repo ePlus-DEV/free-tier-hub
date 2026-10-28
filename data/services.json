@@ -7925,5 +7925,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "mercure-hub-self-hosted",
+    "name": "Mercure Hub Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted Go hub for Server-Sent Events and real-time HTTP API updates; no vendor software fee or hosted message quota.",
+    "watch_out": "Operate your own server, TLS and storage; AGPL-3.0 network-copyleft obligations apply. Managed Mercure.rocks hosting is a separate paid service.",
+    "pricing_url": "https://github.com/dunglas/mercure",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
