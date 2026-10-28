@@ -6735,5 +6735,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "smallstep-step-ca-self-hosted",
+    "name": "Smallstep step-ca Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted private X.509 and SSH certificate authority with ACME issuance and automated renewal; no vendor-imposed certificate quota.",
+    "watch_out": "Free open-source CA lacks several commercial Smallstep features, including turnkey multi-CA, high-availability and enterprise support; manage private keys and infrastructure yourself.",
+    "pricing_url": "https://github.com/smallstep/certificates",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
