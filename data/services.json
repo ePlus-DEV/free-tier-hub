@@ -7743,5 +7743,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "codemagic-personal-free",
+    "name": "Codemagic Personal Free CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "500 macOS M2 build minutes refreshed monthly for an individual account; one concurrent build and 30-day build history/artifact retention.",
+    "watch_out": "Free minutes are for personal accounts, not team accounts. Usage beyond the allowance may incur standard rates; confirm billing controls and commercial eligibility before relying on it for production.",
+    "pricing_url": "https://codemagic.io/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
