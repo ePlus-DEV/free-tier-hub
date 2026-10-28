@@ -8420,6 +8420,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "minisearch-local",
+    "name": "MiniSearch (Local Full-Text Search)",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed JavaScript full-text search library for browser and Node.js; local in-memory indexing, fuzzy and prefix search, with no vendor usage quota.",
+    "watch_out": "Local/embedded library, not a hosted search service. Index data must fit available application memory; CPU, storage, hosting and maintenance are your responsibility.",
+    "pricing_url": "https://github.com/lucaong/minisearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "googiehost-free-hosting",
+    "name": "GoogieHost Free Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-forever managed hosting for 1 website with 1,000 MB NVMe storage, SSL, a free subdomain, one MySQL database, one email account and FTP access.",
+    "watch_out": "Shared hosting subject to provider terms and resource limits; provider may suspend accounts that do not respond to notifications for an extended period. Domain registration is separate; commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://googiehost.com/freehosting",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "togglely-self-hosted",
     "name": "Togglely Open-Source Feature Flags",
     "category": "feature-flags",
