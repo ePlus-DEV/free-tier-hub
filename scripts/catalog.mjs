@@ -116,6 +116,19 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
   return data;
 }
 
+
+/** Shared intake schema for the backlog and trusted candidate workflows.
+ * Legacy candidates may omit deployment_model; never infer it during delivery.
+ */
+export function validateCandidate(candidate, today = new Date().toISOString().slice(0, 10)) {
+  if (!candidate || typeof candidate !== "object" || Array.isArray(candidate) ||
+      Object.keys(candidate).filter(key => key !== "deployment_model").sort().join() !== [...FIELDS].sort().join()) {
+    throw Error("Candidate must contain exactly the catalog schema fields (optional deployment_model allowed)");
+  }
+  validateData([candidate], today);
+  return candidate;
+}
+
 export function render(root = DEFAULT_ROOT) {
   const data = validateData(JSON.parse(read(root, "data/services.json")));
   let readme = read(root, "README.md");

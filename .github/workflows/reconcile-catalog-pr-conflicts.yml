@@ -127,12 +127,12 @@ jobs:
             # pricing and already-delivered IDs. No service entry is discarded.
             if ! node --input-type=module <<'NODE'
           import fs from 'node:fs';
-          import { validateData } from './scripts/catalog.mjs';
+          import { validateData, validateCandidate } from './scripts/catalog.mjs';
           const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
           const original = read('/tmp/catalog-base.json');
           const branch = read('/tmp/catalog-branch.json');
           const main = read('/tmp/catalog-main.json');
-          const candidate = read('/tmp/catalog-candidate.json');
+          const candidate = validateCandidate(read('/tmp/catalog-candidate.json'));
           const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
           const date = Date.parse(candidate.last_checked + 'T00:00:00Z');
           const now = Date.now();
