@@ -7769,5 +7769,17 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "passbolt-community-self-hosted",
+    "name": "Passbolt Community Edition Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 Community Edition password and secret manager for teams, self-hosted with credential sharing and browser clients; no software subscription fee.",
+    "watch_out": "Requires your own PHP/database server, TLS, email setup, backups and security updates. Cloud-hosted Passbolt is a separate paid service with only a short trial; paid enterprise capabilities are excluded. AGPL-3.0 source and trademark conditions apply.",
+    "pricing_url": "https://github.com/passbolt/passbolt_api",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
