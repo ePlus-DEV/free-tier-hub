@@ -7641,6 +7641,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "localxpose-starter-free",
+    "name": "LocalXpose Starter Free Tunnels",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "2 concurrent HTTP/HTTPS tunnels with TLS and random subdomains on the ongoing $0 Starter plan; no credit card required.",
+    "watch_out": "Free tunnels have session time limits and an interstitial warning page; TCP/UDP, custom domains and 24/7 availability require Pro. Intended for testing and light commercial use, not guaranteed production uptime.",
+    "pricing_url": "https://localxpose.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "packetriot-free-tunnel",
+    "name": "Packetriot Free Tunnel",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "1 free tunnel with 1 GB of monthly bandwidth; the free plan does not include TCP port allocations.",
+    "watch_out": "Monthly 1 GB limit and one tunnel; reserved subdomains, port allocations, firewall features and higher bandwidth require a paid plan. Credit-card and commercial-use conditions for free accounts are not clearly specified.",
+    "pricing_url": "https://packetriot.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "tabby-community-self-hosted",
     "name": "Tabby Community Self-Hosted AI Coding Assistant",
     "category": "ai-assistants",
