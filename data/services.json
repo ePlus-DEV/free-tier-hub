@@ -6735,5 +6735,17 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "opencloud-self-hosted",
+    "name": "OpenCloud Self-Hosted File Platform",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted file sync, sharing and collaboration platform with filesystem-backed storage; no vendor-imposed storage quota in the open-source server.",
+    "watch_out": "Storage capacity depends on your own disks and infrastructure; deploy and maintain the server and OIDC identity integration. Enterprise support and hosted infrastructure are separate.",
+    "pricing_url": "https://github.com/opencloud-eu/opencloud",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
