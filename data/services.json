@@ -7730,5 +7730,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "firebase-remote-config-free",
+    "name": "Firebase Remote Config No-Cost Tier",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Up to 100,000 Remote Config fetch requests per day per project at no cost, effective September 1, 2026; A/B Testing, Rollouts and Personalization included.",
+    "watch_out": "Above the daily free allowance on pay-as-you-go plans, per-request charges apply; quotas and limits still apply. This is a distinct Firebase Remote Config product, not Firebase Hosting or Realtime Database.",
+    "pricing_url": "https://firebase.google.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
