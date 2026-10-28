@@ -6773,6 +6773,18 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "sambanova-cloud-free",
+    "name": "SambaNova Cloud Free Tier",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free SambaCloud API access without a linked payment method: production models have 20 requests/minute, 20 requests/day and 200,000 tokens/day per model.",
+    "watch_out": "Free limits are small and model-specific; requests beyond the quota are rate-limited. Linking a payment method switches to Developer tier. Preview models are evaluation-only; commercial-use terms require provider confirmation.",
+    "pricing_url": "https://docs.sambanova.ai/docs/en/models/rate-limits",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "xinference-community-self-hosted",
     "name": "Xinference Community Self-Hosted",
     "category": "ai-ml",
