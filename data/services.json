@@ -7431,5 +7431,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "wix-free-site-hosting",
+    "name": "Wix Free Site Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Ongoing hosted website on a free wixsite.com subdomain, with 500 MB storage and 500 MB bandwidth; free Wix website builder included.",
+    "watch_out": "Custom domains, removing Wix ads, payment acceptance and higher storage/bandwidth require a premium plan. Free-site commercial-use terms and any payment-card requirements should be checked with Wix.",
+    "pricing_url": "https://support.wix.com/en/article/wix-site-hosting",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
