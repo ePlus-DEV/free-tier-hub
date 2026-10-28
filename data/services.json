@@ -8392,5 +8392,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "anchore-grype-local",
+    "name": "Grype (Anchore Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 CLI vulnerability scanning of container images, filesystems and SBOMs with no per-scan software license fee.",
+    "watch_out": "Vulnerability database and target downloads need network access; findings depend on database freshness. Anchore Enterprise and commercial support are separate paid offerings.",
+    "pricing_url": "https://anchore.com/grype/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   }
 ]
