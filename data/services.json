@@ -7419,5 +7419,17 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "yugabytedb-aeon-sandbox",
+    "name": "YugabyteDB Aeon Sandbox Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One free-forever single-node YugabyteDB Aeon Sandbox cluster per account, up to 2 vCPU, 4 GB RAM and 10 GB storage depending on provider; no credit card required.",
+    "watch_out": "Development and tutorials only, not production or performance testing; up to 15 connections, no backups, no scaling or VPC networking. Inactive clusters may be paused after 10 days and deleted after 15 days; commercial production suitability requires provider confirmation.",
+    "pricing_url": "https://docs.yugabyte.com/stable/yugabyte-cloud/cloud-basics/create-clusters/create-clusters-free/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
   }
 ]
