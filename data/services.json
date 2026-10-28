@@ -7927,6 +7927,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "mercure-hub-self-hosted",
+    "name": "Mercure Hub Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted Go hub for Server-Sent Events and real-time HTTP API updates; no vendor software fee or hosted message quota.",
+    "watch_out": "Operate your own server, TLS and storage; AGPL-3.0 network-copyleft obligations apply. Managed Mercure.rocks hosting is a separate paid service.",
+    "pricing_url": "https://github.com/dunglas/mercure",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "pushpin-self-hosted",
+    "name": "Pushpin Open-Source Realtime Proxy",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted proxy for WebSocket, HTTP streaming, and long-polling push to existing APIs; no vendor software quota.",
+    "watch_out": "Requires your own server and backend publisher; scaling and connection capacity depend on infrastructure. Fastly Fanout managed hosting is separate.",
+    "pricing_url": "https://github.com/fastly/pushpin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "fusejs-open-source-search",
     "name": "Fuse.js Open-Source Fuzzy Search",
     "category": "search",
