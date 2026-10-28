@@ -8691,5 +8691,18 @@
     "commercial_use": "yes",
     "deployment_model": "self-hosted",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "sshuttle-local-ssh-vpn",
+    "name": "sshuttle",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Free LGPL-2.1 open-source transparent proxy over SSH for routed TCP and DNS traffic; no software-enforced traffic quota.",
+    "watch_out": "Requires your own reachable SSH server and Python 3.10+ on both ends, plus sudo/root access on the client. Remote server or network transfer may cost money; UDP support depends on the local firewall method and Windows support is experimental.",
+    "pricing_url": "https://sshuttle.readthedocs.io/en/latest/requirements.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "local",
+    "last_checked": "2026-10-28"
   }
 ]
