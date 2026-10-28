@@ -8177,5 +8177,17 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-28"
+  },
+  {
+    "id": "aws-eventbridge-scheduler-free",
+    "name": "Amazon EventBridge Scheduler Free Tier",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "14,000,000 scheduled invocations/month free across eligible AWS regions, supporting cron, rate-based and one-time schedules",
+    "watch_out": "AWS account and billing setup required; invocations above free allowance cost $1 per million. Downstream target services, data transfer and related AWS resources may incur separate charges; GovCloud excluded.",
+    "pricing_url": "https://aws.amazon.com/eventbridge/pricing/",
+    "credit_card": "yes",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
   }
 ]
