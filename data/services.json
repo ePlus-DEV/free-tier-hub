@@ -8563,6 +8563,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "huey-python-task-queue",
+    "name": "Huey Open Source Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python task queue with scheduling, retries and Redis, PostgreSQL, SQLite, file or in-memory backends; no software usage quota.",
+    "watch_out": "Self-managed worker processes and optional Redis/PostgreSQL brokers are not hosted for free; production operation, monitoring and infrastructure costs remain your responsibility.",
+    "pricing_url": "https://github.com/coleifer/huey",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "fail2ban-self-hosted",
+    "name": "Fail2Ban Open Source",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0 licensed daemon to ban repeated authentication failures using log-based filters; no software usage quota.",
+    "watch_out": "Requires a compatible self-managed host, log access and firewall integration; server costs and ongoing security administration are not included. GPL redistribution obligations apply.",
+    "pricing_url": "https://github.com/fail2ban/fail2ban",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "flexsearch-local",
     "name": "FlexSearch Open Source",
     "category": "search",
