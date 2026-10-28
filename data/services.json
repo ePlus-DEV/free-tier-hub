@@ -8059,6 +8059,30 @@
     "last_checked": "2026-10-28"
   },
   {
+    "id": "cabin-analytics-free",
+    "name": "Cabin Analytics Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free privacy-first website analytics for 1 domain, 10,000 pageviews/month and 30-day retention; public dashboards, data export and MCP access included.",
+    "watch_out": "Free plan is positioned for personal projects, portfolios and hobby sites; custom events, API access and extended retention require paid plans. Credit-card and commercial-use terms were not explicitly confirmed.",
+    "pricing_url": "https://withcabin.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "render-key-value-free",
+    "name": "Render Key Value Free",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "One Free Render Key Value (Redis-compatible) instance per workspace, in-memory data store with no monthly software subscription charge.",
+    "watch_out": "Free instance has no disk persistence: all data is lost on restarts, upgrades and some maintenance. Not recommended for production; free instance may restart without notice. Card and commercial terms not independently confirmed.",
+    "pricing_url": "https://render.com/docs/free",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "switchflag-developer-free",
     "name": "SwitchFlag Developer Free",
     "category": "feature-flags",
