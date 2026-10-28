@@ -1,6 +1,6 @@
 {
   "as_of_utc": "2026-10-28",
-  "source_main_sha": "b1623263036a9c03a08dd44f9c74a1b7bba9aafe",
+  "source_main_sha": "9122a8528121dcd9600e6ce1f95366aded9d3194",
   "policy": "Enumerate all current site categories from scripts/catalog.mjs CATEGORIES and main services.json on each run; prioritize least-reviewed, lowest-count categories and stale verification; never duplicate catalog/Issues/PRs/branches. Reverify provider terms before delivery.",
   "categories": [
     {
@@ -17,15 +17,15 @@
     },
     {
       "category": "app-hosting",
-      "service_count": 29,
-      "latest_catalog_verification": "2026-10-27",
+      "service_count": 30,
+      "latest_catalog_verification": "2026-10-28",
       "backlog_total": 1,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-27",
+      "last_discovery_review": "2026-10-28",
       "stale_over_7d": 12,
-      "open_catalog_candidate_issues": 0,
-      "open_catalog_prs": 0,
-      "open_catalog_candidate_prs": 0
+      "open_catalog_candidate_issues": 2,
+      "open_catalog_prs": 2,
+      "open_catalog_candidate_prs": 2
     },
     {
       "category": "serverless",
@@ -197,11 +197,11 @@
     },
     {
       "category": "feature-flags",
-      "service_count": 27,
-      "latest_catalog_verification": "2026-10-27",
+      "service_count": 28,
+      "latest_catalog_verification": "2026-10-28",
       "backlog_total": 0,
       "uncatalogued_backlog": [],
-      "last_discovery_review": "2026-10-27",
+      "last_discovery_review": "2026-10-28",
       "stale_over_7d": 12,
       "open_catalog_candidate_issues": 0,
       "open_catalog_prs": 0,
@@ -9484,6 +9484,79 @@
       ],
       "exclusions": [],
       "new_category_assessment": "No new category; all AI inference products fit existing ai-ml. Distinguish hosted free from self-hosted costs in card descriptions."
+    },
+    {
+      "checked_utc": "2026-10-28",
+      "category": "feature-flags",
+      "queries": [
+        "FlagBridge Apache-2.0 feature flag open core Docker Compose official repository",
+        "open-source feature flags alternative self hosted OpenFeature"
+      ],
+      "official_sources": [
+        "https://github.com/flagbridge/flagbridge",
+        "https://github.com/flagbridge/flagbridge/blob/main/LICENSE"
+      ],
+      "candidates": [
+        {
+          "id": "flagbridge-self-hosted",
+          "issue": 927,
+          "pr": 930,
+          "status": "catalogued",
+          "reason": "Official Apache-2.0 repository confirms self-hosted flag API, UI and Docker Compose. Canonical Issue #927 -> PR #930, exact-head validation/build SUCCESS and bot approval; GitHub auto-merged; main verified."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "FeatBit / Flagsmith / GrowthBook",
+          "reason": "Already represented by existing catalog entries; do not duplicate product-level listings."
+        }
+      ]
+    },
+    {
+      "checked_utc": "2026-10-28",
+      "category": "app-hosting",
+      "queries": [
+        "CasaOS Apache-2.0 personal cloud self hosted Docker apps",
+        "Portainer CE zlib free community nonproduction self hosted",
+        "KubeSphere OSS distribution download availability",
+        "UmbrelOS PolyForm Noncommercial license"
+      ],
+      "official_sources": [
+        "https://github.com/IceWhaleTech/CasaOS",
+        "https://github.com/portainer/portainer",
+        "https://github.com/kubesphere/kubesphere/issues/6550",
+        "https://github.com/getumbrel/umbrel"
+      ],
+      "candidates": [
+        {
+          "id": "casaos-self-hosted",
+          "issue": 928,
+          "pr": 932,
+          "status": "catalogued",
+          "reason": "Official Apache-2.0 personal cloud Docker app manager. Issue queue initial event cancelled; trusted backlog consumer resumed existing Issue #928 and created PR #932. Exact-head CI/review/merge still pending; do not count as delivered."
+        },
+        {
+          "id": "portainer-community-self-hosted",
+          "issue": 929,
+          "pr": 931,
+          "status": "pr",
+          "reason": "Official zlib CE for self-managed containers; provider states CE intended for homelabs/nonproduction, no support or SLA; commercial terms marked check. Issue #929 -> PR #931; exact-head validation/build succeeded and bot approved but main update caused merge conflict; await safe reconciliation."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "KubeSphere open-source distribution",
+          "reason": "Official project suspended open-source edition download links and free technical support; do not claim readily deployable ongoing free distribution."
+        },
+        {
+          "name": "UmbrelOS",
+          "reason": "Free personal/nonprofit download, but PolyForm Noncommercial restricts commercial reuse; not prioritized over Apache-2.0 alternatives."
+        },
+        {
+          "name": "Nginx Proxy Manager / Traefik",
+          "reason": "Both MIT self-hosted and distinct from catalog, but primarily reverse proxies, better suited to already-reviewed networking category; deferred for fair category rotation."
+        }
+      ]
     }
   ],
   "pending_reverification": [
@@ -9545,12 +9618,12 @@
     }
   ],
   "coverage_summary": {
-    "total_services": 561,
+    "total_services": 563,
     "total_categories": 19,
     "stale_over_7d": 220,
-    "open_catalog_candidate_issues": 0,
+    "open_catalog_candidate_issues": 2,
     "unmatched_backlog": [],
-    "note": "Rotation 13 12/19. Main b1623263036a9c03a08dd44f9c74a1b7bba9aafe contains 561 services, +4 from 557 at this run start. Four new ai-ml services delivered via canonical Issues #919, #920, #921, #925 and catalog PRs #922, #924, #923, #926. All four exact-final-head validation/build SUCCESS and eplus-bot APPROVED; all auto-MERGED. LocalAI issue queue event was cancelled and recovered by reviewed backlog consumer dispatch. Xinference and LocalAI conflicts reconciled by no-force workflow. Cerebras one-time credit excluded. 220 entries older than seven days. Seven categories remain this rotation; no direct main push or manual merge/deploy.",
+    "note": "Rotation 13 14/19; main 9122a8528121dcd9600e6ce1f95366aded9d3194 has 563 services. This run discovered and verified FlagBridge, CasaOS, Portainer CE. FlagBridge Issue #927 -> PR #930 auto-MERGED, main verified. CasaOS #928 -> PR #932 resumed after cancelled queue; pending exact-head CI/merge. Portainer #929 -> PR #931 exact-head CI SUCCESS and bot APPROVED but conflict after main changed; safe no-force reconciliation pending. Self-hosted infrastructure is not free. Do not count pending PRs as merged.",
     "rotation_2_started_utc": "2026-10-24",
     "rotation_2_categories_reviewed": [
       "static-hosting",
@@ -9817,16 +9890,16 @@
       "ai-assistants",
       "storage",
       "auth-security",
-      "ai-ml"
+      "ai-ml",
+      "feature-flags",
+      "app-hosting"
     ],
     "rotation_13_categories_remaining": [
       "static-hosting",
-      "app-hosting",
       "databases",
       "developer-tools",
       "observability",
-      "queues-jobs",
-      "feature-flags"
+      "queues-jobs"
     ]
   }
 }
