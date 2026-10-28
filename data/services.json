@@ -8368,6 +8368,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "owasp-zap-local",
+    "name": "ZAP (Open Source Web Security Scanner)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 web application security scanner with free local desktop, daemon and automated scans; no per-scan software fee.",
+    "watch_out": "Only scan targets you own or are authorized to assess; active scans can disrupt applications. Local hardware and any commercial support are not included.",
+    "pricing_url": "https://github.com/zaproxy/zaproxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
+    "id": "open-interpreter-local",
+    "name": "Open Interpreter (Open Source Agent)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local coding agent with CLI, model-provider selection and sandboxed command execution; no software subscription fee.",
+    "watch_out": "Hosted AI model providers may charge separately; agent-generated commands require careful permissions and approvals. Current Rust project differs from the older Python edition.",
+    "pricing_url": "https://github.com/openinterpreter/openinterpreter",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
+  },
+  {
     "id": "anchore-grype-local",
     "name": "Grype (Anchore Open Source)",
     "category": "auth-security",
