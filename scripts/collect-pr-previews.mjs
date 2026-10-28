@@ -29,7 +29,8 @@ function collect(output) {
     if (pr.head.repo?.full_name !== repo) continue;
     const branch = 'pr-preview-'+pr.number;
     try {
-      git('fetch','--quiet','origin','refs/heads/'+branch+':refs/remotes/origin/'+branch);
+      // Preview snapshots have independent histories; refresh only their local tracking ref.
+      git('fetch','--quiet','origin','+refs/heads/'+branch+':refs/remotes/origin/'+branch);
       const ref = 'refs/remotes/origin/'+branch;
       const meta = JSON.parse(git('show',ref+':preview-meta.json').toString());
       if (!matchesPreview(meta,pr)) {console.log('Skip outdated preview:',pr.number);continue;}
