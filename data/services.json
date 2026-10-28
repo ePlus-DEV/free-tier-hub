@@ -7756,5 +7756,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-28",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "appcircle-starter-free",
+    "name": "Appcircle Starter Free Mobile CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "20 mobile app builds per month, one concurrent build, maximum 30 minutes per build; also 1,000 CodePush updates and 5 store publishes per month.",
+    "watch_out": "Starter is always free but has strict build concurrency, duration and distribution quotas; corporate hosting and advanced controls require a tailored paid plan. Card and commercial terms need confirmation.",
+    "pricing_url": "https://appcircle.io/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   }
 ]
