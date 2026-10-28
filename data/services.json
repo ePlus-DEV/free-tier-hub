@@ -8483,5 +8483,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "teamcity-professional-free",
+    "name": "JetBrains TeamCity Professional (On-Premises Free)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free-forever on-premises Professional CI/CD server with unlimited users, 3 build agents, up to 100 build configurations and 10 pipelines; no recurring TeamCity server license fee within those limits.",
+    "watch_out": "Self-hosted server and build-agent infrastructure are not included. Extra agents and Enterprise features cost money; TeamCity Cloud has no ongoing free tier (trial only). The free edition's build configuration and pipeline limits still apply.",
+    "pricing_url": "https://www.jetbrains.com/teamcity/buy/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   }
 ]
