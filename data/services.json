@@ -7771,6 +7771,30 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "passbolt-community-self-hosted",
+    "name": "Passbolt Community Edition Self-Hosted",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 Community Edition password and secret manager for teams, self-hosted with credential sharing and browser clients; no software subscription fee.",
+    "watch_out": "Requires your own PHP/database server, TLS, email setup, backups and security updates. Cloud-hosted Passbolt is a separate paid service with only a short trial; paid enterprise capabilities are excluded. AGPL-3.0 source and trademark conditions apply.",
+    "pricing_url": "https://github.com/passbolt/passbolt_api",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
+    "id": "filebrowser-quantum-self-hosted",
+    "name": "FileBrowser Quantum Self-Hosted",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted web file manager with multi-source browsing, user permissions, file sharing, preview, WebDAV and API; no hosted storage quota or subscription for the software.",
+    "watch_out": "Bring your own filesystem, TLS, identity configuration and backup; the v2 line is described as beta by maintainers, so evaluate release stability and security before internet exposure. Distinct maintained fork of archived original File Browser.",
+    "pricing_url": "https://github.com/gtsteffaniak/filebrowser",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-28"
+  },
+  {
     "id": "northflank-sandbox-free",
     "name": "Northflank Sandbox Free",
     "category": "app-hosting",
