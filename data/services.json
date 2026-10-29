@@ -9382,6 +9382,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "openvino-toolkit-local",
+    "name": "Intel OpenVINO Open-Source Inference Toolkit",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source runtime and model optimization toolkit for local CPU, Intel GPU and NPU inference with Python/C++ APIs; no software inference quota.",
+    "watch_out": "Compute hardware, model licenses, electricity and any optional cloud hosting are separate; some accelerators need supported drivers. OpenVINO telemetry can be opted out; no free hosted model API is included.",
+    "pricing_url": "https://github.com/openvinotoolkit/openvino",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "checkmk-community-self-hosted",
+    "name": "Checkmk Community Open-Source Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0-licensed Checkmk Community monitoring engine, web UI, agent and agentless checks, and community plugins; self-hosted without a subscription or service-count trial expiry.",
+    "watch_out": "Free Community edition differs from paid Pro/Ultimate in advanced automation, performance and support. Requires own Linux host or container, storage and monitoring agents; operating costs and GPL-2.0 obligations apply. No hosted free monitoring allowance.",
+    "pricing_url": "https://github.com/Checkmk/checkmk",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "renovate-oss-self-hosted",
     "name": "Renovate OSS Self-Hosted Dependency Bot",
     "category": "developer-tools",
