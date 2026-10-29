@@ -9185,5 +9185,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "tuqo-static-hosting-free",
+    "name": "Tuqo Static Hosting Free",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 project, 3 static sites and 150 MB storage per account; 10 form submissions/month, SSL, analytics and CLI/MCP deployments.",
+    "watch_out": "Free plan is for personal and trial projects and adds a mandatory Powered by Tuqo badge; custom domains and badge removal cost extra. Hosted data is in Russia; paid plans accept Russian bank cards only. Free plan needs no card.",
+    "pricing_url": "https://tuqo.dev/pricing/",
+    "credit_card": "no",
+    "commercial_use": "no",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
