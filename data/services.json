@@ -9042,5 +9042,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openebs-kubernetes-storage",
+    "name": "OpenEBS Community Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Open-source Kubernetes persistent volume provisioning for local and replicated storage; no software capacity or volume-count quota.",
+    "watch_out": "Requires a managed or self-operated Kubernetes cluster and disks; storage, compute, backups and network transfer are not included. Replicated engines have node and kernel prerequisites.",
+    "pricing_url": "https://openebs.io/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
