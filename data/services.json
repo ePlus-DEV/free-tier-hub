@@ -9549,5 +9549,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ironclad-rivet-local",
+    "name": "Ironclad Rivet Open-Source AI Agent IDE",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed desktop visual IDE and TypeScript runtime for designing, debugging and running AI-agent/prompt-chain graphs locally; no Rivet software seat or workflow usage charge.",
+    "watch_out": "LLM calls, embeddings, speech APIs, remote execution and storage are not included and may require paid third-party API keys. This is the Ironclad desktop IDE, not the separate Rivet Actors orchestration product.",
+    "pricing_url": "https://github.com/Ironclad/rivet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
