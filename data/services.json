@@ -9406,5 +9406,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "grafana-k6-open-source-local",
+    "name": "Grafana k6 Open-Source Load Testing",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 open-source CLI for JavaScript-based performance and load testing on your own machine or CI runner; no software test-run or virtual-user quota.",
+    "watch_out": "Generating load uses your own CPU, network and CI resources; target service usage and bandwidth may be billed. Grafana Cloud k6 hosted tests and enterprise features are separate paid offerings; AGPL-3.0 terms apply.",
+    "pricing_url": "https://github.com/grafana/k6",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
