@@ -9198,5 +9198,18 @@
     "commercial_use": "no",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "apache-activemq-artemis-self-hosted",
+    "name": "Apache ActiveMQ Artemis Open-Source Broker",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 message broker for self-managed queues and topics; AMQP, MQTT, STOMP and JMS support; no vendor-imposed message quota.",
+    "watch_out": "Requires your own Java/Docker host, persistent storage, security configuration and monitoring; infrastructure and operations are not free. Not a managed cloud allowance.",
+    "pricing_url": "https://artemis.apache.org/components/artemis/documentation/latest/docker.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
