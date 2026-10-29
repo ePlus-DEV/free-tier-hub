@@ -9343,6 +9343,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "sst-open-source-framework",
+    "name": "SST Open-Source Serverless Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed SST CLI and TypeScript components for building and deploying serverless/full-stack apps on your own cloud infrastructure; no SST CLI usage quota.",
+    "watch_out": "SST software is free, not hosted compute. AWS/Cloudflare and other provider resources, storage, networking and optional SST Console usage can incur charges; provider accounts and billing may be required. License applies to the framework, not third-party infrastructure.",
+    "pricing_url": "https://github.com/anomalyco/sst",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "nvidia-triton-inference-server",
+    "name": "NVIDIA Triton Inference Server Open Source",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source inference server for serving TensorRT, ONNX, PyTorch, TensorFlow and other models over HTTP/gRPC with dynamic batching; no software request quota.",
+    "watch_out": "Run and pay for your own CPU/GPU machines, model weights, networking and storage; no hosted inference credits included. Some optimized backends, hardware drivers and NVIDIA AI Enterprise services have separate licenses or costs.",
+    "pricing_url": "https://github.com/triton-inference-server/server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "swe-agent-local",
     "name": "SWE-agent Open-Source Coding Agent",
     "category": "ai-assistants",
