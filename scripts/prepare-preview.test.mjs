@@ -17,6 +17,7 @@ test('preview localizes nested links, keeps production canonical, removes analyt
     fs.writeFileSync(path.join(assets, 'site.css'), 'body{}');
     fs.writeFileSync(path.join(root, 'index.html'),
       '<meta name="robots" content="index,follow">' +
+      '<meta name="fth-analytics" content="G-9YPGG0XEZV">' +
       '<link rel="canonical" href="' + URL + '">' +
       '<link rel="stylesheet" href="' + URL + 'assets/site.css">' +
       '<script src="' + URL + 'assets/site.js"></script>' +
@@ -40,7 +41,7 @@ test('preview localizes nested links, keeps production canonical, removes analyt
     assert.ok(page.includes('action="../../index.html#explore"'));
     assert.match(page, /rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/service\/vercel\/"/);
     assert.match(home, /name="robots" content="noindex,nofollow"/);
-    assert.doesNotMatch(home, /googletagmanager\.com/);
+    assert.doesNotMatch(home, /googletagmanager\.com|fth-analytics/);
     assert.doesNotMatch(page, /gtag\('config'/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
