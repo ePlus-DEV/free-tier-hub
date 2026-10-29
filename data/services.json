@@ -9120,5 +9120,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "lunr-js-local",
+    "name": "Lunr.js Local Full-Text Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed full-text search library for browsers and Node.js; fielded search, fuzzy matching and language support with no hosted query quota.",
+    "watch_out": "Client/server application must build and store its own search index; no hosted search infrastructure is included. Repository development is infrequent and large indexes use application memory.",
+    "pricing_url": "https://lunrjs.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
