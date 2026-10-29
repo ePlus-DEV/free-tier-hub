@@ -8782,5 +8782,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
+  },
+  {
+    "id": "acme-dns-self-hosted",
+    "name": "acme-dns Open-Source ACME Challenge DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted DNS server and HTTPS API for automated ACME DNS-01 TXT challenges; supports SQLite or PostgreSQL backends.",
+    "watch_out": "Requires your own DNS-capable server, port 53, domain NS/CNAME delegation and HTTPS API security; hosting, domains and any external CA/service costs are not included. Not a general managed DNS free plan.",
+    "pricing_url": "https://github.com/acme-dns/acme-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
