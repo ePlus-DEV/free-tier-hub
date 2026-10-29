@@ -9250,5 +9250,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "aegis-authenticator-local",
+    "name": "Aegis Authenticator Open-Source Android 2FA",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 Android HOTP/TOTP authenticator with encrypted local vault, biometric/password unlock, encrypted backups and no subscription or token-count limit.",
+    "watch_out": "Android app runs locally and does not provide managed authentication hosting or cross-device cloud sync; backup and recovery are your responsibility. GPL-3.0 redistribution obligations apply; compatible with standard TOTP/HOTP services.",
+    "pricing_url": "https://github.com/beemdevelopment/Aegis",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
