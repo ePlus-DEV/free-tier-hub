@@ -9109,6 +9109,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "sqlite-vec-local",
+    "name": "sqlite-vec Local Vector Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free MIT/Apache-2.0 dual-licensed SQLite extension for local float, int8 and binary vector similarity search; no metered vendor service.",
+    "watch_out": "Pre-v1 project; breaking API changes are possible. Requires a SQLite environment that permits loading extensions; local compute/storage and any external embedding APIs are not included.",
+    "pricing_url": "https://github.com/asg017/sqlite-vec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "lunr-js-local",
     "name": "Lunr.js Local Full-Text Search",
     "category": "search",
