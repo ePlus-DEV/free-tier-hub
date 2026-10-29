@@ -9211,5 +9211,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "node-red-self-hosted",
+    "name": "Node-RED Open-Source Flow Automation",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 flow-based event and webhook automation runtime with HTTP/MQTT nodes and visual editor; unlimited self-managed flows subject to your own resources.",
+    "watch_out": "Self-host with Node.js or Docker and secure the editor and endpoints; server, storage and third-party API costs are separate. Community nodes may have different licenses; hosted FlowFuse is a separate offering.",
+    "pricing_url": "https://nodered.org/docs/getting-started/docker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
