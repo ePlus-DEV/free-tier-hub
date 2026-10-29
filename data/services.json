@@ -8899,5 +8899,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dapr-runtime-self-hosted",
+    "name": "Dapr Open Source Runtime",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed distributed-application runtime with service invocation, pub/sub, state management, jobs and durable workflows; no vendor software usage quota.",
+    "watch_out": "Run Dapr sidecars and supporting components on infrastructure you operate. Kubernetes/VMs, message brokers, databases and managed cloud integrations can incur charges; this is not a vendor-hosted free compute tier.",
+    "pricing_url": "https://github.com/dapr/dapr",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
