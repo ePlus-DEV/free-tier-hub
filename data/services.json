@@ -9265,6 +9265,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "foundationdb-open-source-self-hosted",
+    "name": "FoundationDB Open-Source Distributed Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source transactional distributed ordered key-value database with ACID transactions, multi-node deployment and no vendor-enforced query, user or storage quota for self-hosting.",
+    "watch_out": "You must operate servers, disks, cluster coordination, backups, security and monitoring; infrastructure and optional commercial support are not included. Follow Apache-2.0 license notice requirements; this is not a free managed FoundationDB cloud instance.",
+    "pricing_url": "https://github.com/apple/foundationdb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "keepassxc-local-password-manager",
+    "name": "KeePassXC Open-Source Password Manager",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-2.0/GPL-3.0 cross-platform offline password manager for Windows, macOS and Linux, using encrypted KeePass-compatible local vault files, password generation and browser integration; no vendor account or password-count quota.",
+    "watch_out": "Stores the vault locally; you must handle backups, device synchronization, recovery and security updates. No hosted password-sync service is included. GPL redistribution obligations apply to modified/distributed builds; hardware keys and optional cloud sync providers can cost extra.",
+    "pricing_url": "https://github.com/keepassxreboot/keepassxc",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "cleanbrowsing-free-dns-filters",
     "name": "CleanBrowsing Free DNS Filters",
     "category": "dns-cdn",
