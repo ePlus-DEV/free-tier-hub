@@ -9159,5 +9159,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "hybrid"
+  },
+  {
+    "id": "onedev-open-source-cicd",
+    "name": "OneDev Open Source CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted Git and CI/CD platform; pipelines, build agents, code review and package registries without a software usage quota.",
+    "watch_out": "Runs on your own server or Kubernetes; CPU, storage and runner costs are not included. Enterprise-only features are separately licensed; use the open-source edition. Official repository and license: https://github.com/theonedev/onedev",
+    "pricing_url": "https://github.com/theonedev/onedev",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
