@@ -8834,5 +8834,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "livegrep-open-source-code-search",
+    "name": "Livegrep Open-Source Code Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "BSD-style open-source regex code search for large source repositories; self-hosted indexing backend and web UI with no software license or per-search fee.",
+    "watch_out": "Requires Bazel build or your own container deployment, separate indexing/search processes, and self-managed CPU, RAM, storage and repository access; hosting costs are not included. This is not a managed hosted search tier.",
+    "pricing_url": "https://github.com/livegrep/livegrep",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
