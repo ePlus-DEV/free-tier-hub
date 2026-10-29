@@ -9003,5 +9003,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "grafana-pyroscope-self-hosted",
+    "name": "Grafana Pyroscope Open-Source Continuous Profiling",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted AGPL-3.0 continuous profiling server for CPU, memory and application performance with profiling SDK/OTLP ingestion and Grafana visualization; no vendor software ingestion quota.",
+    "watch_out": "Pyroscope 2.0 uses object storage for profiles; storage, compute, instrumentation and network traffic are user-provided and may cost extra. AGPL network-source obligations apply to modified versions; Grafana Cloud is a separately billed offering.",
+    "pricing_url": "https://github.com/grafana/pyroscope",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
