@@ -8927,6 +8927,45 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "sops-local-secrets",
+    "name": "SOPS Open Source Secrets Encryption",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source local CLI encrypts YAML, JSON, ENV, INI and binary secrets using age, PGP or cloud KMS; no per-file software quota.",
+    "watch_out": "Cloud KMS providers may charge for key operations; local age/PGP encryption avoids paid KMS. Safeguard private keys and plaintext, including CI logs and temporary files. MPL-2.0 redistribution obligations apply; SOPS does not provide hosted key management.",
+    "pricing_url": "https://getsops.io/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "nuclei-open-source-local",
+    "name": "ProjectDiscovery Nuclei Open Source",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local vulnerability scanner using community YAML templates for authorized HTTP, DNS, TCP, SSL and other security checks; no vendor software scan quota.",
+    "watch_out": "Only scan assets you own or are explicitly authorized to assess. Treat third-party templates as untrusted checks; some may execute scripts or use headless browsers. Update the scanner/templates and throttle requests to avoid disruption. Hosted ProjectDiscovery services and CI compute are separate.",
+    "pricing_url": "https://github.com/projectdiscovery/nuclei",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "osv-scanner-local",
+    "name": "Google OSV-Scanner (Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI scans project dependencies, lockfiles and container images against known OSV vulnerabilities; no vendor software seat or scan quota.",
+    "watch_out": "Run locally or in your own CI; CI compute and storage may cost extra. Online scans query OSV.dev/deps.dev with dependency metadata; offline mode needs downloaded databases. Guided remediation can execute package-manager scripts.",
+    "pricing_url": "https://github.com/google/osv-scanner",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "semgrep-community-local",
     "name": "Semgrep Community Edition",
     "category": "auth-security",
