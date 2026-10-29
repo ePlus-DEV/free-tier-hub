@@ -9029,5 +9029,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-tomcat-self-hosted",
+    "name": "Apache Tomcat Open Source",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Java web application server for Jakarta Servlet, Pages and WebSocket; no software-enforced app or request quota.",
+    "watch_out": "Self-managed Java runtime, server, security updates and TLS setup required; infrastructure and third-party services are not free.",
+    "pricing_url": "https://tomcat.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
