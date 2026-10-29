@@ -9081,5 +9081,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "thanos-prometheus-metrics",
+    "name": "Thanos Open Source Metrics",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Prometheus-compatible metrics querying, high availability and long-term retention; no software ingest or retention quota.",
+    "watch_out": "Self-hosted components require Prometheus and compute; object storage, network egress and long-term retention incur infrastructure/provider costs.",
+    "pricing_url": "https://thanos.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
