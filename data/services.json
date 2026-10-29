@@ -8875,6 +8875,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "quartz-scheduler-local",
+    "name": "Quartz Scheduler (Java OSS)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Java job-scheduling library; cron and calendar triggers, persistent jobs and clustering; no vendor per-job or per-project quota.",
+    "watch_out": "Embedded in an application rather than a hosted scheduler; a database, worker runtime, servers and operations are supplied and paid for separately. Commercial use must comply with Apache-2.0 notices.",
+    "pricing_url": "https://www.quartz-scheduler.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "hookrun-self-hosted",
+    "name": "HookRun Webhook Action Engine",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook action engine; YAML routing, token/HMAC/IP checks, command and script execution, forwarding, retries and hot reload; no software usage quota.",
+    "watch_out": "Requires an operator-managed server and TLS/reverse proxy. Webhook-triggered shell commands can be dangerous: validate signatures, restrict privileges and isolate scripts; hosting and network costs are separate.",
+    "pricing_url": "https://github.com/bluvenr/hookrun",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dapr-runtime-self-hosted",
     "name": "Dapr Open Source Runtime",
     "category": "serverless",
