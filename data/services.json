@@ -8784,6 +8784,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "acme-dns-self-hosted",
+    "name": "acme-dns Open-Source ACME Challenge DNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted DNS server and HTTPS API for automated ACME DNS-01 TXT challenges; supports SQLite or PostgreSQL backends.",
+    "watch_out": "Requires your own DNS-capable server, port 53, domain NS/CNAME delegation and HTTPS API security; hosting, domains and any external CA/service costs are not included. Not a general managed DNS free plan.",
+    "pricing_url": "https://github.com/acme-dns/acme-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "maradns-self-hosted",
+    "name": "MaraDNS Open-Source DNS Server",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause open-source authoritative DNS server with Deadwood recursive resolver; no software subscription, zone or query billing.",
+    "watch_out": "Requires self-managed DNS infrastructure, domain delegation, security updates and monitoring. Hosting and network costs are separate; no managed DNS service or uptime SLA is included.",
+    "pricing_url": "https://maradns.samiam.org/license.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dnscrypt-proxy-local",
     "name": "DNSCrypt dnscrypt-proxy (Open Source)",
     "category": "dns-cdn",
