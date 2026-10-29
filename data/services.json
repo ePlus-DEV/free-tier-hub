@@ -9562,5 +9562,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "tunnelmole-self-hosted",
+    "name": "Tunnelmole Open-Source Self-Hosted Tunnels",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Self-hostable reverse-tunneling service and CLI for exposing local HTTP servers through a public URL, without software usage quotas; server AGPL-3.0 and client MIT.",
+    "watch_out": "You supply and secure the public server, domain, bandwidth and TLS reverse proxy; the self-hosted server has no native HTTPS. AGPL-3.0 network-use obligations apply to modified server code; vendor-hosted service and paid custom domains are not part of this self-hosted offering.",
+    "pricing_url": "https://github.com/robbie-cahill/tunnelmole-service",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
