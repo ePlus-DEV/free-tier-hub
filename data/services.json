@@ -9538,6 +9538,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "socket-io-self-hosted",
+    "name": "Socket.IO Open-Source Realtime Server",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js real-time bidirectional messaging library/server and clients, with no license fee, seat cap or software event quota when operated on your own infrastructure.",
+    "watch_out": "You run and secure the Socket.IO server, TLS, scaling adapter and network; compute, bandwidth, Redis and optional hosted messaging providers are not included. This is not a vendor-operated free messaging cloud plan.",
+    "pricing_url": "https://github.com/socketio/socket.io",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ironclad-rivet-local",
+    "name": "Ironclad Rivet Open-Source AI Agent IDE",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed desktop visual IDE and TypeScript runtime for designing, debugging and running AI-agent/prompt-chain graphs locally; no Rivet software seat or workflow usage charge.",
+    "watch_out": "LLM calls, embeddings, speech APIs, remote execution and storage are not included and may require paid third-party API keys. This is the Ironclad desktop IDE, not the separate Rivet Actors orchestration product.",
+    "pricing_url": "https://github.com/Ironclad/rivet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "tunnelmole-self-hosted",
     "name": "Tunnelmole Open-Source Self-Hosted Tunnels",
     "category": "tunneling-networking",
