@@ -8823,6 +8823,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "kipstats-free-analytics",
+    "name": "Kipstats Free Web Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free forever for 1 website and up to 10,000 pageviews per month; includes friction detection, custom events, funnels, REST API and CSV export.",
+    "watch_out": "When monthly pageviews exceed 10,000, collection pauses until the next month or upgrade; existing data remains. Free plan is marketed for personal sites/early projects; commercial eligibility is not explicit. EU-hosted, no self-hosted edition.",
+    "pricing_url": "https://kipstats.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "openmeter-oss-self-hosted",
+    "name": "OpenMeter Open-Source Usage Metering",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source metering and billing infrastructure for usage events, real-time aggregation, entitlements, pricing and usage limits; no software license fee.",
+    "watch_out": "Requires your own OpenMeter services and dependencies such as Kafka, ClickHouse and PostgreSQL; infrastructure, payment processing and tax integrations cost extra. Managed Kong Konnect Metering & Billing is a separate paid offering; Helm chart is development-oriented.",
+    "pricing_url": "https://openmeter.io/about",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "zoekt-open-source-code-search",
     "name": "Zoekt Open-Source Code Search",
     "category": "search",
