@@ -202,6 +202,10 @@
   function updateFilterCount() {
     if (!filterCount) return;
     var count = Number(!!hostingModel) + Number(!!(mobileCategory && mobileCategory.value));
+    if (window.matchMedia("(max-width: 680px)").matches) {
+      count += Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked));
+    }
+    if (filterToggle) filterToggle.setAttribute("aria-label", count ? "Filters, " + count + " active" : "Filters");
     filterCount.textContent = String(count);
     filterCount.hidden = count === 0;
   }
@@ -219,6 +223,24 @@
     document.querySelectorAll("[data-filter-category]")
   );
   if (!search || !grid || !count || !empty) return;
+
+  // Keep the same checkbox inputs/state owners when moving them into the phone sheet.
+  var quickFilters = document.querySelector(".quick-filters");
+  var quickFiltersHome = document.createComment("quick filters home");
+  if (quickFilters) quickFilters.before(quickFiltersHome);
+  var mobileToolbarMedia = window.matchMedia("(max-width: 680px)");
+  function compactToolbar() {
+    if (quickFilters) {
+      if (mobileToolbarMedia.matches) {
+        advancedFilters.insertBefore(quickFilters, document.getElementById("filter-show-results"));
+      } else quickFiltersHome.parentNode.insertBefore(quickFilters, quickFiltersHome.nextSibling);
+    }
+    search.placeholder = mobileToolbarMedia.matches ? "Search services…" : "Search services, categories, or keywords";
+    updateFilterCount();
+  }
+  compactToolbar();
+  if (mobileToolbarMedia.addEventListener) mobileToolbarMedia.addEventListener("change", compactToolbar);
+  else mobileToolbarMedia.addListener(compactToolbar);
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
   var category = "";
