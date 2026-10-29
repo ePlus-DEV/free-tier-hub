@@ -8821,5 +8821,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "kipstats-free-analytics",
+    "name": "Kipstats Free Web Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free forever for 1 website and up to 10,000 pageviews per month; includes friction detection, custom events, funnels, REST API and CSV export.",
+    "watch_out": "When monthly pageviews exceed 10,000, collection pauses until the next month or upgrade; existing data remains. Free plan is marketed for personal sites/early projects; commercial eligibility is not explicit. EU-hosted, no self-hosted edition.",
+    "pricing_url": "https://kipstats.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
