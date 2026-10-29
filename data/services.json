@@ -8834,5 +8834,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "openmeter-oss-self-hosted",
+    "name": "OpenMeter Open-Source Usage Metering",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source metering and billing infrastructure for usage events, real-time aggregation, entitlements, pricing and usage limits; no software license fee.",
+    "watch_out": "Requires your own OpenMeter services and dependencies such as Kafka, ClickHouse and PostgreSQL; infrastructure, payment processing and tax integrations cost extra. Managed Kong Konnect Metering & Billing is a separate paid offering; Helm chart is development-oriented.",
+    "pricing_url": "https://openmeter.io/about",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
