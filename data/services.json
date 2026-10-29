@@ -9094,5 +9094,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "traefik-proxy-oss",
+    "name": "Traefik Proxy Open Source",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed reverse proxy and ingress controller for Docker and Kubernetes; automatic service discovery, routing, TLS and load balancing without a software traffic quota.",
+    "watch_out": "Self-hosted proxy requires compute, networking and DNS; infrastructure, certificate DNS providers and optional commercial support are not included. Secure exposed dashboards.",
+    "pricing_url": "https://github.com/traefik/traefik",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
