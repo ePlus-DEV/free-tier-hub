@@ -9445,5 +9445,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "profreehost-free-web-hosting",
+    "name": "ProFreeHost Free PHP Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-for-life hosted PHP 8.2 and MySQL 5.7 web hosting with 5 GB disk space, advertised unlimited bandwidth, free subdomains, a site builder and Softaculous app installer; no forced website ads.",
+    "watch_out": "Shared hosting is subject to provider resource/fair-use restrictions, possible account suspension and PHP/MySQL runtime limits; advertised unlimited transfer is not a dedicated compute or VPS allowance. Verify SSL, backups, uptime and acceptable-use terms before production use.",
+    "pricing_url": "https://profreehost.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
