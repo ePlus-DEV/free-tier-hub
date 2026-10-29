@@ -379,3 +379,7 @@ body.filter-sheet-open{overflow:hidden}
 .quick-filter input{width:14px;height:14px}
 .catalog-toolbar .active-filter-chip,.catalog-toolbar .clear-filters{min-height:30px;padding:5px 8px;font-size:11px}
 }
+
+.card-filter-link{display:inline-block;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px;border-radius:3px}
+.card-filter-link:hover{color:var(--brand-ink);text-decoration-color:currentColor}
+.card-filter-link::before{content:"";position:absolute;inset:-5px -2px}

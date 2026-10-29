@@ -62,6 +62,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
     assert.equal((html.match(/class="official-link"/g) || []).length, entries.length);
+    assert.equal((html.match(/data-card-category=/g) || []).length, entries.length);
+    assert.match(html, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
+    assert.match(html, /data-card-hosting="cloud" href="https:\/\/free-tier\.eplus\.dev\/\?hosting=cloud"/);
     assert.doesNotMatch(html, /href=""/);
     for (const entry of entries) {
       assert.ok(html.includes(`class="official-link" href="${tag(entry.pricing_url)}"`), entry.id);
