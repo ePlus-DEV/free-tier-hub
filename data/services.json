@@ -9044,6 +9044,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "nginx-proxy-manager-self-hosted",
+    "name": "Nginx Proxy Manager",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Docker reverse proxy manager with web UI, proxy hosts, redirections, access lists and Let's Encrypt TLS; no software-enforced traffic quota.",
+    "watch_out": "Requires self-managed Docker host, domain/DNS and port access; infrastructure, bandwidth and optional DNS services cost extra; keep the admin interface protected.",
+    "pricing_url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kilo-code-local-agent",
+    "name": "Kilo Code Open Source Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed AI coding agent for VS Code, JetBrains and CLI; locally installed extension and CLI have no software seat or usage quota.",
+    "watch_out": "AI inference is not included: hosted model tokens, Kilo gateway and cloud agent may be billed; use a compatible locally hosted model to avoid model API fees. Agent can execute commands; review permissions.",
+    "pricing_url": "https://github.com/Kilo-Org/kilocode",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "openebs-kubernetes-storage",
     "name": "OpenEBS Community Storage",
     "category": "storage",
