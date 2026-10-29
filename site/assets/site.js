@@ -132,7 +132,7 @@
   var filterCount = document.getElementById("active-filter-count");
   function updateFilterCount() {
     if (!filterCount) return;
-    var count = Number(!!hostingModel) + Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value));
+    var count = Number(!!hostingModel) + Number(!!(mobileCategory && mobileCategory.value));
     filterCount.textContent = String(count);
     filterCount.hidden = count === 0;
   }
@@ -401,8 +401,6 @@
     if (search.value.trim()) selected.push(["q", 'Search: ' + search.value.trim()]);
     if (category) selected.push(["category", mobileCategory.options[mobileCategory.selectedIndex].text]);
     if (hostingModel) selected.push(["hosting", hostingSelect.options[hostingSelect.selectedIndex].text]);
-    if (noCard.checked) selected.push(["no-card", "No credit card"]);
-    if (commercial.checked) selected.push(["commercial", "Commercial use"]);
     selected.forEach(function (item) {
       var button = document.createElement("button");
       button.type = "button";
