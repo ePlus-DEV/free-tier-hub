@@ -8795,5 +8795,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "maradns-self-hosted",
+    "name": "MaraDNS Open-Source DNS Server",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause open-source authoritative DNS server with Deadwood recursive resolver; no software subscription, zone or query billing.",
+    "watch_out": "Requires self-managed DNS infrastructure, domain delegation, security updates and monitoring. Hosting and network costs are separate; no managed DNS service or uptime SLA is included.",
+    "pricing_url": "https://maradns.samiam.org/license.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
