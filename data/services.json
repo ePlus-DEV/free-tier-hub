@@ -9107,5 +9107,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "vince-self-hosted-analytics",
+    "name": "Vince Self-Hosted Web Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted web analytics; unlimited sites and events subject to server capacity, with cookie-free tracking and a single-binary deployment.",
+    "watch_out": "No vendor-hosted free tier; requires your own server/storage and operations. AGPL-3.0 obligations apply to modified network services; latest upstream release was September 2025.",
+    "pricing_url": "https://github.com/vinceanalytics/vince",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
