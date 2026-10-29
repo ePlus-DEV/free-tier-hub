@@ -8873,5 +8873,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "quartz-scheduler-local",
+    "name": "Quartz Scheduler (Java OSS)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Java job-scheduling library; cron and calendar triggers, persistent jobs and clustering; no vendor per-job or per-project quota.",
+    "watch_out": "Embedded in an application rather than a hosted scheduler; a database, worker runtime, servers and operations are supplied and paid for separately. Commercial use must comply with Apache-2.0 notices.",
+    "pricing_url": "https://www.quartz-scheduler.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
