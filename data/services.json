@@ -9484,5 +9484,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "rudderstack-cloud-free",
+    "name": "RudderStack Cloud Free",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free-forever hosted customer event pipeline with 250,000 events/month, 16 SDK sources, 200+ cloud destinations and up to 10 team members.",
+    "watch_out": "New accounts initially receive a 30-day Growth trial and must choose Free afterward. Free plan has fewer transformations and 3-hour warehouse syncs; data processing can stop after repeated monthly overages. Warehouse/destination provider charges are separate; do not confuse this managed Free plan with Elastic-2.0 self-hosted software.",
+    "pricing_url": "https://www.rudderstack.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
