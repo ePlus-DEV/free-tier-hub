@@ -352,3 +352,11 @@ body.filter-sheet-open{overflow:hidden}
 .select-trigger{min-height:46px;font-size:14px}
 .select-option{min-height:44px}
 }
+
+/* Keep discovery controls available throughout the service list. */
+.catalog-toolbar{position:sticky;top:var(--site-header-height,76px);z-index:30;padding-top:12px;padding-bottom:12px;background:var(--surface);box-shadow:0 8px 12px -12px rgba(10,24,40,.25)}
+@media(max-width:680px){
+.catalog-toolbar{gap:8px;padding-top:8px;padding-bottom:8px}
+.catalog-toolbar .active-filter-chips{flex-wrap:nowrap;overflow-x:auto;padding:2px}
+.catalog-toolbar .active-filter-chip{flex-shrink:0;max-width:85vw}
+}
