@@ -615,14 +615,16 @@
     var shown = Math.min(matched.length, visible);
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.textContent = String(matched.length);
+    totalBadge.textContent = String(cards.length);
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
-    totalLabel.textContent = (matched.length !== cards.length ? "matching " : "") + labelText(matched.length);
+    totalLabel.textContent = "Total services";
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = shown + " shown";
-    count.replaceChildren(totalBadge, totalLabel, shownLabel);
+    shownLabel.textContent = matched.length !== cards.length
+      ? "Showing " + shown + " of " + matched.length + " matches"
+      : "Showing " + shown;
+    count.replaceChildren(totalLabel, totalBadge, shownLabel);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
