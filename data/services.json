@@ -8821,5 +8821,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "zoekt-open-source-code-search",
+    "name": "Zoekt Open-Source Code Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source trigram code search engine with Git repository indexing, web interface, JSON and gRPC search APIs; no software subscription or per-query fee.",
+    "watch_out": "Self-hosted indexing, storage, CPU/RAM, access control and server maintenance are your responsibility; infrastructure and any Git hosting costs are separate. No managed hosted free tier is included.",
+    "pricing_url": "https://github.com/sourcegraph/zoekt",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
