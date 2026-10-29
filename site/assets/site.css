@@ -360,3 +360,22 @@ body.filter-sheet-open{overflow:hidden}
 .catalog-toolbar .active-filter-chips{flex-wrap:nowrap;overflow-x:auto;padding:2px}
 .catalog-toolbar .active-filter-chip{flex-shrink:0;max-width:85vw}
 }
+
+/* Compact phone controls without shrinking editable text below iOS's zoom threshold. */
+@media(max-width:680px){
+.catalog-toolbar{gap:6px;padding-top:6px;padding-bottom:6px}
+.search-filter-row{gap:6px}
+.directory-search{height:38px;padding:0 10px;gap:7px}
+.directory-search input{height:36px;font-size:16px}
+.directory-search svg{width:16px;height:16px}
+.result-controls{gap:6px}
+.result-controls .select-trigger,.result-controls .advanced-filter-toggle{min-height:38px;height:38px;padding:7px 10px;font-size:12px}
+.result-controls .sort-field select{min-height:38px;height:38px;padding:6px 10px}
+.result-controls .select-trigger{gap:8px}
+.category-shortcuts{gap:4px;padding-bottom:2px}
+.category-chip{min-height:32px;padding:6px 8px;font-size:11px}
+.quick-filters{gap:6px}
+.quick-filter{min-height:32px;padding:5px 8px;gap:6px;font-size:11px}
+.quick-filter input{width:14px;height:14px}
+.catalog-toolbar .active-filter-chip,.catalog-toolbar .clear-filters{min-height:30px;padding:5px 8px;font-size:11px}
+}
