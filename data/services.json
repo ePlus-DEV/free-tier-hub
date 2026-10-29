@@ -8925,5 +8925,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "semgrep-community-local",
+    "name": "Semgrep Community Edition",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free LGPL-2.1 local static code analysis engine with community rules, 30+ supported languages, no account required for basic scans and no vendor software scan quota.",
+    "watch_out": "Semgrep-maintained rules have separate rules-license restrictions on competing SaaS and some commercial redistribution; LGPL engine license differs from rule licenses. Pro engine, supply-chain and secrets detection, hosted management and CI resources may cost extra.",
+    "pricing_url": "https://semgrep.dev/products/community-edition/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
