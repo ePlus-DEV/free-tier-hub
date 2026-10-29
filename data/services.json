@@ -9029,5 +9029,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "kilo-code-local-agent",
+    "name": "Kilo Code Open Source Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed AI coding agent for VS Code, JetBrains and CLI; locally installed extension and CLI have no software seat or usage quota.",
+    "watch_out": "AI inference is not included: hosted model tokens, Kilo gateway and cloud agent may be billed; use a compatible locally hosted model to avoid model API fees. Agent can execute commands; review permissions.",
+    "pricing_url": "https://github.com/Kilo-Org/kilocode",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
