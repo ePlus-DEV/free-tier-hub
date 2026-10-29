@@ -9029,5 +9029,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "nginx-proxy-manager-self-hosted",
+    "name": "Nginx Proxy Manager",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Docker reverse proxy manager with web UI, proxy hosts, redirections, access lists and Let's Encrypt TLS; no software-enforced traffic quota.",
+    "watch_out": "Requires self-managed Docker host, domain/DNS and port access; infrastructure, bandwidth and optional DNS services cost extra; keep the admin interface protected.",
+    "pricing_url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
