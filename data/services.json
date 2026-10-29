@@ -9289,5 +9289,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "cleanbrowsing-free-dns-filters",
+    "name": "CleanBrowsing Free DNS Filters",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Three free preset hosted DNS resolvers (Family, Adult and Security filters) with IPv4/IPv6, DNS-over-HTTPS and DNS-over-TLS; no account, subscription or payment card needed.",
+    "watch_out": "Free filters are throttled and non-customizable, with no account dashboard, reporting, per-domain allow/block rules or support. Provider states free service is for parents rather than organizations; business/managed-network plans cost extra.",
+    "pricing_url": "https://cleanbrowsing.org/filters",
+    "credit_card": "no",
+    "commercial_use": "no",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
