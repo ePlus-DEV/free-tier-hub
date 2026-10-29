@@ -9486,6 +9486,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "aws-sam-cli-local",
+    "name": "AWS SAM CLI (Local Serverless Toolkit)",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI to build, package, locally test and debug AWS Lambda/serverless applications using Docker; no software license or CLI usage fee.",
+    "watch_out": "The free CLI is not free AWS hosting: sam deploy, Lambda, API Gateway, CloudFormation-related resources, networking and logs may incur AWS charges and may require a billing account; local Docker and compute are your responsibility.",
+    "pricing_url": "https://github.com/aws/aws-sam-cli",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "paradedb-community-self-hosted",
+    "name": "ParadeDB Community (pg_search)",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 Community PostgreSQL extension providing full-text and hybrid/vector search, BM25 ranking, filtering and aggregations; self-host with no vendor software usage quota.",
+    "watch_out": "Requires a compatible PostgreSQL deployment, your own compute/storage and operational maintenance. AGPL-3.0 source-sharing obligations can apply to modified network-served versions; Enterprise features, commercial licensing and ParadeDB Cloud are separate.",
+    "pricing_url": "https://github.com/paradedb/paradedb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "rudderstack-cloud-free",
     "name": "RudderStack Cloud Free",
     "category": "analytics",
