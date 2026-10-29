@@ -9122,6 +9122,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "lunr-js-local",
+    "name": "Lunr.js Local Full-Text Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed full-text search library for browsers and Node.js; fielded search, fuzzy matching and language support with no hosted query quota.",
+    "watch_out": "Client/server application must build and store its own search index; no hosted search infrastructure is included. Repository development is infrequent and large indexes use application memory.",
+    "pricing_url": "https://lunrjs.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
+    "id": "vince-self-hosted-analytics",
+    "name": "Vince Self-Hosted Web Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted web analytics; unlimited sites and events subject to server capacity, with cookie-free tracking and a single-binary deployment.",
+    "watch_out": "No vendor-hosted free tier; requires your own server/storage and operations. AGPL-3.0 obligations apply to modified network services; latest upstream release was September 2025.",
+    "pricing_url": "https://github.com/vinceanalytics/vince",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "counter-dev-analytics",
     "name": "Counter.dev Free Web Analytics",
     "category": "analytics",
