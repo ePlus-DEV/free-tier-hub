@@ -9484,5 +9484,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "aws-sam-cli-local",
+    "name": "AWS SAM CLI (Local Serverless Toolkit)",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI to build, package, locally test and debug AWS Lambda/serverless applications using Docker; no software license or CLI usage fee.",
+    "watch_out": "The free CLI is not free AWS hosting: sam deploy, Lambda, API Gateway, CloudFormation-related resources, networking and logs may incur AWS charges and may require a billing account; local Docker and compute are your responsibility.",
+    "pricing_url": "https://github.com/aws/aws-sam-cli",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
