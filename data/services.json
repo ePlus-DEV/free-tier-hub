@@ -8990,5 +8990,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "onnx-runtime-local",
+    "name": "Microsoft ONNX Runtime Open-Source Inference Engine",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed cross-platform machine-learning inference runtime with CPU and supported hardware acceleration for ONNX models; no vendor software API quota or license seat fee.",
+    "watch_out": "Run inference on your own devices or infrastructure; model weights, GPU/accelerator hardware, cloud compute and third-party services may cost extra. Some distribution builds collect usage telemetry; model licenses are separate.",
+    "pricing_url": "https://github.com/microsoft/onnxruntime",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
