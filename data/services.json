@@ -8977,5 +8977,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "tile38-self-hosted",
+    "name": "Tile38 Open-Source Geospatial Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed geospatial in-memory database server with real-time geofencing, spatial indexes, Redis RESP/HTTP interfaces and persistence; no vendor software quota or seat fee.",
+    "watch_out": "Operate and secure your own Tile38 server, memory, storage and backups; infrastructure and networking costs are not included. Geofencing webhook destinations and external services may charge separately.",
+    "pricing_url": "https://github.com/tidwall/tile38",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
