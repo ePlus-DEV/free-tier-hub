@@ -821,4 +821,3 @@
   doc.classList.add("js-enabled");
   render();
 })();
-
