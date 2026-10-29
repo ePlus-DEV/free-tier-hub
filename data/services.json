@@ -9445,5 +9445,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "serv00-free-web-hosting",
+    "name": "Serv00 Free Shared Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Provider-operated free shared hosting with 3 GB SSD storage, advertised unlimited transfer, up to 100 websites, 10 MySQL/3 PostgreSQL/3 MongoDB databases, 512 MB RAM and SSH access; free subdomain and no forced ads.",
+    "watch_out": "Not a free VPS or root server. Terms restrict accounts to website/email/repository hosting; VPN, proxy, tunneling and resale are prohibited. Terms state accounts without a proper panel/SSH login for 90 days may be deleted, and backups are not guaranteed. Resource abuse may trigger suspension; commercial website eligibility and payment verification require checking.",
+    "pricing_url": "https://www.serv00.com/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
