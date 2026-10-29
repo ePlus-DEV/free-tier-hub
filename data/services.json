@@ -9393,5 +9393,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "hysteria-quic-proxy-self-hosted",
+    "name": "Hysteria Open-Source QUIC Proxy",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted QUIC/HTTP3 proxy server and client with configurable transport and authentication; unlimited software usage without a subscription.",
+    "watch_out": "Requires an operator-controlled server or VPS, public connectivity, TLS configuration and bandwidth; none are free with the software. Network-provider policies, regional regulations and server security are the operator's responsibility.",
+    "pricing_url": "https://github.com/HyNetworks/hysteria",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
