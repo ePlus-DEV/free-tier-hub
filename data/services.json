@@ -8940,6 +8940,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "nuclei-open-source-local",
+    "name": "ProjectDiscovery Nuclei Open Source",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local vulnerability scanner using community YAML templates for authorized HTTP, DNS, TCP, SSL and other security checks; no vendor software scan quota.",
+    "watch_out": "Only scan assets you own or are explicitly authorized to assess. Treat third-party templates as untrusted checks; some may execute scripts or use headless browsers. Update the scanner/templates and throttle requests to avoid disruption. Hosted ProjectDiscovery services and CI compute are separate.",
+    "pricing_url": "https://github.com/projectdiscovery/nuclei",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
+  },
+  {
     "id": "osv-scanner-local",
     "name": "Google OSV-Scanner (Open Source)",
     "category": "auth-security",
