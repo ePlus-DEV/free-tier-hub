@@ -9536,5 +9536,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "socket-io-self-hosted",
+    "name": "Socket.IO Open-Source Realtime Server",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js real-time bidirectional messaging library/server and clients, with no license fee, seat cap or software event quota when operated on your own infrastructure.",
+    "watch_out": "You run and secure the Socket.IO server, TLS, scaling adapter and network; compute, bandwidth, Redis and optional hosted messaging providers are not included. This is not a vendor-operated free messaging cloud plan.",
+    "pricing_url": "https://github.com/socketio/socket.io",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
