@@ -8925,5 +8925,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "osv-scanner-local",
+    "name": "Google OSV-Scanner (Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI scans project dependencies, lockfiles and container images against known OSV vulnerabilities; no vendor software seat or scan quota.",
+    "watch_out": "Run locally or in your own CI; CI compute and storage may cost extra. Online scans query OSV.dev/deps.dev with dependency metadata; offline mode needs downloaded databases. Guided remediation can execute package-manager scripts.",
+    "pricing_url": "https://github.com/google/osv-scanner",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
