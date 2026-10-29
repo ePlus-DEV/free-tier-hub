@@ -485,6 +485,22 @@
     selectWidgets.forEach(function (widget) { widget.sync(); });
     if (showResults) showResults.textContent = "Show results (" + matched.length + ")";
   }
+  grid.addEventListener("click", function (event) {
+    var link = event.target.closest("[data-card-category], [data-card-hosting]");
+    if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (link.hasAttribute("data-card-category")) {
+      category = link.dataset.cardCategory;
+    } else {
+      hostingModel = link.dataset.cardHosting;
+      hostingSelect.value = hostingModel;
+    }
+    visible = pageSize;
+    render();
+    // Rendering resets pagination, so move keyboard focus to a stable control.
+    // The advanced controls live in a closed dialog; focus the visible Filters button.
+    (filterToggle || search).focus({preventScroll:true});
+  });
   function changeCategory(next) {
     category = next;
     visible = pageSize;
