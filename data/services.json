@@ -9395,6 +9395,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "checkmk-community-self-hosted",
+    "name": "Checkmk Community Open-Source Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0-licensed Checkmk Community monitoring engine, web UI, agent and agentless checks, and community plugins; self-hosted without a subscription or service-count trial expiry.",
+    "watch_out": "Free Community edition differs from paid Pro/Ultimate in advanced automation, performance and support. Requires own Linux host or container, storage and monitoring agents; operating costs and GPL-2.0 obligations apply. No hosted free monitoring allowance.",
+    "pricing_url": "https://github.com/Checkmk/checkmk",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "renovate-oss-self-hosted",
+    "name": "Renovate OSS Self-Hosted Dependency Bot",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 open-source Renovate CLI and bot for automated dependency-update PRs across supported repositories and package managers; no software-imposed repository or PR quota.",
+    "watch_out": "Self-hosting requires your own CI runner, server or container, Git provider token and API rate-limit management. AGPL-3.0 obligations apply; hosted Mend Renovate Community is a separate service and is not an included cloud allowance.",
+    "pricing_url": "https://github.com/renovatebot/renovate",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "hysteria-quic-proxy-self-hosted",
     "name": "Hysteria Open-Source QUIC Proxy",
     "category": "tunneling-networking",
