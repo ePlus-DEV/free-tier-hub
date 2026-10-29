@@ -12,6 +12,75 @@
   } else {
     window.addEventListener("resize", syncHeaderHeight);
   }
+  var consent = null;
+  try { consent = window.localStorage.getItem('fth-consent-v1'); } catch (_error) {}
+  var analyticsLoaded = false;
+  function loadAnalytics() {
+    var config = document.querySelector('meta[name="fth-analytics"]');
+    if (consent !== 'accepted' || analyticsLoaded || !config) return;
+    analyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', config.content);
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(config.content);
+    document.head.appendChild(script);
+  }
+  var notice = document.createElement('section');
+  notice.className = 'cookie-notice';
+  notice.setAttribute('role', 'region');
+  notice.setAttribute('aria-label', 'Cookies and saved preferences');
+  var noticeCopy = document.createElement('p');
+  noticeCopy.textContent = 'Allow cookies & saved preferences? We use browser storage to remember your filters and up to 5 recent searches, and Google Analytics cookies to understand site usage. Your filter history stays in this browser. You can decline and still browse normally.';
+  var noticeActions = document.createElement('div');
+  noticeActions.className = 'cookie-actions';
+  var acceptCookies = document.createElement('button');
+  acceptCookies.type = 'button'; acceptCookies.textContent = 'Allow';
+  var rejectCookies = document.createElement('button');
+  rejectCookies.type = 'button'; rejectCookies.textContent = 'Decline';
+  noticeActions.append(rejectCookies, acceptCookies);
+  notice.append(noticeCopy, noticeActions);
+  notice.hidden = consent === 'accepted' || consent === 'rejected';
+  document.body.appendChild(notice);
+  var cookieSettings = document.createElement('button');
+  cookieSettings.type = 'button'; cookieSettings.className = 'cookie-settings';
+  cookieSettings.textContent = 'Cookie settings';
+  cookieSettings.addEventListener('click', function () { notice.hidden = false; acceptCookies.focus(); });
+  (document.querySelector('footer') || document.body).appendChild(cookieSettings);
+  function chooseConsent(choice) {
+    consent = choice;
+    try {
+      window.localStorage.setItem('fth-consent-v1', choice);
+      if (choice === 'rejected') {
+        ['fth-directory-last', 'fth-directory-history', 'fth-sort'].forEach(function (key) { window.localStorage.removeItem(key); });
+      }
+    } catch (_error) {}
+    notice.hidden = true;
+    cookieSettings.focus({preventScroll:true});
+    window.dispatchEvent(new Event('fth-consent-change'));
+    if (choice === 'rejected') {
+      // Revoke a previously loaded analytics session and remove its first-party cookies.
+      var config = document.querySelector('meta[name="fth-analytics"]');
+      if (config) window['ga-disable-' + config.content] = true;
+      document.cookie.split(';').forEach(function (cookie) {
+        var name = cookie.split('=')[0].trim();
+        if (!/^_ga(?:_|$)/.test(name)) return;
+        var domains = window.location.hostname.split('.');
+        document.cookie = name + '=; Max-Age=0; path=/';
+        while (domains.length > 1) {
+          document.cookie = name + '=; Max-Age=0; path=/; domain=.' + domains.join('.');
+          domains.shift();
+        }
+      });
+      if (analyticsLoaded) window.location.reload();
+    } else loadAnalytics();
+  }
+  acceptCookies.addEventListener('click', function () { chooseConsent('accepted'); });
+  rejectCookies.addEventListener('click', function () { chooseConsent('rejected'); });
+  loadAnalytics();
+
   var menuToggle = document.getElementById("menu-toggle");
   if (menuToggle) {
     doc.classList.add("nav-ready");
@@ -328,6 +397,9 @@
     var state = urlState.read(window.location.href,
       Array.from(mobileCategory.options, function (option) { return option.value; }),
       Array.from(sort.options, function (option) { return option.value; }));
+    applyFilterState(state);
+  }
+  function applyFilterState(state) {
     hostingModel = state.hosting;
     if (hostingSelect) hostingSelect.value = hostingModel;
     category = state.category;
@@ -346,6 +418,7 @@
       noCard: noCard.checked, commercial: commercial.checked
     });
     if (next !== window.location.href) window.history.replaceState(window.history.state, "", next);
+    rememberFilters();
   }
   window.addEventListener("popstate", function () { restoreURL(); render(); });
   function labelText(n) { return n === 1 ? "service" : "services"; }
@@ -394,6 +467,82 @@
   var activeFilters = document.getElementById("active-filters");
   var activeChips = document.getElementById("active-filter-chips");
   var showResults = document.getElementById("filter-show-results");
+  var recentFilters = [];
+  var historyTimer;
+  try {
+    if (consent === 'accepted') {
+      var savedHistory = JSON.parse(window.localStorage.getItem('fth-directory-history') || '[]');
+      if (Array.isArray(savedHistory)) recentFilters = savedHistory.filter(function (item) { return typeof item === 'string' && item.startsWith('?') && item.length < 3000; }).slice(0, 5);
+    }
+  } catch (_error) {}
+  var historyPanel = document.createElement('section');
+  historyPanel.className = 'filter-history';
+  historyPanel.setAttribute('aria-label', 'Recent filters');
+  var historyTitle = document.createElement('strong');
+  historyTitle.textContent = 'Recent filters';
+  var historyList = document.createElement('div');
+  var clearHistory = document.createElement('button');
+  clearHistory.type = 'button'; clearHistory.className = 'history-clear';
+  clearHistory.textContent = 'Clear history';
+  historyPanel.append(historyTitle, historyList, clearHistory);
+  advancedFilters.insertBefore(historyPanel, showResults);
+  function readFilterState(query) {
+    return urlState.read(new URL(query, window.location.origin + '/').href,
+      Array.from(mobileCategory.options, function (option) { return option.value; }),
+      Array.from(sort.options, function (option) { return option.value; }));
+  }
+  function renderHistory() {
+    historyPanel.hidden = consent !== 'accepted' || recentFilters.length === 0;
+    historyList.replaceChildren();
+    recentFilters.forEach(function (query) {
+      var state = readFilterState(query);
+      var parts = [];
+      if (state.q) parts.push('Search: ' + state.q.slice(0, 40));
+      if (state.category) parts.push(Array.from(mobileCategory.options).find(function (option) { return option.value === state.category; }).text);
+      if (state.hosting) parts.push(Array.from(hostingSelect.options).find(function (option) { return option.value === state.hosting; }).text);
+      if (state.noCard) parts.push('No credit card');
+      if (state.commercial) parts.push('Commercial use');
+      if (state.sort !== 'default') parts.push(Array.from(sort.options).find(function (option) { return option.value === state.sort; }).text);
+      var button = document.createElement('button');
+      button.type = 'button'; button.className = 'history-item';
+      button.textContent = parts.join(' · ') || 'All services';
+      button.addEventListener('click', function () {
+        applyFilterState(state); visible = pageSize; render();
+        showResults.focus();
+      });
+      historyList.appendChild(button);
+    });
+  }
+  function rememberFilters() {
+    window.clearTimeout(historyTimer);
+    if (consent !== 'accepted') return;
+    historyTimer = window.setTimeout(function () {
+      if (consent !== 'accepted') return;
+      var state = {q:search.value, category:category, hosting:hostingModel, sort:sort.value, noCard:noCard.checked, commercial:commercial.checked};
+      var query = new URL(urlState.write(window.location.origin + '/', state)).search;
+      if (query) recentFilters = [query].concat(recentFilters.filter(function (item) { return item !== query; })).slice(0, 5);
+      try {
+        window.localStorage.setItem('fth-directory-last', query);
+        window.localStorage.setItem('fth-directory-history', JSON.stringify(recentFilters));
+      } catch (_error) {}
+      renderHistory();
+    }, 700);
+  }
+  clearHistory.addEventListener('click', function () {
+    window.clearTimeout(historyTimer);
+    recentFilters = [];
+    try {
+      window.localStorage.removeItem('fth-directory-history');
+      window.localStorage.removeItem('fth-directory-last');
+    } catch (_error) {}
+    renderHistory(); showResults.focus();
+  });
+  window.addEventListener('fth-consent-change', function () {
+    if (consent !== 'accepted') recentFilters = [];
+    renderHistory(); rememberFilters();
+  });
+  renderHistory();
+
   function renderActiveFilters() {
     if (!activeChips) return;
     activeChips.replaceChildren();
@@ -619,7 +768,6 @@
     });
   });
   if (sort) sort.addEventListener("change", function () {
-    try { window.localStorage.setItem("fth-sort", sort.value); } catch (_error) {}
     visible = pageSize; render();
   });
   [noCard, commercial].forEach(function (filter) {
@@ -662,14 +810,15 @@
     }
   });
   restoreURL();
-  // An explicit shared URL always takes precedence over the local preference.
-  if (!new URL(window.location.href).searchParams.has("sort")) {
+  // A URL carrying any directory state wins over saved local preferences.
+  if (consent === 'accepted' && !['q','category','hosting','sort','no_card','commercial'].some(function (key) { return new URL(window.location.href).searchParams.has(key); })) {
     try {
-      var savedSort = window.localStorage.getItem("fth-sort");
-      if (Array.from(sort.options).some(function (option) { return option.value === savedSort; })) sort.value = savedSort;
+      var lastFilters = window.localStorage.getItem('fth-directory-last');
+      if (lastFilters && lastFilters.startsWith('?') && lastFilters.length < 3000) applyFilterState(readFilterState(lastFilters));
     } catch (_error) {}
   }
   [sort, mobileCategory, hostingSelect].forEach(enhanceSelect);
   doc.classList.add("js-enabled");
   render();
 })();
+

@@ -11,6 +11,8 @@ test('directory exposes unique search/category controls and official sources for
   try {
     const result = build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
+    assert.match(html, /<meta name="fth-analytics" content="G-9YPGG0XEZV">/);
+    assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www\.googletagmanager\.com/);
     const imageURL = 'https://free-tier.eplus.dev/assets/og-image.png';
     for (const page of [html, fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8')]) {
       assert.ok(page.includes(`<meta property="og:image" content="${imageURL}">`));
@@ -132,13 +134,14 @@ test('header search opens and keyboard shortcuts work without a directory grid',
       addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); },
       setAttribute(key, value) { this.attrs[key] = value; },
       focus() { this.focused = true; }, select() { this.selected = true; },
+      append() {}, appendChild() {},
       contains(target) { return target === this; }
     };
   }
   const toggle = element(), panel = element(), input = element(), form = element();
   const elements = { 'header-search-toggle': toggle, 'header-search-panel': panel,
     'header-search': input, 'header-search-form': form };
-  const document = { ...element(), documentElement: { setAttribute() {}, style: { setProperty() {} } },
+  const document = { ...element(), body: element(), createElement: element, documentElement: { setAttribute() {}, style: { setProperty() {} } },
     getElementById(id) { return elements[id] || null; }, querySelector() { return null; }, querySelectorAll() { return []; } };
   const window = { addEventListener() {}, localStorage: { getItem() { return null; } },
     matchMedia() { return { matches: false }; }, location: { href: 'https://free-tier.eplus.dev/service/vercel/' } };

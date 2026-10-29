@@ -128,9 +128,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<link rel="alternate" type="text/plain" title="LLM overview" href="', tag(absolute('llms.txt')), '">',
     '<link rel="alternate" type="text/markdown" title="Agent discovery" href="', tag(absolute('agents.md')), '">',
     '<script type="application/ld+json">', safeJSON(structuredData), '</script>',
-    '<script async src="https://www.googletagmanager.com/gtag/js?id=', GA_ID, '"></script>',
-    '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}',
-    "gtag('js',new Date());gtag('config','", GA_ID, "');</script>",
+    '<meta name="fth-analytics" content="', GA_ID, '">',
     '<script src="', tag(absolute('assets/directory-url.js?v=' + assetVersion('directory-url.js'))), '" defer></script>',
     '<script src="', tag(absolute('assets/site.js?v=' + assetVersion('site.js'))), '" defer></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
@@ -506,3 +504,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     process.exitCode = 1;
   }
 }
+
