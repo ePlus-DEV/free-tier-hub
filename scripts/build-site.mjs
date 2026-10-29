@@ -241,7 +241,7 @@ function homePage(items, absolute, counts) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite"><strong class="result-total">',
-    items.length, ' services</strong></p>',
+    items.length, '</strong><span class="result-label">services</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid">', cards, '</div>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
