@@ -9250,5 +9250,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "nextdns-free-dns",
+    "name": "NextDNS Free DNS Filtering",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "300,000 DNS queries/month with filtering, analytics, unlimited devices and configurations; encrypted DNS options and community support.",
+    "watch_out": "After 300,000 queries/month, DNS resolution continues but blocking, filtering and logging stop until the next allowance period. Business and education subscriptions are separate; commercial eligibility and card requirements for Free are not explicit.",
+    "pricing_url": "https://nextdns.io/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
   }
 ]
