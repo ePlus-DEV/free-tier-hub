@@ -9302,5 +9302,18 @@
     "commercial_use": "no",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "k0s-kubernetes-self-hosted",
+    "name": "k0s Open-Source Kubernetes Distribution",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 CNCF-certified Kubernetes distribution with single-node or multi-node clusters, containerd runtime, networking and workload orchestration on your own servers; no vendor software node or workload quota.",
+    "watch_out": "You supply and operate compute, disks, cluster networking, TLS, upgrades, backups and monitoring. Public-cloud instances, load balancers, storage and commercial support are billed separately; this is not a free managed Kubernetes hosting plan. Follow Apache-2.0 notice obligations.",
+    "pricing_url": "https://k0sproject.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
