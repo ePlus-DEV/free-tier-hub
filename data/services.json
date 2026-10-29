@@ -9031,6 +9031,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "apache-tomcat-self-hosted",
+    "name": "Apache Tomcat Open Source",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Java web application server for Jakarta Servlet, Pages and WebSocket; no software-enforced app or request quota.",
+    "watch_out": "Self-managed Java runtime, server, security updates and TLS setup required; infrastructure and third-party services are not free.",
+    "pricing_url": "https://tomcat.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "nginx-proxy-manager-self-hosted",
+    "name": "Nginx Proxy Manager",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Docker reverse proxy manager with web UI, proxy hosts, redirections, access lists and Let's Encrypt TLS; no software-enforced traffic quota.",
+    "watch_out": "Requires self-managed Docker host, domain/DNS and port access; infrastructure, bandwidth and optional DNS services cost extra; keep the admin interface protected.",
+    "pricing_url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "kilo-code-local-agent",
     "name": "Kilo Code Open Source Agent",
     "category": "ai-assistants",
