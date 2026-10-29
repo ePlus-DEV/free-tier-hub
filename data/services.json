@@ -8992,6 +8992,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "longhorn-self-hosted",
+    "name": "Longhorn Open-Source Kubernetes Block Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes distributed block storage with persistent volumes, synchronous replication, snapshots and backups; no vendor software capacity quota.",
+    "watch_out": "Requires a Kubernetes cluster and sufficient node disks, CPU, networking and backup targets; cloud disks and object-storage backup traffic may incur charges. Replica count increases physical storage consumption.",
+    "pricing_url": "https://github.com/longhorn/longhorn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "grafana-pyroscope-self-hosted",
+    "name": "Grafana Pyroscope Open-Source Continuous Profiling",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted AGPL-3.0 continuous profiling server for CPU, memory and application performance with profiling SDK/OTLP ingestion and Grafana visualization; no vendor software ingestion quota.",
+    "watch_out": "Pyroscope 2.0 uses object storage for profiles; storage, compute, instrumentation and network traffic are user-provided and may cost extra. AGPL network-source obligations apply to modified versions; Grafana Cloud is a separately billed offering.",
+    "pricing_url": "https://github.com/grafana/pyroscope",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "onnx-runtime-local",
     "name": "Microsoft ONNX Runtime Open-Source Inference Engine",
     "category": "ai-ml",
