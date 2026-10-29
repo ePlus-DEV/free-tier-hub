@@ -383,3 +383,53 @@ body.filter-sheet-open{overflow:hidden}
 .card-filter-link{display:inline-block;position:relative;color:inherit;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px;border-radius:3px}
 .card-filter-link:hover{color:var(--brand-ink);text-decoration-color:currentColor}
 .card-filter-link::before{content:"";position:absolute;inset:-5px -2px}
+
+
+.cookie-notice{position:fixed;inset:auto 16px 16px;z-index:1100;display:flex;align-items:center;gap:16px;max-width:960px;margin:auto;padding:14px 18px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow-hover)}
+.cookie-notice p{margin:0;flex:1;font-size:12px;line-height:1.6}
+.cookie-actions{display:flex;gap:8px;flex-shrink:0}
+.cookie-actions button,.cookie-settings,.history-clear{min-height:36px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--brand-ink);font-size:12px}
+.cookie-actions button:last-child{background:var(--brand);color:#fff;border-color:var(--brand)}
+.cookie-settings{display:block;margin:12px auto}
+.filter-history{padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+.filter-history>strong{display:block;margin-bottom:8px}
+.filter-history>div{display:flex;flex-direction:column;gap:6px}
+.history-item{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface-muted);color:var(--ink-soft);font-size:12px;text-align:left;overflow-wrap:anywhere}
+.history-item:hover{border-color:var(--brand);color:var(--brand-ink)}
+.history-clear{margin-top:8px}
+@media(max-width:680px){.cookie-notice{inset:auto 10px 10px;padding:12px;gap:10px;align-items:stretch;flex-direction:column}.cookie-actions{justify-content:flex-end}}
+
+
+
+/* Keep catalog size and the visible/filtered subset together with explicit labels. */
+.directory-heading{align-items:center;justify-content:space-between;gap:8px 16px}
+.results-meta{display:flex;justify-content:flex-end;flex:1;min-width:0}
+.result-count{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:1px 8px;margin:0;text-align:right}
+.result-label{color:var(--ink-soft);font-size:12px;font-weight:500}
+.result-total{padding:0;border:0;background:none;color:var(--brand-ink);font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;line-height:1.2}
+.result-shown{grid-column:1/-1;color:var(--muted);font-size:11px;line-height:1.5}
+@media(max-width:680px){
+.directory-heading{flex-wrap:nowrap;gap:8px}
+.directory-heading h2{flex-basis:auto;font-size:18px}
+.results-meta{flex-basis:auto}
+.result-count{gap:1px 5px}
+.result-label{font-size:11px}
+.result-total{font-size:19px}
+.result-shown{font-size:10px}
+}
+
+/* One compact phone row; secondary conditions live in the existing filter sheet. */
+@media(max-width:680px){
+.catalog-toolbar .search-filter-row{grid-template-columns:minmax(0,1fr) 152px;gap:6px}
+.catalog-toolbar .result-controls{gap:6px;width:auto}
+.catalog-toolbar .sort-field{flex:1;min-width:0}
+.catalog-toolbar .sort-field .custom-select{width:100%}
+.catalog-toolbar .result-controls .select-trigger{padding:7px 8px;font-size:11px;gap:5px}
+.catalog-toolbar .advanced-filter-toggle{position:relative;flex-shrink:0;width:38px;padding:9px!important}
+.catalog-toolbar .advanced-filter-toggle>span:not(.active-filter-count){display:none}
+.catalog-toolbar .active-filter-count{position:absolute;top:-5px;right:-4px;min-width:17px;height:17px;font-size:10px;border:1px solid var(--surface)}
+.catalog-toolbar .category-bar{display:none}
+.filter-checks .quick-filters{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.filter-checks .quick-filter{min-height:42px;padding:8px 10px;font-size:13px}
+.filter-checks .quick-filter input{width:17px;height:17px}
+}
