@@ -8886,5 +8886,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "hookrun-self-hosted",
+    "name": "HookRun Webhook Action Engine",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook action engine; YAML routing, token/HMAC/IP checks, command and script execution, forwarding, retries and hot reload; no software usage quota.",
+    "watch_out": "Requires an operator-managed server and TLS/reverse proxy. Webhook-triggered shell commands can be dangerous: validate signatures, restrict privileges and isolate scripts; hosting and network costs are separate.",
+    "pricing_url": "https://github.com/bluvenr/hookrun",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
