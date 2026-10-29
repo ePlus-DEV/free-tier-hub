@@ -9354,5 +9354,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "nvidia-triton-inference-server",
+    "name": "NVIDIA Triton Inference Server Open Source",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source inference server for serving TensorRT, ONNX, PyTorch, TensorFlow and other models over HTTP/gRPC with dynamic batching; no software request quota.",
+    "watch_out": "Run and pay for your own CPU/GPU machines, model weights, networking and storage; no hosted inference credits included. Some optimized backends, hardware drivers and NVIDIA AI Enterprise services have separate licenses or costs.",
+    "pricing_url": "https://github.com/triton-inference-server/server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
