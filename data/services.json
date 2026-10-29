@@ -8912,5 +8912,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dramatiq-open-source-self-hosted",
+    "name": "Dramatiq Open Source Task Processing",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free LGPL-licensed Python background task-processing library with RabbitMQ or Redis brokers, workers, retries and middleware; no vendor per-job software quota.",
+    "watch_out": "You operate workers and a RabbitMQ/Redis broker; compute, storage and managed broker services may cost extra. LGPL license obligations apply to redistribution or modified library versions; commercial support is separate.",
+    "pricing_url": "https://github.com/Bogdanp/dramatiq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
