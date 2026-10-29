@@ -8808,5 +8808,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dnscrypt-proxy-local",
+    "name": "DNSCrypt dnscrypt-proxy (Open Source)",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed local DNS proxy with DNSCrypt v2, DNS-over-HTTPS, anonymized DNS, caching, DNS filtering and multi-platform binaries.",
+    "watch_out": "Runs on your own device/router or server; requires a chosen upstream resolver and careful network configuration. Free software does not include a managed DNS service, hosting or paid resolver charges.",
+    "pricing_url": "https://github.com/DNSCrypt/dnscrypt-proxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
