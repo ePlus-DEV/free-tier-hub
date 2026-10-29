@@ -9523,5 +9523,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "scrapy-open-source-local",
+    "name": "Scrapy Open-Source Web Crawler",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause Python web crawling and structured data extraction framework, free for local or self-managed use without a software usage quota.",
+    "watch_out": "You provide your own machine, network and storage; paid proxies, anti-bot services and hosted Zyte Cloud are not included. Respect target websites' terms, robots policies and rate limits.",
+    "pricing_url": "https://github.com/scrapy/scrapy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
