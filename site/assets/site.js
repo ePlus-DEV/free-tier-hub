@@ -132,7 +132,7 @@
   var filterCount = document.getElementById("active-filter-count");
   function updateFilterCount() {
     if (!filterCount) return;
-    var count = Number(!!hostingModel) + Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value)) + Number(!!(sort && sort.value !== "default"));
+    var count = Number(!!hostingModel) + Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked)) + Number(!!(mobileCategory && mobileCategory.value));
     filterCount.textContent = String(count);
     filterCount.hidden = count === 0;
   }
@@ -238,7 +238,6 @@
     if (hostingModel) selected.push(["hosting", hostingSelect.options[hostingSelect.selectedIndex].text]);
     if (noCard.checked) selected.push(["no-card", "No credit card"]);
     if (commercial.checked) selected.push(["commercial", "Commercial use"]);
-    if (sort.value !== "default") selected.push(["sort", sort.options[sort.selectedIndex].text]);
     selected.forEach(function (item) {
       var button = document.createElement("button");
       button.type = "button";
@@ -306,7 +305,7 @@
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
-    if (clear) clear.hidden = !hostingModel && !term && !category && (!sort || sort.value === "default") &&
+    if (clear) clear.hidden = !hostingModel && !term && !category &&
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
@@ -438,7 +437,10 @@
       changeCategory(button.getAttribute("data-filter-category"));
     });
   });
-  if (sort) sort.addEventListener("change", function () { visible = pageSize; render(); });
+  if (sort) sort.addEventListener("change", function () {
+    try { window.localStorage.setItem("fth-sort", sort.value); } catch (_error) {}
+    visible = pageSize; render();
+  });
   [noCard, commercial].forEach(function (filter) {
     if (filter) filter.addEventListener("change", function () { visible = pageSize; updateFilterCount(); render(); });
   });
@@ -458,7 +460,6 @@
     search.value = "";
     if (headerSearch) headerSearch.value = "";
     if (heroSearch) heroSearch.value = "";
-    if (sort) sort.value = "default";
     if (noCard) noCard.checked = false;
     if (commercial) commercial.checked = false;
     updateFilterCount();
@@ -480,6 +481,13 @@
     }
   });
   restoreURL();
+  // An explicit shared URL always takes precedence over the local preference.
+  if (!new URL(window.location.href).searchParams.has("sort")) {
+    try {
+      var savedSort = window.localStorage.getItem("fth-sort");
+      if (Array.from(sort.options).some(function (option) { return option.value === savedSort; })) sort.value = savedSort;
+    } catch (_error) {}
+  }
   doc.classList.add("js-enabled");
   render();
 })();
