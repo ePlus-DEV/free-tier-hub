@@ -9328,5 +9328,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "local"
+  },
+  {
+    "id": "glusterfs-open-source-storage",
+    "name": "GlusterFS Open-Source Distributed File Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "GPLv2/LGPLv3+-licensed open-source distributed network filesystem for self-managed scale-out file storage on commodity servers; no vendor-imposed storage capacity, node or transfer quota for the software.",
+    "watch_out": "Requires your own servers, disks, network, replication, backups, monitoring and security maintenance. Red Hat Gluster Storage commercial product reached EOL in December 2024, distinct from the upstream open-source Gluster project; check upstream release maintenance and GPL/LGPL obligations. No managed storage or SLA is included.",
+    "pricing_url": "https://www.gluster.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
