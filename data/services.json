@@ -9172,5 +9172,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "harness-open-source-self-hosted",
+    "name": "Harness Open Source Developer Platform",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted developer platform with Git hosting, CI/CD pipelines, Gitspaces and artifact registries; no vendor-hosted free compute quota is included.",
+    "watch_out": "Run Docker container or build from source; infrastructure, storage and CI runner capacity are user-funded. Open-source pipeline parity with legacy Drone remains evolving; commercial Harness SaaS plans are separate.",
+    "pricing_url": "https://github.com/harness/harness",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
