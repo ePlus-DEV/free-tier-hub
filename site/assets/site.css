@@ -400,17 +400,20 @@ body.filter-sheet-open{overflow:hidden}
 @media(max-width:680px){.cookie-notice{inset:auto 10px 10px;padding:12px;gap:10px;align-items:stretch;flex-direction:column}.cookie-actions{justify-content:flex-end}}
 
 
-/* A quiet typographic count, with loaded results aligned to the opposite edge. */
-.directory-heading{gap:8px 12px}
-.results-meta{flex:1;min-width:0}
-.result-count{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 5px;margin:0;font-size:13px}
-.result-total{padding:0;border:0;border-radius:0;background:none;color:var(--ink);font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.5}
-.result-label{color:var(--muted);font-size:12px}
-.result-shown{margin-left:auto;padding-left:16px;color:var(--muted);font-size:12px;white-space:nowrap}
+
+/* Keep catalog size and the visible/filtered subset together with explicit labels. */
+.directory-heading{align-items:center;justify-content:space-between;gap:8px 16px}
+.results-meta{display:flex;justify-content:flex-end;flex:1;min-width:0}
+.result-count{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:1px 8px;margin:0;text-align:right}
+.result-label{color:var(--ink-soft);font-size:12px;font-weight:500}
+.result-total{padding:0;border:0;background:none;color:var(--brand-ink);font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;line-height:1.2}
+.result-shown{grid-column:1/-1;color:var(--muted);font-size:11px;line-height:1.5}
 @media(max-width:680px){
-.directory-heading h2{flex-basis:auto;font-size:19px}
+.directory-heading{flex-wrap:nowrap;gap:8px}
+.directory-heading h2{flex-basis:auto;font-size:18px}
 .results-meta{flex-basis:auto}
-.result-total{font-size:14px}
-.result-label,.result-shown{font-size:11px}
-.result-shown{display:none}
+.result-count{gap:1px 5px}
+.result-label{font-size:11px}
+.result-total{font-size:19px}
+.result-shown{font-size:10px}
 }
