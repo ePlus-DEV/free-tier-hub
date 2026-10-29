@@ -9263,5 +9263,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-29",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "foundationdb-open-source-self-hosted",
+    "name": "FoundationDB Open-Source Distributed Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source transactional distributed ordered key-value database with ACID transactions, multi-node deployment and no vendor-enforced query, user or storage quota for self-hosting.",
+    "watch_out": "You must operate servers, disks, cluster coordination, backups, security and monitoring; infrastructure and optional commercial support are not included. Follow Apache-2.0 license notice requirements; this is not a free managed FoundationDB cloud instance.",
+    "pricing_url": "https://github.com/apple/foundationdb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
