@@ -9447,6 +9447,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "profreehost-free-web-hosting",
+    "name": "ProFreeHost Free PHP Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-for-life hosted PHP 8.2 and MySQL 5.7 web hosting with 5 GB disk space, advertised unlimited bandwidth, free subdomains, a site builder and Softaculous app installer; no forced website ads.",
+    "watch_out": "Shared hosting is subject to provider resource/fair-use restrictions, possible account suspension and PHP/MySQL runtime limits; advertised unlimited transfer is not a dedicated compute or VPS allowance. Verify SSL, backups, uptime and acceptable-use terms before production use.",
+    "pricing_url": "https://profreehost.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "aeonfree-free-web-hosting",
+    "name": "AeonFree Free PHP Web Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-forever managed PHP/MySQL website hosting with 5 GB storage, advertised unlimited bandwidth, free subdomain or custom domain, free SSL, FTP and up to 400 MySQL databases; no required payment card or forced website ads.",
+    "watch_out": "Shared-hosting fair-use and account resource limits still apply; unlimited bandwidth is not guaranteed dedicated capacity. Official pages disagree on supported PHP/MySQL versions and disk quotas, so confirm actual account limits and security-supported runtimes before deployment. No root/VPS access included.",
+    "pricing_url": "https://aeonfree.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "serv00-free-web-hosting",
     "name": "Serv00 Free Shared Web Hosting",
     "category": "app-hosting",
