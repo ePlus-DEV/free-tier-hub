@@ -8990,5 +8990,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "longhorn-self-hosted",
+    "name": "Longhorn Open-Source Kubernetes Block Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes distributed block storage with persistent volumes, synchronous replication, snapshots and backups; no vendor software capacity quota.",
+    "watch_out": "Requires a Kubernetes cluster and sufficient node disks, CPU, networking and backup targets; cloud disks and object-storage backup traffic may incur charges. Replica count increases physical storage consumption.",
+    "pricing_url": "https://github.com/longhorn/longhorn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
