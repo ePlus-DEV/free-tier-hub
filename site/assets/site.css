@@ -398,3 +398,9 @@ body.filter-sheet-open{overflow:hidden}
 .history-item:hover{border-color:var(--brand);color:var(--brand-ink)}
 .history-clear{margin-top:8px}
 @media(max-width:680px){.cookie-notice{inset:auto 10px 10px;padding:12px;gap:10px;align-items:stretch;flex-direction:column}.cookie-actions{justify-content:flex-end}}
+
+/* Give the result total a compact visual anchor beside the directory heading. */
+.result-count{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px}
+.result-total{display:inline-flex;align-items:center;min-height:30px;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--brand-tint);color:var(--brand-ink);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.5}
+.result-shown{color:var(--muted);font-size:12px}
+@media(max-width:680px){.result-total{min-height:28px;padding:3px 8px;font-size:13px}.result-count{gap:6px}.result-shown{font-size:11px}}
