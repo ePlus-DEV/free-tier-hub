@@ -8925,5 +8925,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sops-local-secrets",
+    "name": "SOPS Open Source Secrets Encryption",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source local CLI encrypts YAML, JSON, ENV, INI and binary secrets using age, PGP or cloud KMS; no per-file software quota.",
+    "watch_out": "Cloud KMS providers may charge for key operations; local age/PGP encryption avoids paid KMS. Safeguard private keys and plaintext, including CI logs and temporary files. MPL-2.0 redistribution obligations apply; SOPS does not provide hosted key management.",
+    "pricing_url": "https://getsops.io/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
