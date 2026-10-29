@@ -9224,5 +9224,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-rocketmq-self-hosted",
+    "name": "Apache RocketMQ Open-Source Messaging",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed message and event streaming broker, self-deployed on servers or Docker; no vendor-set message quota for open-source deployment.",
+    "watch_out": "You operate NameServer, brokers, storage, networking and monitoring; Java runtime and infrastructure costs are separate. No free managed cloud instance is included.",
+    "pricing_url": "https://rocketmq.apache.org/docs/quickStart/01quickstart/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "self-hosted"
   }
 ]
