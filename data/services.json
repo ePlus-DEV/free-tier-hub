@@ -9341,5 +9341,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-29",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "swe-agent-local",
+    "name": "SWE-agent Open-Source Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local software-engineering agent that works on repository issues and coding tasks using a user-selected language model; no license-imposed usage quota.",
+    "watch_out": "Software is free but hosted LLM/API tokens, local GPU/CPU, Docker execution and CI may incur costs; no bundled free model inference or managed agent service. Review sandbox permissions and model/provider terms.",
+    "pricing_url": "https://github.com/SWE-agent/SWE-agent",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-29",
+    "deployment_model": "local"
   }
 ]
