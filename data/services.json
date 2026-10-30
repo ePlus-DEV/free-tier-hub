@@ -9770,5 +9770,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "nona-remote-config-self-hosted",
+    "name": "Nona Remote Config & Feature Flags (Self-hosted)",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Docker service for environment-scoped feature flags and remote configuration, with REST API, dashboard and SQLite/libSQL; no vendor-imposed software seat, flag or request quota.",
+    "watch_out": "You operate and pay for Docker/server, persistent storage, networking, backups and TLS; not a free vendor-hosted service. No built-in per-user targeting, percentage rollout or experiment analytics; follow Apache-2.0 notice requirements.",
+    "pricing_url": "https://github.com/Ryware/nona-config",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
