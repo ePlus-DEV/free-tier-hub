@@ -9770,5 +9770,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "droply-free-static-hosting",
+    "name": "Droply Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 static site on a droply.id HTTPS subdomain; 25 MB total storage, 5,000 visits/month, 5 GB bandwidth/month, 15 publishes/day.",
+    "watch_out": "Free sites show Droply branding and are served noindex/nofollow; no custom domain or server-side code. Over-limit sites show a notice until quota resets, without automatic overage billing. Commercial-use terms not independently confirmed.",
+    "pricing_url": "https://droply.host/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
   }
 ]
