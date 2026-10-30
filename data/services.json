@@ -9770,5 +9770,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "wagle-feature-flags-free",
+    "name": "Wagle Feature Flags Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Hosted $0/month Free plan with 500,000 SDK configuration syncs per month; unlimited local evaluations, flags, segments, projects, environments and seats; no credit card or trial expiry.",
+    "watch_out": "Hosted-only; no self-hosted offering. SDKs poll for configuration (30-second default); syncs count against monthly allowance. Provider says no overage but may move accounts to another plan when exceeding quota; verify upgrade consent and business-use terms before relying on production billing. Free tier has no support SLA.",
+    "pricing_url": "https://wagle.sh/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
   }
 ]
