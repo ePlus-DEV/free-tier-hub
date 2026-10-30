@@ -10074,5 +10074,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "rq-python-redis-queue",
+    "name": "RQ Redis Queue (Python OSS)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause-licensed Python job queue and worker library for Redis or Valkey with background execution, scheduled jobs and prioritized queues; no software-imposed monthly job, worker or queue limit.",
+    "watch_out": "Requires a self-operated Redis >=5 or Valkey >=7.2 broker and Python workers; server, compute, persistence, backups, monitoring and networking are not included. This is not a free managed Redis service; paid Tidelift support is separate.",
+    "pricing_url": "https://github.com/rq/rq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
