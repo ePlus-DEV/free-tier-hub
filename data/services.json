@@ -9822,5 +9822,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "mwmbl-search-api-free",
+    "name": "Mwmbl Search API Free",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "2,000 search API requests/month with free API key at 5 req/s; anonymous access offers 1,000 requests/month at 1 req/s; monthly reset.",
+    "watch_out": "Free API key requires email; anonymous quota is IP-bound. Requests above free quota return HTTP 429 unless pay-as-you-go is explicitly enabled; paid overage costs $5 per 1,000 requests with a spend cap. Commercial terms not independently confirmed.",
+    "pricing_url": "https://developer.mwmbl.org/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
   }
 ]
