@@ -2,12 +2,16 @@
 (function (root) {
   "use strict";
   root.FreeTierDirectoryURL = {
+    matchesOffer: function (plan, offer) {
+      return !offer || (["ongoing", "monthly-credit"].includes(offer) && plan === offer);
+    },
     read: function (href, categories, sorts) {
       var params = new URL(href).searchParams;
       var category = params.get("category") || "";
       var sort = params.get("sort") || "default";
       return {
         hosting: ["cloud", "self-hosted", "hybrid", "local", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
+        offer: ["ongoing", "monthly-credit"].includes(params.get("offer")) ? params.get("offer") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",
@@ -19,6 +23,7 @@
       var url = new URL(href);
       var values = {
         hosting: state.hosting || "",
+        offer: ["ongoing", "monthly-credit"].includes(state.offer) ? state.offer : "",
         q: state.q || "",
         category: state.category || "",
         sort: state.sort === "default" ? "" : state.sort,
