@@ -9996,5 +9996,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "crowdsec-security-engine-self-hosted",
+    "name": "CrowdSec Security Engine (Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted IDS/IPS security engine with behavioral detection, community detection scenarios and community blocklist; no vendor-enforced software license host or event quota for the engine.",
+    "watch_out": "Requires your own Linux/Windows/Docker/Kubernetes infrastructure, log access, remediation integrations and security operations. Premium threat intelligence, paid blocklists and CrowdSec Console premium features are not included.",
+    "pricing_url": "https://github.com/crowdsecurity/crowdsec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
