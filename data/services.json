@@ -9837,6 +9837,45 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "semantic-release-local",
+    "name": "semantic-release (Open Source)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed CLI for automated semantic versioning, release notes and package publishing in your CI pipeline; no vendor-imposed software quota on projects or releases.",
+    "watch_out": "Runs in your own CI environment and needs Git/package-registry credentials. CI runner minutes, Git hosting, registry publishing and any third-party infrastructure are not included; protect release tokens and branch permissions.",
+    "pricing_url": "https://github.com/semantic-release/semantic-release",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
+    "id": "release-please-local",
+    "name": "Release Please (Open Source)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source release automation that generates changelogs, version-bump pull requests, Git tags and GitHub releases from Conventional Commits; no software-imposed release quota.",
+    "watch_out": "Requires your own CI runner or GitHub Action and GitHub API credentials. GitHub Actions minutes, repository/API limits and package publishing fees are separate; release PRs still require your configured review and merge controls.",
+    "pricing_url": "https://github.com/googleapis/release-please",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
+    "id": "wagle-feature-flags-free",
+    "name": "Wagle Feature Flags Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Hosted $0/month Free plan with 500,000 SDK configuration syncs per month; unlimited local evaluations, flags, segments, projects, environments and seats; no credit card or trial expiry.",
+    "watch_out": "Hosted-only; no self-hosted offering. SDKs poll for configuration (30-second default); syncs count against monthly allowance. Provider says no overage but may move accounts to another plan when exceeding quota; verify upgrade consent and business-use terms before relying on production billing. Free tier has no support SLA.",
+    "pricing_url": "https://wagle.sh/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "mosdns-self-hosted",
     "name": "mosdns Open Source DNS Forwarder",
     "category": "dns-cdn",
