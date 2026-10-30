@@ -9627,5 +9627,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "procrastinate-postgresql-queue",
+    "name": "Procrastinate PostgreSQL Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python 3.10+ distributed task queue using PostgreSQL 13+; supports scheduled jobs, retries, locks and sync/async workers without software task quotas.",
+    "watch_out": "Requires your own PostgreSQL database, worker processes, compute, monitoring and backups; hosted Postgres or infrastructure charges are separate. The project is seeking additional maintainers.",
+    "pricing_url": "https://github.com/procrastinate-org/procrastinate",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
