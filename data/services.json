@@ -9705,5 +9705,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "grafana-mimir-self-hosted",
+    "name": "Grafana Mimir (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source horizontally scalable Prometheus-compatible metrics storage; no vendor-enforced ingestion or retention quota in the self-managed software.",
+    "watch_out": "Running Mimir requires self-managed compute and object storage, potentially significant operational costs; AGPL-3.0 network-source obligations may apply to modified deployments. Grafana Cloud pricing is separate.",
+    "pricing_url": "https://github.com/grafana/mimir",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
