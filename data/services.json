@@ -9731,5 +9731,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "tinysearch-static-site-local",
+    "name": "tinysearch (Local WASM Static-Site Search)",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Open-source Rust indexer and WebAssembly client-side full-text search for static websites; MIT or Apache-2.0 dual license with no software query or index quota.",
+    "watch_out": "Build and host the search index and WASM assets yourself; website/CDN bandwidth and CI build resources are not included. It is not a managed hosted search API.",
+    "pricing_url": "https://github.com/tinysearch/tinysearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
