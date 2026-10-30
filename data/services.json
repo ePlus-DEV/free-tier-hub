@@ -9913,5 +9913,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "tigerbeetle-self-hosted",
+    "name": "TigerBeetle (Self-Hosted)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed double-entry financial transactions database; free self-hosted binaries/source with no vendor-imposed transaction, seat or instance quotas.",
+    "watch_out": "Requires your own compatible Linux machines, durable disks, networking, replication, backups and operations. Managed hosting, storage, hardware and production support are not included.",
+    "pricing_url": "https://github.com/tigerbeetle/tigerbeetle",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
