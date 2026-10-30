@@ -10048,5 +10048,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "evidently-open-source-self-hosted",
+    "name": "Evidently Open Source ML Monitoring",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Python ML/LLM evaluation framework with 100+ metrics, local reports and self-hosted monitoring dashboard; no vendor-hosted row quota for the self-managed software.",
+    "watch_out": "Self-hosting requires your own compute, storage and operations. Evidently Cloud, team collaboration, alerting and enterprise features are separate hosted/paid offerings; optional external LLM judge APIs can incur charges.",
+    "pricing_url": "https://www.evidentlyai.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
