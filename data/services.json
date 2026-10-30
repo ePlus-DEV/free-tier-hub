@@ -9996,5 +9996,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "checkov-open-source-local",
+    "name": "Checkov Open Source IaC Scanner (Local)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source local/CI scanner for infrastructure-as-code, container images and dependency misconfigurations; no vendor-imposed license seat or scan quota for the CLI.",
+    "watch_out": "This is the free Checkov CLI, not the paid Prisma Cloud platform. CI runner, cloud accounts, remote integrations and third-party services may cost money; findings require manual review and remediation.",
+    "pricing_url": "https://github.com/bridgecrewio/checkov",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
