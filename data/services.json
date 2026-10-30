@@ -642,11 +642,11 @@
     "category": "observability",
     "plan": "ongoing",
     "free_limit": "50 monitors with 5-minute checks and basic status pages",
-    "watch_out": "Longer monitoring intervals and limited alert integrations; faster 60-second checks require paid plan.",
+    "watch_out": "Free checks run every 5 minutes; 60-second checks and advanced alerts require a paid plan. Basic status pages and integrations have limitations. The Free plan is eligible for personal and commercial monitoring under UptimeRobot's Fair Use Policy.",
     "pricing_url": "https://uptimerobot.com/pricing/",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-30",
     "deployment_model": "cloud"
   },
   {
@@ -889,11 +889,11 @@
     "category": "search",
     "plan": "ongoing",
     "free_limit": "10K searches/month; 50K records; 5K recommendation requests and 5K crawls/month",
-    "watch_out": "Higher usage and advanced search require paid plans; track record and request quotas separately.",
+    "watch_out": "The standalone Free plan has fixed search/record/recommendation/crawl limits, no card requirement, and can be used for commercial production sites; Grow and Grow Plus are distinct metered plans that can bill for overages. Confirm the plan before enabling paid usage.",
     "pricing_url": "https://www.algolia.com/pricing/free-plan",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-30",
     "deployment_model": "cloud"
   },
   {
@@ -915,11 +915,11 @@
     "category": "feature-flags",
     "plan": "ongoing",
     "free_limit": "50,000 flag API requests/month; one team member and one project; unlimited feature flags",
-    "watch_out": "Fair-use limits apply; multi-user administration, advanced scheduling and experimentation need paid plans.",
+    "watch_out": "Free Cloud is limited to 50,000 counted API requests/month and 1 team member; fair-use terms apply. If Free exceeds its monthly limit, Flagsmith allows 7 days to upgrade before action is taken; do not assume unlimited free overage. Additional team members, scheduling and A/B testing require paid plans.",
     "pricing_url": "https://www.flagsmith.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-30",
     "deployment_model": "cloud"
   },
   {
@@ -928,11 +928,11 @@
     "category": "feature-flags",
     "plan": "ongoing",
     "free_limit": "Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month",
-    "watch_out": "Client MAU and service connections have separate caps; higher-scale rollout capabilities use paid plans.",
+    "watch_out": "Developer is $0/month with no card required, limited to 5 service connections and 1,000 client-side MAU/month; additional paid entitlements and advanced capabilities belong to Foundation/Enterprise plans. Commercial-use eligibility beyond the published Developer terms remains unconfirmed.",
     "pricing_url": "https://launchdarkly.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-30",
     "deployment_model": "cloud"
   },
   {
@@ -1136,11 +1136,11 @@
     "category": "tunneling-networking",
     "plan": "ongoing",
     "free_limit": "Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month",
-    "watch_out": "Personal plan is non-commercial only; business/custom-domain signup enters a business trial by default; additional tagged resources are paid.",
+    "watch_out": "Free Personal is for non-commercial home/personal use only; work-domain or business use may enter a 14-day Enterprise trial and require a paid plan. Additional tagged resources and higher ephemeral limits have separate charges.",
     "pricing_url": "https://tailscale.com/pricing",
     "credit_card": "check",
     "commercial_use": "no",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-30",
     "deployment_model": "cloud"
   },
   {
