@@ -10165,5 +10165,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "watermill-go-event-library",
+    "name": "Watermill Go Event-Driven Library",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Go library for pub/sub, event routers, middleware, HTTP webhook handling and message-driven applications; no software license usage quota.",
+    "watch_out": "An embedded software library, not a hosted event delivery service. Kafka, RabbitMQ, NATS, databases, infrastructure and external API usage may cost money; deployment and reliability are your responsibility.",
+    "pricing_url": "https://github.com/ThreeDotsLabs/watermill",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
