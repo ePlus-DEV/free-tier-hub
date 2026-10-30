@@ -10061,5 +10061,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dvc-open-source-local",
+    "name": "DVC Open Source Data Version Control",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local CLI for dataset/model versioning, reproducible pipelines and ML experiment tracking using Git; no per-seat software license or vendor-imposed data-version quota.",
+    "watch_out": "DVC CLI is free software, not free hosted object storage or compute. Optional AWS S3, GCS, Azure, remote servers and Git hosting may charge for storage, requests, egress or compute; DVC Studio is a separate offering.",
+    "pricing_url": "https://github.com/treeverse/dvc",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
