@@ -9588,5 +9588,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "whook-self-hosted",
+    "name": "whook Self-Hosted Webhook Gateway",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Go webhook gateway with durable capture, retries, dead-letter queue, replay and fan-out; SQLite by default or PostgreSQL, without software-imposed webhook quotas.",
+    "watch_out": "Run and secure your own public server, TLS reverse proxy, authentication, storage, backups and bandwidth; no free vendor-hosted webhook capacity or SLA is included.",
+    "pricing_url": "https://github.com/edaywalid/whook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
