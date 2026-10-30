@@ -9835,5 +9835,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-30",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "mosdns-self-hosted",
+    "name": "mosdns Open Source DNS Forwarder",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 open-source configurable DNS forwarding software with downloadable binaries and Docker image; no vendor-enforced query, instance or user quota for self-hosted use.",
+    "watch_out": "Operate your own router, container or server and configure trusted upstream DNS resolvers; software does not include managed DNS hosting, infrastructure, upstream paid DNS or an uptime guarantee. GPL-3.0 distribution obligations apply.",
+    "pricing_url": "https://github.com/IrineSistiana/mosdns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
