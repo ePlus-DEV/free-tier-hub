@@ -9970,5 +9970,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "redash-self-hosted",
+    "name": "Redash Open Source (Self-Hosted)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause open-source self-hosted SQL/NoSQL query, dashboard, visualization, alerts and scheduled-refresh software with no vendor-enforced software seat or query quota.",
+    "watch_out": "Requires your own server, PostgreSQL, Redis, storage, backups and security maintenance. Connected databases, infrastructure and data transfer may incur costs; this is not a free vendor-hosted Redash service.",
+    "pricing_url": "https://github.com/getredash/redash",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
