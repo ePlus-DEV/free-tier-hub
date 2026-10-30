@@ -121,6 +121,28 @@ jobs:
             git show "$old_head:data/services.json" > /tmp/catalog-branch.json
             git show "origin/main:data/services.json" > /tmp/catalog-main.json
             jq -r '.body' <<<"$issue" > /tmp/catalog-candidate.json
+            gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$issue_number/comments?per_page=100" > /tmp/catalog-candidate-comments.json
+
+            # The queue may have attached verified deployment metadata from a
+            # trusted comment to a canonical ten-field Issue. Reconstruct that
+            # exact entry before comparing or reconciling; never drop the model.
+            if ! node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateCandidate } from './scripts/catalog.mjs';
+          import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
+          const path = '/tmp/catalog-candidate.json';
+          const original = validateCandidate(JSON.parse(fs.readFileSync(path, 'utf8')));
+          const comments = JSON.parse(fs.readFileSync('/tmp/catalog-candidate-comments.json', 'utf8')).flat();
+          const resolved = resolveCandidateDeployment(original, comments);
+          if (!resolved) throw Error('No trusted deployment evidence for candidate');
+          validateCandidate(resolved);
+          fs.writeFileSync(path, JSON.stringify(resolved));
+          NODE
+            then
+              echo "::notice::Candidate Issue for PR #$number lacks trusted deployment evidence"
+              echo "::endgroup::"
+              continue
+            fi
 
             # Confirm that the branch's ONLY data change versus its original base
             # is the exact candidate recorded in the trusted Issue. Reject stale

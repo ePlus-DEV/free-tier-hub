@@ -3,6 +3,8 @@ name: Catalog candidate queue
 on:
   issues:
     types: [opened, reopened, edited]
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       issue_number:
@@ -23,7 +25,7 @@ concurrency:
 
 jobs:
   deliver:
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, '[catalog-candidate] ')
+    if: github.event_name == 'workflow_dispatch' || (startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || startsWith(github.event.comment.body, '{"deployment_model"')))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -51,11 +53,16 @@ jobs:
           NODE
 
       - name: Trust gate
-        if: github.event_name == 'issues'
+        if: github.event_name != 'workflow_dispatch'
         env:
           ASSOCIATION: ${{ github.event.issue.author_association }}
+          COMMENT_ASSOCIATION: ${{ github.event.comment.author_association || '' }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           case "$ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ;; *) exit 1 ;; esac
+          if [ "$EVENT_NAME" = issue_comment ]; then
+            case "$COMMENT_ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ;; *) exit 1 ;; esac
+          fi
 
       - uses: actions/checkout@v4
         with:
@@ -68,19 +75,49 @@ jobs:
           node-version-file: '.nvmrc'
           package-manager-cache: false
 
+      # A canonical candidate Issue contains exactly ten catalog fields.
+      # A trusted JSON Issue comment supplies independently sourced deployment
+      # evidence without changing that payload. Old eleven-field Issues still work.
+      - name: Resolve deployment evidence
+        id: deployment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event_name == 'workflow_dispatch' && steps.queued_issue.outputs.body || github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$ISSUE_BODY" > /tmp/issue-candidate.json
+          gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments?per_page=100" > /tmp/candidate-comments.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateCandidate } from './scripts/catalog.mjs';
+          import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
+          const original = JSON.parse(fs.readFileSync('/tmp/issue-candidate.json', 'utf8'));
+          validateCandidate(original);
+          const comments = JSON.parse(fs.readFileSync('/tmp/candidate-comments.json', 'utf8')).flat();
+          const candidate = resolveCandidateDeployment(original, comments);
+          if (!candidate) {
+            console.log('::notice::Waiting for trusted deployment evidence comment; no branch or PR created');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, 'ready=false\n');
+          } else {
+            validateCandidate(candidate);
+            fs.writeFileSync('/tmp/candidate.json', JSON.stringify(candidate));
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, 'ready=true\n');
+          }
+          NODE
+
       - name: Validate bot token before mutations
+        if: steps.deployment.outputs.ready == 'true'
         env:
           BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
         run: |
           test -n "$BOT_TOKEN" || { echo "::error::Configure EPLUS_BOT_TOKEN with contents:write permission to trigger PR checks"; exit 1; }
 
       - name: Parse candidate
+        if: steps.deployment.outputs.ready == 'true'
         id: candidate
-        env:
-          ISSUE_BODY: ${{ github.event_name == 'workflow_dispatch' && steps.queued_issue.outputs.body || github.event.issue.body }}
         run: |
           set -euo pipefail
-          printf '%s' "$ISSUE_BODY" > /tmp/candidate.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { validateData, validateCandidate } from './scripts/catalog.mjs';
@@ -93,6 +130,7 @@ jobs:
           NODE
 
       - name: Enforce active catalog PR limit
+        if: steps.deployment.outputs.ready == 'true'
         id: capacity
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
