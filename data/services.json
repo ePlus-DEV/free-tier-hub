@@ -9900,5 +9900,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "proxmox-backup-server-self-hosted",
+    "name": "Proxmox Backup Server (Open Source)",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "GNU AGPLv3 backup server, free to download and use with incremental backups, deduplication, encryption and verification; no software-enforced client or backup storage quota.",
+    "watch_out": "Requires your own server, disks, networking and maintenance. The no-subscription update repository is intended for testing/non-production and not recommended for production; enterprise updates and vendor support require a paid subscription. AGPLv3 obligations apply.",
+    "pricing_url": "https://proxmox.com/en/products/proxmox-backup-server/get-started",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
