@@ -9640,5 +9640,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "rill-developer-local",
+    "name": "Rill Developer (Local)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source local business-intelligence tool with SQL/YAML data models, DuckDB/ClickHouse-backed exploration and dashboards; no local software seat or dashboard quota.",
+    "watch_out": "Run Rill Developer on your own workstation and supply data/compute; external OLAP services, connectors and managed Rill Cloud deployment may incur separate charges. Local use does not include free managed cloud hosting.",
+    "pricing_url": "https://github.com/rilldata/rill",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
