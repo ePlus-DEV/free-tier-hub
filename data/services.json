@@ -10100,5 +10100,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "atlantis-terraform-pr-automation",
+    "name": "Atlantis Terraform PR Automation",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted automation for Terraform plan/apply workflows on pull requests; no software-imposed project, user, or run quota.",
+    "watch_out": "Requires your own server, Git provider webhook integration, secure cloud credentials and infrastructure; Terraform providers and cloud resources can incur charges. No managed hosting or enterprise support is included.",
+    "pricing_url": "https://www.runatlantis.io/guide.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
