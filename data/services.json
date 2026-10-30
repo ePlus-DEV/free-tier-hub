@@ -9902,6 +9902,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "garnet-self-hosted",
+    "name": "Microsoft Garnet (Self-Hosted)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Redis-protocol-compatible cache-store with persistence, replication and sharding; self-hosted software has no vendor-enforced request, seat or instance quota.",
+    "watch_out": "Operate your own server/container, RAM, disks, networking, TLS and backups. Azure Cosmos DB Garnet Cache is a separate managed paid product, not a free hosted service or included infrastructure.",
+    "pricing_url": "https://github.com/microsoft/garnet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "tigerbeetle-self-hosted",
+    "name": "TigerBeetle (Self-Hosted)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed double-entry financial transactions database; free self-hosted binaries/source with no vendor-imposed transaction, seat or instance quotas.",
+    "watch_out": "Requires your own compatible Linux machines, durable disks, networking, replication, backups and operations. Managed hosting, storage, hardware and production support are not included.",
+    "pricing_url": "https://github.com/tigerbeetle/tigerbeetle",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "proxmox-backup-server-self-hosted",
     "name": "Proxmox Backup Server (Open Source)",
     "category": "storage",
