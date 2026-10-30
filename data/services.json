@@ -10037,6 +10037,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "crowdsec-security-engine-self-hosted",
+    "name": "CrowdSec Security Engine (Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted IDS/IPS security engine with behavioral detection, community detection scenarios and community blocklist; no vendor-enforced software license host or event quota for the engine.",
+    "watch_out": "Requires your own Linux/Windows/Docker/Kubernetes infrastructure, log access, remediation integrations and security operations. Premium threat intelligence, paid blocklists and CrowdSec Console premium features are not included.",
+    "pricing_url": "https://github.com/crowdsecurity/crowdsec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "evidently-open-source-self-hosted",
+    "name": "Evidently Open Source ML Monitoring",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Python ML/LLM evaluation framework with 100+ metrics, local reports and self-hosted monitoring dashboard; no vendor-hosted row quota for the self-managed software.",
+    "watch_out": "Self-hosting requires your own compute, storage and operations. Evidently Cloud, team collaboration, alerting and enterprise features are separate hosted/paid offerings; optional external LLM judge APIs can incur charges.",
+    "pricing_url": "https://www.evidentlyai.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dvc-open-source-local",
     "name": "DVC Open Source Data Version Control",
     "category": "ai-ml",
