@@ -9681,6 +9681,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "apache-hbase-self-hosted",
+    "name": "Apache HBase (Self-Hosted)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed column-family database; no software license fee or vendor-enforced storage/query quota for self-operated deployments.",
+    "watch_out": "Requires self-managed infrastructure and operational expertise, typically Hadoop/HDFS or compatible storage; compute, disks, networking, backups and support are not free.",
+    "pricing_url": "https://github.com/apache/hbase",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "anchore-syft-local",
+    "name": "Anchore Syft (Local SBOM CLI)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI and Go library; generate SBOMs for container images, directories and archives without a vendor-enforced scan quota.",
+    "watch_out": "Runs on your own computer or CI runner; compute, CI and container registry costs are separate. Syft generates SBOMs rather than performing a full vulnerability assessment; Anchore commercial support is optional.",
+    "pricing_url": "https://github.com/anchore/syft",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
     "id": "cilium-tetragon-self-hosted",
     "name": "Cilium Tetragon (Self-Hosted)",
     "category": "auth-security",
