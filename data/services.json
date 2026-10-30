@@ -9627,5 +9627,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kilo-wireguard-kubernetes-network",
+    "name": "Kilo WireGuard Kubernetes Network",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source WireGuard-based encrypted Kubernetes multi-cloud/multi-cluster network overlay, VPN peer access and add-on mode; no software node or peer quota.",
+    "watch_out": "Self-operate Kubernetes nodes and networking; WireGuard support, routable UDP endpoints, cluster infrastructure and bandwidth are required. Kilo does not include hosted VPN servers or cloud compute.",
+    "pricing_url": "https://github.com/squat/kilo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
