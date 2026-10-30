@@ -9809,5 +9809,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zeroclaw-local-ai-agent",
+    "name": "ZeroClaw Local AI Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed Rust AI agent runtime for local use, with pluggable model providers including local Ollama; no software usage or seat limit.",
+    "watch_out": "Runs on your own hardware; external LLM APIs, hosting and messaging services may cost extra. The agent can execute tools, so configure approval and sandbox policies; ZeroClaw name/logo trademarks are separate from the software license.",
+    "pricing_url": "https://github.com/zeroclaw-labs/zeroclaw",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
