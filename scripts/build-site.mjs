@@ -68,6 +68,16 @@ function breadcrumb(crumbs) {
 // Classify the listed offer, not every edition sold by the same vendor.
 const hostingModel = item => item.deployment_model || 'unclassified';
 const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', local: 'Local / embedded', unclassified: 'Not specified'};
+// A perpetual free license/self-managed edition is not a vendor-hosted free tier.
+// This is a display distinction only: pricing and commercial terms remain source-verified catalog data.
+function planBadge(item) {
+  if (item.plan !== 'ongoing') return PLAN_NAMES[item.plan];
+  const model = hostingModel(item);
+  if (model === 'self-hosted') return 'Free self-hosted software';
+  if (model === 'local') return 'Free local software';
+  if (model === 'unclassified') return 'Free offering';
+  return 'Free tier';
+}
 
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
@@ -89,7 +99,7 @@ function card(item, absolute) {
     '" aria-label="Filter by category: ', tag(CATEGORY_LABELS[item.category]), '">', tag(CATEGORY_LABELS[item.category]), '</a>',
     hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"><span aria-hidden="true"> · </span><a class="card-filter-link" data-card-hosting="' + hostingModel(item) + '" href="' + tag(absolute('?hosting=' + hostingModel(item))) + '" aria-label="Filter by deployment model: ' + HOSTING_LABELS[hostingModel(item)] + '">' + HOSTING_LABELS[hostingModel(item)] + '</a></span>' : '', '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
-    tag(item.plan === 'ongoing' ? 'Free tier' : PLAN_NAMES[item.plan]), '</span></div>',
+    tag(planBadge(item)), '</span></div>',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
