@@ -9983,5 +9983,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "prometheus-blackbox-exporter-self-hosted",
+    "name": "Prometheus Blackbox Exporter (Open Source)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted endpoint probe exporter for HTTP/HTTPS, DNS, TCP, ICMP and gRPC; no software-imposed monthly probe, target or seat limit.",
+    "watch_out": "Requires your own Prometheus-compatible monitoring stack, compute and network; network egress may cost money. Protect the /probe endpoint from untrusted target requests; ICMP probes may require extra operating-system privileges.",
+    "pricing_url": "https://github.com/prometheus/blackbox_exporter",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
