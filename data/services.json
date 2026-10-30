@@ -9835,5 +9835,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-30",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "semantic-release-local",
+    "name": "semantic-release (Open Source)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed CLI for automated semantic versioning, release notes and package publishing in your CI pipeline; no vendor-imposed software quota on projects or releases.",
+    "watch_out": "Runs in your own CI environment and needs Git/package-registry credentials. CI runner minutes, Git hosting, registry publishing and any third-party infrastructure are not included; protect release tokens and branch permissions.",
+    "pricing_url": "https://github.com/semantic-release/semantic-release",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
