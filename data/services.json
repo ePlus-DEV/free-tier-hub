@@ -9733,6 +9733,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "grafana-mimir-self-hosted",
+    "name": "Grafana Mimir (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source horizontally scalable Prometheus-compatible metrics storage; no vendor-enforced ingestion or retention quota in the self-managed software.",
+    "watch_out": "Running Mimir requires self-managed compute and object storage, potentially significant operational costs; AGPL-3.0 network-source obligations may apply to modified deployments. Grafana Cloud pricing is separate.",
+    "pricing_url": "https://github.com/grafana/mimir",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "vane-ai-answering-engine-self-hosted",
+    "name": "Vane AI Answering Engine (Self-Hosted)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted AI answering engine with cited web results, bundled SearXNG search, and support for local Ollama models; no vendor-enforced software query quota.",
+    "watch_out": "Run Docker and local LLMs on your own hardware; electricity, compute and hosting are not included. Optional OpenAI, Anthropic, Google or other hosted model APIs can incur separate charges. Formerly known as Perplexica; do not list both names separately.",
+    "pricing_url": "https://github.com/ItzCrazyKns/Vane",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "tinysearch-static-site-local",
     "name": "tinysearch (Local WASM Static-Site Search)",
     "category": "search",
