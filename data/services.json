@@ -9783,5 +9783,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-30",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "boomurl-free-static-hosting",
+    "name": "boomurl Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free HTTPS hosting for small static websites on boomurl.me, up to 50 MB and 500 files per site; email-verified publishing.",
+    "watch_out": "Free pages carry injected advertising/boomurl banner; static human-viewable websites only, no file lockers, hotlinking or CDN use. Provider may delete sites without notice and does not guarantee retention; banner removal costs $2 per site per 30 days. Commercial-use eligibility not explicitly confirmed.",
+    "pricing_url": "https://boomurl.com/terms",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
   }
 ]
