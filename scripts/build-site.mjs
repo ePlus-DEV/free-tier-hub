@@ -69,6 +69,10 @@ function breadcrumb(crumbs) {
 const hostingModel = item => item.deployment_model || 'unclassified';
 const HOSTING_LABELS = {cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted', local: 'Local / embedded', unclassified: 'Not specified'};
 
+// Only ongoing allowances and recurring credits belong in the main free-tier directory.
+// Time-limited trials and expiring resources stay available in a separate archive.
+const isMainFreeOffer = item => item.plan === 'ongoing' || item.plan === 'monthly-credit';
+
 function card(item, absolute) {
   const dest = absolute('service/' + item.id + '/');
   const group = CATEGORY_NAMES[item.category];
@@ -184,7 +188,9 @@ function document(absolute, title, description, relative, content, structuredDat
   ].join('');
 }
 function homePage(items, absolute, counts) {
-  const cards = items.map(item => card(item, absolute)).join('');
+  const mainItems = items.filter(isMainFreeOffer);
+  const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const cards = mainItems.map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
@@ -241,8 +247,9 @@ function homePage(items, absolute, counts) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total services</span><strong class="result-total">',
-    items.length, '</strong></p>',
+    mainItems.length, '</strong></p>',
     '</div></div>',
+    limitedItems.length ? '<p class="limited-offer-hint">Only ongoing free allowances and recurring credits are counted here. <a href="' + tag(absolute('offers/')) + '">View ' + limitedItems.length + ' time-limited / expiring offers</a> separately.</p>' : '',
     '<div class="service-grid" id="service-grid">', cards, '</div>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="load-more">Show more services</button>',
@@ -269,6 +276,20 @@ function categoryPage(category, subset, absolute) {
     subset.map(item => card(item, absolute)).join(''), '</div>',
     '<p class="back-link"><a href="', tag(absolute()),
     '">← All categories and services</a></p>',
+  ].join('');
+}
+function limitedOffersPage(items, absolute) {
+  return [
+    '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
+    '">Home</a><span aria-hidden="true">/</span><span>Limited offers</span></nav>',
+    '<section class="page-intro"><p class="kicker">LIMITED OFFERS · ', items.length,
+    ' ENTRIES</p><h1>Time-limited and expiring offers</h1>',
+    '<p>These promotions, trials and expiring resources are not ongoing free tiers. ',
+    'They are excluded from the main directory counts. Check the provider for current eligibility, renewal fees and expiration rules.</p></section>',
+    '<div class="service-grid category-service-grid">',
+    items.map(item => card(item, absolute)).join(''), '</div>',
+    '<p class="back-link"><a href="', tag(absolute()),
+    '">← Back to ongoing free tiers</a></p>',
   ].join('');
 }
 function detailPage(item, absolute) {
@@ -359,8 +380,10 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   }
   const output = path.resolve(outputDir);
   fs.mkdirSync(output, { recursive: true });
+  const mainItems = items.filter(isMainFreeOffer);
+  const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const counts = Object.fromEntries(CATEGORIES.map(category =>
-    [category, items.filter(item => item.category === category).length]));
+    [category, mainItems.filter(item => item.category === category).length]));
   const latest = items.map(item => item.last_checked).sort().at(-1);
   const pageURLs = [];
   const siteName = 'Free Tier Hub';
@@ -368,8 +391,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     { '@type': 'WebSite', name: siteName, url: base,
       description: 'An independently maintained directory of developer free tiers.' },
     { '@type': 'CollectionPage', name: 'Free Tier Hub developer directory',
-      url: base, mainEntity: { '@type': 'ItemList', numberOfItems: items.length,
-        itemListElement: items.map((item, i) =>
+      url: base, mainEntity: { '@type': 'ItemList', numberOfItems: mainItems.length,
+        itemListElement: mainItems.map((item, i) =>
           ({ '@type': 'ListItem', position: i + 1, name: item.name,
             url: absolute('service/' + item.id + '/') })) } },
   ] };
@@ -379,7 +402,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '', homePage(items, absolute, counts), homeSchema));
   pageURLs.push(['', latest]);
   for (const category of CATEGORIES) {
-    const subset = items.filter(item => item.category === category);
+    const subset = mainItems.filter(item => item.category === category);
     const name = CATEGORY_NAMES[category], relative = 'category/' + category + '/';
     const crumbs = [['Home', base], [name, absolute(relative)]];
     const schema = { '@context': 'https://schema.org', '@graph': [
@@ -395,6 +418,23 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       'Compare free-tier ' + name.toLowerCase() + ' providers and their verified pricing sources and restrictions.',
       relative, categoryPage(category, subset, absolute), schema));
     pageURLs.push([relative, subset.map(item => item.last_checked).sort().at(-1) || latest]);
+  }
+  if (limitedItems.length) {
+    const relative = 'offers/';
+    const schema = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'CollectionPage', name: 'Time-limited and expiring offers — Free Tier Hub',
+        url: absolute(relative), mainEntity: { '@type': 'ItemList',
+          numberOfItems: limitedItems.length, itemListElement: limitedItems.map((item, i) =>
+            ({ '@type': 'ListItem', position: i + 1, name: item.name,
+              url: absolute('service/' + item.id + '/') })) } },
+      { '@type': 'BreadcrumbList', itemListElement: breadcrumb([['Home', base],
+        ['Limited offers', absolute(relative)]]).itemListElement },
+    ] };
+    file(output, relative + 'index.html', document(absolute,
+      'Time-limited & Expiring Offers | Free Tier Hub',
+      'Browse promotional trials and expiring resources separately from ongoing free tiers.',
+      relative, limitedOffersPage(limitedItems, absolute), schema));
+    pageURLs.push([relative, limitedItems.map(item => item.last_checked).sort().at(-1)]);
   }
   for (const item of items) {
     const category = CATEGORY_NAMES[item.category];
@@ -430,7 +470,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '# Free Tier Hub', '',
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
-    '- [Directory](' + base + '): crawlable HTML index of all listed services.',
+    '- [Directory](' + base + '): crawlable HTML index of ongoing free allowances and recurring credits.',
+    '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
     '- [Catalog JSON](' + absolute('catalog.json') +
       '): machine-readable data with source URLs, review dates and plan types.',
     '- [Sitemap](' + absolute('sitemap.xml') + '): category and service URLs.',
@@ -439,7 +480,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     ...CATEGORIES.map(category =>
       '- [' + CATEGORY_NAMES[category] + '](' + absolute('category/' + category + '/') + ')'),
     '', '## Interpretation',
-    '- A listed offer may be an ongoing allowance, recurring credit, trial or expiring resource.',
+    '- The main free-tier directory counts ongoing allowances and recurring credits only; trials and expiring resources are listed separately.',
     '- An unknown card or commercial-use value means check the provider; it does not mean permission is granted.',
     '- Official provider links in the JSON are the primary sources of current billing and limits.',
     '- Review dates are editorial snapshots, not a guarantee that a provider has not changed its terms.', '',
@@ -450,6 +491,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'This Markdown file is optional guidance for automated readers, not a robots.txt policy.', '',
     '## Discover',
     '- Human-readable index: ' + base,
+    '- Time-limited offers: ' + absolute('offers/'),
     '- Machine-readable catalog: ' + absolute('catalog.json'),
     '- Sitemap: ' + absolute('sitemap.xml'),
     '- LLM summary: ' + absolute('llms.txt'), '',
@@ -484,7 +526,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '<a class="button primary" href="' + tag(base) + '">Back to Free Tier Hub</a></section>',
     { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Page not found',
       url: absolute('404.html') }, 'noindex,follow'));
-  return { service_count: items.length, category_count: CATEGORIES.length,
+  return { service_count: items.length, free_tier_count: mainItems.length,
+    limited_offer_count: limitedItems.length, category_count: CATEGORIES.length,
     page_count: pageURLs.length, urls: pageURLs.map(([relative]) => absolute(relative)),
     site_url: base, output };
 }
