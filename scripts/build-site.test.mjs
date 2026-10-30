@@ -179,8 +179,14 @@ test('deployment filtering reads offer metadata rather than ID or product-name g
     const html = fs.readFileSync(path.join(output,'index.html'),'utf8');
     for (const [i, mode] of modes.entries()) {
       assert.ok(html.includes('data-service-id="unmapped-offer-'+i+'" data-category="'+source.category+'" data-hosting-model="'+mode+'"'));
+      const cardStart = html.indexOf('data-service-id="unmapped-offer-'+i+'"');
+      const cardHtml = html.slice(cardStart, html.indexOf('</article>', cardStart));
+      const label = mode === 'self-hosted' ? 'Free self-hosted software' : mode === 'local' ? 'Free local software' : 'Free tier';
+      assert.ok(cardHtml.includes('data-plan="ongoing">' + label + '</span>'), 'badge must describe the listed deployment mode: ' + mode);
     }
     assert.ok(html.includes('data-service-id="vercel" data-category="'+source.category+'" data-hosting-model="unclassified"'));
+    const legacyStart = html.indexOf('data-service-id="vercel"');
+    assert.ok(html.slice(legacyStart, html.indexOf('</article>', legacyStart)).includes('data-plan="ongoing">Free offering</span>'));
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output,'catalog.json'),'utf8')).map(x=>x.deployment_model), [...modes,undefined]);
     await import('../site/assets/directory-url.js');
     const api = globalThis.FreeTierDirectoryURL;
