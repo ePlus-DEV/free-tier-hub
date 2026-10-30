@@ -9614,5 +9614,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-30",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "evidence-open-source-self-hosted",
+    "name": "Evidence Open Source (Self-hosted)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed SQL + Markdown business-intelligence framework; build and self-host interactive reports and dashboards without software seat or report quotas.",
+    "watch_out": "Evidence Studio managed publishing and AI services are separate; bring your own data sources, static hosting, build compute and any paid database/API access. Free software does not include free cloud infrastructure.",
+    "pricing_url": "https://github.com/evidence-dev/evidence",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
