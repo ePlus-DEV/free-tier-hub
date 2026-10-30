@@ -9798,6 +9798,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "nona-remote-config-self-hosted",
+    "name": "Nona Remote Config & Feature Flags (Self-hosted)",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Docker service for environment-scoped feature flags and remote configuration, with REST API, dashboard and SQLite/libSQL; no vendor-imposed software seat, flag or request quota.",
+    "watch_out": "You operate and pay for Docker/server, persistent storage, networking, backups and TLS; not a free vendor-hosted service. No built-in per-user targeting, percentage rollout or experiment analytics; follow Apache-2.0 notice requirements.",
+    "pricing_url": "https://github.com/Ryware/nona-config",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zeroclaw-local-ai-agent",
+    "name": "ZeroClaw Local AI Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed Rust AI agent runtime for local use, with pluggable model providers including local Ollama; no software usage or seat limit.",
+    "watch_out": "Runs on your own hardware; external LLM APIs, hosting and messaging services may cost extra. The agent can execute tools, so configure approval and sandbox policies; ZeroClaw name/logo trademarks are separate from the software license.",
+    "pricing_url": "https://github.com/zeroclaw-labs/zeroclaw",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
     "id": "mwmbl-search-api-free",
     "name": "Mwmbl Search API Free",
     "category": "search",
