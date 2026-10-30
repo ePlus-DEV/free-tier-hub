@@ -9627,5 +9627,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "bareos-community-self-hosted",
+    "name": "Bareos Open Source Backup",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "AGPLv3 open-source network backup and recovery with file/database backups, catalog, restore, disk/tape and S3-compatible targets; no software seat or backup-job quota.",
+    "watch_out": "Operate Bareos director, storage daemons, catalog database, clients and backup media yourself; hosting, object storage and optional vendor subscription/support cost extra. AGPLv3 source-sharing and notice obligations apply when required.",
+    "pricing_url": "https://github.com/bareos/bareos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
