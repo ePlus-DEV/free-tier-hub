@@ -90,8 +90,8 @@ function card(item, absolute) {
   return [
     '<article class="service-card" data-service-id="', tag(item.id),
     '" data-category="', tag(item.category),
-    '" data-offer-plan="', tag(item.plan),
     '" data-hosting-model="', hostingModel(item),
+    '" data-offer-plan="', tag(item.plan),
     '" data-added-at="', tag(item.added_at || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
