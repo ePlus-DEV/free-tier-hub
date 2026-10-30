@@ -10009,5 +10009,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "eclaire-ai-assistant-self-hosted",
+    "name": "Eclaire Self-Hosted AI Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted local-first AI assistant for notes, tasks, documents, photos and bookmarks; local-model inference and OpenAI-compatible API; no vendor-imposed software seat or request quota.",
+    "watch_out": "Run and secure your own Docker/Compose stack, storage and model inference; requires sufficient CPU/GPU resources. Project warns it is not hardened for direct public exposure; use private networking/authentication. Optional external model APIs and infrastructure can incur charges.",
+    "pricing_url": "https://github.com/eclaire-labs/eclaire",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
