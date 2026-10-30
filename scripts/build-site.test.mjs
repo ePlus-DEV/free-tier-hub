@@ -60,7 +60,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
-    assert.match(html, /<option value="limited">Time-limited &amp; expiring offers \(3\)<\/option>/);
+    assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
     assert.ok(html.includes('data-offer-plan="monthly-credit"'));
