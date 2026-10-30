@@ -9720,6 +9720,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "feast-feature-store-self-hosted",
+    "name": "Feast Open Source Feature Store",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source feature store with offline feature retrieval and online feature serving; no software license fee or vendor-enforced feature count quota.",
+    "watch_out": "You operate the feature server and select online/offline stores; cloud warehouses, Redis/databases, infrastructure and managed services may incur separate charges.",
+    "pricing_url": "https://github.com/feast-dev/feast",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "grafana-mimir-self-hosted",
+    "name": "Grafana Mimir (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only open-source horizontally scalable Prometheus-compatible metrics storage; no vendor-enforced ingestion or retention quota in the self-managed software.",
+    "watch_out": "Running Mimir requires self-managed compute and object storage, potentially significant operational costs; AGPL-3.0 network-source obligations may apply to modified deployments. Grafana Cloud pricing is separate.",
+    "pricing_url": "https://github.com/grafana/mimir",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "vane-ai-answering-engine-self-hosted",
     "name": "Vane AI Answering Engine (Self-Hosted)",
     "category": "ai-assistants",
