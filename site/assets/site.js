@@ -630,12 +630,14 @@
       button.setAttribute("aria-pressed", String(active));
     });
     var term = normalize(search.value);
-    var matched = cards.filter(function (card) {
+    var pool = cards.filter(function (card) {
+      return urlState.matchesOffer(card.getAttribute("data-offer-plan"), offerType);
+    });
+    var matched = pool.filter(function (card) {
       var words = normalize(card.getAttribute("data-search"));
       return (!term || words.indexOf(term) !== -1) &&
         (!category || card.getAttribute("data-category") === category) &&
         (!hostingModel || card.getAttribute("data-hosting-model") === hostingModel) &&
-        urlState.matchesOffer(card.getAttribute("data-offer-plan"), offerType) &&
         (!noCard || !noCard.checked || card.getAttribute("data-credit-card") === "no") &&
         (!commercial || !commercial.checked || card.getAttribute("data-commercial-use") === "yes");
     });
@@ -650,13 +652,13 @@
     var shown = Math.min(matched.length, visible);
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.textContent = String(cards.length);
+    totalBadge.textContent = String(pool.length);
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
-    totalLabel.textContent = "Total services";
+    totalLabel.textContent = offerType === "limited" ? "Limited offers" : "Total services";
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = matched.length !== cards.length
+    shownLabel.textContent = matched.length !== pool.length
       ? "Showing " + shown + " of " + matched.length + " matches"
       : "Showing " + shown;
     count.replaceChildren(totalLabel, totalBadge, shownLabel);
