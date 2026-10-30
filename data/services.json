@@ -10011,6 +10011,45 @@
     "deployment_model": "local"
   },
   {
+    "id": "eclaire-ai-assistant-self-hosted",
+    "name": "Eclaire Self-Hosted AI Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted local-first AI assistant for notes, tasks, documents, photos and bookmarks; local-model inference and OpenAI-compatible API; no vendor-imposed software seat or request quota.",
+    "watch_out": "Run and secure your own Docker/Compose stack, storage and model inference; requires sufficient CPU/GPU resources. Project warns it is not hardened for direct public exposure; use private networking/authentication. Optional external model APIs and infrastructure can incur charges.",
+    "pricing_url": "https://github.com/eclaire-labs/eclaire",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "saq-python-async-job-queue",
+    "name": "SAQ Simple Async Queues (Python)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed asyncio background job queue with Redis or PostgreSQL backend, scheduled and recurring jobs, workers and optional monitoring UI; no vendor-enforced job or worker quota.",
+    "watch_out": "Run and secure your own Python workers and Redis/PostgreSQL backend; hosting, database, storage and network costs are not included. SAQ is software, not a managed free cloud queue or hosted SLA.",
+    "pricing_url": "https://github.com/tobymao/saq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "crowdsec-security-engine-self-hosted",
+    "name": "CrowdSec Security Engine (Open Source)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted IDS/IPS security engine with behavioral detection, community detection scenarios and community blocklist; no vendor-enforced software license host or event quota for the engine.",
+    "watch_out": "Requires your own Linux/Windows/Docker/Kubernetes infrastructure, log access, remediation integrations and security operations. Premium threat intelligence, paid blocklists and CrowdSec Console premium features are not included.",
+    "pricing_url": "https://github.com/crowdsecurity/crowdsec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "evidently-open-source-self-hosted",
     "name": "Evidently Open Source ML Monitoring",
     "category": "ai-ml",
