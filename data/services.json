@@ -10154,6 +10154,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "redpanda-connect-community",
+    "name": "Redpanda Connect Community Connectors",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Self-managed stream-processing engine with free Community and Certified connectors under Apache-2.0 and MIT-licensed core; no stated free software execution quota.",
+    "watch_out": "Enterprise connectors such as some CDC, Snowflake and Iceberg components require a paid license; paid support, managed Redpanda Cloud, compute, brokers, storage and third-party APIs are not included.",
+    "pricing_url": "https://www.redpanda.com/connect",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "watermill-go-event-library",
     "name": "Watermill Go Event-Driven Library",
     "category": "webhooks-events",
