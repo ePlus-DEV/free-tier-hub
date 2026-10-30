@@ -9861,5 +9861,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "adguard-dnsproxy-self-hosted",
+    "name": "AdGuard dnsproxy (Open Source)",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source DNS proxy server with DNS-over-HTTPS, DNS-over-TLS, DNS-over-QUIC and DNSCrypt; downloadable binaries and Docker image without vendor-enforced query or instance limits.",
+    "watch_out": "You must operate your own DNS server, container or device and configure upstream resolvers and TLS certificates. Managed DNS hosting, compute, networking and any paid upstream resolver are not included; avoid exposing an unrestricted public resolver.",
+    "pricing_url": "https://github.com/AdguardTeam/dnsproxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
