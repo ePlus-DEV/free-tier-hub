@@ -10100,5 +10100,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "risingwave-self-managed",
+    "name": "RisingWave Community Self-Managed",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed streaming SQL database with materialized views and connectors; no software license fees, feature gates, or usage limits.",
+    "watch_out": "Requires your own compute, storage, networking, and operations; object storage, Kubernetes, and external connector/provider charges are separate. Enterprise support and managed RisingWave Cloud are not included.",
+    "pricing_url": "https://www.risingwave.com/self-managed/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
