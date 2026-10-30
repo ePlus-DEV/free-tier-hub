@@ -10191,5 +10191,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "prometheus-alertmanager-self-hosted",
+    "name": "Prometheus Alertmanager Open Source",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted alert grouping, deduplication, routing, silencing and inhibition with webhook/email receiver integrations; no software alert or instance quota.",
+    "watch_out": "Operate and secure your own Alertmanager instances and monitoring pipeline; Prometheus storage, servers, SMTP, SMS, PagerDuty and other third-party notification integrations may incur separate costs.",
+    "pricing_url": "https://github.com/prometheus/alertmanager",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
