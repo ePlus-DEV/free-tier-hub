@@ -9577,6 +9577,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hickory-dns-self-hosted",
+    "name": "Hickory DNS Open-Source DNS Server",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted Rust DNS server and resolver with DNSSEC and optional encrypted DNS transports; Apache-2.0/MIT software with no usage-based license quota.",
+    "watch_out": "Operate your own DNS infrastructure, public IP/network, security updates and backups; no managed cloud DNS capacity or SLA is included. DNSSEC/DoH/DoT features depend on build and configuration.",
+    "pricing_url": "https://github.com/hickory-dns/hickory-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "whook-self-hosted",
+    "name": "whook Self-Hosted Webhook Gateway",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Go webhook gateway with durable capture, retries, dead-letter queue, replay and fan-out; SQLite by default or PostgreSQL, without software-imposed webhook quotas.",
+    "watch_out": "Run and secure your own public server, TLS reverse proxy, authentication, storage, backups and bandwidth; no free vendor-hosted webhook capacity or SLA is included.",
+    "pricing_url": "https://github.com/edaywalid/whook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "fadehost-free-app-hosting",
     "name": "FadeHost App Hosting Free",
     "category": "app-hosting",
