@@ -9705,5 +9705,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "cilium-tetragon-self-hosted",
+    "name": "Cilium Tetragon (Self-Hosted)",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source eBPF runtime security and observability for Linux and Kubernetes; no vendor-enforced agent or event quota.",
+    "watch_out": "Requires a compatible Linux kernel and privileges for eBPF, with Kubernetes/host operations and telemetry storage paid by the operator; security policies need careful testing.",
+    "pricing_url": "https://github.com/cilium/tetragon",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
