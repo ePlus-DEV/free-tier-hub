@@ -10076,6 +10076,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "taskiq-python-distributed-queue",
+    "name": "Taskiq Open Source Distributed Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python distributed task queue supporting synchronous and asynchronous jobs, worker processes, and pluggable Redis, RabbitMQ, NATS or Kafka brokers; no software-enforced task or worker quota.",
+    "watch_out": "Self-host Python workers and configure a compatible broker and result backend; Redis/NATS/RabbitMQ/Kafka hosting, compute, monitoring and egress are not included. This is free software, not a vendor-hosted free queue or SLA.",
+    "pricing_url": "https://github.com/taskiq-python/taskiq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "rq-python-redis-queue",
     "name": "RQ Redis Queue (Python OSS)",
     "category": "queues-jobs",
