@@ -9926,5 +9926,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "slatedb-embedded-object-storage",
+    "name": "SlateDB Embedded Object-Storage Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 embedded Rust LSM key-value database with language bindings; free library without vendor-imposed software request, seat or instance quotas.",
+    "watch_out": "Not a free hosted database. You must supply S3, R2, GCS or compatible object storage and pay any storage, API request, egress and compute charges. API compatibility may change between versions; production operations are your responsibility.",
+    "pricing_url": "https://slatedb.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
   }
 ]
