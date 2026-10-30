@@ -10193,6 +10193,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "lynis-security-audit-local",
+    "name": "Lynis Open-Source Security Auditing",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "GPLv3 open-source Unix/Linux/macOS security auditing and system-hardening CLI with local checks and recommendations; no software scan or host quota.",
+    "watch_out": "The free local scanner does not include Lynis Enterprise dashboards, centralized reporting, commercial support or host infrastructure; audits require suitable system permissions and operator review.",
+    "pricing_url": "https://github.com/CISOfy/lynis",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
+    "id": "osquery-endpoint-visibility-local",
+    "name": "osquery Open-Source Endpoint Visibility",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OR GPL-2.0 licensed SQL-based operating-system instrumentation and endpoint visibility for Linux, macOS and Windows; no software license fee or vendor-imposed query/endpoint quota.",
+    "watch_out": "Run the agent and queries on your own endpoints; fleet management, centralized log storage, compute and commercial SaaS services are separate. Endpoint access and security permissions must be managed by the operator.",
+    "pricing_url": "https://github.com/osquery/osquery",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "local"
+  },
+  {
     "id": "prometheus-alertmanager-self-hosted",
     "name": "Prometheus Alertmanager Open Source",
     "category": "observability",
