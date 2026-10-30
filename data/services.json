@@ -10178,5 +10178,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "vector-observability-pipeline-self-hosted",
+    "name": "Vector Open-Source Observability Pipeline",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source Rust agent/aggregator to collect, transform and route logs and metrics using configurable sources, transforms and sinks; no software event or host quota.",
+    "watch_out": "Self-operate the agent or aggregator and pay for any compute, network, buffering, log storage and paid telemetry destinations; metrics are beta in upstream docs and trace support is not generally available.",
+    "pricing_url": "https://github.com/vectordotdev/vector",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
