@@ -9679,5 +9679,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-hbase-self-hosted",
+    "name": "Apache HBase (Self-Hosted)",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed column-family database; no software license fee or vendor-enforced storage/query quota for self-operated deployments.",
+    "watch_out": "Requires self-managed infrastructure and operational expertise, typically Hadoop/HDFS or compatible storage; compute, disks, networking, backups and support are not free.",
+    "pricing_url": "https://github.com/apache/hbase",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
