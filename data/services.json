@@ -9744,5 +9744,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "vane-ai-answering-engine-self-hosted",
+    "name": "Vane AI Answering Engine (Self-Hosted)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted AI answering engine with cited web results, bundled SearXNG search, and support for local Ollama models; no vendor-enforced software query quota.",
+    "watch_out": "Run Docker and local LLMs on your own hardware; electricity, compute and hosting are not included. Optional OpenAI, Anthropic, Google or other hosted model APIs can incur separate charges. Formerly known as Perplexica; do not list both names separately.",
+    "pricing_url": "https://github.com/ItzCrazyKns/Vane",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
