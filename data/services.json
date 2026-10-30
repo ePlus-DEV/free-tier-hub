@@ -10113,5 +10113,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-apisix-self-hosted",
+    "name": "Apache APISIX Open Source Gateway",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed API and AI gateway with dynamic routing, authentication, traffic management, and open-source plugins; no software license usage cap.",
+    "watch_out": "Runs on your own infrastructure and uses NGINX and etcd; server, bandwidth, observability, and upstream API/LLM usage may incur costs. Paid vendor services or managed hosting are not included.",
+    "pricing_url": "https://apisix.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-30",
+    "deployment_model": "self-hosted"
   }
 ]
