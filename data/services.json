@@ -9601,5 +9601,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "fadehost-free-app-hosting",
+    "name": "FadeHost App Hosting Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "One app per verified account with 256 MB RAM, 0.25 vCPU, 3 GB persistent disk, 1 GB combined daily traffic, GitHub deploys and free HTTPS subdomain.",
+    "watch_out": "Free public web address sleeps when idle; daily traffic cap and outbound firewall restrictions apply. No free managed database or public TCP/UDP port; email verification and activity conditions apply. Free-plan commercial use is not explicitly confirmed.",
+    "pricing_url": "https://fadehost.com/docs/app-hosting/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-30",
+    "deployment_model": "cloud"
   }
 ]
