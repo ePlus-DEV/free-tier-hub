@@ -32,6 +32,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(fs.existsSync(path.join(output, 'assets/fontawesome-LICENSE.txt')));
     const raw = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
     const entries = Array.isArray(raw) ? raw : raw.services;
+    const mainEntries = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
+    const limitedEntries = entries.filter(item => item.plan !== 'ongoing' && item.plan !== 'monthly-credit');
+    const offersHtml = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
     assert.equal(result.service_count, entries.length);
     const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     assert.equal(published.length, entries.length);
@@ -63,13 +66,14 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
-    assert.equal((html.match(/class="official-link"/g) || []).length, entries.length);
-    assert.equal((html.match(/data-card-category=/g) || []).length, entries.length);
+    assert.equal((html.match(/class="official-link"/g) || []).length, mainEntries.length);
+    assert.equal((html.match(/data-card-category=/g) || []).length, mainEntries.length);
     assert.match(html, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
     assert.match(html, /data-card-hosting="cloud" href="https:\/\/free-tier\.eplus\.dev\/\?hosting=cloud"/);
     assert.doesNotMatch(html, /href=""/);
     for (const entry of entries) {
-      assert.ok(html.includes(`class="official-link" href="${tag(entry.pricing_url)}"`), entry.id);
+      const page = limitedEntries.some(item => item.id === entry.id) ? offersHtml : html;
+      assert.ok(page.includes(`class="official-link" href="${tag(entry.pricing_url)}"`), entry.id);
       assert.ok(fs.existsSync(path.join(output, 'service', entry.id, 'index.html')), entry.id);
     }
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
@@ -82,7 +86,8 @@ test('category count badges are generated from source JSON and update on rebuild
     const first = path.join(tmp, 'first');
     build(first);
     for (const category of CATEGORIES) {
-      const count = items.filter(item => item.category === category).length;
+      const count = items.filter(item => item.category === category &&
+        (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
       const svg = fs.readFileSync(path.join(first, 'badges', 'categories', category + '.svg'), 'utf8');
       assert.equal(svg, categoryCountSVG(count));
       assert.match(svg, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg"/);
@@ -94,9 +99,40 @@ test('category count badges are generated from source JSON and update on rebuild
     const second = path.join(tmp, 'second');
     build(second, undefined, source);
     const category = items[0].category;
-    const count = items.filter(item => item.category === category).length;
+    const count = items.filter(item => item.category === category &&
+      (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
     assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'), categoryCountSVG(count));
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+});
+
+test('time-limited offers remain accessible but are excluded from the primary free-tier counts', () => {
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'limited-offers-'));
+  try {
+    const all = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
+    const limited = all.filter(item => item.plan === 'limited-duration' || item.plan === 'temporary-resource');
+    const main = all.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
+    const result = build(output);
+    const home = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
+    const offers = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
+    assert.ok(limited.length > 0);
+    assert.equal(result.service_count, all.length);
+    assert.equal(result.free_tier_count, main.length);
+    assert.equal(result.limited_offer_count, limited.length);
+    assert.ok(home.includes('href="https://free-tier.eplus.dev/offers/"'));
+    assert.ok(home.includes('<strong class="result-total">' + main.length + '</strong>'));
+    assert.equal((home.match(/class="service-card"/g) || []).length, main.length);
+    assert.equal((offers.match(/class="service-card"/g) || []).length, limited.length);
+    for (const item of limited) {
+      assert.ok(!home.includes('data-service-id="' + item.id + '"'), item.id);
+      assert.ok(offers.includes('data-service-id="' + item.id + '"'), item.id);
+      const categoryHTML = fs.readFileSync(path.join(output, 'category', item.category, 'index.html'), 'utf8');
+      assert.ok(!categoryHTML.includes('data-service-id="' + item.id + '"'), item.id);
+      assert.ok(fs.existsSync(path.join(output, 'service', item.id, 'index.html')), item.id);
+    }
+    const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
+    assert.deepEqual(published.map(item => item.id), all.map(item => item.id));
+    assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /https:\/\/free-tier\.eplus\.dev\/offers\//);
+  } finally { fs.rmSync(output, { recursive: true, force: true }); }
 });
 
 test('every service gets an actual provider favicon, including previously unmapped brands', () => {
