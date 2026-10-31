@@ -11142,5 +11142,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "cube-core-open-source-self-hosted",
+    "name": "Cube Core Open-Source Semantic Layer",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Cube Core semantic layer for reusable metrics, dimensions and joins with SQL, REST and GraphQL APIs and built-in caching; no open-source software license quota.",
+    "watch_out": "Cube Core is a headless semantic layer, not the paid managed Cube analytics platform or a bundled dashboard UI. You operate Docker/servers, data sources and cache infrastructure; warehouse queries and cloud resources may cost money. Development mode disables authentication on API and Playground endpoints: never expose it publicly or use it in production. Backend Apache-2.0; client packages may be MIT.",
+    "pricing_url": "https://github.com/cube-js/cube",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
