@@ -10648,5 +10648,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "styx-agent-workspace-local",
+    "name": "Styx Open Source AI Agent Workspace",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local desktop workspace for multiple coding agents, isolated task branches, approval gates, project management and scoped deployment credentials; free software on macOS, Windows and Linux.",
+    "watch_out": "Windows/Linux support is beta; separate Claude, Codex, Gemini or other agent subscriptions, API calls, cloud resources and deployment accounts may incur charges. Free desktop software does not include paid agent/model access.",
+    "pricing_url": "https://github.com/NicholasFlemmer/styx-app",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
