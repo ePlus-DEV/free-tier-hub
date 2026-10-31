@@ -11051,5 +11051,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "rspack-local-bundler",
+    "name": "Rspack Open-Source JavaScript Bundler",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Rust-based JavaScript/TypeScript bundler with webpack-compatible API; no software license fee or build quota.",
+    "watch_out": "Bundling runs on your own computer or CI runners; CI compute, hosting, optional third-party plugins and deployment infrastructure can cost extra. Not a hosted free CI plan.",
+    "pricing_url": "https://github.com/web-infra-dev/rspack",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
