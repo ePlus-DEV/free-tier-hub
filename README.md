@@ -6,7 +6,7 @@ Discover and compare free-tier services for hosting, databases, cloud infrastruc
 
 ![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
-**[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json)
+**[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json)
 
 ## Why Free Tier Hub?
 
@@ -16,6 +16,12 @@ Discover and compare free-tier services for hosting, databases, cloud infrastruc
 - **Contribute improvements.** Report changed terms or suggest a service without setting up a local development environment.
 
 > **Free does not always mean zero cost.** Some plans use recurring credits, expire, require a payment method, or charge for overages. Free Tier Hub is an independent directory, not a service provider or an endorsement. Always verify current terms with the provider.
+
+## Understanding the labels
+
+Read the [classification guide on the website](https://free-tier.eplus.dev/about/classifications/) or the [versioned repository guide](docs/classifications.md) for the differences between ongoing free allowances, recurring credits, time-limited offers, expiring resources, deployment models, and **legacy-only (existing-account)** eligibility. These are separate dimensions: a self-hosted free application still needs infrastructure, and a grandfathered plan may not accept new free registrations.
+
+`credit_card: check` or `commercial_use: check` means **not independently confirmed**, never a verified no-card or commercial-use permission. A `last_checked` date is an editorial review date, not a guarantee of live availability.
 
 ## Find the right free tier
 

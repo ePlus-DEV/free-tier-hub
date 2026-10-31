@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { build, categoryCountSVG, tag, serviceLogoURL } from './build-site.mjs';
-import { CATEGORIES } from './catalog.mjs';
+import { CATEGORIES, validateData } from './catalog.mjs';
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -35,6 +35,18 @@ test('directory exposes unique search/category controls and official sources for
     const mainEntries = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     const limitedEntries = entries.filter(item => item.plan !== 'ongoing' && item.plan !== 'monthly-credit');
     const offersHtml = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
+    const classificationsHtml = fs.readFileSync(path.join(output, 'about/classifications/index.html'), 'utf8');
+    assert.match(classificationsHtml, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/about\/classifications\/"/);
+    assert.match(classificationsHtml, /Ongoing free allowance/);
+    assert.match(classificationsHtml, /Recurring monthly credit/);
+    assert.match(classificationsHtml, /Time-limited offer/);
+    assert.match(classificationsHtml, /Expiring free resource/);
+    assert.match(classificationsHtml, /Legacy only/);
+    assert.match(classificationsHtml, /Self-hosted/);
+    assert.match(classificationsHtml, /Check provider/);
+    assert.ok(html.includes('href="https://free-tier.eplus.dev/about/classifications/"'));
+    assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /about\/classifications\//);
+    assert.match(fs.readFileSync(path.join(output, 'llms.txt'), 'utf8'), /Offer classifications/);
     assert.equal(result.service_count, entries.length);
     const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     assert.equal(published.length, entries.length);
@@ -60,6 +72,22 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
+    assert.match(html, /class="classification-help-link" href="https:\/\/free-tier\.eplus\.dev\/about\/classifications\/"/);
+    for (const id of ['koyeb', 'steadystack-initiate']) {
+      const entry = entries.find(s => s.id === id);
+      assert.equal(entry.eligibility, 'existing-users-only');
+      const cardStart = html.indexOf('data-service-id="' + id + '"');
+      assert.ok(cardStart > -1);
+      const card = html.slice(cardStart, html.indexOf('</article>', cardStart));
+      assert.match(card, /data-eligibility="existing-users-only"/);
+      assert.match(card, /Legacy only/);
+      const detail = fs.readFileSync(path.join(output, 'service', id, 'index.html'), 'utf8');
+      assert.match(detail, /Legacy only/);
+      assert.match(detail, /<dt>Eligibility<\/dt><dd>Legacy only/);
+    }
+    const normalDetail = fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8');
+    assert.doesNotMatch(normalDetail, /Legacy only/);
+    assert.match(normalDetail, /What do these plan and deployment labels mean/);
     assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
@@ -255,4 +283,13 @@ test('deployment filtering reads offer metadata rather than ID or product-name g
     const state = {hosting:'local',offer:'ongoing',q:'',category:'',sort:'default',noCard:false,commercial:false};
     assert.deepEqual(api.read(api.write('https://example.com/',state),[''],['default']),state);
   } finally {fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('optional eligibility is manually scoped to legacy ongoing offers', () => {
+  const all = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
+  const ordinary = all.find(item => item.id === 'chatgpt-free');
+  assert.ok(ordinary && !ordinary.eligibility);
+  assert.doesNotThrow(() => validateData([{...ordinary, eligibility:'existing-users-only'}]));
+  assert.throws(() => validateData([{...ordinary, eligibility:'legacy'}]), /invalid eligibility/);
+  assert.throws(() => validateData([{...ordinary, eligibility:'existing-users-only', plan:'limited-duration'}]), /invalid eligibility/);
 });
