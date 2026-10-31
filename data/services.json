@@ -11155,5 +11155,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dnstwist-local-domain-monitor",
+    "name": "dnstwist Domain Impersonation Scanner",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local Python CLI and Docker tool for generating domain-name permutations, checking DNS registrations and identifying potential typosquatting or phishing domains; no software usage quota.",
+    "watch_out": "Not a free hosted DNS provider or continuous monitoring subscription. Requires your own machine, network, DNS resolvers and optional web-content comparison dependencies; bulk DNS requests can hit rate limits or third-party fees. Use responsibly for authorized brand/domain monitoring.",
+    "pricing_url": "https://github.com/elceef/dnstwist",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
