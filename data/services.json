@@ -10425,5 +10425,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zappa-python-serverless-local",
+    "name": "Zappa Open-Source Python Serverless Deployment",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python CLI for packaging and deploying Flask, Django and other Python web apps to AWS Lambda/API Gateway; no software license fee or CLI usage cap.",
+    "watch_out": "Zappa itself runs locally and is free; AWS Lambda, API Gateway, S3, CloudWatch and other deployed resources may incur charges and require an AWS billing account/card. Default generated IAM execution policies can be broad; review least-privilege permissions before production.",
+    "pricing_url": "https://github.com/zappa/Zappa",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
