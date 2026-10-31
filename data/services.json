@@ -10754,6 +10754,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "prowler-oss-cli-local",
+    "name": "Prowler Open Source CLI",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source command-line cloud security and compliance scanner for AWS, Azure, Google Cloud, Kubernetes, Microsoft 365 and GitHub; no Prowler OSS seat or scan quota.",
+    "watch_out": "Requires your own machine and authorized cloud credentials. Provider API usage, log/storage and cloud resources can incur charges; Prowler Cloud managed platform and support are separate paid offerings. Review IAM permissions and scan impact.",
+    "pricing_url": "https://github.com/prowler-cloud/prowler",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "ibis-dataframe-local",
+    "name": "Ibis Open Source DataFrame Framework",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 portable Python dataframe and analytics expression library supporting local DuckDB and 20+ SQL/compute backends; no software seat, query or project quota.",
+    "watch_out": "Ibis is a client-side framework, not free hosted analytics compute. Cloud warehouses, external database engines, data transfer and query execution may be billed separately; install appropriate backend dependencies.",
+    "pricing_url": "https://github.com/ibis-project/ibis",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "kubescape-cli-local",
     "name": "Kubescape Open Source Kubernetes Security CLI",
     "category": "auth-security",
