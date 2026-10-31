@@ -10230,5 +10230,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-30",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "static-so-starter-free",
+    "name": "Static.so Starter Free Static Hosting",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Official $0/month Starter plan for static HTML/CSS/JS sites, with up to 100 MB of files per site and a hosted HTTPS static.so URL.",
+    "watch_out": "Starter is advertised for personal projects; commercial eligibility and credit-card requirements are not stated clearly. Custom domains and Git deployments require paid Pro/Business. Monthly bandwidth quota is unpublished; sites may pause after exceeding it, and no overage charge occurs without consent.",
+    "pricing_url": "https://static.so/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
   }
 ]
