@@ -10973,5 +10973,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zed-editor-free",
+    "name": "Zed Free Code Editor",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free desktop code editor for macOS, Linux and Windows without sign-in or subscription; limited Edit Predictions and support for external AI agents or your own model API keys.",
+    "watch_out": "The free editor does not include Zed-hosted AI models. Zed Pro's 14-day trial and its hosted-model token credits are separate, time-limited or paid benefits; own-provider API usage may cost money. Editor source is primarily GPL-3.0-or-later (server components have separate terms); comply with copyleft obligations when redistributing modified software.",
+    "pricing_url": "https://zed.dev/docs/account/plans-and-pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
