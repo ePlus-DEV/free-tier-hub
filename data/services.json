@@ -10386,5 +10386,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "qwen-code-local-ai-agent",
+    "name": "Qwen Code Open-Source Local AI Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source terminal, editor and desktop AI coding agent; free to install and run locally with user-selected local models or external model providers.",
+    "watch_out": "Free software does not mean free inference: hosted Qwen/OpenAI/Anthropic/Gemini APIs and cloud resources may require payment or billing setup. Do not rely on discontinued Qwen OAuth promotional free quotas; local model hardware and model licenses are separate.",
+    "pricing_url": "https://github.com/QwenLM/qwen-code",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
