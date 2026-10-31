@@ -10869,5 +10869,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "hugo-static-site-generator-local",
+    "name": "Hugo Open-Source Static Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source static site generator for building Markdown/content-driven websites locally; no vendor-imposed build, page or site quota.",
+    "watch_out": "Hugo is build software, not a free hosted website or CDN. Hosting, domains, bandwidth, CI runners and cloud storage may cost money; themes and extensions can have separate licenses. Preserve Apache-2.0 notices.",
+    "pricing_url": "https://gohugo.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
