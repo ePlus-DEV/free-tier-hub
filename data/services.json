@@ -10399,5 +10399,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "aws-chalice-serverless-local",
+    "name": "AWS Chalice Open-Source Serverless Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python CLI and microframework for creating, testing and deploying AWS Lambda/API Gateway serverless applications; no software license fee or CLI usage cap.",
+    "watch_out": "Chalice is free local developer software, NOT free AWS hosting. Deploying creates AWS Lambda, API Gateway and potentially S3/SQS/SNS resources with independent AWS quotas, billing and account requirements; card may be required by AWS. Review IAM permissions and service costs.",
+    "pricing_url": "https://github.com/aws/chalice",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
