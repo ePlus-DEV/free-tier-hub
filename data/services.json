@@ -10321,5 +10321,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "metaflow-open-source-local",
+    "name": "Metaflow Open-Source AI/ML Workflows",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python workflow framework with local execution, experiment tracking, versioning, and workflow steps; no software subscription or execution-count cap for local runs.",
+    "watch_out": "Cloud-scale execution on AWS, Azure, Kubernetes or other providers requires separately provisioned compute, object storage, orchestration and associated charges. This listing covers the free local framework, not managed cloud compute.",
+    "pricing_url": "https://github.com/Netflix/metaflow",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
