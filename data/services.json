@@ -10713,5 +10713,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "pantsbuild-local",
+    "name": "Pants Open Source Build System",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source local build, test, lint and package automation for monorepos and supported languages; no software seat, project or execution-minute quota.",
+    "watch_out": "Pants runs on user-provided machines or CI runners; remote caches, external services and infrastructure are not included. Language/tool integrations and compatibility depend on the installed version and selected backends.",
+    "pricing_url": "https://github.com/pantsbuild/pants",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
