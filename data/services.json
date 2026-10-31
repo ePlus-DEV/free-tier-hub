@@ -10687,5 +10687,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "huggingface-smolagents-local",
+    "name": "Hugging Face smolagents Open Source",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python library for code-based and tool-calling AI agents, local agent orchestration, model adapters and sandbox integrations; no software usage quota.",
+    "watch_out": "Model inference, hosted endpoints, E2B/Modal/Blaxel sandboxes and compute may charge separately. Code execution requires careful sandboxing and security review; the free library does not include free hosted LLM tokens.",
+    "pricing_url": "https://github.com/huggingface/smolagents",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
