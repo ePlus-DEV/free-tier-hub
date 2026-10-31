@@ -11129,5 +11129,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "dnspython-local-dns-toolkit",
+    "name": "dnspython DNS Toolkit",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed Python DNS toolkit for DNS queries, zone transfers, dynamic updates, nameserver testing and record/message handling, with no software usage quota.",
+    "watch_out": "This is a local Python library, not hosted DNS or a free managed DNS zone. Users supply resolvers, network access and their own infrastructure; upstream DNS services, paid providers and network traffic may have separate costs. Respect third-party DNS rate limits and policies.",
+    "pricing_url": "https://www.dnspython.org/about/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
