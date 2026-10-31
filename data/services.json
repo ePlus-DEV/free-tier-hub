@@ -11105,6 +11105,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "lightdash-open-source-self-hosted",
+    "name": "Lightdash Open Source Self-Hosted",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Lightdash open-source core with dbt-native metrics, SQL exploration, charts and dashboards; no software usage quota or per-seat fee for the OSS edition.",
+    "watch_out": "Self-hosting requires your own compute, database, data warehouse and maintenance; infrastructure and query costs are separate. MIT applies to the open-source core, while enterprise-only code is separately licensed. Vendor-hosted Cloud Pro, AI agents, enterprise security and support are paid, not included.",
+    "pricing_url": "https://www.lightdash.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cloudevents-javascript-sdk-local",
     "name": "CloudEvents JavaScript SDK",
     "category": "webhooks-events",
