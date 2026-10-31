@@ -10243,5 +10243,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "flagtgl-cloud-free",
+    "name": "FlagTGL Cloud Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Official $0/month hosted Free plan with 5 boolean feature flags, 1 project, 2 environments, 1,000 monthly active users and 2 seats.",
+    "watch_out": "Paid Starter/Pro/Enterprise tiers offer separate 14-day trials, not part of this ongoing Free plan. Free excludes advanced flag types, streaming, segmentation and audit workflows; credit-card and commercial-use terms for Free are not explicitly confirmed. Exceeding the MAU/flag limits may require upgrading.",
+    "pricing_url": "https://flagtgl.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
   }
 ]
