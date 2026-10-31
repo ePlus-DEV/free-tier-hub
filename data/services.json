@@ -11038,5 +11038,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "oxc-local-toolchain",
+    "name": "Oxc JavaScript and TypeScript Toolchain",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local JavaScript/TypeScript parser, linter and formatter toolchain; no software license fee or local run quota.",
+    "watch_out": "Requires your own local or CI compute; hosted CI, infrastructure and third-party services are separate costs. Some tooling features and integrations vary by release.",
+    "pricing_url": "https://github.com/oxc-project/oxc",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
