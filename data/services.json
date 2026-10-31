@@ -10637,6 +10637,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "agenda-6-job-scheduler-local",
+    "name": "Agenda 6 Open Source Job Scheduler",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js 18+ TypeScript/ESM job scheduler with cron and human-readable schedules, concurrency/locking, and pluggable MongoDB, PostgreSQL or Redis backends; no software job quota.",
+    "watch_out": "You must provide and operate a database and Node.js process; managed database/compute costs are separate. Agenda 6 requires ESM and a separately installed backend package; migrations from v5 have breaking changes.",
+    "pricing_url": "https://github.com/agenda/agenda",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "styx-agent-workspace-local",
     "name": "Styx Open Source AI Agent Workspace",
     "category": "ai-assistants",
