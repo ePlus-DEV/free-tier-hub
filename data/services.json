@@ -10596,5 +10596,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "goodjob-rails",
+    "name": "GoodJob for Rails",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed PostgreSQL-backed Active Job queue for Rails: multithreaded jobs, scheduled/recurring jobs, priorities, retries, concurrency controls and dashboard; no software usage quota.",
+    "watch_out": "Runs within your Rails process or separately managed workers and requires PostgreSQL; database, application hosting and operations can incur costs. Retain MIT copyright and license notices.",
+    "pricing_url": "https://github.com/bensheldon/good_job",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
