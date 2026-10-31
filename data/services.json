@@ -11079,6 +11079,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "toggly-starter-free",
+    "name": "Toggly Starter Free",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Always Free hosted Starter plan: 1 application, 2 environments, unlimited feature flags, usage dashboard, A/B testing business metrics and digitally signed definitions.",
+    "watch_out": "The hosted Starter tier is limited to one app and two environments; additional apps, team members, integrations and API access are advertised under paid Team/Business plans. Provider's Free Forever signup docs say no card required; commercial-use rights for the hosted Starter plan are not explicitly confirmed.",
+    "pricing_url": "https://toggly.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "encore-open-source-framework",
     "name": "Encore Open-Source Backend Framework",
     "category": "serverless",
