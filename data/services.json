@@ -10334,5 +10334,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-echarts-visualization-local",
+    "name": "Apache ECharts Open-Source Data Visualization",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 browser-side JavaScript/TypeScript charting library for interactive charts and analytics visualizations; free for commercial applications with no chart or page-view license quota.",
+    "watch_out": "ECharts is a local/browser visualization library, not a hosted analytics collection or reporting service. Data pipelines, databases, servers, paid map layers, hosting and third-party APIs are not included.",
+    "pricing_url": "https://github.com/apache/echarts",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
