@@ -10518,5 +10518,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-doris-self-hosted",
+    "name": "Apache Doris Open Source",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted SQL analytics and hybrid-search database with streaming ingestion, materialized views and lakehouse queries; no vendor software query quota.",
+    "watch_out": "You supply compute, disks, networking, object storage, ingestion services and backups. Some third-party dependencies have incompatible licenses and features may need disabling for Apache-2.0 compliance; managed hosting is not included.",
+    "pricing_url": "https://github.com/apache/doris",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
