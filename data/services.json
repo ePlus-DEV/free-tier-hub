@@ -10778,5 +10778,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "kubescape-cli-local",
+    "name": "Kubescape Open Source Kubernetes Security CLI",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes security CLI for scanning cluster configurations, YAML manifests, Helm charts and container images against compliance and vulnerability controls; no software seat or scan quota.",
+    "watch_out": "Runs on your own workstation or CI and requires appropriate cluster access for live scans. Kubernetes compute, image registries and security feeds can incur separate costs; ARMO hosted services/support are not included. Use fix/patch commands only after review.",
+    "pricing_url": "https://github.com/kubescape/kubescape",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
