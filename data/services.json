@@ -10741,6 +10741,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "perses-observability-self-hosted",
+    "name": "Perses Open Source Observability Dashboards",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source observability dashboard server, CLI and dashboard-as-code tools supporting Prometheus, Tempo, Loki and Pyroscope; no software seat or dashboard quota.",
+    "watch_out": "Self-host and operate Perses on your own compute; data sources, metrics/log storage, network and infrastructure are not included. Managed support or hosted observability services may charge separately.",
+    "pricing_url": "https://github.com/perses/perses",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "prowler-oss-cli-local",
+    "name": "Prowler Open Source CLI",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source command-line cloud security and compliance scanner for AWS, Azure, Google Cloud, Kubernetes, Microsoft 365 and GitHub; no Prowler OSS seat or scan quota.",
+    "watch_out": "Requires your own machine and authorized cloud credentials. Provider API usage, log/storage and cloud resources can incur charges; Prowler Cloud managed platform and support are separate paid offerings. Review IAM permissions and scan impact.",
+    "pricing_url": "https://github.com/prowler-cloud/prowler",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "ibis-dataframe-local",
     "name": "Ibis Open Source DataFrame Framework",
     "category": "analytics",
