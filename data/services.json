@@ -100,7 +100,7 @@
     "pricing_url": "https://deplexo.com/free-hosting",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -426,7 +426,7 @@
     "pricing_url": "https://prquorum.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -569,7 +569,7 @@
     "pricing_url": "https://docs.github.com/en/billing/concepts/product-billing/github-packages",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -582,7 +582,7 @@
     "pricing_url": "https://www.doppler.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -673,7 +673,7 @@
     "pricing_url": "https://sentry.io/pricing/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -686,7 +686,7 @@
     "pricing_url": "https://www.splunk.com/en_us/products/pricing/observability.html",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -699,7 +699,7 @@
     "pricing_url": "https://www.tinybird.co/docs/forward/pricing/free",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -725,7 +725,7 @@
     "pricing_url": "https://www.cloudflare.com/plans/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -738,7 +738,7 @@
     "pricing_url": "https://huggingface.co/docs/hub/spaces-overview",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -751,7 +751,7 @@
     "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -790,7 +790,7 @@
     "pricing_url": "https://appwrite.io/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -855,7 +855,7 @@
     "pricing_url": "https://cron-job.org/en/faq/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -881,7 +881,7 @@
     "pricing_url": "https://future.tinyfish.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1063,7 +1063,7 @@
     "pricing_url": "https://simpleq.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1089,7 +1089,7 @@
     "pricing_url": "https://www.windmill.dev/docs/getting_started/how_to_use_windmill",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1102,7 +1102,7 @@
     "pricing_url": "https://axiom.co/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1115,7 +1115,7 @@
     "pricing_url": "https://hookdeck.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1128,7 +1128,7 @@
     "pricing_url": "https://www.svix.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1167,7 +1167,7 @@
     "pricing_url": "https://motherduck.com/product/pricing/",
     "credit_card": "no",
     "commercial_use": "no",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1206,7 +1206,7 @@
     "pricing_url": "https://kinsta.com/pricing/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1259,7 +1259,7 @@
     "pricing_url": "https://webhooker.eu/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1272,7 +1272,7 @@
     "pricing_url": "https://featureflip.io/pricing/",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-11-01",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
