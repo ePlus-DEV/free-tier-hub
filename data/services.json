@@ -10975,6 +10975,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "tunnelto-me-free",
+    "name": "tunnelto.me Free Hosted Tunnels",
+    "category": "tunneling-networking",
+    "plan": "temporary-resource",
+    "free_limit": "The Free account is ongoing, but each hosted tunnel resource expires after one hour; unlimited one-hour tunnels on one custom domain, one tunnelto.me subdomain, 500 MB bandwidth/month, 100 requests/minute and 5 Mbps.",
+    "watch_out": "Classified as an expiring hosted resource, not a persistent ongoing free tunnel: every Free tunnel terminates after one hour and must be recreated, so this belongs in Time-limited / expiring offers, not the primary ongoing directory. Persistent tunnels and built-in bearer/password authentication require paid Hobbyist; domain registration may cost extra. Pre-26-Aug-2026 accounts may retain 1 GB/month; commercial-use permission is not explicit.",
+    "pricing_url": "https://www.tunnelto.me/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "dif-feature-flags-local",
     "name": "dif Open-Source Feature Flags and Experiments",
     "category": "feature-flags",
