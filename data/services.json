@@ -10360,5 +10360,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "clearml-open-source-self-hosted",
+    "name": "ClearML Open-Source MLOps",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed experiment tracking, data management, orchestration, scheduling and ML pipelines; the open-source server and SDK have no vendor-hosted free resource quota.",
+    "watch_out": "You must operate your own server, storage, agents, GPU/CPU resources and dependencies; ClearML's separately hosted or enterprise services may have different pricing and feature limits.",
+    "pricing_url": "https://github.com/clearml/clearml",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
