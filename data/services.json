@@ -10453,5 +10453,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "django-waffle-local",
+    "name": "Django Waffle Open Source",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause Django feature-flag library with flags, switches and samples; no vendor software usage quota.",
+    "watch_out": "Requires your own Django application, database and optional cache; no hosted feature-flag dashboard or infrastructure is included. Follow BSD notice and non-endorsement conditions.",
+    "pricing_url": "https://github.com/django-waffle/django-waffle",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
