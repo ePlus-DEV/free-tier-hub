@@ -10282,5 +10282,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "lapce-code-editor-local",
+    "name": "Lapce Open-Source Code Editor",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 native Rust code editor with built-in LSP, modal editing, terminal, and WASI plugins; free local Windows, macOS and Linux builds with no software subscription.",
+    "watch_out": "Remote development environments, cloud workspaces, external language services and infrastructure are separate and may incur charges; Lapce itself does not provide hosted compute or API credits.",
+    "pricing_url": "https://github.com/lapce/lapce",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
