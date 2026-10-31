@@ -10494,6 +10494,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "apache-druid-self-hosted",
+    "name": "Apache Druid Open Source",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted real-time OLAP analytics database for streaming and batch ingestion, interactive SQL and dashboards; no software license or query quota.",
+    "watch_out": "Operate your own Druid cluster, metadata database and deep storage; the official Docker quickstart needs at least 6 GiB memory and is not a production configuration. Compute, disks, Kafka/Kinesis and network usage are not included.",
+    "pricing_url": "https://druid.apache.org/docs/latest/tutorials/docker/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "polars-dataframe-local",
+    "name": "Polars Open Source DataFrame Engine",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local DataFrame and query engine for Python, Rust and other supported bindings, with lazy and streaming processing; no software seat or data-volume quota.",
+    "watch_out": "Runs on your own CPU, memory and storage. Polars Cloud and any remote compute or storage services are separate offerings with their own pricing; this listing covers only the open-source local library.",
+    "pricing_url": "https://pola.rs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "apache-datafusion-local",
     "name": "Apache DataFusion Open Source SQL Engine",
     "category": "analytics",
