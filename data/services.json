@@ -11064,5 +11064,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "boringproxy-self-hosted",
+    "name": "boringproxy Self-Hosted Reverse Proxy",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted reverse proxy and client for publishing local web services over HTTPS with a web management interface; no software licensing fee or vendor-imposed request quota.",
+    "watch_out": "Requires your own reachable server, network, domain/DNS configuration, TLS and operational security. Hosting, domain registration and optional third-party integrations may cost money; no free managed tunneling service is included. Keep authentication and exposure rules configured securely.",
+    "pricing_url": "https://github.com/boringproxy/boringproxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
