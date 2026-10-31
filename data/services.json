@@ -10908,5 +10908,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "velixir-free-web-app",
+    "name": "velixir Free Web App Hosting",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "One provider-hosted free web app per account, 0.25 vCPU, 256 MB RAM and 1 GB temporary disk; scales to zero on idle, wakes on HTTP request; custom domain and TLS supported.",
+    "watch_out": "Free app sleeps when idle, causing cold starts; its 1 GB container disk is ephemeral across deployments. Managed PostgreSQL, Valkey, persistent volumes, paid replicas and always-on compute cost extra. One-time signup credits are separate from the permanent Free app. Commercial-use permissions are not explicit in public Free-plan documentation; check provider terms.",
+    "pricing_url": "https://velixir.net/free",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
   }
 ]
