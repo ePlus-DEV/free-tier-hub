@@ -11025,5 +11025,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cert-manager-self-hosted",
+    "name": "cert-manager Kubernetes Certificate Controller",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes/OpenShift X.509 certificate controller with automated issuance and renewal; no software licensing fee.",
+    "watch_out": "Requires your own Kubernetes/OpenShift cluster and operational maintenance; issuer or CA rate limits and charges may apply, as may DNS, infrastructure and support. Not a hosted certificate service.",
+    "pricing_url": "https://cert-manager.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
