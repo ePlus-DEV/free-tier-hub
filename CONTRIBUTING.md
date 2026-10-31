@@ -59,7 +59,7 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - **Logos:** the site displays provider website favicons through Google's favicon cache. Keep `pricing_url` pointed at the official plan evidence, even if that page is hosted on a documentation or corporate domain. Do not change a pricing source just to change its logo.
 - If a shared domain displays the wrong product logo, report the service ID/name and its official product homepage. Maintainers can add a `SERVICE_LOGO_DOMAINS` override in `scripts/site-data.mjs`. Do not add an unsupported `logo_url` field to the catalog. A generic icon can mean the provider has no indexed favicon; initials are a network-error fallback.
 - **Categories:** use an existing category from `scripts/catalog.mjs` for normal additions. The site generates the full category dropdown automatically. New categories require coordinated updates to catalog validation, site labels/icons and generated documentation; propose them in an Issue first.
-- **Share a filtered view:** select the relevant category and filters, then copy the current URL. Query parameters are `category`, `q`, `sort`, `no_card=1`, `commercial=1`, and `hosting=cloud|self-hosted|hybrid|local|unclassified`. The site restores these selections when a shared link is opened or reloaded. Include this URL when reporting a filtering problem.
+- **Share a filtered view:** select the relevant category and filters, then copy the current URL. Query parameters are `category`, `q`, `sort`, `offer=ongoing|monthly-credit|limited`, `no_card=1`, `commercial=1`, and `hosting=cloud|self-hosted|hybrid|local|unclassified`. The site restores these selections when a shared link is opened or reloaded. Include this URL when reporting a filtering problem.
 - For website UI changes, also run `npm run build` after `npm run verify`. Check desktop/mobile, light/dark themes, category, billing and deployment filters, URL restoration after reload, and desktop popover/mobile bottom-sheet behavior before considering visual review complete.
 
 ## Catalog fields
@@ -76,9 +76,12 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 | `credit_card` | `yes`, `no`, or `check` (unconfirmed) |
 | `commercial_use` | `yes`, `no`, or `check` (unconfirmed) |
 | `deployment_model` | `cloud`, `self-hosted`, `hybrid`, `local`, or `unclassified`; include for new/updated entries. Legacy omission remains supported. |
+| `eligibility` | Optional `existing-users-only` for a manually verified grandfathered ongoing benefit; omit for ordinary listings. |
 | `last_checked` | Date that you actually verified the provider source, `YYYY-MM-DD` |
 
-For `plan`, use `ongoing` only when the free allowance has no announced fixed end date. A database that expires after 30 days is a `temporary-resource`; a 30-day account-level trial is `limited-duration`.
+For `plan`, use `ongoing` only when the free allowance has no announced fixed end date. A database that expires after 30 days is a `temporary-resource`; a 30-day account-level trial is `limited-duration`. The separate `eligibility: existing-users-only` flag does **not** convert an ongoing benefit into a trial. It warns that only grandfathered existing accounts qualify. Do not infer this flag from a service name, plan label or trial marketing; require explicit provider evidence, review it in the PR, and leave `last_checked` untouched unless all claims are reverified.
+
+See [Offer classifications](docs/classifications.md) for editorial rules and the matching [public website guide](https://free-tier.eplus.dev/about/classifications/). The automated candidate Issue format remains exactly ten required fields plus its separately reviewed deployment-model evidence; eligibility exceptions require a maintainer-reviewed catalog PR.
 
 ## After submitting a PR
 
