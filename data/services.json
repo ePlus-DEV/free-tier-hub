@@ -10583,5 +10583,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "solid-queue-rails",
+    "name": "Solid Queue (Rails)",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed database-backed Active Job queue for Rails: delayed and recurring jobs, concurrency controls, priorities, and bulk enqueuing; no software usage quota.",
+    "watch_out": "Runs in your Rails application or workers; requires Rails 7.1+/Ruby 3.2+ and a supported SQL database (SQLite, PostgreSQL or MySQL). Application compute, database hosting, storage and operations are not free. Preserve MIT copyright and license notices.",
+    "pricing_url": "https://github.com/rails/solid_queue",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
