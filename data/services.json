@@ -10347,5 +10347,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "externaldns-kubernetes-controller-self-hosted",
+    "name": "Kubernetes ExternalDNS Controller (Open Source)",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes DNS automation controller that synchronizes Service and Ingress hostnames with supported DNS providers; no software subscription or per-record license charge.",
+    "watch_out": "ExternalDNS is not a free authoritative DNS hosting service or CDN. A Kubernetes cluster, hosted zones, DNS provider API calls and cloud infrastructure can incur charges; use dry-run and ownership TXT records to prevent unwanted DNS changes.",
+    "pricing_url": "https://github.com/kubernetes-sigs/external-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
