@@ -103,6 +103,11 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     if (Object.hasOwn(item, "deployment_model") && !DEPLOYMENT_MODELS.includes(item.deployment_model)) {
       errors.push(String(id) + ": invalid deployment_model");
     }
+    // Optional, verified eligibility exception. Not a fifth plan type or a blanket rule.
+    if (Object.hasOwn(item, "eligibility") &&
+        (item.eligibility !== "existing-users-only" || item.plan !== "ongoing")) {
+      errors.push(String(id) + ": invalid eligibility (only ongoing legacy offers may be existing-users-only)");
+    }
     try {
       const u = new URL(item.pricing_url);
       if (u.protocol !== "https:" || !u.hostname || u.username || u.password) throw Error();
