@@ -10559,6 +10559,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kics-open-source-local",
+    "name": "KICS Open Source IaC Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source CLI for scanning infrastructure-as-code templates and configuration files locally or in CI; no vendor-imposed license seat or scan quota for the OSS tool.",
+    "watch_out": "The free KICS CLI is separate from paid Checkmarx products. Self-managed CI runners, cloud resources, third-party services and remediation work can cost money; findings need review.",
+    "pricing_url": "https://github.com/Checkmarx/kics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "owasp-dependency-check-local",
     "name": "OWASP Dependency-Check Open Source Scanner",
     "category": "auth-security",
