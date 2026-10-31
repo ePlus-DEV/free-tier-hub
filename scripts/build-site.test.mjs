@@ -296,11 +296,11 @@ test('optional eligibility is manually scoped to legacy ongoing offers', () => {
 
 test('service card plan badges stay at the top-right without arbitrary 110px wrapping', () => {
   const css = fs.readFileSync(new URL('../site/assets/site.css', import.meta.url), 'utf8');
-  const badgeRule = css.match(/\\.card-top>\\.badge\\{([^}]*)\\}/);
+  const badgeRule = css.match(/\.card-top>\.badge\{([^}]*)\}/);
   assert.ok(badgeRule, 'card-specific badge rule must exist');
   assert.match(badgeRule[1], /grid-column:3;grid-row:1;justify-self:end/);
   assert.match(badgeRule[1], /max-width:none/);
   assert.match(badgeRule[1], /white-space:nowrap/);
   assert.doesNotMatch(badgeRule[1], /max-width:110px|overflow-wrap:anywhere/);
-  assert.match(css, /@media\\(max-width:360px\\)\\{[\\s\\S]*?\\.service-card \\.card-top>\\.badge\\{grid-column:2;grid-row:1;justify-self:end\\}/);
+  assert.match(css, /@media\(max-width:360px\)\{[\s\S]*?\.service-card \.card-top>\.badge\{grid-column:2;grid-row:1;justify-self:end\}/);
 });
