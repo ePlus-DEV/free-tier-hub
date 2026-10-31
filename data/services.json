@@ -10804,5 +10804,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "gokapi-file-sharing-self-hosted",
+    "name": "Gokapi Self-Hosted File Sharing",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted file-sharing server with expiring download links, optional end-to-end encryption and local or S3-compatible storage; no software-imposed transfer quota.",
+    "watch_out": "Provide and secure your own server, disk, TLS and bandwidth; optional S3 storage/requests may be billed. Shared files can expire by configured time/download limits; AGPL-3.0 obligations apply to modified network deployments.",
+    "pricing_url": "https://github.com/Forceu/Gokapi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
