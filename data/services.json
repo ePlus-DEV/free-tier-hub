@@ -11194,5 +11194,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "codecompanion-neovim-ai-coding-local",
+    "name": "CodeCompanion.nvim Open-Source AI Coding Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Neovim plugin for AI-assisted chat, inline editing and coding agents; no software license fee or plugin usage quota.",
+    "watch_out": "Requires Neovim and an LLM provider, compatible local model or agent. Model API requests, subscriptions, agent tooling and compute are NOT included; local model hardware costs are yours. Not a vendor-hosted free inference plan.",
+    "pricing_url": "https://github.com/olimorris/codecompanion.nvim",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
