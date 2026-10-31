@@ -10830,5 +10830,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "usearch-vector-search-local",
+    "name": "USearch Open Source Vector Similarity Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 embedded similarity search and clustering library for vectors; local single-file indexes with C++, Python, JavaScript, Rust and other language bindings, without a vendor-imposed query quota.",
+    "watch_out": "This is an embedded library, not free managed search hosting. Your application provides CPU, memory, disk, indexing, backups and any cloud infrastructure; separate embedding models or APIs may cost money. Observe Apache-2.0 notices.",
+    "pricing_url": "https://github.com/unum-cloud/USearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
