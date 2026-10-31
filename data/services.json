@@ -10674,5 +10674,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "hookbus-light-self-hosted",
+    "name": "HookBus Light Open Source Agent Event Bus",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted event bus for AI-agent lifecycle events, HTTP webhook publishers, event fan-out, subscriber verdicts and audit routing; no software metered quota.",
+    "watch_out": "Developer preview/reference implementation, not a production security perimeter. Requires own Docker/server, TLS, token management and optional publisher/subscriber components; review SECURITY.md before sensitive use. Hosting and integrations may cost money.",
+    "pricing_url": "https://github.com/agentic-thinking/hookbus",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
