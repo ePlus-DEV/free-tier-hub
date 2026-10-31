@@ -10817,5 +10817,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "litestream-sqlite-replication-local",
+    "name": "Litestream Open Source SQLite Replication",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 standalone SQLite replication and disaster-recovery tool; incremental replication to local files or S3-compatible storage without a software usage quota.",
+    "watch_out": "Remote object storage, API requests, bandwidth and hosting may cost money; no free hosted replica is included. SQLite checkpoint/WAL and restore behavior require testing; upstream labels the project beta.",
+    "pricing_url": "https://github.com/benbjohnson/litestream",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
