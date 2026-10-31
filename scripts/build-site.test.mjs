@@ -48,7 +48,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(detail.includes('Added to directory (UTC)'));
     assert.ok(detail.includes(candidate.added_at));
     assert.ok(published.some(item => item.added_at !== item.last_checked));
-    for (const id of ['search', 'category-filter', 'service-grid', 'sort', 'filter-no-card', 'filter-commercial']) {
+    for (const id of ['search', 'category-filter', 'offer-filter', 'service-grid', 'sort', 'filter-no-card', 'filter-commercial']) {
       assert.equal(html.split(`id="${id}"`).length - 1, 1, `${id} must have one owner`);
     }
     assert.match(html, /<form[^>]+id="directory-search-form"[^>]+role="search"/);
@@ -58,6 +58,13 @@ test('directory exposes unique search/category controls and official sources for
     assert.doesNotMatch(dialog, /id="sort"|id="filter-no-card"|id="filter-commercial"/);
     assert.match(html, /class="result-controls"><label class="sort-field"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
+    assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
+    assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
+    assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
+    assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
+    assert.ok(html.includes('data-offer-plan="ongoing"'));
+    assert.ok(html.includes('data-offer-plan="monthly-credit"'));
+    assert.ok(html.includes('data-offer-plan="limited-duration"'));
     assert.ok(html.includes('data-filter-category="ci-cd"'));
     assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines</option>'));
     assert.ok(fs.existsSync(path.join(output, 'category/ci-cd/index.html')));
@@ -66,8 +73,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
-    assert.equal((html.match(/class="official-link"/g) || []).length, mainEntries.length);
-    assert.equal((html.match(/data-card-category=/g) || []).length, mainEntries.length);
+    assert.equal((html.match(/class="official-link"/g) || []).length, entries.length);
+    assert.equal((html.match(/data-card-category=/g) || []).length, entries.length);
     assert.match(html, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
     assert.match(html, /data-card-hosting="cloud" href="https:\/\/free-tier\.eplus\.dev\/\?hosting=cloud"/);
     assert.doesNotMatch(html, /href=""/);
@@ -118,12 +125,12 @@ test('time-limited offers remain accessible but are excluded from the primary fr
     assert.equal(result.service_count, all.length);
     assert.equal(result.free_tier_count, main.length);
     assert.equal(result.limited_offer_count, limited.length);
-    assert.ok(home.includes('href="https://free-tier.eplus.dev/offers/"'));
+    assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
     assert.ok(home.includes('<strong class="result-total">' + main.length + '</strong>'));
-    assert.equal((home.match(/class="service-card"/g) || []).length, main.length);
+    assert.equal((home.match(/class="service-card"/g) || []).length, all.length);
     assert.equal((offers.match(/class="service-card"/g) || []).length, limited.length);
     for (const item of limited) {
-      assert.ok(!home.includes('data-service-id="' + item.id + '"'), item.id);
+      assert.ok(home.includes('class="service-card" hidden data-service-id="' + item.id + '"'), item.id);
       assert.ok(offers.includes('data-service-id="' + item.id + '"'), item.id);
       const categoryHTML = fs.readFileSync(path.join(output, 'category', item.category, 'index.html'), 'utf8');
       assert.ok(!categoryHTML.includes('data-service-id="' + item.id + '"'), item.id);
@@ -152,15 +159,26 @@ test('every service gets an actual provider favicon, including previously unmapp
 test('URL filters round trip, reject unknown values, preserve unrelated params and hash', async () => {
   await import('../site/assets/directory-url.js');
   const api = globalThis.FreeTierDirectoryURL;
-  const state = {hosting: 'self-hosted', q: 'AI & cloud', category: 'databases', sort: 'name', noCard: true, commercial: true};
+  const state = {hosting: 'self-hosted', offer: 'monthly-credit', q: 'AI & cloud', category: 'databases', sort: 'name', noCard: true, commercial: true};
   const href = api.write('https://free-tier.eplus.dev/?utm_source=test#explore', state);
   assert.deepEqual(api.read(href, ['', 'databases'], ['default', 'name']), state);
   assert.equal(new URL(href).searchParams.get('utm_source'), 'test');
   assert.equal(new URL(href).hash, '#explore');
+  assert.equal(new URL(href).searchParams.get('offer'), 'monthly-credit');
+  assert.equal(api.matchesOffer('monthly-credit', 'monthly-credit'), true);
+  assert.equal(api.matchesOffer('ongoing', 'monthly-credit'), false);
+  assert.equal(api.matchesOffer('ongoing', ''), true);
+  assert.equal(api.matchesOffer('limited-duration', ''), false);
+  assert.equal(api.matchesOffer('temporary-resource', 'limited'), true);
+  assert.equal(api.matchesOffer('limited-duration', 'limited'), true);
+  assert.equal(api.matchesOffer('ongoing', 'limited'), false);
+  assert.equal(api.matchesOffer('limited-duration', 'ongoing'), false);
+  assert.equal(api.matchesOffer('monthly-credit', 'invalid'), false);
+  assert.equal(new URL(api.write('https://free-tier.eplus.dev/', {...state, offer:'limited'})).searchParams.get('offer'), 'limited');
   const reset = new URL(api.write(href, {q:'', category:'', sort:'default', noCard:false, commercial:false}));
   assert.equal(reset.search, '?utm_source=test');
-  assert.deepEqual(api.read('https://free-tier.eplus.dev/?hosting=bad&category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
-    {hosting:'', q:'', category:'', sort:'default', noCard:false, commercial:false});
+  assert.deepEqual(api.read('https://free-tier.eplus.dev/?hosting=bad&offer=limited-duration&category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
+    {hosting:'', offer:'', q:'', category:'', sort:'default', noCard:false, commercial:false});
 });
 
 test('header search opens and keyboard shortcuts work without a directory grid', async () => {
@@ -226,7 +244,7 @@ test('deployment filtering reads offer metadata rather than ID or product-name g
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output,'catalog.json'),'utf8')).map(x=>x.deployment_model), [...modes,undefined]);
     await import('../site/assets/directory-url.js');
     const api = globalThis.FreeTierDirectoryURL;
-    const state = {hosting:'local',q:'',category:'',sort:'default',noCard:false,commercial:false};
+    const state = {hosting:'local',offer:'ongoing',q:'',category:'',sort:'default',noCard:false,commercial:false};
     assert.deepEqual(api.read(api.write('https://example.com/',state),[''],['default']),state);
   } finally {fs.rmSync(tmp,{recursive:true,force:true});}
 });

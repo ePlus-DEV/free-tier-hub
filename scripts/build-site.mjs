@@ -83,14 +83,15 @@ function planBadge(item) {
 // Time-limited trials and expiring resources stay available in a separate archive.
 const isMainFreeOffer = item => item.plan === 'ongoing' || item.plan === 'monthly-credit';
 
-function card(item, absolute) {
+function card(item, absolute, initiallyHidden = false) {
   const dest = absolute('service/' + item.id + '/');
   const group = CATEGORY_NAMES[item.category];
   const searchable = [item.name, group, item.free_limit, item.watch_out].join(' ').toLowerCase();
   return [
-    '<article class="service-card" data-service-id="', tag(item.id),
+    '<article class="service-card"', initiallyHidden ? ' hidden' : '', ' data-service-id="', tag(item.id),
     '" data-category="', tag(item.category),
     '" data-hosting-model="', hostingModel(item),
+    '" data-offer-plan="', tag(item.plan),
     '" data-added-at="', tag(item.added_at || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
@@ -200,7 +201,8 @@ function document(absolute, title, description, relative, content, structuredDat
 function homePage(items, absolute, counts) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
-  const cards = mainItems.map(item => card(item, absolute)).join('');
+  // Keep limited entries present for the Offer type filter, but hidden by default.
+  const cards = items.map(item => card(item, absolute, !isMainFreeOffer(item))).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
@@ -241,6 +243,12 @@ function homePage(items, absolute, counts) {
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
     '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
+    '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
+    '<select id="offer-filter"><option value="">All free tiers</option>',
+    '<option value="ongoing">Ongoing free allowance</option>',
+    '<option value="monthly-credit">Recurring monthly credit</option>',
+    '<option value="limited">Time-limited &amp; expiring offers (', limitedItems.length,
+    ')</option></select></label>',
     '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
     '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
@@ -259,7 +267,6 @@ function homePage(items, absolute, counts) {
     '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total services</span><strong class="result-total">',
     mainItems.length, '</strong></p>',
     '</div></div>',
-    limitedItems.length ? '<p class="limited-offer-hint">Only ongoing free allowances and recurring credits are counted here. <a href="' + tag(absolute('offers/')) + '">View ' + limitedItems.length + ' time-limited / expiring offers</a> separately.</p>' : '',
     '<div class="service-grid" id="service-grid">', cards, '</div>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="load-more">Show more services</button>',

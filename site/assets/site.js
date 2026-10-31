@@ -201,7 +201,7 @@
   var filterCount = document.getElementById("active-filter-count");
   function updateFilterCount() {
     if (!filterCount) return;
-    var count = Number(!!hostingModel) + Number(!!(mobileCategory && mobileCategory.value));
+    var count = Number(!!hostingModel) + Number(!!offerType) + Number(!!(mobileCategory && mobileCategory.value));
     if (window.matchMedia("(max-width: 680px)").matches) {
       count += Number(!!(noCard && noCard.checked)) + Number(!!(commercial && commercial.checked));
     }
@@ -246,6 +246,8 @@
   var category = "";
   var hostingModel = "";
   var hostingSelect = document.getElementById("hosting-filter");
+  var offerType = "";
+  var offerSelect = document.getElementById("offer-filter");
   var pageSize = 12;
   var visible = pageSize;
 
@@ -424,6 +426,8 @@
   function applyFilterState(state) {
     hostingModel = state.hosting;
     if (hostingSelect) hostingSelect.value = hostingModel;
+    offerType = state.offer || "";
+    if (offerSelect) offerSelect.value = offerType;
     category = state.category;
     search.value = state.q;
     if (headerSearch) headerSearch.value = state.q;
@@ -436,7 +440,7 @@
   }
   function syncURL() {
     var next = urlState.write(window.location.href, {
-      q: search.value, category: category, sort: sort.value, hosting: hostingModel,
+      q: search.value, category: category, sort: sort.value, hosting: hostingModel, offer: offerType,
       noCard: noCard.checked, commercial: commercial.checked
     });
     if (next !== window.location.href) window.history.replaceState(window.history.state, "", next);
@@ -522,6 +526,7 @@
       if (state.q) parts.push('Search: ' + state.q.slice(0, 40));
       if (state.category) parts.push(Array.from(mobileCategory.options).find(function (option) { return option.value === state.category; }).text);
       if (state.hosting) parts.push(Array.from(hostingSelect.options).find(function (option) { return option.value === state.hosting; }).text);
+      if (state.offer) parts.push(Array.from(offerSelect.options).find(function (option) { return option.value === state.offer; }).text);
       if (state.noCard) parts.push('No credit card');
       if (state.commercial) parts.push('Commercial use');
       if (state.sort !== 'default') parts.push(Array.from(sort.options).find(function (option) { return option.value === state.sort; }).text);
@@ -540,7 +545,7 @@
     if (consent !== 'accepted') return;
     historyTimer = window.setTimeout(function () {
       if (consent !== 'accepted') return;
-      var state = {q:search.value, category:category, hosting:hostingModel, sort:sort.value, noCard:noCard.checked, commercial:commercial.checked};
+      var state = {q:search.value, category:category, hosting:hostingModel, offer:offerType, sort:sort.value, noCard:noCard.checked, commercial:commercial.checked};
       var query = new URL(urlState.write(window.location.origin + '/', state)).search;
       if (query) recentFilters = [query].concat(recentFilters.filter(function (item) { return item !== query; })).slice(0, 5);
       try {
@@ -572,6 +577,7 @@
     if (search.value.trim()) selected.push(["q", 'Search: ' + search.value.trim()]);
     if (category) selected.push(["category", mobileCategory.options[mobileCategory.selectedIndex].text]);
     if (hostingModel) selected.push(["hosting", hostingSelect.options[hostingSelect.selectedIndex].text]);
+    if (offerType) selected.push(["offer", offerSelect.options[offerSelect.selectedIndex].text]);
     selected.forEach(function (item) {
       var button = document.createElement("button");
       button.type = "button";
@@ -596,6 +602,7 @@
       if (headerSearch) headerSearch.value = "";
     } else if (key === "category") category = "";
     else if (key === "hosting") { hostingModel = ""; hostingSelect.value = ""; }
+    else if (key === "offer") { offerType = ""; offerSelect.value = ""; }
     else if (key === "sort") sort.value = "default";
     else if (key === "no-card") noCard.checked = false;
     else if (key === "commercial") commercial.checked = false;
@@ -609,6 +616,11 @@
     visible = pageSize;
     render();
   });
+  if (offerSelect) offerSelect.addEventListener("change", function () {
+    offerType = offerSelect.value;
+    visible = pageSize;
+    render();
+  });
   function render() {
     syncURL();
     document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
@@ -618,7 +630,10 @@
       button.setAttribute("aria-pressed", String(active));
     });
     var term = normalize(search.value);
-    var matched = cards.filter(function (card) {
+    var pool = cards.filter(function (card) {
+      return urlState.matchesOffer(card.getAttribute("data-offer-plan"), offerType);
+    });
+    var matched = pool.filter(function (card) {
       var words = normalize(card.getAttribute("data-search"));
       return (!term || words.indexOf(term) !== -1) &&
         (!category || card.getAttribute("data-category") === category) &&
@@ -637,20 +652,20 @@
     var shown = Math.min(matched.length, visible);
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.textContent = String(cards.length);
+    totalBadge.textContent = String(pool.length);
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
-    totalLabel.textContent = "Total services";
+    totalLabel.textContent = offerType === "limited" ? "Limited offers" : "Total services";
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = matched.length !== cards.length
+    shownLabel.textContent = matched.length !== pool.length
       ? "Showing " + shown + " of " + matched.length + " matches"
       : "Showing " + shown;
     count.replaceChildren(totalLabel, totalBadge, shownLabel);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
-    if (clear) clear.hidden = !hostingModel && !term && !category &&
+    if (clear) clear.hidden = !hostingModel && !offerType && !term && !category &&
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
@@ -819,6 +834,8 @@
   if (clear) clear.addEventListener("click", function () {
     hostingModel = "";
     if (hostingSelect) hostingSelect.value = "";
+    offerType = "";
+    if (offerSelect) offerSelect.value = "";
     search.value = "";
     if (headerSearch) headerSearch.value = "";
     if (heroSearch) heroSearch.value = "";
@@ -844,13 +861,13 @@
   });
   restoreURL();
   // A URL carrying any directory state wins over saved local preferences.
-  if (consent === 'accepted' && !['q','category','hosting','sort','no_card','commercial'].some(function (key) { return new URL(window.location.href).searchParams.has(key); })) {
+  if (consent === 'accepted' && !['q','category','hosting','offer','sort','no_card','commercial'].some(function (key) { return new URL(window.location.href).searchParams.has(key); })) {
     try {
       var lastFilters = window.localStorage.getItem('fth-directory-last');
       if (lastFilters && lastFilters.startsWith('?') && lastFilters.length < 3000) applyFilterState(readFilterState(lastFilters));
     } catch (_error) {}
   }
-  [sort, mobileCategory, hostingSelect].forEach(enhanceSelect);
+  [sort, mobileCategory, offerSelect, hostingSelect].forEach(enhanceSelect);
   doc.classList.add("js-enabled");
   render();
 })();
