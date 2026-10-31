@@ -10440,5 +10440,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "django-flags-local",
+    "name": "Django-Flags Open Source",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "CC0-1.0 Django feature-flag library; configurable flags in Django settings and admin, including user/date/URL conditions; no software usage quota.",
+    "watch_out": "Requires Python 3.10+ and Django 4.2+; runs inside your own Django application and infrastructure. No hosted flag service or managed storage is included.",
+    "pricing_url": "https://github.com/cfpb/django-flags",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
