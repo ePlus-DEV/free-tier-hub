@@ -10399,5 +10399,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "cloudflare-workerd-self-hosted",
+    "name": "Cloudflare workerd Open-Source Workers Runtime",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source JavaScript/WebAssembly Workers runtime for running HTTP event-driven applications on your own server or VM; no workerd software license fee or runtime usage quota.",
+    "watch_out": "This is the self-hosted runtime, NOT the managed Cloudflare Workers free tier or a complete hosted edge platform. You supply and pay for servers, orchestration, storage and networking; some managed Workers platform features are not included.",
+    "pricing_url": "https://github.com/cloudflare/workerd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
