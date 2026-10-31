@@ -10492,5 +10492,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-druid-self-hosted",
+    "name": "Apache Druid Open Source",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted real-time OLAP analytics database for streaming and batch ingestion, interactive SQL and dashboards; no software license or query quota.",
+    "watch_out": "Operate your own Druid cluster, metadata database and deep storage; the official Docker quickstart needs at least 6 GiB memory and is not a production configuration. Compute, disks, Kafka/Kinesis and network usage are not included.",
+    "pricing_url": "https://druid.apache.org/docs/latest/tutorials/docker/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
