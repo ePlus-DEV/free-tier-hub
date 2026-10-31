@@ -10282,5 +10282,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "apache-opendal-storage-sdk-local",
+    "name": "Apache OpenDAL Open-Source Storage Access SDK",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Rust storage access SDK and language bindings; free local integration with unified object, file, and cloud-storage APIs, without a hosted storage quota.",
+    "watch_out": "OpenDAL is a software library, not free S3 buckets or cloud storage. S3/GCS/Azure and other backend providers may charge for stored data, requests, bandwidth, and infrastructure; follow Apache trademark and license terms.",
+    "pricing_url": "https://github.com/apache/opendal",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
