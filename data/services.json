@@ -10700,5 +10700,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "llamaindex-open-source-local",
+    "name": "LlamaIndex Open Source Framework",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source Python framework for document ingestion, retrieval-augmented generation, data indexing and agent workflows, usable locally without a software seat or project quota.",
+    "watch_out": "The framework does not include free hosted LLM inference, embedding APIs, vector databases or cloud infrastructure; selected model providers and LlamaCloud hosted services can bill separately. Configure local models and storage for an entirely self-operated setup.",
+    "pricing_url": "https://github.com/run-llama/llama_index",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
