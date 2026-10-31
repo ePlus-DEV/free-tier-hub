@@ -10323,6 +10323,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "okd-community-kubernetes-self-hosted",
+    "name": "OKD Community Kubernetes Application Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OKD community Kubernetes/OpenShift upstream distribution with application deployment, scaling and cluster management; free software for self-managed clusters without a vendor subscription.",
+    "watch_out": "OKD does not include free virtual machines, Kubernetes nodes, load balancers, storage, DNS, or enterprise support. Some bundled components have separate open-source licenses; operating and upgrading a cluster requires infrastructure and expertise.",
+    "pricing_url": "https://github.com/okd-project/okd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-echarts-visualization-local",
+    "name": "Apache ECharts Open-Source Data Visualization",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 browser-side JavaScript/TypeScript charting library for interactive charts and analytics visualizations; free for commercial applications with no chart or page-view license quota.",
+    "watch_out": "ECharts is a local/browser visualization library, not a hosted analytics collection or reporting service. Data pipelines, databases, servers, paid map layers, hosting and third-party APIs are not included.",
+    "pricing_url": "https://github.com/apache/echarts",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "metaflow-open-source-local",
     "name": "Metaflow Open-Source AI/ML Workflows",
     "category": "ai-ml",
