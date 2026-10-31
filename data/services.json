@@ -10295,5 +10295,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "okd-community-kubernetes-self-hosted",
+    "name": "OKD Community Kubernetes Application Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OKD community Kubernetes/OpenShift upstream distribution with application deployment, scaling and cluster management; free software for self-managed clusters without a vendor subscription.",
+    "watch_out": "OKD does not include free virtual machines, Kubernetes nodes, load balancers, storage, DNS, or enterprise support. Some bundled components have separate open-source licenses; operating and upgrading a cluster requires infrastructure and expertise.",
+    "pricing_url": "https://github.com/okd-project/okd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
