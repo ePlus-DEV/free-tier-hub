@@ -10934,5 +10934,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "sparrow-self-hosted-webhooks",
+    "name": "Sparrow Open-Source Webhook Delivery",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook delivery platform with asynchronous fan-out, retries, HMAC signing, delivery history, health tracking and payload transforms; no vendor-imposed free software quota.",
+    "watch_out": "No free managed webhook hosting or infrastructure is included. Operate your own Go server and PostgreSQL, secure public endpoints, monitor delivery and pay for compute, networking, backups and storage. At-least-once delivery can repeat events; consumers need idempotency. Preserve MIT license notices.",
+    "pricing_url": "https://github.com/sarathsp06/sparrow",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
