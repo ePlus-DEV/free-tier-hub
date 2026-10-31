@@ -10882,5 +10882,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "nsq-distributed-messaging-self-hosted",
+    "name": "NSQ Open-Source Distributed Messaging",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed distributed real-time publish/subscribe and queue-based messaging software; self-hosted binaries and Docker deployment without vendor-imposed message, topic or consumer quotas.",
+    "watch_out": "No free managed broker, compute, storage, networking, backups or SLA is included. You operate nsqd/nsqlookupd, security, monitoring and data durability; at-least-once delivery requires idempotent consumers. Preserve MIT license notices.",
+    "pricing_url": "https://github.com/nsqio/nsq",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
