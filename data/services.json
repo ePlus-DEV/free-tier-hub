@@ -10648,5 +10648,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "hexclaw-desktop-local",
+    "name": "HexClaw Desktop Open Source",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 desktop AI-agent workspace for macOS, Windows and Linux; local Go sidecar, multi-model chat, knowledge base, tools and task automation; no software usage quota.",
+    "watch_out": "Online LLM/API providers may charge separately; local Ollama models require device resources. Windows/Linux need separately installed Ollama for local models; pre-release builds and platform dependencies vary. Desktop software is free, not a free hosted inference tier.",
+    "pricing_url": "https://github.com/hexagon-codes/hexclaw-desktop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
