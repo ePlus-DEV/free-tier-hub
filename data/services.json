@@ -10856,5 +10856,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "astro-static-site-framework-local",
+    "name": "Astro Open-Source Static Website Framework",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed open-source framework for building and locally generating static content-focused websites; no software-imposed site or build quota.",
+    "watch_out": "Astro core is free software, not an included hosting, CDN or serverless allowance. Hosting, domain, bandwidth, CI and optional server-side rendering adapters or third-party integrations may incur costs; respect dependency licenses.",
+    "pricing_url": "https://github.com/withastro/astro",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
