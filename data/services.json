@@ -11103,5 +11103,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "cloudevents-javascript-sdk-local",
+    "name": "CloudEvents JavaScript SDK",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 JavaScript/TypeScript SDK for CloudEvents 1.0: create, serialize, parse, emit and receive structured/binary events using supported protocol bindings, without license fees or event quotas.",
+    "watch_out": "The SDK runs inside your own Node.js applications and is not a hosted webhook delivery, queue, or broker service. You must supply event receivers, transports, servers and operational infrastructure; third-party messaging, network and cloud charges are separate. Supported bindings vary by transport.",
+    "pricing_url": "https://github.com/cloudevents/sdk-javascript",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
