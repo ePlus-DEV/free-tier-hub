@@ -10505,5 +10505,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "polars-dataframe-local",
+    "name": "Polars Open Source DataFrame Engine",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local DataFrame and query engine for Python, Rust and other supported bindings, with lazy and streaming processing; no software seat or data-volume quota.",
+    "watch_out": "Runs on your own CPU, memory and storage. Polars Cloud and any remote compute or storage services are separate offerings with their own pricing; this listing covers only the open-source local library.",
+    "pricing_url": "https://pola.rs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
