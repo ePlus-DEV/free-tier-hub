@@ -299,6 +299,6 @@ test('service-card status badges use their own non-wrapping row at mobile widths
   assert.match(css, /\.card-top\{[^}]*grid-template-columns:36px minmax\(0,1fr\)/);
   assert.match(css, /\.card-top>\.badge\{[^}]*grid-column:2;grid-row:2;[^}]*white-space:nowrap/);
   assert.doesNotMatch(css, /\.card-top>\.badge\{[^}]*max-width:110px/);
-  const statuses = ['Time-limited offer', 'Expiring free resource', 'Free self-hosted software'];
-  for (const label of statuses) assert.ok(label.length > 12);
+  assert.match(css, /\.card-top>\.card-identity\{grid-column:2;grid-row:1\}/);
+  assert.match(css, /\.card-top>\.service-icon\{grid-column:1;grid-row:1\}/);
 });
