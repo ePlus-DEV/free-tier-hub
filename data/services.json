@@ -10440,5 +10440,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "wrkflw-local-ci",
+    "name": "WRKFLW Open Source CI Workflow Runner",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI/TUI to validate and execute GitHub Actions workflows using Docker, Podman or emulation; no software usage quota.",
+    "watch_out": "Not fully equivalent to GitHub-hosted runners: service containers and concurrency groups are unsupported; Windows/macOS runner emulation has limitations. Local container resources and optional remote secrets/cloud integrations are separate.",
+    "pricing_url": "https://github.com/bahdotsh/wrkflw",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
