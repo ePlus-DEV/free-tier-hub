@@ -11170,6 +11170,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "vitepress-static-site-generator-local",
+    "name": "VitePress Open-Source Static Documentation Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Vite/Vue static documentation site generator; build unlimited local documentation sites and pages without a vendor software usage quota.",
+    "watch_out": "Free generator, NOT free managed hosting. Node.js/build runners, domains, hosting/CDN, and optional third-party search or integrations may have separate costs. Commercial use permitted by MIT license.",
+    "pricing_url": "https://github.com/vuejs/vitepress",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "docusaurus-static-docs-generator-local",
     "name": "Docusaurus Open-Source Documentation Generator",
     "category": "static-hosting",
