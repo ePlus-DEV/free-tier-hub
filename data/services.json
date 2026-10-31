@@ -10544,5 +10544,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "fluentd-self-hosted",
+    "name": "Fluentd Open Source Log Collector",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source log and event collection/routing with a plugin ecosystem; no Fluentd core license fee, per-node cap or vendor usage quota when self-operated.",
+    "watch_out": "Operate and secure Fluentd agents/servers and log destinations yourself. Compute, storage, external SaaS outputs and commercial support can cost money; install current security fixes.",
+    "pricing_url": "https://www.fluentd.org/why/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
