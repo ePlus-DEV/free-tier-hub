@@ -10947,5 +10947,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zoo-code-local-agent",
+    "name": "Zoo Code Open-Source Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source VS Code coding-agent extension with code, architect, ask and debug modes; no license fee for the locally installed extension.",
+    "watch_out": "Zoo Code is the actively maintained community continuation of discontinued Roo Code, not Roo Code's former hosted service. Model/API tokens, cloud inference and external tools can incur separate charges; local models need your own hardware. No free hosted inference quota is included.",
+    "pricing_url": "https://github.com/Zoo-Code-Org/Zoo-Code",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
