@@ -10791,5 +10791,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "projectdiscovery-dnsx-local",
+    "name": "ProjectDiscovery dnsx DNS Toolkit",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source local DNS query and discovery CLI supporting A/AAAA/CNAME/MX/TXT records, wildcard filtering, custom resolvers and bulk hostname resolution; no software seat or query quota.",
+    "watch_out": "This is a DNS client and discovery utility, not free authoritative DNS hosting. Network traffic, upstream resolver rate limits and infrastructure costs remain your responsibility; only probe domains you are authorized to test.",
+    "pricing_url": "https://github.com/projectdiscovery/dnsx",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
