@@ -10596,5 +10596,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "bree-node-job-scheduler",
+    "name": "Bree Job Scheduler",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Node.js job scheduler with worker threads, cron, date/interval scheduling, concurrency, graceful shutdown and optional retries; no software usage quota.",
+    "watch_out": "Runs in your Node.js application/worker environment; persistence and job deduplication are application responsibilities, and any infrastructure or external database costs are separate. Retain MIT notices.",
+    "pricing_url": "https://github.com/breejs/bree",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
