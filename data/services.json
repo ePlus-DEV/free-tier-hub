@@ -10466,5 +10466,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "just-command-runner-local",
+    "name": "just Open Source Command Runner",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "CC0-1.0 local command runner for project-specific recipes in a justfile; no vendor software usage quota.",
+    "watch_out": "Runs commands on your own machine or CI environment; not a hosted build or deployment service. Shells, tools, CI runners and external APIs used by recipes may have separate costs.",
+    "pricing_url": "https://github.com/casey/just",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
