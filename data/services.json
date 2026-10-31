@@ -10921,5 +10921,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "bundar-free-control-plane",
+    "name": "Bundar Free Deployment Control Plane",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Vendor-hosted free deployment management for 1 connected server, 1 project and up to 3 apps, with unlimited deployments and automatic HTTPS support; no payment card required.",
+    "watch_out": "Bundar only hosts the deployment control plane: you must supply and pay for your own server, compute, network, domains and storage. Builds and apps run on your infrastructure via SSH. The Free plan is marketed for side projects/experiments; commercial production eligibility is not explicitly guaranteed and must be checked with provider.",
+    "pricing_url": "https://bundar.dev/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
   }
 ]
