@@ -10518,5 +10518,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-datafusion-local",
+    "name": "Apache DataFusion Open Source SQL Engine",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 embeddable Rust SQL and DataFrame query engine for Arrow, CSV, Parquet, JSON and Avro data; no software seat or query quota.",
+    "watch_out": "Runs in your own application or CLI on your own CPU, memory and storage; remote object stores and infrastructure may incur charges. Distributed Ballista is a separate project, not an included hosted free tier.",
+    "pricing_url": "https://github.com/apache/datafusion",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
