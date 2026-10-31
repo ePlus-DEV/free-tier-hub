@@ -11183,6 +11183,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "docusaurus-static-docs-generator-local",
+    "name": "Docusaurus Open-Source Documentation Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local React/MDX documentation and static-site generator; no software license fee or vendor build/site quota.",
+    "watch_out": "Docusaurus generates static files; it does NOT provide free hosting, domains, build runners or CDN. Optional hosted search, translation and third-party integrations may cost extra. Project documentation has a separate CC-BY-4.0 license.",
+    "pricing_url": "https://github.com/meta/docusaurus",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "codecompanion-neovim-ai-coding-local",
     "name": "CodeCompanion.nvim Open-Source AI Coding Assistant",
     "category": "ai-assistants",
