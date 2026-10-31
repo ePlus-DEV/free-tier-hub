@@ -10973,5 +10973,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dif-feature-flags-local",
+    "name": "dif Open-Source Feature Flags and Experiments",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI and zero-dependency SDK for file-based feature flags and A/B experiments: store Markdown flag definitions in your repository, validate them, generate a typed TypeScript client and evaluate assignments locally without a hosted control plane.",
+    "watch_out": "The free CLI/SDK has no signup or license fee, but you provide your own application hosting, CI and analytics. Optional dif.sh Cloud connection and cloud analytics are separate services that may have charges; do not confuse the local MIT software with a free hosted analytics tier. The project is relatively new and APIs may evolve.",
+    "pricing_url": "https://github.com/dif-sh/dif",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
