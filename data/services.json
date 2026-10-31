@@ -11012,5 +11012,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "etcd-self-hosted",
+    "name": "etcd Distributed Key-Value Store",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed distributed key-value store; no software license fee or vendor-imposed operation quota.",
+    "watch_out": "Requires user-operated nodes, storage, backup, networking and cluster maintenance; hosting and cloud resources are not free. This is not a managed etcd cloud allowance.",
+    "pricing_url": "https://github.com/etcd-io/etcd",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
