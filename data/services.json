@@ -10804,5 +10804,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "garage-s3-self-hosted",
+    "name": "Garage S3-Compatible Object Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 S3-compatible distributed object storage software for self-hosted clusters; no software-enforced storage or request quota.",
+    "watch_out": "Self-hosting requires your own disks, servers, networking, backups, TLS and operations; no hosted storage capacity or SLA is included. AGPL-3.0 obligations, including source availability for modified network deployments, apply.",
+    "pricing_url": "https://garagehq.deuxfleurs.fr/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
