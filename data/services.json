@@ -10960,5 +10960,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "tikv-self-hosted",
+    "name": "TiKV Distributed Key-Value Store",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed transactional key-value database with RawKV and ACID transactional APIs; no software license fee or per-node free-edition quota.",
+    "watch_out": "Self-managed TiKV requires your own servers, disks, network, backups, operations and often PD cluster components; infrastructure and any separately purchased managed TiDB/TiKV services cost extra. Use supported releases rather than assuming the development branch is production-ready.",
+    "pricing_url": "https://tikv.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
