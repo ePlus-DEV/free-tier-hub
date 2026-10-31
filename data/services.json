@@ -10884,6 +10884,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "jekyll-static-site-generator-local",
+    "name": "Jekyll Open-Source Static Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed Ruby static site generator for Markdown and Liquid-based websites; no vendor-imposed local build, page or project quota.",
+    "watch_out": "Jekyll is a local build tool, not free hosting. GitHub Pages has separate eligibility and commercial-use restrictions; hosting, domains, CI runners and optional plugins may have costs or additional license conditions.",
+    "pricing_url": "https://github.com/jekyll/jekyll",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "nsq-distributed-messaging-self-hosted",
     "name": "NSQ Open-Source Distributed Messaging",
     "category": "queues-jobs",
