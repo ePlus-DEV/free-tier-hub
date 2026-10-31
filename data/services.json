@@ -10232,6 +10232,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "vearch-vector-search-self-hosted",
+    "name": "Vearch Open-Source Vector Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed vector database and similarity-search engine with standalone Docker Compose or Kubernetes self-hosting; no software-imposed query or vector quota.",
+    "watch_out": "No vendor-hosted free storage or compute is included. Operate Docker/Kubernetes, disk, memory, replicas, backups and networking yourself; paid infrastructure and embedding/model services remain separate.",
+    "pricing_url": "https://github.com/vearch/vearch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "static-so-starter-free",
     "name": "Static.so Starter Free Static Hosting",
     "category": "static-hosting",
