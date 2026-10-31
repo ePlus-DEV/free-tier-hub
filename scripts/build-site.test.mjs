@@ -134,8 +134,16 @@ test('time-limited offers remain accessible but are excluded from the primary fr
       assert.ok(offers.includes('data-service-id="' + item.id + '"'), item.id);
       const categoryHTML = fs.readFileSync(path.join(output, 'category', item.category, 'index.html'), 'utf8');
       assert.ok(!categoryHTML.includes('data-service-id="' + item.id + '"'), item.id);
-      assert.ok(fs.existsSync(path.join(output, 'service', item.id, 'index.html')), item.id);
+      const detail = fs.readFileSync(path.join(output, 'service', item.id, 'index.html'), 'utf8');
+      assert.ok(detail.includes('Time-limited offer | Free Tier Hub'), item.id);
+      assert.ok(detail.includes('not an ongoing free tier'), item.id);
+      assert.ok(detail.includes('TIME-LIMITED OFFER'), item.id);
+      assert.ok(!detail.includes(item.name + ' Free Tier'), item.id);
     }
+    const hosted = main.find(item => item.plan === 'ongoing' && item.deployment_model === 'self-hosted');
+    assert.ok(hosted, 'fixture needs a self-hosted ongoing service');
+    const hostedDetail = fs.readFileSync(path.join(output, 'service', hosted.id, 'index.html'), 'utf8');
+    assert.ok(hostedDetail.includes('Free self-hosted software | Free Tier Hub'));
     const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     assert.deepEqual(published.map(item => item.id), all.map(item => item.id));
     assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /https:\/\/free-tier\.eplus\.dev\/offers\//);

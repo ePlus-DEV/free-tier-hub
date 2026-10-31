@@ -310,6 +310,7 @@ function limitedOffersPage(items, absolute) {
   ].join('');
 }
 function detailPage(item, absolute) {
+  const limited = !isMainFreeOffer(item);
   const name = item.name;
   const category = CATEGORY_NAMES[item.category];
   const categoryURL = absolute('category/' + item.category + '/');
@@ -333,10 +334,11 @@ function detailPage(item, absolute) {
     serviceLogo(item), '</span><span class="badge" data-plan="',
     tag(item.plan), '">', tag(PLAN_NAMES[item.plan]), '</span></div>',
     '<p class="kicker">', tag(category), '</p><h1>', tag(name), '</h1>',
-    '<p class="detail-lead">Explore this developer service’s free allowance, ',
-    'critical restrictions and official documentation before deploying.</p>',
+    '<p class="detail-lead">', limited
+      ? 'This is a time-limited or expiring offer, not an ongoing free tier. Verify eligibility, expiration and billing before use.'
+      : 'Explore this developer service’s ongoing no-cost allowance, restrictions and official documentation before deploying.', '</p>',
     '<div class="detail-highlight">', glyph('layers'),
-    '<div><strong>INCLUDED FREE ALLOWANCE</strong><p>', tag(item.free_limit),
+    '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p>', tag(item.free_limit),
     '</p></div></div><h2>Plan details</h2><dl class="spec-list">', specs, '</dl>',
     '<h2>Important restrictions</h2><div class="detail-warning">',
     glyph('alert'), '<p>', tag(item.watch_out), '</p></div>',
@@ -459,8 +461,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     const crumbs = [['Home', base],
       [category, absolute('category/' + item.category + '/')],
       [item.name, absolute(relative)]];
+    const offerLabel = isMainFreeOffer(item) ? planBadge(item) : 'Time-limited offer';
     const schema = { '@context': 'https://schema.org', '@graph': [
-      { '@type': 'WebPage', name: item.name + ' Free Tier', url: absolute(relative),
+      { '@type': 'WebPage', name: item.name + ' — ' + offerLabel, url: absolute(relative),
         description: item.free_limit + '. ' + item.watch_out,
         dateModified: item.last_checked, about: {
           '@type': 'Thing', name: item.name, url: item.pricing_url,
@@ -468,7 +471,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       { '@type': 'BreadcrumbList', itemListElement: breadcrumb(crumbs).itemListElement },
     ] };
     file(output, relative + 'index.html', document(absolute,
-      item.name + ' Free Tier, Limits & Restrictions | Free Tier Hub',
+      item.name + ' — ' + offerLabel + ' | Free Tier Hub',
       item.free_limit + '. ' + item.watch_out, relative,
       detailPage(item, absolute), schema));
     pageURLs.push([relative, item.last_checked]);
