@@ -10557,5 +10557,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "owasp-dependency-check-local",
+    "name": "OWASP Dependency-Check Open Source Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source software composition analysis CLI, build plugins and Docker scanner; no software license fee or per-project scan quota.",
+    "watch_out": "Requires vulnerability data downloads and Java 11+. An NVD API key is strongly recommended due to rate limits; optional Sonatype OSS Index/Guide analyzers require credentials and may have separate commercial terms. CI runners and infrastructure cost extra.",
+    "pricing_url": "https://github.com/dependency-check/DependencyCheck",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
