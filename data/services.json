@@ -11077,5 +11077,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "encore-open-source-framework",
+    "name": "Encore Open-Source Backend Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 open-source backend framework, compiler, SDK and CLI for Go/TypeScript local development and self-managed Docker deployment, without a software license fee.",
+    "watch_out": "This entry covers the open-source framework, not free hosted compute. Self-hosted production deployments require user-managed cloud, databases, networking and operations; Encore's managed platform, Pro automation and underlying AWS/GCP resources can incur charges. MPL-2.0 file-level copyleft obligations apply.",
+    "pricing_url": "https://encore.dev/docs/community/open-source",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
