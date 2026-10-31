@@ -92,6 +92,7 @@ function card(item, absolute, initiallyHidden = false) {
     '" data-category="', tag(item.category),
     '" data-hosting-model="', hostingModel(item),
     '" data-offer-plan="', tag(item.plan),
+    '" data-eligibility="', tag(item.eligibility || ''),
     '" data-added-at="', tag(item.added_at || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
@@ -105,6 +106,8 @@ function card(item, absolute, initiallyHidden = false) {
     hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"><span aria-hidden="true"> · </span><a class="card-filter-link" data-card-hosting="' + hostingModel(item) + '" href="' + tag(absolute('?hosting=' + hostingModel(item))) + '" aria-label="Filter by deployment model: ' + HOSTING_LABELS[hostingModel(item)] + '">' + HOSTING_LABELS[hostingModel(item)] + '</a></span>' : '', '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(planBadge(item)), '</span></div>',
+    item.eligibility === 'existing-users-only'
+      ? '<p class="eligibility-note"><strong>Legacy only</strong> · Free allowance reserved for eligible existing accounts. <a href="' + tag(absolute('about/classifications/#eligibility')) + '">Why?</a></p>' : '',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
@@ -181,6 +184,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<p>An independent, open-source directory for developers comparing ',
     'free tiers, practical limitations and official pricing sources.</p></div>',
     '<div><h3>Explore</h3><a href="', tag(absolute()), '">All services</a>',
+    '<a href="', tag(absolute('about/classifications/')), '">Offer classifications</a>',
     '<a href="', tag(absolute('#explore')), '">Categories</a>',
     '<a href="', tag(absolute('catalog.json')), '">Catalog JSON</a>',
     '<a href="', tag(absolute('sitemap.xml')), '">Sitemap</a></div>',
@@ -249,6 +253,8 @@ function homePage(items, absolute, counts) {
     '<option value="monthly-credit">Recurring monthly credit</option>',
     '<option value="limited">Time-limited &amp; expiring offers (', limitedItems.length,
     ')</option></select></label>',
+    '<a class="classification-help-link" href="', tag(absolute('about/classifications/')),
+    '">How are these offers classified?</a>',
     '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
     '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
@@ -295,6 +301,51 @@ function categoryPage(category, subset, absolute) {
     '">← All categories and services</a></p>',
   ].join('');
 }
+function classificationsPage(absolute) {
+  const section = (id, heading, rows) => [
+    '<section class="classification-section" id="', id, '"><h2>', heading, '</h2>',
+    '<dl class="classification-grid">',
+    ...rows.map(([label, meaning]) => '<div><dt>' + label + '</dt><dd>' + meaning + '</dd></div>'),
+    '</dl></section>',
+  ].join('');
+  return [
+    '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
+    '">Home</a><span aria-hidden="true">/</span><span>Offer classifications</span></nav>',
+    '<section class="page-intro"><p class="kicker">DIRECTORY GUIDE</p><h1>How we classify free offers</h1>',
+    '<p>Understand what is free, what expires, where software runs and who can sign up. ',
+    'These labels describe the listed offer, not every product sold by the provider.</p></section>',
+    section('plans', 'Offer types', [
+      ['Ongoing free allowance', 'A free plan or allowance without an announced fixed end date. Quotas, policies and pricing can still change.'],
+      ['Recurring monthly credit', 'Free usage credit that resets each billing period. Exceeding the credit may cost money; introductory credits are not part of the recurring amount.'],
+      ['Time-limited offer', 'A trial or introductory promotion that ends after a stated period or when credits run out. Not counted as an ongoing free tier.'],
+      ['Expiring free resource', 'A resource, such as a database, that expires or is removed even if the account remains active. Not counted as an ongoing free tier.'],
+    ]),
+    section('deployment', 'Deployment models', [
+      ['Cloud', 'The listed service is hosted by the provider. Free usage may still have limits or billing requirements.'],
+      ['Self-hosted', 'You run the software on your own servers. The software may be free, but compute, storage, backups and operations are not included.'],
+      ['Cloud + self-hosted', 'The exact listed offer supports both hosted and self-managed deployment; separate paid editions do not automatically qualify.'],
+      ['Local / embedded', 'A desktop application, CLI, SDK or library you run locally or inside your own app. Paid APIs or compute are not included.'],
+      ['Not specified', 'The deployment model has not yet been verified. We do not guess based on the product name.'],
+    ]),
+    '<section class="classification-section" id="eligibility"><h2>Who can use the offer?</h2>',
+    '<div class="classification-explainer"><strong>Legacy only · Existing users</strong>',
+    '<p>Some ongoing allowances are grandfathered for accounts enrolled before a provider changed its plans. ',
+    'The benefit may continue for eligible existing accounts, while a new signup may require payment. ',
+    'Legacy-only is an eligibility warning, <strong>not</strong> another offer type. ',
+    'Only listings with explicitly reviewed eligibility evidence receive this label.</p></div></section>',
+    section('checks', 'Billing and verification', [
+      ['Credit card: Required / Not required / Check provider', 'Check provider means the card requirement has not been verified; it does not mean no card is needed.'],
+      ['Commercial use: Allowed / Restricted / Check provider', 'Check provider means business-use permission is unconfirmed, not that commercial use is permitted.'],
+      ['Last checked', 'Date an editor reviewed provider evidence. It is not a guarantee that terms are still unchanged.'],
+      ['Official source', 'Provider pricing or documentation is the primary reference for current limits, eligibility and renewal costs.'],
+    ]),
+    '<p class="classification-fineprint">A free plan, free software and free infrastructure are different things. ',
+    'Check region, charges above the quota, automatic renewals and required payment methods before deploying.</p>',
+    '<p class="back-link"><a href="', tag(absolute('#explore')), '">← Browse services</a> · ',
+    '<a href="', tag(absolute('offers/')), '">View time-limited offers</a> · ',
+    '<a href="', tag(REPOSITORY + '/blob/main/docs/classifications.md'), '">Read the repository guide</a></p>',
+  ].join('');
+}
 function limitedOffersPage(items, absolute) {
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
@@ -302,7 +353,8 @@ function limitedOffersPage(items, absolute) {
     '<section class="page-intro"><p class="kicker">LIMITED OFFERS · ', items.length,
     ' ENTRIES</p><h1>Time-limited and expiring offers</h1>',
     '<p>These promotions, trials and expiring resources are not ongoing free tiers. ',
-    'They are excluded from the main directory counts. Check the provider for current eligibility, renewal fees and expiration rules.</p></section>',
+    'They are excluded from the main directory counts. Check the provider for current eligibility, renewal fees and expiration rules. ',
+    '<a href="', tag(absolute('about/classifications/#plans')), '">How we classify offers</a>.</p></section>',
     '<div class="service-grid category-service-grid">',
     items.map(item => card(item, absolute)).join(''), '</div>',
     '<p class="back-link"><a href="', tag(absolute()),
@@ -316,6 +368,7 @@ function detailPage(item, absolute) {
   const categoryURL = absolute('category/' + item.category + '/');
   const fields = [
     ['Plan', PLAN_NAMES[item.plan]],
+    ...(item.eligibility === 'existing-users-only' ? [['Eligibility', 'Legacy only · Existing accounts']] : []),
     ['Deployment model', HOSTING_LABELS[hostingModel(item)]],
     ['Credit card', CARD_NAMES[item.credit_card]],
     ['Commercial use', COMMERCIAL_NAMES[item.commercial_use]],
@@ -337,9 +390,13 @@ function detailPage(item, absolute) {
     '<p class="detail-lead">', limited
       ? 'This is a time-limited or expiring offer, not an ongoing free tier. Verify eligibility, expiration and billing before use.'
       : 'Explore this developer service’s ongoing no-cost allowance, restrictions and official documentation before deploying.', '</p>',
+    item.eligibility === 'existing-users-only'
+      ? '<p class="eligibility-note detail-eligibility"><strong>Legacy only</strong> · Only qualifying existing accounts keep this free allowance; new signups may not qualify.</p>' : '',
     '<div class="detail-highlight">', glyph('layers'),
     '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p>', tag(item.free_limit),
-    '</p></div></div><h2>Plan details</h2><dl class="spec-list">', specs, '</dl>',
+    '</p></div></div><h2>Plan details</h2>',
+    '<p class="classification-detail-link"><a href="', tag(absolute('about/classifications/')),
+    '">What do these plan and deployment labels mean?</a></p><dl class="spec-list">', specs, '</dl>',
     '<h2>Important restrictions</h2><div class="detail-warning">',
     glyph('alert'), '<p>', tag(item.watch_out), '</p></div>',
     '<div class="detail-action"><a class="button primary" href="', link,
@@ -420,6 +477,16 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
     '', homePage(items, absolute, counts), homeSchema));
   pageURLs.push(['', latest]);
+  const guideRelative = 'about/classifications/';
+  const guideSchema = { '@context': 'https://schema.org',
+    '@type': 'WebPage', name: 'How we classify free offers — Free Tier Hub',
+    url: absolute(guideRelative),
+    description: 'Offer types, deployment models, eligibility and billing caveats explained.' };
+  file(output, guideRelative + 'index.html', document(absolute,
+    'Offer Types & Classifications | Free Tier Hub',
+    'Learn how Free Tier Hub classifies ongoing allowances, recurring credits, trials, software deployment and legacy eligibility.',
+    guideRelative, classificationsPage(absolute), guideSchema));
+  pageURLs.push([guideRelative, latest]);
   for (const category of CATEGORIES) {
     const subset = mainItems.filter(item => item.category === category);
     const name = CATEGORY_NAMES[category], relative = 'category/' + category + '/';
@@ -491,6 +558,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
     '- [Directory](' + base + '): crawlable HTML index of ongoing free allowances and recurring credits.',
+    '- [Offer classifications](' + absolute('about/classifications/') + '): definitions of plan, deployment, eligibility and verification labels.',
     '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
     '- [Catalog JSON](' + absolute('catalog.json') +
       '): machine-readable data with source URLs, review dates and plan types.',
@@ -512,12 +580,13 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '## Discover',
     '- Human-readable index: ' + base,
     '- Time-limited offers: ' + absolute('offers/'),
+    '- Plan and eligibility definitions: ' + absolute('about/classifications/'),
     '- Machine-readable catalog: ' + absolute('catalog.json'),
     '- Sitemap: ' + absolute('sitemap.xml'),
     '- LLM summary: ' + absolute('llms.txt'), '',
     '## Data model',
     'Each catalog entry includes id, name, category, plan, free_limit, watch_out, pricing_url,',
-    'credit_card, commercial_use, optional deployment_model and last_checked. Treat the official pricing_url as the source',
+    'credit_card, commercial_use, optional deployment_model, optional eligibility and last_checked. Treat the official pricing_url as the source',
     'of truth when checking current quotas, billing requirements and commercial eligibility.', '',
     '## Access and attribution',
     "- Follow the origin's authoritative /robots.txt and applicable service terms.",
