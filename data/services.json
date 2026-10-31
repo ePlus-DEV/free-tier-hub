@@ -10282,5 +10282,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "beekeeper-studio-community-local",
+    "name": "Beekeeper Studio Community Edition",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "GPLv3 Community Edition desktop SQL editor and database client for PostgreSQL, MySQL, SQLite and other supported databases on Windows, macOS and Linux; free download and local use.",
+    "watch_out": "Ultimate/Paid Edition features are under separate commercial terms; the repository includes commercially licensed code, so use only Community Edition's GPLv3 components. Database hosting and paid cloud connections are not included.",
+    "pricing_url": "https://github.com/beekeeper-studio/beekeeper-studio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
