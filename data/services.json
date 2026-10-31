@@ -10245,6 +10245,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "infinity-ai-native-search-self-hosted",
+    "name": "Infinity AI-Native Search Database (OSS)",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source hybrid vector, sparse-vector, tensor and full-text search database; self-run Docker server or embedded Python engine without a software subscription.",
+    "watch_out": "The free license does not provide hosted search, GPUs, compute, disk, backups or model inference. Docker/server mode requires operating your own infrastructure; embedded Python is a local option, not a vendor-hosted free cloud plan.",
+    "pricing_url": "https://github.com/infiniflow/infinity",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "static-so-starter-free",
     "name": "Static.so Starter Free Static Hosting",
     "category": "static-hosting",
