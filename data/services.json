@@ -10583,5 +10583,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "smartdns-self-hosted",
+    "name": "SmartDNS",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0-licensed local DNS resolver/server with upstream selection, DNS-over-HTTPS/TLS/QUIC and client filtering; no software query quota.",
+    "watch_out": "You operate the DNS service on your router/server; compute, bandwidth and upstream DNS services may incur costs. GPL-3.0 redistribution and source-code obligations apply; this is not a hosted DNS/CDN free plan.",
+    "pricing_url": "https://github.com/pymumu/smartdns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
