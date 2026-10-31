@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { resolveCandidateDeployment } from './candidate-deployment.mjs';
 
 const base = { id: 'example-free', name: 'Example' };
@@ -32,4 +33,12 @@ test('newest trusted valid metadata wins', () => {
 test('legacy optional model is preserved without comment or inference', () => {
   const old = { ...base, deployment_model: 'hybrid' };
   assert.equal(resolveCandidateDeployment(old, []), old);
+});
+
+// Candidate delivery is review-first: exact-head CI must not imply automatic merge.
+test('candidate queue creates draft PRs, never a ready-to-merge PR', () => {
+  const workflow = readFileSync(new URL('../.github/workflows/catalog-candidate-queue.yml', import.meta.url), 'utf8');
+  assert.ok(workflow.includes('gh pr create --draft --base main --head'));
+  assert.ok(!workflow.includes('gh pr create --base main --head'));
+  assert.ok(!workflow.includes('gh pr merge'));
 });
