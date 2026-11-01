@@ -11311,5 +11311,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "moonrepo-moon-build-system-local",
+    "name": "moonrepo moon Open-Source Build System",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local monorepo build and task runner with project graph, caching and affected-task execution; no software license fee or task-count quota.",
+    "watch_out": "Runs on local machines or separately provisioned CI runners. Hosted CI minutes, compute, remote cache or optional cloud services are not included; MIT software license permits commercial use.",
+    "pricing_url": "https://github.com/moonrepo/moon",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
