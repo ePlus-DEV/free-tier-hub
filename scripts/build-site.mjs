@@ -394,7 +394,11 @@ function detailPage(item, absolute) {
       ? '<p class="eligibility-note detail-eligibility"><strong>Legacy only</strong> · Only qualifying existing accounts keep this free allowance; new signups may not qualify.</p>' : '',
     '<div class="detail-highlight">', glyph('layers'),
     '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p>', tag(item.free_limit),
-    '</p></div></div><h2>Plan details</h2>',
+    '</p></div></div>',
+    // A prominent mobile CTA avoids forcing phone visitors to scroll past the specification list.
+    '<div class="detail-mobile-action"><a class="button primary" href="', link,
+    '" target="_blank" rel="noopener noreferrer">View official documentation ',
+    glyph('arrow'), '</a></div><h2>Plan details</h2>',
     '<p class="classification-detail-link"><a href="', tag(absolute('about/classifications/')),
     '">What do these plan and deployment labels mean?</a></p><dl class="spec-list">', specs, '</dl>',
     '<h2>Important restrictions</h2><div class="detail-warning">',
