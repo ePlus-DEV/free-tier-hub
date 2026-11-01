@@ -11272,5 +11272,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-kvrocks-self-hosted",
+    "name": "Apache Kvrocks Open Source",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Redis-protocol-compatible, RocksDB-backed distributed key-value database with replication, namespaces and cluster support; self-hosted software has no license fee or vendor usage quota.",
+    "watch_out": "Self-hosted Apache-2.0 Redis-protocol-compatible database, not a vendor-hosted Redis free plan. Operators provide servers, persistent storage, backups, replication/failover configuration, security and monitoring; cloud compute, disks and network can incur charges. Redis clients and other third-party components have separate licensing/usage terms.",
+    "pricing_url": "https://github.com/apache/kvrocks",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
