@@ -165,3 +165,12 @@ test('candidate Issue intake and conflict recovery share deployment-aware valida
     assert.doesNotMatch(workflow, /const fields = \[/);
   }
 });
+
+test('candidate queue opens draft PRs and retains approval gating', () => {
+  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
+  assert.match(workflow, /gh pr create --draft --base main --head/);
+  assert.doesNotMatch(workflow, /gh pr create --base main --head/,
+    'catalog PR creation must never silently bypass draft review');
+  assert.match(workflow, /open_count" -ge 3/,
+    'draft PRs still consume the existing three-PR delivery capacity');
+});
