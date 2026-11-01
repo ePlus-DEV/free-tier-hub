@@ -11298,5 +11298,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "hestia-control-panel-self-hosted",
+    "name": "Hestia Control Panel (Self-Hosted)",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 open-source Linux web hosting control panel to manage domains, Apache/Nginx, mail, DNS and databases; no vendor software subscription or control-panel usage quota.",
+    "watch_out": "Requires a self-operated supported Debian/Ubuntu server with root access, bandwidth, domains, backups and security maintenance; VPS and infrastructure are not included. GPLv3 obligations apply. HestiaCP name/logo have trademark restrictions on resale or rebranding; this is not a free hosted website plan.",
+    "pricing_url": "https://github.com/hestiacp/hestiacp",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
