@@ -11274,6 +11274,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "resque-redis-job-queue-self-hosted",
+    "name": "Resque Open-Source Redis Job Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Ruby Redis-backed background-job queue with worker processing, multiple queues and a web dashboard; no software license fee or vendor-imposed usage quota.",
+    "watch_out": "Self-operated Ruby workers and Redis are required; compute, Redis hosting, persistence, monitoring and operations can incur costs. Redis distribution/version licensing and third-party integrations are separate. Current upstream docs require Ruby 3.2+ and Redis server 4.0+; no free managed queue is included.",
+    "pricing_url": "https://github.com/resque/resque",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "apache-kvrocks-self-hosted",
     "name": "Apache Kvrocks Open Source",
     "category": "databases",
