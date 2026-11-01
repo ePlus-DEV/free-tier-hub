@@ -204,7 +204,7 @@ jobs:
           set -euo pipefail
           url="$(gh pr list --state open --head "$DELIVERY_BRANCH" --json url --jq '.[0].url // empty')"
           if [ -z "$url" ]; then
-            url="$(gh pr create --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
+            url="$(gh pr create --draft --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
