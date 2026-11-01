@@ -88,6 +88,20 @@ test('directory exposes unique search/category controls and official sources for
     const normalDetail = fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8');
     assert.doesNotMatch(normalDetail, /Legacy only/);
     assert.match(normalDetail, /What do these plan and deployment labels mean/);
+    // Mobile service pages put the official-source action before the long fact list,
+    // while retaining the desktop action and all provider restrictions.
+    const allowance = normalDetail.indexOf('class="detail-highlight"');
+    const mobileAction = normalDetail.indexOf('class="detail-mobile-action"');
+    const planDetails = normalDetail.indexOf('<h2>Plan details</h2>');
+    assert.ok(allowance >= 0 && allowance < mobileAction && mobileAction < planDetails);
+    assert.match(normalDetail, /class="detail-mobile-action"><a class="button primary"/);
+    assert.match(normalDetail, /class="detail-action"><a class="button primary"/);
+    assert.match(normalDetail, /class="detail-warning"/);
+    const detailCss = fs.readFileSync(path.join(output, 'assets/site.css'), 'utf8');
+    assert.match(detailCss, /\.detail-mobile-action\{display:none\}/);
+    assert.match(detailCss, /\.detail-head\{display:contents\}/);
+    assert.match(detailCss, /\.detail>\.spec-list\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+    assert.match(detailCss, /\.detail>\.detail-action\{display:none\}/);
     assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
