@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, tag, serviceLogoURL } from './build-site.mjs';
+import { build, categoryCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
@@ -137,10 +137,44 @@ test('directory exposes unique search/category controls and official sources for
     assert.doesNotMatch(html, /href=""/);
     for (const entry of entries) {
       const page = limitedEntries.some(item => item.id === entry.id) ? offersHtml : html;
-      assert.ok(page.includes(`class="official-link" href="${tag(entry.pricing_url)}"`), entry.id);
+      const tracked = tag(providerReferralURL(entry.pricing_url));
+      assert.ok(page.includes(`class="official-link" href="${tracked}"`), entry.id);
+      const categoryPage = fs.readFileSync(path.join(output, 'category', entry.category, 'index.html'), 'utf8');
+      if (mainEntries.some(item => item.id === entry.id)) {
+        assert.ok(categoryPage.includes(`class="official-link" href="${tracked}"`), entry.id);
+      }
+      const detailPage = fs.readFileSync(path.join(output, 'service', entry.id, 'index.html'), 'utf8');
+      assert.equal(detailPage.split(`href="${tracked}"`).length - 1, 3,
+        entry.id + ': mobile CTA, desktop CTA and aside pricing link must share attribution');
       assert.ok(fs.existsSync(path.join(output, 'service', entry.id, 'index.html')), entry.id);
     }
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
+});
+
+test('provider referral attribution preserves URLs, existing parameters, hash and canonicals', () => {
+  const src = 'utm_source=free-tier.eplus.dev';
+  const med = 'utm_medium=referral';
+  assert.equal(providerReferralURL('https://vercel.com/pricing'),
+    'https://vercel.com/pricing?' + src + '&' + med);
+  assert.equal(providerReferralURL('https://vendor.example/pricing?plan=a%20b&sig=x%2By#quota'),
+    'https://vendor.example/pricing?plan=a%20b&sig=x%2By&' + src + '&' + med + '#quota');
+  assert.equal(providerReferralURL('https://shipvela.com/#pricing'),
+    'https://shipvela.com/?' + src + '&' + med + '#pricing');
+  assert.equal(providerReferralURL('https://desec.io/#!/en/product/dnshosting'),
+    'https://desec.io/?' + src + '&' + med + '#!/en/product/dnshosting');
+  assert.equal(providerReferralURL('https://vendor.example/pricing?utm_source=partner#details'),
+    'https://vendor.example/pricing?utm_source=partner&' + med + '#details');
+  assert.equal(providerReferralURL('https://vendor.example/pricing?utm_medium=email'),
+    'https://vendor.example/pricing?utm_medium=email&' + src);
+  const attributed = 'https://vendor.example/pricing?utm_source=partner&utm_medium=campaign';
+  assert.equal(providerReferralURL(attributed), attributed);
+  assert.equal(providerReferralURL('https://vendor.example/pricing?'), 'https://vendor.example/pricing?' + src + '&' + med);
+  assert.equal(providerReferralURL('https://free-tier.eplus.dev/category/static-hosting/'),
+    'https://free-tier.eplus.dev/category/static-hosting/');
+  assert.equal(providerReferralURL('mailto:hello@example.com'), 'mailto:hello@example.com');
+  assert.equal(providerReferralURL('/service/vercel/'), '/service/vercel/');
+  assert.equal(tag(providerReferralURL('https://vendor.example/?foo=bar')),
+    'https://vendor.example/?foo=bar&amp;' + src + '&amp;' + med);
 });
 
 test('category count badges are generated from source JSON and update on rebuild', () => {
