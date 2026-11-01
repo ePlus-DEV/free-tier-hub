@@ -96,6 +96,16 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(html.includes('data-filter-category="ci-cd"'));
     assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines</option>'));
     assert.ok(fs.existsSync(path.join(output, 'category/ci-cd/index.html')));
+    const categoryHtml = fs.readFileSync(path.join(output, 'category/static-hosting/index.html'), 'utf8');
+    assert.ok(categoryHtml.includes('class="service-grid category-service-grid" id="category-service-grid"'));
+    assert.ok(categoryHtml.includes('id="category-pagination" hidden'));
+    assert.ok(categoryHtml.includes('id="category-page-status" role="status" aria-live="polite"'));
+    assert.ok(categoryHtml.includes('id="category-load-more" aria-controls="category-service-grid"') ||
+      categoryHtml.includes('id="category-load-more"'));
+    assert.equal(categoryHtml.split('data-service-id="').length - 1,
+      mainEntries.filter(item => item.category === 'static-hosting').length,
+      'all category cards must stay in server-rendered HTML for SEO and no-JS access');
+    assert.doesNotMatch(categoryHtml, /class="service-card" hidden/);
     assert.ok(fs.existsSync(path.join(output, 'service/crow-ci/index.html')));
     assert.doesNotMatch(html, /class="catalog-sidebar"/);
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
@@ -253,6 +263,87 @@ test('header search opens and keyboard shortcuts work without a directory grid',
   }
   document.listeners.keydown.forEach(fn => fn({ key: 'Escape', preventDefault() {} }));
   assert.equal(panel.hidden, true);
+});
+
+test('category Load more keeps batches, URL history, and links usable without a directory grid', async () => {
+  const { runInNewContext } = await import('node:vm');
+  const source = fs.readFileSync(new URL('../site/assets/site.js', import.meta.url), 'utf8');
+  function setup(href, cardCount) {
+    function element() {
+      return { hidden: false, textContent: '', listeners: {}, attrs: {},
+        addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); },
+        setAttribute(key, val) { this.attrs[key] = val; },
+        focus() { this.focused = true; }, scrollIntoView() { this.scrolled = true; },
+        append() {}, appendChild() {}, querySelector() { return null; }
+      };
+    }
+    const cards = Array.from({length: cardCount}, () => {
+      const link = element(), card = element();
+      card.querySelector = () => link;
+      card.link = link;
+      return card;
+    });
+    const grid = element();
+    grid.querySelectorAll = () => cards;
+    const pagination = element(), button = element(), wrap = element(), status = element();
+    pagination.hidden = true;
+    wrap.hidden = true;
+    const nodes = {
+      'category-service-grid': grid, 'category-pagination': pagination,
+      'category-load-more': button, 'category-load-more-wrap': wrap,
+      'category-page-status': status,
+    };
+    const document = {
+      body: element(), createElement: element,
+      documentElement: { setAttribute() {}, style: { setProperty() {} } },
+      getElementById(id) { return nodes[id] || null; },
+      querySelector() { return null; }, querySelectorAll() { return []; },
+      addEventListener() {},
+    };
+    const window = {
+      location: { href }, listeners: {},
+      addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); },
+      localStorage: { getItem() { return 'rejected'; } },
+      matchMedia() { return { matches: false }; },
+    };
+    window.history = { pushState(_state, _title, url) {
+      window.location.href = new URL(url, window.location.href).href;
+    } };
+    runInNewContext(source, { document, window, URL });
+    return { cards, pagination, button, wrap, status, window };
+  }
+  const sample = setup('https://free-tier.eplus.dev/category/static-hosting/?utm_source=chatgpt.com#results', 26);
+  assert.equal(sample.cards.filter(card => !card.hidden).length, 12);
+  assert.equal(sample.status.textContent, 'Showing 12 of 26 services');
+  assert.equal(sample.button.textContent, 'Show 12 more services');
+  assert.equal(sample.pagination.hidden, false);
+  assert.equal(sample.wrap.hidden, false);
+  sample.button.listeners.click[0]();
+  assert.equal(sample.cards.filter(card => !card.hidden).length, 24);
+  assert.equal(sample.status.textContent, 'Showing 24 of 26 services');
+  assert.equal(sample.button.textContent, 'Show 2 more services');
+  assert.ok(sample.cards[12].link.focused && sample.cards[12].link.scrolled);
+  assert.equal(new URL(sample.window.location.href).searchParams.get('page'), '2');
+  assert.equal(new URL(sample.window.location.href).searchParams.get('utm_source'), 'chatgpt.com');
+  assert.equal(new URL(sample.window.location.href).hash, '#results');
+  sample.button.listeners.click[0]();
+  assert.equal(sample.cards.filter(card => !card.hidden).length, 26);
+  assert.equal(sample.wrap.hidden, true);
+  sample.window.location.href = 'https://free-tier.eplus.dev/category/static-hosting/?page=2';
+  sample.window.listeners.popstate[0]();
+  assert.equal(sample.cards.filter(card => !card.hidden).length, 24);
+  sample.window.location.href = 'https://free-tier.eplus.dev/category/static-hosting/?page=abc';
+  sample.window.listeners.popstate[0]();
+  assert.equal(sample.cards.filter(card => !card.hidden).length, 12);
+  const direct = setup('https://free-tier.eplus.dev/category/static-hosting/?page=2', 26);
+  assert.equal(direct.cards.filter(card => !card.hidden).length, 24);
+  assert.equal(setup('https://free-tier.eplus.dev/category/static-hosting/?page=999', 26)
+    .cards.filter(card => !card.hidden).length, 26);
+  const small = setup('https://free-tier.eplus.dev/category/other/', 8);
+  assert.equal(small.cards.filter(card => !card.hidden).length, 8);
+  assert.equal(small.wrap.hidden, true);
+  const css = fs.readFileSync(new URL('../site/assets/site.css', import.meta.url), 'utf8');
+  assert.ok(css.includes('.category-pagination .load-more{width:100%;min-width:0;min-height:46px}'));
 });
 
 test('deployment filtering reads offer metadata rather than ID or product-name guesses', async () => {
