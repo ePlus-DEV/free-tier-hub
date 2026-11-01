@@ -295,8 +295,15 @@ function categoryPage(category, subset, absolute) {
     '<section class="page-intro"><p class="kicker">CATEGORY · ', subset.length,
     ' SERVICES</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
-    '<div class="service-grid category-service-grid">',
+    // Render all cards into HTML for no-JS users, discovery, and search indexing.
+    // JavaScript progressively reveals batches without changing the catalog data.
+    '<div class="service-grid category-service-grid" id="category-service-grid">',
     subset.map(item => card(item, absolute)).join(''), '</div>',
+    '<div class="category-pagination" id="category-pagination" hidden>',
+    '<p class="category-page-status" id="category-page-status" role="status" aria-live="polite"></p>',
+    '<div class="load-more-wrap" id="category-load-more-wrap" hidden>',
+    '<button class="load-more" type="button" id="category-load-more" ',
+    'aria-controls="category-service-grid">Load more services</button></div></div>',
     '<p class="back-link"><a href="', tag(absolute()),
     '">← All categories and services</a></p>',
   ].join('');
