@@ -194,6 +194,55 @@
       headerSearch.focus(); headerSearch.select();
     }
   });
+  // Category pages share the directory's 12-at-a-time browsing behavior.
+  // All cards remain in the server-rendered HTML when JavaScript is unavailable.
+  var categoryGrid = document.getElementById("category-service-grid");
+  var categoryPagination = document.getElementById("category-pagination");
+  var categoryMore = document.getElementById("category-load-more");
+  var categoryMoreWrap = document.getElementById("category-load-more-wrap");
+  var categoryStatus = document.getElementById("category-page-status");
+  if (categoryGrid && categoryPagination && categoryMore && categoryMoreWrap && categoryStatus) {
+    var categoryCards = Array.prototype.slice.call(categoryGrid.querySelectorAll(".service-card"));
+    var categoryPageSize = 12;
+    var categoryMaxPage = Math.max(1, Math.ceil(categoryCards.length / categoryPageSize));
+    function categoryPageFromURL() {
+      var raw = new URL(window.location.href).searchParams.get("page");
+      return raw && /^[1-9]\\d*$/.test(raw) ? Math.min(categoryMaxPage, Number(raw)) : 1;
+    }
+    var categoryCurrentPage = categoryPageFromURL();
+    function renderCategoryPage() {
+      var shown = Math.min(categoryCards.length, categoryCurrentPage * categoryPageSize);
+      categoryCards.forEach(function (card, index) { card.hidden = index >= shown; });
+      categoryStatus.textContent = "Showing " + shown + " of " + categoryCards.length + " services";
+      categoryMoreWrap.hidden = shown >= categoryCards.length;
+      if (!categoryMoreWrap.hidden) {
+        categoryMore.textContent = "Show " + Math.min(categoryPageSize, categoryCards.length - shown) + " more services";
+      }
+      categoryPagination.hidden = false;
+    }
+    categoryMore.addEventListener("click", function () {
+      if (categoryCurrentPage >= categoryMaxPage) return;
+      var previousShown = categoryCurrentPage * categoryPageSize;
+      categoryCurrentPage++;
+      var url = new URL(window.location.href);
+      url.searchParams.set("page", String(categoryCurrentPage));
+      window.history.pushState(null, "", url.pathname + url.search + url.hash);
+      renderCategoryPage();
+      // Place keyboard and touch users at the first newly revealed service.
+      var firstNewLink = categoryCards[previousShown] &&
+        categoryCards[previousShown].querySelector(".card-identity h3 a");
+      if (firstNewLink) {
+        firstNewLink.focus({ preventScroll: true });
+        firstNewLink.scrollIntoView({ block: "start" });
+      }
+    });
+    window.addEventListener("popstate", function () {
+      categoryCurrentPage = categoryPageFromURL();
+      renderCategoryPage();
+    });
+    renderCategoryPage();
+  }
+
   var search = document.getElementById("search");
   var heroSearch = document.getElementById("hero-search");
   var filterToggle = document.getElementById("advanced-filter-toggle");
