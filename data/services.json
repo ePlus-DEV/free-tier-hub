@@ -11222,6 +11222,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "hnswlib-local-vector-search",
+    "name": "hnswlib Open-Source Approximate Nearest Neighbor Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 header-only C++ library with Python bindings for local HNSW approximate nearest-neighbor search; no software license fee or vendor-imposed index/query quota.",
+    "watch_out": "This is a local search library, not a hosted vector-search API or free cloud service. You supply memory, CPU, storage, embeddings, application hosting and backups; third-party embedding APIs and infrastructure can cost money. Observe Apache-2.0 license notices.",
+    "pricing_url": "https://github.com/nmslib/hnswlib",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "vectorlite-sqlite-vector-search-local",
     "name": "Vectorlite Open-Source SQLite Vector Search Extension",
     "category": "search",

@@ -19,6 +19,26 @@ export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
 const GA_ID = 'G-9YPGG0XEZV';
 
+// Add referral attribution only to links that leave our catalog. Preserve the
+// provider's exact query bytes, fragments and any UTM parameters it already set.
+export function providerReferralURL(rawURL) {
+  const value = String(rawURL);
+  let parsed;
+  try { parsed = new URL(value); } catch { return value; }
+  if (!['http:', 'https:'].includes(parsed.protocol) ||
+      parsed.hostname.toLowerCase() === 'free-tier.eplus.dev') return value;
+  const additions = [];
+  if (!parsed.searchParams.has('utm_source')) additions.push('utm_source=free-tier.eplus.dev');
+  if (!parsed.searchParams.has('utm_medium')) additions.push('utm_medium=referral');
+  if (!additions.length) return value;
+  const hashIndex = value.indexOf('#');
+  const url = hashIndex < 0 ? value : value.slice(0, hashIndex);
+  const fragment = hashIndex < 0 ? '' : value.slice(hashIndex);
+  const separator = url.includes('?')
+    ? (url.endsWith('?') || url.endsWith('&') ? '' : '&') : '?';
+  return url + separator + additions.join('&') + fragment;
+}
+
 export function normalizeURL(siteURL) {
   let u;
   try { u = new URL(String(siteURL).trim()); } catch { throw Error('SITE_URL must be an HTTPS origin with an optional base path'); }
@@ -111,7 +131,7 @@ function card(item, absolute, initiallyHidden = false) {
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
-    ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(item.pricing_url),
+    ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(providerReferralURL(item.pricing_url)),
     '" rel="noopener noreferrer" aria-label="Official pricing source for ', tag(item.name), '">Official source ↗</a></div></article>',
   ].join('');
 }
@@ -295,8 +315,15 @@ function categoryPage(category, subset, absolute) {
     '<section class="page-intro"><p class="kicker">CATEGORY · ', subset.length,
     ' SERVICES</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
-    '<div class="service-grid category-service-grid">',
+    // Render all cards into HTML for no-JS users, discovery, and search indexing.
+    // JavaScript progressively reveals batches without changing the catalog data.
+    '<div class="service-grid category-service-grid" id="category-service-grid">',
     subset.map(item => card(item, absolute)).join(''), '</div>',
+    '<div class="category-pagination" id="category-pagination" hidden>',
+    '<p class="category-page-status" id="category-page-status" role="status" aria-live="polite"></p>',
+    '<div class="load-more-wrap" id="category-load-more-wrap" hidden>',
+    '<button class="load-more" type="button" id="category-load-more" ',
+    'aria-controls="category-service-grid">Load more services</button></div></div>',
     '<p class="back-link"><a href="', tag(absolute()),
     '">← All categories and services</a></p>',
   ].join('');
@@ -377,7 +404,7 @@ function detailPage(item, absolute) {
   ];
   const specs = fields.map(([key, value]) =>
     '<div class="spec"><dt>' + tag(key) + '</dt><dd>' + tag(value) + '</dd></div>').join('');
-  const link = tag(item.pricing_url);
+  const link = tag(providerReferralURL(item.pricing_url));
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><a href="', tag(categoryURL),
@@ -394,7 +421,11 @@ function detailPage(item, absolute) {
       ? '<p class="eligibility-note detail-eligibility"><strong>Legacy only</strong> · Only qualifying existing accounts keep this free allowance; new signups may not qualify.</p>' : '',
     '<div class="detail-highlight">', glyph('layers'),
     '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p>', tag(item.free_limit),
-    '</p></div></div><h2>Plan details</h2>',
+    '</p></div></div>',
+    // A prominent mobile CTA avoids forcing phone visitors to scroll past the specification list.
+    '<div class="detail-mobile-action"><a class="button primary" href="', link,
+    '" target="_blank" rel="noopener noreferrer">View official documentation ',
+    glyph('arrow'), '</a></div><h2>Plan details</h2>',
     '<p class="classification-detail-link"><a href="', tag(absolute('about/classifications/')),
     '">What do these plan and deployment labels mean?</a></p><dl class="spec-list">', specs, '</dl>',
     '<h2>Important restrictions</h2><div class="detail-warning">',
