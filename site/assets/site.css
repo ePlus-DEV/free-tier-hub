@@ -500,9 +500,26 @@ body.filter-sheet-open{overflow:hidden}
   .detail-highlight svg{width:20px;height:20px}
   .detail-highlight strong{font-size:10px;letter-spacing:.045em;line-height:1.4}
   .detail-highlight p{font-size:14px;line-height:1.5;overflow-wrap:anywhere}
-  .detail-mobile-action{display:block;margin:12px 0 0}
+  /* Persistent bottom service CTA with room for iOS safe areas. */
+  .detail-mobile-action{
+    display:block;position:fixed;inset:auto 0 0;z-index:44;margin:0;
+    padding:10px max(16px,env(safe-area-inset-right))
+      calc(10px + env(safe-area-inset-bottom))
+      max(16px,env(safe-area-inset-left));
+    background:var(--surface);border-top:1px solid var(--line);
+    box-shadow:0 -8px 24px rgba(23,43,67,.10);
+  }
   .detail-mobile-action .button{
-    width:100%;min-height:44px;padding:10px 12px;font-size:12.5px;
+    display:flex;width:100%;max-width:560px;margin-inline:auto;
+    min-height:46px;padding:10px 14px;font-size:13px;
+  }
+  /* Keep the final service details and footer links reachable above the bar. */
+  main:has(.detail-mobile-action){padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+  body:has(.detail-mobile-action) .site-footer{
+    padding-bottom:calc(112px + env(safe-area-inset-bottom));
+  }
+  body:has(.detail-mobile-action) .back-to-top{
+    bottom:calc(86px + env(safe-area-inset-bottom));
   }
   .detail>h2{margin:22px 0 9px;font-size:16px}
   .detail>.classification-detail-link{margin:0 0 12px;font-size:11px}
