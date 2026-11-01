@@ -261,6 +261,16 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 .load-more-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px}
 .load-more{min-height:44px;padding:10px 20px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);font-size:13px}
 .load-more-hint{color:var(--muted);font-size:11px}
+/* Category-only progressive pagination; with JS disabled every card stays visible. */
+.category-pagination{display:flex;flex-direction:column;align-items:center;gap:12px;margin:24px 0 0}
+.category-page-status{margin:0;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.category-pagination .load-more-wrap{margin:0;width:100%}
+.category-pagination .load-more{min-width:220px;font-weight:650}
+@media(max-width:680px){
+  .category-pagination{margin-top:20px}
+  .category-pagination .load-more{width:100%;min-width:0;min-height:46px}
+}
+
 .no-results{padding:32px 20px;text-align:center;border:1px dashed var(--line-strong);border-radius:10px}
 .no-results h3{margin:10px 0}
 .no-results p{margin:0;color:var(--muted)}
