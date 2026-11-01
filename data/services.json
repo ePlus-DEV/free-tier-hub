@@ -11337,5 +11337,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "docling-document-ai-local",
+    "name": "Docling Open-Source Document AI Toolkit",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local document parsing and conversion for PDFs, Office files, images and more into structured documents, Markdown or JSON; no vendor software license fee or hosted API quota.",
+    "watch_out": "Local CPU/GPU, memory, model downloads and storage are required; external inference APIs or hosted infrastructure may charge. Individual model weights can have different licenses and commercial-use restrictions; verify each model separately.",
+    "pricing_url": "https://github.com/docling-project/docling",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
