@@ -11324,5 +11324,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "apache-flink-self-hosted",
+    "name": "Apache Flink Open-Source Stream Processing",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 distributed stream and batch processing engine for self-operated clusters, with no vendor software job-count or event-processing quota.",
+    "watch_out": "Requires own Java runtime, cluster compute, memory, network, storage/checkpoints and operations. Cloud-managed Flink offerings and external message brokers/connectors may incur charges; not a hosted free stream-processing plan.",
+    "pricing_url": "https://github.com/apache/flink",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
