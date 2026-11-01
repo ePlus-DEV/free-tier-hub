@@ -11350,5 +11350,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "agent-qa",
+    "name": "agent-qa CLI",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free local CLI for natural-language web, Android and iOS testing, with persistent memory and self-improvement, for FSL-permitted use.",
+    "watch_out": "Requires Node.js 24+ and your own model inference and execution infrastructure; optional cloud-device services cost extra. FSL-1.1-ALv2 restricts competing commercial use. Provider billing/card requirements vary.",
+    "pricing_url": "https://vostride.com/llms.txt",
+    "credit_card": "check",
+    "commercial_use": "no",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
