@@ -102,6 +102,11 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(detailCss, /\.detail-head\{display:contents\}/);
     assert.match(detailCss, /\.detail>\.spec-list\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
     assert.match(detailCss, /\.detail>\.detail-action\{display:none\}/);
+    assert.match(detailCss, /\.detail-mobile-action\{[\s\S]*?position:fixed;inset:auto 0 0;z-index:44/);
+    assert.match(detailCss, /\.detail-mobile-action\{[\s\S]*?env\(safe-area-inset-bottom\)/);
+    assert.match(detailCss, /main:has\(\.detail-mobile-action\)\{padding-bottom:/);
+    assert.match(detailCss, /body:has\(\.detail-mobile-action\) \.back-to-top\{[\s\S]*?bottom:calc\(86px \+ env\(safe-area-inset-bottom\)\)/);
+    assert.match(detailCss, /body:has\(\.detail-mobile-action\) \.site-footer\{/);
     assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
