@@ -11246,5 +11246,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "netmaker-community-self-hosted",
+    "name": "Netmaker Community Edition Self-Hosted WireGuard Network Manager",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed open-source Community Edition to self-host WireGuard mesh, remote-access and site-to-site network management; no Netmaker Community software license fee or fixed trial expiration.",
+    "watch_out": "This is the self-hosted Community Edition, not Netmaker SaaS or the time-limited Pro trial. You supply a compatible server/VM, public IP, domain/DNS, bandwidth and maintenance; cloud infrastructure can incur charges. Enterprise/Pro features under pro/ are separately licensed; follow Apache-2.0 notices.",
+    "pricing_url": "https://github.com/gravitl/netmaker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
