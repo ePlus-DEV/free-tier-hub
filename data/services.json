@@ -11233,5 +11233,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "vectorlite-sqlite-vector-search-local",
+    "name": "Vectorlite Open-Source SQLite Vector Search Extension",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 runtime-loadable SQLite extension providing in-process HNSW vector similarity search via SQL on supported local operating systems; no vendor license fee or managed-service query quota.",
+    "watch_out": "Vectorlite is a local SQLite extension, not free hosted search. Requires a compatible SQLite driver, supported binaries/build toolchain, storage, CPU and memory. Embedding generation, cloud hosting, backups and third-party APIs are separate costs. Follow Apache-2.0 terms.",
+    "pricing_url": "https://github.com/1yefuwang1/vectorlite",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
