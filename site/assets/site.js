@@ -207,7 +207,7 @@
     var categoryMaxPage = Math.max(1, Math.ceil(categoryCards.length / categoryPageSize));
     function categoryPageFromURL() {
       var raw = new URL(window.location.href).searchParams.get("page");
-      return raw && /^[1-9]\\d*$/.test(raw) ? Math.min(categoryMaxPage, Number(raw)) : 1;
+      return raw && /^[1-9][0-9]*$/.test(raw) ? Math.min(categoryMaxPage, Number(raw)) : 1;
     }
     var categoryCurrentPage = categoryPageFromURL();
     function renderCategoryPage() {
