@@ -11259,5 +11259,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-ozone-self-hosted",
+    "name": "Apache Ozone Open-Source Distributed Object Storage",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed distributed object storage software with S3-compatible interfaces, replication and erasure coding; self-hosted deployments have no software license fee or vendor-imposed free-plan expiration.",
+    "watch_out": "Self-hosted software only, not free managed cloud object storage. Operators provide and pay for servers, disks, replication capacity, network/egress, backups, security and maintenance. S3-compatible client integrations and external services may have separate charges; Apache license notices apply.",
+    "pricing_url": "https://github.com/apache/ozone",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
