@@ -20,6 +20,29 @@ export const CATEGORY_NAMES = {
   "webhooks-events": "Webhooks & event delivery"
 };
 
+// Short editorial descriptions for the all-categories overview.
+export const CATEGORY_DESCRIPTIONS = {
+  "static-hosting": "Publish websites, frontend apps and static assets with hosted build and delivery tools.",
+  "app-hosting": "Deploy backends, web applications and APIs without managing every infrastructure detail.",
+  "serverless": "Run functions and edge workloads with usage-based limits and lightweight operations.",
+  "cloud-vps": "Compare virtual machines, infrastructure allowances and entry-level cloud compute.",
+  "databases": "Find managed and self-hosted databases, caches and data persistence options.",
+  "storage": "Store objects, files, backups and application assets with clear capacity limits.",
+  "developer-tools": "Explore APIs, CLIs, coding utilities and developer productivity tooling.",
+  "ci-cd": "Automate builds, tests, releases and delivery pipelines.",
+  "auth-security": "Manage identity, access, authentication and security workflows.",
+  "observability": "Track availability, application health, logs, traces and performance.",
+  "analytics": "Understand usage, product behavior and data with analytics tools.",
+  "dns-cdn": "Route traffic, manage DNS and deliver content closer to users.",
+  "ai-ml": "Build and experiment with machine learning models and AI platforms.",
+  "ai-assistants": "Discover conversational AI assistants and agent workflows.",
+  "queues-jobs": "Schedule tasks, process background work and connect asynchronous systems.",
+  "search": "Integrate hosted search and indexing into websites or applications.",
+  "feature-flags": "Control feature releases, configuration and gradual rollouts.",
+  "tunneling-networking": "Connect environments, expose local services and manage private networking.",
+  "webhooks-events": "Inspect webhooks, deliver events and integrate event-driven systems."
+};
+
 export const CATEGORY_LABELS = {
   "static-hosting": "Static hosting",
   "app-hosting": "App hosting",
