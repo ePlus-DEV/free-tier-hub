@@ -11867,5 +11867,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-hop-self-hosted",
+    "name": "Apache Hop Open Source Data Orchestration",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 data pipeline and workflow orchestration platform with local GUI, command-line runner and optional self-managed Hop Server; no software license fee or vendor usage quota.",
+    "watch_out": "Compute, storage, databases and external services are not free infrastructure. Change default Hop Server credentials, protect REST endpoints with authentication, enable TLS and run only trusted workflows, which execute with host privileges.",
+    "pricing_url": "https://github.com/apache/hop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
