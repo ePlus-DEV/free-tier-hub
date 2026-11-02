@@ -171,18 +171,21 @@ test('candidate Issue intake and conflict recovery share deployment-aware valida
   }
 });
 
-test('verified catalog delivery opens ready PRs for gated auto-merge', () => {
+test('verified catalog delivery creates draft PRs that require review before merging', () => {
   const queue = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
   const approve = fs.readFileSync(path.join(ROOT, '.github/workflows/pr-auto-approve.yml'), 'utf8');
-  assert.match(queue, /gh pr create --base main --head/);
-  assert.doesNotMatch(queue, /gh pr create --draft --base main --head/,
-    'eligible bot catalog PRs must be Ready so approved checks can auto-merge');
+  assert.match(queue, /gh pr create --draft --base main --head/,
+    'bot catalog PRs must remain Draft until a reviewer marks them ready');
+  assert.doesNotMatch(queue, /gh pr create --base main --head/,
+    'the candidate workflow must not open ready-to-merge PRs');
   assert.match(queue, /resolveCandidateDeployment\(original, comments\)/,
     'require trusted deployment evidence before delivery');
   assert.match(queue, /npm run verify/,
     'verify catalog changes before opening the PR');
   assert.match(queue, /open_count" -ge 3/,
     'retain the three-open-catalog-PR delivery capacity');
+  assert.match(approve, /Draft PR is awaiting review; auto-merge skipped/,
+    'draft candidate PRs must not be auto-merged');
   assert.match(approve, /\[\[ "\$BRANCH" == catalog\/add-\* \]\]/,
     'auto-merge bot PRs only from the canonical catalog branch');
   assert.match(approve, /jq -e '.state == "open" and .pull_request == null'/,
