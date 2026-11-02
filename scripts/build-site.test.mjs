@@ -21,6 +21,25 @@ test('directory exposes unique search/category controls and official sources for
       assert.ok(page.includes('id="header-search-form" role="search" method="get" action="https://free-tier.eplus.dev/#explore"'));
       assert.match(page, /id="header-search" name="q" type="search"/);
     }
+    // Support links must be available on every page without confusing them with provider pricing.
+    for (const page of [html, fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8')]) {
+      assert.match(page, /<nav class="primary-nav"[\s\S]*?<a href="https:\/\/eplus\.dev\/page\/donate" target="_blank" rel="noopener noreferrer">Support<\/a><\/nav>/);
+      assert.match(page, /<footer class="site-footer"[\s\S]*?Donate \/ Support<\/a>/);
+      assert.match(page, /href="https:\/\/github\.com\/sponsors\/ePlus-DEV" target="_blank" rel="noopener noreferrer">GitHub Sponsors<\/a>/);
+    }
+    for (const page of [html, fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8')]) {
+      assert.match(page, /<details class="support-widget" id="support-widget">/);
+      assert.match(page, /<summary class="support-toggle" aria-label="Support Free Tier Hub"/);
+      assert.match(page, /class="support-popover" role="group" aria-label="Donation options"/);
+      assert.match(page, /Donate via ePlus\.DEV/);
+      assert.match(page, /Donations never affect which services we list or recommend/);
+    }
+    const css = fs.readFileSync(path.join(output, 'assets/site.css'), 'utf8');
+    assert.match(css, /\.support-widget\{[\s\S]*?position:fixed;right:22px;bottom:calc\(78px/);
+    assert.match(css, /body:has\(\.detail-mobile-action\) \.support-widget\{[\s\S]*?bottom:calc\(144px/);
+    assert.match(css, /body:has\(\.cookie-notice:not\(\[hidden\]\)\) \.support-widget\{display:none\}/);
+    const js = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
+    assert.match(js, /supportWidget\.open = false/);
     const png = fs.readFileSync(path.join(output, 'assets/og-image.png'));
     assert.equal(png.subarray(1, 4).toString(), 'PNG');
     assert.equal(png.readUInt32BE(16), 1200);

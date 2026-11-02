@@ -17,6 +17,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'site/assets', name))).digest('hex').slice(0, 12);
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
+const SUPPORT_URL = 'https://eplus.dev/page/donate';
+const SPONSORS_URL = 'https://github.com/sponsors/ePlus-DEV';
 const GA_ID = 'G-9YPGG0XEZV';
 
 // Add referral attribution only to links that leave our catalog. Preserve the
@@ -184,7 +186,8 @@ function document(absolute, title, description, relative, content, structuredDat
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
     '<a href="', tag(absolute()), '"', relative === '' ? ' aria-current="page"' : '', '>Discover</a>',
     '<a href="', tag(absolute('#explore')), '">Categories</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></nav>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Support</a></nav>',
     '<div class="header-actions">',
     '<button class="header-search-toggle" id="header-search-toggle" type="button" ',
     'aria-label="Open search" aria-expanded="false" aria-controls="header-search-panel" ',
@@ -217,10 +220,24 @@ function document(absolute, title, description, relative, content, structuredDat
     '<a href="', tag(absolute('llms.txt')), '">llms.txt</a>',
     '<a href="', tag(absolute('agents.md')), '">agents.md</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/docs/cost-safety.md'), '">Cost safety</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></div>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate / Support</a>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></div>',
     '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>',
     '<span>Independent catalog · Verify every provider before enabling billing.</span>',
     '</div></div></footer>',
+    // Native details keeps this support action keyboard-accessible without JavaScript.
+    '<details class="support-widget" id="support-widget">',
+    '<summary class="support-toggle" aria-label="Support Free Tier Hub" title="Support Free Tier Hub">',
+    '<span class="support-icon" aria-hidden="true">&#9829;</span>',
+    '<span class="support-label">Donate</span></summary>',
+    '<div class="support-popover" role="group" aria-label="Donation options">',
+    '<strong>Support Free Tier Hub</strong>',
+    '<p>Help keep this independent free-tier directory available and up to date.</p>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate via ePlus.DEV ↗</a>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors ↗</a>',
+    '<small>Completely optional. Donations never affect which services we list or recommend.</small>',
+    '</div></details>',
     '<button class="back-to-top" id="back-to-top" type="button" ',
     'aria-label="Back to top" title="Back to top" hidden>',
     glyph('up'),
