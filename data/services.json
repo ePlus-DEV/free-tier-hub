@@ -11428,5 +11428,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "zizmor-github-actions-security-local",
+    "name": "zizmor Open-Source CI Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI for static analysis of GitHub Actions, Dependabot and pre-commit configurations; no vendor scan quota or software subscription fee.",
+    "watch_out": "Runs locally or on user-provided CI runners. GitHub Actions runner minutes may cost money; optional GitHub code-scanning/SARIF upload can require GitHub Advanced Security for private repositories, but CLI scanning does not. This is not a hosted free security scanning service.",
+    "pricing_url": "https://github.com/zizmorcore/zizmor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
