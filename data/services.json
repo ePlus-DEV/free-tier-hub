@@ -11480,5 +11480,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ice-domains-free-dns",
+    "name": "ice.domains Free DNS Hosting",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Vendor-hosted authoritative Anycast DNS, free forever with unlimited DNS zones, records and queries; DNSSEC, REST API, DNS analytics and DDoS protection included; works with domains from any registrar.",
+    "watch_out": "Requires an existing domain registration (domain registration/renewal is not free). Users must change nameservers at their registrar. Extraordinary query traffic should be discussed with provider; no formal SLA or contractual no-charge guarantee was independently established. Vendor claims production and small-business suitability.",
+    "pricing_url": "https://ice.domains/free-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
   }
 ]
