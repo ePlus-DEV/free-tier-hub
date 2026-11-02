@@ -214,6 +214,12 @@ test('catalog recovery keeps both guarded paths in one hourly workflow', () => {
   assert.ok(workflow.includes('Reactivate one verified non-conflicting catalog PR'));
   assert.ok(workflow.includes('Reconcile one verified data-only conflicting catalog PR'));
   assert.ok(workflow.includes('.draft == false'));
+  const conflictPass = workflow.split('  reconcile:\n')[1]?.split('\n  recover:')[0];
+  const recoveryPass = workflow.split('\n  recover:')[1];
+  assert.ok(conflictPass && recoveryPass, 'both recovery jobs must remain present');
+  assert.doesNotMatch(conflictPass, /\.draft == false/, 'Draft catalog PRs must be eligible for safe conflict reconciliation');
+  assert.match(conflictPass, /\.mergeable == false/, 'only genuinely conflicted PRs may be reconciled');
+  assert.match(recoveryPass, /\.draft == false/, 'Draft PRs must remain excluded from automatic reactivation');
   assert.ok(workflow.includes('.head.sha == $head'));
   assert.ok(workflow.includes('git -c credential.helper= push'));
   assert.ok(!workflow.includes('git push --force'));
