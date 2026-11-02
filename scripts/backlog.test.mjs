@@ -99,6 +99,11 @@ test('backlog consumer resumes one queued Issue after a trusted main merge', () 
   assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]/);
   assert.match(workflow, /gh', \['workflow', 'run', 'catalog-candidate-queue\.yml'/);
   assert.match(workflow, /if \(prs\.some\(pr => pr\.head\?\.ref === branch\)\) continue/);
+  assert.match(workflow, /catalogIds\.has\(id\)/, 'skip already-catalogued Issues');
+  assert.match(workflow, /resolveCandidateDeployment\(candidate, comments\)/,
+    'require trusted first-party deployment evidence before dispatch');
+  assert.match(workflow, /if \(!resolved\)/, 'skip evidence-free Issues rather than retry forever');
+  assert.match(workflow, /validateCandidate\(resolved\)/, 'validate resolved candidate schema');
 });
 
 test('manual candidate queue uses trusted REST issue author association', () => {
