@@ -11573,6 +11573,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "trinity-ai-agents-self-hosted",
+    "name": "Trinity Open-Source Self-Hosted AI Agent Platform",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted AI agent orchestration platform with Docker-based workspaces, agent schedules, approval gates, audit logs, and Claude Code/Codex/Gemini CLI runtime integrations; open-source core has no software license fee or vendor-hosted quota.",
+    "watch_out": "Operator supplies Docker host, compute, storage, PostgreSQL and network infrastructure; model-provider API, agent runtime subscriptions, hosting and bandwidth may cost extra. Enterprise modules including organization SSO, advanced RBAC and compliance features require separate commercial licensing; do not treat them as included in the free open-source core.",
+    "pricing_url": "https://github.com/abilityai/trinity",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ryvos-local-ai-agent-runtime",
+    "name": "Ryvos Open-Source Local AI Agent Runtime",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Rust AI agent runtime and local assistant with command-line interface, persistent memory, task planning, tools, MCP integration and optional messaging channels; self-run binary has no Ryvos software license fee or vendor-imposed local-use quota.",
+    "watch_out": "Runs on user-controlled Linux/macOS hardware; LLM provider API calls, cloud servers, model subscriptions and optional Docker sandboxing infrastructure may cost extra. Ryvos Cloud is a separate hosted offering and is not included or verified as free; use local models where supported to avoid paid inference.",
+    "pricing_url": "https://github.com/Ryvos/ryvos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "grafana-beyla-ebpf-self-hosted",
     "name": "Grafana Beyla Open-Source eBPF Instrumentation",
     "category": "observability",
