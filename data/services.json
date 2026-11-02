@@ -11376,5 +11376,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "konflux-ci-self-hosted",
+    "name": "Konflux Open-Source CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native CI/CD software for building, testing, signing and releasing artifacts; no Konflux software license fee or vendor-imposed build quota when self-hosted.",
+    "watch_out": "You operate the Kubernetes cluster, Tekton pipelines, registries and storage; infrastructure, CI workers, networking and artifact hosting can cost money. This is not a free vendor-hosted Konflux account. Commercial use follows Apache-2.0 notice and license obligations.",
+    "pricing_url": "https://github.com/konflux-ci/konflux-ci",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
