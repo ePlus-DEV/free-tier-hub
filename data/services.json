@@ -12010,5 +12010,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "aionui-desktop-local",
+    "name": "AionUi Open-Source Desktop AI Agent Workspace",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 desktop cowork and AI-agent interface for macOS, Windows and Linux with local file workflows and support for connecting external or local AI agents; no license fee for the open-source app.",
+    "watch_out": "Model subscriptions, API tokens, third-party coding agents and remote hosting may incur charges; the app does not grant free paid LLM inference. Grant filesystem and shell permissions carefully because connected agents can execute local operations.",
+    "pricing_url": "https://github.com/iOfficeAI/AionUi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
