@@ -11558,5 +11558,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ryvos-local-ai-agent-runtime",
+    "name": "Ryvos Open-Source Local AI Agent Runtime",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Rust AI agent runtime and local assistant with command-line interface, persistent memory, task planning, tools, MCP integration and optional messaging channels; self-run binary has no Ryvos software license fee or vendor-imposed local-use quota.",
+    "watch_out": "Runs on user-controlled Linux/macOS hardware; LLM provider API calls, cloud servers, model subscriptions and optional Docker sandboxing infrastructure may cost extra. Ryvos Cloud is a separate hosted offering and is not included or verified as free; use local models where supported to avoid paid inference.",
+    "pricing_url": "https://github.com/Ryvos/ryvos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
