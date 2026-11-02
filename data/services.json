@@ -11391,6 +11391,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "nitro-server-toolkit-local",
+    "name": "Nitro Open-Source Server Toolkit",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed server toolkit/framework for local development and building deployable web/serverless applications; no Nitro software license fee or vendor-imposed local build quota.",
+    "watch_out": "Nitro does not provide free hosted compute, domains, bandwidth, CI or databases; cloud/serverless provider billing and overage policies apply. The upstream main branch documents Nitro v3 while Nitro v2 remains the current stable line; check version compatibility and runtime adapters.",
+    "pricing_url": "https://nitro.build/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "konflux-ci-self-hosted",
+    "name": "Konflux Open-Source CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native CI/CD software for building, testing, signing and releasing artifacts; no Konflux software license fee or vendor-imposed build quota when self-hosted.",
+    "watch_out": "You operate the Kubernetes cluster, Tekton pipelines, registries and storage; infrastructure, CI workers, networking and artifact hosting can cost money. This is not a free vendor-hosted Konflux account. Commercial use follows Apache-2.0 notice and license obligations.",
+    "pricing_url": "https://github.com/konflux-ci/konflux-ci",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "borgmatic-backup-automation-local",
     "name": "borgmatic Open-Source Backup Automation",
     "category": "storage",
