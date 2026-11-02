@@ -11363,5 +11363,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "eleventy-static-site-generator-local",
+    "name": "Eleventy (11ty / Build Awesome) Static Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local static-site generator supporting Markdown, HTML and multiple template engines; no license fee or vendor-imposed local site/build quota.",
+    "watch_out": "Eleventy is build software, not free hosted web space. Hosting, CDN, domains, CI runners, bandwidth and plugins may cost extra. Upstream now uses the Build Awesome name/repository; @11ty/eleventy remains a compatible installation path; check version and plugin compatibility.",
+    "pricing_url": "https://www.11ty.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
