@@ -11750,5 +11750,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "opencost-kubernetes-cost-monitoring-self-hosted",
+    "name": "OpenCost Kubernetes Cost Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes/cloud cost allocation engine, APIs, metrics and UI; no software subscription fee or vendor-imposed usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, Helm and Prometheus; compute, storage, monitoring retention, cloud billing APIs and related infrastructure may cost money. This is not a free hosted Kubernetes or cloud account.",
+    "pricing_url": "https://github.com/opencost/opencost",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
