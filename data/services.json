@@ -11389,5 +11389,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "nitro-server-toolkit-local",
+    "name": "Nitro Open-Source Server Toolkit",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed server toolkit/framework for local development and building deployable web/serverless applications; no Nitro software license fee or vendor-imposed local build quota.",
+    "watch_out": "Nitro does not provide free hosted compute, domains, bandwidth, CI or databases; cloud/serverless provider billing and overage policies apply. The upstream main branch documents Nitro v3 while Nitro v2 remains the current stable line; check version compatibility and runtime adapters.",
+    "pricing_url": "https://nitro.build/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
