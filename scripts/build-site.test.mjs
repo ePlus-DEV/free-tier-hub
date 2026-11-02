@@ -53,6 +53,28 @@ test('directory exposes unique search/category controls and official sources for
     const entries = Array.isArray(raw) ? raw : raw.services;
     const mainEntries = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     const limitedEntries = entries.filter(item => item.plan !== 'ongoing' && item.plan !== 'monthly-credit');
+    // Home chips remain actual filters; the new directory is a separate destination.
+    for (const [id, label] of [
+      ['static-hosting', 'Hosting'], ['databases', 'Databases'],
+      ['ai-assistants', 'AI assistants'], ['storage', 'Storage'],
+      ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']
+    ]) {
+      const expected = mainEntries.filter(item => item.category === id).length;
+      assert.ok(html.includes('data-filter-category="' + id + '" aria-pressed="false">' +
+        label + ' <span class="category-chip-count" aria-label="' + expected +
+        ' services">' + expected + '</span>'), id + ': count agrees with category overview');
+    }
+    const bar = html.slice(html.indexOf('<div class="category-bar">'),
+      html.indexOf('<div class="search-filter-row">'));
+    assert.ok(bar.includes('class="category-shortcuts"'));
+    assert.ok(bar.includes('</div><a class="category-index-shortcut" href="https://free-tier.eplus.dev/categories/"'),
+      'all categories link is separate from and alongside quick filter controls');
+    assert.match(html, /id="category-filter"><option value="">All categories<\/option>/);
+    assert.match(html, /class="category-filter-index-link">Want to explore\? <a href="https:\/\/free-tier\.eplus\.dev\/categories\/">Browse all 19 categories/);
+    assert.match(css, /\.catalog-toolbar \.category-bar\{display:flex;grid-column:1\/-1;gap:5px;min-width:0\}/);
+    assert.match(css, /\.catalog-toolbar \.category-shortcuts\{display:flex;flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto/);
+    assert.match(css, /\.catalog-toolbar \.category-index-shortcut\{flex-shrink:0;max-width:123px/);
+
     const offersHtml = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
     const classificationsHtml = fs.readFileSync(path.join(output, 'about/classifications/index.html'), 'utf8');
     assert.match(classificationsHtml, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/about\/classifications\/"/);
