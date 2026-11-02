@@ -11997,5 +11997,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "astron-agent-self-hosted",
+    "name": "iFLYTEK Astron Agent Open-Source Platform",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted agentic workflow platform for AI orchestration, model/tool integration, RPA and team collaboration with Docker-based deployment; no open-source software license fee.",
+    "watch_out": "Requires self-operated compute, containers, database, authentication and secure networking. Model APIs, external iFLYTEK cloud services and infrastructure can be billed; change default example credentials and review each integrated provider's terms.",
+    "pricing_url": "https://github.com/iflytek/astron-agent",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
