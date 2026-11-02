@@ -11685,5 +11685,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "mkdocs-static-documentation-generator-local",
+    "name": "MkDocs Open-Source Documentation Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause-licensed local Markdown-to-static-HTML documentation generator with themes and plugins; no software license fee or build quota.",
+    "watch_out": "Generates site files locally; public hosting, domains, CI runners, third-party themes/plugins and their licenses are separate and may incur costs. This is not free managed website hosting.",
+    "pricing_url": "https://github.com/mkdocs/mkdocs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
