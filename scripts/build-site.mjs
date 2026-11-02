@@ -17,6 +17,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'site/assets', name))).digest('hex').slice(0, 12);
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
+const SUPPORT_URL = 'https://eplus.dev/page/donate';
 const GA_ID = 'G-9YPGG0XEZV';
 
 // Add referral attribution only to links that leave our catalog. Preserve the
@@ -184,7 +185,8 @@ function document(absolute, title, description, relative, content, structuredDat
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
     '<a href="', tag(absolute()), '"', relative === '' ? ' aria-current="page"' : '', '>Discover</a>',
     '<a href="', tag(absolute('#explore')), '">Categories</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></nav>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Support</a></nav>',
     '<div class="header-actions">',
     '<button class="header-search-toggle" id="header-search-toggle" type="button" ',
     'aria-label="Open search" aria-expanded="false" aria-controls="header-search-panel" ',
@@ -217,7 +219,9 @@ function document(absolute, title, description, relative, content, structuredDat
     '<a href="', tag(absolute('llms.txt')), '">llms.txt</a>',
     '<a href="', tag(absolute('agents.md')), '">agents.md</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/docs/cost-safety.md'), '">Cost safety</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></div>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate / Support</a>',
+    '<a href="https://github.com/sponsors/ePlus-DEV" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></div>',
     '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>',
     '<span>Independent catalog · Verify every provider before enabling billing.</span>',
     '</div></div></footer>',
