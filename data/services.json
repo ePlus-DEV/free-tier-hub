@@ -11763,5 +11763,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cadvisor-container-metrics-self-hosted",
+    "name": "cAdvisor Container Metrics (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source container resource monitoring daemon with CPU, memory, disk and network metrics, API and web UI; no license fee or software usage quota.",
+    "watch_out": "Runs on your own Docker/Kubernetes host; privileged container and host filesystem mounts may be required, so restrict access and review security. Infrastructure, metrics storage, remote monitoring and network costs are not included.",
+    "pricing_url": "https://github.com/google/cadvisor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
