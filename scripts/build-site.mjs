@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import {
-  CATEGORY_NAMES, CATEGORY_LABELS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
+  CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
   CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
 } from './site-data.mjs';
 
@@ -185,7 +185,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<small>by ePlus-DEV</small></span></a>',
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
     '<a href="', tag(absolute()), '"', relative === '' ? ' aria-current="page"' : '', '>Discover</a>',
-    '<a href="', tag(absolute('#explore')), '">Categories</a>',
+    '<a href="', tag(absolute('categories/')), '"', relative === 'categories/' ? ' aria-current="page"' : '', '>Categories</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
     '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Support</a></nav>',
     '<div class="header-actions">',
@@ -213,7 +213,7 @@ function document(absolute, title, description, relative, content, structuredDat
     'free tiers, practical limitations and official pricing sources.</p></div>',
     '<div><h3>Explore</h3><a href="', tag(absolute()), '">All services</a>',
     '<a href="', tag(absolute('about/classifications/')), '">Offer classifications</a>',
-    '<a href="', tag(absolute('#explore')), '">Categories</a>',
+    '<a href="', tag(absolute('categories/')), '">All categories</a>',
     '<a href="', tag(absolute('catalog.json')), '">Catalog JSON</a>',
     '<a href="', tag(absolute('sitemap.xml')), '">Sitemap</a></div>',
     '<div><h3>Developers</h3>',
@@ -261,7 +261,8 @@ function homePage(items, absolute, counts) {
     '</div></section><section id="explore" class="section catalog-section">',
     '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="catalog-toolbar">',
-    '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
+    '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts,
+    '<a class="category-index-shortcut" href="', tag(absolute('categories/')), '">Browse all categories ', glyph('arrow'), '</a></div>',
     '</div>',
     '<div class="search-filter-row">',
     '<form class="hero-search directory-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
@@ -335,11 +336,55 @@ function homePage(items, absolute, counts) {
     '">Review the cost and data-safety checklist ↗</a></p></div></aside>',
   ].join('');
 }
+
+function categoriesOverviewPage(absolute, counts) {
+  const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
+  const entries = CATEGORIES.map(category => {
+    const name = CATEGORY_NAMES[category];
+    const description = CATEGORY_DESCRIPTIONS[category];
+    const count = counts[category];
+    return [
+      '<a class="category-overview-card" href="', tag(absolute('category/' + category + '/')),
+      '" data-category-name="', tag(name.toLowerCase()), '">',
+      '<span class="category-overview-icon" aria-hidden="true">', glyph(CATEGORY_ICONS[category]), '</span>',
+      '<span class="category-overview-body"><strong>', tag(name), '</strong>',
+      '<span class="category-overview-description">', tag(description), '</span></span>',
+      '<span class="category-overview-foot"><span class="category-overview-count"><b>',
+      count, '</b> ', count === 1 ? 'service' : 'services', '</span>',
+      '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'), '</span></span>',
+      '</a>',
+    ].join('');
+  }).join('');
+  return [
+    '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
+    '">Home</a><span aria-hidden="true">/</span><span>Categories</span></nav>',
+    '<section class="page-intro categories-intro">',
+    '<p class="kicker">EXPLORE BY TOPIC</p><h1>All categories</h1>',
+    '<p>Find the right free developer tools, cloud platforms and services by category. ',
+    'Each group links to detailed listings, plan limits and official sources.</p>',
+    '<div class="category-overview-stats"><span><strong>', CATEGORIES.length,
+    '</strong> categories</span><span><strong>', total,
+    '</strong> ongoing free tiers &amp; recurring credits</span></div></section>',
+    '<section class="category-overview-section" aria-labelledby="category-overview-heading">',
+    '<div class="category-overview-toolbar"><div><h2 id="category-overview-heading">Explore categories</h2>',
+    '<p>Counts update from the published catalog. Time-limited offers are excluded.</p></div>',
+    '<label class="category-overview-search" for="category-overview-search">',
+    glyph('search'), '<span class="sr-only">Search categories</span>',
+    '<input id="category-overview-search" type="search" autocomplete="off"',
+    ' placeholder="Search categories..." aria-controls="category-overview-grid"></label></div>',
+    '<div class="category-overview-grid" id="category-overview-grid">', entries, '</div>',
+    '<p class="category-overview-empty" id="category-overview-empty" role="status" aria-live="polite" hidden>No matching categories. Try another search.</p>',
+    '</section><p class="back-link"><a href="', tag(absolute('#explore')),
+    '">← Browse all services</a></p>',
+  ].join('');
+}
+
 function categoryPage(category, subset, absolute) {
   const name = CATEGORY_NAMES[category];
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
-    '">Home</a><span aria-hidden="true">/</span><span>', tag(name), '</span></nav>',
+    '">Home</a><span aria-hidden="true">/</span><a href="', tag(absolute('categories/')),
+    '">Categories</a><span aria-hidden="true">/</span><span>', tag(name), '</span></nav>',
     '<section class="page-intro"><p class="kicker">CATEGORY · ', subset.length,
     ' SERVICES</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
@@ -352,8 +397,9 @@ function categoryPage(category, subset, absolute) {
     '<div class="load-more-wrap" id="category-load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="category-load-more" ',
     'aria-controls="category-service-grid">Load more services</button></div></div>',
-    '<p class="back-link"><a href="', tag(absolute()),
-    '">← All categories and services</a></p>',
+    '<p class="back-link"><a href="', tag(absolute('categories/')),
+    '">← All categories</a> · <a href="', tag(absolute('#explore')),
+    '">Browse all services</a></p>',
   ].join('');
 }
 function classificationsPage(absolute) {
@@ -510,7 +556,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       throw Error('Services missing original Git addition dates: ' + missing.join(', '));
     }
   }
-  if (CATEGORIES.some(c => !(c in CATEGORY_NAMES) || !(c in CATEGORY_ICONS))) {
+  if (CATEGORIES.some(c => !(c in CATEGORY_NAMES) || !(c in CATEGORY_ICONS) || !(c in CATEGORY_DESCRIPTIONS))) {
     throw Error('Missing category presentation metadata');
   }
   const output = path.resolve(outputDir);
