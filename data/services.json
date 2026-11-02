@@ -11789,5 +11789,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "jitsu-cloud-free-event-data",
+    "name": "Jitsu Cloud Free Event Data Pipeline",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "200,000 active events/month, unlimited captured events and destinations, up to 1 daily active connector sync, with ClickHouse UI/API access on the $0 Jitsu Cloud Free plan.",
+    "watch_out": "Active events are those delivered to destinations; exceeding the included allowance requires a paid upgrade according to official pricing. Do not confuse captured with active events; transformations and destinations affect usage. No credit card stated for Free signup; commercial-use terms and overage enforcement should be checked with provider. The separate MIT self-hosted offering requires your own infrastructure.",
+    "pricing_url": "https://jitsu.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
   }
 ]
