@@ -11352,6 +11352,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "kepler-kubernetes-energy-monitoring",
+    "name": "Kepler Open-Source Kubernetes Energy Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes energy and power metrics exporter for nodes, containers and pods; no vendor software monitoring quota or subscription fee.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and compatible host power or hardware metrics. Kubernetes nodes, Prometheus storage, dashboards and infrastructure are not free; energy estimates depend on available telemetry.",
+    "pricing_url": "https://github.com/sustainable-computing-io/kepler",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "eleventy-static-site-generator-local",
+    "name": "Eleventy (11ty / Build Awesome) Static Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local static-site generator supporting Markdown, HTML and multiple template engines; no license fee or vendor-imposed local site/build quota.",
+    "watch_out": "Eleventy is build software, not free hosted web space. Hosting, CDN, domains, CI runners, bandwidth and plugins may cost extra. Upstream now uses the Build Awesome name/repository; @11ty/eleventy remains a compatible installation path; check version and plugin compatibility.",
+    "pricing_url": "https://www.11ty.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "hono-serverless-web-framework-local",
     "name": "Hono Open-Source Web Framework",
     "category": "serverless",
