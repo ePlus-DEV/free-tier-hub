@@ -11893,5 +11893,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "k3s-self-hosted-kubernetes",
+    "name": "K3s Lightweight Kubernetes (Self-Hosted)",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 lightweight, production-ready Kubernetes distribution with bundled control plane, container runtime and cluster utilities; no software license fee or vendor-imposed usage quota.",
+    "watch_out": "Operate your own Linux nodes, network, persistent volumes, backups, security updates and monitoring; cloud VMs, storage and load balancers may be billed. K3s is a Kubernetes distribution, not a free managed cluster.",
+    "pricing_url": "https://github.com/k3s-io/k3s",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
