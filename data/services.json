@@ -11854,5 +11854,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-nifi-self-hosted",
+    "name": "Apache NiFi Open Source Dataflow",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed flow-based data routing, ingestion, event processing and transformation with provenance and a web UI; no software license fee or vendor usage quota.",
+    "watch_out": "Runs on your own Java 21 host or cluster; compute, storage and external systems may cost money. Production requires trusted TLS certificates, authentication, authorization and careful exposure of the administration interface.",
+    "pricing_url": "https://github.com/apache/nifi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
