@@ -11687,6 +11687,45 @@
     "deployment_model": "local"
   },
   {
+    "id": "mergerfs-union-filesystem-local",
+    "name": "mergerfs Open-Source Union Filesystem",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed Linux FUSE union filesystem that combines multiple existing storage paths into one logical mount; no software license fee or vendor usage quota.",
+    "watch_out": "Runs on user-managed Linux storage and requires compatible FUSE/kernel configuration; physical disks, backups and infrastructure cost extra. It is NOT RAID, parity protection, redundancy or a backup solution; retain license notice.",
+    "pricing_url": "https://github.com/trapexit/mergerfs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "zensical-static-documentation-generator-local",
+    "name": "Zensical Open-Source Static Documentation Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed free-forever static documentation site generator by the Material for MkDocs team; Markdown documentation builds without a vendor subscription or usage quota.",
+    "watch_out": "Zensical Studio, Spark and professional support are separate optional offerings; website hosting, domains, CI and infrastructure are not included. Preserve MIT license terms.",
+    "pricing_url": "https://github.com/zensical/zensical",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "mkdocs-static-documentation-generator-local",
+    "name": "MkDocs Open-Source Documentation Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause-licensed local Markdown-to-static-HTML documentation generator with themes and plugins; no software license fee or build quota.",
+    "watch_out": "Generates site files locally; public hosting, domains, CI runners, third-party themes/plugins and their licenses are separate and may incur costs. This is not free managed website hosting.",
+    "pricing_url": "https://github.com/mkdocs/mkdocs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "changesets-monorepo-release-tool-local",
     "name": "Changesets Open-Source Release and Versioning Tool",
     "category": "ci-cd",
