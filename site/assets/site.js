@@ -194,6 +194,22 @@
       headerSearch.focus(); headerSearch.select();
     }
   });
+  // Keep contextual explanations local, dismissible and keyboard accessible.
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll("details.eligibility-help[open], details.classification-help[open]").forEach(function (panel) {
+      if (!panel.contains(event.target)) panel.open = false;
+    });
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    var panels = document.querySelectorAll("details.eligibility-help[open], details.classification-help[open]");
+    if (!panels.length) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    var summary = panels[0].querySelector("summary");
+    panels.forEach(function (panel) { panel.open = false; });
+    if (summary) summary.focus({preventScroll:true});
+  });
   // Category pages share the directory's 12-at-a-time browsing behavior.
   // All cards remain in the server-rendered HTML when JavaScript is unavailable.
   var categoryGrid = document.getElementById("category-service-grid");
