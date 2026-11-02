@@ -337,6 +337,37 @@ function homePage(items, absolute, counts) {
   ].join('');
 }
 
+
+// Lightweight original line icons for the category overview, separate from
+// the small bundled Font Awesome glyph subset used by the navigation.
+const CATEGORY_ICON_STROKES = {
+  "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a15 15 0 0 0 0 18M12 3a15 15 0 0 1 0 18\"/>",
+  "server": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"7\" rx=\"2\"/><rect x=\"4\" y=\"13\" width=\"16\" height=\"7\" rx=\"2\"/><path d=\"M7 7h.01M7 16h.01\"/>",
+  "zap": "<path d=\"m13 2-9 12h7l-1 8 10-12h-7z\"/>",
+  "cloud": "<path d=\"M7 18a5 5 0 0 1-.5-10 7 7 0 0 1 13 .3A4.8 4.8 0 0 1 19 18H7z\"/>",
+  "database": "<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7\"/>",
+  "storage": "<path d=\"m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5\"/>",
+  "code": "<path d=\"m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18\"/>",
+  "shield": "<path d=\"M12 2 4 5v6c0 5 3 8 8 11 5-3 8-6 8-11V5l-8-3Z\"/>",
+  "activity": "<path d=\"M2 12h5l3-7 4 14 3-7h5\"/>",
+  "chart": "<path d=\"M4 20h16M6 18v-6h3v6m3 0V5h3v13m3 0V9h3v9\"/>",
+  "network": "<circle cx=\"12\" cy=\"4\" r=\"2\"/><circle cx=\"5\" cy=\"19\" r=\"2\"/><circle cx=\"19\" cy=\"19\" r=\"2\"/><path d=\"m11 6-5 11m7-11 5 11M7 19h10\"/>",
+  "sparkles": "<path d=\"m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z\"/>",
+  "bot": "<rect x=\"4\" y=\"8\" width=\"16\" height=\"12\" rx=\"3\"/><path d=\"M12 8V4M9 4h6M8 14h.01M16 14h.01M9 18h6\"/>",
+  "queue": "<path d=\"M10 6h11M10 12h11M10 18h11M4 6h.01M4 12h.01M4 18h.01\"/>",
+  "search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m16 16 5 5\"/>",
+  "flag": "<path d=\"M5 22V3m0 1c3-2 5 2 8 0s5 0 6 0v11c-3-2-5 2-8 0s-4 0-6 0\"/>",
+  "webhook": "<circle cx=\"6\" cy=\"7\" r=\"2\"/><circle cx=\"18\" cy=\"7\" r=\"2\"/><circle cx=\"12\" cy=\"18\" r=\"2\"/><path d=\"M8 7h8M7 9l4 7m6-7-4 7\"/>"
+};
+function categoryGlyph(category) {
+  const name = CATEGORY_ICONS[category];
+  const body = CATEGORY_ICON_STROKES[name];
+  if (!body) throw new Error('Unknown category icon: ' + name);
+  return '<svg xmlns="http://www.w3.org/2000/svg" data-category-icon="' + tag(name) +
+    '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + body + '</svg>';
+}
+
 function categoriesOverviewPage(absolute, counts) {
   const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
   const entries = CATEGORIES.map(category => {
@@ -346,7 +377,7 @@ function categoriesOverviewPage(absolute, counts) {
     return [
       '<a class="category-overview-card" href="', tag(absolute('category/' + category + '/')),
       '" data-category-name="', tag(name.toLowerCase()), '">',
-      '<span class="category-overview-icon" aria-hidden="true">', glyph(CATEGORY_ICONS[category]), '</span>',
+      '<span class="category-overview-icon" aria-hidden="true">', categoryGlyph(category), '</span>',
       '<span class="category-overview-body"><strong>', tag(name), '</strong>',
       '<span class="category-overview-description">', tag(description), '</span></span>',
       '<span class="category-overview-foot"><span class="category-overview-count"><b>',
