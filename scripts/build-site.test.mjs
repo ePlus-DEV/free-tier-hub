@@ -45,6 +45,12 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(classificationsHtml, /Self-hosted/);
     assert.match(classificationsHtml, /Check provider/);
     assert.ok(html.includes('href="https://free-tier.eplus.dev/about/classifications/"'));
+    assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
+    assert.match(html, /Legacy only<\/strong> means eligible existing accounts, not a separate offer type/);
+    assert.match(html, /<details class="eligibility-help"><summary>Why\?<\/summary>/);
+    assert.match(html, /Read eligibility policy ↗<\/a><\/div><\/details>/);
+    assert.doesNotMatch(html, /Free allowance reserved for eligible existing accounts\. <a href=/);
+    assert.match(html, /class="official-link"[^>]+target="_blank" rel="noopener noreferrer"/);
     assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /about\/classifications\//);
     assert.match(fs.readFileSync(path.join(output, 'llms.txt'), 'utf8'), /Offer classifications/);
     assert.equal(result.service_count, entries.length);
