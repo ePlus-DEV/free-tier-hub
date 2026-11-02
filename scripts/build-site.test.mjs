@@ -150,6 +150,37 @@ test('directory exposes unique search/category controls and official sources for
       mainEntries.filter(item => item.category === 'static-hosting').length,
       'all category cards must stay in server-rendered HTML for SEO and no-JS access');
     assert.doesNotMatch(categoryHtml, /class="service-card" hidden/);
+    const categoriesHtml = fs.readFileSync(path.join(output, 'categories/index.html'), 'utf8');
+    assert.match(categoriesHtml, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/categories\/"/);
+    assert.match(categoriesHtml, /<h1>All categories<\/h1>/);
+    assert.match(categoriesHtml, /"@type":"CollectionPage"/);
+    assert.match(categoriesHtml, /"@type":"BreadcrumbList"/);
+    assert.match(categoriesHtml, /aria-current="page">Categories<\/a>/);
+    assert.match(categoriesHtml, /id="category-overview-search" type="search"/);
+    assert.equal((categoriesHtml.match(/class="category-overview-card"/g) || []).length, CATEGORIES.length);
+    assert.ok(categoriesHtml.includes('<strong>' + CATEGORIES.length + '</strong> categories'));
+    assert.ok(categoriesHtml.includes('<strong>' + mainEntries.length +
+      '</strong> ongoing free tiers &amp; recurring credits'));
+    for (const category of CATEGORIES) {
+      const categoryUrl = 'https://free-tier.eplus.dev/category/' + category + '/';
+      const start = categoriesHtml.indexOf('<a class="category-overview-card" href="' + categoryUrl + '"');
+      assert.ok(start !== -1, category + ' is present in the index');
+      const card = categoriesHtml.slice(start, categoriesHtml.indexOf('</a>', start));
+      const count = mainEntries.filter(item => item.category === category).length;
+      assert.ok(card.includes('<b>' + count + '</b> ' + (count === 1 ? 'service' : 'services')),
+        category + ': only ongoing free tiers count');
+      assert.ok(card.includes('class="category-overview-description"'), category + ': has a description');
+    }
+    assert.match(html, /class="category-index-shortcut" href="https:\/\/free-tier\.eplus\.dev\/categories\/"/);
+    assert.match(html, /href="https:\/\/free-tier\.eplus\.dev\/categories\/">All categories<\/a>/);
+    assert.match(categoryHtml, /href="https:\/\/free-tier\.eplus\.dev\/categories\/">Categories<\/a>/);
+    assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /<loc>https:\/\/free-tier\.eplus\.dev\/categories\/<\/loc>/);
+    assert.match(fs.readFileSync(path.join(output, 'llms.txt'), 'utf8'), /\[All categories\]/);
+    assert.match(fs.readFileSync(path.join(output, 'agents.md'), 'utf8'), /Category overview:/);
+    assert.match(css, /\.category-overview-grid\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+    assert.match(css, /@media\(max-width:680px\)\{[\s\S]*?\.category-overview-grid\{grid-template-columns:1fr/);
+    assert.match(js, /overviewSearch\.addEventListener\("input"/);
+
     assert.ok(fs.existsSync(path.join(output, 'service/crow-ci/index.html')));
     assert.doesNotMatch(html, /class="catalog-sidebar"/);
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
