@@ -11350,5 +11350,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "kepler-kubernetes-energy-monitoring",
+    "name": "Kepler Open-Source Kubernetes Energy Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes energy and power metrics exporter for nodes, containers and pods; no vendor software monitoring quota or subscription fee.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and compatible host power or hardware metrics. Kubernetes nodes, Prometheus storage, dashboards and infrastructure are not free; energy estimates depend on available telemetry.",
+    "pricing_url": "https://github.com/sustainable-computing-io/kepler",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
