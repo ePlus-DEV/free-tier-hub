@@ -11454,5 +11454,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "rollgate-cloud-free",
+    "name": "Rollgate Free Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "500,000 feature-flag requests/month; unlimited flags; 3 projects, 3 environments, 3 seats; 12 SDKs on vendor-hosted Free plan.",
+    "watch_out": "Free tier is described for side projects and evaluation; confirm production/commercial-use terms before relying on it. No self-hosted plan is currently available (listed as coming soon). Upgrade or over-quota billing/stop behavior is not documented clearly; verify with provider before exceeding 500K requests.",
+    "pricing_url": "https://rollgate.io/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
   }
 ]
