@@ -11932,5 +11932,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-02",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sentence-transformers-local",
+    "name": "Sentence Transformers Open-Source Embeddings Framework",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local Python framework for sentence embeddings, semantic search, reranking and model training; no library subscription or per-request quota.",
+    "watch_out": "Pretrained models have independent licenses and possible gated downloads; verify model commercial-use terms separately. Local CPU/GPU resources, hosted inference endpoints, training and cloud infrastructure are not included.",
+    "pricing_url": "https://github.com/huggingface/sentence-transformers",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
