@@ -11750,5 +11750,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "scrutiny-disk-health-monitoring-self-hosted",
+    "name": "Scrutiny S.M.A.R.T Disk Health Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted disk health dashboard with S.M.A.R.T metrics, historical trends and disk failure thresholds; no vendor software license fee or usage quota.",
+    "watch_out": "Requires a server with disk S.M.A.R.T access and a self-operated collector/web application; device or privileged Docker access can have security implications. Storage, backup and server costs are not included; monitoring is not a substitute for backups.",
+    "pricing_url": "https://github.com/AnalogJ/scrutiny",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
