@@ -12062,5 +12062,18 @@
     "commercial_use": "check",
     "last_checked": "2026-11-01",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "openflags-self-hosted-feature-flags",
+    "name": "OpenFlags Self-Hosted Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted feature-flag API, dashboard and JavaScript/React SDKs; no vendor software subscription or published self-hosted flag-evaluation quota.",
+    "watch_out": "Requires self-operated Bun/SQLite or Docker infrastructure, storage, backups, HTTPS and security maintenance. Hosting, bandwidth and any external cloud services are not included; this is not a free vendor-hosted feature-flag account.",
+    "pricing_url": "https://github.com/huextrat/openflags",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
