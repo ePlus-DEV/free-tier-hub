@@ -45,6 +45,12 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(classificationsHtml, /Self-hosted/);
     assert.match(classificationsHtml, /Check provider/);
     assert.ok(html.includes('href="https://free-tier.eplus.dev/about/classifications/"'));
+    assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
+    assert.match(html, /Legacy only<\/strong> means eligible existing accounts, not a separate offer type/);
+    assert.match(html, /<details class="eligibility-help"><summary>Why\?<\/summary>/);
+    assert.match(html, /Read eligibility policy ↗<\/a><\/div><\/details>/);
+    assert.doesNotMatch(html, /Free allowance reserved for eligible existing accounts\. <a href=/);
+    assert.match(html, /class="official-link"[^>]+target="_blank" rel="noopener noreferrer"/);
     assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /about\/classifications\//);
     assert.match(fs.readFileSync(path.join(output, 'llms.txt'), 'utf8'), /Offer classifications/);
     assert.equal(result.service_count, entries.length);
@@ -72,7 +78,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
-    assert.match(html, /class="classification-help-link" href="https:\/\/free-tier\.eplus\.dev\/about\/classifications\/"/);
+    assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
     for (const id of ['koyeb', 'steadystack-initiate']) {
       const entry = entries.find(s => s.id === id);
       assert.equal(entry.eligibility, 'existing-users-only');
@@ -427,6 +433,18 @@ test('deployment filtering reads offer metadata rather than ID or product-name g
     const state = {hosting:'local',offer:'ongoing',q:'',category:'',sort:'default',noCard:false,commercial:false};
     assert.deepEqual(api.read(api.write('https://example.com/',state),[''],['default']),state);
   } finally {fs.rmSync(tmp,{recursive:true,force:true});}
+});
+
+test('contextual offer help opens on desktop hover and keeps mobile tap and keyboard behavior', () => {
+  const js = fs.readFileSync(new URL('../site/assets/site.js', import.meta.url), 'utf8');
+  assert.match(js, /\(hover: hover\) and \(pointer: fine\)/);
+  assert.match(js, /summary\.addEventListener\("pointerenter", mouseEnter\)/);
+  assert.match(js, /hoverRegion\.addEventListener\("pointerleave", mouseLeave\)/);
+  assert.match(js, /content\.addEventListener\("pointerenter"/);
+  assert.match(js, /event\.pointerType !== "mouse"/);
+  assert.match(js, /event\.preventDefault\(\);\s+cancelClose\(\);\s+help\.open = true/);
+  assert.match(js, /Touch taps and keyboard activation keep their native toggle behavior/);
+  assert.match(js, /content\.contains\(document\.activeElement\)/);
 });
 
 test('optional eligibility is manually scoped to legacy ongoing offers', () => {

@@ -190,3 +190,24 @@ test('verified catalog delivery opens ready PRs for gated auto-merge', () => {
   assert.match(approve, /gh pr merge "\$PR_NUMBER"[^\n]*--squash --match-head-commit "\$EXPECTED_HEAD"/,
     'merge only the CI-reviewed exact HEAD');
 });
+
+test('catalog recovery keeps both guarded paths in one hourly workflow', () => {
+  const root = path.join(ROOT, '.github/workflows');
+  const workflow = fs.readFileSync(path.join(root, 'reconcile-catalog-pr-conflicts.yml'), 'utf8');
+  assert.equal(fs.existsSync(path.join(root, 'recover-open-catalog-prs.yml')), false);
+  assert.ok(workflow.includes('name: Maintain catalog PRs'));
+  assert.ok(workflow.includes("cron: '41 * * * *'"));
+  assert.ok(!workflow.includes("cron: '*/30 * * * *'"));
+  assert.ok(workflow.includes('group: maintain-catalog-prs'));
+  assert.ok(workflow.includes('reconcile:\n    runs-on: ubuntu-latest'));
+  assert.ok(workflow.includes('recover:\n    # Only run after the conflict pass'));
+  assert.ok(workflow.includes('needs: reconcile'));
+  assert.ok(workflow.includes("needs.reconcile.result == 'success' && github.event_name != 'push'"));
+  assert.ok(workflow.includes('Reactivate one verified non-conflicting catalog PR'));
+  assert.ok(workflow.includes('Reconcile one verified data-only conflicting catalog PR'));
+  assert.ok(workflow.includes('.draft == false'));
+  assert.ok(workflow.includes('.head.sha == $head'));
+  assert.ok(workflow.includes('git -c credential.helper= push'));
+  assert.ok(!workflow.includes('git push --force'));
+  assert.ok(!workflow.includes('--force-with-lease'));
+});
