@@ -11830,6 +11830,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dnsviz-dnssec-analysis-local",
+    "name": "DNSViz Open-Source DNSSEC Analysis CLI",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 open-source local DNS and DNSSEC diagnostics, probing, analysis and visualization commands; no software subscription or vendor-imposed quota.",
+    "watch_out": "Runs locally and performs DNS queries; resolver/network costs or rate limits may apply. GPLv2 redistribution conditions apply. This is a DNS diagnostic tool, not a free hosted authoritative DNS or CDN plan.",
+    "pricing_url": "https://github.com/dnsviz/dnsviz",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "debezium-cdc-self-hosted",
+    "name": "Debezium Open Source Change Data Capture",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source database change data capture connectors and Debezium Server for streaming committed row changes to supported sinks; no software subscription or vendor usage quota.",
+    "watch_out": "Requires database replication/log privileges, connector runtime (such as Kafka Connect or Debezium Server), message broker or sink and monitoring. Hosted infrastructure, database storage and broker operations may cost money; Debezium trademarks are separate from the software license.",
+    "pricing_url": "https://debezium.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "microk8s-self-hosted-kubernetes",
     "name": "Canonical MicroK8s (Self-Hosted Kubernetes)",
     "category": "app-hosting",
