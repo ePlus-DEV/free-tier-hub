@@ -171,11 +171,22 @@ test('candidate Issue intake and conflict recovery share deployment-aware valida
   }
 });
 
-test('candidate queue opens draft PRs and retains approval gating', () => {
-  const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
-  assert.match(workflow, /gh pr create --draft --base main --head/);
-  assert.doesNotMatch(workflow, /gh pr create --base main --head/,
-    'catalog PR creation must never silently bypass draft review');
-  assert.match(workflow, /open_count" -ge 3/,
-    'draft PRs still consume the existing three-PR delivery capacity');
+test('verified catalog delivery opens ready PRs for gated auto-merge', () => {
+  const queue = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-candidate-queue.yml'), 'utf8');
+  const approve = fs.readFileSync(path.join(ROOT, '.github/workflows/pr-auto-approve.yml'), 'utf8');
+  assert.match(queue, /gh pr create --base main --head/);
+  assert.doesNotMatch(queue, /gh pr create --draft --base main --head/,
+    'eligible bot catalog PRs must be Ready so approved checks can auto-merge');
+  assert.match(queue, /resolveCandidateDeployment\(original, comments\)/,
+    'require trusted deployment evidence before delivery');
+  assert.match(queue, /npm run verify/,
+    'verify catalog changes before opening the PR');
+  assert.match(queue, /open_count" -ge 3/,
+    'retain the three-open-catalog-PR delivery capacity');
+  assert.match(approve, /\[\[ "\$BRANCH" == catalog\/add-\* \]\]/,
+    'auto-merge bot PRs only from the canonical catalog branch');
+  assert.match(approve, /jq -e '.state == "open" and .pull_request == null'/,
+    'validate the canonical candidate issue before merge');
+  assert.match(approve, /gh pr merge "\$PR_NUMBER"[^\n]*--squash --match-head-commit "\$EXPECTED_HEAD"/,
+    'merge only the CI-reviewed exact HEAD');
 });
