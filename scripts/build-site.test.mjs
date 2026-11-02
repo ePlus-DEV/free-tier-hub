@@ -435,6 +435,18 @@ test('deployment filtering reads offer metadata rather than ID or product-name g
   } finally {fs.rmSync(tmp,{recursive:true,force:true});}
 });
 
+test('contextual offer help opens on desktop hover and keeps mobile tap and keyboard behavior', () => {
+  const js = fs.readFileSync(new URL('../site/assets/site.js', import.meta.url), 'utf8');
+  assert.match(js, /\(hover: hover\) and \(pointer: fine\)/);
+  assert.match(js, /summary\.addEventListener\("pointerenter", mouseEnter\)/);
+  assert.match(js, /hoverRegion\.addEventListener\("pointerleave", mouseLeave\)/);
+  assert.match(js, /content\.addEventListener\("pointerenter"/);
+  assert.match(js, /event\.pointerType !== "mouse"/);
+  assert.match(js, /event\.preventDefault\(\);\s+cancelClose\(\);\s+help\.open = true/);
+  assert.match(js, /Touch taps and keyboard activation keep their native toggle behavior/);
+  assert.match(js, /content\.contains\(document\.activeElement\)/);
+});
+
 test('optional eligibility is manually scoped to legacy ongoing offers', () => {
   const all = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
   const ordinary = all.find(item => item.id === 'chatgpt-free');
