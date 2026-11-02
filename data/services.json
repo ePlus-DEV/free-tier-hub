@@ -11389,5 +11389,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "borgmatic-backup-automation-local",
+    "name": "borgmatic Open-Source Backup Automation",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0-or-later configuration-driven automation for BorgBackup with backup scheduling, retention, consistency checks and hooks; no vendor software subscription or storage quota.",
+    "watch_out": "Requires BorgBackup and your own local or remote backup destination. Disks, servers, object storage, network transfer and maintenance may cost money. GPLv3 redistribution obligations apply; borgmatic is backup orchestration, not a duplicate listing for the BorgBackup engine.",
+    "pricing_url": "https://torsion.org/borgmatic/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
