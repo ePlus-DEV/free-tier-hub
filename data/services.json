@@ -11802,5 +11802,18 @@
     "commercial_use": "check",
     "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "bucketlist-dream-of-the-day-public-api",
+    "name": "Bucketlist.nl Dream of the Day Public API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Public JSON API with CORS serving a daily rotating activity/experience idea, image, canonical URL and source attribution; no published request quota.",
+    "watch_out": "Public API currently needs no account, API key or card, but no formal request rate limit, SLA, service permanence or commercial-content reuse license is published. Keep source attribution and the canonical URL; linked destinations can contain affiliate offers. Daily content rotation is not a one-request/day allowance.",
+    "pricing_url": "https://bucketlist.nl/samenwerken",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-02",
+    "deployment_model": "cloud"
   }
 ]
