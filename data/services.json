@@ -11456,6 +11456,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "shipwright-build-self-hosted",
+    "name": "Shipwright Build (Kubernetes)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native container image build framework with Build and BuildRun APIs; no Shipwright license fee or vendor-enforced build allowance.",
+    "watch_out": "Requires your own compatible Kubernetes cluster, Tekton Pipelines, image registry and credentials; compute, registry, storage and network usage may incur charges. No hosted Shipwright free plan is included. Apache-2.0 notices apply.",
+    "pricing_url": "https://github.com/shipwright-io/build",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kpack-kubernetes-build-service-self-hosted",
+    "name": "kpack Kubernetes Native Container Build Service",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes build service using Cloud Native Buildpacks to build and rebuild OCI images; no kpack software license fee or fixed build quota.",
+    "watch_out": "Runs in a user-operated Kubernetes cluster; image registries, buildpack stacks, compute, persistent volumes and network usage may cost extra. Container registry credentials may be required, but no card is required for the open-source software itself.",
+    "pricing_url": "https://github.com/buildpacks-community/kpack",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "rollgate-cloud-free",
     "name": "Rollgate Free Feature Flags",
     "category": "feature-flags",
