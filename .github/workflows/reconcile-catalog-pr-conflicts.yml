@@ -49,7 +49,7 @@ jobs:
           # representation differs and previously selected zero PRs.
           candidates="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" |
             jq -r '[.[][]] | sort_by(.number)[] |
-              select(.user.login == "github-actions[bot]" and .draft == false and
+              select(.user.login == "github-actions[bot]" and
                      .base.ref == "main" and
                      .head.repo.full_name == env.GITHUB_REPOSITORY and
                      (.head.ref | startswith("catalog/add-")) and
@@ -75,7 +75,7 @@ jobs:
               pr="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number")"
             done
             if ! jq -e --arg head "$expected_head" --arg branch "$branch" \
-              '.state == "open" and .draft == false and .mergeable == false and
+              '.state == "open" and .mergeable == false and
                .user.login == "github-actions[bot]" and
                .head.ref == $branch and .head.sha == $head and
                .head.repo.full_name == env.GITHUB_REPOSITORY and
@@ -218,7 +218,8 @@ jobs:
 
   recover:
     # Only run after the conflict pass, with a clean checkout and fresh PR head.
-    # Draft PRs remain excluded from both recovery paths.
+    # Draft PRs remain excluded from reactivation. Conflict reconciliation may
+    # safely update their branch without changing Draft status.
     needs: reconcile
     if: ${{ needs.reconcile.result == 'success' && github.event_name != 'push' }}
     runs-on: ubuntu-latest
