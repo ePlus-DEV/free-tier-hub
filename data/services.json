@@ -11597,5 +11597,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "perspective-analytics-local",
+    "name": "Perspective Open-Source Streaming Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source interactive data grid, pivot-table and chart component for large and streaming datasets; browser WebAssembly and locally run Python/Node.js/Rust integrations without software license fees or vendor-imposed local query quotas.",
+    "watch_out": "Perspective is an embeddable analytics component, not a free hosted dashboard or database. User supplies hosting, data sources, compute and storage; production security, browser memory and third-party infrastructure costs remain their responsibility.",
+    "pricing_url": "https://github.com/perspective-dev/perspective",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
