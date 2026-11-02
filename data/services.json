@@ -11713,6 +11713,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "mkdocs-static-documentation-generator-local",
+    "name": "MkDocs Open-Source Documentation Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause-licensed local Markdown-to-static-HTML documentation generator with themes and plugins; no software license fee or build quota.",
+    "watch_out": "Generates site files locally; public hosting, domains, CI runners, third-party themes/plugins and their licenses are separate and may incur costs. This is not free managed website hosting.",
+    "pricing_url": "https://github.com/mkdocs/mkdocs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "changesets-monorepo-release-tool-local",
+    "name": "Changesets Open-Source Release and Versioning Tool",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI and tooling for package version management, changelog generation and release publishing in monorepos or individual packages; no vendor software subscription or usage quota.",
+    "watch_out": "Package registry accounts, publishing access, CI runner minutes and third-party release hosting are separate and may incur fees; Changesets is not a free hosted package registry or CI service.",
+    "pricing_url": "https://github.com/changesets/changesets",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "opennext-cloudflare-adapter-local",
     "name": "OpenNext for Cloudflare Open-Source Adapter",
     "category": "serverless",
