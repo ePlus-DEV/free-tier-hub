@@ -11545,5 +11545,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cordium-sandbox-self-hosted",
+    "name": "Cordium Open-Source Developer and AI Sandboxes",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Kubernetes sandbox/workspace platform for developers, AI agents and CI jobs with isolated containers, browser/SSH/CLI access, reusable templates and identity-based infrastructure access; no Cordium software license or hosted-workspace quota.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and Octelium infrastructure; compute, volumes, snapshots, egress, DNS and any model APIs may cost extra. Cordium code is Apache-2.0 but deployments can include AGPL-3.0 Octelium Cluster components with additional source-sharing obligations; no vendor-hosted free workspace is included.",
+    "pricing_url": "https://github.com/octelium/cordium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
