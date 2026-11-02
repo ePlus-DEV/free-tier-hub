@@ -11376,5 +11376,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "hono-serverless-web-framework-local",
+    "name": "Hono Open-Source Web Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Web Standards web/API framework that runs in local JavaScript runtimes and serverless/edge environments including Cloudflare Workers, Deno, Bun and AWS Lambda; no Hono software license fee.",
+    "watch_out": "Hono is a framework, not a hosted free serverless account. Cloudflare Workers, AWS Lambda, Fastly, Vercel, CI, bandwidth and databases may bill separately; each deployment provider sets its own quotas, signup/card and overage terms. Preserve MIT notices.",
+    "pricing_url": "https://hono.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
