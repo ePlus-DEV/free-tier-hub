@@ -11698,5 +11698,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "zensical-static-documentation-generator-local",
+    "name": "Zensical Open-Source Static Documentation Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed free-forever static documentation site generator by the Material for MkDocs team; Markdown documentation builds without a vendor subscription or usage quota.",
+    "watch_out": "Zensical Studio, Spark and professional support are separate optional offerings; website hosting, domains, CI and infrastructure are not included. Preserve MIT license terms.",
+    "pricing_url": "https://github.com/zensical/zensical",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
