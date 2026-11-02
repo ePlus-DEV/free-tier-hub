@@ -11674,6 +11674,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "turborepo-local-build-system",
+    "name": "Turborepo Open-Source Monorepo Build System",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Rust-based build system for JavaScript and TypeScript monorepos with task orchestration and local caching; no license fee or local build quota.",
+    "watch_out": "Free local tooling is distinct from optional vendor-hosted remote caching and other Vercel services, which may have separate pricing, quotas or billing requirements. User-provided CI runners, compute and storage may cost money.",
+    "pricing_url": "https://github.com/vercel/turborepo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "mergerfs-union-filesystem-local",
     "name": "mergerfs Open-Source Union Filesystem",
     "category": "storage",
