@@ -1,9 +1,13 @@
-name: Close catalog issue after merge
+name: Complete catalog issues and thank contributors
 
 # pull_request_target runs in the trusted base repository, so secrets are
 # available even when a contributor opens a pull request from a fork.
 # Do not check out or execute code from the contributor's fork here.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/services.json'
   pull_request_target:
     # Also handle a post-merge edit as a safe, idempotent way to retry a thank-you.
     # No pull-request code is checked out or executed in this workflow.
@@ -13,15 +17,21 @@ on:
       pr_number:
         description: "Merged PR number to thank (backfill)"
         type: number
-        required: true
+        required: false
 
 permissions:
+  contents: read
   issues: write
   pull-requests: write
 
+# Serialize close/thank retries, especially a merge event followed by a main push.
+concurrency:
+  group: complete-catalog-issues
+  cancel-in-progress: false
+
 jobs:
   thank-contributor:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+    if: ${{ (github.event_name == 'workflow_dispatch' && inputs.pr_number) || (github.event_name == 'pull_request_target' && github.event.pull_request.merged == true) }}
     runs-on: ubuntu-latest
     steps:
       - name: Thank contributor as eplus-bot on merged PR
@@ -91,3 +101,46 @@ jobs:
             gh issue comment "$issue" --body "Completed by merged PR $PR_URL."
             gh issue close "$issue" --reason completed
           fi
+
+  close-delivered:
+    # Run the catalog reconciliation on real main updates or manual backfill
+    # without a PR number. Never execute an untrusted PR checkout.
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.pr_number) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Close only catalogued candidate issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
+          const repo = process.env.GITHUB_REPOSITORY;
+          const catalog = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
+          const ids = new Set(catalog.map(item => item.id));
+          const catalogSha = execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim();
+          let page = 1;
+          while (true) {
+            const raw = execFileSync('gh', ['api', '--method', 'GET', `repos/${repo}/issues`,
+              '-f', 'state=open', '-f', 'per_page=100', '-f', `page=${page}`], {encoding:'utf8'});
+            const issues = JSON.parse(raw).filter(issue => !issue.pull_request);
+            for (const issue of issues) {
+              const match = /^\[catalog-candidate\] ([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(issue.title);
+              if (!match || !ids.has(match[1])) continue;
+              let candidate;
+              try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
+              if (candidate.id !== match[1]) continue;
+              const message = `Catalog entry \`${match[1]}\` is present on main at \`${catalogSha}\`. Closing this candidate as delivered. Production visibility still depends on a successful GitHub Pages deployment.`;
+              const outcome = closeCataloguedIssue(repo, issue.number, message);
+              console.log(`${outcome === 'already-closed' ? 'Already closed' : 'Closed'} #${issue.number}: ${match[1]}`);
+            }
+            if (JSON.parse(raw).length < 100) break;
+            page++;
+          }
+          NODE

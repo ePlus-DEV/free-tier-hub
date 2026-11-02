@@ -50,6 +50,8 @@ jobs:
           import fs from 'node:fs';
           import { execFileSync } from 'node:child_process';
           import { loadCandidates, listCandidates, fresh } from './scripts/backlog.mjs';
+          import { validateCandidate } from './scripts/catalog.mjs';
+          import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
 
           const repo = process.env.GITHUB_REPOSITORY;
           const api = (endpoint) => JSON.parse(execFileSync(
@@ -64,6 +66,8 @@ jobs:
           }
           const issues = api('issues?state=all&per_page=100');
           const prs = api('pulls?state=all&per_page=100');
+          const catalogIds = new Set(JSON.parse(fs.readFileSync('data/services.json', 'utf8'))
+            .map(service => service.id));
 
           // Resume the oldest trusted Issue skipped by the PR limit before opening
           // a new one. Existing or closed PR branches are never regenerated.
@@ -80,7 +84,23 @@ jobs:
             if (existingBranch) continue;
             let candidate;
             try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
-            if (candidate?.id !== id || !fresh(candidate)) continue;
+            if (candidate?.id !== id || catalogIds.has(id) || !fresh(candidate)) continue;
+            // A dispatch without trusted deployment evidence succeeds but cannot
+            // create a PR. Skip that Issue rather than retrying it every hour.
+            let resolved;
+            try {
+              validateCandidate(candidate);
+              const comments = api('issues/' + issue.number + '/comments?per_page=100');
+              resolved = resolveCandidateDeployment(candidate, comments);
+              if (resolved) validateCandidate(resolved);
+            } catch (error) {
+              console.log('Skipping invalid candidate Issue #' + issue.number + ': ' + error.message);
+              continue;
+            }
+            if (!resolved) {
+              console.log('Skipping Issue #' + issue.number + ': no trusted deployment evidence');
+              continue;
+            }
             execFileSync('gh', ['workflow', 'run', 'catalog-candidate-queue.yml',
               '--repo', repo, '--ref', 'main', '-f', 'issue_number=' + issue.number],
               { stdio: 'inherit' });

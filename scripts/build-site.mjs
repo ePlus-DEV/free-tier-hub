@@ -127,12 +127,17 @@ function card(item, absolute, initiallyHidden = false) {
     '<span class="badge" data-plan="', tag(item.plan), '">',
     tag(planBadge(item)), '</span></div>',
     item.eligibility === 'existing-users-only'
-      ? '<p class="eligibility-note"><strong>Legacy only</strong> · Free allowance reserved for eligible existing accounts. <a href="' + tag(absolute('about/classifications/#eligibility')) + '">Why?</a></p>' : '',
+      ? '<div class="eligibility-note"><strong>Legacy only</strong> · Free allowance reserved for eligible existing accounts. ' +
+        '<details class="eligibility-help"><summary>Why?</summary>' +
+        '<div class="eligibility-help-panel"><strong>Existing accounts only</strong>' +
+        '<p>Some providers keep an older free plan for qualifying accounts, while new signups may require a paid plan. Legacy eligibility is not a free trial.</p>' +
+        '<a href="' + tag(absolute('about/classifications/#eligibility')) + '" target="_blank" rel="noopener noreferrer">Read eligibility policy ↗</a>' +
+        '</div></details></div>' : '',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
     '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
     ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(providerReferralURL(item.pricing_url)),
-    '" rel="noopener noreferrer" aria-label="Official pricing source for ', tag(item.name), '">Official source ↗</a></div></article>',
+    '" target="_blank" rel="noopener noreferrer" aria-label="Official pricing source for ', tag(item.name), '">Official source ↗</a></div></article>',
   ].join('');
 }
 function document(absolute, title, description, relative, content, structuredData, robots = 'index,follow') {
@@ -273,8 +278,14 @@ function homePage(items, absolute, counts) {
     '<option value="monthly-credit">Recurring monthly credit</option>',
     '<option value="limited">Time-limited &amp; expiring offers (', limitedItems.length,
     ')</option></select></label>',
-    '<a class="classification-help-link" href="', tag(absolute('about/classifications/')),
-    '">How are these offers classified?</a>',
+    '<details class="classification-help"><summary>How are these offers classified?</summary>',
+    '<div class="classification-help-panel"><p class="classification-help-intro">Labels describe the listed offer, not every plan a provider sells.</p>',
+    '<dl><div><dt>Ongoing free allowance</dt><dd>No announced fixed end date. Usage limits and policies can still change.</dd></div>',
+    '<div><dt>Recurring monthly credit</dt><dd>Free credits renew each billing period; overages may cost money.</dd></div>',
+    '<div><dt>Time-limited offer</dt><dd>Trial or promotional credit that ends after a period or is depleted.</dd></div>',
+    '<div><dt>Expiring resource</dt><dd>A provisioned resource eventually expires or is removed.</dd></div></dl>',
+    '<p class="classification-help-caveat"><strong>Legacy only</strong> means eligible existing accounts, not a separate offer type.</p>',
+    '<a href="', tag(absolute('about/classifications/')), '" target="_blank" rel="noopener noreferrer">Full classification guide ↗</a></div></details>',
     '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
     '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
