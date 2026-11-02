@@ -147,6 +147,24 @@
     });
   }
 
+  // Progressive category filtering: the static directory remains fully visible without JS.
+  var overviewSearch = document.getElementById("category-overview-search");
+  var overviewGrid = document.getElementById("category-overview-grid");
+  var overviewEmpty = document.getElementById("category-overview-empty");
+  if (overviewSearch && overviewGrid && overviewEmpty) {
+    var overviewCards = Array.prototype.slice.call(overviewGrid.querySelectorAll(".category-overview-card"));
+    overviewSearch.addEventListener("input", function () {
+      var query = overviewSearch.value.trim().toLocaleLowerCase();
+      var visible = 0;
+      overviewCards.forEach(function (card) {
+        var matches = !query || card.textContent.toLocaleLowerCase().includes(query);
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      overviewEmpty.hidden = visible !== 0;
+    });
+  }
+
   // Works on every page, including detail and 404 pages without a search grid.
   var backToTop = document.getElementById("back-to-top");
   if (backToTop) {

@@ -6,7 +6,7 @@ Discover and compare free-tier services for hosting, databases, cloud infrastruc
 
 ![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
-**[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json) · [Support the project](https://eplus.dev/page/donate)
+**[Explore the directory](https://free-tier.eplus.dev/)** · [All categories](https://free-tier.eplus.dev/categories/) · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json) · [Support the project](https://eplus.dev/page/donate)
 
 ## Why Free Tier Hub?
 
@@ -33,6 +33,8 @@ Read the [classification guide on the website](https://free-tier.eplus.dev/about
 For practical combinations, see [example free-tier stacks](docs/use-cases.md) and the [cost and data-safety checklist](docs/cost-safety.md).
 
 ## Browse all categories
+
+The [all-categories page](https://free-tier.eplus.dev/categories/) provides a visual overview of every category with live counts and direct links to each category's service listings.
 
 | Category | Services | Browse |
 | --- | ---: | --- |
