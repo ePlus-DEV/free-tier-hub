@@ -11495,6 +11495,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "flagdash-cloud-free",
+    "name": "FlagDash Free Feature Flags & Remote Config",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free forever vendor-hosted plan: 10,000 API calls/month; 25 feature flags, 10 remote configs, 2 projects, 2 environments, 2 team members; 10 session replays/month.",
+    "watch_out": "Free plan has small API, project, replay and team quotas. Paid Premium plans have 7-day trials that bill automatically; do not confuse them with the ongoing Free tier. Confirm production/commercial terms, whether Free usage hard-stops at limits, and any add-on/overage charges before scaling.",
+    "pricing_url": "https://flagdash.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "ice-domains-free-dns",
+    "name": "ice.domains Free DNS Hosting",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Vendor-hosted authoritative Anycast DNS, free forever with unlimited DNS zones, records and queries; DNSSEC, REST API, DNS analytics and DDoS protection included; works with domains from any registrar.",
+    "watch_out": "Requires an existing domain registration (domain registration/renewal is not free). Users must change nameservers at their registrar. Extraordinary query traffic should be discussed with provider; no formal SLA or contractual no-charge guarantee was independently established. Vendor claims production and small-business suitability.",
+    "pricing_url": "https://ice.domains/free-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "octelium-zero-trust-self-hosted",
     "name": "Octelium Open-Source Zero Trust Access",
     "category": "auth-security",
