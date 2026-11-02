@@ -38,6 +38,9 @@ jobs:
       - name: Validate source catalog and reviewed backlog
         run: |
           set -euo pipefail
+          # A catalog merge can precede the Pages docs-sync commit. Generate
+          # derived Markdown in this read-only runner before verifying main.
+          npm run catalog:sync
           npm run verify
           npm run catalog:backlog -- --list
       - name: Open one canonical candidate issue, if eligible
