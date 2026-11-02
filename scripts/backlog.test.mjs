@@ -94,6 +94,11 @@ test('backlog consumer resumes one queued Issue after a trusted main merge', () 
   assert.match(workflow, /github\.event\.pull_request\.head\.repo\.full_name == github\.repository/);
   assert.match(workflow, /ref: main\s*\n\s*fetch-depth: 0/);
   assert.match(workflow, /persist-credentials: false/);
+  const verification = workflow.split('      - name: Validate source catalog and reviewed backlog')[1]
+    ?.split('      - name: Open one canonical candidate issue')[0];
+  assert.ok(verification, 'expected a source validation step before backlog delivery');
+  assert.match(verification, /npm run catalog:sync\\s*\\n\\s*npm run verify/,
+    'regenerate derived Markdown in the read-only runner before checking a newly merged catalog');
   assert.match(workflow, /cron: '23 \* \* \* \*'/);
   assert.match(workflow, /openCatalog\.length >= 3/);
   assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]/);
