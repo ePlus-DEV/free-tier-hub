@@ -582,6 +582,23 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
     '', homePage(items, absolute, counts), homeSchema));
   pageURLs.push(['', latest]);
+  const categoriesRelative = 'categories/';
+  const categoriesSchema = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', name: 'All Free Tier Categories — Free Tier Hub',
+      url: absolute(categoriesRelative), mainEntity: { '@type': 'ItemList',
+        numberOfItems: CATEGORIES.length,
+        itemListElement: CATEGORIES.map((category, i) =>
+          ({ '@type': 'ListItem', position: i + 1, name: CATEGORY_NAMES[category],
+            url: absolute('category/' + category + '/') })) } },
+    { '@type': 'BreadcrumbList', itemListElement: breadcrumb([
+      ['Home', base], ['Categories', absolute(categoriesRelative)],
+    ]).itemListElement },
+  ] };
+  file(output, categoriesRelative + 'index.html', document(absolute,
+    'All Categories | Free Tier Hub',
+    'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
+    categoriesRelative, categoriesOverviewPage(absolute, counts), categoriesSchema));
+  pageURLs.push([categoriesRelative, latest]);
   const guideRelative = 'about/classifications/';
   const guideSchema = { '@context': 'https://schema.org',
     '@type': 'WebPage', name: 'How we classify free offers — Free Tier Hub',
@@ -595,7 +612,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   for (const category of CATEGORIES) {
     const subset = mainItems.filter(item => item.category === category);
     const name = CATEGORY_NAMES[category], relative = 'category/' + category + '/';
-    const crumbs = [['Home', base], [name, absolute(relative)]];
+    const crumbs = [['Home', base], ['Categories', absolute(categoriesRelative)], [name, absolute(relative)]];
     const schema = { '@context': 'https://schema.org', '@graph': [
       { '@type': 'CollectionPage', name: name + ' — Free Tier Hub',
         url: absolute(relative), mainEntity: { '@type': 'ItemList',
@@ -663,6 +680,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
     '- [Directory](' + base + '): crawlable HTML index of ongoing free allowances and recurring credits.',
+    '- [All categories](' + absolute('categories/') + '): all service categories with live counts and category landing pages.',
     '- [Offer classifications](' + absolute('about/classifications/') + '): definitions of plan, deployment, eligibility and verification labels.',
     '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
     '- [Catalog JSON](' + absolute('catalog.json') +
@@ -684,6 +702,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'This Markdown file is optional guidance for automated readers, not a robots.txt policy.', '',
     '## Discover',
     '- Human-readable index: ' + base,
+    '- Category overview: ' + absolute('categories/'),
     '- Time-limited offers: ' + absolute('offers/'),
     '- Plan and eligibility definitions: ' + absolute('about/classifications/'),
     '- Machine-readable catalog: ' + absolute('catalog.json'),
