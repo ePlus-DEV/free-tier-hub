@@ -11659,5 +11659,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "meltano-elt-cli-local",
+    "name": "Meltano Open-Source ELT CLI",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source command-line data integration and ELT orchestration engine for extracting, loading and transforming data using configurable plugins; no Meltano OSS license fee or vendor-imposed local pipeline quota.",
+    "watch_out": "Self-operated Meltano CLI and integrations are free software, not a hosted free ETL account. Operator pays for compute, storage, databases, schedulers, network, cloud services and any third-party connectors; individual plugin licenses and API quotas must be checked separately.",
+    "pricing_url": "https://github.com/meltano/meltano",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
