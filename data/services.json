@@ -11815,5 +11815,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zipkin-distributed-tracing-self-hosted",
+    "name": "Zipkin Open-Source Distributed Tracing",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed tracing collector, query API and UI with no vendor software subscription or built-in license usage quota.",
+    "watch_out": "Operate the Zipkin server yourself using Java/Docker and instrument applications. Persistent trace storage may require Cassandra, Elasticsearch or another backend; compute, storage, messaging and network charges are separate. No hosted free tracing service is included.",
+    "pricing_url": "https://github.com/openzipkin/zipkin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
   }
 ]
