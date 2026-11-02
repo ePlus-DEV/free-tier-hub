@@ -12025,6 +12025,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "digitalocean-functions-free",
+    "name": "DigitalOcean Functions Monthly Free Allowance",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "90,000 GiB-seconds of Functions compute per team per month, shared across Functions and App Platform function components; 100 ms minimum billed runtime per invocation.",
+    "watch_out": "A payment method is required to create resources. The recurring free allowance does not roll over; excess compute is billed at $0.0000185/GiB-second automatically. App Platform bandwidth and other resources may incur separate charges. The $5 signup credit expires after 90 days and is not part of this ongoing allowance. Card-specific and commercial-use terms are not independently confirmed.",
+    "pricing_url": "https://www.digitalocean.com/pricing/functions",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "astron-agent-self-hosted",
     "name": "iFLYTEK Astron Agent Open-Source Platform",
     "category": "ai-assistants",
