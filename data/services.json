@@ -11558,5 +11558,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openberth-self-hosted-app-platform",
+    "name": "OpenBerth Self-Hosted Application Deployment Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted application deployment platform for Node.js, Python, Go and static sites; deploy to your own Linux server with gVisor-isolated containers, automatic HTTPS, CLI and web management; no OpenBerth software subscription or vendor-imposed application quota.",
+    "watch_out": "Requires an operator-provided Ubuntu server, DNS/domain, Docker, gVisor and networking; compute, domain registration, storage, bandwidth and external dependencies may cost extra. This is free software, not vendor-hosted free application compute. Review the installer and sandbox/security configuration before production use.",
+    "pricing_url": "https://github.com/openberth/openberth",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
