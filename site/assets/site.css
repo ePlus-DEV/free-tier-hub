@@ -577,3 +577,51 @@ body.filter-sheet-open{overflow:hidden}
   .detail>.spec-list{gap:8px}
   .detail .spec{padding:11px 9px}
 }
+
+
+/* Compact floating support action. Keep it clear of the back-to-top control and
+   service detail CTA; the page's existing light/dark tokens provide contrast. */
+.support-widget{
+  position:fixed;right:22px;bottom:calc(78px + env(safe-area-inset-bottom));
+  z-index:46;font-size:13px;
+}
+.support-toggle{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;
+  padding:11px 16px;border:1px solid var(--brand);border-radius:999px;
+  background:var(--brand);color:var(--surface);
+  font-weight:750;cursor:pointer;box-shadow:0 7px 24px rgba(42,64,152,.22);
+  list-style:none;transition:transform .16s ease,box-shadow .16s ease;
+}
+.support-toggle::-webkit-details-marker{display:none}
+.support-toggle::marker{content:""}
+.support-toggle svg{flex-shrink:0}
+.support-toggle:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(42,64,152,.26)}
+.support-toggle:focus-visible{outline:3px solid var(--brand-ink);outline-offset:4px}
+.support-widget[open] .support-toggle{box-shadow:0 0 0 3px var(--brand-tint),var(--shadow-hover)}
+.support-popover{
+  position:absolute;bottom:calc(100% + 12px);right:0;
+  width:min(310px,calc(100vw - 32px));max-height:min(70vh,440px);overflow-y:auto;
+  padding:18px;border:1px solid var(--line-strong);border-radius:16px;
+  background:var(--surface);color:var(--ink);box-shadow:var(--shadow-hover);
+}
+.support-popover strong{display:block;font-size:16px;letter-spacing:-.025em}
+.support-popover p{font-size:12px;line-height:1.6;color:var(--ink-soft);margin:8px 0 13px}
+.support-popover a{
+  display:block;padding:11px 12px;margin:8px 0;border:1px solid var(--line);
+  border-radius:10px;background:var(--surface-muted);color:var(--brand-ink);
+  font-size:12px;font-weight:700;text-decoration:none;
+}
+.support-popover a:hover{border-color:var(--brand-ink);background:var(--brand-tint)}
+.support-popover a:focus-visible{outline:2px solid var(--brand-ink);outline-offset:2px}
+.support-popover small{display:block;font-size:11px;line-height:1.55;color:var(--muted);margin-top:11px}
+@media(max-width:680px){
+  .support-widget{right:16px}
+  .support-toggle{width:48px;height:48px;padding:0;border-radius:50%}
+  .support-label{display:none}
+  body:has(.detail-mobile-action) .support-widget{
+    bottom:calc(144px + env(safe-area-inset-bottom));
+  }
+}
+/* A tall consent banner takes priority over the floating affordance. */
+body:has(.cookie-notice:not([hidden])) .support-widget{display:none}
+@media(prefers-reduced-motion:reduce){.support-toggle{transition:none}.support-toggle:hover{transform:none}}
