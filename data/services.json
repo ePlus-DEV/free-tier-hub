@@ -11560,6 +11560,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "openberth-self-hosted-app-platform",
+    "name": "OpenBerth Self-Hosted Application Deployment Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted application deployment platform for Node.js, Python, Go and static sites; deploy to your own Linux server with gVisor-isolated containers, automatic HTTPS, CLI and web management; no OpenBerth software subscription or vendor-imposed application quota.",
+    "watch_out": "Requires an operator-provided Ubuntu server, DNS/domain, Docker, gVisor and networking; compute, domain registration, storage, bandwidth and external dependencies may cost extra. This is free software, not vendor-hosted free application compute. Review the installer and sandbox/security configuration before production use.",
+    "pricing_url": "https://github.com/openberth/openberth",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "trinity-ai-agents-self-hosted",
+    "name": "Trinity Open-Source Self-Hosted AI Agent Platform",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted AI agent orchestration platform with Docker-based workspaces, agent schedules, approval gates, audit logs, and Claude Code/Codex/Gemini CLI runtime integrations; open-source core has no software license fee or vendor-hosted quota.",
+    "watch_out": "Operator supplies Docker host, compute, storage, PostgreSQL and network infrastructure; model-provider API, agent runtime subscriptions, hosting and bandwidth may cost extra. Enterprise modules including organization SSO, advanced RBAC and compliance features require separate commercial licensing; do not treat them as included in the free open-source core.",
+    "pricing_url": "https://github.com/abilityai/trinity",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "ryvos-local-ai-agent-runtime",
     "name": "Ryvos Open-Source Local AI Agent Runtime",
     "category": "ai-assistants",
