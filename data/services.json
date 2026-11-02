@@ -11508,6 +11508,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "ice-domains-free-dns",
+    "name": "ice.domains Free DNS Hosting",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Vendor-hosted authoritative Anycast DNS, free forever with unlimited DNS zones, records and queries; DNSSEC, REST API, DNS analytics and DDoS protection included; works with domains from any registrar.",
+    "watch_out": "Requires an existing domain registration (domain registration/renewal is not free). Users must change nameservers at their registrar. Extraordinary query traffic should be discussed with provider; no formal SLA or contractual no-charge guarantee was independently established. Vendor claims production and small-business suitability.",
+    "pricing_url": "https://ice.domains/free-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "octelium-zero-trust-self-hosted",
+    "name": "Octelium Open-Source Zero Trust Access",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free, self-hosted zero-trust access platform for VPN-like WireGuard/QUIC connectivity, identity-aware application gateways and policy-controlled private-resource access; open-source core has no vendor license fee or hosted-usage quota.",
+    "watch_out": "Requires self-operated Kubernetes, compute, networking, DNS and storage, which can incur charges. Cluster/server components are AGPL-3.0, clients Apache-2.0; comply with AGPL network-use/source obligations. Enterprise-only features and alternative commercial licensing are separate paid offerings; no vendor-hosted free infrastructure is included.",
+    "pricing_url": "https://github.com/octelium/octelium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "defguard-open-source-self-hosted",
     "name": "Defguard Open-Source WireGuard Access Management",
     "category": "auth-security",
