@@ -11791,6 +11791,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "jitsu-cloud-free-event-data",
+    "name": "Jitsu Cloud Free Event Data Pipeline",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "200,000 active events/month, unlimited captured events and destinations, up to 1 daily active connector sync, with ClickHouse UI/API access on the $0 Jitsu Cloud Free plan.",
+    "watch_out": "Active events are those delivered to destinations; exceeding the included allowance requires a paid upgrade according to official pricing. Do not confuse captured with active events; transformations and destinations affect usage. No credit card stated for Free signup; commercial-use terms and overage enforcement should be checked with provider. The separate MIT self-hosted offering requires your own infrastructure.",
+    "pricing_url": "https://jitsu.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "kube-state-metrics-self-hosted",
+    "name": "kube-state-metrics Kubernetes Object Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes add-on exporting deployment, node, pod and other Kubernetes API object state metrics to a Prometheus-compatible endpoint, with no software license fee.",
+    "watch_out": "Requires your own Kubernetes cluster and separate metrics scraper/storage; it reports API object state, not full application tracing or node/container resource telemetry. Compute, storage and Prometheus infrastructure are not included.",
+    "pricing_url": "https://github.com/kubernetes/kube-state-metrics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "zipkin-distributed-tracing-self-hosted",
     "name": "Zipkin Open-Source Distributed Tracing",
     "category": "observability",
