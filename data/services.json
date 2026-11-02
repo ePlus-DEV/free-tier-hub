@@ -11906,5 +11906,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sidekiq-oss-background-jobs-self-hosted",
+    "name": "Sidekiq OSS Ruby Background Jobs",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "LGPLv3-licensed Sidekiq OSS background-job processing for Ruby with retries, Web UI, middleware and scheduling; free open-source core with no software subscription or vendor-imposed usage quota.",
+    "watch_out": "Requires self-managed Ruby workers plus Redis, Valkey or Dragonfly and separately funded infrastructure. Sidekiq Pro/Enterprise features are paid. LGPLv3 obligations apply when redistributing Sidekiq; check the license of the chosen datastore.",
+    "pricing_url": "https://sidekiq.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
   }
 ]
