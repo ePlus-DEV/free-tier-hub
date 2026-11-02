@@ -11765,6 +11765,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cadvisor-container-metrics-self-hosted",
+    "name": "cAdvisor Container Metrics (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source container resource monitoring daemon with CPU, memory, disk and network metrics, API and web UI; no license fee or software usage quota.",
+    "watch_out": "Runs on your own Docker/Kubernetes host; privileged container and host filesystem mounts may be required, so restrict access and review security. Infrastructure, metrics storage, remote monitoring and network costs are not included.",
+    "pricing_url": "https://github.com/google/cadvisor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "scrutiny-disk-health-monitoring-self-hosted",
+    "name": "Scrutiny S.M.A.R.T Disk Health Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted disk health dashboard with S.M.A.R.T metrics, historical trends and disk failure thresholds; no vendor software license fee or usage quota.",
+    "watch_out": "Requires a server with disk S.M.A.R.T access and a self-operated collector/web application; device or privileged Docker access can have security implications. Storage, backup and server costs are not included; monitoring is not a substitute for backups.",
+    "pricing_url": "https://github.com/AnalogJ/scrutiny",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "jitsu-cloud-free-event-data",
     "name": "Jitsu Cloud Free Event Data Pipeline",
     "category": "analytics",
