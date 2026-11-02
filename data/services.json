@@ -12114,5 +12114,57 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ast-grep-structural-search-local",
+    "name": "ast-grep Open-Source Structural Code Search",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed, locally executed CLI for AST-aware code search, linting and rewriting across supported languages; no vendor-metered quota or software license fee.",
+    "watch_out": "Runs on user-provided hardware and CI runners; build minutes, cloud infrastructure and optional third-party integrations are not included. This is a local developer tool, not a free hosted code-analysis service. Preserve MIT license notices.",
+    "pricing_url": "https://github.com/ast-grep/ast-grep",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "hyperfine-cli-benchmark-local",
+    "name": "hyperfine Open-Source CLI Benchmarking",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed command-line benchmarking tool with repeated runs, statistical analysis, warmup and export; free local execution with no subscription or usage quota.",
+    "watch_out": "Runs benchmark commands repeatedly on your own hardware; commands, cloud compute, paid APIs or CI runners invoked by a benchmark may incur charges or side effects. This is local software, not a managed benchmarking allowance; comply with license notices.",
+    "pricing_url": "https://github.com/sharkdp/hyperfine",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "watchexec-file-watcher-local",
+    "name": "Watchexec Open-Source File-Watcher CLI",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed local file-change watcher that runs configured commands on filesystem events; no license fee, account or vendor-metered limit.",
+    "watch_out": "Runs on user-managed Windows, macOS or Linux systems. Triggered builds, CI jobs, external APIs or deployment commands can incur their own charges or side effects; no hosted compute or monitoring service is included. Apache-2.0 obligations apply.",
+    "pricing_url": "https://github.com/watchexec/watchexec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "typos-source-spellchecker-local",
+    "name": "typos Open-Source Source-Code Spell Checker",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed source-code spelling checker for local repositories, with CLI and CI/pre-commit integration; no vendor-hosted quota or license fee.",
+    "watch_out": "Users supply their own compute and any CI runner minutes; optional GitHub Actions and third-party services may have independent billing. Automated corrections should be reviewed, and license notices retained. This is local tooling, not a hosted SaaS plan.",
+    "pricing_url": "https://github.com/crate-ci/typos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
   }
 ]
