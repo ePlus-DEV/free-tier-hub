@@ -11469,6 +11469,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kpack-kubernetes-build-service-self-hosted",
+    "name": "kpack Kubernetes Native Container Build Service",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes build service using Cloud Native Buildpacks to build and rebuild OCI images; no kpack software license fee or fixed build quota.",
+    "watch_out": "Runs in a user-operated Kubernetes cluster; image registries, buildpack stacks, compute, persistent volumes and network usage may cost extra. Container registry credentials may be required, but no card is required for the open-source software itself.",
+    "pricing_url": "https://github.com/buildpacks-community/kpack",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "rollgate-cloud-free",
+    "name": "Rollgate Free Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "500,000 feature-flag requests/month; unlimited flags; 3 projects, 3 environments, 3 seats; 12 SDKs on vendor-hosted Free plan.",
+    "watch_out": "Free tier is described for side projects and evaluation; confirm production/commercial-use terms before relying on it. No self-hosted plan is currently available (listed as coming soon). Upgrade or over-quota billing/stop behavior is not documented clearly; verify with provider before exceeding 500K requests.",
+    "pricing_url": "https://rollgate.io/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "flagdash-cloud-free",
     "name": "FlagDash Free Feature Flags & Remote Config",
     "category": "feature-flags",
