@@ -11997,5 +11997,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "wg-easy-wireguard-self-hosted",
+    "name": "wg-easy Self-Hosted WireGuard Management",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only licensed WireGuard VPN server and web administration UI; no vendor software subscription or published per-peer quota for self-hosting.",
+    "watch_out": "Requires self-managed Linux host with Docker/Podman, networking, security updates, and optionally a reverse proxy; VPS, bandwidth, domains and maintenance are not free. Commercial use is allowed subject to AGPL-3.0 network-source and distribution obligations; no vendor-hosted free account is included.",
+    "pricing_url": "https://github.com/wg-easy/wg-easy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
