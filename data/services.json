@@ -11752,6 +11752,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "opencost-kubernetes-cost-monitoring-self-hosted",
+    "name": "OpenCost Kubernetes Cost Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes/cloud cost allocation engine, APIs, metrics and UI; no software subscription fee or vendor-imposed usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, Helm and Prometheus; compute, storage, monitoring retention, cloud billing APIs and related infrastructure may cost money. This is not a free hosted Kubernetes or cloud account.",
+    "pricing_url": "https://github.com/opencost/opencost",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cadvisor-container-metrics-self-hosted",
+    "name": "cAdvisor Container Metrics (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source container resource monitoring daemon with CPU, memory, disk and network metrics, API and web UI; no license fee or software usage quota.",
+    "watch_out": "Runs on your own Docker/Kubernetes host; privileged container and host filesystem mounts may be required, so restrict access and review security. Infrastructure, metrics storage, remote monitoring and network costs are not included.",
+    "pricing_url": "https://github.com/google/cadvisor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "scrutiny-disk-health-monitoring-self-hosted",
     "name": "Scrutiny S.M.A.R.T Disk Health Monitoring (Self-Hosted)",
     "category": "observability",
