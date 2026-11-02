@@ -194,6 +194,93 @@
       headerSearch.focus(); headerSearch.select();
     }
   });
+  // Show short explanations on mouse hover; keep native tap/click and keyboard controls.
+  // Native <details> provides the no-JavaScript fallback for touch and assistive tech.
+  var hoverHelpMedia = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)");
+  document.querySelectorAll("details.eligibility-help, details.classification-help").forEach(function (help) {
+    var summary = help.querySelector("summary");
+    var content = help.querySelector(".eligibility-help-panel, .classification-help-panel");
+    var hoverRegion = help.classList.contains("eligibility-help")
+      ? help.closest(".eligibility-note") : help;
+    if (!summary || !content || !hoverRegion || !hoverHelpMedia) return;
+    var closeTimer = null;
+    var mouseOpened = false;
+    var pointerType = "";
+
+    function cancelClose() {
+      if (closeTimer !== null) window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+    function mouseEnter(event) {
+      if (!hoverHelpMedia.matches || event.pointerType !== "mouse") return;
+      cancelClose();
+      if (!help.open) {
+        help.open = true;
+        mouseOpened = true;
+      }
+    }
+    function mouseLeave(event) {
+      if (!hoverHelpMedia.matches || event.pointerType !== "mouse" || !mouseOpened) return;
+      cancelClose();
+      // The legacy popover has a small visual gap; allow the cursor to cross it.
+      closeTimer = window.setTimeout(function () {
+        closeTimer = null;
+        if (hoverRegion.matches(":hover") || content.matches(":hover")) return;
+        // A keyboard user following a link inside the explanation must retain it.
+        if (content.contains(document.activeElement)) { mouseOpened = false; return; }
+        help.open = false;
+        mouseOpened = false;
+      }, 180);
+    }
+    summary.addEventListener("pointerenter", mouseEnter);
+    summary.addEventListener("pointerdown", function (event) {
+      pointerType = event.pointerType;
+    });
+    hoverRegion.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse") cancelClose();
+    });
+    hoverRegion.addEventListener("pointerleave", mouseLeave);
+    if (content !== hoverRegion) {
+      content.addEventListener("pointerenter", function (event) {
+        if (event.pointerType === "mouse") cancelClose();
+      });
+      content.addEventListener("pointerleave", mouseLeave);
+    }
+    summary.addEventListener("click", function (event) {
+      if (hoverHelpMedia.matches && pointerType === "mouse" && event.detail > 0) {
+        // Opening on pointerenter must not be undone by the ensuing mouse click.
+        event.preventDefault();
+        cancelClose();
+        help.open = true;
+        mouseOpened = true;
+      } else {
+        // Touch taps and keyboard activation keep their native toggle behavior.
+        mouseOpened = false;
+        cancelClose();
+      }
+      pointerType = "";
+    });
+    help.addEventListener("toggle", function () {
+      if (!help.open) { mouseOpened = false; cancelClose(); }
+    });
+  });
+
+  // Keep contextual explanations local, dismissible and keyboard accessible.
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll("details.eligibility-help[open], details.classification-help[open]").forEach(function (panel) {
+      if (!panel.contains(event.target)) panel.open = false;
+    });
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    var panels = document.querySelectorAll("details.eligibility-help[open], details.classification-help[open]");
+    if (!panels.length) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    var summary = panels[0].querySelector("summary");
+    panels.forEach(function (panel) { panel.open = false; });
+    if (summary) summary.focus({preventScroll:true});
+  });
   // Category pages share the directory's 12-at-a-time browsing behavior.
   // All cards remain in the server-rendered HTML when JavaScript is unavailable.
   var categoryGrid = document.getElementById("category-service-grid");
