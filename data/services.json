@@ -96,11 +96,11 @@
     "category": "app-hosting",
     "plan": "ongoing",
     "free_limit": "One always-on Free app: 0.25 vCPU, 128 MB RAM, 250 MB disk, 100 GB monthly transfer and 10 Mbit/s network bandwidth",
-    "watch_out": "No payment card or automatic sleep on the provider's Free plan. Designed for a small single container; limited resources and community support, no independent uptime guarantee. This is provider-managed hosting, not free dedicated VPS.",
+    "watch_out": "No payment card or automatic sleep on the Free plan, but resources are shared and capped at 0.25 vCPU, 128 MB RAM, 250 MB disk and 10 Mbit/s. At the 100 GB monthly account transfer limit, apps stop until the next month or a plan upgrade. No independent uptime guarantee; not a dedicated VPS.",
     "pricing_url": "https://deplexo.com/free-hosting",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-31",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1268,11 +1268,11 @@
     "category": "feature-flags",
     "plan": "ongoing",
     "free_limit": "1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations",
-    "watch_out": "Solo is permanently Free with no credit card or trial end date for individual developers and side projects. One project, 10 flags, two environments and one developer; audit history is 7 days. Paid tiers unlock broader teams, integrations and longer history.",
+    "watch_out": "Free is permanent without a credit card or trial deadline: 1 project, 10 flags, 2 environments, up to 3 team members and 7-day audit logs. Paid tiers unlock larger teams, more projects/environments, scheduled changes and longer audit history.",
     "pricing_url": "https://featureflip.io/pricing/",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-31",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
