@@ -11971,5 +11971,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "huggingface-diffusers-local",
+    "name": "Hugging Face Diffusers Open-Source Library",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python library for local diffusion-model inference and training pipelines for images, video and audio; no software license fee or per-inference quota imposed by the library.",
+    "watch_out": "Model checkpoints have separate licenses, usage restrictions and sometimes gated access; check each model before commercial use. GPUs, cloud compute, model downloads and hosted inference APIs are not free with this library.",
+    "pricing_url": "https://github.com/huggingface/diffusers",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   }
 ]
