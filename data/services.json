@@ -11828,5 +11828,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "microk8s-self-hosted-kubernetes",
+    "name": "Canonical MicroK8s (Self-Hosted Kubernetes)",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 single-package Kubernetes distribution for workstations, edge and clusters, with optional DNS, ingress and monitoring add-ons; no software license fee for self-managed use.",
+    "watch_out": "Requires your own compatible Linux host(s), storage, networking and cluster operations; add-ons and external cloud resources may incur infrastructure costs. Commercial support and managed Kubernetes services are separate.",
+    "pricing_url": "https://github.com/canonical/microk8s",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
