@@ -11547,6 +11547,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cordium-sandbox-self-hosted",
+    "name": "Cordium Open-Source Developer and AI Sandboxes",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Kubernetes sandbox/workspace platform for developers, AI agents and CI jobs with isolated containers, browser/SSH/CLI access, reusable templates and identity-based infrastructure access; no Cordium software license or hosted-workspace quota.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and Octelium infrastructure; compute, volumes, snapshots, egress, DNS and any model APIs may cost extra. Cordium code is Apache-2.0 but deployments can include AGPL-3.0 Octelium Cluster components with additional source-sharing obligations; no vendor-hosted free workspace is included.",
+    "pricing_url": "https://github.com/octelium/cordium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openberth-self-hosted-app-platform",
+    "name": "OpenBerth Self-Hosted Application Deployment Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted application deployment platform for Node.js, Python, Go and static sites; deploy to your own Linux server with gVisor-isolated containers, automatic HTTPS, CLI and web management; no OpenBerth software subscription or vendor-imposed application quota.",
+    "watch_out": "Requires an operator-provided Ubuntu server, DNS/domain, Docker, gVisor and networking; compute, domain registration, storage, bandwidth and external dependencies may cost extra. This is free software, not vendor-hosted free application compute. Review the installer and sandbox/security configuration before production use.",
+    "pricing_url": "https://github.com/openberth/openberth",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "trinity-ai-agents-self-hosted",
     "name": "Trinity Open-Source Self-Hosted AI Agent Platform",
     "category": "ai-assistants",
