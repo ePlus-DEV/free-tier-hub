@@ -78,7 +78,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
-    assert.match(html, /class="classification-help-link" href="https:\/\/free-tier\.eplus\.dev\/about\/classifications\/"/);
+    assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
     for (const id of ['koyeb', 'steadystack-initiate']) {
       const entry = entries.find(s => s.id === id);
       assert.equal(entry.eligibility, 'existing-users-only');
