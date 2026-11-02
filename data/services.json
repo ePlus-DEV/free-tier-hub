@@ -11430,6 +11430,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "zizmor-github-actions-security-local",
+    "name": "zizmor Open-Source CI Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI for static analysis of GitHub Actions, Dependabot and pre-commit configurations; no vendor scan quota or software subscription fee.",
+    "watch_out": "Runs locally or on user-provided CI runners. GitHub Actions runner minutes may cost money; optional GitHub code-scanning/SARIF upload can require GitHub Advanced Security for private repositories, but CLI scanning does not. This is not a hosted free security scanning service.",
+    "pricing_url": "https://github.com/zizmorcore/zizmor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "git-cliff-changelog-generator-local",
+    "name": "git-cliff Open-Source Changelog Generator",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OR MIT licensed CLI that generates customizable changelogs and release notes from Git history and Conventional Commits; no software subscription or vendor execution quota.",
+    "watch_out": "Runs locally or on user-managed CI runners; GitHub Actions or other hosted CI minutes, release hosting and storage may cost money. Not a managed changelog SaaS allowance.",
+    "pricing_url": "https://github.com/orhun/git-cliff",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
     "id": "shipwright-build-self-hosted",
     "name": "Shipwright Build (Kubernetes)",
     "category": "ci-cd",
