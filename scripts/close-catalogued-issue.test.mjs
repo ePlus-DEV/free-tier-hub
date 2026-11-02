@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { closeCataloguedIssue } from './close-catalogued-issue.mjs';
 
 test('closes and comments after successful close', () => {
@@ -43,4 +44,23 @@ test('comment failure remains fatal after closing the issue', () => {
     return '';
   };
   assert.throws(() => closeCataloguedIssue('org/repo', 253, 'delivered', run), /comment denied/);
+});
+
+test('merged catalog closure preserves both event-driven and catch-up pathways in one workflow', () => {
+  const root = new URL('../.github/workflows/', import.meta.url);
+  const workflow = fs.readFileSync(new URL('close-catalog-issue-after-merge.yml', root), 'utf8');
+  assert.equal(fs.existsSync(new URL('close-delivered-catalog-issues.yml', root)), false);
+  assert.match(workflow, /pull_request_target:/);
+  assert.match(workflow, /push:\\n    branches: \\[main\\]\\n    paths:\\n      - 'data\\/services\\.json'/);
+  assert.match(workflow, /workflow_dispatch:/);
+  assert.match(workflow, /group: complete-catalog-issues/);
+  assert.match(workflow, /if: .*github\\.event_name == 'pull_request_target'.*github\\.event\\.pull_request\\.merged == true/);
+  assert.match(workflow, /close-linked-catalog-issue:/);
+  assert.match(workflow, /close-delivered:/);
+  assert.match(workflow, /if: .*github\\.event_name == 'push'.*!inputs\\.pr_number/);
+  assert.match(workflow, /ref: main\\n          persist-credentials: false/);
+  assert.match(workflow, /import \\{ closeCataloguedIssue \\} from '\\.\\/scripts\\/close-catalogued-issue\\.mjs'/);
+  assert.match(workflow, /catalogSha = execFileSync\\('git', \\['rev-parse', 'HEAD'\\]/);
+  assert.match(workflow, /catalog\\.map\\(item => item\\.id\\)/);
+  assert.match(workflow, /candidate\\.id !== match\\[1\\]/);
 });
