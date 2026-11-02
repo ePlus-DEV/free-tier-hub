@@ -11521,6 +11521,32 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "octelium-zero-trust-self-hosted",
+    "name": "Octelium Open-Source Zero Trust Access",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free, self-hosted zero-trust access platform for VPN-like WireGuard/QUIC connectivity, identity-aware application gateways and policy-controlled private-resource access; open-source core has no vendor license fee or hosted-usage quota.",
+    "watch_out": "Requires self-operated Kubernetes, compute, networking, DNS and storage, which can incur charges. Cluster/server components are AGPL-3.0, clients Apache-2.0; comply with AGPL network-use/source obligations. Enterprise-only features and alternative commercial licensing are separate paid offerings; no vendor-hosted free infrastructure is included.",
+    "pricing_url": "https://github.com/octelium/octelium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "defguard-open-source-self-hosted",
+    "name": "Defguard Open-Source WireGuard Access Management",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted open-source core for WireGuard-based remote access, identity and access management, and authentication; no software subscription for the AGPL-licensed community components.",
+    "watch_out": "Requires operator-provided server, network and WireGuard infrastructure. AGPL obligations apply to the open-source core; the enterprise directory and enterprise-only features are separately licensed. The paid Business/Enterprise offerings must not be confused with the free open-source core; consult official feature boundaries before deployment.",
+    "pricing_url": "https://github.com/DefGuard/defguard",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cordium-sandbox-self-hosted",
     "name": "Cordium Open-Source Developer and AI Sandboxes",
     "category": "developer-tools",
