@@ -252,7 +252,9 @@ function homePage(items, absolute, counts) {
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
-    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) + '</button>').join('');
+    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
+    (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + counts[category] + '</span>' : '') +
+    '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
     '<p class="hero-kicker">The free-tier directory</p>',
@@ -261,8 +263,8 @@ function homePage(items, absolute, counts) {
     '</div></section><section id="explore" class="section catalog-section">',
     '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="catalog-toolbar">',
-    '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts,
-    '<a class="category-index-shortcut" href="', tag(absolute('categories/')), '">Browse all categories ', glyph('arrow'), '</a></div>',
+    '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
+    '<a class="category-index-shortcut" href="', tag(absolute('categories/')), '">All categories ', glyph('arrow'), '</a>',
     '</div>',
     '<div class="search-filter-row">',
     '<form class="hero-search directory-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
@@ -290,6 +292,8 @@ function homePage(items, absolute, counts) {
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
     '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
+    '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
+    '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
     '<select id="offer-filter"><option value="">All free tiers</option>',
     '<option value="ongoing">Ongoing free allowance</option>',
