@@ -11804,6 +11804,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "kube-state-metrics-self-hosted",
+    "name": "kube-state-metrics Kubernetes Object Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes add-on exporting deployment, node, pod and other Kubernetes API object state metrics to a Prometheus-compatible endpoint, with no software license fee.",
+    "watch_out": "Requires your own Kubernetes cluster and separate metrics scraper/storage; it reports API object state, not full application tracing or node/container resource telemetry. Compute, storage and Prometheus infrastructure are not included.",
+    "pricing_url": "https://github.com/kubernetes/kube-state-metrics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "bucketlist-dream-of-the-day-public-api",
     "name": "Bucketlist.nl Dream of the Day Public API",
     "category": "developer-tools",
