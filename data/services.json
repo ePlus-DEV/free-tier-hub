@@ -11428,5 +11428,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "shipwright-build-self-hosted",
+    "name": "Shipwright Build (Kubernetes)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native container image build framework with Build and BuildRun APIs; no Shipwright license fee or vendor-enforced build allowance.",
+    "watch_out": "Requires your own compatible Kubernetes cluster, Tekton Pipelines, image registry and credentials; compute, registry, storage and network usage may incur charges. No hosted Shipwright free plan is included. Apache-2.0 notices apply.",
+    "pricing_url": "https://github.com/shipwright-io/build",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
