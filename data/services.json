@@ -11685,5 +11685,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-31",
     "deployment_model": "local"
+  },
+  {
+    "id": "mergerfs-union-filesystem-local",
+    "name": "mergerfs Open-Source Union Filesystem",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed Linux FUSE union filesystem that combines multiple existing storage paths into one logical mount; no software license fee or vendor usage quota.",
+    "watch_out": "Runs on user-managed Linux storage and requires compatible FUSE/kernel configuration; physical disks, backups and infrastructure cost extra. It is NOT RAID, parity protection, redundancy or a backup solution; retain license notice.",
+    "pricing_url": "https://github.com/trapexit/mergerfs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
   }
 ]
