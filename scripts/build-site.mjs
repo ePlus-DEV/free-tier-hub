@@ -18,6 +18,7 @@ const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.jo
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
 const SUPPORT_URL = 'https://eplus.dev/page/donate';
+const SPONSORS_URL = 'https://github.com/sponsors/ePlus-DEV';
 const GA_ID = 'G-9YPGG0XEZV';
 
 // Add referral attribution only to links that leave our catalog. Preserve the
@@ -221,10 +222,23 @@ function document(absolute, title, description, relative, content, structuredDat
     '<a href="', tag(REPOSITORY + '/blob/main/docs/cost-safety.md'), '">Cost safety</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
     '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate / Support</a>',
-    '<a href="https://github.com/sponsors/ePlus-DEV" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></div>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></div>',
     '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>',
     '<span>Independent catalog · Verify every provider before enabling billing.</span>',
     '</div></div></footer>',
+    // Native details keeps this support action keyboard-accessible without JavaScript.
+    '<details class="support-widget" id="support-widget">',
+    '<summary class="support-toggle" aria-label="Support Free Tier Hub" title="Support Free Tier Hub">',
+    '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" width="22" height="22">',
+    '<path d="M20.8 5.6a5.1 5.1 0 0 0-7.2 0L12 7.2l-1.6-1.6a5.1 5.1 0 0 0-7.2 7.2L12 21l8.8-8.2a5.1 5.1 0 0 0 0-7.2Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    '<span class="support-label">Donate</span></summary>',
+    '<div class="support-popover" role="group" aria-label="Donation options">',
+    '<strong>Support Free Tier Hub</strong>',
+    '<p>Help keep this independent free-tier directory available and up to date.</p>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate via ePlus.DEV ↗</a>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors ↗</a>',
+    '<small>Completely optional. Donations never affect which services we list or recommend.</small>',
+    '</div></details>',
     '<button class="back-to-top" id="back-to-top" type="button" ',
     'aria-label="Back to top" title="Back to top" hidden>',
     glyph('up'),
