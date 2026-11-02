@@ -11571,5 +11571,18 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "grafana-beyla-ebpf-self-hosted",
+    "name": "Grafana Beyla Open-Source eBPF Instrumentation",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Linux eBPF auto-instrumentation for HTTP/gRPC and other supported application traffic, exporting OpenTelemetry traces and Prometheus metrics; no Beyla software license fee or vendor-imposed self-hosted usage quota.",
+    "watch_out": "Requires Linux kernel/eBPF/BTF support and elevated tracing capabilities; operator must supply compute, storage, telemetry backend and security controls. Grafana Cloud and hosted observability usage may incur charges. Beyla code is migrating toward upstream OpenTelemetry eBPF Instrumentation; avoid cataloguing that upstream as a separate equivalent offering.",
+    "pricing_url": "https://grafana.com/docs/beyla/latest/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
