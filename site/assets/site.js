@@ -131,6 +131,22 @@
     });
   }
 
+  // The native details disclosure also works without JavaScript.
+  // When enhanced, clicking outside or pressing Escape closes the support popover.
+  var supportWidget = document.getElementById("support-widget");
+  if (supportWidget) {
+    document.addEventListener("click", function (event) {
+      if (supportWidget.open && !supportWidget.contains(event.target)) supportWidget.open = false;
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && supportWidget.open) {
+        event.preventDefault();
+        supportWidget.open = false;
+        supportWidget.querySelector("summary").focus();
+      }
+    });
+  }
+
   // Works on every page, including detail and 404 pages without a search grid.
   var backToTop = document.getElementById("back-to-top");
   if (backToTop) {
