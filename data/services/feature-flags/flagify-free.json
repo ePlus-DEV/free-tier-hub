@@ -4,7 +4,7 @@
   "category": "feature-flags",
   "plan": "ongoing",
   "free_limit": "2 projects/workspace; unlimited flags; 3 environments; 3 seats; 75,000 evaluations/month; 50 AI messages/month",
-  "watch_out": "Free plan is aimed at side projects and small teams; paid tiers add higher evaluation quotas and advanced controls.",
+  "watch_out": "Ongoing Free ($0, no card) is limited to one workspace, two projects, three environments, three seats, 75,000 evaluations/month and 50 AI messages/month. Higher quotas, audit logs, RBAC and full API access belong to paid plans. The advertised $20 per 1M extra evaluations is an additional paid-usage rate, not an included Free allowance; confirm overage enforcement before relying on a hard stop.",
   "pricing_url": "https://flagify.dev/",
   "credit_card": "no",
   "commercial_use": "check",

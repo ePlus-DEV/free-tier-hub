@@ -4,7 +4,7 @@
   "category": "databases",
   "plan": "ongoing",
   "free_limit": "1 single-host cluster; 50 Gorilla Credits/month; 7-day retention",
-  "watch_out": "Initial 30-day Pro trial reverts to Free; auto-reload of purchased credits may incur charges",
+  "watch_out": "The initial 30-day Pro trial automatically reverts to ongoing Free (1 single-host cluster, 50 monthly Gorilla Credits) unless upgraded. Free monthly credits reset and do not roll over. Credit-pack auto-reload is ON by default in provider pricing documentation; disable auto-reload explicitly to pause credit-consuming actions at zero balance and avoid unexpected purchased credits. A local read-only collector sends telemetry to the managed cloud; fully on-prem deployment is Enterprise, not Free.",
   "pricing_url": "https://www.dbgorilla.com/pricing",
   "credit_card": "no",
   "commercial_use": "check",

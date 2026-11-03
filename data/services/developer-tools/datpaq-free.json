@@ -4,7 +4,7 @@
   "category": "developer-tools",
   "plan": "ongoing",
   "free_limit": "250 API requests/month; full API catalog, CLI and MCP server",
-  "watch_out": "Over-limit grace period may lead to billing; monitor usage",
+  "watch_out": "Free remains $0 without a card for 250 API requests/month. Official pricing FAQ says usage above the monthly limit receives an approximately five-day upgrade grace window; requests over the limit MAY be billed after that. Do not assume an automatic hard stop; confirm actual billing enforcement with DATPAQ before production use.",
   "pricing_url": "https://datpaq.com/pricing",
   "credit_card": "no",
   "commercial_use": "check",
