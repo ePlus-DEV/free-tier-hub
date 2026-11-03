@@ -12233,6 +12233,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cacti-network-graphing-self-hosted",
+    "name": "Cacti Open-Source Network Graphing (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Cacti software under GPL-2.0; no vendor-hosted resource quota or recurring credit is included.",
+    "watch_out": "Requires your own PHP web server, database, RRDtool, SNMP setup and infrastructure; hosting, operations and network access can incur costs. GPL-2.0 license obligations apply to redistribution; no managed cloud service is included.",
+    "pricing_url": "https://github.com/Cacti/cacti",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cosmos-server-self-hosted",
     "name": "Cosmos Server Self-Hosted",
     "category": "app-hosting",
