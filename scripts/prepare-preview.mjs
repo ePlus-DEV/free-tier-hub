@@ -33,8 +33,9 @@ export function prepare(site, baseURL) {
       // HTML route. Keep its trailing slash so runtime can append category.json.
       if (!prefix.startsWith('data-search-cards') &&
           (!target || target.endsWith('/'))) target += 'index.html';
-      const relative = path.relative(path.dirname(page), path.join(root, target))
+      let relative = path.relative(path.dirname(page), path.join(root, target))
         .split(path.sep).join('/');
+      if (prefix.startsWith('data-search-cards') && !relative.endsWith('/')) relative += '/';
       return prefix + relative + fragment + suffix;
     });
     if (canonical) {
