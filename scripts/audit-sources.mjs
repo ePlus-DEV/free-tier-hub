@@ -178,7 +178,7 @@ export function report(results, checkedAt, offline = false) {
     "2. Compare free_limit with published quotas, including units, reset periods, and regions.",
     "3. Confirm payment card, commercial-use rights, expiration, sleep, and excess charges.",
     "4. If official sources disagree, record both sources and leave claims marked for review.",
-    "5. Only after manual verification, edit data/services.json and set last_checked to the date verified; open a reviewed PR.",
+    "5. Only after manual verification, edit data/services/<category>/<id>.json and set last_checked to the date verified; open a reviewed PR.",
     "",
   ];
   return { stats: { entries: results.length, stale, unknown, high, ...stats }, markdown: lines.join("\n") };
