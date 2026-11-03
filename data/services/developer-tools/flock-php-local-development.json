@@ -1,0 +1,13 @@
+{
+  "id": "flock-php-local-development",
+  "name": "Flock PHP Local Development Environment",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free, open-source AGPL-3.0 native PHP/Laravel development environment for Windows and macOS with per-project PHP versions, local .test HTTPS sites, databases, email capture and debugging; no software subscription or account required.",
+  "watch_out": "Runs on the user's computer, not a free hosted PHP service. Requires supported Windows/macOS and local resources; Flock uses ports 80 and 443 and may conflict with Laragon, Apache or other local stacks. AGPL-3.0 obligations apply when distributing modified software and in applicable network-use scenarios; Linux availability depends on release channel.",
+  "pricing_url": "https://flockphp.com/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
