@@ -245,6 +245,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # The canonical source is per-service files now; this legacy
+          # monolith recovery path must never modify or refresh shard PRs.
+          if [ -d data/services ]; then
+            echo "::notice::Shard catalog active; legacy PR reactivation is no longer applicable."
+            exit 0
+          fi
           test -n "$BOT_TOKEN" || { echo "::error::Missing EPLUS_BOT_TOKEN"; exit 1; }
 
           # GitHub REST uses github-actions[bot]; GraphQL/gh pr list can
