@@ -12233,6 +12233,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "dask-local-parallel-analytics",
+    "name": "Dask Open-Source Parallel Analytics (Local)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "BSD-3-Clause open-source Python library for local parallel DataFrame, array and task-graph computation; no software license fee or per-job vendor quota.",
+    "watch_out": "Local execution uses your own CPU, RAM and disk. Optional distributed scheduler and cloud/Kubernetes clusters require self-provided infrastructure and may incur compute, storage and network charges; no hosted free cluster is included. BSD-3-Clause notices apply.",
+    "pricing_url": "https://docs.dask.org/en/stable/deploying.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "dnsmon-self-hosted-dns-monitor",
     "name": "dnsmon Self-Hosted DNS Propagation and Change Monitor",
     "category": "dns-cdn",
@@ -12426,6 +12439,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "restate-cloud-free",
+    "name": "Restate Cloud Free",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "100,000 durable actions per month on the vendor-hosted Free plan (per current pricing page); 1 GB Virtual Object storage, 1-day history retention, 10 actions/second throughput with 100 actions/second burst.",
+    "watch_out": "Official pricing lists 100,000 monthly actions, but the vendor's Cloud overview still says 50,000; verify the live account allowance before production use. Each function invocation plus completion consumes two actions, with intermediate steps and larger payloads consuming additional actions. Free has no listed additional-action allowance; throughput is rate-limited. Paid tiers can bill overages. Commercial-use terms for the hosted Free plan are not explicitly confirmed.",
+    "pricing_url": "https://restate.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
   },
   {
     "id": "txtai-local-semantic-search",
