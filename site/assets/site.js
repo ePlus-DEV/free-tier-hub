@@ -506,7 +506,13 @@
   function drawCards(shown) {
     var serial = ++drawSerial;
     var identity = shown.map(function (entry) { return entry.id; }).join("|");
-    if (identity === lastDrawn && grid.children.length === shown.length) return;
+    if (identity === lastDrawn && grid.children.length === shown.length) {
+      // The user may return to the original SSR cards while an older fetch
+      // is pending; never leave the grid permanently marked as busy.
+      grid.removeAttribute("aria-busy");
+      setSearchStatus("");
+      return;
+    }
     var needed = [];
     shown.forEach(function (entry) {
       if (!seedMarkup[entry.id] && !cardGroups[entry.category] &&
