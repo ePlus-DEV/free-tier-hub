@@ -121,10 +121,10 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { validateData, validateCandidate } from './scripts/catalog.mjs';
+          import { loadServices } from './scripts/catalog-source.mjs';
           const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
           validateCandidate(candidate);
-          const services = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
-          validateData([...services, candidate]);
+          validateData([...loadServices(), candidate]);
           fs.appendFileSync(process.env.GITHUB_OUTPUT,
             'id=' + candidate.id + '\nbranch=catalog/add-' + candidate.id + '\n');
           NODE
@@ -153,12 +153,11 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { validateData } from './scripts/catalog.mjs';
+          import { loadServices, writeService } from './scripts/catalog-source.mjs';
           const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
-          const catalog = 'data/services.json';
-          const services = JSON.parse(fs.readFileSync(catalog, 'utf8'));
-          validateData([...services, candidate]);
-          // Site builder supports safe initials fallback for newly catalogued IDs.
-          fs.writeFileSync(catalog, JSON.stringify([...services, candidate], null, 2) + '\n');
+          validateData([...loadServices(), candidate]);
+          // Only the new service shard is canonical; aggregate and docs are generated.
+          writeService(process.cwd(), candidate);
           NODE
 
       - name: Generate and validate
@@ -184,7 +183,7 @@ jobs:
             exit 1
           fi
           git switch -c "$DELIVERY_BRANCH"
-          git add data/services.json README.md docs/
+          git add "data/services/$(node -p "JSON.parse(require('fs').readFileSync('/tmp/candidate.json')).category")/$SERVICE_ID.json"
           git commit -m "catalog: add $SERVICE_ID"
           # The added-date site tests inspect committed Git history. Run the
           # complete verification only after the local commit exists, but
