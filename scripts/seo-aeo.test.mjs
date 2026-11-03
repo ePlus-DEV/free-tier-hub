@@ -89,6 +89,12 @@ test('SEO/AEO stays consistent after per-service migration and lazy Home search'
       const url = base + relative;
       assert.ok(locs.includes(url), 'Sitemap missing canonical service URL: ' + item.id);
       const page = read(relative + 'index.html');
+      if (limited.some(x => x.id === item.id)) {
+        assert.ok(page.includes('Other time-limited offers'));
+        assert.ok(page.includes('Back to Limited offers'));
+      } else {
+        assert.ok(page.includes('More in this category'));
+      }
       assert.ok(page.includes('<link rel="canonical" href="' + url + '">'));
       assert.match(page, /<meta name="robots" content="index,follow">/);
       assert.ok(page.includes('<h1>' + tag(item.name) + '</h1>'),
