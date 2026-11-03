@@ -226,7 +226,7 @@
     }
     if (event.target.closest(".compare-tray-go") && selected.length < 2) event.preventDefault();
     if (event.target.closest("#compare-share") && selected.length >= 2) {
-      var value = window.location.origin + shareURL(selected);
+      var value = new URL(shareURL(selected), window.location.origin).href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(value).then(function () { announce("Comparison link copied."); },
           function () { announce("Copy this page URL to share the comparison."); });
