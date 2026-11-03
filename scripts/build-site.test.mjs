@@ -370,6 +370,58 @@ test('URL filters round trip, reject unknown values, preserve unrelated params a
     {hosting:'', offer:'', q:'', category:'', sort:'default', noCard:false, commercial:false});
 });
 
+test('search result headline reflects matches rather than the entire offer pool', async () => {
+  await import('../site/assets/directory-url.js');
+  const summarize = globalThis.FreeTierDirectoryURL.summarizeResults;
+  assert.equal(typeof summarize, 'function');
+
+  assert.deepEqual(summarize(926, 926, 12, {}), {
+    label: 'Total free tiers', total: '926', shown: 'Showing 12 of 926'
+  });
+  assert.deepEqual(summarize(49, 926, 12, { q: 'chat' }), {
+    label: 'Matching services', total: '49',
+    shown: 'Showing 12 of 49 · 926 free tiers total'
+  });
+  assert.deepEqual(summarize(49, 926, 24, { q: 'chat', category: '' }), {
+    label: 'Matching services', total: '49',
+    shown: 'Showing 24 of 49 · 926 free tiers total'
+  });
+  assert.deepEqual(summarize(0, 926, 12, { q: 'notfound' }), {
+    label: 'Matching services', total: '0',
+    shown: 'Showing 0 of 0 · 926 free tiers total'
+  });
+  assert.deepEqual(summarize(4, 4, 12, { offer: 'limited' }), {
+    label: 'Limited offers', total: '4', shown: 'Showing 4 of 4'
+  });
+  assert.deepEqual(summarize(1, 4, 12, { offer: 'limited', category: 'ai-assistants' }), {
+    label: 'Matching services', total: '1',
+    shown: 'Showing 1 of 1 · 4 limited offers total'
+  });
+  assert.deepEqual(summarize(30, 30, 12, { offer: 'monthly-credit' }), {
+    label: 'Monthly credits', total: '30', shown: 'Showing 12 of 30'
+  });
+  assert.deepEqual(summarize(13, 926, 12, { noCard: true }), {
+    label: 'Matching services', total: '13',
+    shown: 'Showing 12 of 13 · 926 free tiers total'
+  });
+  assert.deepEqual(summarize(926, 926, 12, { q: '   ', sort: 'newest' }), {
+    label: 'Total free tiers', total: '926', shown: 'Showing 12 of 926'
+  });
+
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-summary-'));
+  try {
+    const catalog = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
+    const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
+    build(output);
+    const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
+    assert.ok(html.includes('<span class="result-label">Total free tiers</span><strong class="result-total">' + free.length + '</strong>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' + Math.min(12, free.length) + ' of ' + free.length + '</span>'));
+    const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
+    assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
+    assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);
+  } finally { fs.rmSync(output, { recursive: true, force: true }); }
+});
+
 test('header search opens and keyboard shortcuts work without a directory grid', async () => {
   const { runInNewContext } = await import('node:vm');
   function element() {
