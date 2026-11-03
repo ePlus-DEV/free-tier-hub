@@ -1,0 +1,13 @@
+{
+  "id": "netalertx-network-discovery-self-hosted",
+  "name": "NetAlertX Network Discovery (Self-Hosted)",
+  "category": "tunneling-networking",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0 self-hosted network device discovery, inventory, change detection and alerts with no vendor software license fee or fixed usage quota.",
+  "watch_out": "Requires user-operated Docker/server and network scan permissions; infrastructure and notification integrations may incur separate costs. Some network discovery methods require elevated privileges and cannot see all subnets; GPL-3.0 conditions apply.",
+  "pricing_url": "https://github.com/netalertx/NetAlertX",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
