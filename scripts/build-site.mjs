@@ -2,6 +2,7 @@
 // Static HTML directory builder. Node.js 24, zero runtime dependencies.
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
@@ -245,11 +246,13 @@ function document(absolute, title, description, relative, content, structuredDat
     '</button></body></html>',
   ].join('');
 }
-function homePage(items, absolute, counts) {
+function homePage(items, absolute, counts, searchVersion) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   // Keep limited entries present for the Offer type filter, but hidden by default.
-  const cards = items.map(item => card(item, absolute, !isMainFreeOffer(item))).join('');
+  // Server-render only the first 12 ongoing cards. Other results are loaded
+  // from lean search metadata and category HTML fragments on demand.
+  const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
@@ -327,7 +330,13 @@ function homePage(items, absolute, counts) {
     '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total services</span><strong class="result-total">',
     mainItems.length, '</strong></p>',
     '</div></div>',
-    '<div class="service-grid" id="service-grid">', cards, '</div>',
+    '<div class="service-grid" id="service-grid" data-search-index="',
+    tag(absolute('search/index.json?v=' + searchVersion)),
+    '" data-search-cards="', tag(absolute('search/cards/')), '">', cards, '</div>',
+    '<p class="search-load-status" id="search-load-status" role="status" aria-live="polite" hidden></p>',
+    '<noscript><p class="search-noscript">Showing the first 12 services. ',
+    '<a href="', tag(absolute('categories/')), '">Browse all categories</a>',
+    ' to explore the full catalog without JavaScript.</p></noscript>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="load-more">Show more services</button>',
     '<span class="load-more-hint">Browse all matching services</span></div>',
@@ -600,6 +609,17 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   fs.mkdirSync(output, { recursive: true });
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const searchVersion = createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
+  const searchIndex = {
+    version: 1,
+    revision: searchVersion,
+    // [id, name, category, plan, deployment, card, commercial, added, checked, searchable].
+    rows: items.map(item => [
+      item.id, item.name, item.category, item.plan, hostingModel(item),
+      item.credit_card, item.commercial_use, item.added_at || '', item.last_checked,
+      [item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
+    ])
+  };
   const counts = Object.fromEntries(CATEGORIES.map(category =>
     [category, mainItems.filter(item => item.category === category).length]));
   const latest = items.map(item => item.last_checked).sort().at(-1);
@@ -617,7 +637,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, 'index.html', document(absolute,
     'Free Tier Hub | Free Hosting, Cloud, Databases & Developer Tools',
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
-    '', homePage(items, absolute, counts), homeSchema));
+    '', homePage(items, absolute, counts, searchVersion), homeSchema));
   pageURLs.push(['', latest]);
   const categoriesRelative = 'categories/';
   const categoriesSchema = { '@context': 'https://schema.org', '@graph': [
@@ -759,6 +779,14 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       '- [' + CATEGORY_NAMES[category] + '](' + absolute('category/' + category + '/') + ')'),
   ];
   file(output, 'agents.md', agents.join('\n') + '\n');
+  // Public catalog remains unchanged for external API users; the browser only
+  // requests the compact index and HTML for categories currently on screen.
+  file(output, 'search/index.json', JSON.stringify(searchIndex) + '\n');
+  for (const category of CATEGORIES) {
+    const fragments = Object.fromEntries(items.filter(item => item.category === category)
+      .map(item => [item.id, card(item, absolute)]));
+    file(output, 'search/cards/' + category + '.json', JSON.stringify(fragments) + '\n');
+  }
   file(output, 'catalog.json', JSON.stringify(items, null, 2) + '\n');
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
