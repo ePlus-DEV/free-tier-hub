@@ -20,7 +20,7 @@ test('contributor entrypoints use independent service shards, not a manually edi
   const howTo = read('CONTRIBUTING.md');
   assert.match(howTo, /original PR.*branch/i);
   assert.match(howTo, /Do not create a replacement maintainer-authored PR/);
-  assert.match(howTo, /category\/id/);
+  assert.match(howTo, /data\/services\/<category>\/<id>\.json/);
   assert.match(howTo, /npm run catalog:sync/);
   const checklist = read('.github/PULL_REQUEST_TEMPLATE.md');
   assert.match(checklist, /each containing one JSON object/);
@@ -34,7 +34,7 @@ test('source audit and operational guides explicitly distinguish canonical sourc
   }
   assert.match(read('docs/source-audit.md'), /Only after \*\*human factual verification\*\*/);
   assert.doesNotMatch(read('docs/source-audit.md'), /edit `data\/services\.json` and set `last_checked`/);
-  assert.match(read('docs/catalog-reconciliation-safety.md'), /legacy.*single-file conflict/i);
+  assert.match(read('docs/catalog-reconciliation-safety.md'), /single-file conflict reconciliation/);
 });
 
 test('public no-code service suggestion remains open without requiring Git or JSON', () => {
