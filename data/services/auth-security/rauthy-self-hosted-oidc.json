@@ -1,0 +1,13 @@
+{
+  "id": "rauthy-self-hosted-oidc",
+  "name": "Rauthy Open-Source Self-Hosted OIDC Identity Provider",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed self-hosted OpenID Connect/OAuth 2.0 identity provider with passkeys, admin UI and optional high availability; no vendor subscription or published self-hosted user quota.",
+  "watch_out": "You must supply and secure your own host, TLS, backups, outbound email and any external dependencies; infrastructure is not free. Professional support is paid. LOCAL_TEST mode uses an unsafe demo configuration and must not be used in production.",
+  "pricing_url": "https://github.com/sebadob/rauthy",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
