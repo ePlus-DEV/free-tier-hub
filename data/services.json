@@ -12220,6 +12220,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "apache-hugegraph-self-hosted-graph",
+    "name": "Apache HugeGraph Open-Source Graph Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed self-hosted graph database with Gremlin and Cypher querying, REST API and graph processing tools; no license fee or vendor-hosted free resource quota.",
+    "watch_out": "Compute, backend storage, network, security, backups, operations and optional external Spark/Flink/LLM services are paid or user-operated separately. This is not a free managed graph-database plan.",
+    "pricing_url": "https://github.com/apache/hugegraph",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cosmos-server-self-hosted",
     "name": "Cosmos Server Self-Hosted",
     "category": "app-hosting",
@@ -12357,6 +12370,19 @@
     "free_limit": "MIT-licensed self-managed WireGuard coordination server and client tools with CIDR and peer access controls; no vendor software subscription or published peer quota.",
     "watch_out": "Requires a self-operated coordination server reachable by peers, WireGuard dependencies and network configuration; server/VPS and bandwidth may cost money. Upstream warns that the software has not received an independent security audit and should be treated as experimental.",
     "pricing_url": "https://github.com/tonarino/innernet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "janusgraph-self-hosted-graph-database",
+    "name": "JanusGraph Open-Source Distributed Graph Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed self-managed transactional graph database with Apache TinkerPop/Gremlin support; no vendor license fee or software usage quota.",
+    "watch_out": "Requires user-operated compute, graph storage backend (for example Cassandra/HBase/Bigtable), optional search indexing (Elasticsearch/Solr/Lucene), security, backup and maintenance. Cloud backends and managed hosting can charge separately.",
+    "pricing_url": "https://janusgraph.org/",
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
@@ -12516,6 +12542,19 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "s3proxy-self-hosted-s3-gateway",
+    "name": "S3Proxy Open-Source S3-Compatible Gateway",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed S3 API proxy; run against a local filesystem or self-managed backend without a software subscription or vendor-hosted free storage quota.",
+    "watch_out": "S3Proxy is an API gateway, not free cloud object storage. Requires a user-operated Java 17+ server or Docker deployment, disk, networking and backups. AWS, Azure, Google Cloud, Swift and SFTP backends may incur separate storage, request and egress charges; S3 API feature coverage is not complete.",
+    "pricing_url": "https://github.com/gaul/s3proxy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
     "deployment_model": "self-hosted"
   },
   {
