@@ -1,0 +1,13 @@
+{
+  "id": "dask-local-parallel-analytics",
+  "name": "Dask Open-Source Parallel Analytics (Local)",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "BSD-3-Clause open-source Python library for local parallel DataFrame, array and task-graph computation; no software license fee or per-job vendor quota.",
+  "watch_out": "Local execution uses your own CPU, RAM and disk. Optional distributed scheduler and cloud/Kubernetes clusters require self-provided infrastructure and may incur compute, storage and network charges; no hosted free cluster is included. BSD-3-Clause notices apply.",
+  "pricing_url": "https://docs.dask.org/en/stable/deploying.html",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
