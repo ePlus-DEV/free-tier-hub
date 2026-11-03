@@ -40,6 +40,7 @@ test("only services and generated Markdown are safe for automatic merge", () => 
     "scripts/build-site.mjs",
     "scripts/pr-auto-approve.test.mjs",
     "site/index.html",
+    "data/services.json",
     "data/category-discovery-ledger.json",
     "CONTRIBUTING.md",
   ]) {
