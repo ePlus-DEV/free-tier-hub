@@ -18,6 +18,15 @@ maintainer review, and GitHub Actions remain authoritative.
 | Debug publishing | `docs/deployment.md`, `.github/workflows/pages.yml` |
 | Offer guidance to AI readers of the live directory | `https://free-tier.eplus.dev/llms.txt`, `https://free-tier.eplus.dev/agents.md` |
 
+## Licensing boundaries
+
+- Code and tooling are under [MIT](LICENSE); original licensed catalog
+  editorial/database content is under [CC BY 4.0](LICENSE-DATA.md) only to the
+  extent each contributor or rightsholder has authority to grant rights.
+- Do not assume provider trademarks, logos, third-party terms or unlicensed
+  historical contributions are included. Treat uncertain rights as a review
+  blocker and never invent permission.
+
 ## Non-negotiable catalog rules
 
 - **Canonical source:** only edit the matching `data/services/<category>/<id>.json` for a normal service addition or correction. Ensure both the folder and filename match its JSON `category` and `id`. Check for duplicates first.
