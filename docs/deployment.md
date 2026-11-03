@@ -41,6 +41,21 @@ To build for a different canonical domain or base path, run:
 node scripts/build-site.mjs --site-url https://example.com/free-tier/ --output dist
 ```
 
+## Search index and page delivery
+
+The **canonical data source** is still the per-service JSON tree; website visitors do **not** request raw GitHub files or the full `data/services.json` aggregate for ordinary search.
+
+During `npm run build`, Node.js produces:
+
+- `dist/search/index.json` — lightweight ID, category, plan, billing, search text, and sort metadata for the complete catalog, keyed by a content-based revision
+- `dist/search/cards/<category>.json` — pre-rendered HTML card fragments fetched only for categories needed by visible search results
+- `dist/catalog.json` — complete, backwards-compatible public API for people and external integrations
+- `dist/service/<id>/index.html` and category HTML — crawlable, static service details and no-JavaScript browsing
+
+Home includes only the first **12 server-rendered service cards**. Search/filters fetch the small index on first use, then render up to 12 cards per batch; "Show more" loads additional cards on demand. Category pages retain crawlable static HTML. Search files are generated build outputs — **never commit or edit them manually**.
+
+The PR preview preparation step rewrites search URLs to preview-relative paths so the preview uses its **own index and card fragments**, not stale production search data. Verify that `/search/index.json` and at least one `/search/cards/<category>.json` exist in build artifacts before releasing. Site search and API assets deploy together from the same revision.
+
 ## Release verification and troubleshooting
 
 1. Confirm the catalog PR has been reviewed and that its **exact head commit** has successful required checks; missing, pending, skipped, cancelled or action-required checks are not successful results.
