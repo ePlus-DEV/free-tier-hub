@@ -1,0 +1,13 @@
+{
+  "id": "maildev-local-email-testing",
+  "name": "MailDev Local Email Testing",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Unlimited local SMTP capture and browser-based inspection of development emails using the MIT-licensed MailDev application; no hosted email delivery allowance.",
+  "watch_out": "Runs locally or on infrastructure you provide. Captured messages are for testing, not production outbound email delivery; upstream SMTP relay may incur separate provider charges.",
+  "pricing_url": "https://github.com/maildev/maildev",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
