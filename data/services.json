@@ -12246,6 +12246,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "devspace-kubernetes-cli-local",
+    "name": "DevSpace Open-Source Kubernetes Development CLI (Local)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed client-only DevSpace CLI for Kubernetes image builds, deployments, workflow automation, hot reload and debugging; no CLI license fee or usage quota.",
+    "watch_out": "Requires a Kubernetes cluster, image registry and user-provided compute/network/storage; these are not free with the CLI. Optional third-party services and managed Kubernetes may incur charges. Apache-2.0 notice obligations apply.",
+    "pricing_url": "https://github.com/devspace-sh/devspace/blob/main/LICENSE",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "dnsmon-self-hosted-dns-monitor",
     "name": "dnsmon Self-Hosted DNS Propagation and Change Monitor",
     "category": "dns-cdn",
@@ -12465,6 +12478,32 @@
     "commercial_use": "check",
     "last_checked": "2026-11-01",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "runtipi-self-hosted-app-platform",
+    "name": "Runtipi Self-Hosted App Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 Docker-based home-server app orchestrator with a web dashboard and one-click app installation; no vendor-hosted compute or usage quota is included.",
+    "watch_out": "Runs on your own Linux server with Docker; server, electricity, storage, networking, domains and third-party apps may cost money. GPL-3.0 obligations apply when distributing modified software; volunteer-maintained without guaranteed support.",
+    "pricing_url": "https://github.com/runtipi/runtipi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sandstorm-self-hosted-app-platform",
+    "name": "Sandstorm Self-Hosted App Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted application platform for installing and isolating web apps on a user-operated 64-bit Linux server; no vendor-hosted free compute is included.",
+    "watch_out": "Requires your own x86-64 Linux server (at least 1 GB RAM, 2 GB recommended), maintenance, backups and hosting costs. Individual Sandstorm apps may have separate licenses or services. The optional Sandcats DNS service is not a free server.",
+    "pricing_url": "https://sandstorm.org/install",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "terramate-cli-local-iac",
