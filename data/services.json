@@ -12194,6 +12194,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "dnsmon-self-hosted-dns-monitor",
+    "name": "dnsmon Self-Hosted DNS Propagation and Change Monitor",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed self-hosted DNS propagation checker and monitoring dashboard; checks DNS records across public resolvers, supports delegation traces, alerting and a local web UI, without a vendor software subscription or per-query license quota.",
+    "watch_out": "Not a free hosted DNS service. Scheduled monitor execution is not yet implemented (manual/API-triggered checks only). Requires user-operated compute/network; DNS resolver limits, hosting, domains and third-party alert transports may incur costs. The upstream README warns that UI authentication is disabled by default and notification credentials are stored as plaintext; secure any public deployment.",
+    "pricing_url": "https://github.com/t0mer/dnsmon",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "faiss-local-vector-search",
     "name": "Faiss Open-Source Local Vector Similarity Search",
     "category": "search",
@@ -12218,6 +12231,19 @@
     "commercial_use": "check",
     "last_checked": "2026-11-01",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "gocron-go-scheduler-local",
+    "name": "gocron v2 Go Job Scheduler",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Go scheduling library for recurring interval and cron jobs; no software license fee or vendor-imposed usage quota.",
+    "watch_out": "Runs within user-operated Go applications, not a hosted scheduler. Compute, persistence and optional distributed-lock infrastructure are not included; retain MIT copyright/license notices.",
+    "pricing_url": "https://github.com/go-co-op/gocron",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
   },
   {
     "id": "innernet-wireguard-self-hosted",
