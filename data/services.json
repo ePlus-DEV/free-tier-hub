@@ -12181,6 +12181,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "acme-sh-local-client",
+    "name": "acme.sh Open-Source Shell ACME Certificate Automation",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0 licensed local Unix shell ACME client to issue, renew and install TLS certificates with webroot, standalone and DNS validation; supports DNS provider API integrations and automatic scheduled renewal without a software license fee.",
+    "watch_out": "Not free domain registration, managed DNS, hosting or a guarantee of free certificates from every CA. Own server and domain validation required; DNS API/provider fees, ACME CA restrictions and infrastructure costs may apply. Manual DNS mode cannot renew unattended; GPL-3.0 conditions apply to redistribution.",
+    "pricing_url": "https://github.com/acmesh-official/acme.sh",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "faiss-local-vector-search",
     "name": "Faiss Open-Source Local Vector Similarity Search",
     "category": "search",
