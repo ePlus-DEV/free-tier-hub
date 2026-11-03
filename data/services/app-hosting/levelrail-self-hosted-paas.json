@@ -1,0 +1,13 @@
+{
+  "id": "levelrail-self-hosted-paas",
+  "name": "LevelRail Open-Source Self-Hosted PaaS",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 self-hosted PaaS with Git-based application deployments, HTTPS, logs, metrics, backups and rollback; one software edition without license keys, paid feature gates or vendor usage quotas.",
+  "watch_out": "Requires user-operated Linux servers and Docker; VPS, bandwidth, domains, storage, registries and operational costs are separate. No provider-hosted compute allowance. Software is pre-1.0: single-server setup is the more tested path, while multi-node support remains beta.",
+  "pricing_url": "https://levelrail.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
