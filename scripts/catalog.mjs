@@ -6,8 +6,8 @@ import { fileURLToPath } from "node:url";
 import { loadServices, hasServiceShards, aggregateCatalog, COMPATIBILITY_FILE } from './catalog-source.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-// The README badge counts services from the live source JSON on main; no sync commit needed.
-export const SERVICE_BADGE_URL = "https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen";
+// The README badge counts the deployed canonical catalog assembled from service shards.\n// data/services.json remains a generated compatibility artifact and may briefly lag a merge.
+export const SERVICE_BADGE_URL = "https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ffree-tier.eplus.dev%2Fcatalog.json&query=%24.length&label=services&color=brightgreen&cacheSeconds=300";
 export function hasDynamicServiceBadge(readme) {
   const badges = [...readme.matchAll(/!\[Catalog\]\(([^)]+)\)/g)];
   return badges.length === 1 && badges[0][1] === SERVICE_BADGE_URL;
