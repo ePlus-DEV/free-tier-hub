@@ -1,0 +1,13 @@
+{
+  "id": "daft-local-dataframe",
+  "name": "Daft Open-Source Data Engine (Local)",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source Python/Rust data engine for local DataFrame and multimodal analytics; no software license fee or vendor-metered local processing quota.",
+  "watch_out": "Runs on user-provided CPU, memory and storage; distributed Ray/Kubernetes clusters, cloud storage, OpenAI/other model APIs and data transfer may incur separate charges. Free library is not a managed cloud free tier; respect Apache-2.0 notices.",
+  "pricing_url": "https://github.com/Eventual-Inc/Daft",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
