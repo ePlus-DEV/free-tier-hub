@@ -1,0 +1,13 @@
+{
+  "id": "surveyjs-form-library-local",
+  "name": "SurveyJS Form Library Open Source",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed JavaScript library for embedding dynamic forms, multi-step surveys and quizzes in web applications; no vendor-imposed form or submission quotas in the open-source library.",
+  "watch_out": "Form Library is a client-side renderer, not SurveyJS Cloud hosting or a response database. You must supply and operate your own backend/storage. Survey Creator, PDF Generator and Dashboard are separate paid proprietary products; do not assume their developer licenses are included.",
+  "pricing_url": "https://surveyjs.io/form-library/documentation/overview",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
