@@ -1,0 +1,14 @@
+{
+  "id": "grafana-oss",
+  "name": "Grafana OSS",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Grafana OSS dashboards, visualizations, and alerting against supported data sources.",
+  "watch_out": "Grafana OSS does not include Grafana Cloud usage quotas or hosted metric storage. Data sources, authentication, hosting, and any paid integrations are separate.",
+  "pricing_url": "https://grafana.com/oss/grafana/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

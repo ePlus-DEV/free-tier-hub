@@ -1,0 +1,13 @@
+{
+  "id": "deplexo-free",
+  "name": "Deplexo Free Hosting",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "One always-on Free app: 0.25 vCPU, 128 MB RAM, 250 MB disk, 100 GB monthly transfer and 10 Mbit/s network bandwidth",
+  "watch_out": "No payment card or automatic sleep on the Free plan, but resources are shared and capped at 0.25 vCPU, 128 MB RAM, 250 MB disk and 10 Mbit/s. At the 100 GB monthly account transfer limit, apps stop until the next month or a plan upgrade. No independent uptime guarantee; not a dedicated VPS.",
+  "pricing_url": "https://deplexo.com/free-hosting",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

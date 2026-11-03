@@ -1,0 +1,13 @@
+{
+  "id": "auth0",
+  "name": "Auth0 Free",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Auth0 Free: up to 25K monthly active users, 5 organizations, 1 custom domain and 1 enterprise connection",
+  "watch_out": "No credit card is needed to sign up for Free, but custom domains require card verification. Free includes limited tenant and connection features; higher production limits and additional organizations are on paid plans. MAU quota is not an unlimited user allowance.",
+  "pricing_url": "https://auth0.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

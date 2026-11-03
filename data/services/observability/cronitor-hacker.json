@@ -1,0 +1,14 @@
+{
+  "id": "cronitor-hacker",
+  "name": "Cronitor Hacker Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Five monitors, email and Slack alerts, and a basic status page.",
+  "watch_out": "No SMS alerts or premium integrations; intended for small projects.",
+  "pricing_url": "https://cronitor.io/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

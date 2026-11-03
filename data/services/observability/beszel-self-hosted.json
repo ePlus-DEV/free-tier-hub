@@ -1,0 +1,14 @@
+{
+  "id": "beszel-self-hosted",
+  "name": "Beszel Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Beszel server monitoring dashboard with resource metrics collected by lightweight agents.",
+  "watch_out": "Requires your own server and agents; provide network access, storage, updates, and backups. It is not a managed monitoring or alerting service.",
+  "pricing_url": "https://github.com/henrygd/beszel",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

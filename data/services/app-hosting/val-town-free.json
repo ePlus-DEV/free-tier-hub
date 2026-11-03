@@ -1,0 +1,13 @@
+{
+  "id": "val-town-free",
+  "name": "Val Town Free",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Val Town Free: 100,000 val runs/day, unlimited public vals, up to 2,500 vals and cron schedules no more frequently than every 15 minutes",
+  "watch_out": "Free vals are public (no private vals), each run has a one-minute wall-clock timeout and logs are retained for three days. Custom domains, external email recipients, 1-minute cron schedules and longer runtimes require paid Pro; ongoing Free is not a short-term trial.",
+  "pricing_url": "https://www.val.town/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

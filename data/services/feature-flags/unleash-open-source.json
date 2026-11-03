@@ -1,0 +1,14 @@
+{
+  "id": "unleash-open-source",
+  "name": "Unleash Open Source",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Unleash Open Source feature-flag management with gradual rollout and SDK integration.",
+  "watch_out": "You run the flag server and data store. Check the open-source edition's feature limits; enterprise hosting, governance, and support may require payment.",
+  "pricing_url": "https://www.getunleash.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

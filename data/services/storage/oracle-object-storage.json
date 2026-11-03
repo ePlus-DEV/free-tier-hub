@@ -1,0 +1,13 @@
+{
+  "id": "oracle-object-storage",
+  "name": "Oracle Object Storage Always Free",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "OCI Always Free Object Storage: 20 GB combined Standard/Infrequent Access/Archive storage on Always Free-only accounts and 50,000 Object Storage API requests/month",
+  "watch_out": "The 20 GB is shared across storage classes, not 20 GB per class. Accounts with paid/trial credits instead get 10 GB each in Standard, Infrequent Access and Archive plus 50,000 requests/month. Oracle warns objects exceeding the 20 GB Always Free-only limit may be deleted when the 30-day trial ends without upgrade. OCI account/payment verification and home-region restrictions apply.",
+  "pricing_url": "https://www.oracle.com/cloud/free/",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

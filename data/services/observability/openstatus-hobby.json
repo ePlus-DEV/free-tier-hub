@@ -1,0 +1,13 @@
+{
+  "id": "openstatus-hobby",
+  "name": "Openstatus Hobby",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Ongoing $0 Hobby plan with 1 uptime monitor, 1 status page containing 3 components and minimum check interval of 10 minutes",
+  "watch_out": "New workspaces start on a separate 14-day Starter trial with no card, then return to ongoing Hobby if not upgraded. Hobby needs no credit card; 1-minute checks, additional monitors, larger status pages and advanced alerting options are paid. Do not classify the trial's 14-day expiry as expiry of the Hobby Free plan.",
+  "pricing_url": "https://www.openstatus.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

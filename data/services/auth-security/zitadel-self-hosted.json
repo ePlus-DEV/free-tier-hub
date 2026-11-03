@@ -1,0 +1,14 @@
+{
+  "id": "zitadel-self-hosted",
+  "name": "ZITADEL Self-Hosted",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted ZITADEL identity platform supporting authentication, organizations, OAuth 2.0, and OpenID Connect.",
+  "watch_out": "Requires deployment, database, backups, and operational management. Verify current community-versus-cloud feature and license conditions.",
+  "pricing_url": "https://zitadel.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

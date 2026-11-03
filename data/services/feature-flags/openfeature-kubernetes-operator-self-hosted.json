@@ -1,0 +1,13 @@
+{
+  "id": "openfeature-kubernetes-operator-self-hosted",
+  "name": "OpenFeature Kubernetes Operator (Self-Hosted)",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source Kubernetes operator for feature flags, injecting flagd sidecars and exposing flag evaluation via gRPC and HTTP; no software license fee or vendor quota.",
+  "watch_out": "Requires a user-operated Kubernetes cluster and flagd sidecars; infrastructure and monitoring are not free. The operator resolves cross-namespace resources, with documented multi-tenant isolation risk GHSA-398h-7f66-3h4p; apply upstream mitigations.",
+  "pricing_url": "https://github.com/open-feature/open-feature-operator",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}

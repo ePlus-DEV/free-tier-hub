@@ -1,0 +1,14 @@
+{
+  "id": "flagsmith-self-hosted",
+  "name": "Flagsmith Self-Hosted",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Flagsmith feature-flag and remote-configuration platform with SDK-based evaluation.",
+  "watch_out": "You provide server and database resources. Cloud usage allowances do not apply; hosted support and certain enterprise capabilities are separate.",
+  "pricing_url": "https://www.flagsmith.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

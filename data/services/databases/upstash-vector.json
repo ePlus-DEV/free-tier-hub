@@ -1,0 +1,13 @@
+{
+  "id": "upstash-vector",
+  "name": "Upstash Vector Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "One Free vector index: 10,000 queries/day and 10,000 updates/day; up to 1 GB vector metadata/data, 1,536 dimensions and 100 namespaces",
+  "watch_out": "The Free index is limited to 200 million vector dimensions, 1 GB total data/metadata and 100 namespaces, with no uptime SLA. Entering a payment card upgrades that index to metered pay-as-you-go; do not confuse ongoing Free quotas with a paid or one-time trial.",
+  "pricing_url": "https://upstash.com/pricing/vector",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

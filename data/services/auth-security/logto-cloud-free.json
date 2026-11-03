@@ -1,0 +1,14 @@
+{
+  "id": "logto-cloud-free",
+  "name": "Logto Cloud Free",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Up to 50,000 monthly active users, 50,000 access tokens and 3 applications; 1 machine-to-machine app.",
+  "watch_out": "Token allowance and app limits apply; additional organization and advanced auth features require paid plans.",
+  "pricing_url": "https://logto.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

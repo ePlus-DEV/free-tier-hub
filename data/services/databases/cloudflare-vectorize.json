@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-vectorize",
+  "name": "Cloudflare Vectorize Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Workers Free includes 30 million queried vector dimensions/month and 5 million stored vector dimensions; up to 100 indexes",
+  "watch_out": "Usage is counted in vector dimensions, not simple query count. Free supports up to 1,536 dimensions/vector, 1,000 namespaces/index and 10 KiB metadata/vector; Workers compute and any external embeddings API have separate quotas or costs.",
+  "pricing_url": "https://developers.cloudflare.com/vectorize/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}
