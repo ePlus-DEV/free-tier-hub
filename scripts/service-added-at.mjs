@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
 import path from 'node:path';
 
 const COMMIT_MARKER = '@@FREE_TIER_CATALOG_COMMIT@@';
@@ -72,7 +73,7 @@ export function serviceAddedDates(repoRoot) {
     '--reverse', '--no-ext-diff', '--no-color',
     `--format=${COMMIT_MARKER}%cI`, '--name-only', ref, '--', 'data/services/',
   ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
-    let publishedRef = 'HEAD';
+  let publishedRef = 'HEAD';
   try {
     execFileSync('git', ['rev-parse', '--verify', 'refs/remotes/origin/main'], {
       cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'],
@@ -81,10 +82,23 @@ export function serviceAddedDates(repoRoot) {
   } catch {
     // Local repositories without a remote still retain the original behavior.
   }
-  // Historical monolith dates win over the migration commit's file creation
-  // date. New shard-only IDs use their first appearance on published main.
-  const dates = readDates(publishedRef);
-  for (const [id, date] of readShardDates(publishedRef)) {
+  // Historical IDs use the original monolith history. New IDs use the shard
+  // merge into main, NOT the later Pages commit updating the compatibility
+  // aggregate. The immutable migration manifest distinguishes both populations.
+  const legacyManifest = path.join(cwd, 'data/catalog-legacy-order.json');
+  const legacy = fs.existsSync(legacyManifest)
+    ? new Set(JSON.parse(fs.readFileSync(legacyManifest, 'utf8'))) : null;
+  const aggregatePublished = readDates(publishedRef);
+  const shardPublished = readShardDates(publishedRef);
+  const dates = new Map();
+  for (const [id, date] of aggregatePublished) {
+    if (!legacy || legacy.has(id)) dates.set(id, date);
+  }
+  for (const [id, date] of shardPublished) {
+    if (!dates.has(id)) dates.set(id, date);
+  }
+  // Legacy monolith-only fixture compatibility and safe fallback for older PRs.
+  for (const [id, date] of aggregatePublished) {
     if (!dates.has(id)) dates.set(id, date);
   }
   if (publishedRef !== 'HEAD') {
