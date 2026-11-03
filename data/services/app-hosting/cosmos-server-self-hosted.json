@@ -1,0 +1,13 @@
+{
+  "id": "cosmos-server-self-hosted",
+  "name": "Cosmos Server Self-Hosted",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free-to-use self-hosted Docker server manager with app installation, authentication and reverse proxy; no managed hosting, infrastructure allowance or vendor quota is included.",
+  "watch_out": "Source-available under Apache-2.0 with Commons Clause 1.0 AND an Anti Tampering Clause, not unrestricted open source. Selling Cosmos, derivatives or a Cosmos-based SaaS/PaaS is prohibited; upstream permits hosting a monetized business website if the business is not selling Cosmos features. Do not bypass licensing/paywall restrictions. Requires user-funded server, Docker socket privileges, storage, network and secure operations; review license terms for any commercial deployment or redistribution.",
+  "pricing_url": "https://github.com/azukaar/Cosmos-Server",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
