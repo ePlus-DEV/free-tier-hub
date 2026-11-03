@@ -1,0 +1,13 @@
+{
+  "id": "terramate-cli-local-iac",
+  "name": "Terramate Open-Source IaC Orchestration CLI (Local)",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "MPL-2.0-licensed Terramate CLI for local IaC stack orchestration, change detection and code generation without a CLI license fee or fixed usage quota.",
+  "watch_out": "Terramate Cloud is an optional separately managed product with its own plans; Terraform/OpenTofu providers, cloud infrastructure, CI runners and state storage can cost money. MPL-2.0 distribution obligations apply.",
+  "pricing_url": "https://github.com/terramate-io/terramate/blob/main/LICENSE",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
