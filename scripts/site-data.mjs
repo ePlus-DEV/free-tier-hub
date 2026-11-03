@@ -113,9 +113,9 @@ export const CATEGORY_ICONS = {
   "feature-flags": "flag",
   "tunneling-networking": "network",
   "webhooks-events": "webhook",
-  "email-notifications": "webhook",
-  "testing-qa": "shield",
-  "forms-surveys": "layers"
+  "email-notifications": "mail",
+  "testing-qa": "test",
+  "forms-surveys": "form"
 };
 
 // Actual website favicons, with product domains for shared corporate sources.
