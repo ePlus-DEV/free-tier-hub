@@ -12610,6 +12610,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "twitterapi-io-signup-credits",
+    "name": "TwitterAPI.io New-Account Credits",
+    "category": "developer-tools",
+    "plan": "limited-duration",
+    "free_limit": "Up to $1 (100,000 API credits) as a one-time new-account sign-up allowance after an automated bot check; credits expire 31 days after issuance.",
+    "watch_out": "Not an ongoing free tier or recurring monthly credit. One offer per person/network; another signup on the same IP within 30 days may receive only $0.10. A valid sign-up bonus may be denied by anti-abuse checks. Subsequent API usage requires paid top-ups or subscriptions, with usage-based credit consumption and minimum request charges. Commercial use and X content/data licensing restrictions must be verified for the specific use case.",
+    "pricing_url": "https://twitterapi.io/pricing/details",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-03",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "txtai-local-semantic-search",
     "name": "txtai Open-Source Local Semantic Search and Embeddings",
     "category": "search",
