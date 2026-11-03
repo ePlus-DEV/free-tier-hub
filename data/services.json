@@ -12415,6 +12415,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "nx-open-source-local-build",
+    "name": "Nx Open-Source Monorepo Build CLI (Local)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Nx CLI for local monorepo task execution, affected-project builds and local caching; no software license fee or vendor-metered local build quota.",
+    "watch_out": "Nx Cloud remote caching, CI agents and other managed capabilities have separate terms and possible charges. CI runner minutes, CPU, storage and external services are not included. Retain MIT copyright/license notices.",
+    "pricing_url": "https://github.com/nrwl/nx/blob/master/LICENSE",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "privacyidea-community-self-hosted",
     "name": "privacyIDEA Community Self-Hosted Multi-Factor Authentication",
     "category": "auth-security",
@@ -12454,6 +12467,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "terramate-cli-local-iac",
+    "name": "Terramate Open-Source IaC Orchestration CLI (Local)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0-licensed Terramate CLI for local IaC stack orchestration, change detection and code generation without a CLI license fee or fixed usage quota.",
+    "watch_out": "Terramate Cloud is an optional separately managed product with its own plans; Terraform/OpenTofu providers, cloud infrastructure, CI runners and state storage can cost money. MPL-2.0 distribution obligations apply.",
+    "pricing_url": "https://github.com/terramate-io/terramate/blob/main/LICENSE",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "txtai-local-semantic-search",
     "name": "txtai Open-Source Local Semantic Search and Embeddings",
     "category": "search",
@@ -12461,6 +12487,19 @@
     "free_limit": "Apache-2.0 open-source Python framework for local semantic/vector search, embeddings indexes and RAG workflows; no vendor software license fee or query quota for the self-run framework.",
     "watch_out": "This is not free hosted txtai.cloud or free LLM inference. You supply CPU/GPU, memory, storage, model downloads and API credentials; third-party model licenses, hosted inference, infrastructure and external APIs may have separate costs or commercial restrictions.",
     "pricing_url": "https://github.com/neuml/txtai",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "vaex-local-dataframe",
+    "name": "Vaex Open-Source Out-of-Core DataFrames (Local)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Python library for local out-of-core tabular data exploration, aggregation and visualization; no software license fee or vendor-metered usage quota.",
+    "watch_out": "User supplies compute, memory and disk; very large data, external data stores and optional professional support can incur costs. This is local software, not a hosted analytics SaaS allowance. MIT license notices apply.",
+    "pricing_url": "https://github.com/vaexio/vaex",
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
