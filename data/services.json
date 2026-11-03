@@ -12649,6 +12649,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "opensurvey-self-hosted",
+    "name": "OpenSurvey Self-Hosted",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted survey platform with visual form builder, conditional logic, response analytics, teams and RBAC; no vendor-enforced seats or paid feature tiers in the open-source distribution.",
+    "watch_out": "Self-hosting requires PostgreSQL, Redis and application compute; infrastructure, storage and outbound email delivery are not free. Small/new upstream project; assess security and production readiness independently.",
+    "pricing_url": "https://github.com/mohitbadwal/opensurvey",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "pact-js-contract-testing",
     "name": "Pact JS Contract Testing",
     "category": "testing-qa",
