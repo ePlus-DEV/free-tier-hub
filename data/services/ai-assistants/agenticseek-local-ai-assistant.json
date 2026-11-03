@@ -1,0 +1,13 @@
+{
+  "id": "agenticseek-local-ai-assistant",
+  "name": "AgenticSeek Local AI Assistant",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0-licensed local autonomous AI assistant for browsing, coding and task planning; no software license fee or vendor-hosted quota",
+  "watch_out": "Runs on your own computer with Python, Docker/Compose, local LLM and substantial GPU resources; electricity, hardware and optional paid model/API services are not included. Autonomous browser/code execution needs careful sandboxing; GPL-3.0 redistribution obligations apply.",
+  "pricing_url": "https://github.com/Fosowl/agenticSeek",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
