@@ -1,0 +1,13 @@
+{
+  "id": "txtai-local-semantic-search",
+  "name": "txtai Open-Source Local Semantic Search and Embeddings",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source Python framework for local semantic/vector search, embeddings indexes and RAG workflows; no vendor software license fee or query quota for the self-run framework.",
+  "watch_out": "This is not free hosted txtai.cloud or free LLM inference. You supply CPU/GPU, memory, storage, model downloads and API credentials; third-party model licenses, hosted inference, infrastructure and external APIs may have separate costs or commercial restrictions.",
+  "pricing_url": "https://github.com/neuml/txtai",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
