@@ -1,0 +1,13 @@
+{
+  "id": "apache-hugegraph-self-hosted-graph",
+  "name": "Apache HugeGraph Open-Source Graph Database",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed self-hosted graph database with Gremlin and Cypher querying, REST API and graph processing tools; no license fee or vendor-hosted free resource quota.",
+  "watch_out": "Compute, backend storage, network, security, backups, operations and optional external Spark/Flink/LLM services are paid or user-operated separately. This is not a free managed graph-database plan.",
+  "pricing_url": "https://github.com/apache/hugegraph",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
