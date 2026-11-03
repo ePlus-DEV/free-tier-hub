@@ -4,7 +4,24 @@
 // before the automatic sync could silently discard their contribution.
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { loadServices, hasServiceShards } from './catalog-source.mjs';
 import path from 'node:path';
+
+export function validateMigrationParity(published, proposed) {
+  // During the one-time migration, every existing provider field and order
+  // must match the latest main branch exactly. A concurrent main change blocks
+  // the Draft migration rather than silently dropping an entry.
+  if (JSON.stringify(published) !== JSON.stringify(proposed)) {
+    const originalIDs = new Set(published.map(item => item.id));
+    const proposedIDs = new Set(proposed.map(item => item.id));
+    const missing = [...originalIDs].filter(id => !proposedIDs.has(id));
+    const extra = [...proposedIDs].filter(id => !originalIDs.has(id));
+    throw Error('Shard migration is stale relative to latest main. '
+      + 'Rebase/refresh the migration before merge. Missing IDs: '
+      + missing.join(', ') + '; new IDs: ' + extra.join(', '));
+  }
+  return true;
+}
 
 export function validateChangedPaths(paths) {
   if (paths.includes('data/services.json')) {
@@ -28,6 +45,12 @@ export function main() {
     ['diff', '--name-only', '--diff-filter=ACDMRT', `refs/remotes/origin/${base}...HEAD`],
     { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }).trim().split('\n').filter(Boolean);
   validateChangedPaths(files);
+  if (hasServiceShards() && files.includes('data/catalog-legacy-order.json')) {
+    const published = JSON.parse(execFileSync('git',
+      ['show', `refs/remotes/origin/${base}:data/services.json`],
+      { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }));
+    validateMigrationParity(published, loadServices());
+  }
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
