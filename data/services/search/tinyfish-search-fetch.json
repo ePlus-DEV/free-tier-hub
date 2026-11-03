@@ -1,0 +1,13 @@
+{
+  "id": "tinyfish-search-fetch",
+  "name": "TinyFish Search & Fetch",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Search: 30 requests/min and 500/hour; Fetch: 150 URLs/min and 1,000/day",
+  "watch_out": "Search and Fetch remain free within published rate limits even with a $0 Wallet; Agent and Browser are separate prepaid metered products. A new signup Wallet promotional grant is one-time, not recurring Search/Fetch credit. No card needed for the free Search/Fetch APIs.",
+  "pricing_url": "https://future.tinyfish.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
+import { loadServices } from './catalog-source.mjs';
 import {
   CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
   CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
@@ -575,7 +576,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   catalogPath = path.join(ROOT, 'data/services.json')) {
   const base = normalizeURL(siteURL);
   const absolute = (relative = '') => base + relative;
-  const source = validateData(JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
+  const source = validateData(path.resolve(catalogPath) === path.join(ROOT, 'data/services.json')
+    ? loadServices(ROOT) : JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
   const publishedDates = serviceAddedDates(ROOT);
   // Derive dates from the commit when each service first became visible on
   // the current branch. In particular, an old PR merged today is new today.

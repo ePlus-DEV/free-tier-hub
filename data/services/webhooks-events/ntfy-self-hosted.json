@@ -1,0 +1,14 @@
+{
+  "id": "ntfy-self-hosted",
+  "name": "ntfy Self-Hosted",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted ntfy notification server for sending and subscribing to push messages over HTTP-based topics.",
+  "watch_out": "Provide server resources and network access. Mobile push delivery, quotas, and feature availability depend on the hosting and client setup.",
+  "pricing_url": "https://ntfy.sh/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

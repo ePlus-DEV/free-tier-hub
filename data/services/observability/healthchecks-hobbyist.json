@@ -1,0 +1,14 @@
+{
+  "id": "healthchecks-hobbyist",
+  "name": "Healthchecks.io Hobbyist",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Monitor up to 20 scheduled jobs with 100 log entries per job.",
+  "watch_out": "Check alerting and retention limitations before production use.",
+  "pricing_url": "https://healthchecks.io/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

@@ -43,6 +43,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # Legacy monolith append reconciliation is not safe after the
+          # canonical catalog moves into independently versioned shards.
+          # Keep this hourly workflow in place but fail closed on the new layout;
+          # distinct-service shard PRs do not need monolith merge recovery.
+          if [ -d data/services ]; then
+            echo "::notice::Shard catalog active: skip obsolete monolith reconciliation. Update old contributor PRs on their original branches; do not rewrite author attribution."
+            exit 0
+          fi
           test -n "$BOT_TOKEN" || { echo "::error::EPLUS_BOT_TOKEN missing"; exit 1; }
 
           # Use REST login for bot-authored PRs. GitHub's GraphQL bot
@@ -237,6 +245,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # The canonical source is per-service files now; this legacy
+          # monolith recovery path must never modify or refresh shard PRs.
+          if [ -d data/services ]; then
+            echo "::notice::Shard catalog active; legacy PR reactivation is no longer applicable."
+            exit 0
+          fi
           test -n "$BOT_TOKEN" || { echo "::error::Missing EPLUS_BOT_TOKEN"; exit 1; }
 
           # GitHub REST uses github-actions[bot]; GraphQL/gh pr list can

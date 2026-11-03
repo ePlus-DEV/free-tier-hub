@@ -1,0 +1,14 @@
+{
+  "id": "emailoctopus-starter",
+  "name": "EmailOctopus Starter Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "2,500 subscribers and 10,000 emails per month.",
+  "watch_out": "Branding on emails; 30-day reporting; one landing page and one form.",
+  "pricing_url": "https://emailoctopus.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

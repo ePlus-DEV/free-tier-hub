@@ -1,0 +1,13 @@
+{
+  "id": "gemini-app-free",
+  "name": "Google Gemini App Free",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Free Gemini app with Google Account; AI chat, image creation, Gemini Live and limited Deep Research",
+  "watch_out": "Model and feature access varies by region and changes with demand; paid Google AI plans offer higher usage. Not the Gemini Developer API.",
+  "pricing_url": "https://gemini.google/subscriptions/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-13",
+  "deployment_model": "cloud"
+}

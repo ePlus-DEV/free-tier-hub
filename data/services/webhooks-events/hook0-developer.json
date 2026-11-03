@@ -1,0 +1,13 @@
+{
+  "id": "hook0-developer",
+  "name": "Hook0 Developer Free",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "100 webhook events/day; 10 event types; 10 subscriptions; 1 application and 1 developer; 7-day event retention",
+  "watch_out": "Extra events on the hosted Developer Free plan are blocked with HTTP 429, not automatically billed. Retries, HMAC signing and delivery logs are included. Separately offered SSPL-1.0 self-hosted Hook0 requires your own infrastructure; this listing is for the managed Cloud Developer plan. No credit card required.",
+  "pricing_url": "https://www.hook0.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

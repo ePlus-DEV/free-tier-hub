@@ -1,0 +1,13 @@
+{
+  "id": "algolia-free",
+  "name": "Algolia Free Search",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "10K searches/month; 50K records; 5K recommendation requests and 5K crawls/month",
+  "watch_out": "The standalone Free plan has fixed search/record/recommendation/crawl limits, no card requirement, and can be used for commercial production sites; Grow and Grow Plus are distinct metered plans that can bill for overages. Confirm the plan before enabling paid usage.",
+  "pricing_url": "https://www.algolia.com/pricing/free-plan",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud"
+}

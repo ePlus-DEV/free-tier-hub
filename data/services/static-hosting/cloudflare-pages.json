@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-pages",
+  "name": "Cloudflare Pages",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "500 builds/month on Free; 20,000 files/site, 25 MiB maximum per file and up to 100 custom domains/project",
+  "watch_out": "One concurrent build per Free account; 20-minute build timeout. Pages Functions consume the separate Workers quota (100,000 Free requests/day with 10 ms CPU time each), not unlimited backend compute.",
+  "pricing_url": "https://developers.cloudflare.com/pages/platform/limits/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

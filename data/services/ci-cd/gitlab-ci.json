@@ -1,0 +1,13 @@
+{
+  "id": "gitlab-ci",
+  "name": "GitLab CI/CD Free",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "400 compute minutes/month per GitLab.com Free top-level namespace on eligible GitLab-hosted instance runners",
+  "watch_out": "Minutes are calculated as job duration multiplied by the runner/project cost factor and shared across the namespace. When the monthly quota is exhausted, additional hosted-runner jobs can be blocked; purchased extra compute and storage are separate. Self-managed runners use your own infrastructure.",
+  "pricing_url": "https://docs.gitlab.com/ci/pipelines/compute_minutes/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

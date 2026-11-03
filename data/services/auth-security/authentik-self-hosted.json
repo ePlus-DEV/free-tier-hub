@@ -1,0 +1,14 @@
+{
+  "id": "authentik-self-hosted",
+  "name": "authentik Self-Hosted",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted authentik identity provider for single sign-on, user management, and application access.",
+  "watch_out": "Host the application and its supporting services yourself; configure secure access and backups. Enterprise features or managed offerings may cost extra.",
+  "pricing_url": "https://goauthentik.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

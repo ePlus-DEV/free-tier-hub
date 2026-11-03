@@ -1,0 +1,13 @@
+{
+  "id": "chatgpt-free",
+  "name": "ChatGPT Free",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Free AI chat, web search and limited access to file uploads, image tools and data analysis",
+  "watch_out": "Message and tool limits vary; higher usage and advanced capabilities require paid plans. Consumer Free is not an API credit tier.",
+  "pricing_url": "https://openai.com/chatgpt/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-13",
+  "deployment_model": "cloud"
+}

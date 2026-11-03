@@ -1,0 +1,13 @@
+{
+  "id": "firebase-rtdb",
+  "name": "Firebase Realtime Database (Spark)",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Firebase Realtime Database on Spark: 1 GB stored, 10 GB downloaded/month and 100 simultaneous connections",
+  "watch_out": "Spark requires no payment method and does not support multiple Realtime Database instances in one project. The 10 GB download quota is monthly (Blaze uses a different daily free allowance); excess Spark usage is restricted rather than silently becoming paid. Firebase Hosting and other products have separate limits.",
+  "pricing_url": "https://firebase.google.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

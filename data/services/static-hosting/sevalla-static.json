@@ -1,0 +1,13 @@
+{
+  "id": "sevalla-static",
+  "name": "Sevalla Static Site Hosting",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "Sevalla Static Site Hosting: 100 static sites/account, 600 build minutes/month, 100 GB bandwidth/month and 1 GB/site maximum",
+  "watch_out": "The static-site tier is Free under provider fair-use limits; application/database hosting is paid after a separate trial, not included in this Free static plan. One concurrent build/site; usage beyond the free bandwidth/build quotas may scale into billable resources. Confirm payment requirements before enabling paid usage.",
+  "pricing_url": "https://sevalla.com/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

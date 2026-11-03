@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-r2",
+  "name": "Cloudflare R2 Standard",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "R2 Standard: 10 GB-month storage, 1M Class A operations and 10M Class B operations per month; no egress fee",
+  "watch_out": "The ongoing monthly free quota applies only to R2 Standard storage, NOT Infrequent Access (which also has retrieval fees). Storage and request usage above the allowance are billed; track billable-unit rounding and avoid confusing free egress with free storage.",
+  "pricing_url": "https://developers.cloudflare.com/r2/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

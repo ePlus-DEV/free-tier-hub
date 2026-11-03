@@ -1,0 +1,13 @@
+{
+  "id": "vercel",
+  "name": "Vercel Hobby",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "100 GB Fast Data Transfer/month, 1M Edge Requests/month and included Vercel Functions on the free Hobby plan",
+  "watch_out": "Hobby is for personal, non-commercial projects only; not for running a business or commercial SaaS. On most quotas, exceeding the free allowance stops the affected feature until the usage period resets. Pro features and its 14-day promotional trial are separate.",
+  "pricing_url": "https://vercel.com/docs/plans/hobby",
+  "credit_card": "no",
+  "commercial_use": "no",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

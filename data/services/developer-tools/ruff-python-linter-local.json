@@ -1,0 +1,13 @@
+{
+  "id": "ruff-python-linter-local",
+  "name": "Astral Ruff Open-Source Python Linter and Formatter",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local Python linting and formatting CLI with hundreds of built-in rules, auto-fixes and editor integrations; unlimited local use without a subscription.",
+  "watch_out": "You provide your own workstation or CI runner; remote CI, repository hosting and third-party integrations may cost money. Ruff does not include a hosted code-quality dashboard or paid infrastructure.",
+  "pricing_url": "https://github.com/astral-sh/ruff",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}

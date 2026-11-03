@@ -1,0 +1,13 @@
+{
+  "id": "motherduck-lite",
+  "name": "MotherDuck Lite",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "10 GB storage and 10 Pulse compute CU-hours/month; up to 3 internal active users and 2 service accounts",
+  "watch_out": "Lite is an ongoing $0 tier with 10 GB storage and 10 hours of Pulse compute/month; a card is not needed. An optional 7-day Business trial is separate and does not terminate the free Lite plan. Customer-facing embedding/redistribution is restricted on Lite; usage beyond Lite included quotas needs a paid plan.",
+  "pricing_url": "https://motherduck.com/product/pricing/",
+  "credit_card": "no",
+  "commercial_use": "no",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

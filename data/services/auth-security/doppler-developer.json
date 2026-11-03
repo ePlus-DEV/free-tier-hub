@@ -1,0 +1,13 @@
+{
+  "id": "doppler-developer",
+  "name": "Doppler Developer",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "3 users free; 5 config syncs; 3 days of activity logs",
+  "watch_out": "The ongoing Developer tier includes 3 users, 5 config syncs and 3-day audit activity logs. Each extra developer is $8/month. The separate Team tier has an introductory 14-day premium trial; do not classify that trial as expiry of Developer Free.",
+  "pricing_url": "https://www.doppler.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

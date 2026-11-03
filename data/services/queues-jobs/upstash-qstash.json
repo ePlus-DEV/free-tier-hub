@@ -1,0 +1,13 @@
+{
+  "id": "upstash-qstash",
+  "name": "Upstash QStash Free",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Upstash QStash Free: 1,000 message delivery attempts/day, 50 GB bandwidth/month, 10 active schedules and 1 MB messages",
+  "watch_out": "Each delivery attempt—including retries—counts against the daily quota; one topic publish costs a delivery per subscribed endpoint. Free includes maximum 7-day delay, 3-day logs/DLQ retention and 10 concurrent deliveries; paid plans increase quotas. Do not confuse published jobs with billed delivery attempts.",
+  "pricing_url": "https://upstash.com/pricing/qstash",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

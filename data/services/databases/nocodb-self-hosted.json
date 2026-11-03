@@ -1,0 +1,14 @@
+{
+  "id": "nocodb-self-hosted",
+  "name": "NocoDB Self-Hosted",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted NocoDB spreadsheet-style database interface and collaboration tools over supported data sources.",
+  "watch_out": "Hosting, underlying database, storage, and operations are your responsibility. Check which collaboration and governance features require paid tiers.",
+  "pricing_url": "https://nocodb.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

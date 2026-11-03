@@ -2,7 +2,7 @@
 
 Thanks for helping keep this free-tier directory accurate. **Official provider pricing and documentation are the source of truth**—not referral pages, blog summaries, or AI-generated prices.
 
-There are **two ways to contribute**. You do not need to know Git, Node.js, or JSON to suggest a service.
+There are **two ways to contribute**. You do not need to know Git, Node.js, or JSON to suggest a service. The catalog is stored as **one JSON object per service** under `data/services/<category>/<id>.json`; the consolidated `data/services.json` and website assets are generated outputs.
 
 ## Option A: Suggest a service without code (recommended for beginners)
 
@@ -13,15 +13,15 @@ There are **two ways to contribute**. You do not need to know Git, Node.js, or J
 
 **No fork, pull request, or local commands are needed.** The public suggestion form is reviewed by maintainers; it does **not** automatically create a PR. A separate maintainer-oriented `[catalog-candidate] <id>` Issue queue exists, but requires valid JSON, trusted authorship and successful workflow execution. Do not assume an Issue automatically reaches production.
 
-**Trusted catalog candidate intake:** The Issue body must contain exactly the ten required catalog fields (`id`, `name`, `category`, `plan`, `free_limit`, `watch_out`, `pricing_url`, `credit_card`, `commercial_use`, `last_checked`), with no `deployment_model` field. After creating the Issue, a trusted repository member adds a separate JSON comment such as `{"deployment_model":"cloud","source":"https://provider.example/pricing"}` using the real official evidence URL. The queue waits for that comment, then propagates the verified mode into `data/services.json` before opening a PR. Never guess a mode from the category or software license. Existing legacy candidate Issues with a validated `deployment_model` field remain supported during migration. You may also [browse existing suggestions](https://github.com/ePlus-DEV/free-tier-hub/issues) to avoid duplicates.
+**Trusted catalog candidate intake:** The Issue body must contain exactly the ten required catalog fields (`id`, `name`, `category`, `plan`, `free_limit`, `watch_out`, `pricing_url`, `credit_card`, `commercial_use`, `last_checked`), with no `deployment_model` field. After creating the Issue, a trusted repository member adds a separate JSON comment such as `{"deployment_model":"cloud","source":"https://provider.example/pricing"}` using the real official evidence URL. The queue waits for that comment, then writes the verified service into `data/services/<category>/<id>.json` before opening a PR. Never guess a mode from the category or software license. Existing legacy candidate Issues with a validated `deployment_model` field remain supported during migration. You may also [browse existing suggestions](https://github.com/ePlus-DEV/free-tier-hub/issues) to avoid duplicates.
 
 ## Option B: Contribute directly using a fork and pull request
 
 Use this route if you want to edit the catalog yourself. **You do not need Node.js or a terminal**: GitHub Actions automatically generates category documentation and validates contributions when you open a PR. You may edit your fork directly in GitHub's web interface.
 
 1. [Fork this repository](https://github.com/ePlus-DEV/free-tier-hub/fork). Create a feature branch from its latest `main`, such as `catalog/add-example-free`. You can edit in GitHub's website or clone your fork if preferred.
-2. In **`data/services.json`**, add or update one entry, using the [fields](#catalog-fields) below and the provider's current official source. Check whether the entry already exists, even under a slightly different name. Use the actual verification date in `last_checked`. Include `deployment_model` for new or updated entries; use `unclassified` when the official evidence is inconclusive.
-3. **Only edit `data/services.json` by hand for a standard service addition.** README totals and category counts use automatic badges. GitHub Actions regenerates the category-page tables in `docs/*.md`; do not edit those files or badge URLs manually. Provider logos are resolved automatically from the official `pricing_url` domain; standard additions do not require a logo file or mapping.
+2. Create or edit **`data/services/<category>/<id>.json`** (for example, `data/services/developer-tools/my-tool.json`) with **one JSON object**, using the [fields](#catalog-fields) below and the provider's current official source. The file's folder and name must equal the object's `category` and `id`. Check for duplicates under other names first. Use your real `last_checked` date and a reviewed `deployment_model` (or `unclassified` when evidence is inconclusive).
+3. **Do not edit `data/services.json` by hand.** It is the generated compatibility aggregate for existing raw-file clients and badges. `data/catalog-legacy-order.json` preserves the migration order; never append IDs to it. `docs/*.md` category tables are generated. Website search files under `dist/search/` are **build outputs**, not source files to commit. GitHub Actions will generate the aggregate and category tables in CI.
 4. **No local commands are required.** GitHub Actions runs the equivalent of `npm run catalog:sync` and `npm run verify` automatically on your PR. The generated category files are used to validate the PR in CI, but the workflow **does not push changes back to contributor forks**. If you prefer local checks, Node.js 24 LTS needs no `npm install`:
 
    ```bash
@@ -29,17 +29,18 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
    npm run verify
    ```
 
-5. Commit **`data/services.json` only** for a standard service addition. Push your branch to your fork and open a PR against [`ePlus-DEV/free-tier-hub:main`](https://github.com/ePlus-DEV/free-tier-hub/compare). No README or generated documentation changes are required in the PR.
+5. Commit **only your `data/services/<category>/<id>.json` source file** for a standard service addition or update. If removing or moving an existing listing, delete or move its old shard as appropriate. Push your branch to your fork and open a PR against [`ePlus-DEV/free-tier-hub:main`](https://github.com/ePlus-DEV/free-tier-hub/compare). No README or generated documentation changes are required in the PR.
 6. In the PR, explain what changed and include official source URLs and the date checked. Keep the PR focused on one provider/product or a small related set.
 
-**What updates automatically:** The README total-service badge reads `main/data/services.json`; category badges reflect the latest successful Pages deploy. GitHub Actions generates matching `docs/*.md` tables in the runner for PR checks. **After the PR is reviewed and merged**, the Pages workflow commits any updated category tables to `main` using the built-in `GITHUB_TOKEN`. Forks are never written to. A JSON-only PR passes consistency checks as long as its catalog data is valid; a green check does **not** prove the provider's pricing claims. Badges may refresh later due to deploy or caching. If GitHub branch protection blocks an automated docs commit, maintainers must resolve that failed build without bypassing protection.
+**What updates automatically:** The README total-service badge still reads generated `main/data/services.json`; category badges reflect the latest successful Pages deploy. GitHub Actions regenerates the aggregate and matching `docs/*.md` tables in an **ephemeral CI workspace** before verification. **After the PR is reviewed and merged**, the Pages workflow commits updated generated files to `main` using `GITHUB_TOKEN`. Forks are never written to. Website search assets are built from the canonical service shards; do not submit generated `dist/` files. A green check confirms code/data consistency, **not** the truth of provider pricing claims. Badges and public search data may refresh only after the successful production deploy. If branch protection blocks generated-doc commits, maintainers must resolve the failed build without bypassing protection.
 
 **Provider data verification:** `npm run verify` checks JSON and Markdown consistency; it does **not** check live pricing, quotas or official terms. See [the source audit guide](docs/source-audit.md) for the read-only URL health report and required manual verification before changing `last_checked`.
 
 **Fork and review notes:**
 - CI regenerates derived docs for external PRs but **does not push changes back to contributor forks**. After merging, a protected `main` workflow persists those docs in the original repository. For first-time contributions, GitHub may require a maintainer to approve the workflow run; that is not automatically a rejection.
 - `eplus-bot` can review/approve when checks succeed, but **external contributions are not automatically merged**. Maintainers still review official pricing and restrictions.
-- When `main` changes before your PR is merged, your branch may need an update or conflict resolution. Ask a maintainer if you need help.
+- When `main` changes before your PR is merged, your branch may need an update. Individual service files eliminate unrelated append conflicts; ask a maintainer if you need help.
+- **Existing pre-migration PRs:** keep your original PR open and update that branch to the new structure. Move your proposed entry from `data/services.json` into `data/services/<category>/<id>.json`, restore `data/services.json` to the latest generated version from `main`, and rerun CI. This preserves original PR and commit attribution. Do not create a replacement maintainer-authored PR solely to resolve a monolithic catalog conflict. See [the migration examples below](#creating-updating-and-migrating-service-files).
 - After an external PR is merged, `eplus-bot` posts a thank-you comment. It does not require linking an Issue first.
 
 ### Editorial guidelines
@@ -61,6 +62,35 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - **Categories:** use an existing category from `scripts/catalog.mjs` for normal additions. The site generates the full category dropdown automatically. New categories require coordinated updates to catalog validation, site labels/icons and generated documentation; propose them in an Issue first.
 - **Share a filtered view:** select the relevant category and filters, then copy the current URL. Query parameters are `category`, `q`, `sort`, `offer=ongoing|monthly-credit|limited`, `no_card=1`, `commercial=1`, and `hosting=cloud|self-hosted|hybrid|local|unclassified`. The site restores these selections when a shared link is opened or reloaded. Include this URL when reporting a filtering problem.
 - For website UI changes, also run `npm run build` after `npm run verify`. Check desktop/mobile, light/dark themes, category, billing and deployment filters, URL restoration after reload, and desktop popover/mobile bottom-sheet behavior before considering visual review complete.
+
+## Creating, updating, and migrating service files
+
+**One service = one file.** Every JSON shard contains **one object** (not an array), and its folder/filename must agree with its `category`/`id` fields. For example, to add a verified developer tool you would create `data/services/developer-tools/example-cli.json`:
+
+```json
+{
+  "id": "example-cli",
+  "name": "Example CLI Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Describe the independently verified allowance and reset period",
+  "watch_out": "Describe specific restrictions or additional model/hosting costs",
+  "pricing_url": "https://example.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "local",
+  "last_checked": "2026-11-03"
+}
+```
+
+*Illustrative example only: replace all placeholder information with real official evidence before submitting; never submit invented pricing or verification dates.*
+
+- **Correct a listing:** locate its `id` in `data/services/` and edit **that file**, retaining the same ID. Do not create a second record for the same offer.
+- **Remove a discontinued offer:** delete its shard and explain the official evidence; the generated aggregate, badge counts and category page update on build.
+- **Move a category / rename an ID:** move/rename the old shard and change the matching fields together. Note that changing an ID changes its public `/service/<id>/` URL and needs explicit maintainer review of redirects/external links. Do not leave both files present.
+- **An old PR still edits the monolith:** preserve the **same contributor PR**, update the fork branch to current `main`, create the relevant shard, undo the manual `data/services.json` edit and remove any generated files from the PR diff. Then rerun Checks. Maintainers should help resolve the original PR instead of substituting their own PR.
+- **Verify locally (optional):** run `npm run catalog:sync && npm run verify && npm run build`. The sync step may modify generated files **in your working tree**; leave those out of the service-only commit. For GitHub web contributions, CI performs sync/validation without pushing changes to your fork.
+- **On GitHub Pages:** the production build publishes `/catalog.json` as a full backward-compatible API, while Home can use small versioned `/search/` assets (after the separate search optimization is released). Neither is a canonical source file.
 
 ## Catalog fields
 
@@ -97,7 +127,7 @@ See [Offer classifications](docs/classifications.md) for editorial rules and the
 - [ ] Expiration, sleep, billing, payment-card, and commercial-use caveats are appropriately disclosed or marked unconfirmed.
 - [ ] Deployment model describes this specific listed offer, backed by the official source. Separate cloud/self-hosted editions are not automatically hybrid; unclear evidence uses `unclassified`.
 - [ ] No duplicated provider/product entry is being added.
-- [ ] CI generated matching category tables from `data/services.json`, and README dynamic badge URLs remain intact (no manual count edits).
+- [ ] CI regenerated `data/services.json` and category tables from the canonical service shards, and README badge URLs remain intact (no manual count edits).
 - [ ] `npm run verify` passes (CI also runs the existing site tests).
 
 ### Deployment model
@@ -108,7 +138,7 @@ Include `deployment_model` when adding or updating a catalog entry to classify t
 `local` (desktop, CLI, SDK or embedded library), or `unclassified`.
 Use the linked official source and the entry's allowance/caveat as evidence. A separately
 sold self-hosted edition does not make a Cloud Free entry hybrid. Missing metadata
-remains unclassified; the UI never guesses from a service name or category. Candidate intake, backlog delivery and conflict recovery use the same validator. Delivery preserves the original reviewed JSON, including this field; it does not infer values or refresh verification dates.
+remains unclassified; the UI never guesses from a service name or category. Candidate intake and backlog delivery use the same validator. The old single-file conflict-recovery mechanism is skipped after shard migration, because unrelated service PRs should no longer touch the same file. Delivery preserves the original reviewed JSON, including this field; it does not infer values or refresh verification dates.
 
 The initial metadata migration uses the existing catalog descriptions and source links;
 it does not reverify pricing or change `last_checked`.

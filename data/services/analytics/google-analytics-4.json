@@ -1,0 +1,14 @@
+{
+  "id": "google-analytics-4",
+  "name": "Google Analytics 4",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "No-cost standard Google Analytics 4 property for website and app event collection, reports, audiences, and explorations.",
+  "watch_out": "Standard properties have configuration, reporting, and data-retention limits; sampling or thresholding may affect reports. Google Analytics 360 is a separate paid offering.",
+  "pricing_url": "https://marketingplatform.google.com/about/analytics/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}
