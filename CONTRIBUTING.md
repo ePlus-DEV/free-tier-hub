@@ -90,7 +90,7 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - **Move a category / rename an ID:** move/rename the old shard and change the matching fields together. Note that changing an ID changes its public `/service/<id>/` URL and needs explicit maintainer review of redirects/external links. Do not leave both files present.
 - **An old PR still edits the monolith:** preserve the **same contributor PR**, update the fork branch to current `main`, create the relevant shard, undo the manual `data/services.json` edit and remove any generated files from the PR diff. Then rerun Checks. Maintainers should help resolve the original PR instead of substituting their own PR.
 - **Verify locally (optional):** run `npm run catalog:sync && npm run verify && npm run build`. The sync step may modify generated files **in your working tree**; leave those out of the service-only commit. For GitHub web contributions, CI performs sync/validation without pushing changes to your fork.
-- **On GitHub Pages:** the production build publishes `/catalog.json` as a full backward-compatible API, while Home can use small versioned `/search/` assets (after the separate search optimization is released). Neither is a canonical source file.
+- **On GitHub Pages:** the production build publishes `/catalog.json` as a full backward-compatible API, while Home uses versioned `/search/index.json` and `/search/cards/<category>.json` assets generated from the canonical source. Neither is a source file to edit or commit. Generated search assets are tested independently of any contributor PR.
 
 ## Catalog fields
 
