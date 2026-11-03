@@ -1,0 +1,13 @@
+{
+  "id": "gemini-api",
+  "name": "Google Gemini Developer API Free",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "Free input and output tokens for eligible Gemini models; Google AI Studio access",
+  "watch_out": "Gemini Developer API Free eligibility, per-model token billing and rate limits vary by current model, geography and request mode. No broad promise of unlimited free API use; free-tier content may be used to improve Google products. Cloud billing is separate for paid-tier access.",
+  "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

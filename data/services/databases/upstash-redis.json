@@ -1,0 +1,13 @@
+{
+  "id": "upstash-redis",
+  "name": "Upstash Redis Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "One Free Upstash Redis database: 256 MB data, 500,000 commands/month and 10 GB monthly bandwidth",
+  "watch_out": "Instant databases created without signup are deleted after 3 days unless claimed in an account. The claimed Free tier has ongoing monthly quotas; entering a credit card upgrades the database to Pay-as-you-go pricing, whose usage is charged separately.",
+  "pricing_url": "https://upstash.com/pricing/redis",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

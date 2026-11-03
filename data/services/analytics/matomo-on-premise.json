@@ -1,0 +1,14 @@
+{
+  "id": "matomo-on-premise",
+  "name": "Matomo On-Premise",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Matomo web analytics software for visitor statistics, event tracking, and reporting; hosting is not included.",
+  "watch_out": "You must provide server resources, database storage, updates, backups, and any required privacy controls. Some premium plugins and managed services cost extra.",
+  "pricing_url": "https://matomo.org/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

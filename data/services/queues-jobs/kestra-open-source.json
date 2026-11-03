@@ -1,0 +1,14 @@
+{
+  "id": "kestra-open-source",
+  "name": "Kestra Open Source",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Kestra orchestration engine for workflows, scheduled jobs, and data pipelines.",
+  "watch_out": "Provide compute, storage, and any worker infrastructure yourself. Enterprise-specific features and managed hosting are separate.",
+  "pricing_url": "https://kestra.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

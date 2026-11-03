@@ -1,0 +1,14 @@
+{
+  "id": "growthbook-self-hosted",
+  "name": "GrowthBook Self-Hosted",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted GrowthBook feature flags and experimentation interface for managing rollouts and A/B tests.",
+  "watch_out": "Compute, database, and telemetry collection are yours to provide. Review open-source edition and paid governance/enterprise capabilities.",
+  "pricing_url": "https://www.growthbook.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - 'data/services.json'
+      - 'data/services/**'
   pull_request_target:
     # Also handle a post-merge edit as a safe, idempotent way to retry a thank-you.
     # No pull-request code is checked out or executed in this workflow.
@@ -122,7 +123,8 @@ jobs:
           import { execFileSync } from 'node:child_process';
           import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
           const repo = process.env.GITHUB_REPOSITORY;
-          const catalog = JSON.parse(fs.readFileSync('data/services.json', 'utf8'));
+          const { loadServices } = await import('./scripts/catalog-source.mjs');
+          const catalog = loadServices();
           const ids = new Set(catalog.map(item => item.id));
           const catalogSha = execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim();
           let page = 1;

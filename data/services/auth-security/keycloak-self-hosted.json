@@ -1,0 +1,14 @@
+{
+  "id": "keycloak-self-hosted",
+  "name": "Keycloak Self-Hosted",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Keycloak identity and access management with single sign-on, OAuth 2.0, and OpenID Connect.",
+  "watch_out": "You run the identity server and database; secure TLS, upgrades, backups, and availability. Vendor hosting and enterprise support are not included.",
+  "pricing_url": "https://www.keycloak.org/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

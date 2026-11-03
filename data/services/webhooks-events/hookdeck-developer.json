@@ -1,0 +1,13 @@
+{
+  "id": "hookdeck-developer",
+  "name": "Hookdeck Developer",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "10,000 events/month; 100,000 discarded requests/month; 5 events/second per destination; 3-day event retention",
+  "watch_out": "Developer is an ongoing $0 plan with 10,000 monthly events, one user, three-day retention and five events/second/destination. One inbound request may create multiple events; retries are included. After 10,000 events the dashboard locks until renewal or upgrade; excessive overages may stop processing. Paid Team/Growth use separate metered billing.",
+  "pricing_url": "https://hookdeck.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

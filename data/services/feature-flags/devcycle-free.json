@@ -1,0 +1,13 @@
+{
+  "id": "devcycle-free",
+  "name": "DevCycle Free",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "1,000 client-side MAUs; 10,000 cloud config requests/month; 100,000 server config requests/month; 5,000 events/month; unlimited feature flags and seats",
+  "watch_out": "Client-side MAUs count unique client SDK initializations, while cloud-bucketing requests, server SDK configuration fetches and events have separate quotas. Free has no credit card requirement. Paid Business features and overages are separate; the pricing page does not clearly specify Free over-quota behavior, so do not assume unlimited calls or automatic billing.",
+  "pricing_url": "https://devcycle.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

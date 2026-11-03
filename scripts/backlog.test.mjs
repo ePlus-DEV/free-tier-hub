@@ -140,6 +140,12 @@ test('candidate delivery validates the committed service before branch push', ()
   assert.ok(commit >= 0 && commit < verify && verify < checked && checked < push,
     'verify the actual local commit before pushing the candidate branch');
   assert.match(delivery, /git ls-remote --exit-code --heads origin/);
+  assert.match(workflow, /writeService\(process\.cwd\(\), candidate\)/,
+    'candidate workflow must write a targeted canonical shard');
+  assert.match(delivery, /git add -- data\/services\//,
+    'candidate PR must stage service shards only, never the generated aggregate');
+  assert.doesNotMatch(delivery, /git add data\/services\.json/,
+    'generated compatibility aggregate must not be committed in service-addition PRs');
   assert.match(workflow, /\[ "\$open_count" -ge 3 \]/);
 });
 

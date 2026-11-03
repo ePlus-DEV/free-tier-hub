@@ -1,0 +1,14 @@
+{
+  "id": "onesignal-free",
+  "name": "OneSignal Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "10,000 emails/month; mobile push and in-app messaging for up to 1,000 monthly active users; web push up to 10,000 subscribers per send.",
+  "watch_out": "Free mobile MAU cap applies from October 2026; paid messaging and advanced features are separate.",
+  "pricing_url": "https://onesignal.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

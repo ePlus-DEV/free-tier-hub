@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-workers-ai",
+  "name": "Cloudflare Workers AI Free",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "10,000 Workers AI Neurons/day across eligible inference models (resets daily at 00:00 UTC)",
+  "watch_out": "Free neuron allowance covers only eligible Workers AI models; requests above it fail until reset or upgrade to Workers Paid, which bills excess neurons. Some frontier models require Workers Paid or prepaid AI Gateway credits even before daily free allocation is exhausted. Standard Workers request/CPU quotas also apply.",
+  "pricing_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

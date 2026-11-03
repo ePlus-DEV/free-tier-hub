@@ -1,0 +1,14 @@
+{
+  "id": "pocketbase-self-hosted",
+  "name": "PocketBase Self-Hosted",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted PocketBase backend with an embedded database, authentication, file storage, and real-time subscriptions.",
+  "watch_out": "Runs on your infrastructure rather than a hosted free quota. Plan for persistent disk, backups, security updates, and deployment/scale constraints.",
+  "pricing_url": "https://pocketbase.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

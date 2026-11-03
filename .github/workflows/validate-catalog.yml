@@ -4,6 +4,8 @@ on:
     paths:
       - README.md
       - CONTRIBUTING.md
+      - .github/PULL_REQUEST_TEMPLATE.md
+      - .github/ISSUE_TEMPLATE/**
       - data/**
       - docs/**
       - scripts/**
@@ -15,6 +17,9 @@ on:
     branches: [main, 'catalog/**']
     paths:
       - README.md
+      - CONTRIBUTING.md
+      - .github/PULL_REQUEST_TEMPLATE.md
+      - .github/ISSUE_TEMPLATE/**
       - data/**
       - docs/**
       - scripts/**
@@ -40,6 +45,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
+      - name: Reject legacy monolith edits in pull requests
+        run: node scripts/validate-catalog-pr.mjs
       - name: Regenerate category documentation in CI
         run: npm run catalog:sync
       - name: Verify catalog and generated Markdown with Node.js

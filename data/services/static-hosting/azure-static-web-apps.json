@@ -1,0 +1,13 @@
+{
+  "id": "azure-static-web-apps",
+  "name": "Azure Static Web Apps Free",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free static web app plan: 100 GB bandwidth per subscription, 2 custom domains/app and free managed SSL",
+  "watch_out": "For hobby/personal projects; no SLA or Standard-plan features. Free includes 0.50 GB storage overall with a 0.25 GB maximum size per app deployment. When bandwidth quota is exceeded, the site cannot be served.",
+  "pricing_url": "https://azure.microsoft.com/en-us/pricing/details/app-service/static/",
+  "credit_card": "check",
+  "commercial_use": "no",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

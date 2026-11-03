@@ -1,0 +1,13 @@
+{
+  "id": "grafana-cloud",
+  "name": "Grafana Cloud Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Grafana Cloud Free: 10,000 active metric series/month and 50 GB logs ingested/month, with 14-day free retention",
+  "watch_out": "No credit card for ongoing Free, but metrics, logs, traces, profiles and synthetic tests have separate usage caps. Free retention is 14 days for metrics, logs and traces; Pro starts with a $19/month platform fee plus usage. Do not mistake self-hosted Grafana OSS for free managed ingestion.",
+  "pricing_url": "https://grafana.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

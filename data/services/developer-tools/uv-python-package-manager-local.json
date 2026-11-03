@@ -1,0 +1,13 @@
+{
+  "id": "uv-python-package-manager-local",
+  "name": "Astral uv Open-Source Python Package Manager",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT/Apache-2.0 local Python package and project manager with dependency resolution, lockfiles, Python version management and CLI tool installation; no license fee or per-project quota.",
+  "watch_out": "This is local MIT/Apache-2.0 software, not a hosted Python development plan. Python packages and registries have independent terms; CI runners, private registries, cloud compute and bandwidth can cost money.",
+  "pricing_url": "https://github.com/astral-sh/uv",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

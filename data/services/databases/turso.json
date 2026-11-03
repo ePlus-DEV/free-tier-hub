@@ -1,0 +1,13 @@
+{
+  "id": "turso",
+  "name": "Turso Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Free: 100 databases, 5 GB total storage, 500M rows read and 10M rows written/month, plus 3 GB monthly sync",
+  "watch_out": "Turso's $0 Free plan has no credit card requirement, but reads, writes, storage and embedded sync each have independent limits. Free has 1-day audit log retention; point-in-time restore and deleted database recovery are paid-plan features. Avoid treating 3 GB sync as unlimited network traffic.",
+  "pricing_url": "https://turso.tech/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

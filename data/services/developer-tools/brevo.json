@@ -1,0 +1,13 @@
+{
+  "id": "brevo",
+  "name": "Brevo Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Brevo Free: 300 emails sent/day and storage for up to 100,000 contacts, with no plan expiry",
+  "watch_out": "Unused daily sends do not roll over. Campaigns above 300 recipients require manually requeuing remaining contacts; transactional messages can queue up to 1,000 excess sends. Free includes Brevo branding, 1 account user, basic reporting and up to 2,000 unique contacts entering automations. Paid plan required for higher quotas and advanced features.",
+  "pricing_url": "https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

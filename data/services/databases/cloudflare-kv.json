@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-kv",
+  "name": "Cloudflare Workers KV Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Workers Free KV: 1 GB stored, 100K key reads/day and 1K each of key writes, deletes and list requests/day",
+  "watch_out": "Read/write/delete/list limits are separate, reset at 00:00 UTC, and exceeding any quota causes that operation to fail. Dashboard and Wrangler operations count toward limits; missing-key reads also count. No KV egress charge, but Workers requests and CPU quotas are separate.",
+  "pricing_url": "https://developers.cloudflare.com/kv/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

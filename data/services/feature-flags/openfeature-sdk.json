@@ -1,0 +1,14 @@
+{
+  "id": "openfeature-sdk",
+  "name": "OpenFeature SDK",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "OpenFeature provides free, vendor-neutral SDKs and an API specification for evaluating feature flags in applications.",
+  "watch_out": "OpenFeature is a specification and SDK ecosystem, not a hosted flag-management service. You still need a provider and flag backend; their hosting and licensing may incur costs.",
+  "pricing_url": "https://openfeature.dev/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "local"
+}

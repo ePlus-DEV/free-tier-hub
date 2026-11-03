@@ -1,0 +1,14 @@
+{
+  "id": "amplitude-free",
+  "name": "Amplitude Free",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "2 million events/month; 10,000 session replays/month; unlimited seats.",
+  "watch_out": "Advanced analytics and longer retention require paid tiers.",
+  "pricing_url": "https://amplitude.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "flipt-self-hosted",
+  "name": "Flipt Self-Hosted",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Flipt feature-flag management and flag evaluation services for applications.",
+  "watch_out": "Requires your own hosting, persistence, and configuration. Check deployment mode, current license, and external storage requirements.",
+  "pricing_url": "https://www.flipt.io/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

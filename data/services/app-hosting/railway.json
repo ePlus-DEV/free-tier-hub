@@ -1,0 +1,13 @@
+{
+  "id": "railway",
+  "name": "Railway Free",
+  "category": "app-hosting",
+  "plan": "monthly-credit",
+  "free_limit": "$1 recurring Free-plan credit/month after a one-time $5 trial credit lasting up to 30 days",
+  "watch_out": "Railway Free is $0/month; its $1 recurring credit does not roll over. New users initially receive a one-time $5 trial grant that expires after 30 days or when depleted; trial accounts can have restricted outbound networking until verification. Trial stateful volumes may be deleted 30 days after credit expiry. Monitor resource usage and billing before upgrading.",
+  "pricing_url": "https://docs.railway.com/pricing/free-trial",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

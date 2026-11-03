@@ -1,0 +1,14 @@
+{
+  "id": "searxng-self-hosted",
+  "name": "SearXNG Self-Hosted",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted SearXNG metasearch engine that aggregates results from configured search engines.",
+  "watch_out": "Results depend on external engines, which may rate-limit or block instances. Server operation, network access, and privacy controls are your responsibility.",
+  "pricing_url": "https://docs.searxng.org/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

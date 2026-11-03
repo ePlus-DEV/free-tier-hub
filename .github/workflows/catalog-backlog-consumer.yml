@@ -69,8 +69,8 @@ jobs:
           }
           const issues = api('issues?state=all&per_page=100');
           const prs = api('pulls?state=all&per_page=100');
-          const catalogIds = new Set(JSON.parse(fs.readFileSync('data/services.json', 'utf8'))
-            .map(service => service.id));
+          const { loadServices } = await import('./scripts/catalog-source.mjs');
+          const catalogIds = new Set(loadServices().map(service => service.id));
 
           // Resume the oldest trusted Issue skipped by the PR limit before opening
           // a new one. Existing or closed PR branches are never regenerated.

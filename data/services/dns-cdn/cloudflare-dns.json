@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-dns",
+  "name": "Cloudflare DNS & CDN Free",
+  "category": "dns-cdn",
+  "plan": "ongoing",
+  "free_limit": "Free authoritative DNS, CDN, universal SSL and DDoS protection",
+  "watch_out": "Free provides authoritative DNS, basic CDN, universal SSL and DDoS protections for eligible zones; the free CDN is not website hosting. Zones created after September 2024 have lower record-count defaults (check the currently applicable DNS record cap); advanced performance/WAF features may require paid plans.",
+  "pricing_url": "https://www.cloudflare.com/plans/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "inngest-hobby",
+  "name": "Inngest Hobby",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Inngest Cloud Free: 50,000 executions/month, 500,000 events/month, 5 concurrent steps, 5 seats and 3 workers",
+  "watch_out": "No card required. A single function run and every step execution each consume one execution (five steps use six executions). Free includes 100,000 queue depth, 50 concurrent realtime connections and 24-hour trace/log history; function runs can sleep for at most 30 days. Extra compute/sandbox resources may be billed separately.",
+  "pricing_url": "https://www.inngest.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

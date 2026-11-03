@@ -1,0 +1,13 @@
+{
+  "id": "google-cloud-run",
+  "name": "Google Cloud Run",
+  "category": "serverless",
+  "plan": "ongoing",
+  "free_limit": "Request-based Cloud Run Free Tier: 2M requests, 180,000 vCPU-seconds and 360,000 GiB-seconds of memory/month; 1 GB eligible North America outbound transfer",
+  "watch_out": "Requires an active Cloud Billing account and valid payment method. The request-based Free Tier differs from instance-based billing; Cloud Build, Artifact Registry, logging, network egress and other products may charge separately. Paid billing accounts are charged for usage beyond the free allowance; a Free Trial account draws from its limited trial credit.",
+  "pricing_url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "upstash-search",
+  "name": "Upstash Search Free",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "One ongoing Upstash Search Free database: 20,000 search queries/month and up to 200,000 records",
+  "watch_out": "Free is a distinct capped database tier. Adding a credit card upgrades the database to pay-as-you-go ($0.05 per 1,000 billed search/upsert requests), where the Free query cap no longer applies; no automatic unlimited free usage. Pro/Enterprise trials offered on request are separate from this ongoing Free plan.",
+  "pricing_url": "https://upstash.com/pricing/search",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

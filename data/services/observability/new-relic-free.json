@@ -1,0 +1,13 @@
+{
+  "id": "new-relic-free",
+  "name": "New Relic Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "New Relic Free: 100 GB data ingest/month, one full-platform user, unlimited basic users and 500 synthetic monitoring checks",
+  "watch_out": "No credit card needed for the perpetual Free edition. Default data retention is at least 8 days, varying by data type; data ingest stops when Free exceeds its monthly 100 GB allowance until next month or upgrade. Additional full-platform seats and ingest beyond 100 GB on paid editions are billable.",
+  "pricing_url": "https://newrelic.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

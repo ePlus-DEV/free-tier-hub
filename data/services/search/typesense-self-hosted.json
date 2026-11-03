@@ -1,0 +1,14 @@
+{
+  "id": "typesense-self-hosted",
+  "name": "Typesense Self-Hosted",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Typesense search engine offering text search, indexing, filters, and typo tolerance.",
+  "watch_out": "You supply compute and persistent storage and handle cluster operations and backups. Typesense Cloud is a separate managed paid service.",
+  "pricing_url": "https://typesense.org/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

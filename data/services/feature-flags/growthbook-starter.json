@@ -1,0 +1,13 @@
+{
+  "id": "growthbook-starter",
+  "name": "GrowthBook Cloud Starter",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "3 users, 1 project, unlimited feature flags, experiments and traffic; optional managed warehouse includes 1 million events/month",
+  "watch_out": "Cloud Starter is free without a card. Bring-your-own data warehouse may have separate infrastructure charges; advanced AI Visual Editor, governance and multi-project features require Pro. The self-hosted Open Source edition is separate.",
+  "pricing_url": "https://www.growthbook.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

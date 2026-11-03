@@ -21,6 +21,8 @@ test('preview localizes nested links, keeps production canonical, removes analyt
       '<link rel="canonical" href="' + URL + '">' +
       '<link rel="stylesheet" href="' + URL + 'assets/site.css">' +
       '<script src="' + URL + 'assets/site.js"></script>' +
+      '<div id="service-grid" data-search-index="' + URL + 'search/index.json?v=abcdef123456" ' +
+      'data-search-cards="' + URL + 'search/cards/"></div>' +
       '<a href="' + URL + 'service/vercel/">Vercel</a>' +
       '<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YPGG0XEZV"></script>');
     fs.writeFileSync(path.join(detail, 'index.html'),
@@ -35,6 +37,14 @@ test('preview localizes nested links, keeps production canonical, removes analyt
     assert.match(home, /href="assets\/site\.css"/);
     assert.match(home, /src="assets\/site\.js"/);
     assert.match(home, /href="service\/vercel\/index\.html"/);
+    assert.match(home, /data-search-index="search\/index\.json\?v=abcdef123456"/);
+    assert.match(home, /data-search-cards="search\/cards\/"/);
+    assert.doesNotMatch(home, /data-search-index="https:\/\//);
+    assert.doesNotMatch(home, /data-search-cards="https:\/\//);
+    // Publishing the same artifact twice must not rewrite already-localized URLs.
+    assert.equal(prepare(root, URL), 2);
+    const secondPass = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+    assert.match(secondPass, /data-search-cards="search\/cards\/"/);
     assert.match(home, /rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/"/);
     assert.match(page, /href="\.\.\/\.\.\/assets\/site\.css"/);
     assert.match(page, /href="\.\.\/\.\.\/index\.html"/);

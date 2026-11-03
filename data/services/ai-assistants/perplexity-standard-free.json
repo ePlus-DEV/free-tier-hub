@@ -1,0 +1,13 @@
+{
+  "id": "perplexity-standard-free",
+  "name": "Perplexity Standard Free",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Practically unlimited basic searches with citations; limited Pro Searches and basic file uploads",
+  "watch_out": "Advanced models, image generation and premium features require paid plans; Pro Search quotas can change. Commercial-use eligibility must be checked.",
+  "pricing_url": "https://www.perplexity.ai/hub/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-13",
+  "deployment_model": "cloud"
+}

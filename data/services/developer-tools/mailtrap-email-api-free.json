@@ -1,0 +1,14 @@
+{
+  "id": "mailtrap-email-api-free",
+  "name": "Mailtrap Email API/SMTP Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Up to 4,000 emails per month and 150 emails per day.",
+  "watch_out": "One sending domain, one user and 3 days of logs; not unlimited email.",
+  "pricing_url": "https://mailtrap.io/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

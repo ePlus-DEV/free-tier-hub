@@ -2,9 +2,9 @@
 
 The `Consume reviewed catalog backlog` GitHub Actions workflow runs hourly or by manual dispatch. It reads the reviewed `data/catalog-candidate-backlog.json` on the checked-out default branch and uses the current Node.js 24 catalog tooling.
 
-It validates the catalog and backlog with `npm run verify` and `npm run catalog:backlog -- --list`. Only records that are not in `data/services.json` and whose `last_checked` date is no more than seven UTC days old are eligible. Outdated records must be reverified against official HTTPS pricing and updated in a separately reviewed PR; the consumer never refreshes evidence by itself.
+It validates the catalog and backlog with `npm run verify` and `npm run catalog:backlog -- --list`. Only records whose IDs are not present in the canonical `data/services/<category>/<id>.json` shards and whose `last_checked` date is no more than seven UTC days old are eligible. Outdated records must be reverified against official HTTPS pricing and updated in a separately reviewed PR; the consumer never refreshes evidence by itself.
 
-The workflow checks **all historical Issues and PRs**, plus any existing delivery branch, before opening **at most one** canonical `[catalog-candidate] <id>` Issue per run. The Issue body is the exact catalog-schema JSON object. The existing `catalog-candidate-queue` workflow then validates it, prepares the `catalog/add-<id>` branch and opens a **Draft PR** for manual review. An Issue or Draft PR is not proof of delivery; require the PR's exact-head validation and build checks and an actual merge into main. Draft PRs are not auto-merged.
+The workflow checks **all historical Issues and PRs**, plus any existing delivery branch, before opening **at most one** canonical `[catalog-candidate] <id>` Issue per run. The Issue body is the exact catalog-schema JSON object. The existing `catalog-candidate-queue` workflow then validates it, writes only `data/services/<category>/<id>.json`, prepares the `catalog/add-<id>` branch and opens a **Draft PR** for manual review. The generated `data/services.json` and category docs are rebuilt in CI/production; they are not authored in the candidate PR. An Issue or Draft PR is not proof of delivery; require the PR's exact-head validation and build checks and an actual merge into main. Draft PRs are not auto-merged.
 
 The consumer uses `EPLUS_BOT_TOKEN` to create the Issue so the normal GitHub `issues` event can trigger the queue; `GITHUB_TOKEN`-authored Issues would not trigger another workflow. The bot must be a trusted repository collaborator and have Issue write permission. The consumer itself has read-only default-token permissions and never pushes code, merges PRs or deploys.
 
@@ -19,8 +19,7 @@ New or updated candidates should include `deployment_model`: `cloud`, `self-host
 specific listed offer. A separate self-hosted edition does not make a cloud plan hybrid.
 Use `unclassified` when evidence is inconclusive.
 
-The backlog loader, candidate Issue parser and conflict-recovery workflow call
-`validateCandidate` from `scripts/catalog.mjs`. Invalid values and unrelated JSON
+The backlog loader and candidate Issue parser call `validateCandidate` from `scripts/catalog.mjs`. Once independent service shards are active, the old monolith conflict-recovery workflow exits safely; GitHub no longer needs to reconcile unrelated append edits. Invalid values and unrelated JSON
 fields are rejected. Existing reviewed candidates without deployment metadata remain
 valid and appear under Not specified. Delivery preserves the canonical Issue JSON
 and never guesses a deployment model, rewrites evidence or advances `last_checked`.

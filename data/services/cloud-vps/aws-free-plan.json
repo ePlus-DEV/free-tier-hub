@@ -1,0 +1,13 @@
+{
+  "id": "aws-free-plan",
+  "name": "AWS Free Plan",
+  "category": "cloud-vps",
+  "plan": "limited-duration",
+  "free_limit": "New eligible AWS customers: Free account plan for up to 6 months or until AWS Free Tier credits are exhausted; $100 signup credit plus up to $100 earned through activities",
+  "watch_out": "The Free account plan is a time-limited ACCOUNT offer, not an always-free VPS. It ends at 6 months or credit exhaustion, whichever comes first; AWS automatically closes the Free account and resources/data become inaccessible unless upgraded. Joining AWS Organizations upgrades to Paid and ends Free Plan credit eligibility. Some services offer separate always-free monthly usage; Paid-plan usage beyond allowances can incur charges.",
+  "pricing_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-FAQ.html",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

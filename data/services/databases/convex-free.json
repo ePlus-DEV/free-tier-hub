@@ -1,0 +1,13 @@
+{
+  "id": "convex-free",
+  "name": "Convex Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Free plan: 0.5 GB database storage, 1 GB database I/O/month, 1 million function calls/month, 20 GB-hours action compute/month and 1 GB file storage",
+  "watch_out": "Free limits are measured across the team (not per project); includes 0.5 GB search storage and 3,000 query-GBs/month for search. Exceeding Free caps for a sustained period may cause function calls or mutations to fail; the separate Starter plan can charge usage-based overages. The free allowance is ongoing, not a trial.",
+  "pricing_url": "https://www.convex.dev/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

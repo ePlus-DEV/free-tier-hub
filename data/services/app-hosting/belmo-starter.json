@@ -1,0 +1,14 @@
+{
+  "id": "belmo-starter",
+  "name": "Belmo Starter",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "1 always-on service; 0.5 shared vCPU; 512 MB RAM; SSL; 30-day logs",
+  "watch_out": "No custom domain on Starter, only belmo.io subdomain; commercial terms unconfirmed.",
+  "pricing_url": "https://belmo.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-08",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

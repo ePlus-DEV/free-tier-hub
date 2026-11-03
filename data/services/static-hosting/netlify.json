@@ -1,0 +1,13 @@
+{
+  "id": "netlify",
+  "name": "Netlify Free",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "300 Free plan credits/month for deployments, requests, bandwidth and compute; custom domains and HTTPS included",
+  "watch_out": "Credits are shared across production deploys, web requests, bandwidth and compute. The ongoing $0 Free plan is distinct from any promotional credits; overages/auto-recharge can result in charges if a paid add-on is enabled (auto-recharge is disabled by default). Legacy account terms may differ.",
+  "pricing_url": "https://www.netlify.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

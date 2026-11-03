@@ -1,0 +1,13 @@
+{
+  "id": "posthog",
+  "name": "PostHog Free",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "PostHog Free: 1M product analytics events/month, 5,000 session recordings/month and 1M feature-flag requests/month",
+  "watch_out": "The $0 Free plan has no credit-card requirement and renews monthly; quotas are independent per product. Without billing enabled, excess events are dropped and feature flags fall back to quota-limited behavior; adding a card moves to usage-based billing with paid overages. Free plan allows one project and one-year retention.",
+  "pricing_url": "https://posthog.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

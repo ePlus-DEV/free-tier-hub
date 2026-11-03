@@ -1,0 +1,14 @@
+{
+  "id": "glitchtip-hosted-free",
+  "name": "GlitchTip Hosted Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Up to 1,000 events per month with unlimited projects and team members.",
+  "watch_out": "Personal projects; usage capped at 1,000 events per month.",
+  "pricing_url": "https://glitchtip.com/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

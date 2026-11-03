@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-workers",
+  "name": "Cloudflare Workers Free",
+  "category": "serverless",
+  "plan": "ongoing",
+  "free_limit": "100,000 requests/day and 10 ms CPU time per invocation on Workers Free",
+  "watch_out": "Workers Free has a daily request cap and per-invocation CPU time cap, not continuously running server compute. Pages Functions use the same Workers quota; paid Worker plans have different billing and higher limits.",
+  "pricing_url": "https://developers.cloudflare.com/workers/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}
