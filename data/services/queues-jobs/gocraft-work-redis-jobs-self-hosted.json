@@ -1,0 +1,13 @@
+{
+  "id": "gocraft-work-redis-jobs-self-hosted",
+  "name": "gocraft/work Redis-backed Go Jobs",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Go background-job library with Redis-backed durable queues, retries and scheduled jobs; no software license fee or vendor quota.",
+  "watch_out": "Requires user-operated Redis-compatible storage and Go worker processes. Hosting, monitoring, backups and Redis service costs are separate; preserve MIT license notices.",
+  "pricing_url": "https://github.com/gocraft/work",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
