@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - README.md
+      - AGENTS.md
+      - agent.md
       - CONTRIBUTING.md
       - .github/PULL_REQUEST_TEMPLATE.md
       - .github/ISSUE_TEMPLATE/**
@@ -17,6 +19,8 @@ on:
     branches: [main, 'catalog/**']
     paths:
       - README.md
+      - AGENTS.md
+      - agent.md
       - CONTRIBUTING.md
       - .github/PULL_REQUEST_TEMPLATE.md
       - .github/ISSUE_TEMPLATE/**
