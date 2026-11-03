@@ -40,6 +40,9 @@ Explore [all categories online](https://free-tier.eplus.dev/categories/) or use 
 | Feature flags & gradual rollout | ![Count](https://free-tier.eplus.dev/badges/categories/feature-flags.svg) | [Browse](docs/feature-flags.md) |
 | Tunneling & networking | ![Count](https://free-tier.eplus.dev/badges/categories/tunneling-networking.svg) | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | ![Count](https://free-tier.eplus.dev/badges/categories/webhooks-events.svg) | [Browse](docs/webhooks-events.md) |
+| Email & notifications | ![Count](https://free-tier.eplus.dev/badges/categories/email-notifications.svg) | [Browse](docs/email-notifications.md) |
+| Testing & QA | ![Count](https://free-tier.eplus.dev/badges/categories/testing-qa.svg) | [Browse](docs/testing-qa.md) |
+| Forms & surveys | ![Count](https://free-tier.eplus.dev/badges/categories/forms-surveys.svg) | [Browse](docs/forms-surveys.md) |
 
 The dynamic service and category badges reflect the **deployed catalog**, so GitHub Pages deployment and image caching may briefly delay count updates. [Browse the full catalog JSON](https://free-tier.eplus.dev/catalog.json).
 
