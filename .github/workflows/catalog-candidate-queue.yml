@@ -143,7 +143,28 @@ jobs:
             echo "available=false" >> "$GITHUB_OUTPUT"
             echo "::notice::$open_count catalog PRs open; leave this candidate Issue queued for later retry."
           else
-            echo "available=true" >> "$GITHUB_OUTPUT"
+            # The candidate may already be covered by a maintainer batch PR
+            # whose branch is NOT named catalog/add-<id>. Prevent duplicate PRs.
+            node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { proposedServiceIds } from './scripts/catalog-pr-coverage.mjs';
+          const repo = process.env.GITHUB_REPOSITORY;
+          const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
+          const api = endpoint => JSON.parse(execFileSync('gh', [
+            'api', '--paginate', '--slurp', 'repos/' + repo + '/' + endpoint
+          ], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 })).flat();
+          const openPRs = api('pulls?state=open&per_page=100');
+          const pending = proposedServiceIds(openPRs, pr =>
+            api('pulls/' + pr.number + '/files?per_page=100'));
+          const alreadyCovered = pending.has(candidate.id);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            'available=' + (alreadyCovered ? 'false' : 'true') + '\n');
+          if (alreadyCovered) {
+            console.log('::notice::Service ' + candidate.id +
+              ' is already proposed in an open PR; leave candidate Issue queued.');
+          }
+          NODE
           fi
 
       - name: Update source data

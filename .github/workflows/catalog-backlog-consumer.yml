@@ -55,6 +55,7 @@ jobs:
           import { loadCandidates, listCandidates, fresh } from './scripts/backlog.mjs';
           import { validateCandidate } from './scripts/catalog.mjs';
           import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
+          import { proposedServiceIds } from './scripts/catalog-pr-coverage.mjs';
 
           const repo = process.env.GITHUB_REPOSITORY;
           const api = (endpoint) => JSON.parse(execFileSync(
@@ -62,6 +63,11 @@ jobs:
             { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
           )).flat();
           const openPRs = api('pulls?state=open&per_page=100');
+          // Do not deliver the same service while ANY open PR (including a
+          // maintainer batch PR with a non-catalog/add branch) already changes
+          // its canonical shard. Fail closed if changed-file lookup fails.
+          const proposedIds = proposedServiceIds(openPRs, pr =>
+            api('pulls/' + pr.number + '/files?per_page=100'));
           const openCatalog = openPRs.filter(pr => pr.head?.ref?.startsWith('catalog/add-'));
           if (openCatalog.length >= 3) {
             console.log(openCatalog.length + ' catalog PRs already open; keep backlog queued.');
@@ -80,6 +86,10 @@ jobs:
             if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) continue;
             const id = issue.title.slice('[catalog-candidate] '.length);
             const branch = 'catalog/add-' + id;
+            if (proposedIds.has(id)) {
+              console.log('Candidate ' + id + ' already proposed in an open service PR; waiting for review.');
+              continue;
+            }
             if (prs.some(pr => pr.head?.ref === branch)) continue;
             const existingBranch = execFileSync('git',
               ['ls-remote', '--heads', 'origin', 'refs/heads/' + branch],
@@ -120,6 +130,10 @@ jobs:
             if (!eligible.has(candidate.id)) continue;
             const title = '[catalog-candidate] ' + candidate.id;
             const branch = 'catalog/add-' + candidate.id;
+            if (proposedIds.has(candidate.id)) {
+              console.log('Existing open PR already proposes service: ' + candidate.id);
+              continue;
+            }
             if (issues.some(item => item.title === title)) {
               console.log('Already has an Issue: ' + candidate.id);
               continue;
