@@ -512,6 +512,8 @@ function detailPage(item, absolute) {
   const name = item.name;
   const category = CATEGORY_NAMES[item.category];
   const categoryURL = absolute('category/' + item.category + '/');
+  const listingURL = limited ? absolute('offers/') : categoryURL;
+  const listingName = limited ? 'Limited offers' : category;
   const fields = [
     ['Plan', PLAN_NAMES[item.plan]],
     ...(item.eligibility === 'existing-users-only' ? [['Eligibility', 'Legacy only · Existing accounts']] : []),
@@ -526,8 +528,8 @@ function detailPage(item, absolute) {
   const link = tag(providerReferralURL(item.pricing_url));
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
-    '">Home</a><span aria-hidden="true">/</span><a href="', tag(categoryURL),
-    '">', tag(category), '</a><span aria-hidden="true">/</span><span>', tag(name),
+    '">Home</a><span aria-hidden="true">/</span><a href="', tag(listingURL),
+    '">', tag(listingName), '</a><span aria-hidden="true">/</span><span>', tag(name),
     '</span></nav><div class="detail-layout"><article class="detail">',
     '<div class="detail-head"><span class="detail-icon" aria-hidden="true">',
     serviceLogo(item), '</span><span class="badge" data-plan="',
@@ -561,10 +563,10 @@ function detailPage(item, absolute) {
     '" target="_blank" rel="noopener noreferrer">Official pricing ',
     glyph('arrow'), '</a><hr><h2>More in this category</h2>',
     '<p>Explore other ', tag(category.toLowerCase()), ' services with their free allowances.</p>',
-    '<a class="text-link" href="', tag(categoryURL),
-    '">Browse category ', glyph('arrow'), '</a></aside></div>',
-    '<p class="back-link"><a href="', tag(categoryURL),
-    '">← Back to ', tag(category), '</a></p>',
+    '<a class="text-link" href="', tag(listingURL),
+    '">', limited ? 'Browse limited offers' : 'Browse category', ' ', glyph('arrow'), '</a></aside></div>',
+    '<p class="back-link"><a href="', tag(listingURL),
+    '">← Back to ', tag(listingName), '</a></p>',
   ].join('');
 }
 // GitHub Markdown cannot evaluate JSON. These tiny SVG assets show the latest
@@ -625,12 +627,16 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   const latest = items.map(item => item.last_checked).sort().at(-1);
   const pageURLs = [];
   const siteName = 'Free Tier Hub';
+  // Home initially renders only 12 cards. Keep structured data in sync with
+  // content actually present in the HTML, not thousands of lazy-only results.
+  // All other services are linked from crawlable category pages and sitemap.
+  const homeVisibleItems = mainItems.slice(0, 12);
   const homeSchema = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'WebSite', name: siteName, url: base,
       description: 'An independently maintained directory of developer free tiers.' },
     { '@type': 'CollectionPage', name: 'Free Tier Hub developer directory',
-      url: base, mainEntity: { '@type': 'ItemList', numberOfItems: mainItems.length,
-        itemListElement: mainItems.map((item, i) =>
+      url: base, mainEntity: { '@type': 'ItemList', numberOfItems: homeVisibleItems.length,
+        itemListElement: homeVisibleItems.map((item, i) =>
           ({ '@type': 'ListItem', position: i + 1, name: item.name,
             url: absolute('service/' + item.id + '/') })) } },
   ] };
@@ -705,7 +711,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     const category = CATEGORY_NAMES[item.category];
     const relative = 'service/' + item.id + '/';
     const crumbs = [['Home', base],
-      [category, absolute('category/' + item.category + '/')],
+      ...(!isMainFreeOffer(item)
+        ? [['Limited offers', absolute('offers/')]]
+        : [[category, absolute('category/' + item.category + '/')]]),
       [item.name, absolute(relative)]];
     const offerLabel = isMainFreeOffer(item) ? planBadge(item) : 'Time-limited offer';
     const schema = { '@context': 'https://schema.org', '@graph': [
@@ -736,18 +744,19 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '# Free Tier Hub', '',
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
-    '- [Directory](' + base + '): crawlable HTML index of ongoing free allowances and recurring credits.',
+    '- [Directory](' + base + '): first 12 ongoing service cards; full catalog is navigable through static category pages.',
     '- [All categories](' + absolute('categories/') + '): all service categories with live counts and category landing pages.',
     '- [Offer classifications](' + absolute('about/classifications/') + '): definitions of plan, deployment, eligibility and verification labels.',
     '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
     '- [Catalog JSON](' + absolute('catalog.json') +
       '): machine-readable data with source URLs, review dates and plan types.',
-    '- [Sitemap](' + absolute('sitemap.xml') + '): category and service URLs.',
+    '- [Sitemap](' + absolute('sitemap.xml') + '): all category and service canonical HTML URLs.',
     '- [Agent discovery](' + absolute('agents.md') + '): optional reading guide.', '',
     '## Categories',
     ...CATEGORIES.map(category =>
       '- [' + CATEGORY_NAMES[category] + '](' + absolute('category/' + category + '/') + ')'),
     '', '## Interpretation',
+    '- Home loads additional cards through JavaScript; for complete crawlable service links, follow the category pages and sitemap.',
     '- The main free-tier directory counts ongoing allowances and recurring credits only; trials and expiring resources are listed separately.',
     '- An unknown card or commercial-use value means check the provider; it does not mean permission is granted.',
     '- Official provider links in the JSON are the primary sources of current billing and limits.',
@@ -765,6 +774,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '- Machine-readable catalog: ' + absolute('catalog.json'),
     '- Sitemap: ' + absolute('sitemap.xml'),
     '- LLM summary: ' + absolute('llms.txt'), '',
+    'All service detail pages have stable canonical HTML URLs and server-rendered content.',
+    'Home initially shows 12 listings; use category pages and the sitemap for complete link discovery.', '',
     '## Data model',
     'Each catalog entry includes id, name, category, plan, free_limit, watch_out, pricing_url,',
     'credit_card, commercial_use, optional deployment_model, optional eligibility and last_checked. Treat the official pricing_url as the source',
