@@ -4,7 +4,7 @@
 
 Discover and compare free-tier services for hosting, databases, cloud infrastructure, AI, security, and developer tools. Explore published free allowances, important restrictions, and direct links to official provider documentation—all in one independent directory.
 
-![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
+![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ffree-tier.eplus.dev%2Fcatalog.json&query=%24.length&label=services&color=brightgreen&cacheSeconds=300) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
 **[Explore the directory](https://free-tier.eplus.dev/)** · [All categories](https://free-tier.eplus.dev/categories/) · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json) · [Support the project](https://eplus.dev/page/donate)
 
@@ -58,7 +58,7 @@ The [all-categories page](https://free-tier.eplus.dev/categories/) provides a vi
 | Tunneling & networking | ![Count](https://free-tier.eplus.dev/badges/categories/tunneling-networking.svg) | [Browse](docs/tunneling-networking.md) |
 | Webhooks & event delivery | ![Count](https://free-tier.eplus.dev/badges/categories/webhooks-events.svg) | [Browse](docs/webhooks-events.md) |
 
-Category counts are generated from the catalog during successful site deployments. GitHub's image cache may briefly display earlier totals.
+The total-services badge reads the deployed canonical catalog (`/catalog.json`), which is generated directly from `data/services/<category>/<id>.json`. Category counts are generated from the same catalog during successful site deployments. GitHub/Shields image caches and deployments may briefly show earlier totals.
 
 ## Contributing
 
