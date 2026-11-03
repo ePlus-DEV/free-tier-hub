@@ -731,6 +731,9 @@ body:has(.cookie-notice:not([hidden])) .support-widget{display:none}
 .compare-clear{border:0;background:transparent;color:var(--ink-soft);padding:9px;cursor:pointer;font-weight:650}
 .compare-tray-go{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
   padding:11px 15px;border-radius:9px;background:var(--brand);color:#fff;font-size:13px;font-weight:750}
+.compare-tray-go:hover,.compare-tray-go:focus-visible{
+  background:var(--brand-hover);color:#fff;text-decoration:none
+}
 .compare-tray-go.is-disabled{opacity:.48;cursor:not-allowed}
 .compare-page{max-width:1100px;margin:22px auto 60px;padding:30px}
 .compare-page-heading{display:flex;justify-content:space-between;align-items:center;gap:24px}
