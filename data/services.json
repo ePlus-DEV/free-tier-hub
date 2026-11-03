@@ -12181,6 +12181,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "faiss-local-vector-search",
+    "name": "Faiss Open-Source Local Vector Similarity Search",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed C++ library with Python bindings for local dense-vector similarity search and clustering; CPU indexes and optional GPU implementations have no vendor software subscription or per-query quota.",
+    "watch_out": "Faiss is an embedded library, not a hosted vector database or free API. CPU/RAM/storage, optional GPU hardware and CUDA/ROCm dependencies, embedding generation and any cloud infrastructure are supplied separately and may cost money; follow MIT and third-party notices.",
+    "pricing_url": "https://github.com/facebookresearch/faiss",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "firezone-starter-free",
     "name": "Firezone Starter Free Zero Trust Access",
     "category": "tunneling-networking",
@@ -12270,5 +12283,31 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-02",
     "deployment_model": "local"
+  },
+  {
+    "id": "privacyidea-community-self-hosted",
+    "name": "privacyIDEA Community Self-Hosted Multi-Factor Authentication",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-licensed self-hosted MFA server and FreeRADIUS plugin with no technical core community-edition user limit; supports OTP, WebAuthn/FIDO2 and integrations with existing identity stores.",
+    "watch_out": "Self-operated server, database, HTTPS, support and hardware/SMS/email delivery are not free. Some separately distributed integration plugins have user-count or subscription limits (including Windows Credential Provider and ADFS); AGPL-3.0 network-source obligations apply to modified deployments.",
+    "pricing_url": "https://github.com/privacyidea/privacyidea",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "rauthy-self-hosted-oidc",
+    "name": "Rauthy Open-Source Self-Hosted OIDC Identity Provider",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed self-hosted OpenID Connect/OAuth 2.0 identity provider with passkeys, admin UI and optional high availability; no vendor subscription or published self-hosted user quota.",
+    "watch_out": "You must supply and secure your own host, TLS, backups, outbound email and any external dependencies; infrastructure is not free. Professional support is paid. LOCAL_TEST mode uses an unsafe demo configuration and must not be used in production.",
+    "pricing_url": "https://github.com/sebadob/rauthy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
