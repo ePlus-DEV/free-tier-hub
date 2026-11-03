@@ -1,0 +1,13 @@
+{
+  "id": "ipfs-cluster-self-hosted-pin-orchestration",
+  "name": "IPFS Cluster Self-Hosted Pin Orchestration",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "MIT/Apache-2.0 dual-licensed pinset replication and orchestration across self-operated IPFS/Kubo nodes; no software license fee or hosted storage quota.",
+  "watch_out": "Requires separate Kubo/IPFS peers, disk, compute, networking and ongoing pin availability. This is pin orchestration rather than a managed free pinning service; third-party pinning/gateway services may charge. Verify upstream maintenance and security before production use.",
+  "pricing_url": "https://github.com/ipfs-cluster/ipfs-cluster",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}
