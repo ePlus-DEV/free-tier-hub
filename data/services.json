@@ -12324,6 +12324,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "flock-php-local-development",
+    "name": "Flock PHP Local Development Environment",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free, open-source AGPL-3.0 native PHP/Laravel development environment for Windows and macOS with per-project PHP versions, local .test HTTPS sites, databases, email capture and debugging; no software subscription or account required.",
+    "watch_out": "Runs on the user's computer, not a free hosted PHP service. Requires supported Windows/macOS and local resources; Flock uses ports 80 and 443 and may conflict with Laragon, Apache or other local stacks. AGPL-3.0 obligations apply when distributing modified software and in applicable network-use scenarios; Linux availability depends on release channel.",
+    "pricing_url": "https://flockphp.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
     "id": "gocraft-work-redis-jobs-self-hosted",
     "name": "gocraft/work Redis-backed Go Jobs",
     "category": "queues-jobs",
@@ -12439,6 +12452,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "levelrail-self-hosted-paas",
+    "name": "LevelRail Open-Source Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted PaaS with Git-based application deployments, HTTPS, logs, metrics, backups and rollback; one software edition without license keys, paid feature gates or vendor usage quotas.",
+    "watch_out": "Requires user-operated Linux servers and Docker; VPS, bandwidth, domains, storage, registries and operational costs are separate. No provider-hosted compute allowance. Software is pre-1.0: single-server setup is the more tested path, while multi-node support remains beta.",
+    "pricing_url": "https://levelrail.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "librenms-network-monitoring-self-hosted",
@@ -12672,6 +12698,19 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zero-email-self-hosted",
+    "name": "Zero Open-Source Self-Hosted Email App",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed open-source self-hostable email application with a unified inbox, external email-provider integrations and optional AI-assisted features; no license fee or vendor-provided hosting quota for self-running the code.",
+    "watch_out": "This is an email app/client, not a free hosted mailbox or SMTP delivery service. Self-hosting requires Node.js, PostgreSQL, Docker and appropriate configuration; Gmail/Outlook access, Google OAuth, AI models, Cloudflare storage/workers, Twilio, Autumn or other integrations may require credentials and incur separate charges. MIT copyright/license notices apply.",
+    "pricing_url": "https://github.com/Mail-0/Zero",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
     "deployment_model": "self-hosted"
   }
 ]
