@@ -12194,6 +12194,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "agenticseek-local-ai-assistant",
+    "name": "AgenticSeek Local AI Assistant",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0-licensed local autonomous AI assistant for browsing, coding and task planning; no software license fee or vendor-hosted quota",
+    "watch_out": "Runs on your own computer with Python, Docker/Compose, local LLM and substantial GPU resources; electricity, hardware and optional paid model/API services are not included. Autonomous browser/code execution needs careful sandboxing; GPL-3.0 redistribution obligations apply.",
+    "pricing_url": "https://github.com/Fosowl/agenticSeek",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "dnsmon-self-hosted-dns-monitor",
     "name": "dnsmon Self-Hosted DNS Propagation and Change Monitor",
     "category": "dns-cdn",
@@ -12335,6 +12348,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-02",
     "deployment_model": "local"
+  },
+  {
+    "id": "machinery-go-task-queue-self-hosted",
+    "name": "Machinery Go Distributed Task Queue",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0-licensed Go asynchronous distributed task queue with worker and broker integrations; no software license fee or vendor-imposed usage quota.",
+    "watch_out": "Self-managed workers, message brokers and result backends require infrastructure and operations; paid managed broker services are separate. MPL-2.0 obligations apply to distribution of modified covered files.",
+    "pricing_url": "https://github.com/RichardKnop/machinery",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "monika-synthetic-monitor-local",
