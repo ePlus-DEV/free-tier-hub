@@ -36,7 +36,9 @@ and mocking tools in `testing-qa`; user-facing forms and surveys in
 `forms-surveys`. Do not duplicate a listing in two categories; move its shard
 without changing its stable `id` or inventing new provider facts. A change
 to the category taxonomy must update navigation, documentation, generated
-category pages/badges and tests through a reviewed PR.
+category pages/badges and tests through a reviewed PR. Category regression
+checks must derive the current taxonomy and allow new services or retired
+offers; do not freeze a category's exact service count in CI tests.
 
 ## Non-negotiable catalog rules
 
