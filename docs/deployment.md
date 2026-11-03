@@ -56,6 +56,15 @@ Home includes only the first **12 server-rendered service cards**. Search/filter
 
 The PR preview preparation step rewrites search URLs to preview-relative paths so the preview uses its **own index and card fragments**, not stale production search data. Verify that `/search/index.json` and at least one `/search/cards/<category>.json` exist in build artifacts before releasing. Site search and API assets deploy together from the same revision.
 
+## Safe rollback
+
+If a release fails after the per-service migration, follow the
+[Catalog rollback and data-preservation runbook](catalog-rollback.md).
+**Do not simply revert the migration commit or replace the latest catalog
+with the original 930-entry snapshot**: new service PRs may have been
+merged since then. Preserve shard contents, original service IDs,
+publication dates, contributor history, and the `/catalog.json` contract.
+
 ## Release verification and troubleshooting
 
 1. Confirm the catalog PR has been reviewed and that its **exact head commit** has successful required checks; missing, pending, skipped, cancelled or action-required checks are not successful results.
