@@ -1,0 +1,13 @@
+{
+  "id": "machinery-go-task-queue-self-hosted",
+  "name": "Machinery Go Distributed Task Queue",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "MPL-2.0-licensed Go asynchronous distributed task queue with worker and broker integrations; no software license fee or vendor-imposed usage quota.",
+  "watch_out": "Self-managed workers, message brokers and result backends require infrastructure and operations; paid managed broker services are separate. MPL-2.0 obligations apply to distribution of modified covered files.",
+  "pricing_url": "https://github.com/RichardKnop/machinery",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
