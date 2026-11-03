@@ -458,7 +458,7 @@
   {
     "id": "resend",
     "name": "Resend Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Resend Free: 3,000 transactional emails/month, 100/day, 3 domains and 10,000 automation runs",
     "watch_out": "Free has a hard daily send cap and 30-day data retention. Pay-as-you-go email overages are only available on paid subscriptions, not an automatic unlimited Free extension. Verify sender domains and deliverability; extra domains, dedicated IPs and higher daily limits require paid plans.",
@@ -536,7 +536,7 @@
   {
     "id": "brevo",
     "name": "Brevo Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Brevo Free: 300 emails sent/day and storage for up to 100,000 contacts, with no plan expiry",
     "watch_out": "Unused daily sends do not roll over. Campaigns above 300 recipients require manually requeuing remaining contacts; transactional messages can queue up to 1,000 excess sends. Free includes Brevo branding, 1 account user, basic reporting and up to 2,000 unique contacts entering automations. Paid plan required for higher quotas and advanced features.",
@@ -562,7 +562,7 @@
   {
     "id": "cloudflare-email-routing",
     "name": "Cloudflare Email Routing",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Free inbound email forwarding for custom domains on Workers Free and Workers Paid; unlimited inbound routed emails",
     "watch_out": "Email Routing is inbound-only; arbitrary outbound Email Sending requires Workers Paid. Sending to verified destination addresses in your own account is free, but it is not a public transactional sending API. Routing via Email Workers consumes Workers usage separately; configure domain DNS/email routing correctly.",
@@ -1265,7 +1265,7 @@
   {
     "id": "novu-free",
     "name": "Novu Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "10,000 workflow runs/month on Novu Cloud Free; up to 20 workflows, 2 environments (Dev/Prod), 3 team members and all notification channels",
     "watch_out": "No credit card required. Free activity-feed retention is 24 hours and event trigger throughput is limited to 60/sec. Free includes US/EU data residency; removing Novu branding, seven-day retention and increased workflow throughput require a paid plan. Email/SMS delivery providers may charge separately.",
@@ -1369,7 +1369,7 @@
   {
     "id": "mockhive-free",
     "name": "MockHive Free",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "3 collections with 100 records each; 1,000 GET requests/month; 50 POST inserts/day; 3 AI API Builder uses/month",
     "watch_out": "Free is $0 forever without a card. Production base URLs and relationships require Starter; when a quota is exhausted, further mock requests can return HTTP 429 until upgrade or the billing cycle resets.",
@@ -1540,7 +1540,7 @@
   {
     "id": "formbricks-hobby",
     "name": "Formbricks Cloud Hobby",
-    "category": "developer-tools",
+    "category": "forms-surveys",
     "plan": "ongoing",
     "free_limit": "250 survey responses/month; 1 workspace; link and in-product surveys; full API access including MCP",
     "watch_out": "Cloud Hobby includes Formbricks branding; response cap is 250/month; self-hosted Community Edition is a separate option; explicit commercial-use terms not confirmed.",
@@ -1579,7 +1579,7 @@
   {
     "id": "suprsend-free",
     "name": "SuprSend Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "10,000 notifications/month; unlimited notification channels and team members; in-app feed, workflow branching, lists and broadcasts",
     "watch_out": "30-day premium-feature trial transitions to ongoing Free; SuprSend branding on in-app feed; multi-channel delivery counts each user/channel separately; email/SMS providers may charge separately; free over-limit sends may continue pending contact from SuprSend; explicit commercial-use terms not confirmed.",
@@ -1724,7 +1724,7 @@
   {
     "id": "tally-forms-free",
     "name": "Tally Forms Free",
-    "category": "developer-tools",
+    "category": "forms-surveys",
     "plan": "ongoing",
     "free_limit": "Unlimited forms and submissions under fair-use guidelines; webhooks and file uploads up to 10 MB per file.",
     "watch_out": "Tally branding remains; custom domains, team collaboration and larger uploads require paid plans. Fair-use restrictions apply; commercial-use terms unconfirmed.",
@@ -1780,7 +1780,7 @@
   {
     "id": "mailtrap-email-api-free",
     "name": "Mailtrap Email API/SMTP Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Up to 4,000 emails per month and 150 emails per day.",
     "watch_out": "One sending domain, one user and 3 days of logs; not unlimited email.",
@@ -1808,7 +1808,7 @@
   {
     "id": "formspree-free",
     "name": "Formspree Free",
-    "category": "developer-tools",
+    "category": "forms-surveys",
     "plan": "ongoing",
     "free_limit": "50 form submissions per month, unlimited forms and projects.",
     "watch_out": "Intended for testing and development; 30-day submission archive; no file uploads.",
@@ -1850,7 +1850,7 @@
   {
     "id": "loops-free",
     "name": "Loops Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Up to 1,000 contacts and 4,000 emails per 30 days.",
     "watch_out": "Free-plan branding; transactional and marketing sends share the allowance.",
@@ -1878,7 +1878,7 @@
   {
     "id": "emailoctopus-starter",
     "name": "EmailOctopus Starter Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "2,500 subscribers and 10,000 emails per month.",
     "watch_out": "Branding on emails; 30-day reporting; one landing page and one form.",
@@ -1892,7 +1892,7 @@
   {
     "id": "web3forms-free",
     "name": "Web3Forms Free",
-    "category": "developer-tools",
+    "category": "forms-surveys",
     "plan": "ongoing",
     "free_limit": "250 form submissions per month with unlimited forms and domains.",
     "watch_out": "Paid plan required for additional features and larger submission volume.",
@@ -2102,7 +2102,7 @@
   {
     "id": "courier-developer",
     "name": "Courier Developer",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "10,000 notification sends/month; Journeys and broadcasts; SDKs, CLI and MCP server; Google and GitHub SSO",
     "watch_out": "Beyond the free monthly allowance, Business pricing is $0.005 per send; downstream email/SMS provider charges may apply. Credit-card requirement and explicit commercial-use terms for Developer not confirmed.",
@@ -2116,7 +2116,7 @@
   {
     "id": "mailjet-free",
     "name": "Mailjet Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "6,000 emails/month; 200 emails/day; up to 1,000 contacts; API, SMTP relay and event webhooks",
     "watch_out": "Free support is limited to the first month; daily cap applies and advanced features or removal of branding require a paid plan. Explicit commercial-use terms for Free are unconfirmed.",
@@ -2144,7 +2144,7 @@
   {
     "id": "chromatic-free",
     "name": "Chromatic Free",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "5,000 billed visual-test snapshots/month (equivalent to up to 25,000 TurboSnaps); Chrome browser; unlimited projects, users and collaborators",
     "watch_out": "Visual review and testing pause at the monthly snapshot cap until reset or upgrade. Safari, Firefox and Edge testing require a paid plan; explicit commercial-use terms unconfirmed.",
@@ -2172,7 +2172,7 @@
   {
     "id": "beeceptor-free",
     "name": "Beeceptor Free",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "50 requests/day per public endpoint; 3 mock rules; 10 small CRUD objects; dynamic and conditional responses; ephemeral local tunnel",
     "watch_out": "Free endpoints are public, with no SLA. Unclaimed endpoints are automatically deleted (official pages differ between 7 and 30 days); claimed endpoints expire 90 days after creation. Do not send sensitive payloads.",
@@ -2200,7 +2200,7 @@
   {
     "id": "expo-push-service-free",
     "name": "Expo Push Service Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Free push notification delivery through Expo to FCM and APNs; 600 notifications/second per project; 100 notifications per API request",
     "watch_out": "Requires valid Expo push tokens and platform push credentials; no delivery SLA or guarantee of receipt on the device; Expo Go on Android requires a development build for remote push notifications. Commercial-use terms not independently confirmed.",
@@ -2270,7 +2270,7 @@
   {
     "id": "onesignal-free",
     "name": "OneSignal Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "10,000 emails/month; mobile push and in-app messaging for up to 1,000 monthly active users; web push up to 10,000 subscribers per send.",
     "watch_out": "Free mobile MAU cap applies from October 2026; paid messaging and advanced features are separate.",
@@ -3681,7 +3681,7 @@
   {
     "id": "mockoon-open-source",
     "name": "Mockoon Open Source",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "Unlimited local mock API servers, routes and requests using the free desktop app, CLI or Docker image; OpenAPI import/export and CI integration.",
     "watch_out": "Local-first MIT-licensed edition; infrastructure for remote deployment is self-funded. Real-time team collaboration, centralized administration, managed deployments and browser workspace require paid Mockoon Pro; its 14-day trial is not the free edition.",
@@ -3733,7 +3733,7 @@
   {
     "id": "mailersend-free",
     "name": "MailerSend Free",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "500 transactional emails per month (up to 100 emails/day); 100 API requests/day; 1 sending domain, 1 API token, 1 webhook and 1 template.",
     "watch_out": "A credit card and account approval are required to activate Free, although the plan is $0. Sending pauses at the quota until reset; 14-day Professional trial is separate and downgrades to Free. Hosted Free commercial-use conditions require confirmation.",
@@ -4201,7 +4201,7 @@
   {
     "id": "mailpit-self-hosted",
     "name": "Mailpit Self-Hosted",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Free MIT-licensed local/self-hosted SMTP capture and email-testing server with a web inbox, message search, REST API, HTML/link checks and Docker or single-binary deployment; no vendor software quota.",
     "watch_out": "For development and staging email testing, not a managed email delivery provider. Default automatic pruning retains the latest 500 messages; protect the SMTP and web UI with authentication/network controls, especially when using optional relay/forwarding. You operate any hosting infrastructure.",
@@ -5553,7 +5553,7 @@
   {
     "id": "hurl-open-source-http-testing",
     "name": "Hurl Open Source HTTP Testing",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "Free Apache-2.0 command-line HTTP client and integration-test runner; unlimited locally executed HTTP requests and tests without a vendor account.",
     "watch_out": "Requests consume your own network and target-service quotas; no hosted API or testing infrastructure is included. Runs locally or in user-provided CI.",
@@ -7074,7 +7074,7 @@
   {
     "id": "wiremock-open-source-self-hosted",
     "name": "WireMock Open Source Self-Hosted",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "Free Apache-2.0 open-source HTTP API mocking and stubbing server, available as standalone Java JAR, Docker container or library; no software request or project quotas.",
     "watch_out": "Self-hosted software only: server compute, storage and networking may cost money. WireMock Cloud hosted mocking and enterprise features are separate offerings; no hosted cloud allowance is included.",
@@ -8296,7 +8296,7 @@
   {
     "id": "emailjs-free",
     "name": "EmailJS Free Email API",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "200 email API requests/month; 2 templates, 1 user seat, 500 contacts and 7-day email history",
     "watch_out": "Free tier is positioned for testing and small projects; requests over monthly limit are dropped. No attachments or custom domain whitelist on Free; commercial-use terms require confirmation.",
@@ -8309,7 +8309,7 @@
   {
     "id": "formcarry-baby-free",
     "name": "Formcarry Baby Free Form Backend",
-    "category": "developer-tools",
+    "category": "forms-surveys",
     "plan": "ongoing",
     "free_limit": "1 hosted form and 50 submissions/month with email notifications, spam filtering and form API",
     "watch_out": "Submissions above the free limit are held but inaccessible until upgrade; paid plans provide more forms, quota and integrations. Free plan is for small projects or businesses; payment method not explicitly confirmed.",
@@ -9518,7 +9518,7 @@
   {
     "id": "grafana-k6-open-source-local",
     "name": "Grafana k6 Open-Source Load Testing",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "AGPL-3.0 open-source CLI for JavaScript-based performance and load testing on your own machine or CI runner; no software test-run or virtual-user quota.",
     "watch_out": "Generating load uses your own CPU, network and CI resources; target service usage and bandwidth may be billed. Grafana Cloud k6 hosted tests and enterprise features are separate paid offerings; AGPL-3.0 terms apply.",
@@ -11416,7 +11416,7 @@
   {
     "id": "agent-qa",
     "name": "agent-qa CLI",
-    "category": "developer-tools",
+    "category": "testing-qa",
     "plan": "ongoing",
     "free_limit": "Free local CLI for natural-language web, Android and iOS testing, with persistent memory and self-improvement, for FSL-permitted use.",
     "watch_out": "Requires Node.js 24+ and your own model inference and execution infrastructure; optional cloud-device services cost extra. FSL-1.1-ALv2 restricts competing commercial use. Provider billing/card requirements vary.",
@@ -12768,7 +12768,7 @@
   {
     "id": "zero-email-self-hosted",
     "name": "Zero Open-Source Self-Hosted Email App",
-    "category": "developer-tools",
+    "category": "email-notifications",
     "plan": "ongoing",
     "free_limit": "Free MIT-licensed open-source self-hostable email application with a unified inbox, external email-provider integrations and optional AI-assisted features; no license fee or vendor-provided hosting quota for self-running the code.",
     "watch_out": "This is an email app/client, not a free hosted mailbox or SMTP delivery service. Self-hosting requires Node.js, PostgreSQL, Docker and appropriate configuration; Gmail/Outlook access, Google OAuth, AI models, Cloudflare storage/workers, Twilio, Autumn or other integrations may require credentials and incur separate charges. MIT copyright/license notices apply.",
