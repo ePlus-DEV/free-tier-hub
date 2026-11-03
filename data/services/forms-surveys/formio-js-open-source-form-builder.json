@@ -1,0 +1,13 @@
+{
+  "id": "formio-js-open-source-form-builder",
+  "name": "Form.io JavaScript Open-Source Form Builder",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed JavaScript form builder, JSON schema renderer and SDK for embedding forms in your own applications; no hosted submission quota included.",
+  "watch_out": "This listing covers the formio.js library only, not the paid Form.io hosted API, enterprise services, or free hosting/storage for submitted data.",
+  "pricing_url": "https://github.com/formio/formio.js",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
