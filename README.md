@@ -67,7 +67,18 @@ There are two ways to help keep the directory current:
 - **No-code suggestion:** [Open a service suggestion Issue](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) with the provider's official source and the date you checked it.
 - **Pull request:** Fork the repository, create or update **one JSON object** in [`data/services/<category>/<id>.json`](data/services/), and open a PR. **Do not edit generated `data/services.json` or category tables**. No local Node.js commands or manual badge edits are needed; GitHub Actions generates compatibility files and validates the PR. Existing contributors should update their original PR branches rather than open replacement PRs to keep GitHub author credit.
 
-Please include accurate quotas, reset periods, restrictions, and official URLs. Maintainers review provider claims before merging. Read the [contribution guide](CONTRIBUTING.md) for the schema and full workflow.
+Please include accurate quotas, reset periods, restrictions, and official URLs. Public suggestions and external contributor PRs require maintainer review; CI checks cannot confirm provider claims. Read the [contribution guide](CONTRIBUTING.md) for the schema and full workflow.
+
+### How catalog updates are delivered
+
+1. **Discover and verify:** Maintainers verify the current official source, genuine ongoing allowance (or time-limited offer), card/billing and commercial-use conditions, deployment model, and existing catalog entries.
+2. **Queue a trusted candidate:** A maintainer-created `[catalog-candidate] <id>` Issue uses the reviewed ten-field JSON schema. An independently checked deployment-model source is supplied as a trusted Issue comment. Public suggestion Issues are not automatically promoted.
+3. **Create a Draft PR:** The [candidate queue](.github/workflows/catalog-candidate-queue.yml) creates a `catalog/add-<id>` branch containing only `data/services/<category>/<id>.json`. The bot token triggers PR CI without a synthetic empty commit. Up to **three catalog delivery PRs** may be open concurrently.
+4. **Validate at the exact PR commit:** [Catalog Validation](.github/workflows/validate-catalog.yml) checks the schema and generated docs; [Pages Build](.github/workflows/pages.yml) checks the static site, search assets and SEO outputs. Both must succeed.
+5. **Merge safely:** The separate [event-driven merge gate](.github/workflows/catalog-gated-auto-merge.yml) may mark **trusted, ongoing, no-card, commercial-use-verified local/self-hosted open-source** candidates Ready and squash-merge them only after the required exact-head checks and one-shard/evidence checks pass. Cloud offers, trials, uncertain terms and external PRs **stay for manual review**. A passing check alone never establishes current pricing accuracy.
+6. **Publish and reconcile:** A merge triggers the [GitHub Pages workflow](.github/workflows/pages.yml), which builds and deploys the website; generated compatibility docs may be synchronized on `main`. Confirm the successful **production deployment** and [live catalog](https://free-tier.eplus.dev/catalog.json) before reporting a service as publicly available.
+
+The [reviewed backlog consumer](.github/workflows/catalog-backlog-consumer.yml) runs when appropriate PRs merge and as an hourly fallback (minute 23, UTC). Separate ChatGPT maintainer automations handle hourly discovery/delivery review and daily legacy-data audits; they are distinct from GitHub Actions. See the [backlog operations guide](docs/catalog-backlog-consumer.md) for failure and recovery procedures.
 
 ## Support Free Tier Hub
 
@@ -87,10 +98,10 @@ Automated checks validate the data structure and generated documentation; they d
 
 ## Development and operations
 
-The static site uses **Node.js 24** and GitHub Pages. GitHub Actions runs catalog synchronization, validation, and builds for pull requests. Following an approved merge, the production workflow generates category documentation and deploys the website.
+The static site uses **Node.js 24** and GitHub Pages. GitHub Actions validates catalog contributions and builds PR previews before merging. Following a human-reviewed or narrowly gated automatic merge, the production workflow regenerates derived category documentation and deploys the website. PR CI success is not proof that a production deployment has completed.
 
 - **Source and generated docs:** [Per-service JSON catalog](data/services/) · [Legacy-compatible aggregate](data/services.json) · [Category reference files](docs/)
-- **CI and deployment:** [Catalog checks](.github/workflows/validate-catalog.yml) · [GitHub Pages workflow](.github/workflows/pages.yml) · [Actions status](https://github.com/ePlus-DEV/free-tier-hub/actions)
+- **CI and deployment:** [Catalog checks](.github/workflows/validate-catalog.yml) · [Pages build/deployment](.github/workflows/pages.yml) · [Candidate queue](.github/workflows/catalog-candidate-queue.yml) · [Guarded merge gate](.github/workflows/catalog-gated-auto-merge.yml) · [Actions status](https://github.com/ePlus-DEV/free-tier-hub/actions)
 - **Maintainer documentation:** [Deployment & SEO](docs/deployment.md) · [Source audits](docs/source-audit.md)
 
 Local checks are optional:
