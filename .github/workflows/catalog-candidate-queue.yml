@@ -246,6 +246,19 @@ jobs:
           git -c credential.helper= push "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
 
 
+      # Only low-risk, trusted open-source catalog candidates are auto-reviewed.
+      # Hosted, trial, credit and ambiguous commercial-use offerings stay Draft.
+      # Both CI workflows must succeed for the PR's EXACT current head SHA.
+      - name: Gate auto-merge for verified open-source candidates
+        if: steps.capacity.outputs.available == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+          PR_URL: ${{ steps.pr.outputs.url }}
+          SERVICE_ID: ${{ steps.candidate.outputs.id }}
+        run: node scripts/catalog-gated-auto-merge.mjs
+
+
+
       - name: Link delivery PR to issue
         if: steps.capacity.outputs.available == 'true'
         env:
