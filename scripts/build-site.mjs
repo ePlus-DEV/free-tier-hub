@@ -138,7 +138,8 @@ function card(item, absolute, initiallyHidden = false) {
         '</div></details></div>' : '',
     '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
     '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
-    '<div class="card-bottom"><a href="', tag(dest), '" aria-label="View ', tag(item.name),
+    '<div class="card-bottom"><button type="button" class="compare-card-toggle" data-compare-add="', tag(item.id),
+    '" data-compare-name="', tag(item.name), '" aria-pressed="false">+ Compare</button><a href="', tag(dest), '" aria-label="View ', tag(item.name),
     ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(providerReferralURL(item.pricing_url)),
     '" target="_blank" rel="noopener noreferrer" aria-label="Official pricing source for ', tag(item.name), '">Official source ↗</a></div></article>',
   ].join('');
@@ -177,6 +178,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<meta name="fth-analytics" content="', GA_ID, '">',
     '<script src="', tag(absolute('assets/directory-url.js?v=' + assetVersion('directory-url.js'))), '" defer></script>',
     '<script src="', tag(absolute('assets/site.js?v=' + assetVersion('site.js'))), '" defer></script>',
+    '<script src="', tag(absolute('assets/compare.js?v=' + assetVersion('compare.js'))), '" defer></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
     '<header class="site-header"><div class="container header-inner">',
     '<a class="brand" href="', tag(absolute()), '" aria-label="Free Tier Hub home">',
@@ -187,6 +189,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
     '<a href="', tag(absolute()), '"', relative === '' ? ' aria-current="page"' : '', '>Discover</a>',
     '<a href="', tag(absolute('categories/')), '"', relative === 'categories/' ? ' aria-current="page"' : '', '>Categories</a>',
+    '<a href="', tag(absolute('compare/')), '"', relative === 'compare/' ? ' aria-current="page"' : '', '>Compare</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
     '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Support</a></nav>',
     '<div class="header-actions">',
@@ -215,6 +218,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<div><h3>Explore</h3><a href="', tag(absolute()), '">All services</a>',
     '<a href="', tag(absolute('about/classifications/')), '">Offer classifications</a>',
     '<a href="', tag(absolute('categories/')), '">All categories</a>',
+    '<a href="', tag(absolute('compare/')), '">Compare services</a>',
     '<a href="', tag(absolute('catalog.json')), '">Catalog JSON</a>',
     '<a href="', tag(absolute('sitemap.xml')), '">Sitemap</a></div>',
     '<div><h3>Developers</h3>',
@@ -227,6 +231,14 @@ function document(absolute, title, description, relative, content, structuredDat
     '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>',
     '<span>Independent catalog · Verify every provider before enabling billing.</span>',
     '</div></div></footer>',
+    '<aside class="compare-tray" id="compare-tray" data-compare-url="', tag(absolute('compare/')),
+    '" aria-label="Selected services for comparison" hidden>',
+    '<div class="compare-tray-main"><div class="compare-tray-heading"><strong>Compare services</strong>',
+    '<span class="compare-tray-count">0 / 4 selected</span></div>',
+    '<div class="compare-tray-items"></div></div>',
+    '<div class="compare-tray-actions"><button type="button" class="compare-clear" data-compare-clear>Clear</button>',
+    '<a class="compare-tray-go" href="', tag(absolute('compare/')), '" aria-disabled="true">Compare now →</a></div></aside>',
+    '<span class="sr-only" role="status" aria-live="polite" id="compare-live"></span>',
     // Native details keeps this support action keyboard-accessible without JavaScript.
     '<details class="support-widget" id="support-widget">',
     '<summary class="support-toggle" aria-label="Support Free Tier Hub" title="Support Free Tier Hub">',
@@ -573,6 +585,32 @@ function detailPage(item, absolute) {
     '">← Back to ', tag(listingName), '</a></p>',
   ].join('');
 }
+function comparePage(absolute) {
+  return [
+    '<section class="compare-page page-intro" data-compare-root',
+    ' data-compare-url="', tag(absolute('compare/')), '"',
+    ' data-service-base="', tag(absolute('service/')), '"',
+    ' data-catalog-url="', tag(absolute('catalog.json')), '">',
+    '<a class="back-link" href="', tag(absolute('#explore')), '">← Browse services</a>',
+    '<div class="compare-page-heading"><div><span class="eyebrow">FREE TIER COMPARISON</span>',
+    '<h1>Compare free services</h1><p>Choose 2–4 services and see their allowances, billing requirements and restrictions side by side.</p></div>',
+    '<button type="button" class="compare-share" id="compare-share" disabled>Copy share link</button></div>',
+    '<div class="compare-picker-wrap"><label for="compare-picker">Add another service</label>',
+    '<input id="compare-picker" type="search" autocomplete="off" placeholder="Search by name or category…" aria-controls="compare-suggestions">',
+    '<div id="compare-suggestions" class="compare-suggestions" hidden></div></div>',
+    '<p id="compare-status" role="status" aria-live="polite"></p>',
+    '<div id="compare-empty" class="compare-empty"><strong>Select at least two services to compare.</strong>',
+    '<p>Use the search above or select Compare on service cards in the directory.</p>',
+    '<a class="button primary" href="', tag(absolute('#explore')), '">Explore the directory</a></div>',
+    '<div id="compare-results" hidden>',
+    '<div class="compare-options"><label><input type="checkbox" id="compare-differences"> Show differences only</label>',
+    '<p id="compare-category-warning" hidden>These services are from different categories; compare their use cases carefully.</p></div>',
+    '<div class="compare-table-wrap" role="region" tabindex="0" aria-label="Service comparison table (scroll horizontally on mobile)">',
+    '<table class="compare-table" id="compare-table"></table></div>',
+    '<p class="compare-disclaimer">Information is editorial and may change. Check each official provider source before signing up or enabling billing.</p>',
+    '</div></section>',
+  ].join('');
+}
 // GitHub Markdown cannot evaluate JSON. These tiny SVG assets show the latest
 // deployed catalog counts without bot commits or external image services.
 export function categoryCountSVG(count) {
@@ -666,6 +704,13 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
     categoriesRelative, categoriesOverviewPage(absolute, counts), categoriesSchema));
   pageURLs.push([categoriesRelative, latest]);
+  const compareRelative = 'compare/';
+  file(output, compareRelative + 'index.html', document(absolute,
+    'Compare Free Developer Services | Free Tier Hub',
+    'Compare 2–4 free developer services by limits, payment-card requirements and restrictions.',
+    compareRelative, comparePage(absolute),
+    { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Compare free services',
+      url: absolute(compareRelative) }, 'noindex,follow'));
   const guideRelative = 'about/classifications/';
   const guideSchema = { '@context': 'https://schema.org',
     '@type': 'WebPage', name: 'How we classify free offers — Free Tier Hub',
@@ -806,7 +851,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }
-  for (const name of ['site.css', 'directory-url.js', 'site.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
+  for (const name of ['site.css', 'directory-url.js', 'site.js', 'compare.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
     const dest = path.join(output, 'assets', name);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(path.join(ROOT, 'site/assets', name), dest);
