@@ -1,0 +1,13 @@
+{
+  "id": "mailhog-local-smtp-testing",
+  "name": "MailHog Local SMTP Testing",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local SMTP capture server with web UI and HTTP API; no vendor-hosted email quota is included.",
+  "watch_out": "For development/testing, not a hosted production email delivery allowance; users provide their own machine or container and any real SMTP relay.",
+  "pricing_url": "https://github.com/mailhog/MailHog",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
