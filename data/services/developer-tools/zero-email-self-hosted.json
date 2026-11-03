@@ -1,0 +1,13 @@
+{
+  "id": "zero-email-self-hosted",
+  "name": "Zero Open-Source Self-Hosted Email App",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed open-source self-hostable email application with a unified inbox, external email-provider integrations and optional AI-assisted features; no license fee or vendor-provided hosting quota for self-running the code.",
+  "watch_out": "This is an email app/client, not a free hosted mailbox or SMTP delivery service. Self-hosting requires Node.js, PostgreSQL, Docker and appropriate configuration; Gmail/Outlook access, Google OAuth, AI models, Cloudflare storage/workers, Twilio, Autumn or other integrations may require credentials and incur separate charges. MIT copyright/license notices apply.",
+  "pricing_url": "https://github.com/Mail-0/Zero",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
