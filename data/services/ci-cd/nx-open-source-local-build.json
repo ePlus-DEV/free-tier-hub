@@ -1,0 +1,13 @@
+{
+  "id": "nx-open-source-local-build",
+  "name": "Nx Open-Source Monorepo Build CLI (Local)",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Nx CLI for local monorepo task execution, affected-project builds and local caching; no software license fee or vendor-metered local build quota.",
+  "watch_out": "Nx Cloud remote caching, CI agents and other managed capabilities have separate terms and possible charges. CI runner minutes, CPU, storage and external services are not included. Retain MIT copyright/license notices.",
+  "pricing_url": "https://github.com/nrwl/nx/blob/master/LICENSE",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
