@@ -65,7 +65,7 @@ Category counts are generated from the catalog during successful site deployment
 There are two ways to help keep the directory current:
 
 - **No-code suggestion:** [Open a service suggestion Issue](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) with the provider's official source and the date you checked it.
-- **Pull request:** Fork the repository, add or update an entry in [`data/services.json`](data/services.json), and open a PR. **No local Node.js commands or manual README/doc-count edits are required** for standard catalog contributions; GitHub Actions generates category tables for checks.
+- **Pull request:** Fork the repository, create or update **one JSON object** in [`data/services/<category>/<id>.json`](data/services/), and open a PR. **Do not edit generated `data/services.json` or category tables**. No local Node.js commands or manual badge edits are needed; GitHub Actions generates compatibility files and validates the PR. Existing contributors should update their original PR branches rather than open replacement PRs to keep GitHub author credit.
 
 Please include accurate quotas, reset periods, restrictions, and official URLs. Maintainers review provider claims before merging. Read the [contribution guide](CONTRIBUTING.md) for the schema and full workflow.
 
@@ -81,7 +81,7 @@ Donations are voluntary and never required to browse the catalog. Financial supp
 
 ## Catalog data and accuracy
 
-[`data/services.json`](data/services.json) is the source of truth for listings. The website provides a [machine-readable catalog](https://free-tier.eplus.dev/catalog.json) and dedicated category and service pages. Each entry's `last_checked` date records a source review, **not** a guarantee of current prices or live availability.
+[`data/services/`](data/services/) is the source of truth: each service lives in a single `<category>/<id>.json` file. [`data/services.json`](data/services.json) is a **generated, backward-compatible aggregate**, not a file to edit by hand. The website provides a [machine-readable catalog](https://free-tier.eplus.dev/catalog.json) and dedicated category and service pages. The static build also generates lightweight `/search/index.json` and per-category card assets: Home initially renders 12 service cards and loads additional matching results on demand instead of embedding the entire catalog in HTML. Search indexes and card HTML are **never edited by contributors**; `/catalog.json` stays available as a full API. Each entry's `last_checked` date records a source review, **not** a guarantee of current prices or live availability.
 
 Automated checks validate the data structure and generated documentation; they do not independently confirm every provider's terms. See the [source-audit guide](docs/source-audit.md) for review practices.
 
@@ -89,7 +89,7 @@ Automated checks validate the data structure and generated documentation; they d
 
 The static site uses **Node.js 24** and GitHub Pages. GitHub Actions runs catalog synchronization, validation, and builds for pull requests. Following an approved merge, the production workflow generates category documentation and deploys the website.
 
-- **Source and generated docs:** [Service catalog](data/services.json) · [Category reference files](docs/)
+- **Source and generated docs:** [Per-service JSON catalog](data/services/) · [Legacy-compatible aggregate](data/services.json) · [Category reference files](docs/)
 - **CI and deployment:** [Catalog checks](.github/workflows/validate-catalog.yml) · [GitHub Pages workflow](.github/workflows/pages.yml) · [Actions status](https://github.com/ePlus-DEV/free-tier-hub/actions)
 - **Maintainer documentation:** [Deployment & SEO](docs/deployment.md) · [Source audits](docs/source-audit.md)
 

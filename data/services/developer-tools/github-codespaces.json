@@ -1,0 +1,13 @@
+{
+  "id": "github-codespaces",
+  "name": "GitHub Codespaces (personal Free)",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "GitHub Free personal accounts: 120 core-hours/month and 15 GB-month Codespaces storage",
+  "watch_out": "Organization accounts do not receive this personal free quota. A 2-core machine consumes 2 core-hours per elapsed hour; if no payment method is on file, Codespaces usage is blocked when the free quota is exhausted instead of auto-billing. Paid overages require a payment method and budget controls.",
+  "pricing_url": "https://docs.github.com/en/billing/concepts/product-billing/github-codespaces",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

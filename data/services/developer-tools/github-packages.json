@@ -1,0 +1,13 @@
+{
+  "id": "github-packages",
+  "name": "GitHub Packages",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Public packages are free; GitHub Free includes 500 MB private storage and 1 GB monthly transfer",
+  "watch_out": "GitHub Free includes 500 MB private package storage and 1 GB private package transfer/month. Storage is shared with Actions artifacts; eligible public packages and current Container registry bandwidth are separately free. Above-limit private usage can be charged unless budgets/usage controls prevent it; plan reset applies to transfer.",
+  "pricing_url": "https://docs.github.com/en/billing/concepts/product-billing/github-packages",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

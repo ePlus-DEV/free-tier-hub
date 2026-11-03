@@ -1,0 +1,14 @@
+{
+  "id": "laragon-free",
+  "name": "Laragon Free (Non-Commercial)",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free local development environment for personal and non-commercial use.",
+  "watch_out": "Commercial use requires a paid license; confirm current Laragon license terms before business use.",
+  "pricing_url": "https://laragon.app/pricing",
+  "credit_card": "no",
+  "commercial_use": "no",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "local"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "render-postgres",
+  "name": "Render Free Postgres",
+  "category": "databases",
+  "plan": "temporary-resource",
+  "free_limit": "One free Render Postgres database/workspace, capped at 1 GB; instance expires 30 days after creation",
+  "watch_out": "Free Render Postgres is a TEMPORARY resource: it expires after 30 days, followed by a 14-day grace period before permanent deletion of the database and its data. There are no Free backups or managed connection pooling; not suitable for durable production data.",
+  "pricing_url": "https://render.com/docs/free",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

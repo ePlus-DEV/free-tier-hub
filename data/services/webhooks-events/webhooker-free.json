@@ -1,0 +1,13 @@
+{
+  "id": "webhooker-free",
+  "name": "Webhooker Free",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "10,000 inbound events/month; 3 sources; 9 shared destinations; 1 workspace member; 14-day event retention",
+  "watch_out": "Free has 10,000 inbound events/month, three sources, nine destinations and 14-day retention, without a signup card. Rate limit is 120 incoming events/minute/source; a 20% buffer avoids immediate paid overage. Higher-volume production features, ordered delivery, static egress IP and DPA need a paid plan.",
+  "pricing_url": "https://webhooker.eu/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "authelia-self-hosted",
+  "name": "Authelia Self-Hosted",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Authelia authentication and authorization gateway for protecting applications with SSO and multi-factor authentication.",
+  "watch_out": "Requires an identity backend, reverse-proxy integration, and ongoing security maintenance. Hosting and delivery of external MFA messages are separate.",
+  "pricing_url": "https://www.authelia.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

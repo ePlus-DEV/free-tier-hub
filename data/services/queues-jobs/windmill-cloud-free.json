@@ -1,0 +1,13 @@
+{
+  "id": "windmill-cloud-free",
+  "name": "Windmill Cloud Community",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "1,000 cloud executions/month; no credit card required",
+  "watch_out": "Hosted Windmill Cloud Community has an ongoing bounded monthly execution allocation and is distinct from a separately self-hosted Community Edition. Cloud service limits and regions are provider-operated; personal/commercial use and paid extras should be checked against the latest cloud terms.",
+  "pricing_url": "https://www.windmill.dev/docs/getting_started/how_to_use_windmill",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

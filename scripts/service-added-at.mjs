@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
 import path from 'node:path';
 
 const COMMIT_MARKER = '@@FREE_TIER_CATALOG_COMMIT@@';
@@ -21,6 +22,24 @@ export function parseAddedDates(log) {
     }
     if (!addedOn || !line.startsWith('+') || line.startsWith('+++')) continue;
     const match = /^\+\s*"id"\s*:\s*"([a-z0-9]+(?:-[a-z0-9]+)*)"\s*[,}]?/.exec(line);
+    if (match && !dates.has(match[1])) dates.set(match[1], addedOn);
+  }
+  return dates;
+}
+
+/** First publication of individually versioned service records (post migration). */
+export function parseShardAddedDates(log) {
+  const dates = new Map();
+  let addedOn = '';
+  for (const line of log.split(/\r?\n/)) {
+    if (line.startsWith(COMMIT_MARKER)) {
+      const date = new Date(line.slice(COMMIT_MARKER.length).trim());
+      if (!Number.isFinite(date.getTime())) throw Error('Invalid Git commit timestamp in service shard history');
+      addedOn = date.toISOString().slice(0, 10);
+      continue;
+    }
+    if (!addedOn) continue;
+    const match = /^data\/services\/[a-z0-9-]+\/([a-z0-9-]+)\.json$/.exec(line.trim());
     if (match && !dates.has(match[1])) dates.set(match[1], addedOn);
   }
   return dates;
@@ -49,6 +68,11 @@ export function serviceAddedDates(repoRoot) {
     '--no-ext-diff', '--no-color', `--format=${COMMIT_MARKER}%cI`,
     '-p', ref, '--', 'data/services.json',
   ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+  const readShardDates = ref => parseShardAddedDates(execFileSync('git', [
+    'log', '--first-parent', '--diff-merges=first-parent', '--diff-filter=A',
+    '--reverse', '--no-ext-diff', '--no-color',
+    `--format=${COMMIT_MARKER}%cI`, '--name-only', ref, '--', 'data/services/',
+  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
   let publishedRef = 'HEAD';
   try {
     execFileSync('git', ['rev-parse', '--verify', 'refs/remotes/origin/main'], {
@@ -58,9 +82,30 @@ export function serviceAddedDates(repoRoot) {
   } catch {
     // Local repositories without a remote still retain the original behavior.
   }
-  const dates = readDates(publishedRef);
+  // Historical IDs use the original monolith history. New IDs use the shard
+  // merge into main, NOT the later Pages commit updating the compatibility
+  // aggregate. The immutable migration manifest distinguishes both populations.
+  const legacyManifest = path.join(cwd, 'data/catalog-legacy-order.json');
+  const legacy = fs.existsSync(legacyManifest)
+    ? new Set(JSON.parse(fs.readFileSync(legacyManifest, 'utf8'))) : null;
+  const aggregatePublished = readDates(publishedRef);
+  const shardPublished = readShardDates(publishedRef);
+  const dates = new Map();
+  for (const [id, date] of aggregatePublished) {
+    if (!legacy || legacy.has(id)) dates.set(id, date);
+  }
+  for (const [id, date] of shardPublished) {
+    if (!dates.has(id)) dates.set(id, date);
+  }
+  // Legacy monolith-only fixture compatibility and safe fallback for older PRs.
+  for (const [id, date] of aggregatePublished) {
+    if (!dates.has(id)) dates.set(id, date);
+  }
   if (publishedRef !== 'HEAD') {
     for (const [id, date] of readDates('HEAD')) {
+      if (!dates.has(id)) dates.set(id, date);
+    }
+    for (const [id, date] of readShardDates('HEAD')) {
       if (!dates.has(id)) dates.set(id, date);
     }
   }

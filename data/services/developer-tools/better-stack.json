@@ -1,0 +1,13 @@
+{
+  "id": "better-stack",
+  "name": "Better Stack Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free personal projects: 10 monitors/heartbeats, one status page, Slack/email alerts; 3 GB logs and 3 GB traces/month retained for 3 days",
+  "watch_out": "The $0 tier is positioned for personal projects. Also includes 100,000 exceptions, 5,000 session replays and 30 GB metrics allowance; longer retention, higher quotas and paid incident responder seats are separate. Do not assume the Free tier includes unlimited production monitoring or commercial-use rights.",
+  "pricing_url": "https://betterstack.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

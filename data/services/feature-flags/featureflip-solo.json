@@ -1,0 +1,13 @@
+{
+  "id": "featureflip-solo",
+  "name": "Featureflip Solo",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations",
+  "watch_out": "Free is permanent without a credit card or trial deadline: 1 project, 10 flags, 2 environments, up to 3 team members and 7-day audit logs. Paid tiers unlock larger teams, more projects/environments, scheduled changes and longer audit history.",
+  "pricing_url": "https://featureflip.io/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

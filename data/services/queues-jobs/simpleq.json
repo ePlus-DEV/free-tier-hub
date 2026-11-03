@@ -1,0 +1,13 @@
+{
+  "id": "simpleq",
+  "name": "SimpleQ Free",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "30,000 outbound webhook attempts/month; 5 queues; up to 5 attempts/job; 3-day job retention",
+  "watch_out": "Free has 30,000 monthly outbound webhook POST attempts across five queues, no card and no paid overage. Retry attempts count toward the cap; backpressure waiting does not. At the limit you must upgrade rather than assuming unlimited delivery; job retention is three days.",
+  "pricing_url": "https://simpleq.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

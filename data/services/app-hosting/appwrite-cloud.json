@@ -1,0 +1,13 @@
+{
+  "id": "appwrite-cloud",
+  "name": "Appwrite Cloud Free",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Appwrite Cloud Free: 2 projects, 5 GB monthly bandwidth, 2 GB storage, 750,000 executions/month and 75,000 monthly active users",
+  "watch_out": "Free includes one database, one bucket and two functions per project; projects pause after one week of inactivity. Backups, extra resources and production-oriented features require paid tiers; do not mistake the $10 Pro compute credit for Free recurring usage.",
+  "pricing_url": "https://appwrite.io/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

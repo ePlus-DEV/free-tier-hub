@@ -1,0 +1,14 @@
+{
+  "id": "n8n-community-self-hosted",
+  "name": "n8n Community Self-Hosted",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted n8n Community Edition workflow automation with triggers, nodes, and third-party integrations.",
+  "watch_out": "Runs on your infrastructure; compute, storage, and third-party API costs are separate. Its fair-code license and community-edition feature limits require review.",
+  "pricing_url": "https://docs.n8n.io/hosting/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

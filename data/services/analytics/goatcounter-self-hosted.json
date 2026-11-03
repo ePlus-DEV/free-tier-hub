@@ -1,0 +1,14 @@
+{
+  "id": "goatcounter-self-hosted",
+  "name": "GoatCounter Self-Hosted",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted GoatCounter website analytics for page views, referrals, and traffic insights without a managed subscription.",
+  "watch_out": "You supply hosting and storage and maintain the deployment; public hosted plans and self-hosted software have different operating conditions.",
+  "pricing_url": "https://www.goatcounter.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

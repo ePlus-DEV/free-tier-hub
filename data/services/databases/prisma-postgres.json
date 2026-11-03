@@ -1,0 +1,13 @@
+{
+  "id": "prisma-postgres",
+  "name": "Prisma Postgres Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "2 GB storage; 200,000 database operations/month; up to 50 databases; unlimited database data transfer",
+  "watch_out": "Free is $0 forever without a card and has a fixed $0 spend limit (no automatic overage billing). One query counts as one operation; Free has 10 pooled and 10 direct connections and no automated backups. Paid plans offer larger quotas with spend limits.",
+  "pricing_url": "https://www.prisma.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

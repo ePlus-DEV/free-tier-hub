@@ -1,0 +1,14 @@
+{
+  "id": "glances-self-hosted",
+  "name": "Glances Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Glances system-monitoring software for CPU, memory, disks, network, and running processes.",
+  "watch_out": "Install and run on your own machines; collection scope and remote access depend on your setup. Secure exposed endpoints and arrange any long-term storage yourself.",
+  "pricing_url": "https://github.com/nicolargo/glances",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

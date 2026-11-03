@@ -1,0 +1,14 @@
+{
+  "id": "meilisearch-self-hosted",
+  "name": "Meilisearch Self-Hosted",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Meilisearch search engine for full-text indexing, filtering, and application search APIs.",
+  "watch_out": "Index capacity, storage, and availability depend on your deployment. Hosted Meilisearch plans and enterprise features are separate.",
+  "pricing_url": "https://www.meilisearch.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "seaweedfs-self-hosted",
+  "name": "SeaweedFS Self-Hosted",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted SeaweedFS distributed object/file storage with S3-compatible access and scalable volume servers.",
+  "watch_out": "Supply hardware, disks, networking, backups, and operational support. Enterprise-only capabilities and managed infrastructure are not included in the community deployment.",
+  "pricing_url": "https://github.com/seaweedfs/seaweedfs",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "qdrant-cloud-free",
+  "name": "Qdrant Cloud Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "One ongoing Free single-node Qdrant Cloud cluster with 0.5 vCPU, 1 GB RAM and 4 GB disk; no credit card required",
+  "watch_out": "Free is for prototyping, not production: limited cloud/region choice and no high availability or production SLA. Cluster suspends after one week of inactivity and is DELETED after four weeks unless reactivated; snapshots must be managed manually. Free hosted Qdrant is separate from self-hosted OSS and paid inference.",
+  "pricing_url": "https://qdrant.tech/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

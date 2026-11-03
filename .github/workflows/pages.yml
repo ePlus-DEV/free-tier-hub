@@ -9,6 +9,9 @@ on:
       - 'site/**'
       - 'tests/**'
       - 'README.md'
+      - 'CONTRIBUTING.md'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - '.github/ISSUE_TEMPLATE/**'
       - 'package.json'
       - '.nvmrc'
       - '.github/workflows/**'
@@ -21,6 +24,9 @@ on:
       - 'site/**'
       - 'tests/**'
       - 'README.md'
+      - 'CONTRIBUTING.md'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - '.github/ISSUE_TEMPLATE/**'
       - 'package.json'
       - '.nvmrc'
       - '.github/workflows/pages.yml'
@@ -53,7 +59,7 @@ jobs:
           node-version-file: '.nvmrc'
           package-manager-cache: false
       - name: Regenerate category documentation in CI
-        run: npm run catalog:sync
+        run: node scripts/validate-catalog-pr.mjs && npm run catalog:sync
       - name: Verify contributor catalog tooling
         run: npm run verify
       - name: Validate browser script syntax
@@ -79,6 +85,8 @@ jobs:
           test -s dist/llms.txt
           test -s dist/agents.md
           test -s dist/catalog.json
+          test -s dist/search/index.json
+          test -s dist/search/cards/static-hosting.json
           test -s dist/badges/categories/static-hosting.svg
           test -f dist/.nojekyll
       - name: Verify public-domain SEO URLs
@@ -110,7 +118,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           set -euo pipefail
-          git add -u -- 'docs/*.md'
+          git add -u -- 'docs/*.md' data/services.json
           if git diff --cached --quiet; then
             echo 'Category documentation already matches source data.'
             exit 0

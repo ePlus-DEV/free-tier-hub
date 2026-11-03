@@ -220,7 +220,7 @@ jobs:
           # Workflow, application, script, test and UI changes require manual review.
           FILES="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')"
           test -n "$FILES"
-          if grep -Ev '^(data/services\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$FILES"; then
+          if grep -Ev '^(data/services/[a-z0-9-]+/[a-z0-9-]+\.json|README\.md|docs/[a-z0-9-]+\.md)$' <<<"$FILES"; then
             echo "::notice::Changes outside catalog data/docs require manual review"
             exit 0
           fi

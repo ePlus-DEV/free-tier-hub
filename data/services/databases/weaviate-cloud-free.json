@@ -1,0 +1,13 @@
+{
+  "id": "weaviate-cloud-free",
+  "name": "Weaviate Cloud Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "One always-free Weaviate Cloud shared cluster/user: 100,000 objects, 1 GB RAM, 10 GB disk, one collection and up to three tenants",
+  "watch_out": "No card required. Free separately includes 2,000 Weaviate Embeddings requests/day and 1,000 Query Agent requests/month; backups, HA/replication and production SLA are not included. Paid Flex and other AI-service overages are separate; do not assume all query/embedding usage is unlimited.",
+  "pricing_url": "https://weaviate.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

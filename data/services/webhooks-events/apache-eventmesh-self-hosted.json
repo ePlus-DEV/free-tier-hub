@@ -1,0 +1,13 @@
+{
+  "id": "apache-eventmesh-self-hosted",
+  "name": "Apache EventMesh Open-Source Event Middleware",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed self-managed event middleware for CloudEvents-based publish/subscribe, event routing and connectors; no vendor software subscription or per-event license quota.",
+  "watch_out": "Self-hosting requires your own compute, storage and operations; production backends such as Kafka or RocketMQ have separate infrastructure costs. The in-memory storage backend is intended for development and CI, not durable production use. Beta/experimental components have evolving APIs; this is not a free managed event-mesh cloud tier.",
+  "pricing_url": "https://github.com/apache/eventmesh",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}

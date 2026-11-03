@@ -1,0 +1,13 @@
+{
+  "id": "ngrok-free",
+  "name": "ngrok Free",
+  "category": "tunneling-networking",
+  "plan": "ongoing",
+  "free_limit": "ngrok Free: 3 online endpoints, up to 1 GB monthly data transfer, 20,000 HTTP(S) requests/month, 5,000 TCP/TLS connections/month and $5 one-time included usage",
+  "watch_out": "The $5 included usage is a ONE-TIME credit, not a recurring $5/month allowance. Free HTTP(S) endpoints show an interstitial page; no additional usage beyond credit is allowed. Free TCP endpoints require card verification (no charge for verification); assigned development domains differ from paid branded/custom domains. Do not treat a one-time credit as a time-limited Free plan.",
+  "pricing_url": "https://ngrok.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

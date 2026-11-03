@@ -1,0 +1,14 @@
+{
+  "id": "activepieces-community",
+  "name": "Activepieces Community Edition",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Activepieces Community Edition workflow automation with reusable steps, triggers, and app integrations.",
+  "watch_out": "You operate the worker and data infrastructure. Review community license and feature differences from paid cloud or enterprise plans.",
+  "pricing_url": "https://www.activepieces.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

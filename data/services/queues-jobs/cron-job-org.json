@@ -1,0 +1,13 @@
+{
+  "id": "cron-job-org",
+  "name": "cron-job.org Free",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Free scheduled HTTP requests as frequently as every minute; no fixed job-count limit under fair use",
+  "watch_out": "The service is fully free for regular HTTP cron jobs under fair-use requirements. Jobs call publicly reachable URLs; very high scheduling volume or REST API use is rate limited. Your own target endpoint/cloud provider may still incur compute or network costs.",
+  "pricing_url": "https://cron-job.org/en/faq/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

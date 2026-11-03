@@ -1,0 +1,14 @@
+{
+  "id": "instatus-starter",
+  "name": "Instatus Starter",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "15 monitors, two-minute checks, email alerts and public status page.",
+  "watch_out": "No custom domain; limited subscribers and on-call members.",
+  "pricing_url": "https://instatus.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

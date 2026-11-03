@@ -51,7 +51,7 @@ test('merged catalog closure preserves both event-driven and catch-up pathways i
   const workflow = fs.readFileSync(new URL('close-catalog-issue-after-merge.yml', root), 'utf8');
   assert.equal(fs.existsSync(new URL('close-delivered-catalog-issues.yml', root)), false);
   assert.ok(workflow.includes('pull_request_target:'));
-  assert.ok(workflow.includes("push:\n    branches: [main]\n    paths:\n      - 'data/services.json'"));
+  assert.ok(workflow.includes("push:\n    branches: [main]\n    paths:\n      - 'data/services.json'\n      - 'data/services/**'"));
   assert.ok(workflow.includes('workflow_dispatch:'));
   assert.ok(workflow.includes('group: complete-catalog-issues'));
   assert.ok(workflow.includes("github.event_name == 'pull_request_target' && github.event.pull_request.merged == true"));
@@ -61,6 +61,8 @@ test('merged catalog closure preserves both event-driven and catch-up pathways i
   assert.ok(workflow.includes('ref: main\n          persist-credentials: false'));
   assert.ok(workflow.includes("import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs'"));
   assert.ok(workflow.includes("catalogSha = execFileSync('git', ['rev-parse', 'HEAD']"));
+  assert.ok(workflow.includes("const { loadServices } = await import('./scripts/catalog-source.mjs')"));
+  assert.ok(workflow.includes('const catalog = loadServices();'));
   assert.ok(workflow.includes('catalog.map(item => item.id)'));
   assert.ok(workflow.includes('candidate.id !== match[1]'));
 });

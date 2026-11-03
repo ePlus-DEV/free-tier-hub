@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-hyperdrive",
+  "name": "Cloudflare Hyperdrive Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "100,000 database SQL statements/day through Hyperdrive on Workers Free; up to 10 configured databases/account",
+  "watch_out": "Each SELECT, INSERT, UPDATE, DELETE and schema statement counts toward the daily limit (resets 00:00 UTC); over-limit queries fail rather than becoming unlimited. Hyperdrive requires a separately operated PostgreSQL/MySQL origin and a Worker: origin hosting and paid Workers resources are NOT included.",
+  "pricing_url": "https://developers.cloudflare.com/hyperdrive/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

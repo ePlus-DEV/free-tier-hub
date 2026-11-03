@@ -690,3 +690,8 @@ body:has(.cookie-notice:not([hidden])) .support-widget{display:none}
   .catalog-toolbar .category-index-shortcut{flex-shrink:0;max-width:123px;min-height:38px;padding:7px 8px;font-size:11px;white-space:nowrap}
   .category-filter-index-link{margin:-6px 0 0;font-size:13px}
 }
+
+/* Home search: fetched index feedback is polite, never an overlay. */
+.search-load-status:not([hidden]){margin:12px 0;padding:12px 14px;border:1px solid var(--border, #d6dce5);border-radius:12px;font-size:14px;line-height:1.5}
+.search-noscript{margin:12px 0;font-size:14px}
+#service-grid[aria-busy="true"]{opacity:.78;transition:opacity .15s ease}

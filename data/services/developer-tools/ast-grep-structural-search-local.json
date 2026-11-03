@@ -1,0 +1,13 @@
+{
+  "id": "ast-grep-structural-search-local",
+  "name": "ast-grep Open-Source Structural Code Search",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed, locally executed CLI for AST-aware code search, linting and rewriting across supported languages; no vendor-metered quota or software license fee.",
+  "watch_out": "Runs on user-provided hardware and CI runners; build minutes, cloud infrastructure and optional third-party integrations are not included. This is a local developer tool, not a free hosted code-analysis service. Preserve MIT license notices.",
+  "pricing_url": "https://github.com/ast-grep/ast-grep",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}
