@@ -31,6 +31,7 @@ test('comparison MVP is emitted from canonical catalog without bloating search i
     assert.match(js, /MutationObserver\(syncButtons\)/);
     assert.match(js, /window\.fetch\(source/);
     assert.match(js, /new URL\(shareURL\(selected\), window\.location\.origin\)/);
+    assert.match(css, /\.compare-tray-go:hover,\.compare-tray-go:focus-visible\{\s*background:var\(--brand-hover\);color:#fff/);
     assert.match(css, /\.compare-table th:first-child\{position:sticky/);
     assert.match(css, /@media\(max-width:680px\)/);
     assert.ok(catalog.length > 0);
