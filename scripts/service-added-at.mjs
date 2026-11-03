@@ -26,6 +26,24 @@ export function parseAddedDates(log) {
   return dates;
 }
 
+/** First publication of individually versioned service records (post migration). */
+export function parseShardAddedDates(log) {
+  const dates = new Map();
+  let addedOn = '';
+  for (const line of log.split(/\r?\n/)) {
+    if (line.startsWith(COMMIT_MARKER)) {
+      const date = new Date(line.slice(COMMIT_MARKER.length).trim());
+      if (!Number.isFinite(date.getTime())) throw Error('Invalid Git commit timestamp in service shard history');
+      addedOn = date.toISOString().slice(0, 10);
+      continue;
+    }
+    if (!addedOn) continue;
+    const match = /^data\/services\/[a-z0-9-]+\/([a-z0-9-]+)\.json$/.exec(line.trim());
+    if (match && !dates.has(match[1])) dates.set(match[1], addedOn);
+  }
+  return dates;
+}
+
 export function serviceAddedDates(repoRoot) {
   const cwd = path.resolve(repoRoot);
   let shallow;
@@ -49,7 +67,12 @@ export function serviceAddedDates(repoRoot) {
     '--no-ext-diff', '--no-color', `--format=${COMMIT_MARKER}%cI`,
     '-p', ref, '--', 'data/services.json',
   ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
-  let publishedRef = 'HEAD';
+  const readShardDates = ref => parseShardAddedDates(execFileSync('git', [
+    'log', '--first-parent', '--diff-merges=first-parent', '--diff-filter=A',
+    '--reverse', '--no-ext-diff', '--no-color',
+    `--format=${COMMIT_MARKER}%cI`, '--name-only', ref, '--', 'data/services/',
+  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+    let publishedRef = 'HEAD';
   try {
     execFileSync('git', ['rev-parse', '--verify', 'refs/remotes/origin/main'], {
       cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'],
@@ -58,9 +81,17 @@ export function serviceAddedDates(repoRoot) {
   } catch {
     // Local repositories without a remote still retain the original behavior.
   }
+  // Historical monolith dates win over the migration commit's file creation
+  // date. New shard-only IDs use their first appearance on published main.
   const dates = readDates(publishedRef);
+  for (const [id, date] of readShardDates(publishedRef)) {
+    if (!dates.has(id)) dates.set(id, date);
+  }
   if (publishedRef !== 'HEAD') {
     for (const [id, date] of readDates('HEAD')) {
+      if (!dates.has(id)) dates.set(id, date);
+    }
+    for (const [id, date] of readShardDates('HEAD')) {
       if (!dates.has(id)) dates.set(id, date);
     }
   }
