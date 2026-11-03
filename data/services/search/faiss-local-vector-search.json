@@ -1,0 +1,13 @@
+{
+  "id": "faiss-local-vector-search",
+  "name": "Faiss Open-Source Local Vector Similarity Search",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed C++ library with Python bindings for local dense-vector similarity search and clustering; CPU indexes and optional GPU implementations have no vendor software subscription or per-query quota.",
+  "watch_out": "Faiss is an embedded library, not a hosted vector database or free API. CPU/RAM/storage, optional GPU hardware and CUDA/ROCm dependencies, embedding generation and any cloud infrastructure are supplied separately and may cost money; follow MIT and third-party notices.",
+  "pricing_url": "https://github.com/facebookresearch/faiss",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
