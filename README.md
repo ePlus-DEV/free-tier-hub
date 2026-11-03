@@ -6,7 +6,7 @@ Discover and compare free-tier services for hosting, databases, cloud infrastruc
 
 ![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FePlus-DEV%2Ffree-tier-hub%2Fmain%2Fdata%2Fservices.json&query=%24.length&label=services&color=brightgreen) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
-**[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json)
+**[Explore the directory](https://free-tier.eplus.dev/)** · [All categories](https://free-tier.eplus.dev/categories/) · **[Search & filter services](https://free-tier.eplus.dev/#explore)** · [How offers are classified](https://free-tier.eplus.dev/about/classifications/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml) · [Catalog JSON](https://free-tier.eplus.dev/catalog.json) · [Support the project](https://eplus.dev/page/donate)
 
 ## Why Free Tier Hub?
 
@@ -33,6 +33,8 @@ Read the [classification guide on the website](https://free-tier.eplus.dev/about
 For practical combinations, see [example free-tier stacks](docs/use-cases.md) and the [cost and data-safety checklist](docs/cost-safety.md).
 
 ## Browse all categories
+
+The [all-categories page](https://free-tier.eplus.dev/categories/) provides a visual overview of every category with live counts and direct links to each category's service listings.
 
 | Category | Services | Browse |
 | --- | ---: | --- |
@@ -66,6 +68,16 @@ There are two ways to help keep the directory current:
 - **Pull request:** Fork the repository, add or update an entry in [`data/services.json`](data/services.json), and open a PR. **No local Node.js commands or manual README/doc-count edits are required** for standard catalog contributions; GitHub Actions generates category tables for checks.
 
 Please include accurate quotas, reset periods, restrictions, and official URLs. Maintainers review provider claims before merging. Read the [contribution guide](CONTRIBUTING.md) for the schema and full workflow.
+
+## Support Free Tier Hub
+
+Free Tier Hub is an independent, community-maintained project. If the directory helps you, you can support its continued development and upkeep:
+
+- **[Sponsor ePlus.DEV on GitHub](https://github.com/sponsors/ePlus-DEV)** — support the maintainers through GitHub Sponsors.
+- **[Donate via ePlus.DEV](https://eplus.dev/page/donate)** — see the official donation page for the available methods, including Vietnam bank transfer.
+- **Support without donating:** [star the repository](https://github.com/ePlus-DEV/free-tier-hub), [report incorrect listings](https://github.com/ePlus-DEV/free-tier-hub/issues), or [contribute a service](CONTRIBUTING.md).
+
+Donations are voluntary and never required to browse the catalog. Financial support does **not** influence service eligibility, classification, ranking or inclusion. Verify payment details on the official donation page before sending funds.
 
 ## Catalog data and accuracy
 

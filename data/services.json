@@ -95,12 +95,12 @@
     "name": "Deplexo Free Hosting",
     "category": "app-hosting",
     "plan": "ongoing",
-    "free_limit": "1 always-on app; 0.25 CPU; 128 MB RAM; 250 MB disk",
-    "watch_out": "Provider advertises no sleep; long-term reliability has not been independently verified.",
+    "free_limit": "One always-on Free app: 0.25 vCPU, 128 MB RAM, 250 MB disk, 100 GB monthly transfer and 10 Mbit/s network bandwidth",
+    "watch_out": "No payment card or automatic sleep on the Free plan, but resources are shared and capped at 0.25 vCPU, 128 MB RAM, 250 MB disk and 10 Mbit/s. At the 100 GB monthly account transfer limit, apps stop until the next month or a plan upgrade. No independent uptime guarantee; not a dedicated VPS.",
     "pricing_url": "https://deplexo.com/free-hosting",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -422,12 +422,25 @@
     "category": "developer-tools",
     "plan": "ongoing",
     "free_limit": "50 AI code reviews/month across 2 repositories; max 3 inline comments/review",
-    "watch_out": "Default three-reviewer panel only; excess reviews are skipped until reset or upgrade.",
+    "watch_out": "$0 forever, no card, up to 50 monthly PR panel reviews across 2 repositories; three default reviewers and maximum 3 inline comments. At quota exhaustion additional reviews are skipped (not auto-billed); custom panels, higher quotas and BYO OpenRouter key require paid plans.",
     "pricing_url": "https://prquorum.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "uv-python-package-manager-local",
+    "name": "Astral uv Open-Source Python Package Manager",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT/Apache-2.0 local Python package and project manager with dependency resolution, lockfiles, Python version management and CLI tool installation; no license fee or per-project quota.",
+    "watch_out": "This is local MIT/Apache-2.0 software, not a hosted Python development plan. Python packages and registries have independent terms; CI runners, private registries, cloud compute and bandwidth can cost money.",
+    "pricing_url": "https://github.com/astral-sh/uv",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
   },
   {
     "id": "estuary-developer",
@@ -499,12 +512,12 @@
     "name": "Prisma Postgres Free",
     "category": "databases",
     "plan": "ongoing",
-    "free_limit": "1.01 GB storage; 200,000 operations/month; up to 50 databases",
-    "watch_out": "Monthly operations and storage caps on Free; verify current limits before production use.",
+    "free_limit": "2 GB storage; 200,000 database operations/month; up to 50 databases; unlimited database data transfer",
+    "watch_out": "Free is $0 forever without a card and has a fixed $0 spend limit (no automatic overage billing). One query counts as one operation; Free has 10 pooled and 10 direct connections and no automated backups. Paid plans offer larger quotas with spend limits.",
     "pricing_url": "https://www.prisma.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-08",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -565,11 +578,11 @@
     "category": "developer-tools",
     "plan": "ongoing",
     "free_limit": "Public packages are free; GitHub Free includes 500 MB private storage and 1 GB monthly transfer",
-    "watch_out": "Private quotas share storage with Actions artifacts; over-quota usage may be blocked or billed.",
+    "watch_out": "GitHub Free includes 500 MB private package storage and 1 GB private package transfer/month. Storage is shared with Actions artifacts; eligible public packages and current Container registry bandwidth are separately free. Above-limit private usage can be charged unless budgets/usage controls prevent it; plan reset applies to transfer.",
     "pricing_url": "https://docs.github.com/en/billing/concepts/product-billing/github-packages",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -578,11 +591,11 @@
     "category": "auth-security",
     "plan": "ongoing",
     "free_limit": "3 users free; 5 config syncs; 3 days of activity logs",
-    "watch_out": "Additional users cost $8/month; advanced SSO and audit retention require paid plans.",
+    "watch_out": "The ongoing Developer tier includes 3 users, 5 config syncs and 3-day audit activity logs. Each extra developer is $8/month. The separate Team tier has an introductory 14-day premium trial; do not classify that trial as expiry of Developer Free.",
     "pricing_url": "https://www.doppler.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -669,11 +682,11 @@
     "category": "observability",
     "plan": "ongoing",
     "free_limit": "One user; 5,000 errors/month; 50 replays and 1 uptime monitor",
-    "watch_out": "Free plan is single-user; profiling, advanced integrations and additional event volumes require payment.",
+    "watch_out": "Developer is $0 for one user with error/tracing support; extra seats, event volume, profiling and paid integrations are separate. A temporary new-user promotion grants 5,000 Session Replays/month for the first 3 months; it does NOT expand the ongoing Free allowance.",
     "pricing_url": "https://sentry.io/pricing/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -681,12 +694,12 @@
     "name": "Splunk Observability Cloud Free Edition",
     "category": "observability",
     "plan": "ongoing",
-    "free_limit": "Up to 15 hosts with all Observability Cloud platform features; no time limit",
-    "watch_out": "May be throttled and accounts inactive for 30+ days can be deactivated; use is limited to internal business purposes and not service-bureau processing for third parties.",
+    "free_limit": "Splunk Observability Cloud Free Edition: Agent Observability for agentic applications and supporting infrastructure, up to 15 hosts, without a fixed trial period",
+    "watch_out": "Free Edition concentrates on Agent Observability and up to 15 hosts, not every paid Observability Cloud module. Sign-up may require a request and platform eligibility; throttling and 30-day inactivity deactivation can apply. Commercial usage is restricted to internal business purposes; no service-bureau use.",
     "pricing_url": "https://www.splunk.com/en_us/products/pricing/observability.html",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -695,11 +708,11 @@
     "category": "analytics",
     "plan": "ongoing",
     "free_limit": "10 GB storage; 1,000 requests/day per organization; 0.25 vCPU (up to 3x burst); 1 query thread",
-    "watch_out": "Shared infrastructure; CPU bursts beyond capacity return HTTP 429; Free queries have a 10-second execution limit; $25 LLM credits per billing cycle are separate.",
+    "watch_out": "The ongoing Free plan includes shared query infrastructure (0.25 vCPU with bursts), a 10-second query execution ceiling and one query thread; bursts over capacity can yield 429 errors. Separately advertised LLM credits are not recurring general-purpose database cash credit.",
     "pricing_url": "https://www.tinybird.co/docs/forward/pricing/free",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -721,11 +734,11 @@
     "category": "dns-cdn",
     "plan": "ongoing",
     "free_limit": "Free authoritative DNS, CDN, universal SSL and DDoS protection",
-    "watch_out": "Free DNS zones created since Sep 2024 default to 200 records; free CDN is not a substitute for hosting.",
+    "watch_out": "Free provides authoritative DNS, basic CDN, universal SSL and DDoS protections for eligible zones; the free CDN is not website hosting. Zones created after September 2024 have lower record-count defaults (check the currently applicable DNS record cap); advanced performance/WAF features may require paid plans.",
     "pricing_url": "https://www.cloudflare.com/plans/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -733,12 +746,12 @@
     "name": "Hugging Face Static Spaces",
     "category": "ai-ml",
     "plan": "ongoing",
-    "free_limit": "Free static Spaces for ML demo frontends and project showcases",
-    "watch_out": "Creating Gradio or Docker compute Spaces requires a paid plan; static hosting does not provide free persistent compute.",
+    "free_limit": "Free static HTML/JavaScript Spaces hosted on Hugging Face for demos, portfolios and ML interfaces, without managed runtime compute",
+    "watch_out": "Static Spaces are free for everyone. Creating CPU-backed Gradio/Docker compute Spaces normally requires a paid account tier, even though CPU Basic hardware itself lists a zero hourly rate; limited eligible ZeroGPU exceptions exist. GPUs, model inference and persistent compute are not part of this static tier.",
     "pricing_url": "https://huggingface.co/docs/hub/spaces-overview",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -747,11 +760,11 @@
     "category": "ai-ml",
     "plan": "ongoing",
     "free_limit": "Free input and output tokens for eligible Gemini models; Google AI Studio access",
-    "watch_out": "Free API eligibility and rate limits vary by model and region; free-tier content can be used to improve Google products.",
+    "watch_out": "Gemini Developer API Free eligibility, per-model token billing and rate limits vary by current model, geography and request mode. No broad promise of unlimited free API use; free-tier content may be used to improve Google products. Cloud billing is separate for paid-tier access.",
     "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -785,12 +798,12 @@
     "name": "Appwrite Cloud Free",
     "category": "app-hosting",
     "plan": "ongoing",
-    "free_limit": "2 projects; 5 GB monthly bandwidth; 2 GB storage; 750K executions/month; 75K MAU",
-    "watch_out": "Free projects pause after one week of inactivity; 1 database, 1 bucket and 2 functions per project.",
+    "free_limit": "Appwrite Cloud Free: 2 projects, 5 GB monthly bandwidth, 2 GB storage, 750,000 executions/month and 75,000 monthly active users",
+    "watch_out": "Free includes one database, one bucket and two functions per project; projects pause after one week of inactivity. Backups, extra resources and production-oriented features require paid tiers; do not mistake the $10 Pro compute credit for Free recurring usage.",
     "pricing_url": "https://appwrite.io/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -851,11 +864,11 @@
     "category": "queues-jobs",
     "plan": "ongoing",
     "free_limit": "Free scheduled HTTP requests as frequently as every minute; no fixed job-count limit under fair use",
-    "watch_out": "Fair-use requirements apply; REST API is limited to 100 calls/day by default and jobs call public URLs.",
+    "watch_out": "The service is fully free for regular HTTP cron jobs under fair-use requirements. Jobs call publicly reachable URLs; very high scheduling volume or REST API use is rate limited. Your own target endpoint/cloud provider may still incur compute or network costs.",
     "pricing_url": "https://cron-job.org/en/faq/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-22",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -877,11 +890,11 @@
     "category": "search",
     "plan": "ongoing",
     "free_limit": "Search: 30 requests/min and 500/hour; Fetch: 150 URLs/min and 1,000/day",
-    "watch_out": "Agent and Browser are separately metered; Search/Fetch stay free with $0 Wallet.",
+    "watch_out": "Search and Fetch remain free within published rate limits even with a $0 Wallet; Agent and Browser are separate prepaid metered products. A new signup Wallet promotional grant is one-time, not recurring Search/Fetch credit. No card needed for the free Search/Fetch APIs.",
     "pricing_url": "https://future.tinyfish.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -922,6 +935,19 @@
     "commercial_use": "check",
     "last_checked": "2026-10-30",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "openfeature-kubernetes-operator-self-hosted",
+    "name": "OpenFeature Kubernetes Operator (Self-Hosted)",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes operator for feature flags, injecting flagd sidecars and exposing flag evaluation via gRPC and HTTP; no software license fee or vendor quota.",
+    "watch_out": "Requires a user-operated Kubernetes cluster and flagd sidecars; infrastructure and monitoring are not free. The operator resolves cross-namespace resources, with documented multi-tenant isolation risk GHSA-398h-7f66-3h4p; apply upstream mitigations.",
+    "pricing_url": "https://github.com/open-feature/open-feature-operator",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "launchdarkly-developer",
@@ -1059,11 +1085,11 @@
     "category": "queues-jobs",
     "plan": "ongoing",
     "free_limit": "30,000 outbound webhook attempts/month; 5 queues; up to 5 attempts/job; 3-day job retention",
-    "watch_out": "Each dispatched webhook POST, including retries and backpressure responses, counts as an attempt; backpressure waiting is free. Commercial-use terms need confirmation.",
+    "watch_out": "Free has 30,000 monthly outbound webhook POST attempts across five queues, no card and no paid overage. Retry attempts count toward the cap; backpressure waiting does not. At the limit you must upgrade rather than assuming unlimited delivery; job retention is three days.",
     "pricing_url": "https://simpleq.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1085,11 +1111,11 @@
     "category": "queues-jobs",
     "plan": "ongoing",
     "free_limit": "1,000 cloud executions/month; no credit card required",
-    "watch_out": "Cloud hosted in US; self-hosted Community Edition is a separate option; commercial-use conditions need confirmation.",
+    "watch_out": "Hosted Windmill Cloud Community has an ongoing bounded monthly execution allocation and is distinct from a separately self-hosted Community Edition. Cloud service limits and regions are provider-operated; personal/commercial use and paid extras should be checked against the latest cloud terms.",
     "pricing_url": "https://www.windmill.dev/docs/getting_started/how_to_use_windmill",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1098,11 +1124,11 @@
     "category": "observability",
     "plan": "ongoing",
     "free_limit": "500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention",
-    "watch_out": "Intended for individuals and small projects; soft dataset, field and query-concurrency limits; commercial use unconfirmed.",
+    "watch_out": "Axiom Personal is a permanent $0 hosted plan with NO credit card: 500 GB monthly data loading, 10 GB-hours query compute, 25 GB storage and 30-day retention, for individual developers and small projects. The separate Axiom Cloud plan adds a $25/month platform fee and larger allowances.",
     "pricing_url": "https://axiom.co/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1111,11 +1137,11 @@
     "category": "webhooks-events",
     "plan": "ongoing",
     "free_limit": "10,000 events/month; 100,000 discarded requests/month; 5 events/second per destination; 3-day event retention",
-    "watch_out": "One user; retries included. After 10,000 events, dashboard locks until next billing period or upgrade; excessive overages may stop processing.",
+    "watch_out": "Developer is an ongoing $0 plan with 10,000 monthly events, one user, three-day retention and five events/second/destination. One inbound request may create multiple events; retries are included. After 10,000 events the dashboard locks until renewal or upgrade; excessive overages may stop processing. Paid Team/Growth use separate metered billing.",
     "pricing_url": "https://hookdeck.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1124,11 +1150,11 @@
     "category": "webhooks-events",
     "plan": "ongoing",
     "free_limit": "Up to 50,000 messages/month; 50 messages/second; 7-day payload retention",
-    "watch_out": "Free plan targets developers testing or setting up first webhooks; retries and filtered messages do not count; no stated uptime SLA.",
+    "watch_out": "Free requires no credit card, with 50 messages/second, 7-day payload retention and no stated uptime SLA. The 200 messages/second limit, 30-day retention and 99.9% uptime SLA are paid Basic features. Check payload-size and retry accounting before high-volume use.",
     "pricing_url": "https://www.svix.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-23",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1163,11 +1189,11 @@
     "category": "databases",
     "plan": "ongoing",
     "free_limit": "10 GB storage and 10 Pulse compute CU-hours/month; up to 3 internal active users and 2 service accounts",
-    "watch_out": "Free accounts are for internal business use only; embedding in third-party products/services is prohibited. Usage beyond included quotas requires a paid account; no SLA.",
+    "watch_out": "Lite is an ongoing $0 tier with 10 GB storage and 10 hours of Pulse compute/month; a card is not needed. An optional 7-day Business trial is separate and does not terminate the free Lite plan. Customer-facing embedding/redistribution is restricted on Lite; usage beyond Lite included quotas needs a paid plan.",
     "pricing_url": "https://motherduck.com/product/pricing/",
     "credit_card": "no",
     "commercial_use": "no",
-    "last_checked": "2026-09-24",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1202,11 +1228,11 @@
     "category": "app-hosting",
     "plan": "limited-duration",
     "free_limit": "First month free for eligible new customers on select managed WordPress plans; Single 20GB includes 1 WordPress install, 20 GB server bandwidth/month, 10 GB storage and 125 GB CDN bandwidth/month.",
-    "watch_out": "Not an ongoing free tier. Selected plans only; Single 20GB renews at $35/month on monthly billing after the first month, excluding taxes. Confirm eligibility, payment requirements and cancellation terms before signing up.",
+    "watch_out": "A time-limited first-month promotional offer, NOT an ongoing free plan. Single 20GB is $0 for the first month then $35/month on monthly billing, excluding taxes. New-customer and plan eligibility, automatic renewal, payment method and cancellation terms must be checked before signup.",
     "pricing_url": "https://kinsta.com/pricing/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-09-24",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1224,15 +1250,15 @@
   },
   {
     "id": "shipvela-hobby",
-    "name": "Shipvela Hobby",
+    "name": "Shipvela Free Static Hosting",
     "category": "static-hosting",
     "plan": "ongoing",
     "free_limit": "3 projects; 20 publishes/month; custom domains and managed HTTPS",
-    "watch_out": "Early access. Static CLI uploads are limited to 50 MB and 5,000 files; server-rendered Next.js requires a paid plan. No hosted databases or long-lived backend servers.",
+    "watch_out": "This is Shipvela Free ($0), NOT the separate paid Hobby tier ($9.99/month). Free publishing resets monthly and has no automatic overage charges. Prebuilt CLI uploads are limited to 50 MB/5,000 files; supported Next.js SSR requires paid Pro/Studio. Domain registration, databases and backend services are not included.",
     "pricing_url": "https://shipvela.com/#pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-03",
+    "last_checked": "2026-11-01",
     "added_at": "2026-10-03",
     "deployment_model": "cloud"
   },
@@ -1255,11 +1281,11 @@
     "category": "webhooks-events",
     "plan": "ongoing",
     "free_limit": "10,000 inbound events/month; 3 sources; 9 shared destinations; 1 workspace member; 14-day event retention",
-    "watch_out": "120 inbound events/minute per source; up to 20% monthly quota buffer without overage charges; ordered delivery, static outbound IP and DPA require paid plans. Commercial-use terms not explicitly confirmed.",
+    "watch_out": "Free has 10,000 inbound events/month, three sources, nine destinations and 14-day retention, without a signup card. Rate limit is 120 incoming events/minute/source; a 20% buffer avoids immediate paid overage. Higher-volume production features, ordered delivery, static egress IP and DPA need a paid plan.",
     "pricing_url": "https://webhooker.eu/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-09-28",
+    "last_checked": "2026-10-31",
     "deployment_model": "cloud"
   },
   {
@@ -1268,11 +1294,11 @@
     "category": "feature-flags",
     "plan": "ongoing",
     "free_limit": "1 project; 10 flags; 2 environments; 1 developer; unlimited evaluations",
-    "watch_out": "7-day audit logs and one developer on Solo; larger teams, more projects/environments and longer audit retention require paid plans.",
+    "watch_out": "Free is permanent without a credit card or trial deadline: 1 project, 10 flags, 2 environments, up to 3 team members and 7-day audit logs. Paid tiers unlock larger teams, more projects/environments, scheduled changes and longer audit history.",
     "pricing_url": "https://featureflip.io/pricing/",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-09-29",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1294,11 +1320,11 @@
     "category": "observability",
     "plan": "ongoing",
     "free_limit": "20 million events/month; 100 million metrics data points/month; unlimited seats; unlimited querying",
-    "watch_out": "SLOs and Service Map are not included on Free. Free support is limited to account support. Commercial-use terms need confirmation.",
+    "watch_out": "Free forever includes 2 triggers, distributed tracing and BubbleUp. Service Level Objectives require Pro; Service Map is Enterprise-only. Free event/metric ingestion is capped; commercial-use terms are not explicitly confirmed.",
     "pricing_url": "https://www.honeycomb.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-04",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1319,12 +1345,12 @@
     "name": "ReqKey",
     "category": "developer-tools",
     "plan": "ongoing",
-    "free_limit": "100,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member",
-    "watch_out": "Official homepage and pricing page have conflicting request quotas; use conservative pricing-page limit and recheck before merging. Reselling or white-labeling requires separate agreement.",
+    "free_limit": "5,000,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member",
+    "watch_out": "A billable-meter request means one API key validation OR one logged API call; using both can consume two units for the same application request. Free traffic is not hard-stopped immediately above the allowance, but the provider may request a tier upgrade for sustained overuse; its pricing FAQ says over-allowance accepted traffic is not retroactively billed. No credit card required.",
     "pricing_url": "https://www.reqkey.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-01",
     "deployment_model": "cloud"
   },
   {
@@ -1345,12 +1371,12 @@
     "name": "MockHive Free",
     "category": "developer-tools",
     "plan": "ongoing",
-    "free_limit": "3 collections; 100 records each; 1,000 GET requests/month; 50 POST inserts/day",
-    "watch_out": "No production base URL on Free; paid plans unlock higher limits",
+    "free_limit": "3 collections with 100 records each; 1,000 GET requests/month; 50 POST inserts/day; 3 AI API Builder uses/month",
+    "watch_out": "Free is $0 forever without a card. Production base URLs and relationships require Starter; when a quota is exhausted, further mock requests can return HTTP 429 until upgrade or the billing cycle resets.",
     "pricing_url": "https://mockhive.dev/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1358,12 +1384,12 @@
     "name": "DevCycle Free",
     "category": "feature-flags",
     "plan": "ongoing",
-    "free_limit": "Up to 1,000 client-side monthly active users; unlimited seats and feature flags",
-    "watch_out": "Client-side MAU usage is capped on Free; confirm server-side and experimentation usage limits before scaling.",
+    "free_limit": "1,000 client-side MAUs; 10,000 cloud config requests/month; 100,000 server config requests/month; 5,000 events/month; unlimited feature flags and seats",
+    "watch_out": "Client-side MAUs count unique client SDK initializations, while cloud-bucketing requests, server SDK configuration fetches and events have separate quotas. Free has no credit card requirement. Paid Business features and overages are separate; the pricing page does not clearly specify Free over-quota behavior, so do not assume unlimited calls or automatic billing.",
     "pricing_url": "https://devcycle.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-01",
     "deployment_model": "cloud"
   },
   {
@@ -1385,11 +1411,11 @@
     "category": "developer-tools",
     "plan": "ongoing",
     "free_limit": "100 requests/month per API across 20 APIs",
-    "watch_out": "Free tier hard limit; RapidAPI subscription used",
+    "watch_out": "Free Basic is a hard stop at 100 requests/month per API, without a paid overage. Paid RapidAPI tiers use soft quotas and bill additional requests per call; commercial use is explicitly permitted even on Free.",
     "pricing_url": "https://www.datanest.network/pricing",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1397,12 +1423,12 @@
     "name": "Mastra Platform Starter",
     "category": "ai-ml",
     "plan": "ongoing",
-    "free_limit": "100K observability events; 24 CPU hours; 10 GB egress per month",
-    "watch_out": "Usage beyond included allowance is pay-as-you-go; persistent server is paid",
+    "free_limit": "100,000 observability events/month; 24 CPU hours/month; 10 GB data egress/month; 15-day data retention; unlimited users, projects and deployments",
+    "watch_out": "Starter is $0/month but usage above monthly allowances is pay-as-you-go: $10/100K observability events, $0.35/CPU hour and $0.10/GB egress. Set credit top-up/auto-top-up cautiously; a persistent always-on server is $100/project. Model/Gateway tokens, storage and other metered services have separate charges. Card requirement and commercial-use terms remain unconfirmed.",
     "pricing_url": "https://mastra.ai/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-01",
     "deployment_model": "cloud"
   },
   {
@@ -1410,12 +1436,12 @@
     "name": "GrowthBook Cloud Starter",
     "category": "feature-flags",
     "plan": "ongoing",
-    "free_limit": "3 users, 1 project, unlimited feature flags and experiments",
-    "watch_out": "Advanced governance and additional projects require paid plan",
+    "free_limit": "3 users, 1 project, unlimited feature flags, experiments and traffic; optional managed warehouse includes 1 million events/month",
+    "watch_out": "Cloud Starter is free without a card. Bring-your-own data warehouse may have separate infrastructure charges; advanced AI Visual Editor, governance and multi-project features require Pro. The self-hosted Open Source edition is separate.",
     "pricing_url": "https://www.growthbook.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1423,12 +1449,12 @@
     "name": "Hook0 Developer Free",
     "category": "webhooks-events",
     "plan": "ongoing",
-    "free_limit": "100 events/day; 1 application, 1 developer, 7-day retention",
-    "watch_out": "Over-quota events rejected with HTTP 429",
+    "free_limit": "100 webhook events/day; 10 event types; 10 subscriptions; 1 application and 1 developer; 7-day event retention",
+    "watch_out": "Extra events on the hosted Developer Free plan are blocked with HTTP 429, not automatically billed. Retries, HMAC signing and delivery logs are included. Separately offered SSPL-1.0 self-hosted Hook0 requires your own infrastructure; this listing is for the managed Cloud Developer plan. No credit card required.",
     "pricing_url": "https://www.hook0.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-01",
     "deployment_model": "cloud"
   },
   {
@@ -1436,12 +1462,12 @@
     "name": "PingZen Free",
     "category": "observability",
     "plan": "ongoing",
-    "free_limit": "55 monitors; 1-minute check interval; 23 protocols; 3 alert channels",
-    "watch_out": "Confirm alert and monitoring retention limits before production reliance",
+    "free_limit": "55 monitors; 1-minute checks; 23 protocols; Telegram/email/webhook alerts plus 3 saved integrations; 5 status pages, 20 alerts, 5 API keys and 3 team members",
+    "watch_out": "Free forever without a card and explicitly permitted for commercial sites. Three consecutive failed checks are required by default before an alert (typically 2–3 minutes); service is provided as-is without uptime SLA or compensation.",
     "pricing_url": "https://pingzen.dev/",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -1450,11 +1476,11 @@
     "category": "feature-flags",
     "plan": "ongoing",
     "free_limit": "500 monthly active contexts; unlimited flags, projects and users",
-    "watch_out": "Lifecycle reporting and advanced reporting require paid Team plan",
+    "watch_out": "Permanent Free tier includes 500 monthly active contexts and unlimited projects, users and flags, without a card. The separate 30-day Team trial does not make Free time-limited. Hosted MCP/Management API, audit logs and advanced lifecycle reporting require paid plans.",
     "pricing_url": "https://zenmanage.com/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-07",
+    "last_checked": "2026-11-02",
     "deployment_model": "cloud"
   },
   {
@@ -2895,7 +2921,7 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-10-16",
-    "deployment_model": "unclassified"
+    "deployment_model": "cloud"
   },
   {
     "id": "mistral-vibe-free",
@@ -5691,7 +5717,7 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-27",
-    "deployment_model": "unclassified"
+    "deployment_model": "cloud"
   },
   {
     "id": "apache-dolphinscheduler-self-hosted",
@@ -7822,7 +7848,8 @@
     "pricing_url": "https://northflank.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "hybrid"
   },
   {
     "id": "alwaysdata-free-web-hosting",
@@ -7860,7 +7887,8 @@
     "pricing_url": "https://github.com/openmediavault/openmediavault",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "ferretdb-self-hosted",
@@ -7872,7 +7900,8 @@
     "pricing_url": "https://github.com/FerretDB/FerretDB",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "go-task-open-source",
@@ -7884,7 +7913,8 @@
     "pricing_url": "https://github.com/go-task/task",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   },
   {
     "id": "litellm-open-source",
@@ -7896,7 +7926,8 @@
     "pricing_url": "https://github.com/BerriAI/litellm/blob/main/LICENSE",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "uptrace-self-hosted",
@@ -7908,7 +7939,8 @@
     "pricing_url": "https://github.com/uptrace/uptrace",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "apache-iotdb-self-hosted",
@@ -7920,7 +7952,8 @@
     "pricing_url": "https://github.com/apache/iotdb",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "apache-hertzbeat-self-hosted",
@@ -7932,7 +7965,8 @@
     "pricing_url": "https://github.com/apache/hertzbeat",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "haystack-open-source",
@@ -7944,7 +7978,8 @@
     "pricing_url": "https://github.com/deepset-ai/haystack",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   },
   {
     "id": "mercure-hub-self-hosted",
@@ -7956,7 +7991,8 @@
     "pricing_url": "https://github.com/dunglas/mercure",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "pushpin-self-hosted",
@@ -7968,7 +8004,8 @@
     "pricing_url": "https://github.com/fastly/pushpin",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "fusejs-open-source-search",
@@ -7980,7 +8017,8 @@
     "pricing_url": "https://github.com/krisk/Fuse",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   },
   {
     "id": "backhaul-reverse-tunnel-self-hosted",
@@ -7992,7 +8030,8 @@
     "pricing_url": "https://github.com/Musixal/Backhaul",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "qdrant-self-hosted",
@@ -8004,7 +8043,8 @@
     "pricing_url": "https://github.com/qdrant/qdrant",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "pgvector-postgresql-extension",
@@ -8016,7 +8056,8 @@
     "pricing_url": "https://github.com/pgvector/pgvector",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   },
   {
     "id": "weaviate-open-source-self-hosted",
@@ -8028,7 +8069,8 @@
     "pricing_url": "https://github.com/weaviate/weaviate",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "dify-community-self-hosted",
@@ -8040,7 +8082,8 @@
     "pricing_url": "https://github.com/langgenius/dify",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "oneuptime-cloud-free",
@@ -8052,7 +8095,8 @@
     "pricing_url": "https://oneuptime.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "atlassian-forge-free-usage",
@@ -8064,7 +8108,8 @@
     "pricing_url": "https://developer.atlassian.com/platform/forge/forge-platform-pricing/",
     "credit_card": "check",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "better-auth-managed-starter",
@@ -8076,7 +8121,8 @@
     "pricing_url": "https://better-auth.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "cabin-analytics-free",
@@ -8088,7 +8134,8 @@
     "pricing_url": "https://withcabin.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "render-key-value-free",
@@ -8100,7 +8147,8 @@
     "pricing_url": "https://render.com/docs/free",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "switchflag-developer-free",
@@ -8112,7 +8160,8 @@
     "pricing_url": "https://www.switchflag.com/pricing",
     "credit_card": "no",
     "commercial_use": "no",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "tuzzle-hobby-free",
@@ -8124,7 +8173,8 @@
     "pricing_url": "https://tzzl.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "statichost-eu-hobby",
@@ -8136,7 +8186,8 @@
     "pricing_url": "https://www.statichost.eu/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "stow-media-library-free",
@@ -8148,7 +8199,8 @@
     "pricing_url": "https://usestow.com/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "google-cloud-scheduler-free",
@@ -8160,7 +8212,8 @@
     "pricing_url": "https://cloud.google.com/scheduler/pricing",
     "credit_card": "yes",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "sheetdb-free",
@@ -8172,7 +8225,8 @@
     "pricing_url": "https://sheetdb.io/pricing",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "gedo-free-authoritative-dns",
@@ -8184,7 +8238,8 @@
     "pricing_url": "https://www.gedo.se/en/dns",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "nubbo-free-storage-manager",
@@ -8196,7 +8251,8 @@
     "pricing_url": "https://nubbo.app/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "goose-open-source-ai-agent",
@@ -8208,7 +8264,8 @@
     "pricing_url": "https://github.com/aaif-goose/goose",
     "credit_card": "no",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "local"
   },
   {
     "id": "azure-pipelines-free",
@@ -8220,7 +8277,8 @@
     "pricing_url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines",
     "credit_card": "check",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "aws-eventbridge-scheduler-free",
@@ -8232,7 +8290,8 @@
     "pricing_url": "https://aws.amazon.com/eventbridge/pricing/",
     "credit_card": "yes",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "emailjs-free",
@@ -8244,7 +8303,8 @@
     "pricing_url": "https://www.emailjs.com/pricing/",
     "credit_card": "no",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "formcarry-baby-free",
@@ -8256,7 +8316,8 @@
     "pricing_url": "https://formcarry.com/pricing",
     "credit_card": "check",
     "commercial_use": "yes",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "fermyon-cloud-starter-free",
@@ -8268,7 +8329,8 @@
     "pricing_url": "https://www.fermyon.com/pricing",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-28"
+    "last_checked": "2026-10-28",
+    "deployment_model": "cloud"
   },
   {
     "id": "dagu-community-self-hosted",
@@ -11362,6 +11424,760 @@
     "credit_card": "check",
     "commercial_use": "no",
     "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "kepler-kubernetes-energy-monitoring",
+    "name": "Kepler Open-Source Kubernetes Energy Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Kubernetes energy and power metrics exporter for nodes, containers and pods; no vendor software monitoring quota or subscription fee.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and compatible host power or hardware metrics. Kubernetes nodes, Prometheus storage, dashboards and infrastructure are not free; energy estimates depend on available telemetry.",
+    "pricing_url": "https://github.com/sustainable-computing-io/kepler",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "eleventy-static-site-generator-local",
+    "name": "Eleventy (11ty / Build Awesome) Static Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local static-site generator supporting Markdown, HTML and multiple template engines; no license fee or vendor-imposed local site/build quota.",
+    "watch_out": "Eleventy is build software, not free hosted web space. Hosting, CDN, domains, CI runners, bandwidth and plugins may cost extra. Upstream now uses the Build Awesome name/repository; @11ty/eleventy remains a compatible installation path; check version and plugin compatibility.",
+    "pricing_url": "https://www.11ty.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "hono-serverless-web-framework-local",
+    "name": "Hono Open-Source Web Framework",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Web Standards web/API framework that runs in local JavaScript runtimes and serverless/edge environments including Cloudflare Workers, Deno, Bun and AWS Lambda; no Hono software license fee.",
+    "watch_out": "Hono is a framework, not a hosted free serverless account. Cloudflare Workers, AWS Lambda, Fastly, Vercel, CI, bandwidth and databases may bill separately; each deployment provider sets its own quotas, signup/card and overage terms. Preserve MIT notices.",
+    "pricing_url": "https://hono.dev/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "nitro-server-toolkit-local",
+    "name": "Nitro Open-Source Server Toolkit",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed server toolkit/framework for local development and building deployable web/serverless applications; no Nitro software license fee or vendor-imposed local build quota.",
+    "watch_out": "Nitro does not provide free hosted compute, domains, bandwidth, CI or databases; cloud/serverless provider billing and overage policies apply. The upstream main branch documents Nitro v3 while Nitro v2 remains the current stable line; check version compatibility and runtime adapters.",
+    "pricing_url": "https://nitro.build/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "konflux-ci-self-hosted",
+    "name": "Konflux Open-Source CI/CD",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native CI/CD software for building, testing, signing and releasing artifacts; no Konflux software license fee or vendor-imposed build quota when self-hosted.",
+    "watch_out": "You operate the Kubernetes cluster, Tekton pipelines, registries and storage; infrastructure, CI workers, networking and artifact hosting can cost money. This is not a free vendor-hosted Konflux account. Commercial use follows Apache-2.0 notice and license obligations.",
+    "pricing_url": "https://github.com/konflux-ci/konflux-ci",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "borgmatic-backup-automation-local",
+    "name": "borgmatic Open-Source Backup Automation",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0-or-later configuration-driven automation for BorgBackup with backup scheduling, retention, consistency checks and hooks; no vendor software subscription or storage quota.",
+    "watch_out": "Requires BorgBackup and your own local or remote backup destination. Disks, servers, object storage, network transfer and maintenance may cost money. GPLv3 redistribution obligations apply; borgmatic is backup orchestration, not a duplicate listing for the BorgBackup engine.",
+    "pricing_url": "https://torsion.org/borgmatic/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "zizmor-github-actions-security-local",
+    "name": "zizmor Open-Source CI Security Scanner",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI for static analysis of GitHub Actions, Dependabot and pre-commit configurations; no vendor scan quota or software subscription fee.",
+    "watch_out": "Runs locally or on user-provided CI runners. GitHub Actions runner minutes may cost money; optional GitHub code-scanning/SARIF upload can require GitHub Advanced Security for private repositories, but CLI scanning does not. This is not a hosted free security scanning service.",
+    "pricing_url": "https://github.com/zizmorcore/zizmor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "git-cliff-changelog-generator-local",
+    "name": "git-cliff Open-Source Changelog Generator",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 OR MIT licensed CLI that generates customizable changelogs and release notes from Git history and Conventional Commits; no software subscription or vendor execution quota.",
+    "watch_out": "Runs locally or on user-managed CI runners; GitHub Actions or other hosted CI minutes, release hosting and storage may cost money. Not a managed changelog SaaS allowance.",
+    "pricing_url": "https://github.com/orhun/git-cliff",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "shipwright-build-self-hosted",
+    "name": "Shipwright Build (Kubernetes)",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes-native container image build framework with Build and BuildRun APIs; no Shipwright license fee or vendor-enforced build allowance.",
+    "watch_out": "Requires your own compatible Kubernetes cluster, Tekton Pipelines, image registry and credentials; compute, registry, storage and network usage may incur charges. No hosted Shipwright free plan is included. Apache-2.0 notices apply.",
+    "pricing_url": "https://github.com/shipwright-io/build",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kpack-kubernetes-build-service-self-hosted",
+    "name": "kpack Kubernetes Native Container Build Service",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed Kubernetes build service using Cloud Native Buildpacks to build and rebuild OCI images; no kpack software license fee or fixed build quota.",
+    "watch_out": "Runs in a user-operated Kubernetes cluster; image registries, buildpack stacks, compute, persistent volumes and network usage may cost extra. Container registry credentials may be required, but no card is required for the open-source software itself.",
+    "pricing_url": "https://github.com/buildpacks-community/kpack",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "rollgate-cloud-free",
+    "name": "Rollgate Free Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "500,000 feature-flag requests/month; unlimited flags; 3 projects, 3 environments, 3 seats; 12 SDKs on vendor-hosted Free plan.",
+    "watch_out": "Free tier is described for side projects and evaluation; confirm production/commercial-use terms before relying on it. No self-hosted plan is currently available (listed as coming soon). Upgrade or over-quota billing/stop behavior is not documented clearly; verify with provider before exceeding 500K requests.",
+    "pricing_url": "https://rollgate.io/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "flagdash-cloud-free",
+    "name": "FlagDash Free Feature Flags & Remote Config",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "Free forever vendor-hosted plan: 10,000 API calls/month; 25 feature flags, 10 remote configs, 2 projects, 2 environments, 2 team members; 10 session replays/month.",
+    "watch_out": "Free plan has small API, project, replay and team quotas. Paid Premium plans have 7-day trials that bill automatically; do not confuse them with the ongoing Free tier. Confirm production/commercial terms, whether Free usage hard-stops at limits, and any add-on/overage charges before scaling.",
+    "pricing_url": "https://flagdash.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "ice-domains-free-dns",
+    "name": "ice.domains Free DNS Hosting",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "Vendor-hosted authoritative Anycast DNS, free forever with unlimited DNS zones, records and queries; DNSSEC, REST API, DNS analytics and DDoS protection included; works with domains from any registrar.",
+    "watch_out": "Requires an existing domain registration (domain registration/renewal is not free). Users must change nameservers at their registrar. Extraordinary query traffic should be discussed with provider; no formal SLA or contractual no-charge guarantee was independently established. Vendor claims production and small-business suitability.",
+    "pricing_url": "https://ice.domains/free-dns",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "octelium-zero-trust-self-hosted",
+    "name": "Octelium Open-Source Zero Trust Access",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free, self-hosted zero-trust access platform for VPN-like WireGuard/QUIC connectivity, identity-aware application gateways and policy-controlled private-resource access; open-source core has no vendor license fee or hosted-usage quota.",
+    "watch_out": "Requires self-operated Kubernetes, compute, networking, DNS and storage, which can incur charges. Cluster/server components are AGPL-3.0, clients Apache-2.0; comply with AGPL network-use/source obligations. Enterprise-only features and alternative commercial licensing are separate paid offerings; no vendor-hosted free infrastructure is included.",
+    "pricing_url": "https://github.com/octelium/octelium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "defguard-open-source-self-hosted",
+    "name": "Defguard Open-Source WireGuard Access Management",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted open-source core for WireGuard-based remote access, identity and access management, and authentication; no software subscription for the AGPL-licensed community components.",
+    "watch_out": "Requires operator-provided server, network and WireGuard infrastructure. AGPL obligations apply to the open-source core; the enterprise directory and enterprise-only features are separately licensed. The paid Business/Enterprise offerings must not be confused with the free open-source core; consult official feature boundaries before deployment.",
+    "pricing_url": "https://github.com/DefGuard/defguard",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cordium-sandbox-self-hosted",
+    "name": "Cordium Open-Source Developer and AI Sandboxes",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted Kubernetes sandbox/workspace platform for developers, AI agents and CI jobs with isolated containers, browser/SSH/CLI access, reusable templates and identity-based infrastructure access; no Cordium software license or hosted-workspace quota.",
+    "watch_out": "Requires a self-operated Kubernetes cluster and Octelium infrastructure; compute, volumes, snapshots, egress, DNS and any model APIs may cost extra. Cordium code is Apache-2.0 but deployments can include AGPL-3.0 Octelium Cluster components with additional source-sharing obligations; no vendor-hosted free workspace is included.",
+    "pricing_url": "https://github.com/octelium/cordium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openberth-self-hosted-app-platform",
+    "name": "OpenBerth Self-Hosted Application Deployment Platform",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted application deployment platform for Node.js, Python, Go and static sites; deploy to your own Linux server with gVisor-isolated containers, automatic HTTPS, CLI and web management; no OpenBerth software subscription or vendor-imposed application quota.",
+    "watch_out": "Requires an operator-provided Ubuntu server, DNS/domain, Docker, gVisor and networking; compute, domain registration, storage, bandwidth and external dependencies may cost extra. This is free software, not vendor-hosted free application compute. Review the installer and sandbox/security configuration before production use.",
+    "pricing_url": "https://github.com/openberth/openberth",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "trinity-ai-agents-self-hosted",
+    "name": "Trinity Open-Source Self-Hosted AI Agent Platform",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted AI agent orchestration platform with Docker-based workspaces, agent schedules, approval gates, audit logs, and Claude Code/Codex/Gemini CLI runtime integrations; open-source core has no software license fee or vendor-hosted quota.",
+    "watch_out": "Operator supplies Docker host, compute, storage, PostgreSQL and network infrastructure; model-provider API, agent runtime subscriptions, hosting and bandwidth may cost extra. Enterprise modules including organization SSO, advanced RBAC and compliance features require separate commercial licensing; do not treat them as included in the free open-source core.",
+    "pricing_url": "https://github.com/abilityai/trinity",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ryvos-local-ai-agent-runtime",
+    "name": "Ryvos Open-Source Local AI Agent Runtime",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Rust AI agent runtime and local assistant with command-line interface, persistent memory, task planning, tools, MCP integration and optional messaging channels; self-run binary has no Ryvos software license fee or vendor-imposed local-use quota.",
+    "watch_out": "Runs on user-controlled Linux/macOS hardware; LLM provider API calls, cloud servers, model subscriptions and optional Docker sandboxing infrastructure may cost extra. Ryvos Cloud is a separate hosted offering and is not included or verified as free; use local models where supported to avoid paid inference.",
+    "pricing_url": "https://github.com/Ryvos/ryvos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "perspective-analytics-local",
+    "name": "Perspective Open-Source Streaming Analytics",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source interactive data grid, pivot-table and chart component for large and streaming datasets; browser WebAssembly and locally run Python/Node.js/Rust integrations without software license fees or vendor-imposed local query quotas.",
+    "watch_out": "Perspective is an embeddable analytics component, not a free hosted dashboard or database. User supplies hosting, data sources, compute and storage; production security, browser memory and third-party infrastructure costs remain their responsibility.",
+    "pricing_url": "https://github.com/perspective-dev/perspective",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "grafana-beyla-ebpf-self-hosted",
+    "name": "Grafana Beyla Open-Source eBPF Instrumentation",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Linux eBPF auto-instrumentation for HTTP/gRPC and other supported application traffic, exporting OpenTelemetry traces and Prometheus metrics; no Beyla software license fee or vendor-imposed self-hosted usage quota.",
+    "watch_out": "Requires Linux kernel/eBPF/BTF support and elevated tracing capabilities; operator must supply compute, storage, telemetry backend and security controls. Grafana Cloud and hosted observability usage may incur charges. Beyla code is migrating toward upstream OpenTelemetry eBPF Instrumentation; avoid cataloguing that upstream as a separate equivalent offering.",
+    "pricing_url": "https://grafana.com/docs/beyla/latest/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "meltano-elt-cli-local",
+    "name": "Meltano Open-Source ELT CLI",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source command-line data integration and ELT orchestration engine for extracting, loading and transforming data using configurable plugins; no Meltano OSS license fee or vendor-imposed local pipeline quota.",
+    "watch_out": "Self-operated Meltano CLI and integrations are free software, not a hosted free ETL account. Operator pays for compute, storage, databases, schedulers, network, cloud services and any third-party connectors; individual plugin licenses and API quotas must be checked separately.",
+    "pricing_url": "https://github.com/meltano/meltano",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "turborepo-local-build-system",
+    "name": "Turborepo Open-Source Monorepo Build System",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Rust-based build system for JavaScript and TypeScript monorepos with task orchestration and local caching; no license fee or local build quota.",
+    "watch_out": "Free local tooling is distinct from optional vendor-hosted remote caching and other Vercel services, which may have separate pricing, quotas or billing requirements. User-provided CI runners, compute and storage may cost money.",
+    "pricing_url": "https://github.com/vercel/turborepo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "mergerfs-union-filesystem-local",
+    "name": "mergerfs Open-Source Union Filesystem",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed Linux FUSE union filesystem that combines multiple existing storage paths into one logical mount; no software license fee or vendor usage quota.",
+    "watch_out": "Runs on user-managed Linux storage and requires compatible FUSE/kernel configuration; physical disks, backups and infrastructure cost extra. It is NOT RAID, parity protection, redundancy or a backup solution; retain license notice.",
+    "pricing_url": "https://github.com/trapexit/mergerfs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "zensical-static-documentation-generator-local",
+    "name": "Zensical Open-Source Static Documentation Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed free-forever static documentation site generator by the Material for MkDocs team; Markdown documentation builds without a vendor subscription or usage quota.",
+    "watch_out": "Zensical Studio, Spark and professional support are separate optional offerings; website hosting, domains, CI and infrastructure are not included. Preserve MIT license terms.",
+    "pricing_url": "https://github.com/zensical/zensical",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "mkdocs-static-documentation-generator-local",
+    "name": "MkDocs Open-Source Documentation Site Generator",
+    "category": "static-hosting",
+    "plan": "ongoing",
+    "free_limit": "BSD-2-Clause-licensed local Markdown-to-static-HTML documentation generator with themes and plugins; no software license fee or build quota.",
+    "watch_out": "Generates site files locally; public hosting, domains, CI runners, third-party themes/plugins and their licenses are separate and may incur costs. This is not free managed website hosting.",
+    "pricing_url": "https://github.com/mkdocs/mkdocs",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "changesets-monorepo-release-tool-local",
+    "name": "Changesets Open-Source Release and Versioning Tool",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local CLI and tooling for package version management, changelog generation and release publishing in monorepos or individual packages; no vendor software subscription or usage quota.",
+    "watch_out": "Package registry accounts, publishing access, CI runner minutes and third-party release hosting are separate and may incur fees; Changesets is not a free hosted package registry or CI service.",
+    "pricing_url": "https://github.com/changesets/changesets",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "opennext-cloudflare-adapter-local",
+    "name": "OpenNext for Cloudflare Open-Source Adapter",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed open-source adapter that builds Next.js applications for the Cloudflare Workers runtime; free to install and use locally without an adapter subscription.",
+    "watch_out": "This is build/deployment tooling, NOT free Cloudflare hosting or unlimited Workers requests. Cloudflare Workers accounts, compute, bandwidth, storage and paid overages are governed by separate Cloudflare plans; retain MIT license notice.",
+    "pricing_url": "https://github.com/opennextjs/opennextjs-cloudflare",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "opencost-kubernetes-cost-monitoring-self-hosted",
+    "name": "OpenCost Kubernetes Cost Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes/cloud cost allocation engine, APIs, metrics and UI; no software subscription fee or vendor-imposed usage quota.",
+    "watch_out": "Requires your own Kubernetes cluster, Helm and Prometheus; compute, storage, monitoring retention, cloud billing APIs and related infrastructure may cost money. This is not a free hosted Kubernetes or cloud account.",
+    "pricing_url": "https://github.com/opencost/opencost",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "cadvisor-container-metrics-self-hosted",
+    "name": "cAdvisor Container Metrics (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source container resource monitoring daemon with CPU, memory, disk and network metrics, API and web UI; no license fee or software usage quota.",
+    "watch_out": "Runs on your own Docker/Kubernetes host; privileged container and host filesystem mounts may be required, so restrict access and review security. Infrastructure, metrics storage, remote monitoring and network costs are not included.",
+    "pricing_url": "https://github.com/google/cadvisor",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "scrutiny-disk-health-monitoring-self-hosted",
+    "name": "Scrutiny S.M.A.R.T Disk Health Monitoring (Self-Hosted)",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted disk health dashboard with S.M.A.R.T metrics, historical trends and disk failure thresholds; no vendor software license fee or usage quota.",
+    "watch_out": "Requires a server with disk S.M.A.R.T access and a self-operated collector/web application; device or privileged Docker access can have security implications. Storage, backup and server costs are not included; monitoring is not a substitute for backups.",
+    "pricing_url": "https://github.com/AnalogJ/scrutiny",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "jitsu-cloud-free-event-data",
+    "name": "Jitsu Cloud Free Event Data Pipeline",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "200,000 active events/month, unlimited captured events and destinations, up to 1 daily active connector sync, with ClickHouse UI/API access on the $0 Jitsu Cloud Free plan.",
+    "watch_out": "Active events are those delivered to destinations; exceeding the included allowance requires a paid upgrade according to official pricing. Do not confuse captured with active events; transformations and destinations affect usage. No credit card stated for Free signup; commercial-use terms and overage enforcement should be checked with provider. The separate MIT self-hosted offering requires your own infrastructure.",
+    "pricing_url": "https://jitsu.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-10-31",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "kube-state-metrics-self-hosted",
+    "name": "kube-state-metrics Kubernetes Object Monitoring",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Kubernetes add-on exporting deployment, node, pod and other Kubernetes API object state metrics to a Prometheus-compatible endpoint, with no software license fee.",
+    "watch_out": "Requires your own Kubernetes cluster and separate metrics scraper/storage; it reports API object state, not full application tracing or node/container resource telemetry. Compute, storage and Prometheus infrastructure are not included.",
+    "pricing_url": "https://github.com/kubernetes/kube-state-metrics",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zipkin-distributed-tracing-self-hosted",
+    "name": "Zipkin Open-Source Distributed Tracing",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source distributed tracing collector, query API and UI with no vendor software subscription or built-in license usage quota.",
+    "watch_out": "Operate the Zipkin server yourself using Java/Docker and instrument applications. Persistent trace storage may require Cassandra, Elasticsearch or another backend; compute, storage, messaging and network charges are separate. No hosted free tracing service is included.",
+    "pricing_url": "https://github.com/openzipkin/zipkin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "dnsviz-dnssec-analysis-local",
+    "name": "DNSViz Open-Source DNSSEC Analysis CLI",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "GPLv2 open-source local DNS and DNSSEC diagnostics, probing, analysis and visualization commands; no software subscription or vendor-imposed quota.",
+    "watch_out": "Runs locally and performs DNS queries; resolver/network costs or rate limits may apply. GPLv2 redistribution conditions apply. This is a DNS diagnostic tool, not a free hosted authoritative DNS or CDN plan.",
+    "pricing_url": "https://github.com/dnsviz/dnsviz",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "local"
+  },
+  {
+    "id": "debezium-cdc-self-hosted",
+    "name": "Debezium Open Source Change Data Capture",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source database change data capture connectors and Debezium Server for streaming committed row changes to supported sinks; no software subscription or vendor usage quota.",
+    "watch_out": "Requires database replication/log privileges, connector runtime (such as Kafka Connect or Debezium Server), message broker or sink and monitoring. Hosted infrastructure, database storage and broker operations may cost money; Debezium trademarks are separate from the software license.",
+    "pricing_url": "https://debezium.io/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "microk8s-self-hosted-kubernetes",
+    "name": "Canonical MicroK8s (Self-Hosted Kubernetes)",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 single-package Kubernetes distribution for workstations, edge and clusters, with optional DNS, ingress and monitoring add-ons; no software license fee for self-managed use.",
+    "watch_out": "Requires your own compatible Linux host(s), storage, networking and cluster operations; add-ons and external cloud resources may incur infrastructure costs. Commercial support and managed Kubernetes services are separate.",
+    "pricing_url": "https://github.com/canonical/microk8s",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-hop-self-hosted",
+    "name": "Apache Hop Open Source Data Orchestration",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 data pipeline and workflow orchestration platform with local GUI, command-line runner and optional self-managed Hop Server; no software license fee or vendor usage quota.",
+    "watch_out": "Compute, storage, databases and external services are not free infrastructure. Change default Hop Server credentials, protect REST endpoints with authentication, enable TLS and run only trusted workflows, which execute with host privileges.",
+    "pricing_url": "https://github.com/apache/hop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "apache-nifi-self-hosted",
+    "name": "Apache NiFi Open Source Dataflow",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-managed flow-based data routing, ingestion, event processing and transformation with provenance and a web UI; no software license fee or vendor usage quota.",
+    "watch_out": "Runs on your own Java 21 host or cluster; compute, storage and external systems may cost money. Production requires trusted TLS certificates, authentication, authorization and careful exposure of the administration interface.",
+    "pricing_url": "https://github.com/apache/nifi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-10-31",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "k3s-self-hosted-kubernetes",
+    "name": "K3s Lightweight Kubernetes (Self-Hosted)",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 lightweight, production-ready Kubernetes distribution with bundled control plane, container runtime and cluster utilities; no software license fee or vendor-imposed usage quota.",
+    "watch_out": "Operate your own Linux nodes, network, persistent volumes, backups, security updates and monitoring; cloud VMs, storage and load balancers may be billed. K3s is a Kubernetes distribution, not a free managed cluster.",
+    "pricing_url": "https://github.com/k3s-io/k3s",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "sidekiq-oss-background-jobs-self-hosted",
+    "name": "Sidekiq OSS Ruby Background Jobs",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "LGPLv3-licensed Sidekiq OSS background-job processing for Ruby with retries, Web UI, middleware and scheduling; free open-source core with no software subscription or vendor-imposed usage quota.",
+    "watch_out": "Requires self-managed Ruby workers plus Redis, Valkey or Dragonfly and separately funded infrastructure. Sidekiq Pro/Enterprise features are paid. LGPLv3 obligations apply when redistributing Sidekiq; check the license of the chosen datastore.",
+    "pricing_url": "https://sidekiq.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "bucketlist-dream-of-the-day-public-api",
+    "name": "Bucketlist.nl Dream of the Day Public API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Public JSON API with CORS serving a daily rotating activity/experience idea, image, canonical URL and source attribution; no published request quota.",
+    "watch_out": "Public API currently needs no account, API key or card, but no formal request rate limit, SLA, service permanence or commercial-content reuse license is published. Keep source attribution and the canonical URL; linked destinations can contain affiliate offers. Daily content rotation is not a one-request/day allowance.",
+    "pricing_url": "https://bucketlist.nl/samenwerken",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-02",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "ruff-python-linter-local",
+    "name": "Astral Ruff Open-Source Python Linter and Formatter",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Python linting and formatting CLI with hundreds of built-in rules, auto-fixes and editor integrations; unlimited local use without a subscription.",
+    "watch_out": "You provide your own workstation or CI runner; remote CI, repository hosting and third-party integrations may cost money. Ruff does not include a hosted code-quality dashboard or paid infrastructure.",
+    "pricing_url": "https://github.com/astral-sh/ruff",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "sentence-transformers-local",
+    "name": "Sentence Transformers Open-Source Embeddings Framework",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 local Python framework for sentence embeddings, semantic search, reranking and model training; no library subscription or per-request quota.",
+    "watch_out": "Pretrained models have independent licenses and possible gated downloads; verify model commercial-use terms separately. Local CPU/GPU resources, hosted inference endpoints, training and cloud infrastructure are not included.",
+    "pricing_url": "https://github.com/huggingface/sentence-transformers",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "huggingface-diffusers-local",
+    "name": "Hugging Face Diffusers Open-Source Library",
+    "category": "ai-ml",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 Python library for local diffusion-model inference and training pipelines for images, video and audio; no software license fee or per-inference quota imposed by the library.",
+    "watch_out": "Model checkpoints have separate licenses, usage restrictions and sometimes gated access; check each model before commercial use. GPUs, cloud compute, model downloads and hosted inference APIs are not free with this library.",
+    "pricing_url": "https://github.com/huggingface/diffusers",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "wg-easy-wireguard-self-hosted",
+    "name": "wg-easy Self-Hosted WireGuard Management",
+    "category": "tunneling-networking",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-only licensed WireGuard VPN server and web administration UI; no vendor software subscription or published per-peer quota for self-hosting.",
+    "watch_out": "Requires self-managed Linux host with Docker/Podman, networking, security updates, and optionally a reverse proxy; VPS, bandwidth, domains and maintenance are not free. Commercial use is allowed subject to AGPL-3.0 network-source and distribution obligations; no vendor-hosted free account is included.",
+    "pricing_url": "https://github.com/wg-easy/wg-easy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "aionui-desktop-local",
+    "name": "AionUi Open-Source Desktop AI Agent Workspace",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 desktop cowork and AI-agent interface for macOS, Windows and Linux with local file workflows and support for connecting external or local AI agents; no license fee for the open-source app.",
+    "watch_out": "Model subscriptions, API tokens, third-party coding agents and remote hosting may incur charges; the app does not grant free paid LLM inference. Grant filesystem and shell permissions carefully because connected agents can execute local operations.",
+    "pricing_url": "https://github.com/iOfficeAI/AionUi",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "digitalocean-functions-free",
+    "name": "DigitalOcean Functions Monthly Free Allowance",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "90,000 GiB-seconds of Functions compute per team per month, shared across Functions and App Platform function components; 100 ms minimum billed runtime per invocation.",
+    "watch_out": "A payment method is required to create resources. The recurring free allowance does not roll over; excess compute is billed at $0.0000185/GiB-second automatically. App Platform bandwidth and other resources may incur separate charges. The $5 signup credit expires after 90 days and is not part of this ongoing allowance. Card-specific and commercial-use terms are not independently confirmed.",
+    "pricing_url": "https://www.digitalocean.com/pricing/functions",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "astron-agent-self-hosted",
+    "name": "iFLYTEK Astron Agent Open-Source Platform",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted agentic workflow platform for AI orchestration, model/tool integration, RPA and team collaboration with Docker-based deployment; no open-source software license fee.",
+    "watch_out": "Requires self-operated compute, containers, database, authentication and secure networking. Model APIs, external iFLYTEK cloud services and infrastructure can be billed; change default example credentials and review each integrated provider's terms.",
+    "pricing_url": "https://github.com/iflytek/astron-agent",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "twilio-serverless-functions-free",
+    "name": "Twilio Serverless Functions Monthly Free Invocations",
+    "category": "serverless",
+    "plan": "ongoing",
+    "free_limit": "First 10,000 Twilio Serverless Functions invocations per month are free; additional invocations cost $0.0001 each.",
+    "watch_out": "Twilio's initial trial expires after 30 days; continuing afterward requires upgrading to a billing-enabled pay-as-you-go account. The monthly free Functions allowance is separate from the expiring trial. Excess invocations are charged automatically, and other Twilio communication services may be billed separately. Card requirement for continued use and explicit commercial-use permission are not independently confirmed.",
+    "pricing_url": "https://www.twilio.com/en-us/serverless/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "openflags-self-hosted-feature-flags",
+    "name": "OpenFlags Self-Hosted Feature Flags",
+    "category": "feature-flags",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted feature-flag API, dashboard and JavaScript/React SDKs; no vendor software subscription or published self-hosted flag-evaluation quota.",
+    "watch_out": "Requires self-operated Bun/SQLite or Docker infrastructure, storage, backups, HTTPS and security maintenance. Hosting, bandwidth and any external cloud services are not included; this is not a free vendor-hosted feature-flag account.",
+    "pricing_url": "https://github.com/huextrat/openflags",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "hooklistener-free-webhook-debugger",
+    "name": "Hooklistener Free Webhook Debugger",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free hosted plan: 1 debug endpoint, 50 stored requests per endpoint, 1 day of request history, 1 seat, and MCP access; $0 per month.",
+    "watch_out": "Free stores at most 50 webhook requests for 1 day, not 50 new requests per month. Official billing docs say new requests return HTTP 403 when storage is full until old requests expire or are deleted; do not rely on this plan for guaranteed production delivery. Paid plans offer larger quotas, history and production features. Anonymous endpoints are session-scoped; sign up for persistent endpoints. Free-plan commercial/production rights are not expressly guaranteed.",
+    "pricing_url": "https://www.hooklistener.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-02",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "requestbin-net-free-webhook-testing",
+    "name": "RequestBin.net Free Webhook Testing",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free hosted webhook testing plan: 3 bins, up to 500 requests per bin per day, the latest 100 requests stored per bin, and 1 preview mock API rule; $0 ongoing.",
+    "watch_out": "Daily request quotas reset; free history is capped at 100 requests per bin. Additional bins, unlimited history and advanced forwarding require paid plans. Free-plan commercial and production-use rights are not expressly documented; verify provider terms before relying on it for production.",
+    "pricing_url": "https://requestbin.net/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "apache-eventmesh-self-hosted",
+    "name": "Apache EventMesh Open-Source Event Middleware",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed self-managed event middleware for CloudEvents-based publish/subscribe, event routing and connectors; no vendor software subscription or per-event license quota.",
+    "watch_out": "Self-hosting requires your own compute, storage and operations; production backends such as Kafka or RocketMQ have separate infrastructure costs. The in-memory storage backend is intended for development and CI, not durable production use. Beta/experimental components have evolving APIs; this is not a free managed event-mesh cloud tier.",
+    "pricing_url": "https://github.com/apache/eventmesh",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "ast-grep-structural-search-local",
+    "name": "ast-grep Open-Source Structural Code Search",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed, locally executed CLI for AST-aware code search, linting and rewriting across supported languages; no vendor-metered quota or software license fee.",
+    "watch_out": "Runs on user-provided hardware and CI runners; build minutes, cloud infrastructure and optional third-party integrations are not included. This is a local developer tool, not a free hosted code-analysis service. Preserve MIT license notices.",
+    "pricing_url": "https://github.com/ast-grep/ast-grep",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "hyperfine-cli-benchmark-local",
+    "name": "hyperfine Open-Source CLI Benchmarking",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed command-line benchmarking tool with repeated runs, statistical analysis, warmup and export; free local execution with no subscription or usage quota.",
+    "watch_out": "Runs benchmark commands repeatedly on your own hardware; commands, cloud compute, paid APIs or CI runners invoked by a benchmark may incur charges or side effects. This is local software, not a managed benchmarking allowance; comply with license notices.",
+    "pricing_url": "https://github.com/sharkdp/hyperfine",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "watchexec-file-watcher-local",
+    "name": "Watchexec Open-Source File-Watcher CLI",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed local file-change watcher that runs configured commands on filesystem events; no license fee, account or vendor-metered limit.",
+    "watch_out": "Runs on user-managed Windows, macOS or Linux systems. Triggered builds, CI jobs, external APIs or deployment commands can incur their own charges or side effects; no hosted compute or monitoring service is included. Apache-2.0 obligations apply.",
+    "pricing_url": "https://github.com/watchexec/watchexec",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "local"
+  },
+  {
+    "id": "typos-source-spellchecker-local",
+    "name": "typos Open-Source Source-Code Spell Checker",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT OR Apache-2.0 licensed source-code spelling checker for local repositories, with CLI and CI/pre-commit integration; no vendor-hosted quota or license fee.",
+    "watch_out": "Users supply their own compute and any CI runner minutes; optional GitHub Actions and third-party services may have independent billing. Automated corrections should be reviewed, and license notices retained. This is local tooling, not a hosted SaaS plan.",
+    "pricing_url": "https://github.com/crate-ci/typos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
     "deployment_model": "local"
   }
 ]
