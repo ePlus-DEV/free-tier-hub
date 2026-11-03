@@ -1,0 +1,44 @@
+name: Gate verified catalog auto-merge
+
+on:
+  workflow_run:
+    workflows:
+      - Validate free tier catalog
+      - Build and deploy GitHub Pages
+    types: [completed]
+
+permissions:
+  contents: read
+  pull-requests: read
+  actions: read
+
+# Two workflows finish independently. Serialize checks/merge per exact head.
+concurrency:
+  group: catalog-gated-merge-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    if: >-
+      ${{ github.event.workflow_run.event == 'pull_request' &&
+          github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Verify bot credentials
+        env:
+          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+        run: test -n "$GH_TOKEN"
+      - name: Check exact-head CI and guarded merge
+        env:
+          GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
+          CI_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: node scripts/catalog-event-auto-merge.mjs

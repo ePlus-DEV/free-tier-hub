@@ -60,8 +60,10 @@ jobs:
           package-manager-cache: false
       - name: Regenerate category documentation in CI
         run: node scripts/validate-catalog-pr.mjs && npm run catalog:sync
-      - name: Verify contributor catalog tooling
-        run: npm run verify
+      # The independent Validate free tier catalog workflow owns the full test suite.
+      # Pages owns built-site verification and SEO checks to avoid duplicate runs.
+      - name: Validate catalog source before site build
+        run: npm run catalog:check
       - name: Validate browser script syntax
         run: node --check site/assets/site.js
       - name: Assert Node-only repository automation
