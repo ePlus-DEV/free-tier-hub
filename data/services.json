@@ -12322,5 +12322,31 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "txtai-local-semantic-search",
+    "name": "txtai Open-Source Local Semantic Search and Embeddings",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Python framework for local semantic/vector search, embeddings indexes and RAG workflows; no vendor software license fee or query quota for the self-run framework.",
+    "watch_out": "This is not free hosted txtai.cloud or free LLM inference. You supply CPU/GPU, memory, storage, model downloads and API credentials; third-party model licenses, hosted inference, infrastructure and external APIs may have separate costs or commercial restrictions.",
+    "pricing_url": "https://github.com/neuml/txtai",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "webhookwhisper-free-webhook-testing",
+    "name": "WebhookWhisper Free Webhook Testing",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free hosted plan: 3 webhook endpoints, 2 forwarding rules per endpoint, 7-day event history and 35+ sample provider payloads; $0 per month.",
+    "watch_out": "Anonymous guest endpoints expire after 1 hour and are not the persistent free-account plan. Event history is retained for only 7 days on Free; more endpoints, longer history and event replay require paid tiers. Commercial/production rights are not expressly confirmed in the public pricing description.",
+    "pricing_url": "https://webhookwhisper.com/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "cloud"
   }
 ]
