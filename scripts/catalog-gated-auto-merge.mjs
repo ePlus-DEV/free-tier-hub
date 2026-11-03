@@ -7,7 +7,6 @@ import { execFileSync } from 'node:child_process';
 const repo = process.env.GITHUB_REPOSITORY;
 const prURL = process.env.PR_URL || '';
 const serviceId = process.env.SERVICE_ID || '';
-const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function gh(args) {
@@ -34,6 +33,7 @@ export function changedOnlyCandidate(files, item) {
 }
 
 async function main() {
+  const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
   if (!repo || !/^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/\d+$/.test(prURL) ||
       !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(serviceId) || candidate.id !== serviceId) {
     throw Error('Invalid catalog auto-merge inputs');
