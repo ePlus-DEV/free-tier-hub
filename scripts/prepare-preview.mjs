@@ -21,14 +21,18 @@ export function prepare(site, baseURL) {
   if (!pages.length || !fs.existsSync(path.join(root, 'assets/site.css'))) {
     throw Error('Missing generated site or stylesheet');
   }
-  const localLinks = new RegExp('((?:href|src|action)=")' + escapeRegex(baseURL) + '([^"]*)(")', 'g');
+  const localLinks = new RegExp('((?:href|src|action|data-search-index|data-search-cards)=")' +
+    escapeRegex(baseURL) + '([^"]*)(")', 'g');
   for (const page of pages) {
     let content = fs.readFileSync(page, 'utf8');
     const canonical = content.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
     content = content.replace(localLinks, (_match, prefix, url, suffix) => {
       let target = url.split(/[?#]/)[0];
       const fragment = url.slice(target.length);
-      if (!target || target.endsWith('/')) target += 'index.html';
+      // data-search-cards points to a directory prefix used by fetch(), not an
+      // HTML route. Keep its trailing slash so runtime can append category.json.
+      if (!prefix.startsWith('data-search-cards') &&
+          (!target || target.endsWith('/'))) target += 'index.html';
       const relative = path.relative(path.dirname(page), path.join(root, target))
         .split(path.sep).join('/');
       return prefix + relative + fragment + suffix;
