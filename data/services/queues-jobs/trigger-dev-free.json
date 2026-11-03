@@ -1,0 +1,13 @@
+{
+  "id": "trigger-dev-free",
+  "name": "Trigger.dev Free",
+  "category": "queues-jobs",
+  "plan": "monthly-credit",
+  "free_limit": "$5 recurring compute/run credits each month on Trigger.dev Free ($0/month); 20 concurrent runs, 10 schedules, unlimited tasks and 5 team members",
+  "watch_out": "The $5 Free compute/run credit renews monthly; it is not a one-time trial. Free includes Dev/Prod environments, 10 concurrent Realtime connections and one-day log and query retention. Usage beyond credit may require an upgrade; Hobby is a separately billed $10/month plan with its own included credits.",
+  "pricing_url": "https://trigger.dev/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

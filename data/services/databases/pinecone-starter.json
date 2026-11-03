@@ -1,0 +1,13 @@
+{
+  "id": "pinecone-starter",
+  "name": "Pinecone Starter",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Pinecone Starter: up to 2 GB vector storage, 2 million write units and 1 million read units/month, 1 GB egress/month and 5 indexes",
+  "watch_out": "Starter is a recurring Free managed database allowance, limited to AWS us-east-1, one project and small teams, without an uptime SLA. Dedicated read nodes, backups and cross-region restore are unavailable; Builder ($20/month) and higher usage-based plans are distinct. Inference or Assistant resources can have separate limits.",
+  "pricing_url": "https://www.pinecone.io/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

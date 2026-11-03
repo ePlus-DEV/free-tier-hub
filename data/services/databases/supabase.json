@@ -1,0 +1,13 @@
+{
+  "id": "supabase",
+  "name": "Supabase Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Free: 500 MB Postgres/project, 2 active projects, 50K monthly active users, 1 GB file storage and 5 GB egress",
+  "watch_out": "Free projects pause after one week of inactivity. The 500 MB database is on shared CPU/500 MB RAM; the 5 GB cached egress is a separate quota. Daily backups and longer log retention require Pro. Paid add-ons/extra compute are not part of the $0 Free plan.",
+  "pricing_url": "https://supabase.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

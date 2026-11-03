@@ -1,0 +1,14 @@
+{
+  "id": "duckdns-free",
+  "name": "Duck DNS Free",
+  "category": "dns-cdn",
+  "plan": "ongoing",
+  "free_limit": "Free dynamic DNS subdomains under duckdns.org with IPv4/IPv6 updates using HTTPS.",
+  "watch_out": "Hostname quota, payment-card requirements and commercial-use terms not confirmed; verify account limits before relying on the service.",
+  "pricing_url": "https://www.duckdns.org/about.jsp",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

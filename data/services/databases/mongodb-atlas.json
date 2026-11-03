@@ -1,0 +1,13 @@
+{
+  "id": "mongodb-atlas",
+  "name": "MongoDB Atlas Free Cluster",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "MongoDB Atlas M0 Free cluster: 512 MB total storage including indexes; shared RAM/vCPU",
+  "watch_out": "The M0 Free tier is ongoing but constrained to development/learning, with region, throughput and feature limits. A separate no-signup Ephemeral M0 cluster is NOT durable: it pauses after 2 days and is deleted after 7 days unless claimed. Do not confuse ephemeral signup flow with a claimed Free Atlas cluster or a paid Flex cluster.",
+  "pricing_url": "https://www.mongodb.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

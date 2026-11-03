@@ -1,0 +1,14 @@
+{
+  "id": "opensearch-self-hosted",
+  "name": "OpenSearch Self-Hosted",
+  "category": "search",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted OpenSearch search and analytics engine, including indexing, querying, and dashboards.",
+  "watch_out": "Cluster hardware, storage, security configuration, upgrades, and backups are your responsibility. Managed OpenSearch offerings incur separate costs.",
+  "pricing_url": "https://opensearch.org/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

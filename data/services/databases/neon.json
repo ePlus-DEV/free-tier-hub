@@ -1,0 +1,13 @@
+{
+  "id": "neon",
+  "name": "Neon Free Postgres",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "100 projects; 100 CU-hours/project/month; 1 GB storage/project",
+  "watch_out": "Scale-to-zero after inactivity; 5 GB public network transfer/project/month; verify project eligibility.",
+  "pricing_url": "https://neon.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-12",
+  "deployment_model": "cloud"
+}

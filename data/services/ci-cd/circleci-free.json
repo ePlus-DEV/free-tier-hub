@@ -1,0 +1,13 @@
+{
+  "id": "circleci-free",
+  "name": "CircleCI Free",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "Up to 6,000 build minutes/month on a small Docker resource; up to 5 active users",
+  "watch_out": "Build-minute consumption varies by resource class and credit rate; higher-resource jobs exhaust the free allowance sooner. Paid plans offer additional credits.",
+  "pricing_url": "https://circleci.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-23",
+  "deployment_model": "cloud"
+}

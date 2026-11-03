@@ -1,0 +1,14 @@
+{
+  "id": "garage-object-storage",
+  "name": "Garage Object Storage",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Garage distributed, S3-compatible object storage for deployment across your own nodes.",
+  "watch_out": "Free software is not free managed capacity; supply disks, network, backups, and operations. Check replication configuration, current project support, and license conditions.",
+  "pricing_url": "https://garagehq.deuxfleurs.fr/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "baserow-cloud-free",
+  "name": "Baserow Cloud Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "3,000 rows and 2 GB storage per workspace; 2,000 automation credits.",
+  "watch_out": "Usage and automation limits apply; verify account restrictions.",
+  "pricing_url": "https://baserow.io/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

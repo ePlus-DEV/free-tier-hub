@@ -1,0 +1,13 @@
+{
+  "id": "upstash-workflow",
+  "name": "Upstash Workflow Free",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Upstash Workflow Free: 1,000 billed steps/day, 50 GB bandwidth/month, 10 concurrent steps and 1 MB message size",
+  "watch_out": "A retry counts as another step; context.call/context.invoke each cost two billed steps and parallel execution incurs extra steps. Free workflow sleep is limited to 7 days, log/DLQ retention to 3 days; persistent daily quota overruns can cause workflow failures via QStash. Not unlimited serverless compute.",
+  "pricing_url": "https://upstash.com/pricing/workflow",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

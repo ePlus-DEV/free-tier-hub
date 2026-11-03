@@ -1,0 +1,13 @@
+{
+  "id": "gce-e2-micro",
+  "name": "Google Compute Engine Free Tier",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "One non-preemptible e2-micro VM-month (aggregate hours), 30 GB-months standard persistent disk and 1 GB eligible outbound data/month",
+  "watch_out": "Free e2-micro usage only in us-west1, us-central1 or us-east1. The VM allowance is pooled by running hours across those regions, not one free VM in every region. GPUs/TPUs, other disk types, excess egress, IP addresses and other billable resources are not covered. An active Cloud Billing account is required.",
+  "pricing_url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

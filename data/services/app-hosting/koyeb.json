@@ -1,0 +1,14 @@
+{
+  "id": "koyeb",
+  "name": "Koyeb Free Instance (Legacy Starter Only)",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Existing Starter-plan organizations only: one Free web instance with 512 MB RAM, 0.1 vCPU and 2 GB SSD",
+  "watch_out": "Not available as a free signup for new users: Koyeb's February 17, 2026 announcement requires new registrations to choose Pro or another paid plan and provide a payment method. Existing Starter organizations retain their free plan; do not treat this as a new-user free tier. Paid plan subscription/overage charges apply; instance regions, scale-to-zero and persistent-volume restrictions still apply.",
+  "pricing_url": "https://www.koyeb.com/pricing",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud",
+  "eligibility": "existing-users-only"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "pingzen-free",
+  "name": "PingZen Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "55 monitors; 1-minute checks; 23 protocols; Telegram/email/webhook alerts plus 3 saved integrations; 5 status pages, 20 alerts, 5 API keys and 3 team members",
+  "watch_out": "Free forever without a card and explicitly permitted for commercial sites. Three consecutive failed checks are required by default before an alert (typically 2–3 minutes); service is provided as-is without uptime SLA or compensation.",
+  "pricing_url": "https://pingzen.dev/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

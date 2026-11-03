@@ -1,0 +1,13 @@
+{
+  "id": "deno-deploy",
+  "name": "Deno Deploy Free",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free Deno Deploy: 1M inbound requests/month, 20 GiB egress/month, 5 custom domains, 10 active CPU hours and 150 GiB-hours of memory time",
+  "watch_out": "Free resources are metered independently across applications, egress, CPU and memory; idle apps shut down after about 20–30 seconds. Pro/Builder tiers add higher limits and usage charges; Free does not include unrestricted always-on compute.",
+  "pricing_url": "https://deno.com/deploy/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

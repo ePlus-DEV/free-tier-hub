@@ -1,0 +1,13 @@
+{
+  "id": "github-pages",
+  "name": "GitHub Pages",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "Public-repository static hosting on GitHub Free; published site up to 1 GB and a soft 100 GB/month bandwidth limit",
+  "watch_out": "GitHub Pages is not allowed as free hosting for an online business, e-commerce site or commercial SaaS. Deployment builds time out at 10 minutes; default Pages builds have a soft limit of 10/hour (not applicable to custom Actions publication).",
+  "pricing_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+  "credit_card": "no",
+  "commercial_use": "no",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

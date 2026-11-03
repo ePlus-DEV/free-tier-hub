@@ -1,0 +1,13 @@
+{
+  "id": "splunk-observability-free",
+  "name": "Splunk Observability Cloud Free Edition",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Splunk Observability Cloud Free Edition: Agent Observability for agentic applications and supporting infrastructure, up to 15 hosts, without a fixed trial period",
+  "watch_out": "Free Edition concentrates on Agent Observability and up to 15 hosts, not every paid Observability Cloud module. Sign-up may require a request and platform eligibility; throttling and 30-day inactivity deactivation can apply. Commercial usage is restricted to internal business purposes; no service-bureau use.",
+  "pricing_url": "https://www.splunk.com/en_us/products/pricing/observability.html",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

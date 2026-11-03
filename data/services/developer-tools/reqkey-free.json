@@ -1,0 +1,13 @@
+{
+  "id": "reqkey-free",
+  "name": "ReqKey",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "5,000,000 requests/month; 1,000 API keys; unlimited APIs; 1 workspace member",
+  "watch_out": "A billable-meter request means one API key validation OR one logged API call; using both can consume two units for the same application request. Free traffic is not hard-stopped immediately above the allowance, but the provider may request a tier upgrade for sustained overuse; its pricing FAQ says over-allowance accepted traffic is not retroactively billed. No credit card required.",
+  "pricing_url": "https://www.reqkey.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

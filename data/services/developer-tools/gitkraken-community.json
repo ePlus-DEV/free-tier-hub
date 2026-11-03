@@ -1,0 +1,14 @@
+{
+  "id": "gitkraken-community",
+  "name": "GitKraken Desktop Community",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free Git client for local and public repositories.",
+  "watch_out": "Private repositories and advanced features require a paid plan; verify plan restrictions.",
+  "pricing_url": "https://www.gitkraken.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "local"
+}

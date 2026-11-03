@@ -1,0 +1,14 @@
+{
+  "id": "vaultwarden-self-hosted",
+  "name": "Vaultwarden Self-Hosted",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Vaultwarden password-manager server compatible with Bitwarden clients, using your own storage.",
+  "watch_out": "You administer credential security, encryption keys, backups, TLS, and updates. It is not the paid or managed Bitwarden cloud service.",
+  "pricing_url": "https://github.com/dani-garcia/vaultwarden",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-turnstile",
+  "name": "Cloudflare Turnstile Free",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Up to 20 free Turnstile widgets/account; 10 configured hostnames/widget and unlimited verification challenges",
+  "watch_out": "Turnstile Free can protect production websites, including small and medium businesses, independently of other Cloudflare services. Analytics lookback is limited to 7 days. Custom-branding removal, any-hostname widgets and ephemeral IDs are Enterprise-only; Free supports pre-clearance.",
+  "pricing_url": "https://developers.cloudflare.com/turnstile/plans/",
+  "credit_card": "check",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

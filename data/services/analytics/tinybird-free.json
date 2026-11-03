@@ -1,0 +1,13 @@
+{
+  "id": "tinybird-free",
+  "name": "Tinybird Free",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "10 GB storage; 1,000 requests/day per organization; 0.25 vCPU (up to 3x burst); 1 query thread",
+  "watch_out": "The ongoing Free plan includes shared query infrastructure (0.25 vCPU with bursts), a 10-second query execution ceiling and one query thread; bursts over capacity can yield 429 errors. Separately advertised LLM credits are not recurring general-purpose database cash credit.",
+  "pricing_url": "https://www.tinybird.co/docs/forward/pricing/free",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

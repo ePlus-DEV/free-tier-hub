@@ -1,0 +1,14 @@
+{
+  "id": "microsoft-clarity-free",
+  "name": "Microsoft Clarity Free",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Free forever: unlimited website traffic, heatmaps, session recordings, websites and team members.",
+  "watch_out": "Privacy, consent and applicable data-protection requirements remain the site owner's responsibility.",
+  "pricing_url": "https://clarity.microsoft.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

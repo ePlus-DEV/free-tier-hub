@@ -1,0 +1,13 @@
+{
+  "id": "svix-free",
+  "name": "Svix Free",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Up to 50,000 messages/month; 50 messages/second; 7-day payload retention",
+  "watch_out": "Free requires no credit card, with 50 messages/second, 7-day payload retention and no stated uptime SLA. The 200 messages/second limit, 30-day retention and 99.9% uptime SLA are paid Basic features. Check payload-size and retry accounting before high-volume use.",
+  "pricing_url": "https://www.svix.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

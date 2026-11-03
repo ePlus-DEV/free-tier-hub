@@ -1,0 +1,14 @@
+{
+  "id": "openpanel-self-hosted",
+  "name": "OpenPanel Self-Hosted",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted OpenPanel product and web analytics for tracking events, users, and usage trends on infrastructure you operate.",
+  "watch_out": "No hosted ingestion, compute, or storage allowance is included. Database resources, retention, maintenance, and edition-specific features need review.",
+  "pricing_url": "https://openpanel.dev/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}
