@@ -12376,6 +12376,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "ipfs-cluster-self-hosted-pin-orchestration",
+    "name": "IPFS Cluster Self-Hosted Pin Orchestration",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "MIT/Apache-2.0 dual-licensed pinset replication and orchestration across self-operated IPFS/Kubo nodes; no software license fee or hosted storage quota.",
+    "watch_out": "Requires separate Kubo/IPFS peers, disk, compute, networking and ongoing pin availability. This is pin orchestration rather than a managed free pinning service; third-party pinning/gateway services may charge. Verify upstream maintenance and security before production use.",
+    "pricing_url": "https://github.com/ipfs-cluster/ipfs-cluster",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "janusgraph-self-hosted-graph-database",
     "name": "JanusGraph Open-Source Distributed Graph Database",
     "category": "databases",
@@ -12396,6 +12409,19 @@
     "free_limit": "Free MIT-licensed self-hosted server monitoring dashboard with lightweight agents, live resource metrics and historical charts; no vendor-hosted free quota.",
     "watch_out": "Requires a user-operated monitoring server and authorized agents; hosting, bandwidth, storage and backups are not included. Restrict dashboard, agent credentials and remote-control capabilities to systems you own or are authorized to manage.",
     "pricing_url": "https://github.com/komari-monitor/komari",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-02",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kubo-ipfs-self-hosted-node",
+    "name": "Kubo Self-Hosted IPFS Node",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "MIT/Apache-2.0 dual-licensed IPFS daemon with content-addressed local storage, CLI, RPC and HTTP gateway; no software license fee or vendor-provided hosted storage allowance.",
+    "watch_out": "Runs on user-provided hardware, disks and bandwidth; remote pinning, public gateways and hosting may cost money. IPFS content is not automatically durable unless pinned and reachable. Official upstream README states there is no dedicated maintainer after Shipyard maintenance ended 2026-09-30; assess security and operational risks before production use.",
+    "pricing_url": "https://github.com/ipfs/kubo",
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-02",
