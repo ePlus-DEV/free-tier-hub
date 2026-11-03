@@ -159,7 +159,7 @@ jobs:
             api('pulls/' + pr.number + '/files?per_page=100'));
           const alreadyCovered = pending.has(candidate.id);
           fs.appendFileSync(process.env.GITHUB_OUTPUT,
-            'available=' + (alreadyCovered ? 'false' : 'true') + '\\n');
+            'available=' + (alreadyCovered ? 'false' : 'true') + '\n');
           if (alreadyCovered) {
             console.log('::notice::Service ' + candidate.id +
               ' is already proposed in an open PR; leave candidate Issue queued.');
