@@ -937,17 +937,19 @@
     sortCards(matched);
     drawCards(matched.slice(0, visible));
     var shown = Math.min(matched.length, visible);
+    var summary = urlState.summarizeResults(matched.length, pool.length, shown, {
+      q: search.value, category: category, hosting: hostingModel, offer: offerType,
+      noCard: noCard.checked, commercial: commercial.checked
+    });
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.textContent = String(pool.length);
+    totalBadge.textContent = summary.total;
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
-    totalLabel.textContent = offerType === "limited" ? "Limited offers" : "Total services";
+    totalLabel.textContent = summary.label;
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = matched.length !== pool.length
-      ? "Showing " + shown + " of " + matched.length + " matches"
-      : "Showing " + shown;
+    shownLabel.textContent = summary.shown;
     count.replaceChildren(totalLabel, totalBadge, shownLabel);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
