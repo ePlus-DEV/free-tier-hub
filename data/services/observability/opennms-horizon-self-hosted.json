@@ -1,0 +1,13 @@
+{
+  "id": "opennms-horizon-self-hosted",
+  "name": "OpenNMS Horizon Community (Self-Hosted)",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free AGPL-3.0 community network monitoring software for self-managed deployments; no published license-based device or time quota.",
+  "watch_out": "Self-hosting requires your own server, database and operations; infrastructure and support are not free. AGPL-3.0 obligations apply, including network-use source availability where applicable. Horizon community releases may include features not production-ready; paid Meridian subscription is separate.",
+  "pricing_url": "https://github.com/OpenNMS/opennms",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
