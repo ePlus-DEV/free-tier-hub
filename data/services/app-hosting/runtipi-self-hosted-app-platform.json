@@ -1,0 +1,13 @@
+{
+  "id": "runtipi-self-hosted-app-platform",
+  "name": "Runtipi Self-Hosted App Platform",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free GPL-3.0 Docker-based home-server app orchestrator with a web dashboard and one-click app installation; no vendor-hosted compute or usage quota is included.",
+  "watch_out": "Runs on your own Linux server with Docker; server, electricity, storage, networking, domains and third-party apps may cost money. GPL-3.0 obligations apply when distributing modified software; volunteer-maintained without guaranteed support.",
+  "pricing_url": "https://github.com/runtipi/runtipi",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
