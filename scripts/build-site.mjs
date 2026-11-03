@@ -2,7 +2,6 @@
 // Static HTML directory builder. Node.js 24, zero runtime dependencies.
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
