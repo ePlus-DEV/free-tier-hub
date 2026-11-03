@@ -183,7 +183,7 @@ jobs:
             exit 1
           fi
           git switch -c "$DELIVERY_BRANCH"
-          git add "data/services/$(node -p "JSON.parse(require('fs').readFileSync('/tmp/candidate.json')).category")/$SERVICE_ID.json"
+          git add -- data/services/
           git commit -m "catalog: add $SERVICE_ID"
           # The added-date site tests inspect committed Git history. Run the
           # complete verification only after the local commit exists, but
