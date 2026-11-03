@@ -1,0 +1,13 @@
+{
+  "id": "smtp4dev-local-email-testing",
+  "name": "smtp4dev Local Email Testing",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "BSD-3-Clause-licensed local fake SMTP server for testing email flows, with web UI, IMAP/POP3 access, SMTP logs and HTML preview; no software usage quota or hosted sending allowance.",
+  "watch_out": "Not a production email delivery service. Requires user-provided Windows, Linux, macOS or container runtime and storage; local/CI infrastructure costs are separate. SMTP relay features can send real messages if explicitly configured; protect the testing server from public exposure.",
+  "pricing_url": "https://github.com/rnwood/smtp4dev",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
