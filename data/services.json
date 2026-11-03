@@ -12532,6 +12532,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "munin-monitoring-self-hosted",
+    "name": "Munin Monitoring Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted system and network monitoring with graphing and extensible plugins; no software usage quota.",
+    "watch_out": "Requires your own server, storage, and maintenance; infrastructure and connectivity are not included. GPL-2.0 terms apply to redistribution and modifications; no managed hosting or uptime SLA.",
+    "pricing_url": "https://github.com/munin-monitoring/munin",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "nx-open-source-local-build",
     "name": "Nx Open-Source Monorepo Build CLI (Local)",
     "category": "ci-cd",
