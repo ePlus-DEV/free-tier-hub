@@ -122,8 +122,13 @@ jobs:
           import fs from 'node:fs';
           import { validateData, validateCandidate } from './scripts/catalog.mjs';
           import { loadServices } from './scripts/catalog-source.mjs';
+          import { candidateCollisions, dedupMessage } from './scripts/catalog-dedup.mjs';
           const candidate = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
           validateCandidate(candidate);
+          const overlaps = candidateCollisions(candidate, loadServices());
+          if (overlaps.length) {
+            throw Error('Candidate requires duplicate review: ' + dedupMessage(candidate, overlaps));
+          }
           validateData([...loadServices(), candidate]);
           fs.appendFileSync(process.env.GITHUB_OUTPUT,
             'id=' + candidate.id + '\nbranch=catalog/add-' + candidate.id + '\n');

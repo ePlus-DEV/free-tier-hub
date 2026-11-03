@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, sync, validateData, validateCandidate } from './catalog.mjs';
 import { loadServices, writeService, hasServiceShards } from './catalog-source.mjs';
+import { candidateCollisions, assertNoExactDuplicate } from './catalog-dedup.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const isoToday = () => new Date().toISOString().slice(0, 10);
@@ -35,7 +36,8 @@ export function listCandidates(root = DEFAULT_ROOT, today = isoToday()) {
   validateData(current, today);
   const present = new Set(current.map(item => item.id));
   return loadCandidates(root, today)
-    .filter(candidate => !present.has(candidate.id) && fresh(candidate, today))
+    .filter(candidate => !present.has(candidate.id) && fresh(candidate, today) &&
+      candidateCollisions(candidate, current).length === 0)
     .map(candidate => candidate.id);
 }
 
@@ -49,6 +51,9 @@ export function applyCandidate(id, root = DEFAULT_ROOT, today = isoToday()) {
     throw Error('Candidate missing from backlog or already catalogued');
   }
   if (!fresh(matches[0], today)) throw Error('Candidate pricing review is stale: ' + id);
+  const overlaps = assertNoExactDuplicate(matches[0], current);
+  if (overlaps.length) throw Error('Candidate requires manual review for shared pricing URL: ' +
+    overlaps.map(hit => hit.id + ' [' + hit.category + ']').join(', '));
   validateData([...current, matches[0]], today);
   const shardMode = hasServiceShards(root);
   const written = writeService(root, matches[0]);

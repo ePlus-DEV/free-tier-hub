@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { loadServices, hasServiceShards } from './catalog-source.mjs';
 import path from 'node:path';
+import { candidateCollisions, dedupMessage } from './catalog-dedup.mjs';
 
 export function validateMigrationParity(published, proposed) {
   // During the one-time migration, every existing provider field and order
@@ -63,6 +64,27 @@ export function main() {
     }
   }
   validateChangedPaths(files, { allowLegacyManifestCreation: creatingLegacyManifest });
+  // Only compare new shards against the entire existing proposed catalog.
+  // Do not retroactively fail on historical collisions or unchanged entries.
+  const added = execFileSync('git',
+    ['diff', '--name-only', '--diff-filter=A', `refs/remotes/origin/${base}...HEAD`],
+    { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }).trim().split('\n')
+    .filter(name => /^data\/services\/[a-z0-9-]+\/[a-z0-9-]+\.json$/.test(name));
+  if (added.length) {
+    const all = loadServices();
+    for (const filename of added) {
+      const candidate = all.find(item => filename ===
+        'data/services/' + item.category + '/' + item.id + '.json');
+      if (!candidate) throw Error('Missing newly added shard: ' + filename);
+      const hits = candidateCollisions(candidate, all.filter(item => item.id !== candidate.id));
+      if (hits.some(hit => hit.severity === 'block')) {
+        throw Error(dedupMessage(candidate, hits) + '; rename/review before merge');
+      }
+      // Shared URLs are review signals rather than invalid data: cloud providers
+      // often publish multiple products on the same pricing page.
+      if (hits.length) console.log('::warning::' + dedupMessage(candidate, hits));
+    }
+  }
   if (creatingLegacyManifest) {
     const published = JSON.parse(execFileSync('git',
       ['show', `refs/remotes/origin/${base}:data/services.json`],

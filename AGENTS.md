@@ -29,6 +29,7 @@ maintainer review, and GitHub Actions remain authoritative.
 
 ## Non-negotiable catalog rules
 
+- **Cross-category deduplication:** compare new candidates with the **entire** canonical catalog, not only their target category. Exact normalized service-name matches block new additions; shared normalized pricing URLs must be reviewed because multiple genuine products can share one pricing page. See `scripts/catalog-dedup.mjs`.
 - **Canonical source:** only edit the matching `data/services/<category>/<id>.json` for a normal service addition or correction. Ensure both the folder and filename match its JSON `category` and `id`. Check for duplicates first.
 - **Generated outputs:** do **not** hand-edit `data/services.json`, `data/catalog-legacy-order.json`, generated `docs/<category>.md`, `dist/`, `dist/catalog.json`, search indexes, sitemap, or built page artifacts. The build creates them.
 - **Evidence:** use the provider's current official HTTPS pricing, documentation, repository, or license for claims. Record exact quotas and periods, eligibility, payment requirements, commercial-use limits, deployment model, and material cost risks. Never invent source evidence or refresh `last_checked` without reviewing facts.
