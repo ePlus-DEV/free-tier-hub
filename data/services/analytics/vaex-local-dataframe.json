@@ -1,0 +1,13 @@
+{
+  "id": "vaex-local-dataframe",
+  "name": "Vaex Open-Source Out-of-Core DataFrames (Local)",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Python library for local out-of-core tabular data exploration, aggregation and visualization; no software license fee or vendor-metered usage quota.",
+  "watch_out": "User supplies compute, memory and disk; very large data, external data stores and optional professional support can incur costs. This is local software, not a hosted analytics SaaS allowance. MIT license notices apply.",
+  "pricing_url": "https://github.com/vaexio/vaex",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
