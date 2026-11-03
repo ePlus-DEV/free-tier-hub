@@ -1,0 +1,13 @@
+{
+  "id": "resend",
+  "name": "Resend Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Resend Free: 3,000 transactional emails/month, 100/day, 3 domains and 10,000 automation runs",
+  "watch_out": "Free has a hard daily send cap and 30-day data retention. Pay-as-you-go email overages are only available on paid subscriptions, not an automatic unlimited Free extension. Verify sender domains and deliverability; extra domains, dedicated IPs and higher daily limits require paid plans.",
+  "pricing_url": "https://resend.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

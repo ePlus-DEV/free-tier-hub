@@ -1,0 +1,14 @@
+{
+  "id": "loops-free",
+  "name": "Loops Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Up to 1,000 contacts and 4,000 emails per 30 days.",
+  "watch_out": "Free-plan branding; transactional and marketing sends share the allowance.",
+  "pricing_url": "https://app.loops.so/docs/account/free-plan",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

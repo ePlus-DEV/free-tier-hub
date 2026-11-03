@@ -270,7 +270,7 @@ function homePage(items, absolute, counts, searchVersion) {
   const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
-  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
+  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
     (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + counts[category] + '</span>' : '') +
     '</button>').join('');
@@ -387,7 +387,10 @@ const CATEGORY_ICON_STROKES = {
   "queue": "<path d=\"M10 6h11M10 12h11M10 18h11M4 6h.01M4 12h.01M4 18h.01\"/>",
   "search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m16 16 5 5\"/>",
   "flag": "<path d=\"M5 22V3m0 1c3-2 5 2 8 0s5 0 6 0v11c-3-2-5 2-8 0s-4 0-6 0\"/>",
-  "webhook": "<circle cx=\"6\" cy=\"7\" r=\"2\"/><circle cx=\"18\" cy=\"7\" r=\"2\"/><circle cx=\"12\" cy=\"18\" r=\"2\"/><path d=\"M8 7h8M7 9l4 7m6-7-4 7\"/>"
+  "webhook": "<circle cx=\"6\" cy=\"7\" r=\"2\"/><circle cx=\"18\" cy=\"7\" r=\"2\"/><circle cx=\"12\" cy=\"18\" r=\"2\"/><path d=\"M8 7h8M7 9l4 7m6-7-4 7\"/>",
+  "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m4 7 8 6 8-6\"/>",
+  "test": "<path d=\"M9 3v7l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3M8 3h8M7 16h10\"/>",
+  "form": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 7h6M9 11h6M9 15h3\"/>"
 };
 function categoryGlyph(category) {
   const name = CATEGORY_ICONS[category];

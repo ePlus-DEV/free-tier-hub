@@ -1,0 +1,13 @@
+{
+  "id": "mockhive-free",
+  "name": "MockHive Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "3 collections with 100 records each; 1,000 GET requests/month; 50 POST inserts/day; 3 AI API Builder uses/month",
+  "watch_out": "Free is $0 forever without a card. Production base URLs and relationships require Starter; when a quota is exhausted, further mock requests can return HTTP 429 until upgrade or the billing cycle resets.",
+  "pricing_url": "https://mockhive.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

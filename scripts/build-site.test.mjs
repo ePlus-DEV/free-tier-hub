@@ -74,7 +74,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(bar.includes('</div><a class="category-index-shortcut" href="https://free-tier.eplus.dev/categories/"'),
       'all categories link is separate from and alongside quick filter controls');
     assert.match(html, /id="category-filter"><option value="">All categories<\/option>/);
-    assert.match(html, /class="category-filter-index-link">Want to explore\? <a href="https:\/\/free-tier\.eplus\.dev\/categories\/">Browse all 19 categories/);
+    assert.ok(html.includes('Browse all ' + CATEGORIES.length + ' categories'),
+      'filter shortcut must display the current category count');
     assert.match(css, /\.catalog-toolbar \.category-bar\{display:flex;grid-column:1\/-1;gap:5px;min-width:0\}/);
     assert.match(css, /\.catalog-toolbar \.category-shortcuts\{display:flex;flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto/);
     assert.match(css, /\.catalog-toolbar \.category-index-shortcut\{flex-shrink:0;max-width:123px/);

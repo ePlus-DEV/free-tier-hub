@@ -27,6 +27,17 @@ maintainer review, and GitHub Actions remain authoritative.
   historical contributions are included. Treat uncertain rights as a review
   blocker and never invent permission.
 
+## Category choice
+
+Use one **primary category** per service. Current categories are defined in
+`scripts/catalog.mjs` and `scripts/site-data.mjs`. Email delivery, mail routing,
+and notification workflows belong in `email-notifications`; API/UI/load testing
+and mocking tools in `testing-qa`; user-facing forms and surveys in
+`forms-surveys`. Do not duplicate a listing in two categories; move its shard
+without changing its stable `id` or inventing new provider facts. A change
+to the category taxonomy must update navigation, documentation, generated
+category pages/badges and tests through a reviewed PR.
+
 ## Non-negotiable catalog rules
 
 - **Cross-category deduplication:** compare new candidates with the **entire** canonical catalog, not only their target category. Exact normalized service-name matches block new additions; shared normalized pricing URLs must be reviewed because multiple genuine products can share one pricing page. See `scripts/catalog-dedup.mjs`.

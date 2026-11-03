@@ -17,7 +17,10 @@ export const CATEGORY_NAMES = {
   "search": "Hosted search",
   "feature-flags": "Feature flags & gradual rollout",
   "tunneling-networking": "Tunneling & networking",
-  "webhooks-events": "Webhooks & event delivery"
+  "webhooks-events": "Webhooks & event delivery",
+  "email-notifications": "Email & notifications",
+  "testing-qa": "Testing & QA",
+  "forms-surveys": "Forms & surveys"
 };
 
 // Short editorial descriptions for the all-categories overview.
@@ -40,7 +43,10 @@ export const CATEGORY_DESCRIPTIONS = {
   "search": "Integrate hosted search and indexing into websites or applications.",
   "feature-flags": "Control feature releases, configuration and gradual rollouts.",
   "tunneling-networking": "Connect environments, expose local services and manage private networking.",
-  "webhooks-events": "Inspect webhooks, deliver events and integrate event-driven systems."
+  "webhooks-events": "Inspect webhooks, deliver events and integrate event-driven systems.",
+  "email-notifications": "Send transactional and marketing email, route inbound mail, and deliver push or multichannel notifications.",
+  "testing-qa": "Validate APIs, mock services, run load tests and catch UI regressions before release.",
+  "forms-surveys": "Collect form submissions, run user surveys and connect structured responses to applications."
 };
 
 export const CATEGORY_LABELS = {
@@ -62,7 +68,10 @@ export const CATEGORY_LABELS = {
   "search": "Search",
   "feature-flags": "Feature flags",
   "tunneling-networking": "Networking",
-  "webhooks-events": "Webhooks & events"
+  "webhooks-events": "Webhooks & events",
+  "email-notifications": "Email & messaging",
+  "testing-qa": "Testing & QA",
+  "forms-surveys": "Forms & surveys"
 };
 
 export const PLAN_NAMES = {
@@ -103,7 +112,10 @@ export const CATEGORY_ICONS = {
   "search": "search",
   "feature-flags": "flag",
   "tunneling-networking": "network",
-  "webhooks-events": "webhook"
+  "webhooks-events": "webhook",
+  "email-notifications": "mail",
+  "testing-qa": "test",
+  "forms-surveys": "form"
 };
 
 // Actual website favicons, with product domains for shared corporate sources.

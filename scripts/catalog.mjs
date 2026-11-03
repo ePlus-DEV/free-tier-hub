@@ -18,6 +18,7 @@ export const CATEGORIES = [
   "databases", "storage", "developer-tools", "ci-cd", "auth-security",
   "observability", "analytics", "dns-cdn", "ai-ml", "ai-assistants",
   "queues-jobs", "search", "feature-flags", "tunneling-networking", "webhooks-events",
+  "email-notifications", "testing-qa", "forms-surveys",
 ];
 // Category count images are generated from the catalog at build time.
 export function categoryCountBadge(category) {

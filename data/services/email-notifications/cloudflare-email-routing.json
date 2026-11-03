@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-email-routing",
+  "name": "Cloudflare Email Routing",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free inbound email forwarding for custom domains on Workers Free and Workers Paid; unlimited inbound routed emails",
+  "watch_out": "Email Routing is inbound-only; arbitrary outbound Email Sending requires Workers Paid. Sending to verified destination addresses in your own account is free, but it is not a public transactional sending API. Routing via Email Workers consumes Workers usage separately; configure domain DNS/email routing correctly.",
+  "pricing_url": "https://developers.cloudflare.com/email-service/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}
