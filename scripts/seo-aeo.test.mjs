@@ -4,12 +4,11 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
-import { build } from './build-site.mjs';
+import { build, tag } from './build-site.mjs';
 import { loadServices } from './catalog-source.mjs';
 import { CATEGORIES } from './catalog.mjs';
 
 const base = 'https://free-tier.eplus.dev/';
-const decode = text => text.replaceAll('&amp;', '&');
 
 function jsonLD(html) {
   const matches = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
@@ -92,7 +91,7 @@ test('SEO/AEO stays consistent after per-service migration and lazy Home search'
       const page = read(relative + 'index.html');
       assert.ok(page.includes('<link rel="canonical" href="' + url + '">'));
       assert.match(page, /<meta name="robots" content="index,follow">/);
-      assert.ok(page.includes('<h1>' + item.name.replaceAll('&', '&amp;') + '</h1>'),
+      assert.ok(page.includes('<h1>' + tag(item.name) + '</h1>'),
         item.id + ' must have a crawlable heading');
       const schema = jsonLD(page)['@graph'];
       const web = schema.find(x => x['@type'] === 'WebPage');
