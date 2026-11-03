@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { validateChangedPaths } from './validate-catalog-pr.mjs';
+import { validateChangedPaths, validateMigrationParity } from './validate-catalog-pr.mjs';
 
 test('community PRs change independently versioned service shards only', () => {
   assert.equal(validateChangedPaths([
@@ -29,4 +29,13 @@ test('invalid shard paths fail closed', () => {
 
 test('non-catalog code changes are left to normal CI and review gates', () => {
   assert.equal(validateChangedPaths(['scripts/catalog.mjs', 'README.md']), true);
+});
+
+test('migration must exactly preserve latest-main entries and historical order', () => {
+  const original = [{ id: 'first', label: 'v1' }, { id: 'second', label: 'v1' }];
+  assert.equal(validateMigrationParity(original, structuredClone(original)), true);
+  assert.throws(() => validateMigrationParity(original, original.slice(0, 1)), /stale.*main/);
+  assert.throws(() => validateMigrationParity(original, [...original].reverse()), /stale.*main/);
+  assert.throws(() => validateMigrationParity(original, [{ id: 'first', label: 'v2' }, original[1]]),
+    /stale.*main/);
 });
