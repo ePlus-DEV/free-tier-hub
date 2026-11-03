@@ -1,0 +1,13 @@
+{
+  "id": "greptimedb-open-source-self-hosted",
+  "name": "GreptimeDB Open-Source Observability Database",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed open-source core for self-hosted metrics, logs and traces storage and SQL/PromQL querying; standalone or distributed deployment without software license fees.",
+  "watch_out": "You operate and pay for compute, object storage, networking, backups and any external observability ingestion infrastructure. GreptimeDB Enterprise features (including automated repartitioning, read replicas and enterprise governance) are separately licensed; Greptime Cloud pricing is separate.",
+  "pricing_url": "https://github.com/GreptimeTeam/greptimedb",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
