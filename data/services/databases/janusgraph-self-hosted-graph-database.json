@@ -1,0 +1,13 @@
+{
+  "id": "janusgraph-self-hosted-graph-database",
+  "name": "JanusGraph Open-Source Distributed Graph Database",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed self-managed transactional graph database with Apache TinkerPop/Gremlin support; no vendor license fee or software usage quota.",
+  "watch_out": "Requires user-operated compute, graph storage backend (for example Cassandra/HBase/Bigtable), optional search indexing (Elasticsearch/Solr/Lucene), security, backup and maintenance. Cloud backends and managed hosting can charge separately.",
+  "pricing_url": "https://janusgraph.org/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
