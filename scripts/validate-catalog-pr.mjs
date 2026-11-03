@@ -40,7 +40,10 @@ export function validateChangedPaths(paths) {
 export function main() {
   if (process.env.GITHUB_EVENT_NAME !== 'pull_request') return;
   const base = process.env.GITHUB_BASE_REF || 'main';
-  if (!/^[A-Za-z0-9._-]+$/.test(base)) throw Error('Unsafe base branch ref');
+  if (!/^[A-Za-z0-9._/-]+$/.test(base) || base.startsWith('-') ||
+      base.split('/').some(part => !part || part === '.' || part === '..')) {
+    throw Error('Unsafe base branch ref');
+  }
   const files = execFileSync('git',
     ['diff', '--name-only', '--diff-filter=ACDMRT', `refs/remotes/origin/${base}...HEAD`],
     { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }).trim().split('\n').filter(Boolean);
