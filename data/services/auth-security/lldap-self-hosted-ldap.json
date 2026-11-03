@@ -1,0 +1,13 @@
+{
+  "id": "lldap-self-hosted-ldap",
+  "name": "LLDAP Self-Hosted Lightweight LDAP",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0-licensed lightweight self-hosted LDAP authentication and user-management server with web UI, SQLite/MySQL/PostgreSQL backends and no vendor subscription or published user quota for the core server.",
+  "watch_out": "Runs on infrastructure you operate; server, database, backups, TLS, email delivery and maintenance may cost money. Intentionally does not implement all LDAP server features, and GPL-3.0 obligations apply to redistribution; no hosted free account or commercial support is included.",
+  "pricing_url": "https://github.com/lldap/lldap",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
