@@ -1,0 +1,13 @@
+{
+  "id": "xtdb-self-hosted-bitemporal-sql",
+  "name": "XTDB Open-Source Bitemporal SQL Database",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "MPL-2.0 licensed, free-to-use SQL database with immutable history and bitemporal queries; run a self-managed Docker deployment without a vendor software subscription.",
+  "watch_out": "Bring your own CPU, memory, persistent storage or S3-compatible object storage, networking and operations. Managed infrastructure and optional commercial support or consulting are not included; MPL-2.0 distribution obligations apply.",
+  "pricing_url": "https://docs.xtdb.com/intro/community.html",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
