@@ -12233,6 +12233,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "lego-acme-client-local",
+    "name": "lego Open-Source ACME Client and DNS-01 Automation",
+    "category": "dns-cdn",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Go ACME client and library for issuing, renewing and revoking TLS certificates, with DNS-01, HTTP-01 and TLS-ALPN-01 validation and 200+ DNS-provider integrations; no software license fee or vendor usage quota.",
+    "watch_out": "This is local certificate automation, not a free managed DNS, CDN, hosting or paid certificate authority plan. Requires control of domains and DNS/HTTP validation; domain registration, DNS provider APIs, paid CAs, infrastructure and operational costs may apply. ACME issuer rate limits and provider-specific policies apply.",
+    "pricing_url": "https://github.com/go-acme/lego",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "librenms-network-monitoring-self-hosted",
     "name": "LibreNMS Open-Source Network Monitoring",
     "category": "observability",
