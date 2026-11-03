@@ -1,0 +1,13 @@
+{
+  "id": "privacyidea-community-self-hosted",
+  "name": "privacyIDEA Community Self-Hosted Multi-Factor Authentication",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-licensed self-hosted MFA server and FreeRADIUS plugin with no technical core community-edition user limit; supports OTP, WebAuthn/FIDO2 and integrations with existing identity stores.",
+  "watch_out": "Self-operated server, database, HTTPS, support and hardware/SMS/email delivery are not free. Some separately distributed integration plugins have user-count or subscription limits (including Windows Credential Provider and ADFS); AGPL-3.0 network-source obligations apply to modified deployments.",
+  "pricing_url": "https://github.com/privacyidea/privacyidea",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
