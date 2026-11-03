@@ -194,6 +194,7 @@ jobs:
         env:
           DELIVERY_BRANCH: ${{ steps.candidate.outputs.branch }}
           SERVICE_ID: ${{ steps.candidate.outputs.id }}
+          BOT_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -213,7 +214,7 @@ jobs:
           git show --format= --check HEAD
           # Use the bot token so the branch push and subsequent PR events trigger CI.
           git config --local --unset-all http.https://github.com/.extraheader || true
-          git -c credential.helper= push "https://x-access-token:${{ secrets.EPLUS_BOT_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
+          git -c credential.helper= push "https://x-access-token:$BOT_TOKEN@github.com/$GITHUB_REPOSITORY.git" "HEAD:refs/heads/$DELIVERY_BRANCH"
 
       # Candidate PRs start Draft. The separate event-driven gate may publish
       # only trusted, verified OSS candidates after both exact-head CI runs pass.
