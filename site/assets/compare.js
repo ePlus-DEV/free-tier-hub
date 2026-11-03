@@ -2,7 +2,9 @@
 (function () {
   "use strict";
   var MAX = 4, KEY = "fth-compare-selection-v1";
-  var root = document.querySelector("[data-compare-root]");
+  var pageRoot = document.querySelector("main [data-compare-root]");
+  var dialog = document.getElementById("compare-dialog");
+  var root = pageRoot || (dialog && dialog.querySelector("[data-compare-root]"));
   var tray = document.getElementById("compare-tray");
   var compareURL = (tray && tray.getAttribute("data-compare-url")) ||
     (root && root.getAttribute("data-compare-url")) || "/compare/";
@@ -16,7 +18,9 @@
   var differences = root && root.querySelector("#compare-differences");
   var warning = root && root.querySelector("#compare-category-warning");
   var url = new URL(window.location.href);
-  var fromURL = root && url.searchParams.has("ids");
+  var fromURL = pageRoot && url.searchParams.has("ids");
+  var catalogLoading = null;
+  var lastFocused = null;
 
   function valid(id) { return typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id); }
   function clean(ids) {
@@ -62,7 +66,7 @@
   }
   function renderTray() {
     if (!tray) return;
-    tray.hidden = selected.length === 0 || !!root;
+    tray.hidden = selected.length === 0 || !!pageRoot;
     if (tray.hidden) { syncButtons(); return; }
     var list = tray.querySelector(".compare-tray-items");
     var count = tray.querySelector(".compare-tray-count");
@@ -89,13 +93,13 @@
     selected = clean(ids);
     persist();
     renderTray();
-    if (root) {
+    if (pageRoot) {
       var next = new URL(window.location.href);
       if (selected.length) next.searchParams.set("ids", selected.join(","));
       else next.searchParams.delete("ids");
       window.history.replaceState(null, "", next.pathname + next.search + next.hash);
-      renderCompare();
     }
+    if (root && (pageRoot || (dialog && dialog.open))) renderCompare();
     if (message) announce(message);
   }
   function add(id) {
@@ -224,7 +228,24 @@
       updateSuggestions();
       return;
     }
-    if (event.target.closest(".compare-tray-go") && selected.length < 2) event.preventDefault();
+    var openButton = event.target.closest(".compare-tray-go");
+    if (openButton) {
+      event.preventDefault();
+      if (selected.length < 2) { announce("Select at least two services."); return; }
+      if (dialog && typeof dialog.showModal === "function") {
+        lastFocused = openButton;
+        dialog.showModal();
+        ensureCatalog();
+        renderCompare();
+        var close = dialog.querySelector("[data-compare-close]");
+        if (close) close.focus();
+      } else window.location.assign(shareURL(selected));
+      return;
+    }
+    if (event.target.closest("[data-compare-close]")) {
+      if (dialog) dialog.close();
+      return;
+    }
     if (event.target.closest("#compare-share") && selected.length >= 2) {
       var value = new URL(shareURL(selected), window.location.origin).href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -245,10 +266,11 @@
     selected = raw.length <= 500 ? clean(raw.split(",")) : [];
   }
   renderTray();
-  if (root) {
+  function ensureCatalog() {
+    if (!root || catalog.length || catalogLoading) return catalogLoading;
     var source = root.getAttribute("data-catalog-url");
     if (status) status.textContent = "Loading catalog…";
-    window.fetch(source, { credentials:"same-origin" })
+    catalogLoading = window.fetch(source, { credentials:"same-origin" })
       .then(function (response) {
         if (!response.ok) throw Error("Catalog unavailable");
         return response.json();
@@ -264,8 +286,22 @@
         renderCompare(); updateSuggestions();
       }).catch(function () {
         if (status) status.textContent = "Could not load catalog. Please refresh or try again later.";
+        catalogLoading = null;
       });
+    return catalogLoading;
+  }
+  if (root) {
+    if (pageRoot) ensureCatalog();
     if (picker) picker.addEventListener("input", updateSuggestions);
     if (differences) differences.addEventListener("change", renderCompare);
+  }
+  if (dialog) {
+    dialog.addEventListener("close", function () {
+      if (lastFocused && lastFocused.isConnected) lastFocused.focus();
+      lastFocused = null;
+    });
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) dialog.close();
+    });
   }
 })();
