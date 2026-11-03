@@ -1,0 +1,13 @@
+{
+  "id": "sandstorm-self-hosted-app-platform",
+  "name": "Sandstorm Self-Hosted App Platform",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 self-hosted application platform for installing and isolating web apps on a user-operated 64-bit Linux server; no vendor-hosted free compute is included.",
+  "watch_out": "Requires your own x86-64 Linux server (at least 1 GB RAM, 2 GB recommended), maintenance, backups and hosting costs. Individual Sandstorm apps may have separate licenses or services. The optional Sandcats DNS service is not a free server.",
+  "pricing_url": "https://sandstorm.org/install",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
