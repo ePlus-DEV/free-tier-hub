@@ -5,6 +5,8 @@ import { execFileSync } from 'node:child_process';
 import { eligibleForAutoMerge, successfulChecks, changedOnlyCandidate } from './catalog-gated-auto-merge.mjs';
 import { validateCandidate } from './catalog.mjs';
 import { resolveCandidateDeployment } from './candidate-deployment.mjs';
+import { candidateCollisions, dedupMessage } from './catalog-dedup.mjs';
+import { loadServices } from './catalog-source.mjs';
 
 const repo = process.env.GITHUB_REPOSITORY;
 const runId = process.env.CI_RUN_ID;
@@ -83,6 +85,11 @@ async function main() {
     return;
   }
   validateCandidate(candidate);
+  const overlaps = candidateCollisions(candidate, loadServices());
+  if (overlaps.length) {
+    console.log('Manual duplicate review retained: ' + dedupMessage(candidate, overlaps));
+    return;
+  }
   if (!eligibleForAutoMerge(candidate)) {
     console.log('Cloud/limited/restricted/unknown candidate requires review');
     return;
