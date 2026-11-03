@@ -110,7 +110,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           set -euo pipefail
-          git add -u -- 'docs/*.md'
+          git add -u -- 'docs/*.md' data/services.json
           if git diff --cached --quiet; then
             echo 'Category documentation already matches source data.'
             exit 0
