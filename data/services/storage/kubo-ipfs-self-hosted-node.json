@@ -1,0 +1,13 @@
+{
+  "id": "kubo-ipfs-self-hosted-node",
+  "name": "Kubo Self-Hosted IPFS Node",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "MIT/Apache-2.0 dual-licensed IPFS daemon with content-addressed local storage, CLI, RPC and HTTP gateway; no software license fee or vendor-provided hosted storage allowance.",
+  "watch_out": "Runs on user-provided hardware, disks and bandwidth; remote pinning, public gateways and hosting may cost money. IPFS content is not automatically durable unless pinned and reachable. Official upstream README states there is no dedicated maintainer after Shipyard maintenance ended 2026-09-30; assess security and operational risks before production use.",
+  "pricing_url": "https://github.com/ipfs/kubo",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}
