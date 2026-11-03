@@ -20,6 +20,13 @@ test('comparison MVP is emitted from canonical catalog without bloating search i
     assert.match(home, /class="compare-card-toggle" data-compare-add="/);
     assert.match(card, /data-compare-add/);
     assert.match(home, /id="compare-tray"/);
+    assert.match(home, /<dialog class="compare-dialog" id="compare-dialog"/);
+    assert.match(home, /data-compare-close aria-label="Close comparison"/);
+    assert.match(home, /class="compare-tray-go"/);
+    assert.match(js, /dialog\.showModal\(\)/);
+    assert.match(js, /dialog\.addEventListener\("close"/);
+    assert.match(js, /if \(pageRoot\) ensureCatalog\(\)/);
+    assert.match(css, /\.compare-dialog::backdrop\{background:/);
     assert.match(home, /assets\/compare\.js\?v=[a-f0-9]{12}/);
     assert.match(compare, /data-compare-root/);
     assert.match(compare, /id="compare-picker"/);
