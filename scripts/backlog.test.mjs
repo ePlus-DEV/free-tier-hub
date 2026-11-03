@@ -136,10 +136,12 @@ test('candidate delivery validates the committed service before branch push', ()
   const commit = delivery.indexOf('git commit -m "catalog: add $SERVICE_ID"');
   const verify = delivery.indexOf('npm run verify');
   const checked = delivery.indexOf('git show --format= --check HEAD');
-  const push = delivery.indexOf('git push origin');
+  const push = delivery.indexOf('git -c credential.helper= push');
   assert.ok(commit >= 0 && commit < verify && verify < checked && checked < push,
     'verify the actual local commit before pushing the candidate branch');
   assert.match(delivery, /git ls-remote --exit-code --heads origin/);
+  assert.match(delivery, /x-access-token:\$BOT_TOKEN@github.com/, 'branch push uses the bot token to trigger PR CI');
+  assert.doesNotMatch(workflow, /git commit --allow-empty/, 'no synthetic CI-trigger commit');
   assert.match(workflow, /writeService\(process\.cwd\(\), candidate\)/,
     'candidate workflow must write a targeted canonical shard');
   assert.match(delivery, /git add -- data\/services\//,
