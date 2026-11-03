@@ -1,0 +1,13 @@
+{
+  "id": "pact-js-contract-testing",
+  "name": "Pact JS Contract Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Unlimited locally executed consumer/provider API contract tests with the MIT-licensed Pact JS library; no hosted broker or CI compute included.",
+  "watch_out": "Requires your own Node.js test environment and CI resources; hosted PactFlow and external broker services are separate offerings and may cost money.",
+  "pricing_url": "https://github.com/pact-foundation/pact-js",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
