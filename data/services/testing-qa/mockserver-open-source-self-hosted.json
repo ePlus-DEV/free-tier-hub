@@ -1,0 +1,13 @@
+{
+  "id": "mockserver-open-source-self-hosted",
+  "name": "MockServer Open Source Self-Hosted",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free open-source MockServer software for self-hosted API mocking, proxying, recording and request verification; no hosted quota included.",
+  "watch_out": "Runs on your own Docker/Java/Kubernetes infrastructure; compute, storage and CI costs are not included. Apache-2.0 license obligations apply.",
+  "pricing_url": "https://www.mock-server.com/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
