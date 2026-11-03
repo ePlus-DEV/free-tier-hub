@@ -40,6 +40,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
+      - name: Reject legacy monolith edits in pull requests
+        run: node scripts/validate-catalog-pr.mjs
       - name: Regenerate category documentation in CI
         run: npm run catalog:sync
       - name: Verify catalog and generated Markdown with Node.js
