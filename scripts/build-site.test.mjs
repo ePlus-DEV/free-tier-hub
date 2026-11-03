@@ -53,6 +53,10 @@ test('directory exposes unique search/category controls and official sources for
     const entries = Array.isArray(raw) ? raw : raw.services;
     const mainEntries = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     const limitedEntries = entries.filter(item => item.plan !== 'ongoing' && item.plan !== 'monthly-credit');
+    const searchIndex = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
+    const fragments = Object.fromEntries(CATEGORIES.map(category =>
+      [category, JSON.parse(fs.readFileSync(path.join(output, 'search/cards', category + '.json'), 'utf8'))]));
+    const cardHTML = item => fragments[item.category][item.id];
     // Home chips remain actual filters; the new directory is a separate destination.
     for (const [id, label] of [
       ['static-hosting', 'Hosting'], ['databases', 'Databases'],
@@ -88,8 +92,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(html.includes('href="https://free-tier.eplus.dev/about/classifications/"'));
     assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
     assert.match(html, /Legacy only<\/strong> means eligible existing accounts, not a separate offer type/);
-    assert.match(html, /<details class="eligibility-help"><summary>Why\?<\/summary>/);
-    assert.match(html, /Read eligibility policy ↗<\/a><\/div><\/details>/);
+    const eligibilityHTML = cardHTML(entries.find(item => item.id === 'koyeb'));
+    assert.match(eligibilityHTML, /<details class="eligibility-help"><summary>Why\?<\/summary>/);
+    assert.match(eligibilityHTML, /Read eligibility policy ↗<\/a><\/div><\/details>/);
     assert.doesNotMatch(html, /Free allowance reserved for eligible existing accounts\. <a href=/);
     assert.match(html, /class="official-link"[^>]+target="_blank" rel="noopener noreferrer"/);
     assert.match(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /about\/classifications\//);
@@ -123,9 +128,8 @@ test('directory exposes unique search/category controls and official sources for
     for (const id of ['koyeb', 'steadystack-initiate']) {
       const entry = entries.find(s => s.id === id);
       assert.equal(entry.eligibility, 'existing-users-only');
-      const cardStart = html.indexOf('data-service-id="' + id + '"');
-      assert.ok(cardStart > -1);
-      const card = html.slice(cardStart, html.indexOf('</article>', cardStart));
+      const card = cardHTML(entry);
+      assert.ok(card.includes('data-service-id="' + id + '"'));
       assert.match(card, /data-eligibility="existing-users-only"/);
       assert.match(card, /Legacy only/);
       const detail = fs.readFileSync(path.join(output, 'service', id, 'index.html'), 'utf8');
@@ -157,8 +161,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
-    assert.ok(html.includes('data-offer-plan="monthly-credit"'));
-    assert.ok(html.includes('data-offer-plan="limited-duration"'));
+    assert.ok(searchIndex.rows.some(row => row[3] === 'monthly-credit'));
+    assert.ok(searchIndex.rows.some(row => row[3] === 'limited-duration'));
     assert.ok(html.includes('data-filter-category="ci-cd"'));
     assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines</option>'));
     assert.ok(fs.existsSync(path.join(output, 'category/ci-cd/index.html')));
@@ -208,13 +212,15 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
-    assert.equal((html.match(/class="official-link"/g) || []).length, entries.length);
-    assert.equal((html.match(/data-card-category=/g) || []).length, entries.length);
-    assert.match(html, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
-    assert.match(html, /data-card-hosting="cloud" href="https:\/\/free-tier\.eplus\.dev\/\?hosting=cloud"/);
+    assert.equal((html.match(/class="official-link"/g) || []).length, Math.min(12, mainEntries.length));
+    assert.equal((html.match(/data-card-category=/g) || []).length, Math.min(12, mainEntries.length));
+    const fragmentHTML = Object.values(fragments).flatMap(group => Object.values(group)).join('');
+    assert.equal((fragmentHTML.match(/class="official-link"/g) || []).length, entries.length);
+    assert.match(fragmentHTML, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
+    assert.match(fragmentHTML, /data-card-hosting="cloud" href="https:\/\/free-tier\.eplus\.dev\/\?hosting=cloud"/);
     assert.doesNotMatch(html, /href=""/);
     for (const entry of entries) {
-      const page = limitedEntries.some(item => item.id === entry.id) ? offersHtml : html;
+      const page = limitedEntries.some(item => item.id === entry.id) ? offersHtml : cardHTML(entry);
       const tracked = tag(providerReferralURL(entry.pricing_url));
       assert.ok(page.includes(`class="official-link" href="${tracked}"`), entry.id);
       const categoryPage = fs.readFileSync(path.join(output, 'category', entry.category, 'index.html'), 'utf8');
@@ -296,10 +302,16 @@ test('time-limited offers remain accessible but are excluded from the primary fr
     assert.equal(result.limited_offer_count, limited.length);
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
     assert.ok(home.includes('<strong class="result-total">' + main.length + '</strong>'));
-    assert.equal((home.match(/class="service-card"/g) || []).length, all.length);
+    assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
+    assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
+    const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
+    assert.equal(index.rows.length, all.length);
+    assert.equal(index.rows.filter(row => row[3] === 'limited-duration' || row[3] === 'temporary-resource').length, limited.length);
     assert.equal((offers.match(/class="service-card"/g) || []).length, limited.length);
     for (const item of limited) {
-      assert.ok(home.includes('class="service-card" hidden data-service-id="' + item.id + '"'), item.id);
+      assert.ok(!home.includes('data-service-id="' + item.id + '"'), item.id);
+      const shard = JSON.parse(fs.readFileSync(path.join(output, 'search/cards', item.category + '.json'), 'utf8'));
+      assert.ok(shard[item.id].includes('data-service-id="' + item.id + '"'), item.id);
       assert.ok(offers.includes('data-service-id="' + item.id + '"'), item.id);
       const categoryHTML = fs.readFileSync(path.join(output, 'category', item.category, 'index.html'), 'utf8');
       assert.ok(!categoryHTML.includes('data-service-id="' + item.id + '"'), item.id);
