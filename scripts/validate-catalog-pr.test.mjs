@@ -17,6 +17,14 @@ test('legacy monolith contributions fail before generation could drop their chan
   ]), /data\/services\.json is generated/);
 });
 
+test('legacy ordering manifest may only be created during migration', () => {
+  const changed = ['data/catalog-legacy-order.json'];
+  assert.throws(() => validateChangedPaths(changed), /immutable migration snapshot/);
+  assert.equal(validateChangedPaths(changed, { allowLegacyManifestCreation: true }), true);
+  assert.throws(() => validateChangedPaths(['data/services.json', ...changed],
+    { allowLegacyManifestCreation: true }), /generated and must not be edited/);
+});
+
 test('invalid shard paths fail closed', () => {
   for (const filename of [
     'data/services/developer-tools/new service.json',

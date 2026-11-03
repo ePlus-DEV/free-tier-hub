@@ -8,7 +8,7 @@ This document describes the **GitHub Pages setup** and checks for deploying or m
 
 **Canonical website:** [free-tier.eplus.dev](https://free-tier.eplus.dev/) · [Browse the catalog](https://free-tier.eplus.dev/catalog.json) · [Sitemap](https://free-tier.eplus.dev/sitemap.xml) · [llms.txt](https://free-tier.eplus.dev/llms.txt) · [agents.md](https://free-tier.eplus.dev/agents.md)
 
-The [GitHub Pages workflow](../.github/workflows/pages.yml) pre-renders a crawlable HTML page for each service and category from `data/services.json`. The site has responsive search, canonical URLs, meta descriptions, Open Graph metadata, breadcrumbs and schema.org JSON-LD. It publishes these discovery resources directly at the **custom-domain root**: `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/agents.md` and `/catalog.json`.
+The [GitHub Pages workflow](../.github/workflows/pages.yml) pre-renders a crawlable HTML page for each service and category from canonical `data/services/<category>/<id>.json` files via `scripts/catalog-source.mjs`. `data/services.json` is a generated compatibility aggregate; the public `/catalog.json` endpoint remains unchanged. The site has responsive search, canonical URLs, meta descriptions, Open Graph metadata, breadcrumbs and schema.org JSON-LD. It publishes these discovery resources directly at the **custom-domain root**: `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/agents.md` and `/catalog.json`.
 
 ### GitHub Pages custom-domain setup
 
@@ -45,7 +45,7 @@ node scripts/build-site.mjs --site-url https://example.com/free-tier/ --output d
 
 1. Confirm the catalog PR has been reviewed and that its **exact head commit** has successful required checks; missing, pending, skipped, cancelled or action-required checks are not successful results.
 2. After a maintainer merges the PR, find the [Build and deploy GitHub Pages workflow](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/pages.yml) for the resulting `main` commit. Confirm both the build and deploy jobs succeeded. PR previews are not deployments.
-3. Compare `data/services.json` on the deployed commit with [the live catalog JSON](https://free-tier.eplus.dev/catalog.json). A README count or a merged PR alone is not proof that production has updated.
+3. Compare the canonical `data/services/` contents (or their generated `data/services.json` aggregate after the Pages docs-sync commit) with [the live catalog JSON](https://free-tier.eplus.dev/catalog.json). A README count or a merged PR alone is not proof that production has updated.
 4. If the website lags, inspect the Pages deployment run, the configured Pages environment and custom-domain DNS/HTTPS before attributing the difference to caching.
 5. Public service suggestion Issues are reviewed manually. The separate structured `[catalog-candidate]` workflow can create catalog PRs, but depends on trusted authorship, the configured `EPLUS_BOT_TOKEN`, valid JSON and successful workflow execution. Inspect the specific queue run and PR checks rather than assuming automatic delivery.
 
@@ -53,9 +53,9 @@ The build and verification scripts validate catalog **structure and consistency*
 
 ## Catalog data and maintenance
 
-- Source: [`data/services.json`](../data/services.json).
-- [Node.js contributor CLI](../scripts/catalog.mjs) updates README category counts and detailed category tables (`npm run catalog:sync`).
-- `npm run verify` checks service fields and generated documents before submission. The [Node Markdown validator](../scripts/check-markdown.mjs) verifies table structures, local links, service rows, README counts and catalog consistency alongside the [Node site builder](../scripts/build-site.mjs).
+- Canonical source: [`data/services/`](../data/services/), one JSON object per `<category>/<id>.json`; generated compatibility artifact: [`data/services.json`](../data/services.json).
+- [Node.js catalog compiler](../scripts/catalog-source.mjs) reads canonical shards and validates their identity; [the documentation sync](../scripts/catalog.mjs) regenerates the aggregate and category tables (`npm run catalog:sync`). README service totals remain backed by the generated aggregate.
+- `npm run verify` checks service fields and generated documents before submission (run `npm run catalog:sync` first if your shard edits changed generated outputs). The [Node Markdown validator](../scripts/check-markdown.mjs) verifies table structures, local links, service rows, README counts and catalog consistency alongside the [Node site builder](../scripts/build-site.mjs).
 - [Catalog validation workflow](../.github/workflows/validate-catalog.yml) runs tests and consistency checks.
 - [Submit an update](https://github.com/ePlus-DEV/free-tier-hub/issues/new/choose) using official evidence and dated verification.
 

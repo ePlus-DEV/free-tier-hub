@@ -23,7 +23,11 @@ export function validateMigrationParity(published, proposed) {
   return true;
 }
 
-export function validateChangedPaths(paths) {
+export function validateChangedPaths(paths, { allowLegacyManifestCreation = false } = {}) {
+  if (paths.includes('data/catalog-legacy-order.json') && !allowLegacyManifestCreation) {
+    throw Error('data/catalog-legacy-order.json is an immutable migration snapshot. '
+      + 'New services belong in data/services/<category>/<id>.json; do not change the legacy ordering.');
+  }
   if (paths.includes('data/services.json')) {
     throw Error('data/services.json is generated and must not be edited by a PR. '
       + 'Keep the original PR/author, update its branch, restore the aggregate, '
@@ -47,8 +51,19 @@ export function main() {
   const files = execFileSync('git',
     ['diff', '--name-only', '--diff-filter=ACDMRT', `refs/remotes/origin/${base}...HEAD`],
     { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }).trim().split('\n').filter(Boolean);
-  validateChangedPaths(files);
-  if (hasServiceShards() && files.includes('data/catalog-legacy-order.json')) {
+  const migration = hasServiceShards() && files.includes('data/catalog-legacy-order.json');
+  let creatingLegacyManifest = false;
+  if (migration) {
+    try {
+      execFileSync('git', ['cat-file', '-e',
+        `refs/remotes/origin/${base}:data/catalog-legacy-order.json`],
+        { stdio: 'ignore' });
+    } catch {
+      creatingLegacyManifest = true;
+    }
+  }
+  validateChangedPaths(files, { allowLegacyManifestCreation: creatingLegacyManifest });
+  if (creatingLegacyManifest) {
     const published = JSON.parse(execFileSync('git',
       ['show', `refs/remotes/origin/${base}:data/services.json`],
       { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }));

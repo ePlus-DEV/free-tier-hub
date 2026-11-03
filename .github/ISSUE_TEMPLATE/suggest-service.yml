@@ -1,5 +1,5 @@
 name: Suggest a free-tier service
-description: Suggest a service or report changed terms, category, or provider logo
+description: Suggest a new service or request a correction without writing JSON or creating a PR
 title: "[Catalog] "
 labels: ["documentation"]
 body:
@@ -43,6 +43,6 @@ body:
     id: details
     attributes:
       label: Evidence and important restrictions
-      description: For plan changes, include allowance, expiry, card, commercial use, deployment evidence, and the date verified. For logo/category corrections, include the service name or ID, expected category or official product homepage, and a filtered directory URL if relevant.
+      description: For plan changes, include allowance (with units and reset period), trial/expiry, card, commercial use, deployment evidence, and the date you personally checked the official source. For existing services, include the current service ID or URL and the exact field to change. For logo/category corrections, include the expected category or official product homepage. You do not need to edit data/services.json or prepare JSON; maintainers review the suggestion and preserve contributor credit when a PR is involved.
     validations:
       required: true
