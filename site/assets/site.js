@@ -231,7 +231,10 @@
   // Show short explanations on mouse hover; keep native tap/click and keyboard controls.
   // Native <details> provides the no-JavaScript fallback for touch and assistive tech.
   var hoverHelpMedia = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)");
-  document.querySelectorAll("details.eligibility-help, details.classification-help").forEach(function (help) {
+  function bindContextHelp(root) {
+  root.querySelectorAll("details.eligibility-help, details.classification-help").forEach(function (help) {
+    if (help.dataset.fthHelpBound) return;
+    help.dataset.fthHelpBound = "true";
     var summary = help.querySelector("summary");
     var content = help.querySelector(".eligibility-help-panel, .classification-help-panel");
     var hoverRegion = help.classList.contains("eligibility-help")
@@ -298,6 +301,8 @@
       if (!help.open) { mouseOpened = false; cancelClose(); }
     });
   });
+  }
+  bindContextHelp(document);
 
   // Keep contextual explanations local, dismissible and keyboard accessible.
   document.addEventListener("click", function (event) {
@@ -412,7 +417,131 @@
   if (mobileToolbarMedia.addEventListener) mobileToolbarMedia.addEventListener("change", compactToolbar);
   else mobileToolbarMedia.addListener(compactToolbar);
 
-  var cards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
+  // The Home ships with only 12 crawlable cards. The rest are discovered from
+  // a compact metadata index, with pre-rendered card HTML fetched by category.
+  var seedCards = Array.prototype.slice.call(grid.querySelectorAll(".service-card"));
+  var seedMarkup = Object.create(null);
+  seedCards.forEach(function (card) {
+    seedMarkup[card.getAttribute("data-service-id")] = card.outerHTML;
+  });
+  var cards = [];
+  var searchReady = false;
+  var searchFailed = false;
+  var searchLoading = null;
+  var searchRevision = "";
+  var cardGroups = Object.create(null);
+  var cardInflight = Object.create(null);
+  var drawSerial = 0;
+  var lastDrawn = seedCards.map(function (card) { return card.getAttribute("data-service-id"); }).join("|");
+  var searchStatus = document.getElementById("search-load-status");
+  function setSearchStatus(message) {
+    if (!searchStatus) return;
+    searchStatus.hidden = !message;
+    searchStatus.textContent = message || "";
+  }
+  function loadSearchIndex() {
+    if (searchLoading || searchReady || searchFailed) return;
+    if (!window.fetch) {
+      searchFailed = true;
+      setSearchStatus("Search needs a modern browser. Browse all categories for the complete catalog.");
+      return;
+    }
+    setSearchStatus("Loading service search…");
+    searchLoading = window.fetch(grid.getAttribute("data-search-index"), { credentials: "same-origin" })
+      .then(function (response) {
+        if (!response.ok) throw Error("Could not load search index");
+        return response.json();
+      }).then(function (payload) {
+        if (!payload || payload.version !== 1 || !/^[a-f0-9]{12}$/.test(payload.revision) ||
+            !Array.isArray(payload.rows)) throw Error("Unsupported search index version");
+        var known = Object.create(null);
+        var next = payload.rows.map(function (row, order) {
+          if (!Array.isArray(row) || row.length !== 10 ||
+              row.some(function (value) { return typeof value !== "string"; }) ||
+              !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(row[0]) || known[row[0]]) {
+            throw Error("Invalid or duplicate search entry");
+          }
+          known[row[0]] = true;
+          return { id: row[0], name: row[1], category: row[2], plan: row[3],
+            hosting: row[4], credit: row[5], commercial: row[6],
+            added: row[7], checked: row[8], search: normalize(row[9]), order: order };
+        });
+        if (!next.length) throw Error("Empty search index");
+        cards = next;
+        searchRevision = payload.revision;
+        searchReady = true;
+        searchLoading = null;
+        setSearchStatus("");
+        render();
+      }).catch(function () {
+        searchFailed = true;
+        searchLoading = null;
+        grid.removeAttribute("aria-busy");
+        setSearchStatus("Search is temporarily unavailable. Browse all categories to view the complete catalog.");
+      });
+  }
+  function loadCardGroup(categoryName) {
+    if (cardGroups[categoryName]) return Promise.resolve(cardGroups[categoryName]);
+    if (cardInflight[categoryName]) return cardInflight[categoryName];
+    // The query revision prevents mixing HTML from different GitHub Pages deploys.
+    var url = grid.getAttribute("data-search-cards") +
+      encodeURIComponent(categoryName) + ".json?v=" + encodeURIComponent(searchRevision);
+    cardInflight[categoryName] = window.fetch(url, { credentials: "same-origin" })
+      .then(function (response) {
+        if (!response.ok) throw Error("Could not load category cards");
+        return response.json();
+      }).then(function (fragmentMap) {
+        if (!fragmentMap || Array.isArray(fragmentMap) || typeof fragmentMap !== "object") {
+          throw Error("Invalid category card fragment");
+        }
+        cardGroups[categoryName] = fragmentMap;
+        delete cardInflight[categoryName];
+        return fragmentMap;
+      }).catch(function (error) {
+        delete cardInflight[categoryName];
+        throw error;
+      });
+    return cardInflight[categoryName];
+  }
+  function drawCards(shown) {
+    var serial = ++drawSerial;
+    var identity = shown.map(function (entry) { return entry.id; }).join("|");
+    if (identity === lastDrawn && grid.children.length === shown.length) return;
+    var needed = [];
+    shown.forEach(function (entry) {
+      if (!seedMarkup[entry.id] && !cardGroups[entry.category] &&
+          needed.indexOf(entry.category) < 0) needed.push(entry.category);
+    });
+    if (needed.length) grid.setAttribute("aria-busy", "true");
+    Promise.all(needed.map(loadCardGroup)).then(function () {
+      if (serial !== drawSerial) return; // a more recent query superseded this one
+      var fragment = document.createDocumentFragment();
+      shown.forEach(function (entry) {
+        var html = seedMarkup[entry.id] ||
+          (cardGroups[entry.category] && cardGroups[entry.category][entry.id]);
+        if (typeof html !== "string") throw Error("Missing rendered service card " + entry.id);
+        var template = document.createElement("template");
+        template.innerHTML = html;
+        var node = template.content.firstElementChild;
+        if (!node || !node.classList.contains("service-card") ||
+            node.getAttribute("data-service-id") !== entry.id) {
+          throw Error("Invalid rendered service card " + entry.id);
+        }
+        node.hidden = false;
+        node.removeAttribute("data-paged-hidden");
+        fragment.appendChild(node);
+      });
+      grid.replaceChildren(fragment);
+      bindContextHelp(grid);
+      lastDrawn = identity;
+      grid.removeAttribute("aria-busy");
+      setSearchStatus("");
+    }).catch(function () {
+      if (serial !== drawSerial) return;
+      grid.removeAttribute("aria-busy");
+      setSearchStatus("Could not load matching cards. Refresh the page or browse all categories.");
+    });
+  }
   var category = "";
   var hostingModel = "";
   var hostingSelect = document.getElementById("hosting-filter");
@@ -624,41 +753,29 @@
   }
   function sortCards(matched) {
     var mode = sort ? sort.value : "default";
-    if (mode === "name") {
+    if (mode === "name" || mode === "name-desc") {
       matched.sort(function (a, b) {
-        return a.querySelector("h3").textContent.localeCompare(
-          b.querySelector("h3").textContent, "en");
+        return (mode === "name" ? a.name.localeCompare(b.name, "en")
+          : b.name.localeCompare(a.name, "en")) || a.order - b.order;
       });
     } else if (mode === "newest" || mode === "oldest") {
       matched.sort(function (a, b) {
-        var ad = a.getAttribute("data-added-at") || "";
-        var bd = b.getAttribute("data-added-at") || "";
-        // Multiple services can be published on the same UTC day. Preserve
-        // the source insertion sequence for ties; newest additions go first.
-        return (mode === "newest" ? bd.localeCompare(ad) : ad.localeCompare(bd)) ||
-          (mode === "newest" ? cards.indexOf(b) - cards.indexOf(a) :
-            cards.indexOf(a) - cards.indexOf(b));
+        return (mode === "newest" ? b.added.localeCompare(a.added)
+          : a.added.localeCompare(b.added)) ||
+          (mode === "newest" ? b.order - a.order : a.order - b.order);
       });
     } else if (mode === "verified") {
       matched.sort(function (a, b) {
-        return b.getAttribute("data-last-checked").localeCompare(a.getAttribute("data-last-checked")) ||
-          cards.indexOf(a) - cards.indexOf(b);
-      });
-    } else if (mode === "name-desc") {
-      matched.sort(function (a, b) {
-        return b.querySelector("h3").textContent.localeCompare(a.querySelector("h3").textContent, "en");
+        return b.checked.localeCompare(a.checked) || a.order - b.order;
       });
     } else if (mode === "category") {
       matched.sort(function (a, b) {
-        return a.getAttribute("data-category").localeCompare(
-          b.getAttribute("data-category")) ||
-          a.querySelector("h3").textContent.localeCompare(
-            b.querySelector("h3").textContent, "en");
+        return a.category.localeCompare(b.category) ||
+          a.name.localeCompare(b.name, "en") || a.order - b.order;
       });
     } else {
-      matched.sort(function (a, b) { return cards.indexOf(a) - cards.indexOf(b); });
+      matched.sort(function (a, b) { return a.order - b.order; });
     }
-    matched.forEach(function (card) { grid.appendChild(card); });
   }
   var activeFilters = document.getElementById("active-filters");
   var activeChips = document.getElementById("active-filter-chips");
@@ -793,6 +910,7 @@
   });
   function render() {
     syncURL();
+    if (!searchReady) { loadSearchIndex(); return; }
     document.querySelectorAll("[data-quick-filter]").forEach(function (button) {
       var mode = button.getAttribute("data-quick-filter");
       var active = mode === "all" ? !noCard.checked && !commercial.checked
@@ -800,25 +918,18 @@
       button.setAttribute("aria-pressed", String(active));
     });
     var term = normalize(search.value);
-    var pool = cards.filter(function (card) {
-      return urlState.matchesOffer(card.getAttribute("data-offer-plan"), offerType);
+    var pool = cards.filter(function (entry) {
+      return urlState.matchesOffer(entry.plan, offerType);
     });
-    var matched = pool.filter(function (card) {
-      var words = normalize(card.getAttribute("data-search"));
-      return (!term || words.indexOf(term) !== -1) &&
-        (!category || card.getAttribute("data-category") === category) &&
-        (!hostingModel || card.getAttribute("data-hosting-model") === hostingModel) &&
-        (!noCard || !noCard.checked || card.getAttribute("data-credit-card") === "no") &&
-        (!commercial || !commercial.checked || card.getAttribute("data-commercial-use") === "yes");
-    });
-    cards.forEach(function (card) {
-      card.hidden = matched.indexOf(card) === -1;
-      card.removeAttribute("data-paged-hidden");
+    var matched = pool.filter(function (entry) {
+      return (!term || entry.search.indexOf(term) !== -1) &&
+        (!category || entry.category === category) &&
+        (!hostingModel || entry.hosting === hostingModel) &&
+        (!noCard || !noCard.checked || entry.credit === "no") &&
+        (!commercial || !commercial.checked || entry.commercial === "yes");
     });
     sortCards(matched);
-    matched.forEach(function (card, index) {
-      if (index >= visible) card.setAttribute("data-paged-hidden", "true");
-    });
+    drawCards(matched.slice(0, visible));
     var shown = Math.min(matched.length, visible);
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
