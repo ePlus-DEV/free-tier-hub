@@ -52,7 +52,8 @@ async function main() {
       pr.head.repo?.full_name === repo &&
       pr.head.ref.startsWith('catalog/add-') &&
       pr.head.sha === run.head_sha &&
-      (run.pull_requests || []).some(link => link.number === pr.number));
+      (!(run.pull_requests || []).length ||
+       run.pull_requests.some(link => link.number === pr.number)));
   if (prs.length !== 1) {
     console.log('No single same-repository exact-head catalog PR linked to CI run');
     return;
@@ -98,8 +99,8 @@ async function main() {
   if (latest.head.sha !== pr.head.sha || latest.state !== 'open' || !latest.draft) {
     throw Error('Head moved during verification');
   }
-  const runs = paged('actions/runs?head_sha=' + pr.head.sha +
-    '&event=pull_request&per_page=100');
+  const runs = api('actions/runs?head_sha=' + pr.head.sha +
+    '&event=pull_request&per_page=100').workflow_runs;
   if (!successfulChecks(runs, pr.head.sha)) {
     console.log('Other required exact-head CI is not successful yet');
     return;
