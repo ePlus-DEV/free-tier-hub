@@ -1,0 +1,13 @@
+{
+  "id": "github-actions",
+  "name": "GitHub Actions",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "GitHub Free: $12/month included shared compute allowance (roughly 2,000 Linux 2-core runner minutes); standard hosted runners free for public repos",
+  "watch_out": "The included private-repository allowance is now a dollar-denominated shared compute budget, NOT a guaranteed 2,000 minutes on every runner OS; Windows/macOS and cloud sandbox usage draw at different rates. Public standard hosted runners and self-hosted runners remain free; public larger runners are billable. Artifacts/Packages share a separate 500 MB Free storage allowance; extra use is blocked without a valid payment method or charged when billing is enabled.",
+  "pricing_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

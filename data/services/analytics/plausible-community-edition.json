@@ -1,0 +1,14 @@
+{
+  "id": "plausible-community-edition",
+  "name": "Plausible Community Edition",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Plausible Community Edition for lightweight website traffic and referral analytics; bring your own infrastructure.",
+  "watch_out": "Community Edition differs from the paid hosted service; check supported features and license terms. You operate the database, backups, upgrades, and server.",
+  "pricing_url": "https://plausible.io/self-hosted-web-analytics",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

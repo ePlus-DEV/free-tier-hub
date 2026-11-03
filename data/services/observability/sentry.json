@@ -1,0 +1,13 @@
+{
+  "id": "sentry",
+  "name": "Sentry Developer",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "One user; 5,000 errors/month; 50 replays and 1 uptime monitor",
+  "watch_out": "Developer is $0 for one user with error/tracing support; extra seats, event volume, profiling and paid integrations are separate. A temporary new-user promotion grants 5,000 Session Replays/month for the first 3 months; it does NOT expand the ongoing Free allowance.",
+  "pricing_url": "https://sentry.io/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

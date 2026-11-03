@@ -1,0 +1,13 @@
+{
+  "id": "pr-quorum-free",
+  "name": "PR Quorum Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "50 AI code reviews/month across 2 repositories; max 3 inline comments/review",
+  "watch_out": "$0 forever, no card, up to 50 monthly PR panel reviews across 2 repositories; three default reviewers and maximum 3 inline comments. At quota exhaustion additional reviews are skipped (not auto-billed); custom panels, higher quotas and BYO OpenRouter key require paid plans.",
+  "pricing_url": "https://prquorum.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

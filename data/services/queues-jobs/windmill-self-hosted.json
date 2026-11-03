@@ -1,0 +1,14 @@
+{
+  "id": "windmill-self-hosted",
+  "name": "Windmill Self-Hosted",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Windmill platform for scripts, scheduled jobs, internal apps, and workflow automation.",
+  "watch_out": "You operate execution workers, database, and hosting. Check community-edition limitations and paid enterprise features before production adoption.",
+  "pricing_url": "https://www.windmill.dev/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

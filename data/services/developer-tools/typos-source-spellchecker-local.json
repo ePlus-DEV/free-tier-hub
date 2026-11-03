@@ -1,0 +1,13 @@
+{
+  "id": "typos-source-spellchecker-local",
+  "name": "typos Open-Source Source-Code Spell Checker",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT OR Apache-2.0 licensed source-code spelling checker for local repositories, with CLI and CI/pre-commit integration; no vendor-hosted quota or license fee.",
+  "watch_out": "Users supply their own compute and any CI runner minutes; optional GitHub Actions and third-party services may have independent billing. Automated corrections should be reviewed, and license notices retained. This is local tooling, not a hosted SaaS plan.",
+  "pricing_url": "https://github.com/crate-ci/typos",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

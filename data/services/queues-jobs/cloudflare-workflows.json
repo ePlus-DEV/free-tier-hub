@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-workflows",
+  "name": "Cloudflare Workflows Free",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "Workers Free includes 3,000 Workflow steps/day and 1 GB-month of state storage; invocations share the Workers Free requests quota",
+  "watch_out": "Workflow steps, state storage, Worker invocations and CPU are separate usage dimensions; 10 ms CPU per invocation on Free and the Workers Free daily request cap apply. Default completed/errored workflow state retention is 3 days. Workflow sleeps/waits do not consume CPU, and Workflows billing began August 10, 2026; Paid has separate metered charges.",
+  "pricing_url": "https://developers.cloudflare.com/workflows/reference/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

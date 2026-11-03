@@ -1,0 +1,13 @@
+{
+  "id": "launchdarkly-developer",
+  "name": "LaunchDarkly Developer",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "Unlimited seats and feature flags; five service connections; 1,000 client-side MAU/month",
+  "watch_out": "Developer is $0/month with no card required, limited to 5 service connections and 1,000 client-side MAU/month; additional paid entitlements and advanced capabilities belong to Foundation/Enterprise plans. Commercial-use eligibility beyond the published Developer terms remains unconfirmed.",
+  "pricing_url": "https://launchdarkly.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud"
+}

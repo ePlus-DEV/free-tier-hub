@@ -5,8 +5,9 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
+import { loadServices } from './catalog-source.mjs';
 import {
-  CATEGORY_NAMES, CATEGORY_LABELS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
+  CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
   CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
 } from './site-data.mjs';
 
@@ -17,6 +18,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assetVersion = name => createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'site/assets', name))).digest('hex').slice(0, 12);
 export const DEFAULT_URL = 'https://free-tier.eplus.dev/';
 const REPOSITORY = 'https://github.com/ePlus-DEV/free-tier-hub';
+const SUPPORT_URL = 'https://eplus.dev/page/donate';
+const SPONSORS_URL = 'https://github.com/sponsors/ePlus-DEV';
 const GA_ID = 'G-9YPGG0XEZV';
 
 // Add referral attribution only to links that leave our catalog. Preserve the
@@ -183,8 +186,9 @@ function document(absolute, title, description, relative, content, structuredDat
     '<small>by ePlus-DEV</small></span></a>',
     '<nav class="primary-nav" id="primary-nav" aria-label="Main navigation">',
     '<a href="', tag(absolute()), '"', relative === '' ? ' aria-current="page"' : '', '>Discover</a>',
-    '<a href="', tag(absolute('#explore')), '">Categories</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></nav>',
+    '<a href="', tag(absolute('categories/')), '"', relative === 'categories/' ? ' aria-current="page"' : '', '>Categories</a>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Support</a></nav>',
     '<div class="header-actions">',
     '<button class="header-search-toggle" id="header-search-toggle" type="button" ',
     'aria-label="Open search" aria-expanded="false" aria-controls="header-search-panel" ',
@@ -210,32 +214,50 @@ function document(absolute, title, description, relative, content, structuredDat
     'free tiers, practical limitations and official pricing sources.</p></div>',
     '<div><h3>Explore</h3><a href="', tag(absolute()), '">All services</a>',
     '<a href="', tag(absolute('about/classifications/')), '">Offer classifications</a>',
-    '<a href="', tag(absolute('#explore')), '">Categories</a>',
+    '<a href="', tag(absolute('categories/')), '">All categories</a>',
     '<a href="', tag(absolute('catalog.json')), '">Catalog JSON</a>',
     '<a href="', tag(absolute('sitemap.xml')), '">Sitemap</a></div>',
     '<div><h3>Developers</h3>',
     '<a href="', tag(absolute('llms.txt')), '">llms.txt</a>',
     '<a href="', tag(absolute('agents.md')), '">agents.md</a>',
     '<a href="', tag(REPOSITORY + '/blob/main/docs/cost-safety.md'), '">Cost safety</a>',
-    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a></div>',
+    '<a href="', tag(REPOSITORY + '/blob/main/CONTRIBUTING.md'), '">Contribute</a>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate / Support</a>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></div>',
     '</div><div class="footer-bottom"><span>© Free Tier Hub · Community-maintained.</span>',
     '<span>Independent catalog · Verify every provider before enabling billing.</span>',
     '</div></div></footer>',
+    // Native details keeps this support action keyboard-accessible without JavaScript.
+    '<details class="support-widget" id="support-widget">',
+    '<summary class="support-toggle" aria-label="Support Free Tier Hub" title="Support Free Tier Hub">',
+    '<span class="support-icon" aria-hidden="true">&#9829;</span>',
+    '<span class="support-label">Donate</span></summary>',
+    '<div class="support-popover" role="group" aria-label="Donation options">',
+    '<strong>Support Free Tier Hub</strong>',
+    '<p>Help keep this independent free-tier directory available and up to date.</p>',
+    '<a href="', tag(SUPPORT_URL), '" target="_blank" rel="noopener noreferrer">Donate via ePlus.DEV ↗</a>',
+    '<a href="', tag(SPONSORS_URL), '" target="_blank" rel="noopener noreferrer">GitHub Sponsors ↗</a>',
+    '<small>Completely optional. Donations never affect which services we list or recommend.</small>',
+    '</div></details>',
     '<button class="back-to-top" id="back-to-top" type="button" ',
     'aria-label="Back to top" title="Back to top" hidden>',
     glyph('up'),
     '</button></body></html>',
   ].join('');
 }
-function homePage(items, absolute, counts) {
+function homePage(items, absolute, counts, searchVersion) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   // Keep limited entries present for the Offer type filter, but hidden by default.
-  const cards = items.map(item => card(item, absolute, !isMainFreeOffer(item))).join('');
+  // Server-render only the first 12 ongoing cards. Other results are loaded
+  // from lean search metadata and category HTML fragments on demand.
+  const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
-    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) + '</button>').join('');
+    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
+    (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + counts[category] + '</span>' : '') +
+    '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
     '<p class="hero-kicker">The free-tier directory</p>',
@@ -245,6 +267,7 @@ function homePage(items, absolute, counts) {
     '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="catalog-toolbar">',
     '<div class="category-bar"><div class="category-shortcuts" role="group" aria-label="Popular categories">', shortcuts, '</div>',
+    '<a class="category-index-shortcut" href="', tag(absolute('categories/')), '">All categories ', glyph('arrow'), '</a>',
     '</div>',
     '<div class="search-filter-row">',
     '<form class="hero-search directory-search" id="directory-search-form" role="search"><label class="sr-only" for="search">Search free tiers</label>',
@@ -272,6 +295,8 @@ function homePage(items, absolute, counts) {
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
     '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
+    '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
+    '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
     '<select id="offer-filter"><option value="">All free tiers</option>',
     '<option value="ongoing">Ongoing free allowance</option>',
@@ -301,10 +326,17 @@ function homePage(items, absolute, counts) {
     '<button id="clear-filters" class="clear-filters" type="button">Clear</button></div></div>',
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
-    '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total services</span><strong class="result-total">',
-    mainItems.length, '</strong></p>',
+    '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total free tiers</span><strong class="result-total">',
+    mainItems.length, '</strong><span class="result-shown">Showing ', Math.min(12, mainItems.length),
+    ' of ', mainItems.length, '</span></p>',
     '</div></div>',
-    '<div class="service-grid" id="service-grid">', cards, '</div>',
+    '<div class="service-grid" id="service-grid" data-search-index="',
+    tag(absolute('search/index.json?v=' + searchVersion)),
+    '" data-search-cards="', tag(absolute('search/cards/')), '">', cards, '</div>',
+    '<p class="search-load-status" id="search-load-status" role="status" aria-live="polite" hidden></p>',
+    '<noscript><p class="search-noscript">Showing the first 12 services. ',
+    '<a href="', tag(absolute('categories/')), '">Browse all categories</a>',
+    ' to explore the full catalog without JavaScript.</p></noscript>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="load-more">Show more services</button>',
     '<span class="load-more-hint">Browse all matching services</span></div>',
@@ -318,11 +350,86 @@ function homePage(items, absolute, counts) {
     '">Review the cost and data-safety checklist ↗</a></p></div></aside>',
   ].join('');
 }
+
+
+// Lightweight original line icons for the category overview, separate from
+// the small bundled Font Awesome glyph subset used by the navigation.
+const CATEGORY_ICON_STROKES = {
+  "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a15 15 0 0 0 0 18M12 3a15 15 0 0 1 0 18\"/>",
+  "server": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"7\" rx=\"2\"/><rect x=\"4\" y=\"13\" width=\"16\" height=\"7\" rx=\"2\"/><path d=\"M7 7h.01M7 16h.01\"/>",
+  "zap": "<path d=\"m13 2-9 12h7l-1 8 10-12h-7z\"/>",
+  "cloud": "<path d=\"M7 18a5 5 0 0 1-.5-10 7 7 0 0 1 13 .3A4.8 4.8 0 0 1 19 18H7z\"/>",
+  "database": "<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7\"/>",
+  "storage": "<path d=\"m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5\"/>",
+  "code": "<path d=\"m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18\"/>",
+  "shield": "<path d=\"M12 2 4 5v6c0 5 3 8 8 11 5-3 8-6 8-11V5l-8-3Z\"/>",
+  "activity": "<path d=\"M2 12h5l3-7 4 14 3-7h5\"/>",
+  "chart": "<path d=\"M4 20h16M6 18v-6h3v6m3 0V5h3v13m3 0V9h3v9\"/>",
+  "network": "<circle cx=\"12\" cy=\"4\" r=\"2\"/><circle cx=\"5\" cy=\"19\" r=\"2\"/><circle cx=\"19\" cy=\"19\" r=\"2\"/><path d=\"m11 6-5 11m7-11 5 11M7 19h10\"/>",
+  "sparkles": "<path d=\"m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z\"/>",
+  "bot": "<rect x=\"4\" y=\"8\" width=\"16\" height=\"12\" rx=\"3\"/><path d=\"M12 8V4M9 4h6M8 14h.01M16 14h.01M9 18h6\"/>",
+  "queue": "<path d=\"M10 6h11M10 12h11M10 18h11M4 6h.01M4 12h.01M4 18h.01\"/>",
+  "search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m16 16 5 5\"/>",
+  "flag": "<path d=\"M5 22V3m0 1c3-2 5 2 8 0s5 0 6 0v11c-3-2-5 2-8 0s-4 0-6 0\"/>",
+  "webhook": "<circle cx=\"6\" cy=\"7\" r=\"2\"/><circle cx=\"18\" cy=\"7\" r=\"2\"/><circle cx=\"12\" cy=\"18\" r=\"2\"/><path d=\"M8 7h8M7 9l4 7m6-7-4 7\"/>"
+};
+function categoryGlyph(category) {
+  const name = CATEGORY_ICONS[category];
+  const body = CATEGORY_ICON_STROKES[name];
+  if (!body) throw new Error('Unknown category icon: ' + name);
+  return '<svg xmlns="http://www.w3.org/2000/svg" data-category-icon="' + tag(name) +
+    '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + body + '</svg>';
+}
+
+function categoriesOverviewPage(absolute, counts) {
+  const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
+  const entries = CATEGORIES.map(category => {
+    const name = CATEGORY_NAMES[category];
+    const description = CATEGORY_DESCRIPTIONS[category];
+    const count = counts[category];
+    return [
+      '<a class="category-overview-card" href="', tag(absolute('category/' + category + '/')),
+      '" data-category-name="', tag(name.toLowerCase()), '">',
+      '<span class="category-overview-icon" aria-hidden="true">', categoryGlyph(category), '</span>',
+      '<span class="category-overview-body"><strong>', tag(name), '</strong>',
+      '<span class="category-overview-description">', tag(description), '</span></span>',
+      '<span class="category-overview-foot"><span class="category-overview-count"><b>',
+      count, '</b> ', count === 1 ? 'service' : 'services', '</span>',
+      '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'), '</span></span>',
+      '</a>',
+    ].join('');
+  }).join('');
+  return [
+    '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
+    '">Home</a><span aria-hidden="true">/</span><span>Categories</span></nav>',
+    '<section class="page-intro categories-intro">',
+    '<p class="kicker">EXPLORE BY TOPIC</p><h1>All categories</h1>',
+    '<p>Find the right free developer tools, cloud platforms and services by category. ',
+    'Each group links to detailed listings, plan limits and official sources.</p>',
+    '<div class="category-overview-stats"><span><strong>', CATEGORIES.length,
+    '</strong> categories</span><span><strong>', total,
+    '</strong> ongoing free tiers &amp; recurring credits</span></div></section>',
+    '<section class="category-overview-section" aria-labelledby="category-overview-heading">',
+    '<div class="category-overview-toolbar"><div><h2 id="category-overview-heading">Explore categories</h2>',
+    '<p>Counts update from the published catalog. Time-limited offers are excluded.</p></div>',
+    '<label class="category-overview-search" for="category-overview-search">',
+    glyph('search'), '<span class="sr-only">Search categories</span>',
+    '<input id="category-overview-search" type="search" autocomplete="off"',
+    ' placeholder="Search categories..." aria-controls="category-overview-grid"></label></div>',
+    '<div class="category-overview-grid" id="category-overview-grid">', entries, '</div>',
+    '<p class="category-overview-empty" id="category-overview-empty" role="status" aria-live="polite" hidden>No matching categories. Try another search.</p>',
+    '</section><p class="back-link"><a href="', tag(absolute('#explore')),
+    '">← Browse all services</a></p>',
+  ].join('');
+}
+
 function categoryPage(category, subset, absolute) {
   const name = CATEGORY_NAMES[category];
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
-    '">Home</a><span aria-hidden="true">/</span><span>', tag(name), '</span></nav>',
+    '">Home</a><span aria-hidden="true">/</span><a href="', tag(absolute('categories/')),
+    '">Categories</a><span aria-hidden="true">/</span><span>', tag(name), '</span></nav>',
     '<section class="page-intro"><p class="kicker">CATEGORY · ', subset.length,
     ' SERVICES</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
@@ -335,8 +442,9 @@ function categoryPage(category, subset, absolute) {
     '<div class="load-more-wrap" id="category-load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="category-load-more" ',
     'aria-controls="category-service-grid">Load more services</button></div></div>',
-    '<p class="back-link"><a href="', tag(absolute()),
-    '">← All categories and services</a></p>',
+    '<p class="back-link"><a href="', tag(absolute('categories/')),
+    '">← All categories</a> · <a href="', tag(absolute('#explore')),
+    '">Browse all services</a></p>',
   ].join('');
 }
 function classificationsPage(absolute) {
@@ -477,7 +585,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   catalogPath = path.join(ROOT, 'data/services.json')) {
   const base = normalizeURL(siteURL);
   const absolute = (relative = '') => base + relative;
-  const source = validateData(JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
+  const source = validateData(path.resolve(catalogPath) === path.join(ROOT, 'data/services.json')
+    ? loadServices(ROOT) : JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
   const publishedDates = serviceAddedDates(ROOT);
   // Derive dates from the commit when each service first became visible on
   // the current branch. In particular, an old PR merged today is new today.
@@ -493,13 +602,24 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       throw Error('Services missing original Git addition dates: ' + missing.join(', '));
     }
   }
-  if (CATEGORIES.some(c => !(c in CATEGORY_NAMES) || !(c in CATEGORY_ICONS))) {
+  if (CATEGORIES.some(c => !(c in CATEGORY_NAMES) || !(c in CATEGORY_ICONS) || !(c in CATEGORY_DESCRIPTIONS))) {
     throw Error('Missing category presentation metadata');
   }
   const output = path.resolve(outputDir);
   fs.mkdirSync(output, { recursive: true });
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const searchVersion = createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
+  const searchIndex = {
+    version: 1,
+    revision: searchVersion,
+    // [id, name, category, plan, deployment, card, commercial, added, checked, searchable].
+    rows: items.map(item => [
+      item.id, item.name, item.category, item.plan, hostingModel(item),
+      item.credit_card, item.commercial_use, item.added_at || '', item.last_checked,
+      [item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
+    ])
+  };
   const counts = Object.fromEntries(CATEGORIES.map(category =>
     [category, mainItems.filter(item => item.category === category).length]));
   const latest = items.map(item => item.last_checked).sort().at(-1);
@@ -517,8 +637,25 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, 'index.html', document(absolute,
     'Free Tier Hub | Free Hosting, Cloud, Databases & Developer Tools',
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
-    '', homePage(items, absolute, counts), homeSchema));
+    '', homePage(items, absolute, counts, searchVersion), homeSchema));
   pageURLs.push(['', latest]);
+  const categoriesRelative = 'categories/';
+  const categoriesSchema = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', name: 'All Free Tier Categories — Free Tier Hub',
+      url: absolute(categoriesRelative), mainEntity: { '@type': 'ItemList',
+        numberOfItems: CATEGORIES.length,
+        itemListElement: CATEGORIES.map((category, i) =>
+          ({ '@type': 'ListItem', position: i + 1, name: CATEGORY_NAMES[category],
+            url: absolute('category/' + category + '/') })) } },
+    { '@type': 'BreadcrumbList', itemListElement: breadcrumb([
+      ['Home', base], ['Categories', absolute(categoriesRelative)],
+    ]).itemListElement },
+  ] };
+  file(output, categoriesRelative + 'index.html', document(absolute,
+    'All Categories | Free Tier Hub',
+    'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
+    categoriesRelative, categoriesOverviewPage(absolute, counts), categoriesSchema));
+  pageURLs.push([categoriesRelative, latest]);
   const guideRelative = 'about/classifications/';
   const guideSchema = { '@context': 'https://schema.org',
     '@type': 'WebPage', name: 'How we classify free offers — Free Tier Hub',
@@ -532,7 +669,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   for (const category of CATEGORIES) {
     const subset = mainItems.filter(item => item.category === category);
     const name = CATEGORY_NAMES[category], relative = 'category/' + category + '/';
-    const crumbs = [['Home', base], [name, absolute(relative)]];
+    const crumbs = [['Home', base], ['Categories', absolute(categoriesRelative)], [name, absolute(relative)]];
     const schema = { '@context': 'https://schema.org', '@graph': [
       { '@type': 'CollectionPage', name: name + ' — Free Tier Hub',
         url: absolute(relative), mainEntity: { '@type': 'ItemList',
@@ -600,6 +737,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
     '- [Directory](' + base + '): crawlable HTML index of ongoing free allowances and recurring credits.',
+    '- [All categories](' + absolute('categories/') + '): all service categories with live counts and category landing pages.',
     '- [Offer classifications](' + absolute('about/classifications/') + '): definitions of plan, deployment, eligibility and verification labels.',
     '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
     '- [Catalog JSON](' + absolute('catalog.json') +
@@ -621,6 +759,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'This Markdown file is optional guidance for automated readers, not a robots.txt policy.', '',
     '## Discover',
     '- Human-readable index: ' + base,
+    '- Category overview: ' + absolute('categories/'),
     '- Time-limited offers: ' + absolute('offers/'),
     '- Plan and eligibility definitions: ' + absolute('about/classifications/'),
     '- Machine-readable catalog: ' + absolute('catalog.json'),
@@ -640,6 +779,14 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       '- [' + CATEGORY_NAMES[category] + '](' + absolute('category/' + category + '/') + ')'),
   ];
   file(output, 'agents.md', agents.join('\n') + '\n');
+  // Public catalog remains unchanged for external API users; the browser only
+  // requests the compact index and HTML for categories currently on screen.
+  file(output, 'search/index.json', JSON.stringify(searchIndex) + '\n');
+  for (const category of CATEGORIES) {
+    const fragments = Object.fromEntries(items.filter(item => item.category === category)
+      .map(item => [item.id, card(item, absolute)]));
+    file(output, 'search/cards/' + category + '.json', JSON.stringify(fragments) + '\n');
+  }
   file(output, 'catalog.json', JSON.stringify(items, null, 2) + '\n');
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));

@@ -1,0 +1,14 @@
+{
+  "id": "shipvela-hobby",
+  "name": "Shipvela Free Static Hosting",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "3 projects; 20 publishes/month; custom domains and managed HTTPS",
+  "watch_out": "This is Shipvela Free ($0), NOT the separate paid Hobby tier ($9.99/month). Free publishing resets monthly and has no automatic overage charges. Prebuilt CLI uploads are limited to 50 MB/5,000 files; supported Next.js SSR requires paid Pro/Studio. Domain registration, databases and backend services are not included.",
+  "pricing_url": "https://shipvela.com/#pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "added_at": "2026-10-03",
+  "deployment_model": "cloud"
+}

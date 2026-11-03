@@ -1,0 +1,13 @@
+{
+  "id": "monika-synthetic-monitor-local",
+  "name": "Monika Open-Source Synthetic Monitoring CLI",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed CLI for YAML-configured synthetic monitoring of HTTP endpoints and supported services with configurable notifications; no software license fee or hosted probe quota.",
+  "watch_out": "User runs and maintains probes and schedules on their own machine or infrastructure; no vendor-managed monitoring network or SLA. Third-party notifications, target databases, CI runners and hosting may cost extra.",
+  "pricing_url": "https://github.com/hyperjumptech/monika",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

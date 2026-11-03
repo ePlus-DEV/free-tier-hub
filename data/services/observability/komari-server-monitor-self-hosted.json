@@ -1,0 +1,13 @@
+{
+  "id": "komari-server-monitor-self-hosted",
+  "name": "Komari Open-Source Self-Hosted Server Monitor",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed self-hosted server monitoring dashboard with lightweight agents, live resource metrics and historical charts; no vendor-hosted free quota.",
+  "watch_out": "Requires a user-operated monitoring server and authorized agents; hosting, bandwidth, storage and backups are not included. Restrict dashboard, agent credentials and remote-control capabilities to systems you own or are authorized to manage.",
+  "pricing_url": "https://github.com/komari-monitor/komari",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}

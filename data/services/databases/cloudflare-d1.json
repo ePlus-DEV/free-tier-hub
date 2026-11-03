@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-d1",
+  "name": "Cloudflare D1 Free",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Workers Free D1: 5 GB total storage, 10 databases/account, 5M rows read/day and 100K rows written/day",
+  "watch_out": "Daily read/write allowances reset at 00:00 UTC. On Free, exhausted row quotas return query errors and hitting storage cap prevents further writes/schema changes; indexes also count toward stored data and row writes. Workers Paid allows additional billable databases and metered usage. Workers invocation quotas apply separately.",
+  "pricing_url": "https://developers.cloudflare.com/d1/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

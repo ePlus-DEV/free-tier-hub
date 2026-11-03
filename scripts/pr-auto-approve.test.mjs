@@ -26,7 +26,7 @@ test("only services and generated Markdown are safe for automatic merge", () => 
   assert.ok(allowedMatch, "auto-merge must have a path allowlist");
   const allowed = new RegExp(allowedMatch[1]);
   for (const path of [
-    "data/services.json",
+    "data/services/developer-tools/new-service.json",
     "docs/app-hosting.md",
     "docs/developer-tools.md",
     "README.md",
@@ -40,6 +40,7 @@ test("only services and generated Markdown are safe for automatic merge", () => 
     "scripts/build-site.mjs",
     "scripts/pr-auto-approve.test.mjs",
     "site/index.html",
+    "data/services.json",
     "data/category-discovery-ledger.json",
     "CONTRIBUTING.md",
   ]) {

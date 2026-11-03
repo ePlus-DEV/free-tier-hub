@@ -1,0 +1,14 @@
+{
+  "id": "uptime-kuma-self-hosted",
+  "name": "Uptime Kuma Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Uptime Kuma uptime monitoring and status pages for HTTP, TCP, ping, and other endpoint checks.",
+  "watch_out": "Monitoring runs on your own server, which needs connectivity and maintenance. Alert delivery may require third-party channels, and uptime checks depend on the host being available.",
+  "pricing_url": "https://github.com/louislam/uptime-kuma",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

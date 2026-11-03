@@ -1,0 +1,13 @@
+{
+  "id": "gcs",
+  "name": "Google Cloud Storage Free Tier",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "5 GB-months regional Cloud Storage, 5,000 Class A and 50,000 Class B operations/month in eligible US regions; up to 100 GB eligible outbound transfer/month",
+  "watch_out": "Storage/operations Free Tier applies only to us-east1, us-west1 and us-central1, aggregated across these regions. The 100 GB North America outbound allowance excludes destinations in China and Australia; not all egress routes are free. Billing account/payment method required; unsupported locations, storage classes and overages may be billed.",
+  "pricing_url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

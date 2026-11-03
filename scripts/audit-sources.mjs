@@ -5,6 +5,7 @@
  * Node.js 24+, no third-party packages.
  */
 import fs from "node:fs";
+import { loadServices } from './catalog-source.mjs';
 import path from "node:path";
 import net from "node:net";
 import { fileURLToPath } from "node:url";
@@ -177,7 +178,7 @@ export function report(results, checkedAt, offline = false) {
     "2. Compare free_limit with published quotas, including units, reset periods, and regions.",
     "3. Confirm payment card, commercial-use rights, expiration, sleep, and excess charges.",
     "4. If official sources disagree, record both sources and leave claims marked for review.",
-    "5. Only after manual verification, edit data/services.json and set last_checked to the date verified; open a reviewed PR.",
+    "5. Only after manual verification, edit data/services/<category>/<id>.json and set last_checked to the date verified; open a reviewed PR.",
     "",
   ];
   return { stats: { entries: results.length, stale, unknown, high, ...stats }, markdown: lines.join("\n") };
@@ -190,8 +191,7 @@ async function main() {
   const offline = args.includes("--offline");
   const root = path.resolve(flags.root || ROOT);
   const out = path.resolve(flags.out || path.join(root, "audit-results"));
-  const items = JSON.parse(fs.readFileSync(path.join(root, "data/services.json"), "utf8"));
-  if (!Array.isArray(items)) throw Error("data/services.json must be an array");
+  const items = loadServices(root);
   const results = await audit(items, {
     concurrency: Math.max(1, Math.min(8, Number(flags.concurrency) || 5)),
     timeoutMs: Math.max(1000, Math.min(20000, Number(flags["timeout-ms"]) || 12000)),

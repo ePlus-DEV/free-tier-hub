@@ -1,0 +1,13 @@
+{
+  "id": "render-web",
+  "name": "Render Free Web Services",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "750 Free web-instance hours/workspace per calendar month; unused hours do not carry over",
+  "watch_out": "A Free web service spins down after 15 minutes without inbound HTTP or WebSocket traffic; waking may take about a minute. Its local filesystem is ephemeral and no persistent disk is available. Excess bandwidth/build minutes can be billed if a payment method is on file; otherwise services or builds are suspended. Not for production.",
+  "pricing_url": "https://render.com/docs/free",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

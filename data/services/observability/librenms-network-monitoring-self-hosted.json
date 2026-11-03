@@ -1,0 +1,13 @@
+{
+  "id": "librenms-network-monitoring-self-hosted",
+  "name": "LibreNMS Open-Source Network Monitoring",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free GPL-3.0-or-later licensed network monitoring software with SNMP auto-discovery, device health and alerting on user-operated servers; no vendor-hosted free quota or software license charge.",
+  "watch_out": "Requires self-managed PHP/database/web infrastructure, network and SNMP access, secure credentials, updates and backups. Hardware, storage, notifications and optional commercial support are separate; GPL license and bundled third-party notices apply.",
+  "pricing_url": "https://github.com/librenms/librenms",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}

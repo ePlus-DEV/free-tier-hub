@@ -1,0 +1,13 @@
+{
+  "id": "watchexec-file-watcher-local",
+  "name": "Watchexec Open-Source File-Watcher CLI",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed local file-change watcher that runs configured commands on filesystem events; no license fee, account or vendor-metered limit.",
+  "watch_out": "Runs on user-managed Windows, macOS or Linux systems. Triggered builds, CI jobs, external APIs or deployment commands can incur their own charges or side effects; no hosted compute or monitoring service is included. Apache-2.0 obligations apply.",
+  "pricing_url": "https://github.com/watchexec/watchexec",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

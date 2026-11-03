@@ -1,0 +1,13 @@
+{
+  "id": "estuary-developer",
+  "name": "Estuary Developer",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free Developer tier: up to 10 GB data moved/month and 2 concurrent connector instances; no card required",
+  "watch_out": "Developer is an ongoing free plan, not just a trial. Exceeding 10 GB/month or 2 connectors automatically starts a separate 30-day Cloud trial; after it ends, a payment method is needed to continue paid Cloud pipelines. Disable unneeded connectors to avoid subsequent charges.",
+  "pricing_url": "https://estuary.dev/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { parseAddedDates, serviceAddedDates } from './service-added-at.mjs';
+import { parseAddedDates, parseShardAddedDates, serviceAddedDates } from './service-added-at.mjs';
 
 test('sort dates are immutable across later provider checks and normalized to UTC', () => {
   const log = `@@FREE_TIER_CATALOG_COMMIT@@2026-10-21T22:59:00-07:00\n+    "id": "first-service",\n@@FREE_TIER_CATALOG_COMMIT@@2026-10-27T11:00:00Z\n+    "id": "first-service",\n+    "id": "second-service",`;
@@ -79,4 +79,49 @@ test('PR reconcile finds services merged into main on the second-parent path', (
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
+});
+
+test('first published shard path is used for new entries while legacy dates stay stable', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'added-date-shards-'));
+  const run = (args, date) => execFileSync('git', args, {
+    cwd: root, encoding: 'utf8',
+    env: date ? { ...process.env, GIT_COMMITTER_DATE: date } : process.env,
+  }).trim();
+  try {
+    run(['init', '-q', '-b', 'main']);
+    run(['config', 'user.name', 'Test']);
+    run(['config', 'user.email', 'test@example.com']);
+    fs.mkdirSync(path.join(root, 'data'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'data/services.json'),
+      JSON.stringify([{ id: 'historical' }], null, 2) + '\n');
+    run(['add', '.']);
+    run(['commit', '-qm', 'historical'], '2026-10-20T10:00:00Z');
+    fs.mkdirSync(path.join(root, 'data/services/developer-tools'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'data/services/developer-tools/historical.json'),
+      JSON.stringify({ id: 'historical' }));
+    run(['add', '.']);
+    run(['commit', '-qm', 'migrate historical record'], '2026-11-01T10:00:00Z');
+    run(['checkout', '-qb', 'new-service']);
+    fs.writeFileSync(path.join(root, 'data/services/developer-tools/new-entry.json'),
+      JSON.stringify({ id: 'new-entry' }));
+    run(['add', '.']);
+    run(['commit', '-qm', 'add shard in PR'], '2026-11-02T10:00:00Z');
+    run(['checkout', '-q', 'main']);
+    run(['merge', '--no-ff', '-m', 'Merge community service', 'new-service'],
+      '2026-11-03T10:00:00Z');
+    assert.deepEqual(Object.fromEntries(serviceAddedDates(root)), {
+      historical: '2026-10-20', 'new-entry': '2026-11-03',
+    });
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('shard parser ignores updates and rejects invalid commit timestamps', () => {
+  const log = '@@FREE_TIER_CATALOG_COMMIT@@2026-11-01T13:00:00Z\n'
+    + 'data/services/developer-tools/new-entry.json\n'
+    + '@@FREE_TIER_CATALOG_COMMIT@@2026-11-02T13:00:00Z\n'
+    + 'data/services/developer-tools/new-entry.json\n';
+  assert.deepEqual(Object.fromEntries(parseShardAddedDates(log)), { 'new-entry': '2026-11-01' });
+  assert.throws(() => parseShardAddedDates('@@FREE_TIER_CATALOG_COMMIT@@broken'), /Invalid/);
 });

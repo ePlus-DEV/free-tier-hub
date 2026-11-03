@@ -1,0 +1,14 @@
+{
+  "id": "formspree-free",
+  "name": "Formspree Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "50 form submissions per month, unlimited forms and projects.",
+  "watch_out": "Intended for testing and development; 30-day submission archive; no file uploads.",
+  "pricing_url": "https://formspree.io/plans",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

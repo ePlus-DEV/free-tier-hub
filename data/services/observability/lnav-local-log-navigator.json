@@ -1,0 +1,13 @@
+{
+  "id": "lnav-local-log-navigator",
+  "name": "lnav Open-Source Logfile Navigator",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free BSD-2-Clause terminal log viewer with automatic format detection, merged chronological logs, filtering and SQLite-based analysis on local files; no vendor-hosted usage quota.",
+  "watch_out": "Runs locally on user-provided hardware and only analyzes logs the user can access; no hosted log ingestion, storage, alerting service or retention is included. Handle sensitive log data carefully and retain license notices.",
+  "pricing_url": "https://github.com/tstack/lnav",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

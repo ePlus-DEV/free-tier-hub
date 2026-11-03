@@ -1,0 +1,13 @@
+{
+  "id": "hf-static-spaces",
+  "name": "Hugging Face Static Spaces",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "Free static HTML/JavaScript Spaces hosted on Hugging Face for demos, portfolios and ML interfaces, without managed runtime compute",
+  "watch_out": "Static Spaces are free for everyone. Creating CPU-backed Gradio/Docker compute Spaces normally requires a paid account tier, even though CPU Basic hardware itself lists a zero hourly rate; limited eligible ZeroGPU exceptions exist. GPUs, model inference and persistent compute are not part of this static tier.",
+  "pricing_url": "https://huggingface.co/docs/hub/spaces-overview",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

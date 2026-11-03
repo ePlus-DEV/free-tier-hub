@@ -1,0 +1,13 @@
+{
+  "id": "flagsmith",
+  "name": "Flagsmith Free",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "50,000 flag API requests/month; one team member and one project; unlimited feature flags",
+  "watch_out": "Free Cloud is limited to 50,000 counted API requests/month and 1 team member; fair-use terms apply. If Free exceeds its monthly limit, Flagsmith allows 7 days to upgrade before action is taken; do not assume unlimited free overage. Additional team members, scheduling and A/B testing require paid plans.",
+  "pricing_url": "https://www.flagsmith.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud"
+}

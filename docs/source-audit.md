@@ -2,7 +2,7 @@
 
 [← Directory](../README.md) · [Contribution guide](../CONTRIBUTING.md)
 
-The catalog at [data/services.json](../data/services.json) is community maintained. **A successful `npm run verify` verifies schema and generated documentation consistency, not the truth of provider pricing, plan conditions or service availability.**
+The canonical catalog under [data/services/](../data/services/) is community maintained. The single [data/services.json](../data/services.json) file is a **generated compatibility aggregate**, not a file to edit. **A successful `npm run verify` verifies schema and generated documentation consistency, not the truth of provider pricing, plan conditions or service availability.**
 
 ## Automated checks
 
@@ -29,7 +29,7 @@ The offline mode checks age and unknown card/commercial policies without contact
 2. Compare every quota and unit in `free_limit`, including reset windows, region, requests, compute, storage and egress.
 3. Check payment-card requirements, commercial use, trial/expiry periods, overages, sleep/deletion and the material `watch_out` conditions.
 4. If two official sources conflict, record both URLs and publication dates. Use `check` where card/commercial permission cannot be confirmed.
-5. Only after **human factual verification**, edit `data/services.json` and set `last_checked` to the date actually checked. Run `npm run catalog:sync` and `npm run verify`, then open a sourced PR.
+5. Only after **human factual verification**, edit the matching `data/services/<category>/<id>.json` shard and set `last_checked` to the date actually checked. Do not touch the generated `data/services.json` aggregate. Run `npm run catalog:sync` and `npm run verify` locally (or rely on PR CI), then open a sourced PR under the original contributor's account.
 
 **Important:** `last_checked` means that factual claims were checked by a person on that date, not merely that an automated URL request succeeded.
 

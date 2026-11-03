@@ -1,0 +1,13 @@
+{
+  "id": "zenmanage-free",
+  "name": "Zenmanage Free",
+  "category": "feature-flags",
+  "plan": "ongoing",
+  "free_limit": "500 monthly active contexts; unlimited flags, projects and users",
+  "watch_out": "Permanent Free tier includes 500 monthly active contexts and unlimited projects, users and flags, without a card. The separate 30-day Team trial does not make Free time-limited. Hosted MCP/Management API, audit logs and advanced lifecycle reporting require paid plans.",
+  "pricing_url": "https://zenmanage.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

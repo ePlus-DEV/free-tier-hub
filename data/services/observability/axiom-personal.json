@@ -1,0 +1,13 @@
+{
+  "id": "axiom-personal",
+  "name": "Axiom Personal",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "500 GB data loading/month; 10 GB-hours query compute/month; 25 GB storage; 30-day retention",
+  "watch_out": "Axiom Personal is a permanent $0 hosted plan with NO credit card: 500 GB monthly data loading, 10 GB-hours query compute, 25 GB storage and 30-day retention, for individual developers and small projects. The separate Axiom Cloud plan adds a $25/month platform fee and larger allowances.",
+  "pricing_url": "https://axiom.co/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

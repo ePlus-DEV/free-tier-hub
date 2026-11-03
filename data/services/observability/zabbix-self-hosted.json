@@ -1,0 +1,14 @@
+{
+  "id": "zabbix-self-hosted",
+  "name": "Zabbix Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Zabbix infrastructure monitoring with host agents, metrics, triggers, and alerting.",
+  "watch_out": "Requires your own monitoring server, database, agents, maintenance, and storage. Paid vendor support is separate from the community software.",
+  "pricing_url": "https://www.zabbix.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

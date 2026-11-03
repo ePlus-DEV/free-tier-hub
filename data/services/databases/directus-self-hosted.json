@@ -1,0 +1,14 @@
+{
+  "id": "directus-self-hosted",
+  "name": "Directus Self-Hosted",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Directus data platform and API layer for SQL databases, content management, and admin interfaces.",
+  "watch_out": "Your database and server costs are separate. Check Directus's current self-hosted licensing eligibility and enterprise feature restrictions before commercial deployment.",
+  "pricing_url": "https://directus.io/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}
