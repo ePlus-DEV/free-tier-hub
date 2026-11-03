@@ -1,0 +1,13 @@
+{
+  "id": "smokeping-latency-monitoring-self-hosted",
+  "name": "SmokePing Latency Monitoring (Self-Hosted)",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "GPL-2.0-or-later self-hosted network latency and packet-loss monitoring with RRDtool historical graphs and alerts; no software license fee or vendor-imposed usage quota.",
+  "watch_out": "Requires self-operated Unix/Linux host, network probes, RRDtool and storage; hosting, connectivity and maintenance are not free. GPL redistribution obligations apply; no managed hosting allowance is included.",
+  "pricing_url": "https://github.com/oetiker/SmokePing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
