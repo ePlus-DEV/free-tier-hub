@@ -12220,6 +12220,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cosmos-server-self-hosted",
+    "name": "Cosmos Server Self-Hosted",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free-to-use self-hosted Docker server manager with app installation, authentication and reverse proxy; no managed hosting, infrastructure allowance or vendor quota is included.",
+    "watch_out": "Source-available under Apache-2.0 with Commons Clause 1.0 AND an Anti Tampering Clause, not unrestricted open source. Selling Cosmos, derivatives or a Cosmos-based SaaS/PaaS is prohibited; upstream permits hosting a monetized business website if the business is not selling Cosmos features. Do not bypass licensing/paywall restrictions. Requires user-funded server, Docker socket privileges, storage, network and secure operations; review license terms for any commercial deployment or redistribution.",
+    "pricing_url": "https://github.com/azukaar/Cosmos-Server",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "daft-local-dataframe",
     "name": "Daft Open-Source Data Engine (Local)",
     "category": "analytics",
@@ -12322,6 +12335,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "greptimedb-open-source-self-hosted",
+    "name": "GreptimeDB Open-Source Observability Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed open-source core for self-hosted metrics, logs and traces storage and SQL/PromQL querying; standalone or distributed deployment without software license fees.",
+    "watch_out": "You operate and pay for compute, object storage, networking, backups and any external observability ingestion infrastructure. GreptimeDB Enterprise features (including automated repartitioning, read replicas and enterprise governance) are separately licensed; Greptime Cloud pricing is separate.",
+    "pricing_url": "https://github.com/GreptimeTeam/greptimedb",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "innernet-wireguard-self-hosted",
@@ -12556,5 +12582,18 @@
     "commercial_use": "check",
     "last_checked": "2026-11-01",
     "deployment_model": "cloud"
+  },
+  {
+    "id": "xtdb-self-hosted-bitemporal-sql",
+    "name": "XTDB Open-Source Bitemporal SQL Database",
+    "category": "databases",
+    "plan": "ongoing",
+    "free_limit": "MPL-2.0 licensed, free-to-use SQL database with immutable history and bitemporal queries; run a self-managed Docker deployment without a vendor software subscription.",
+    "watch_out": "Bring your own CPU, memory, persistent storage or S3-compatible object storage, networking and operations. Managed infrastructure and optional commercial support or consulting are not included; MPL-2.0 distribution obligations apply.",
+    "pricing_url": "https://docs.xtdb.com/intro/community.html",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
   }
 ]
