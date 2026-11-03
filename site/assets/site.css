@@ -793,3 +793,41 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
   body:has(.compare-tray:not([hidden])) .support-widget{display:none}
 }
 @media(prefers-reduced-motion:reduce){.compare-card-toggle,.compare-tray{scroll-behavior:auto}}
+
+
+/* Keep comparison on the current page; the standalone URL is for share/fallback. */
+.compare-dialog:not([open]){display:none}
+.compare-dialog[open]{
+  position:fixed;inset:0;margin:auto;width:min(1120px,calc(100vw - 40px));
+  max-width:none;max-height:min(90dvh,950px);overflow:auto;
+  border:1px solid var(--line-strong);border-radius:16px;
+  padding:0;background:var(--surface);color:var(--ink);
+  box-shadow:var(--shadow-hover);overscroll-behavior:contain;
+}
+.compare-dialog::backdrop{background:rgba(8,17,35,.65)}
+.compare-dialog-bar{
+  position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:13px 20px;border-bottom:1px solid var(--line);
+  background:var(--surface);color:var(--ink)
+}
+.compare-dialog-bar strong{font-size:14px}
+.compare-dialog-close{
+  display:grid;place-items:center;min-width:38px;min-height:38px;
+  border:1px solid var(--line-strong);border-radius:9px;cursor:pointer;
+  background:var(--surface-muted);color:var(--ink);font-size:23px
+}
+.compare-dialog-close:hover{background:var(--brand-tint);color:var(--brand-ink)}
+.compare-dialog-close:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.compare-dialog .compare-page{margin:0;max-width:none;padding:24px}
+.compare-dialog .compare-page>.back-link{display:none}
+.compare-dialog .compare-page-heading h1{font-size:26px}
+.compare-dialog .compare-table-wrap{max-height:55dvh}
+.compare-dialog .compare-table thead th{position:sticky;top:0;z-index:3}
+.compare-dialog .compare-table thead th:first-child{z-index:4}
+@media(max-width:680px){
+  .compare-dialog[open]{width:100vw;max-height:100dvh;min-height:100dvh;border:0;border-radius:0}
+  .compare-dialog-bar{padding:10px 14px}
+  .compare-dialog .compare-page{padding:14px 12px}
+  .compare-dialog .compare-page-heading h1{font-size:23px}
+  .compare-dialog .compare-table-wrap{max-height:48dvh}
+}
