@@ -12207,6 +12207,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "agno-agentos-self-hosted",
+    "name": "Agno AgentOS Open Source",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed agent framework and self-managed AgentOS runtime with agent/team workflows, API and MCP; no software license fee or vendor-hosted usage allowance",
+    "watch_out": "You operate and pay for compute, PostgreSQL, storage and any model/provider APIs; optional Agno-hosted UI/integrations may have separate terms. Apache-2.0 attribution/license conditions apply; no free cloud hosting or model tokens are included.",
+    "pricing_url": "https://github.com/agno-agi/agno",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "daft-local-dataframe",
+    "name": "Daft Open-Source Data Engine (Local)",
+    "category": "analytics",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source Python/Rust data engine for local DataFrame and multimodal analytics; no software license fee or vendor-metered local processing quota.",
+    "watch_out": "Runs on user-provided CPU, memory and storage; distributed Ray/Kubernetes clusters, cloud storage, OpenAI/other model APIs and data transfer may incur separate charges. Free library is not a managed cloud free tier; respect Apache-2.0 notices.",
+    "pricing_url": "https://github.com/Eventual-Inc/Daft",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
     "id": "dnsmon-self-hosted-dns-monitor",
     "name": "dnsmon Self-Hosted DNS Propagation and Change Monitor",
     "category": "dns-cdn",
