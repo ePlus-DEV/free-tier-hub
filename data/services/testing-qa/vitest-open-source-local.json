@@ -1,0 +1,13 @@
+{
+  "id": "vitest-open-source-local",
+  "name": "Vitest Open-Source Test Runner",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local JavaScript/TypeScript test runner with unit and component testing, snapshots and coverage integration; no vendor-metered test runs or license fee.",
+  "watch_out": "Runs on your own Node.js development or CI environment; test execution, browser runners and paid CI infrastructure can incur costs. Current documentation requires compatible Node.js and Vite versions; this is not a hosted test-execution allowance.",
+  "pricing_url": "https://vitest.dev/guide/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
