@@ -1,0 +1,13 @@
+{
+  "id": "innernet-wireguard-self-hosted",
+  "name": "innernet Self-Hosted WireGuard Private Networking",
+  "category": "tunneling-networking",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-managed WireGuard coordination server and client tools with CIDR and peer access controls; no vendor software subscription or published peer quota.",
+  "watch_out": "Requires a self-operated coordination server reachable by peers, WireGuard dependencies and network configuration; server/VPS and bandwidth may cost money. Upstream warns that the software has not received an independent security audit and should be treated as experimental.",
+  "pricing_url": "https://github.com/tonarino/innernet",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "self-hosted"
+}
