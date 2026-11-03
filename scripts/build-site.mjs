@@ -561,8 +561,12 @@ function detailPage(item, absolute) {
     'Check the latest limits, billing rules and eligibility directly with the source.</p>',
     '<a class="button secondary" href="', link,
     '" target="_blank" rel="noopener noreferrer">Official pricing ',
-    glyph('arrow'), '</a><hr><h2>More in this category</h2>',
-    '<p>Explore other ', tag(category.toLowerCase()), ' services with their free allowances.</p>',
+    glyph('arrow'), '</a><hr><h2>',
+    limited ? 'Other time-limited offers' : 'More in this category', '</h2>',
+    '<p>', limited
+      ? 'Browse other promotional trials and expiring free resources, separately from ongoing free tiers.'
+      : 'Explore other ' + tag(category.toLowerCase()) + ' services with their free allowances.',
+    '</p>',
     '<a class="text-link" href="', tag(listingURL),
     '">', limited ? 'Browse limited offers' : 'Browse category', ' ', glyph('arrow'), '</a></aside></div>',
     '<p class="back-link"><a href="', tag(listingURL),
