@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, sync, validateData, validateCandidate } from './catalog.mjs';
+import { loadServices, writeService, hasServiceShards } from './catalog-source.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const isoToday = () => new Date().toISOString().slice(0, 10);
@@ -30,7 +31,7 @@ export function fresh(candidate, today = isoToday()) {
 }
 
 export function listCandidates(root = DEFAULT_ROOT, today = isoToday()) {
-  const current = readJSON(root, 'data/services.json');
+  const current = loadServices(root);
   validateData(current, today);
   const present = new Set(current.map(item => item.id));
   return loadCandidates(root, today)
@@ -41,7 +42,7 @@ export function listCandidates(root = DEFAULT_ROOT, today = isoToday()) {
 export function applyCandidate(id, root = DEFAULT_ROOT, today = isoToday()) {
   const catalogFile = path.join(root, 'data/services.json');
   const oldContent = fs.readFileSync(catalogFile, 'utf8');
-  const current = JSON.parse(oldContent);
+  const current = loadServices(root);
   validateData(current, today);
   const matches = loadCandidates(root, today).filter(candidate => candidate.id === id);
   if (matches.length !== 1 || current.some(item => item.id === id)) {
@@ -49,11 +50,13 @@ export function applyCandidate(id, root = DEFAULT_ROOT, today = isoToday()) {
   }
   if (!fresh(matches[0], today)) throw Error('Candidate pricing review is stale: ' + id);
   validateData([...current, matches[0]], today);
-  fs.writeFileSync(catalogFile, JSON.stringify([...current, matches[0]], null, 2) + '\n');
+  const shardMode = hasServiceShards(root);
+  const written = writeService(root, matches[0]);
   try {
-    // Keep generated category pages consistent with the source on application.
+    // Keep the compatibility aggregate and category pages consistent.
     sync(root);
   } catch (error) {
+    if (shardMode) fs.unlinkSync(written);
     fs.writeFileSync(catalogFile, oldContent);
     throw error;
   }

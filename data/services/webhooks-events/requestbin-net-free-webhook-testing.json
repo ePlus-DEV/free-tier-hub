@@ -1,0 +1,13 @@
+{
+  "id": "requestbin-net-free-webhook-testing",
+  "name": "RequestBin.net Free Webhook Testing",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Free hosted webhook testing plan: 3 bins, up to 500 requests per bin per day, the latest 100 requests stored per bin, and 1 preview mock API rule; $0 ongoing.",
+  "watch_out": "Daily request quotas reset; free history is capped at 100 requests per bin. Additional bins, unlimited history and advanced forwarding require paid plans. Free-plan commercial and production-use rights are not expressly documented; verify provider terms before relying on it for production.",
+  "pricing_url": "https://requestbin.net/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mastra-starter",
+  "name": "Mastra Platform Starter",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "100,000 observability events/month; 24 CPU hours/month; 10 GB data egress/month; 15-day data retention; unlimited users, projects and deployments",
+  "watch_out": "Starter is $0/month but usage above monthly allowances is pay-as-you-go: $10/100K observability events, $0.35/CPU hour and $0.10/GB egress. Set credit top-up/auto-top-up cautiously; a persistent always-on server is $100/project. Model/Gateway tokens, storage and other metered services have separate charges. Card requirement and commercial-use terms remain unconfirmed.",
+  "pricing_url": "https://mastra.ai/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

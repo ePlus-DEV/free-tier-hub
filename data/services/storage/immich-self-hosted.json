@@ -1,0 +1,14 @@
+{
+  "id": "immich-self-hosted",
+  "name": "Immich Self-Hosted",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Immich photo and video library with mobile backup, timeline browsing, and media management.",
+  "watch_out": "You provide compute and disk capacity; keep independent backups of originals and metadata. Check project maturity, updates, and optional paid support/licensing terms.",
+  "pricing_url": "https://immich.app/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

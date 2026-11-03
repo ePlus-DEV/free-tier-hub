@@ -1,0 +1,13 @@
+{
+  "id": "aiven-postgres",
+  "name": "Aiven Free PostgreSQL",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "One ongoing Free Aiven PostgreSQL service per organization: single node, 1 CPU, 1 GB RAM and 1 GB disk; no credit card required",
+  "watch_out": "No VPC, static IP, service integrations, connection pooling, SLA or Aiven support; maximum 20 concurrent database connections. Free services have no fixed expiry but may be powered off after sustained inactivity and can be restarted; upgrading to paid requires a payment method.",
+  "pricing_url": "https://aiven.io/docs/products/postgresql/concepts/pg-free-tier",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

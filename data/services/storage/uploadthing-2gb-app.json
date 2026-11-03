@@ -1,0 +1,14 @@
+{
+  "id": "uploadthing-2gb-app",
+  "name": "UploadThing 2GB App",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "2 GB shared storage, unlimited uploads and downloads.",
+  "watch_out": "Storage is shared across apps; seven days of audit log retention.",
+  "pricing_url": "https://uploadthing.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

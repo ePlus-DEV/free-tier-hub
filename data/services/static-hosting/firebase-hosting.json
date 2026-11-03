@@ -1,0 +1,13 @@
+{
+  "id": "firebase-hosting",
+  "name": "Firebase Hosting (Spark)",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "Firebase Hosting on Spark: 10 GB stored and 360 MB/day transferred; custom domain and SSL included",
+  "watch_out": "Spark needs no payment method. The 360 MB/day Hosting transfer quota is not a recurring monthly bandwidth allowance; other Firebase products have separate free caps. Firebase App Hosting and its billed resources are not available on Spark.",
+  "pricing_url": "https://firebase.google.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

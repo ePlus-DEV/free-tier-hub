@@ -1,0 +1,13 @@
+{
+  "id": "firezone-starter-free",
+  "name": "Firezone Starter Free Zero Trust Access",
+  "category": "tunneling-networking",
+  "plan": "ongoing",
+  "free_limit": "Free Starter plan for up to 6 users and 10 service accounts; includes native clients, email/OpenID Connect authentication, resource-level access policies, audit logs and REST API.",
+  "watch_out": "Firezone operates the hosted control plane but gateways are deployed on your infrastructure, which may incur hosting/network costs. Paid Team/Business features and Enterprise trial are separate. Verify usage restrictions and commercial-use terms before production; no credit card is required for Starter.",
+  "pricing_url": "https://www.firezone.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}

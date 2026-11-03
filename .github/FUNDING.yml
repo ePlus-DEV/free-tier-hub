@@ -1,0 +1,5 @@
+# Official project support options.
+# Keep payment details on the maintained donation page rather than in Git.
+github: [ePlus-DEV]
+custom:
+  - https://eplus.dev/page/donate

@@ -1,0 +1,13 @@
+{
+  "id": "uptimerobot",
+  "name": "UptimeRobot Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "50 monitors with 5-minute checks and basic status pages",
+  "watch_out": "Free checks run every 5 minutes; 60-second checks and advanced alerts require a paid plan. Basic status pages and integrations have limitations. The Free plan is eligible for personal and commercial monitoring under UptimeRobot's Fair Use Policy.",
+  "pricing_url": "https://uptimerobot.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud"
+}

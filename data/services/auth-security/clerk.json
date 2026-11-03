@@ -1,0 +1,13 @@
+{
+  "id": "clerk",
+  "name": "Clerk Hobby",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "Clerk Hobby Free: 50K monthly retained users (MRU) per application, unlimited applications, up to 3 dashboard seats",
+  "watch_out": "MRU counts retained users, not the same as monthly active users (MAU). Hobby needs no card; it has 1-day application-log retention, fixed 7-day sessions and limited impersonation. B2B add-on Free supports 100 monthly retained organizations with up to 20 members each; paid SSO/advanced controls are separate.",
+  "pricing_url": "https://clerk.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "hooklistener-free-webhook-debugger",
+  "name": "Hooklistener Free Webhook Debugger",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Free hosted plan: 1 debug endpoint, 50 stored requests per endpoint, 1 day of request history, 1 seat, and MCP access; $0 per month.",
+  "watch_out": "Free stores at most 50 webhook requests for 1 day, not 50 new requests per month. Official billing docs say new requests return HTTP 403 when storage is full until old requests expire or are deleted; do not rely on this plan for guaranteed production delivery. Paid plans offer larger quotas, history and production features. Anonymous endpoints are session-scoped; sign up for persistent endpoints. Free-plan commercial/production rights are not expressly guaranteed.",
+  "pricing_url": "https://www.hooklistener.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-02",
+  "deployment_model": "cloud"
+}

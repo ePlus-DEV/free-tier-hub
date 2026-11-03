@@ -1,0 +1,14 @@
+{
+  "id": "dipsac-free",
+  "name": "DIPSAC Free API",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "500 API requests/month; 2 requests/second; 5 MB files; 1 API key",
+  "watch_out": "Free API excludes audio/video endpoints; monthly overages return HTTP 429; commercial use unconfirmed.",
+  "pricing_url": "https://dipsac.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-08",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

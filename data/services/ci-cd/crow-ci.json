@@ -1,0 +1,13 @@
+{
+  "id": "crow-ci",
+  "name": "Crow CI",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source CI/CD for self-hosted pipelines; no software-enforced build-minute or pipeline-run quotas, with Docker, Podman, Kubernetes and other agent backends.",
+  "watch_out": "Self-hosted only: provide and pay for your own servers/runners, storage and networking; capacity and costs depend on your infrastructure. No managed free runner allowance is included.",
+  "pricing_url": "https://crowci.dev/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-10-23",
+  "deployment_model": "self-hosted"
+}

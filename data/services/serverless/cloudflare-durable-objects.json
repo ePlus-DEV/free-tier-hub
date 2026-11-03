@@ -1,0 +1,13 @@
+{
+  "id": "cloudflare-durable-objects",
+  "name": "Cloudflare Durable Objects Free",
+  "category": "serverless",
+  "plan": "ongoing",
+  "free_limit": "Workers Free Durable Objects: 100,000 requests/day, 13,000 GB-seconds duration/day and up to 5 GB total SQLite-backed storage",
+  "watch_out": "Only SQLite-backed Durable Objects can be created on Workers Free; key-value-backed objects are unavailable. SQLite storage has additional daily row-read/write limits (5M reads and 100K writes), and Free limits reset at 00:00 UTC; exceeding them causes errors. Workers request and CPU quotas also apply.",
+  "pricing_url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

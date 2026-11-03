@@ -1,0 +1,14 @@
+{
+  "id": "langfuse-hobby",
+  "name": "Langfuse Cloud Hobby",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "50,000 usage units per month, 30-day data access and two users.",
+  "watch_out": "Usage limits and short history retention; no credit card required.",
+  "pricing_url": "https://langfuse.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

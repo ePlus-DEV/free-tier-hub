@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
 import { CATEGORIES, categoryCountBadge, check, hasDynamicServiceBadge, render, sync, validateData } from "./catalog.mjs";
+import { hasServiceShards } from './catalog-source.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceData = JSON.parse(readFileSync(path.join(ROOT, "data/services.json"), "utf8"));
@@ -56,8 +57,9 @@ test("new CI/CD entries synchronize without changing the baseline category invar
 });
 
 test("Node generator matches committed Markdown exactly", () => {
-  assert.equal(check(ROOT), CATEGORIES.length + 1);
-  assert.equal(render(ROOT).size, CATEGORIES.length + 1);
+  const expected = CATEGORIES.length + (hasServiceShards(ROOT) ? 2 : 1);
+  assert.equal(check(ROOT), expected);
+  assert.equal(render(ROOT).size, expected);
 });
 
 test("rejects duplicate IDs, invalid URLs, unsupported plans and future dates", () => {

@@ -1,0 +1,13 @@
+{
+  "id": "render-static",
+  "name": "Render Static Sites",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free static-site deploys with automatic TLS, subject to shared workspace outbound bandwidth and build-pipeline allowances",
+  "watch_out": "Static sites do not use Free web-instance hours, but share workspace bandwidth and pipeline-minute quotas. If you add a payment method, excess outbound bandwidth or pipeline minutes may be billed; without one, Render restricts service/builds until the next billing period.",
+  "pricing_url": "https://render.com/docs/free",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-31",
+  "deployment_model": "cloud"
+}

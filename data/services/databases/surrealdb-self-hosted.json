@@ -1,0 +1,14 @@
+{
+  "id": "surrealdb-self-hosted",
+  "name": "SurrealDB Self-Hosted",
+  "category": "databases",
+  "plan": "ongoing",
+  "free_limit": "Self-managed SurrealDB database software supporting structured records, queries, and application data APIs.",
+  "watch_out": "Free community deployment does not include hosted compute, storage, backups, or an SLA. Review edition features and licensing for your use case.",
+  "pricing_url": "https://surrealdb.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

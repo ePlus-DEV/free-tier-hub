@@ -1,0 +1,14 @@
+{
+  "id": "umami-cloud-hobby",
+  "name": "Umami Cloud Hobby",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "Ongoing free Hobby plan for personal projects and low-traffic websites.",
+  "watch_out": "Monthly usage quotas apply; verify current event allowance before relying on the service.",
+  "pricing_url": "https://docs.umami.is/docs/cloud/faq",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "cloud"
+}

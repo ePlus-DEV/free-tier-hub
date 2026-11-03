@@ -1,0 +1,14 @@
+{
+  "id": "gotify-self-hosted",
+  "name": "Gotify Self-Hosted",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Gotify push-notification server with an HTTP API and application-specific message channels.",
+  "watch_out": "Requires your own reachable server, storage, authentication, and client apps. It does not include a managed outbound notification quota.",
+  "pricing_url": "https://gotify.net/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-10-14",
+  "added_at": "2026-10-14",
+  "deployment_model": "self-hosted"
+}

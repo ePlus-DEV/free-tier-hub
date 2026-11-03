@@ -1,0 +1,13 @@
+{
+  "id": "hyperfine-cli-benchmark-local",
+  "name": "hyperfine Open-Source CLI Benchmarking",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT OR Apache-2.0 licensed command-line benchmarking tool with repeated runs, statistical analysis, warmup and export; free local execution with no subscription or usage quota.",
+  "watch_out": "Runs benchmark commands repeatedly on your own hardware; commands, cloud compute, paid APIs or CI runners invoked by a benchmark may incur charges or side effects. This is local software, not a managed benchmarking allowance; comply with license notices.",
+  "pricing_url": "https://github.com/sharkdp/hyperfine",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "local"
+}

@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadServices, hasServiceShards, aggregateCatalog, COMPATIBILITY_FILE } from './catalog-source.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // The README badge counts services from the live source JSON on main; no sync commit needed.
@@ -135,7 +136,7 @@ export function validateCandidate(candidate, today = new Date().toISOString().sl
 }
 
 export function render(root = DEFAULT_ROOT) {
-  const data = validateData(JSON.parse(read(root, "data/services.json")));
+  const data = validateData(loadServices(root));
   let readme = read(root, "README.md");
   const lines = readme.split("\n");
   const start = lines.findIndex(line => line.trim() === NAV);
@@ -156,6 +157,7 @@ export function render(root = DEFAULT_ROOT) {
     throw Error("README.md: expected dynamic service-count badge from main catalog JSON");
   }
   const output = new Map([["README.md", readme]]);
+  if (hasServiceShards(root)) output.set(COMPATIBILITY_FILE, aggregateCatalog(root));
   for (const category of CATEGORIES) {
     const filename = "docs/" + category + ".md";
     const rows = data.filter(item => item.category === category).map(item => [

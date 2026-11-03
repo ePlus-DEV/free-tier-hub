@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, categoryCountBadge, hasDynamicServiceBadge, validateData } from './catalog.mjs';
+import { loadServices } from './catalog-source.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PLANS = {
@@ -130,7 +131,7 @@ export function validateDocuments(root, data, readme, pages) {
   return errors;
 }
 export function checkDocuments(root = ROOT) {
-  const data = validateData(JSON.parse(fs.readFileSync(path.join(root, 'data/services.json'), 'utf8')));
+  const data = validateData(loadServices(root));
   const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
   const pages = {};
   for (const cat of CATEGORIES)

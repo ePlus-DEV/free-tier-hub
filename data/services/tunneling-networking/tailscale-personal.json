@@ -1,0 +1,13 @@
+{
+  "id": "tailscale-personal",
+  "name": "Tailscale Personal",
+  "category": "tunneling-networking",
+  "plan": "ongoing",
+  "free_limit": "Up to 6 users; unlimited user devices; 50 tagged resources; 1,000 ephemeral-resource minutes/month",
+  "watch_out": "Free Personal is for non-commercial home/personal use only; work-domain or business use may enter a 14-day Enterprise trial and require a paid plan. Additional tagged resources and higher ephemeral limits have separate charges.",
+  "pricing_url": "https://tailscale.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "no",
+  "last_checked": "2026-10-30",
+  "deployment_model": "cloud"
+}
