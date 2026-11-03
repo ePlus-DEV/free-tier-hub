@@ -238,6 +238,10 @@ function document(absolute, title, description, relative, content, structuredDat
     '<div class="compare-tray-items"></div></div>',
     '<div class="compare-tray-actions"><button type="button" class="compare-clear" data-compare-clear>Clear</button>',
     '<a class="compare-tray-go" href="', tag(absolute('compare/')), '" aria-disabled="true">Compare now →</a></div></aside>',
+    '<dialog class="compare-dialog" id="compare-dialog" aria-label="Compare selected services">',
+    '<div class="compare-dialog-bar"><strong>Compare selected services</strong>',
+    '<button type="button" class="compare-dialog-close" data-compare-close aria-label="Close comparison">×</button></div>',
+    comparePage(absolute), '</dialog>',
     '<span class="sr-only" role="status" aria-live="polite" id="compare-live"></span>',
     // Native details keeps this support action keyboard-accessible without JavaScript.
     '<details class="support-widget" id="support-widget">',
