@@ -1,6 +1,7 @@
 {
   "name": "free-tier-hub",
   "private": true,
+  "license": "MIT",
   "version": "0.0.0",
   "description": "Node.js 24 tooling for Free Tier Hub catalog validation and static-site generation",
   "type": "module",

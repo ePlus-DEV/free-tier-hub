@@ -4,6 +4,16 @@ Thanks for helping keep this free-tier directory accurate. **Official provider p
 
 There are **two ways to contribute**. You do not need to know Git, Node.js, or JSON to suggest a service. The catalog is stored as **one JSON object per service** under `data/services/<category>/<id>.json`; the consolidated `data/services.json` and website assets are generated outputs.
 
+## Licensing your contribution
+
+Code and tooling contributions should be compatible with the project's
+[MIT License](LICENSE). New original catalog descriptions, curation and
+database rights that you have authority to license are contributed under
+[CC BY 4.0](LICENSE-DATA.md). You retain ownership of your contributions;
+only submit work you are authorized to license. Avoid copying protected
+provider text or images, and flag any pre-existing contributions with
+uncertain license permissions for maintainer review.
+
 ## Option A: Suggest a service without code (recommended for beginners)
 
 1. [Open the service suggestion form](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml).

@@ -65,6 +65,12 @@ npm run verify
 npm run build
 ```
 
+## License
+
+- **Software and tooling:** [MIT License](LICENSE).
+- **Original catalog editorial/database rights:** [CC BY 4.0](LICENSE-DATA.md), only where the project has authority to license them.
+- Provider names, logos, trademarks and third-party content retain their respective owners' rights. Public pricing facts are not claimed as exclusive property.
+
 ## Support the project
 
 Support [ePlus.DEV on GitHub Sponsors](https://github.com/sponsors/ePlus-DEV), [donate](https://eplus.dev/page/donate), or help by [reporting outdated listings](https://github.com/ePlus-DEV/free-tier-hub/issues). Donations are optional and never affect catalog eligibility, rankings, or inclusion.

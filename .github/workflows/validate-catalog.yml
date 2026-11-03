@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - README.md
+      - LICENSE
+      - LICENSE-DATA.md
       - AGENTS.md
       - agent.md
       - CONTRIBUTING.md
@@ -19,6 +21,8 @@ on:
     branches: [main, 'catalog/**']
     paths:
       - README.md
+      - LICENSE
+      - LICENSE-DATA.md
       - AGENTS.md
       - agent.md
       - CONTRIBUTING.md
