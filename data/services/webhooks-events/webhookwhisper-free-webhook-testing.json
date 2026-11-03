@@ -1,0 +1,13 @@
+{
+  "id": "webhookwhisper-free-webhook-testing",
+  "name": "WebhookWhisper Free Webhook Testing",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Free hosted plan: 3 webhook endpoints, 2 forwarding rules per endpoint, 7-day event history and 35+ sample provider payloads; $0 per month.",
+  "watch_out": "Anonymous guest endpoints expire after 1 hour and are not the persistent free-account plan. Event history is retained for only 7 days on Free; more endpoints, longer history and event replay require paid tiers. Commercial/production rights are not expressly confirmed in the public pricing description.",
+  "pricing_url": "https://webhookwhisper.com/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-01",
+  "deployment_model": "cloud"
+}
