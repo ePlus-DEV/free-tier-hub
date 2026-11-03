@@ -56,6 +56,7 @@ jobs:
           import { validateCandidate } from './scripts/catalog.mjs';
           import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
           import { proposedServiceIds } from './scripts/catalog-pr-coverage.mjs';
+          import { candidateCollisions, dedupMessage } from './scripts/catalog-dedup.mjs';
 
           const repo = process.env.GITHUB_REPOSITORY;
           const api = (endpoint) => JSON.parse(execFileSync(
@@ -98,6 +99,11 @@ jobs:
             let candidate;
             try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
             if (candidate?.id !== id || catalogIds.has(id) || !fresh(candidate)) continue;
+            const matches = candidateCollisions(candidate, loadServices());
+            if (matches.length) {
+              console.log('Queued Issue needs duplicate review: ' + dedupMessage(candidate,matches));
+              continue;
+            }
             // A dispatch without trusted deployment evidence succeeds but cannot
             // create a PR. Skip that Issue rather than retrying it every hour.
             let resolved;
@@ -128,6 +134,11 @@ jobs:
           }
           for (const candidate of loadCandidates()) {
             if (!eligible.has(candidate.id)) continue;
+            const matches = candidateCollisions(candidate, loadServices());
+            if (matches.length) {
+              console.log('Backlog candidate needs duplicate review: ' + dedupMessage(candidate,matches));
+              continue;
+            }
             const title = '[catalog-candidate] ' + candidate.id;
             const branch = 'catalog/add-' + candidate.id;
             if (proposedIds.has(candidate.id)) {
