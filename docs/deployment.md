@@ -56,6 +56,52 @@ Home includes only the first **12 server-rendered service cards**. Search/filter
 
 The PR preview preparation step rewrites search URLs to preview-relative paths so the preview uses its **own index and card fragments**, not stale production search data. Verify that `/search/index.json` and at least one `/search/cards/<category>.json` exist in build artifacts before releasing. Site search and API assets deploy together from the same revision.
 
+## SEO and answer-engine discovery after the catalog migration
+
+**Canonical URLs are independent of source-file paths.** Each canonical service shard
+`data/services/<category>/<id>.json` builds an HTML detail page at `/service/<id>/` and
+a matching entry in `/sitemap.xml`. Changing the internal storage layout does **not**
+change `/service/<id>/`, category URLs, `/catalog.json` or their canonical links.
+Do not change service IDs without planning redirects and checking external links.
+
+- **Home and lazy search:** the Home HTML contains the first 12 cards and matching
+  `ItemList` JSON-LD entries. Bot-discoverable links for *all* ongoing services
+  are in their pre-rendered `/category/<category>/` pages; time-limited/expiring
+  services are linked from `/offers/`. Crawlers do not click Show more buttons.
+- **Metadata:** each generated detail page has an H1, self-canonical URL, indexable
+  robots meta, WebPage JSON-LD, BreadcrumbList, official source, and restriction
+  text. Limited-offer breadcrumbs point to the actual `/offers/` parent.
+- **Sitemap/robots:** `/sitemap.xml` enumerates every canonical HTML page.
+  `/robots.txt` advertises the sitemap. PR previews are isolated and
+  non-indexable. The sitemap uses the catalog's verified `last_checked` as
+  a conservative date, not the build timestamp; never mass refresh those
+  dates merely to provoke recrawls.
+- **AEO / AI discovery:** `/llms.txt` and `/agents.md` are generated
+  discovery guides pointing to the real category pages, catalog API and
+  sitemap. These are *optional conventions*, not substitutes for HTML
+  links, robots policies, or a guarantee of ranking/citation in AI answers.
+  AI crawlers should be able to access useful service details without
+  running client-side JavaScript.
+- **Full data and search:** `/catalog.json` remains a public API;
+  `/search/index.json` and `/search/cards/<category>.json` are generated
+  UI assets. Neither should be submitted to search engines as canonical pages.
+
+**Regression gates:** `npm run verify` runs `scripts/seo-aeo.test.mjs` and
+checks all service IDs against generated URLs, crawlable category/offer links,
+canonical tags, indexability, HTML headings, sitemap, JSON-LD and AEO guides.
+The existing **Audit catalog official sources** GitHub Action keeps its
+**Monday 03:00 UTC** schedule and also executes this read-only local-build
+check with full Git history. It does not rewrite data, request reindexing,
+or change the scheduled ChatGPT discovery/audit tasks.
+
+**Release checklist:** confirm exact-HEAD CI and GitHub Pages deployment,
+then independently inspect a live service and category URL, `robots.txt`,
+`sitemap.xml`, `llms.txt`, `agents.md`, `catalog.json`, and the search
+index. Use Google Search Console URL Inspection / sitemap reports where
+available; repository CI cannot prove that a search engine has indexed
+or cited a page. A successful static build is not proof the live host
+has finished deploying.
+
 ## Release verification and troubleshooting
 
 1. Confirm the catalog PR has been reviewed and that its **exact head commit** has successful required checks; missing, pending, skipped, cancelled or action-required checks are not successful results.
