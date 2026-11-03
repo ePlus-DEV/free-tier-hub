@@ -1,0 +1,13 @@
+{
+  "id": "gocron-go-scheduler-local",
+  "name": "gocron v2 Go Job Scheduler",
+  "category": "queues-jobs",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Go scheduling library for recurring interval and cron jobs; no software license fee or vendor-imposed usage quota.",
+  "watch_out": "Runs within user-operated Go applications, not a hosted scheduler. Compute, persistence and optional distributed-lock infrastructure are not included; retain MIT copyright/license notices.",
+  "pricing_url": "https://github.com/go-co-op/gocron",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
