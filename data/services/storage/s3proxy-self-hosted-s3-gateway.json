@@ -1,0 +1,13 @@
+{
+  "id": "s3proxy-self-hosted-s3-gateway",
+  "name": "S3Proxy Open-Source S3-Compatible Gateway",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed S3 API proxy; run against a local filesystem or self-managed backend without a software subscription or vendor-hosted free storage quota.",
+  "watch_out": "S3Proxy is an API gateway, not free cloud object storage. Requires a user-operated Java 17+ server or Docker deployment, disk, networking and backups. AWS, Azure, Google Cloud, Swift and SFTP backends may incur separate storage, request and egress charges; S3 API feature coverage is not complete.",
+  "pricing_url": "https://github.com/gaul/s3proxy",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-02",
+  "deployment_model": "self-hosted"
+}
