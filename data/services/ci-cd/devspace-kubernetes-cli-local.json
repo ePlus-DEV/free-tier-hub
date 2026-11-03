@@ -1,0 +1,13 @@
+{
+  "id": "devspace-kubernetes-cli-local",
+  "name": "DevSpace Open-Source Kubernetes Development CLI (Local)",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed client-only DevSpace CLI for Kubernetes image builds, deployments, workflow automation, hot reload and debugging; no CLI license fee or usage quota.",
+  "watch_out": "Requires a Kubernetes cluster, image registry and user-provided compute/network/storage; these are not free with the CLI. Optional third-party services and managed Kubernetes may incur charges. Apache-2.0 notice obligations apply.",
+  "pricing_url": "https://github.com/devspace-sh/devspace/blob/main/LICENSE",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-01",
+  "deployment_model": "local"
+}
