@@ -1,0 +1,13 @@
+{
+  "id": "stoplight-prism-open-source-api-mocking",
+  "name": "Stoplight Prism Open-Source API Mocking",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed local/self-hosted Prism CLI for OpenAPI/Postman API mocking and request validation; no vendor-hosted quota or subscription included.",
+  "watch_out": "Requires your own Node.js or container runtime and compute/CI resources. Stoplight hosted mock servers and commercial platform are separate offerings; do not assume free hosted capacity. API proxy mode forwards requests to a real target, which may incur charges.",
+  "pricing_url": "https://github.com/stoplightio/prism",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
