@@ -1,0 +1,13 @@
+{
+  "id": "playwright-open-source-local",
+  "name": "Playwright Open-Source Browser Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source local end-to-end browser testing for Chromium, Firefox and WebKit; no vendor-imposed test-run limit or software subscription.",
+  "watch_out": "Runs browsers on your own machine, containers or CI runners. Compute, storage, artifacts and any hosted browser grid cost extra. This listing is for the Playwright test framework, not a managed testing SaaS tier.",
+  "pricing_url": "https://playwright.dev/docs/intro",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
