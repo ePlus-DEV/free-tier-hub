@@ -1,0 +1,13 @@
+{
+  "id": "endatix-headless-form-api",
+  "name": "Endatix Headless Form API",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form and survey management REST API with no vendor-imposed software quota or expiration; supports forms, submissions, templates, and webhooks.",
+  "watch_out": "Only the headless API is MIT-licensed; Endatix Hub UI is commercially licensed. Supply your own .NET runtime, database, hosting, and any paid SurveyJS Creator or external services. No hosted compute or submissions are included.",
+  "pricing_url": "https://github.com/endatix/endatix",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
