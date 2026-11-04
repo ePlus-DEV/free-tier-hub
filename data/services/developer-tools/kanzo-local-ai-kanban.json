@@ -1,0 +1,13 @@
+{
+  "id": "kanzo-local-ai-kanban",
+  "name": "Kanzo Local AI Kanban",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-licensed local-first Kanban board and MCP task interface for AI coding agents, with SQLite storage, Git-based synchronization and no vendor-metered task or agent-call quota.",
+  "watch_out": "Runs on your own machine or server; no free hosted compute or AI-model usage is included. The web UI has no built-in authentication; bind to localhost or protect access separately. AGPL network-source-sharing obligations apply to modified deployments.",
+  "pricing_url": "https://github.com/emanuele-em/kanzo",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "local"
+}
