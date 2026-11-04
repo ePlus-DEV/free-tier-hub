@@ -149,11 +149,11 @@
     "category": "app-hosting",
     "plan": "ongoing",
     "free_limit": "Free Deno Deploy: 1M inbound requests/month, 20 GiB egress/month, 5 custom domains, 10 active CPU hours and 150 GiB-hours of memory time",
-    "watch_out": "Free resources are metered independently across applications, egress, CPU and memory; idle apps shut down after about 20–30 seconds. Pro/Builder tiers add higher limits and usage charges; Free does not include unrestricted always-on compute.",
+    "watch_out": "Full published Free allowances require organization verification with a credit card; unverified organizations receive restricted Free limits. Apps are paused when request, egress, CPU or memory limits are exhausted until the billing cycle resets. Pro/Builder charge for overages; this is new Deno Deploy, not retired Deploy Classic (sunset July 20, 2026). Commercial eligibility should be verified with Deno.",
     "pricing_url": "https://deno.com/deploy/pricing",
-    "credit_card": "check",
+    "credit_card": "yes",
     "commercial_use": "check",
-    "last_checked": "2026-10-31",
+    "last_checked": "2026-11-04",
     "deployment_model": "cloud"
   },
   {
@@ -1950,12 +1950,12 @@
     "name": "UploadThing 2GB App",
     "category": "storage",
     "plan": "ongoing",
-    "free_limit": "2 GB shared storage, unlimited uploads and downloads.",
-    "watch_out": "Storage is shared across apps; seven days of audit log retention.",
+    "free_limit": "2 GB shared storage across apps, unlimited uploads and downloads, and 7-day audit-log retention on the $0/month 2GB App.",
+    "watch_out": "2 GB storage is shared across all apps, not 2 GB per app. Private files, configurable regions and longer audit logs require paid tiers. Provider pricing does not clearly state signup card requirements or commercial-use permission; verify before use.",
     "pricing_url": "https://uploadthing.com/",
     "credit_card": "check",
     "commercial_use": "check",
-    "last_checked": "2026-10-14",
+    "last_checked": "2026-11-04",
     "added_at": "2026-10-14",
     "deployment_model": "cloud"
   },
@@ -3235,19 +3235,6 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-23",
     "deployment_model": "self-hosted"
-  },
-  {
-    "id": "deno-deploy-free",
-    "name": "Deno Deploy Free",
-    "category": "serverless",
-    "plan": "ongoing",
-    "free_limit": "1,000,000 requests/month; 20 GiB egress/month; 10 active CPU hours/month; 150 GiB-hours memory/month; 1 GiB KV storage; 5 custom domains; up to 10 active apps",
-    "watch_out": "The full published Free allowance requires organization verification with a credit card; unverified organizations have restricted Free limits. Free apps pause when request/bandwidth/CPU/memory allowance is exceeded. This is new Deno Deploy, not discontinued Deploy Classic. Commercial eligibility of the Free plan needs provider confirmation.",
-    "pricing_url": "https://deno.com/deploy/pricing",
-    "credit_card": "yes",
-    "commercial_use": "check",
-    "last_checked": "2026-10-23",
-    "deployment_model": "cloud"
   },
   {
     "id": "ackee-self-hosted",
@@ -7551,19 +7538,6 @@
     "commercial_use": "yes",
     "last_checked": "2026-10-28",
     "deployment_model": "local"
-  },
-  {
-    "id": "uploadthing-free",
-    "name": "UploadThing 2GB App",
-    "category": "storage",
-    "plan": "ongoing",
-    "free_limit": "2 GB storage shared across apps; unlimited uploads/downloads; 7-day audit logs",
-    "watch_out": "Free 2 GB storage is shared across all apps; 7-day audit logs; private files and region choice require paid plans. Official pricing does not explicitly confirm card requirement or commercial-use terms, so both remain check.",
-    "pricing_url": "https://uploadthing.com/pricing",
-    "credit_card": "check",
-    "commercial_use": "check",
-    "last_checked": "2026-10-28",
-    "deployment_model": "cloud"
   },
   {
     "id": "scaleway-serverless-functions-free",
@@ -12506,6 +12480,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "json-server-local-mock-rest-api",
+    "name": "JSON Server Local Mock REST API",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed CLI for generating a local mock REST API from a JSON or JSON5 data file; unlimited local use of the software without hosted API quota.",
+    "watch_out": "Current v1 documentation is beta and may have breaking changes; this is a mock server, not a hosted production API. User supplies compute, network and any CI resources; exposing mock data publicly requires independent access controls.",
+    "pricing_url": "https://github.com/typicode/json-server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
     "id": "kanzo-local-ai-kanban",
     "name": "Kanzo Local AI Kanban",
     "category": "developer-tools",
@@ -12529,6 +12516,19 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
+    "deployment_model": "local"
+  },
+  {
+    "id": "keploy-open-source-api-testing",
+    "name": "Keploy Open-Source API Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed open-source API and integration test recording/replay CLI; run locally or in your own CI with no software subscription or vendor-hosted quota included.",
+    "watch_out": "Uses Linux eBPF/network interception and may require elevated privileges and compatible kernels; compute, CI runners, test infrastructure, external APIs and any separate Keploy hosted or Marketplace offerings may incur costs. Follow Apache-2.0 notices and verify production traffic privacy.",
+    "pricing_url": "https://github.com/keploy/keploy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
     "deployment_model": "local"
   },
   {
@@ -12831,6 +12831,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "opnform-core-self-hosted",
+    "name": "OpnForm Core Self-Hosted",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0-or-later core software for self-hosted forms and submissions; no vendor-hosted quota included.",
+    "watch_out": "Requires your own server, database, maintenance and hosting costs. Proprietary Enterprise features require a separate license; AGPL obligations apply to modified network-deployed software. Cloud hosting is a distinct paid/managed offering.",
+    "pricing_url": "https://github.com/OpnForm/OpnForm",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "pact-js-contract-testing",
     "name": "Pact JS Contract Testing",
     "category": "testing-qa",
@@ -12948,6 +12961,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "schemathesis-open-source-api-testing",
+    "name": "Schemathesis Open-Source API Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local CLI/Python tool for schema-based OpenAPI, GraphQL and gRPC API testing; no vendor-hosted testing quota or recurring credits included.",
+    "watch_out": "Runs on your own workstation or CI runner; compute, network, target API usage and CI infrastructure may incur separate charges. Generated requests can modify data: use staging/test targets. Hosted services, if any, are not included.",
+    "pricing_url": "https://github.com/schemathesis/schemathesis",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
     "id": "smokeping-latency-monitoring-self-hosted",
     "name": "SmokePing Latency Monitoring (Self-Hosted)",
     "category": "observability",
@@ -12968,6 +12994,19 @@
     "free_limit": "BSD-3-Clause-licensed local fake SMTP server for testing email flows, with web UI, IMAP/POP3 access, SMTP logs and HTML preview; no software usage quota or hosted sending allowance.",
     "watch_out": "Not a production email delivery service. Requires user-provided Windows, Linux, macOS or container runtime and storage; local/CI infrastructure costs are separate. SMTP relay features can send real messages if explicitly configured; protect the testing server from public exposure.",
     "pricing_url": "https://github.com/rnwood/smtp4dev",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
+    "id": "step-ci-open-source-api-testing",
+    "name": "Step CI Open-Source API Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Open-source API testing CLI for locally run and self-hosted REST, GraphQL, gRPC, tRPC and SOAP workflows; no vendor-imposed usage quota for the software.",
+    "watch_out": "Mozilla Public License 2.0 obligations apply to modified covered files. Users pay for their own compute, CI runners, network and target APIs. Optional paid support is separate; CLI has opt-out anonymous usage analytics.",
+    "pricing_url": "https://github.com/stepci/stepci",
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
