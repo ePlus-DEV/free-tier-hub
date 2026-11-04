@@ -1,0 +1,13 @@
+{
+  "id": "step-ci-open-source-api-testing",
+  "name": "Step CI Open-Source API Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Open-source API testing CLI for locally run and self-hosted REST, GraphQL, gRPC, tRPC and SOAP workflows; no vendor-imposed usage quota for the software.",
+  "watch_out": "Mozilla Public License 2.0 obligations apply to modified covered files. Users pay for their own compute, CI runners, network and target APIs. Optional paid support is separate; CLI has opt-out anonymous usage analytics.",
+  "pricing_url": "https://github.com/stepci/stepci",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}

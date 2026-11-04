@@ -1,0 +1,13 @@
+{
+  "id": "keploy-open-source-api-testing",
+  "name": "Keploy Open-Source API Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed open-source API and integration test recording/replay CLI; run locally or in your own CI with no software subscription or vendor-hosted quota included.",
+  "watch_out": "Uses Linux eBPF/network interception and may require elevated privileges and compatible kernels; compute, CI runners, test infrastructure, external APIs and any separate Keploy hosted or Marketplace offerings may incur costs. Follow Apache-2.0 notices and verify production traffic privacy.",
+  "pricing_url": "https://github.com/keploy/keploy",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
