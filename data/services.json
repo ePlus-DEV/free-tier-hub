@@ -12454,6 +12454,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hyvor-relay-self-hosted-email-api",
+    "name": "Hyvor Relay Open-Source Self-Hosted Email API",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 open-source email API and SMTP delivery software may be self-hosted without a software subscription or per-message software quota; operator supplies mail servers and delivery infrastructure.",
+    "watch_out": "Self-hosting requires PostgreSQL, workers, SMTP infrastructure, IP reputation, DNS and operational maintenance; provider-hosted Relay Cloud is separate and not included. Modified network-served versions must comply with AGPL-3.0; enterprise commercial licenses are separately paid.",
+    "pricing_url": "https://github.com/hyvor/relay",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "innernet-wireguard-self-hosted",
     "name": "innernet Self-Hosted WireGuard Private Networking",
     "category": "tunneling-networking",
