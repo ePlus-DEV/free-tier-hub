@@ -6,7 +6,8 @@
   // updated result labels. Preserve original counts in accessible labels.
   function compactUiCount(input) {
     var number = Number(input);
-    if (!Number.isSafeInteger(number) || number < 100000) return String(input);
+    if (!Number.isSafeInteger(number) || number < 1000) return String(input);
+    if (number < 100000) return String(number).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     var units = [[1000000000000, "T", 2], [1000000000, "B", 2],
       [1000000, "M", 2], [1000, "K", 1]];
     for (var i = 0; i < units.length; i++) {
@@ -357,10 +358,10 @@
     function renderCategoryPage() {
       var shown = Math.min(categoryCards.length, categoryCurrentPage * categoryPageSize);
       categoryCards.forEach(function (card, index) { card.hidden = index >= shown; });
-      categoryStatus.textContent = "Showing " + shown + " of " + categoryCards.length + " services";
+      categoryStatus.textContent = "Showing " + compactUiCount(shown) + " of " + compactUiCount(categoryCards.length) + " services";
       categoryMoreWrap.hidden = shown >= categoryCards.length;
       if (!categoryMoreWrap.hidden) {
-        categoryMore.textContent = "Show " + Math.min(categoryPageSize, categoryCards.length - shown) + " more services";
+        categoryMore.textContent = "Show " + compactUiCount(Math.min(categoryPageSize, categoryCards.length - shown)) + " more services";
       }
       categoryPagination.hidden = false;
     }
@@ -969,7 +970,7 @@
     totalLabel.textContent = summary.label;
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = summary.shown.replace(/\b\d{6,}\b/g, compactUiCount);
+    shownLabel.textContent = summary.shown.replace(/\b\d{4,}\b/g, compactUiCount);
     shownLabel.title = summary.shown;
     count.replaceChildren(totalLabel, totalBadge, shownLabel);
     empty.hidden = matched.length !== 0;
@@ -988,7 +989,7 @@
     updateFilterCount();
     renderActiveFilters();
     selectWidgets.forEach(function (widget) { widget.sync(); });
-    if (showResults) showResults.textContent = "Show results (" + matched.length + ")";
+    if (showResults) showResults.textContent = "Show results (" + compactUiCount(matched.length) + ")";
   }
   grid.addEventListener("click", function (event) {
     var link = event.target.closest("[data-card-category], [data-card-hosting]");
