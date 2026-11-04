@@ -12883,6 +12883,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "posthorn-self-hosted-email-gateway",
+    "name": "Posthorn Self-Hosted Email Gateway",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed self-hosted outbound email gateway with HTTP form, HTTP API and SMTP ingress and configurable outbound transports; no software subscription or vendor-imposed gateway quota.",
+    "watch_out": "Does not provide free email delivery or sending credits. Requires a separately configured transactional email provider or SMTP relay, which may charge fees or enforce quotas, plus your own Docker/server resources. Delivery limits and commercial terms of the upstream provider are separate.",
+    "pricing_url": "https://github.com/craigmccaskill/posthorn",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "privacyidea-community-self-hosted",
     "name": "privacyIDEA Community Self-Hosted Multi-Factor Authentication",
     "category": "auth-security",
