@@ -1,0 +1,13 @@
+{
+  "id": "mockttp-open-source-http-mocking",
+  "name": "Mockttp Open-Source HTTP Mocking Library",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 JavaScript/TypeScript HTTP(S) mock server and proxy library for local integration tests; no software usage quota or expiry; run on developer or CI infrastructure.",
+  "watch_out": "This is the open-source Mockttp library, not a free hosted HTTP Toolkit plan. Node/browser test runtime, CI, compute and network resources are not included; Apache-2.0 notices and license conditions apply.",
+  "pricing_url": "https://github.com/httptoolkit/mockttp",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "local"
+}
