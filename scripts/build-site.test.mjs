@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { build, categoryCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
+import { compactNumber } from '../site/assets/compact-numbers.js';
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -66,7 +67,7 @@ test('directory exposes unique search/category controls and official sources for
       const expected = mainEntries.filter(item => item.category === id).length;
       assert.ok(html.includes('data-filter-category="' + id + '" aria-pressed="false">' +
         label + ' <span class="category-chip-count" aria-label="' + expected +
-        ' services">' + expected + '</span>'), id + ': count agrees with category overview');
+        ' services">' + compactNumber(expected) + '</span>'), id + ': count agrees with category overview');
     }
     const bar = html.slice(html.indexOf('<div class="category-bar">'),
       html.indexOf('<div class="search-filter-row">'));
@@ -186,7 +187,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(categoriesHtml, /id="category-overview-search" type="search"/);
     assert.equal((categoriesHtml.match(/class="category-overview-card"/g) || []).length, CATEGORIES.length);
     assert.ok(categoriesHtml.includes('<strong>' + CATEGORIES.length + '</strong> categories'));
-    assert.ok(categoriesHtml.includes('<strong>' + mainEntries.length +
+    assert.ok(categoriesHtml.includes('<strong>' + compactNumber(mainEntries.length) +
       '</strong> ongoing free tiers &amp; recurring credits'));
     for (const category of CATEGORIES) {
       const categoryUrl = 'https://free-tier.eplus.dev/category/' + category + '/';
@@ -194,7 +195,7 @@ test('directory exposes unique search/category controls and official sources for
       assert.ok(start !== -1, category + ' is present in the index');
       const card = categoriesHtml.slice(start, categoriesHtml.indexOf('</a>', start));
       const count = mainEntries.filter(item => item.category === category).length;
-      assert.ok(card.includes('<b>' + count + '</b> ' + (count === 1 ? 'service' : 'services')),
+      assert.ok(card.includes('<b>' + compactNumber(count) + '</b> ' + (count === 1 ? 'service' : 'services')),
         category + ': only ongoing free tiers count');
       assert.ok(card.includes('class="category-overview-description"'), category + ': has a description');
     }
@@ -302,7 +303,7 @@ test('time-limited offers remain accessible but are excluded from the primary fr
     assert.equal(result.free_tier_count, main.length);
     assert.equal(result.limited_offer_count, limited.length);
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
-    assert.ok(home.includes('<strong class="result-total">' + main.length + '</strong>'));
+    assert.ok(home.includes('<strong class="result-total">' + compactNumber(main.length) + '</strong>'));
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
@@ -415,8 +416,8 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<span class="result-label">Total free tiers</span><strong class="result-total">' + free.length + '</strong>'));
-    assert.ok(html.includes('<span class="result-shown">Showing ' + Math.min(12, free.length) + ' of ' + free.length + '</span>'));
+    assert.ok(html.includes('<span class="result-label">Total free tiers</span><strong class="result-total">' + compactNumber(free.length) + '</strong>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(free.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
     assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);
