@@ -1,0 +1,13 @@
+{
+  "id": "formbee-self-hosted",
+  "name": "FormBee Self-Hosted Form Backend",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form backend for website submissions, with email, Telegram and webhook integrations; no vendor-enforced software usage quota or expiration.",
+  "watch_out": "Hosted formbee.dev has been offline since July 2026; only the self-hosted software is free. Provide your own Docker/server, database and any email or integration services; deployment templates may incur hosting charges.",
+  "pricing_url": "https://github.com/FormBee/FormBee",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
