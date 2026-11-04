@@ -632,13 +632,14 @@ function comparePage(absolute) {
 export function categoryCountSVG(count) {
   if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid category count');
   const number = String(count);
-  const width = Math.max(28, 16 + number.length * 8);
+  const display = compactNumber(count);
+  const width = Math.max(28, 16 + display.length * 8);
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
     'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + number + ' services">' +
     '<title>' + number + ' services</title>' +
     '<rect width="' + width + '" height="22" rx="7" fill="#e8f0ec"/>' +
     '<text x="' + width / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
-    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + number + '</text></svg>';
+    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + display + '</text></svg>';
 }
 
 // GitHub Pages serves static HTML rather than HTTP 301s. This page keeps old
