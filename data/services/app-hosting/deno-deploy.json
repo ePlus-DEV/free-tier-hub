@@ -4,10 +4,10 @@
   "category": "app-hosting",
   "plan": "ongoing",
   "free_limit": "Free Deno Deploy: 1M inbound requests/month, 20 GiB egress/month, 5 custom domains, 10 active CPU hours and 150 GiB-hours of memory time",
-  "watch_out": "Free resources are metered independently across applications, egress, CPU and memory; idle apps shut down after about 20–30 seconds. Pro/Builder tiers add higher limits and usage charges; Free does not include unrestricted always-on compute.",
+  "watch_out": "Full published Free allowances require organization verification with a credit card; unverified organizations receive restricted Free limits. Apps are paused when request, egress, CPU or memory limits are exhausted until the billing cycle resets. Pro/Builder charge for overages; this is new Deno Deploy, not retired Deploy Classic (sunset July 20, 2026). Commercial eligibility should be verified with Deno.",
   "pricing_url": "https://deno.com/deploy/pricing",
-  "credit_card": "check",
+  "credit_card": "yes",
   "commercial_use": "check",
-  "last_checked": "2026-10-31",
+  "last_checked": "2026-11-04",
   "deployment_model": "cloud"
 }

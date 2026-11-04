@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
+import { activeServiceAliases } from './service-aliases.mjs';
 import {
   CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
   CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
@@ -632,12 +633,33 @@ export function categoryCountSVG(count) {
     'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + number + '</text></svg>';
 }
 
+// GitHub Pages serves static HTML rather than HTTP 301s. This page keeps old
+// bookmarks functional and tells crawlers the surviving URL is authoritative.
+function serviceAliasRedirectPage(absolute, targetId) {
+  const dest = absolute('service/' + targetId + '/');
+  return [
+    '<!doctype html><html lang="en"><head><meta charset="utf-8">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    '<title>Service moved | Free Tier Hub</title>',
+    '<meta name="robots" content="noindex,follow">',
+    '<link rel="canonical" href="', tag(dest), '">',
+    '<meta http-equiv="refresh" content="0;url=', tag(dest), '">',
+    '<link rel="stylesheet" href="', tag(absolute('assets/site.css?v=' + assetVersion('site.css'))), '">',
+    '</head><body><main class="page-intro"><h1>Service listing moved</h1>',
+    '<p>This listing was consolidated into one verified catalog entry. ',
+    '<a href="', tag(dest), '">View the current service details</a>.</p>',
+    '</main><script>window.location.replace(', safeJSON(dest), ');</script></body></html>',
+  ].join('');
+}
+
 export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL,
   catalogPath = path.join(ROOT, 'data/services.json')) {
   const base = normalizeURL(siteURL);
   const absolute = (relative = '') => base + relative;
   const source = validateData(path.resolve(catalogPath) === path.join(ROOT, 'data/services.json')
     ? loadServices(ROOT) : JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
+  const serviceAliases = activeServiceAliases(source,
+    path.resolve(catalogPath) === path.join(ROOT, 'data/services.json'));
   const publishedDates = serviceAddedDates(ROOT);
   // Derive dates from the commit when each service first became visible on
   // the current branch. In particular, an old PR merged today is new today.
@@ -785,6 +807,12 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       item.free_limit + '. ' + item.watch_out, relative,
       detailPage(item, absolute), schema));
     pageURLs.push([relative, item.last_checked]);
+  }
+  // Compatibility pages are deliberately excluded from the canonical sitemap,
+  // catalog count and machine-readable search index.
+  for (const [oldId, targetId] of serviceAliases) {
+    file(output, 'service/' + oldId + '/index.html',
+      serviceAliasRedirectPage(absolute, targetId));
   }
   let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
