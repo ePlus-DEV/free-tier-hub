@@ -12935,6 +12935,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "testcontainers-open-source-local",
+    "name": "Testcontainers Open Source (Local)",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed Testcontainers libraries provide reusable, disposable Docker containers for integration tests without a software usage quota or expiration; local Docker runtime and compute are supplied by the user.",
+    "watch_out": "This entry covers open-source local Testcontainers libraries, not Testcontainers Cloud or paid hosted resources. Requires a compatible container runtime; CI infrastructure, images, network traffic and hosted compute may incur charges.",
+    "pricing_url": "https://github.com/testcontainers/testcontainers-java",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "local"
+  },
+  {
     "id": "twitterapi-io-signup-credits",
     "name": "TwitterAPI.io New-Account Credits",
     "category": "developer-tools",
