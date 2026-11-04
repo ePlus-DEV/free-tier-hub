@@ -466,7 +466,7 @@
       return;
     }
     setSearchStatus("Loading service search…");
-    searchLoading = window.fetch(grid.getAttribute("data-search-index"), { credentials: "same-origin" })
+    searchLoading = window.fetch(grid.getAttribute("data-search-index"), { credentials: "same-origin", cache: "no-store" })
       .then(function (response) {
         if (!response.ok) throw Error("Could not load search index");
         return response.json();

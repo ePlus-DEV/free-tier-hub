@@ -180,6 +180,42 @@ jobs:
         if: steps.deployment.outcome == 'failure'
         id: retry_deployment
         uses: actions/deploy-pages@v4
+      - name: Checkout canonical catalog for live verification
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - name: Verify deployed search index matches canonical shards
+        env:
+          PUBLIC_INDEX_URL: https://free-tier.eplus.dev/search/index.json
+        run: |
+          node --input-type=module <<'NODE'
+          import { loadServices } from './scripts/catalog-source.mjs';
+          const expected = new Set(loadServices().map(service => service.id));
+          let failure = '';
+          for (let attempt = 1; attempt <= 6; attempt++) {
+            try {
+              const response = await fetch(process.env.PUBLIC_INDEX_URL + '?verify=' + process.env.GITHUB_SHA + '-' + attempt, {
+                headers: { 'Cache-Control': 'no-cache' },
+                signal: AbortSignal.timeout(15000)
+              });
+              if (!response.ok) throw Error('HTTP ' + response.status);
+              const index = await response.json();
+              if (!Array.isArray(index.rows)) throw Error('Missing search rows');
+              const actual = new Set(index.rows.map(row => row[0]));
+              const missing = [...expected].filter(id => !actual.has(id));
+              const extra = [...actual].filter(id => !expected.has(id));
+              if (!missing.length && !extra.length && actual.size === index.rows.length) {
+                console.log('Live search index verified: ' + actual.size + ' services');
+                process.exit(0);
+              }
+              failure = 'Missing: ' + missing.slice(0, 10).join(', ') + '; unexpected: ' + extra.slice(0, 10).join(', ');
+            } catch (error) { failure = error.message; }
+            console.log('Live catalog verification attempt ' + attempt + '/6: ' + failure);
+            if (attempt < 6) await new Promise(resolve => setTimeout(resolve, 15000));
+          }
+          console.error('::error::Deployed search index does not match canonical main catalog: ' + failure);
+          process.exit(1);
+          NODE
       - name: Require a successful Pages deployment
         if: always()
         env:
