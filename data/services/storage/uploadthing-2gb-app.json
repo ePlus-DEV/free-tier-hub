@@ -3,12 +3,12 @@
   "name": "UploadThing 2GB App",
   "category": "storage",
   "plan": "ongoing",
-  "free_limit": "2 GB shared storage, unlimited uploads and downloads.",
-  "watch_out": "Storage is shared across apps; seven days of audit log retention.",
+  "free_limit": "2 GB shared storage across apps, unlimited uploads and downloads, and 7-day audit-log retention on the $0/month 2GB App.",
+  "watch_out": "2 GB storage is shared across all apps, not 2 GB per app. Private files, configurable regions and longer audit logs require paid tiers. Provider pricing does not clearly state signup card requirements or commercial-use permission; verify before use.",
   "pricing_url": "https://uploadthing.com/",
   "credit_card": "check",
   "commercial_use": "check",
-  "last_checked": "2026-10-14",
+  "last_checked": "2026-11-04",
   "added_at": "2026-10-14",
   "deployment_model": "cloud"
 }
