@@ -1,0 +1,13 @@
+{
+  "id": "mox-self-hosted-mail-server",
+  "name": "Mox Self-Hosted Mail Server",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted mail server with SMTP, IMAP, webmail, DNS setup guidance and transactional email HTTP API; no vendor-imposed mailbox or sending quota in the software.",
+  "watch_out": "Requires your own server, domain, DNS, IP reputation, storage, backups and operational security. SMTP deliverability and VPS/network costs are not included; hosting providers may block port 25. MIT license covers software, not third-party infrastructure.",
+  "pricing_url": "https://github.com/mjl-/mox",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
