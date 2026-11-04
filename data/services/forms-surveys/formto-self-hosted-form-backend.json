@@ -1,0 +1,13 @@
+{
+  "id": "formto-self-hosted-form-backend",
+  "name": "FormTo (Self-Hosted Form Backend)",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted HTML form submission backend with a dashboard, CSV/JSON export, webhook and email notifications; no vendor-imposed submission quota or software subscription.",
+  "watch_out": "Requires self-managed Docker Compose, PostgreSQL and hosting; SMTP and external integrations may incur charges. Public form endpoints have spam protection and rate limiting. Hosted infrastructure is not included.",
+  "pricing_url": "https://github.com/lumizone/formto",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
