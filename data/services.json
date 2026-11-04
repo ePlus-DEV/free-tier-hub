@@ -12779,6 +12779,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "mocktail-self-hosted-mock-server",
+    "name": "Mocktail Self-Hosted Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local or self-hosted HTTP mock server with configurable endpoints, status codes, delays, request inspection, and import/export; no vendor-imposed software quota or expiry.",
+    "watch_out": "Run the binary or Docker container on your own infrastructure; persistent disk and CI resources are not included. The optional AI assistant requires your own API key and may incur third-party model charges. Protect management endpoints before exposing them publicly.",
+    "pricing_url": "https://github.com/Huseyinnurbaki/mocktail",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mockttp-open-source-http-mocking",
     "name": "Mockttp Open-Source HTTP Mocking Library",
     "category": "testing-qa",
