@@ -1,0 +1,13 @@
+{
+  "id": "portabase-self-hosted-backups",
+  "name": "Portabase Self-Hosted Database Backups",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed self-hosted backup and restore management for databases including PostgreSQL, MySQL, MariaDB, SQLite and MongoDB, with agents and storage destinations; no vendor-metered backup quota for the open-source software.",
+  "watch_out": "Self-host the management server and agents, configure storage/retention and verify restorations; backup destinations, storage capacity and compute are not supplied free. Some database engines and operations have different restore capabilities; review official compatibility docs.",
+  "pricing_url": "https://github.com/Portabase/portabase",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}

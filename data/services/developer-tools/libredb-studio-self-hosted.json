@@ -1,0 +1,13 @@
+{
+  "id": "libredb-studio-self-hosted",
+  "name": "LibreDB Studio Self-Hosted SQL IDE",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted browser-based database IDE supporting SQL and NoSQL systems including PostgreSQL, MySQL, SQLite, Redis and MongoDB; no vendor-imposed query or connection quota for the software.",
+  "watch_out": "Run on your own machine, container or server; infrastructure and managed databases are not included. Protect the web interface and database credentials. Any optional external AI/model services or hosting may have separate terms and charges.",
+  "pricing_url": "https://github.com/libredb/libredb-studio",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
