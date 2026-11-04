@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Existing catalog candidate issue number to retry'
+        description: 'Open [catalog-candidate] Issue number (for example 1857; not a PR number)'
         required: true
         type: string
 
@@ -45,9 +45,11 @@ jobs:
           import fs from 'node:fs';
           import crypto from 'node:crypto';
           const issue = JSON.parse(fs.readFileSync('/tmp/issue.json', 'utf8'));
-          if (issue.state !== 'open' || issue.pull_request) throw Error('Candidate Issue is not an open Issue');
-          if (!issue.title.startsWith('[catalog-candidate] ')) throw Error('Not a catalog candidate issue');
-          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) throw Error('Untrusted submitter');
+          if (issue.pull_request) throw Error(`Issue #${issue.number} is a pull request, not a candidate Issue`);
+          if (issue.state !== 'open') throw Error(`Issue #${issue.number} is ${issue.state}; select an OPEN [catalog-candidate] Issue`);
+          if (!issue.title.startsWith('[catalog-candidate] ')) throw Error(`Issue #${issue.number} is not a [catalog-candidate] Issue`);
+          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) throw Error(`Issue #${issue.number} has an untrusted submitter`);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `### Candidate delivery retry\nIssue: [#${issue.number}](${issue.html_url}) (${issue.state})\n\n`);
           const delimiter = 'BODY_' + crypto.randomUUID();
           fs.appendFileSync(process.env.GITHUB_OUTPUT, 'body<<' + delimiter + '\n' + issue.body + '\n' + delimiter + '\n');
           NODE
@@ -98,6 +100,10 @@ jobs:
           const candidate = resolveCandidateDeployment(original, comments);
           if (!candidate) {
             console.log('::notice::Waiting for trusted deployment evidence comment; no branch or PR created');
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'No Draft PR: missing valid trusted deployment evidence comment. Add the exact deployment JSON comment and retry.\n');
+            if (process.env.GITHUB_EVENT_NAME === 'workflow_dispatch') {
+              throw Error('Manual delivery blocked: missing valid trusted deployment evidence comment');
+            }
             fs.appendFileSync(process.env.GITHUB_OUTPUT, 'ready=false\n');
           } else {
             validateCandidate(candidate);
@@ -237,6 +243,7 @@ jobs:
             url="$(gh pr create --draft --base main --head "$DELIVERY_BRANCH" --title "catalog: add ${SERVICE_ID//-/ }" --body "Automated delivery from candidate issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}. Catalog generation and validation passed before opening this PR.")"
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Draft PR: $url" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Link delivery PR to issue
         if: steps.capacity.outputs.available == 'true'
