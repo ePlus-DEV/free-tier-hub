@@ -1,0 +1,13 @@
+{
+  "id": "boxbox-self-hosted-file-manager",
+  "name": "BoxBox Self-Hosted File Manager",
+  "category": "storage",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted web file manager for mounted Linux directories with previews, resumable file/folder uploads, text editing and share links; no vendor-imposed storage or transfer quota in the software.",
+  "watch_out": "You must supply storage, Docker/server capacity, backups and network security; no hosted storage allowance is included. The app can modify files on mounted volumes, so restrict mounts and sharing permissions. Provider branding and external infrastructure costs are separate.",
+  "pricing_url": "https://github.com/jR4dh3y/BoxBox",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
