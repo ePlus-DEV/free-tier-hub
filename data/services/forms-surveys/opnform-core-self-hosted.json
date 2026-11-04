@@ -1,0 +1,13 @@
+{
+  "id": "opnform-core-self-hosted",
+  "name": "OpnForm Core Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free AGPL-3.0-or-later core software for self-hosted forms and submissions; no vendor-hosted quota included.",
+  "watch_out": "Requires your own server, database, maintenance and hosting costs. Proprietary Enterprise features require a separate license; AGPL obligations apply to modified network-deployed software. Cloud hosting is a distinct paid/managed offering.",
+  "pricing_url": "https://github.com/OpnForm/OpnForm",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
