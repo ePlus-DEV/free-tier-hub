@@ -1,0 +1,13 @@
+{
+  "id": "bettercollected-self-hosted-form-platform",
+  "name": "bettercollected Self-Hosted Form Platform",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed self-hosted form and data collection platform with form builder, consent and deletion workflows, REST API, MCP and CSV exports; no vendor-imposed software quota or expiry.",
+  "watch_out": "Self-hosting requires your own compute, PostgreSQL, object storage and operations. Optional AI providers, external integrations and hosted bettercollected.com may incur separate costs; no free cloud hosting allowance is claimed.",
+  "pricing_url": "https://github.com/bettercollected/bettercollected",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
