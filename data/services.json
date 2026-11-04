@@ -13000,6 +13000,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "sosse-self-hosted-search-archive",
+    "name": "Sosse Self-Hosted Search and Web Archive",
+    "category": "search",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-licensed self-hosted web crawler, full-text search and page archiving software; no vendor-metered search, crawl or archive quota for the self-hosted edition.",
+    "watch_out": "Requires your own server, storage, database and browser/crawler resources; no hosted search capacity is included. Respect target sites' crawling policies. Modified network deployments must comply with AGPL-3.0 source-sharing obligations.",
+    "pricing_url": "https://github.com/biolds/sosse",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "step-ci-open-source-api-testing",
     "name": "Step CI Open-Source API Testing",
     "category": "testing-qa",
