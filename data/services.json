@@ -12233,6 +12233,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "boxbox-self-hosted-file-manager",
+    "name": "BoxBox Self-Hosted File Manager",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted web file manager for mounted Linux directories with previews, resumable file/folder uploads, text editing and share links; no vendor-imposed storage or transfer quota in the software.",
+    "watch_out": "You must supply storage, Docker/server capacity, backups and network security; no hosted storage allowance is included. The app can modify files on mounted volumes, so restrict mounts and sharing permissions. Provider branding and external infrastructure costs are separate.",
+    "pricing_url": "https://github.com/jR4dh3y/BoxBox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cacti-network-graphing-self-hosted",
     "name": "Cacti Open-Source Network Graphing (Self-Hosted)",
     "category": "observability",
@@ -12467,6 +12480,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kanzo-local-ai-kanban",
+    "name": "Kanzo Local AI Kanban",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-licensed local-first Kanban board and MCP task interface for AI coding agents, with SQLite storage, Git-based synchronization and no vendor-metered task or agent-call quota.",
+    "watch_out": "Runs on your own machine or server; no free hosted compute or AI-model usage is included. The web UI has no built-in authentication; bind to localhost or protect access separately. AGPL network-source-sharing obligations apply to modified deployments.",
+    "pricing_url": "https://github.com/emanuele-em/kanzo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "local"
+  },
+  {
     "id": "karate-open-source-test-automation",
     "name": "Karate Open-Source Test Automation",
     "category": "testing-qa",
@@ -12529,6 +12555,19 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "libredb-studio-self-hosted",
+    "name": "LibreDB Studio Self-Hosted SQL IDE",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted browser-based database IDE supporting SQL and NoSQL systems including PostgreSQL, MySQL, SQLite, Redis and MongoDB; no vendor-imposed query or connection quota for the software.",
+    "watch_out": "Run on your own machine, container or server; infrastructure and managed databases are not included. Protect the web interface and database credentials. Any optional external AI/model services or hosting may have separate terms and charges.",
+    "pricing_url": "https://github.com/libredb/libredb-studio",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
     "deployment_model": "self-hosted"
   },
   {
@@ -12790,6 +12829,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "local"
+  },
+  {
+    "id": "portabase-self-hosted-backups",
+    "name": "Portabase Self-Hosted Database Backups",
+    "category": "storage",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed self-hosted backup and restore management for databases including PostgreSQL, MySQL, MariaDB, SQLite and MongoDB, with agents and storage destinations; no vendor-metered backup quota for the open-source software.",
+    "watch_out": "Self-host the management server and agents, configure storage/retention and verify restorations; backup destinations, storage capacity and compute are not supplied free. Some database engines and operations have different restore capabilities; review official compatibility docs.",
+    "pricing_url": "https://github.com/Portabase/portabase",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "privacyidea-community-self-hosted",
