@@ -1,0 +1,13 @@
+{
+  "id": "owlmail-self-hosted-email-testing-gateway",
+  "name": "OwlMail Self-Hosted Email Testing Gateway",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted SMTP email capture and inspection gateway with Web UI, REST API, webhooks, WebSocket and MCP; no vendor-imposed software quota or expiry.",
+  "watch_out": "Run locally or on your own server; provide Docker/compute/storage and any optional integrations. This is an email testing gateway, not a free hosted transactional email sending plan.",
+  "pricing_url": "https://github.com/soulteary/owlmail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
