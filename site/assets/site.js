@@ -358,10 +358,10 @@
     function renderCategoryPage() {
       var shown = Math.min(categoryCards.length, categoryCurrentPage * categoryPageSize);
       categoryCards.forEach(function (card, index) { card.hidden = index >= shown; });
-      categoryStatus.textContent = "Showing " + shown + " of " + categoryCards.length + " services";
+      categoryStatus.textContent = "Showing " + compactUiCount(shown) + " of " + compactUiCount(categoryCards.length) + " services";
       categoryMoreWrap.hidden = shown >= categoryCards.length;
       if (!categoryMoreWrap.hidden) {
-        categoryMore.textContent = "Show " + Math.min(categoryPageSize, categoryCards.length - shown) + " more services";
+        categoryMore.textContent = "Show " + compactUiCount(Math.min(categoryPageSize, categoryCards.length - shown)) + " more services";
       }
       categoryPagination.hidden = false;
     }
@@ -989,7 +989,7 @@
     updateFilterCount();
     renderActiveFilters();
     selectWidgets.forEach(function (widget) { widget.sync(); });
-    if (showResults) showResults.textContent = "Show results (" + matched.length + ")";
+    if (showResults) showResults.textContent = "Show results (" + compactUiCount(matched.length) + ")";
   }
   grid.addEventListener("click", function (event) {
     var link = event.target.closest("[data-card-category], [data-card-hosting]");
