@@ -12363,6 +12363,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "formcraft-self-hosted-form-builder",
+    "name": "FormCraft Self-Hosted Form Builder",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted form builder with drag-and-drop editor, form submissions, response management and SQLite or PostgreSQL storage; no vendor-imposed software usage quota or expiry.",
+    "watch_out": "Self-hosting requires Docker and your own compute/storage. Public forms require securing the deployment; optional email or third-party integrations may incur separate costs. This is not a free hosted form service.",
+    "pricing_url": "https://github.com/shatheitguy/formcraft",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "formgrid-self-hosted-form-endpoints",
     "name": "FormGrid Self-Hosted Form Endpoints",
     "category": "forms-surveys",
