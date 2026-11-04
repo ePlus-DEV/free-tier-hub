@@ -32,7 +32,7 @@ export function compactNumber(value) {
 
 // Matches only complete, well-formed grouped or ungrouped integer values.
 // Never touch decimals with arbitrary precision, versions, paths or URLs.
-const QUANTITY = /(?<![\w./])(?:\d{1,3}(?:,\d{3})+|\d{1,3}(?:\.\d{3})+|\d{6,})(?![\w./])/g;
+const QUANTITY = /(?<![\w./])(?:\d{1,3}(?:,\d{3})+|\d{1,3}(?:\.\d{3})+|\d{6,})(?![\w.])/g;
 
 export function compactQuantityText(value) {
   const original = String(value ?? '');
