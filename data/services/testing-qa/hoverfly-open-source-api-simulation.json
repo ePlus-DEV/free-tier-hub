@@ -1,0 +1,13 @@
+{
+  "id": "hoverfly-open-source-api-simulation",
+  "name": "Hoverfly Open-Source API Simulation",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 open-source API simulation and service virtualization software, runnable locally or on self-managed infrastructure; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Self-managed software only: compute, storage, networking and CI costs are separate. Hoverfly Cloud is a distinct hosted offering; no free hosted cloud allowance is included. Apache-2.0 license obligations apply.",
+  "pricing_url": "https://github.com/SpectoLabs/hoverfly",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
