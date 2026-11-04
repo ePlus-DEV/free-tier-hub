@@ -4,7 +4,7 @@
   "category": "forms-surveys",
   "plan": "ongoing",
   "free_limit": "250 survey responses/month; 1 workspace; link and in-product surveys; full API access including MCP",
-  "watch_out": "Cloud Hobby includes Formbricks branding; response cap is 250/month; self-hosted Community Edition is a separate option; explicit commercial-use terms not confirmed.",
+  "watch_out": "This is the provider-hosted Formbricks Cloud Hobby tier, not the separately self-hosted Community Edition. Hobby includes 250 responses/month, one workspace and Formbricks branding; the full API (including MCP) is included. The paid Pro tier advertises optional dynamic response-overage handling, which must NOT be assumed available or automatically billable on Hobby. Credit-card and commercial-use terms beyond published plan details should not be inferred.",
   "pricing_url": "https://formbricks.com/pricing",
   "credit_card": "no",
   "commercial_use": "check",

@@ -4,7 +4,7 @@
   "category": "observability",
   "plan": "ongoing",
   "free_limit": "10 uptime monitors; 1,000 Browser check runs and 10,000 API check runs/month; 1 user; 7-day raw data retention",
-  "watch_out": "Hobby is intended for personal projects and learning; 1 user and 7-day raw data retention; monitoring frequency and check runs are capped.",
+  "watch_out": "Hobby is an ongoing $0 plan for personal projects and learning; no credit card required. Its 10,000 API and 1,000 Browser check runs per month are HARD capped: checks stop running once the relevant credits are exhausted, rather than generating paid overages. One user, 7-day raw result retention and 30-day aggregated retention. On paid Starter/Team, checks continue past prepaid allowances and overage rates apply.",
   "pricing_url": "https://www.checklyhq.com/pricing/",
   "credit_card": "no",
   "commercial_use": "no",
