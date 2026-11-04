@@ -12792,6 +12792,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mailcrab-self-hosted-email-test-server",
+    "name": "MailCrab Self-Hosted Email Test Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed SMTP capture and email inspection server with Web UI, JSON API and WebSocket updates; no vendor-imposed software usage quota or expiry.",
+    "watch_out": "Self-host via Docker, binary or Kubernetes and supply your own compute. Emails are stored in memory and lost on restart; default accept-all SMTP and permissive test authentication are unsuitable for public production mail delivery. Retention and high-volume WebSocket queue limits require configuration.",
+    "pricing_url": "https://github.com/tweedegolf/mailcrab",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "maildev-local-email-testing",
     "name": "MailDev Local Email Testing",
     "category": "email-notifications",
