@@ -12766,6 +12766,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "maildotnull-local-email-api-testing",
+    "name": "maildotnull Local Email and Provider API Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local SMTP testing server with web inbox and emulated Resend, SendGrid and Amazon SES send APIs; no vendor-imposed software usage limit or expiry.",
+    "watch_out": "Self-host on your own machine or Docker infrastructure; messages are held in memory and the inbox retains at most 1,000 messages. Not a hosted email sending allowance or production mail delivery service.",
+    "pricing_url": "https://github.com/maildotnull/maildotnull",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "local"
+  },
+  {
     "id": "mailhog-local-smtp-testing",
     "name": "MailHog Local SMTP Testing",
     "category": "email-notifications",
