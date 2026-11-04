@@ -1,0 +1,13 @@
+{
+  "id": "formengine-core",
+  "name": "FormEngine Core",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed React/JavaScript JSON-schema form rendering, validation and reusable components; free self-managed library without vendor-imposed usage quota or expiry.",
+  "watch_out": "Free Core is a developer library, not a hosted form submission service. Premium on-premise drag-and-drop designer and support are separately licensed; hosting, databases and integrations are user-provided.",
+  "pricing_url": "https://github.com/optimajet/formengine",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "local"
+}
