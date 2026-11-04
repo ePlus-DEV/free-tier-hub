@@ -1,0 +1,13 @@
+{
+  "id": "karate-open-source-test-automation",
+  "name": "Karate Open-Source Test Automation",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed framework for local API testing, mocks, performance testing and UI automation; no software usage quota or expiry.",
+  "watch_out": "Runs on your own machine or CI; compute, browsers, test targets and CI resources are not included. Commercial Karate Labs offerings are separate.",
+  "pricing_url": "https://github.com/karatelabs/karate",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "local"
+}
