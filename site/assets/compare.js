@@ -1,3 +1,4 @@
+import { compactQuantityText } from './compact-numbers.js';
 /* Lightweight client-side service comparison. No tracking or external dependencies. */
 (function () {
   "use strict";
@@ -117,6 +118,9 @@
     if (field === "plan") return {ongoing:"Ongoing free allowance","monthly-credit":"Recurring free credit","limited-duration":"Time-limited","temporary-resource":"Temporary resource"}[value] || value || "Not specified";
     if (field === "deployment_model") return {"self-hosted":"Self-hosted",cloud:"Cloud",local:"Local",hybrid:"Hybrid",unclassified:"Not classified"}[value] || "Not classified";
     if (field === "eligibility") return value === "existing-users-only" ? "Existing accounts only" : "Check provider eligibility";
+    if (field === "free_limit" || field === "watch_out") {
+      return compactQuantityText(value || "Not specified");
+    }
     return value || "Not specified";
   }
   function renderCompare() {
@@ -161,12 +165,20 @@
     var body = el("tbody");
     fields.forEach(function (field) {
       var values = items.map(function (item) { return formatValue(item[field[1]], field[1]); });
-      var same = values.every(function (value) { return value === values[0]; });
+      // Compare original provider values, not abbreviated display text; two
+      // different quotas can render identically at the chosen precision.
+      var originals = items.map(function (item) { return String(item[field[1]] ?? ""); });
+      var same = originals.every(function (value) { return value === originals[0]; });
       if (differences && differences.checked && same) return;
       var tr = el("tr");
       var th = el("th", "", field[0]); th.scope = "row"; tr.appendChild(th);
       items.forEach(function (item, i) {
         var td = el("td", "", field[1] === "pricing_url" ? "" : values[i]);
+        if ((field[1] === "free_limit" || field[1] === "watch_out") &&
+            values[i] !== originals[i]) {
+          td.title = originals[i];
+          td.setAttribute("aria-label", originals[i]);
+        }
         if (field[1] === "pricing_url") {
           var link = el("a", "", "Official pricing ↗");
           try {

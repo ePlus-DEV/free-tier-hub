@@ -2,6 +2,24 @@
 (function () {
   "use strict";
   var doc = document.documentElement;
+  // Mirror the server's truncating compact count policy for dynamically
+  // updated result labels. Preserve original counts in accessible labels.
+  function compactUiCount(input) {
+    var number = Number(input);
+    if (!Number.isSafeInteger(number) || number < 100000) return String(input);
+    var units = [[1000000000000, "T", 2], [1000000000, "B", 2],
+      [1000000, "M", 2], [1000, "K", 1]];
+    for (var i = 0; i < units.length; i++) {
+      var unit = units[i];
+      if (number < unit[0]) continue;
+      var fractionBase = Math.pow(10, unit[2]);
+      var fraction = Math.floor((number % unit[0]) * fractionBase / unit[0]);
+      var part = String(fraction).padStart(unit[2], "0").replace(/0+$/, "");
+      return Math.floor(number / unit[0]) + (part ? "." + part : "") + unit[1];
+    }
+    return String(input);
+  }
+
   var siteHeader = document.querySelector(".site-header");
   function syncHeaderHeight() {
     if (siteHeader) doc.style.setProperty("--site-header-height", siteHeader.getBoundingClientRect().height + "px");
@@ -943,17 +961,20 @@
     });
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.textContent = summary.total;
+    totalBadge.textContent = compactUiCount(summary.total);
+    totalBadge.title = summary.total;
+    totalBadge.setAttribute("aria-label", summary.total + " results");
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
     totalLabel.textContent = summary.label;
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
-    shownLabel.textContent = summary.shown;
+    shownLabel.textContent = summary.shown.replace(/\b\d{6,}\b/g, compactUiCount);
+    shownLabel.title = summary.shown;
     count.replaceChildren(totalLabel, totalBadge, shownLabel);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
-    if (more) more.textContent = "Show more (" + (matched.length - shown) + " remaining)";
+    if (more) more.textContent = "Show more (" + compactUiCount(matched.length - shown) + " remaining)";
     if (clear) clear.hidden = !hostingModel && !offerType && !term && !category &&
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
