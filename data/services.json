@@ -12506,6 +12506,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "limesurvey-community-self-hosted",
+    "name": "LimeSurvey Community Edition Self-Hosted",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "GPL-2.0-or-later open-source self-hosted survey platform; free Community Edition download and operation on your own infrastructure without vendor-managed response or survey quotas.",
+    "watch_out": "Requires your own PHP web server, database, backups, updates and outbound email configuration. Hosting, support, email and integrations can cost money; LimeSurvey Cloud is a separate hosted product. GPL conditions and provider trademarks remain applicable.",
+    "pricing_url": "https://community.limesurvey.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "listmonk-self-hosted",
+    "name": "listmonk Self-Hosted Newsletter Manager",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted mailing-list, newsletter and campaign manager; no vendor-enforced subscriber, campaign or monthly-send quota for the software.",
+    "watch_out": "Requires your own PostgreSQL database and server, plus SMTP/email delivery infrastructure or a third-party sending provider. Hosting, outgoing mail and deliverability may cost money. AGPLv3 obligations apply, including to modified versions offered over a network; this is not a hosted free email quota.",
+    "pricing_url": "https://listmonk.app/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "lldap-self-hosted-ldap",
     "name": "LLDAP Self-Hosted Lightweight LDAP",
     "category": "auth-security",
@@ -12582,6 +12608,32 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "local"
+  },
+  {
+    "id": "mock-service-worker-local",
+    "name": "Mock Service Worker Local API Mocking",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed browser and Node.js API mocking library for REST, GraphQL and other network requests; no vendor-imposed mock-handler, request or test-run quota for the local package.",
+    "watch_out": "Mocks run in your app or test environment; no managed mock API hosting or persistent cloud service is included. Your own test infrastructure and any external network dependencies may cost money. Consult the versioned MSW docs when upgrading handlers or request interception.",
+    "pricing_url": "https://mswjs.io/docs/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
+    "id": "mockserver-open-source-self-hosted",
+    "name": "MockServer Open Source Self-Hosted",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free open-source MockServer software for self-hosted API mocking, proxying, recording and request verification; no hosted quota included.",
+    "watch_out": "Runs on your own Docker/Java/Kubernetes infrastructure; compute, storage and CI costs are not included. Apache-2.0 license obligations apply.",
+    "pricing_url": "https://www.mock-server.com/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "monika-synthetic-monitor-local",
@@ -12669,6 +12721,19 @@
     "free_limit": "Unlimited locally executed consumer/provider API contract tests with the MIT-licensed Pact JS library; no hosted broker or CI compute included.",
     "watch_out": "Requires your own Node.js test environment and CI resources; hosted PactFlow and external broker services are separate offerings and may cost money.",
     "pricing_url": "https://github.com/pact-foundation/pact-js",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
+    "id": "playwright-open-source-local",
+    "name": "Playwright Open-Source Browser Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source local end-to-end browser testing for Chromium, Firefox and WebKit; no vendor-imposed test-run limit or software subscription.",
+    "watch_out": "Runs browsers on your own machine, containers or CI runners. Compute, storage, artifacts and any hosted browser grid cost extra. This listing is for the Playwright test framework, not a managed testing SaaS tier.",
+    "pricing_url": "https://playwright.dev/docs/intro",
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
@@ -12792,6 +12857,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "surveyjs-form-library-local",
+    "name": "SurveyJS Form Library Open Source",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed JavaScript library for embedding dynamic forms, multi-step surveys and quizzes in web applications; no vendor-imposed form or submission quotas in the open-source library.",
+    "watch_out": "Form Library is a client-side renderer, not SurveyJS Cloud hosting or a response database. You must supply and operate your own backend/storage. Survey Creator, PDF Generator and Dashboard are separate paid proprietary products; do not assume their developer licenses are included.",
+    "pricing_url": "https://surveyjs.io/form-library/documentation/overview",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
     "id": "terramate-cli-local-iac",
     "name": "Terramate Open-Source IaC Orchestration CLI (Local)",
     "category": "ci-cd",
@@ -12841,6 +12919,19 @@
     "credit_card": "no",
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
+    "deployment_model": "local"
+  },
+  {
+    "id": "vitest-open-source-local",
+    "name": "Vitest Open-Source Test Runner",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local JavaScript/TypeScript test runner with unit and component testing, snapshots and coverage integration; no vendor-metered test runs or license fee.",
+    "watch_out": "Runs on your own Node.js development or CI environment; test execution, browser runners and paid CI infrastructure can incur costs. Current documentation requires compatible Node.js and Vite versions; this is not a hosted test-execution allowance.",
+    "pricing_url": "https://vitest.dev/guide/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
     "deployment_model": "local"
   },
   {
