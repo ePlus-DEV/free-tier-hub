@@ -1,0 +1,13 @@
+{
+  "id": "schemathesis-open-source-api-testing",
+  "name": "Schemathesis Open-Source API Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local CLI/Python tool for schema-based OpenAPI, GraphQL and gRPC API testing; no vendor-hosted testing quota or recurring credits included.",
+  "watch_out": "Runs on your own workstation or CI runner; compute, network, target API usage and CI infrastructure may incur separate charges. Generated requests can modify data: use staging/test targets. Hosted services, if any, are not included.",
+  "pricing_url": "https://github.com/schemathesis/schemathesis",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
