@@ -12389,6 +12389,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "greenmail-open-source-email-testing",
+    "name": "GreenMail Open-Source Email Testing",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed sandbox email test servers supporting SMTP, POP3 and IMAP, embedded in Java tests or run as a standalone process/container; no software usage quota or hosted mail allowance.",
+    "watch_out": "Designed for email integration tests, not production mail delivery. Requires Java or container runtime and user-provided CI/compute resources; sandbox messages are not forwarded to real recipients. Infrastructure and CI usage can incur costs.",
+    "pricing_url": "https://greenmail-mail-test.github.io/greenmail/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-03",
+    "deployment_model": "local"
+  },
+  {
     "id": "greptimedb-open-source-self-hosted",
     "name": "GreptimeDB Open-Source Observability Database",
     "category": "databases",
