@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
+import { compactNumber, compactQuantityText } from '../site/assets/compact-numbers.js';
 import { activeServiceAliases } from './service-aliases.mjs';
 import {
   CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
@@ -137,8 +138,12 @@ function card(item, absolute, initiallyHidden = false) {
         '<p>Some providers keep an older free plan for qualifying accounts, while new signups may require a paid plan. Legacy eligibility is not a free trial.</p>' +
         '<a href="' + tag(absolute('about/classifications/#eligibility')) + '" target="_blank" rel="noopener noreferrer">Read eligibility policy ↗</a>' +
         '</div></details></div>' : '',
-    '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance">', tag(item.free_limit), '</p></div>',
-    '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction">', tag(item.watch_out), '</p></div>',
+    '<div class="allowance-block"><span class="card-label">Free allowance</span><p class="allowance"',
+    compactQuantityText(item.free_limit) !== item.free_limit ? ' title="' + tag(item.free_limit) + '" aria-label="' + tag(item.free_limit) + '"' : '',
+    '>', tag(compactQuantityText(item.free_limit)), '</p></div>',
+    '<div class="restriction-block"><span class="card-label">Keep in mind</span><p class="restriction"',
+    compactQuantityText(item.watch_out) !== item.watch_out ? ' title="' + tag(item.watch_out) + '" aria-label="' + tag(item.watch_out) + '"' : '',
+    '>', tag(compactQuantityText(item.watch_out)), '</p></div>',
     '<div class="card-bottom"><button type="button" class="compare-card-toggle" data-compare-add="', tag(item.id),
     '" data-compare-name="', tag(item.name), '" aria-pressed="false">+ Compare</button><a href="', tag(dest), '" aria-label="View ', tag(item.name),
     ' details">View details ', glyph('arrow'), '</a><a class="official-link" href="', tag(providerReferralURL(item.pricing_url)),
@@ -179,7 +184,7 @@ function document(absolute, title, description, relative, content, structuredDat
     '<meta name="fth-analytics" content="', GA_ID, '">',
     '<script src="', tag(absolute('assets/directory-url.js?v=' + assetVersion('directory-url.js'))), '" defer></script>',
     '<script src="', tag(absolute('assets/site.js?v=' + assetVersion('site.js'))), '" defer></script>',
-    '<script src="', tag(absolute('assets/compare.js?v=' + assetVersion('compare.js'))), '" defer></script>',
+    '<script type="module" src="', tag(absolute('assets/compare.js?v=' + assetVersion('compare.js'))), '"></script>',
     '</head><body><a class="skip-link" href="#main">Skip to content</a>',
     '<header class="site-header"><div class="container header-inner">',
     '<a class="brand" href="', tag(absolute()), '" aria-label="Free Tier Hub home">',
@@ -273,7 +278,7 @@ function homePage(items, absolute, counts, searchVersion) {
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
-    (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + counts[category] + '</span>' : '') +
+    (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + compactNumber(counts[category]) + '</span>' : '') +
     '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
@@ -344,8 +349,8 @@ function homePage(items, absolute, counts, searchVersion) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total free tiers</span><strong class="result-total">',
-    mainItems.length, '</strong><span class="result-shown">Showing ', Math.min(12, mainItems.length),
-    ' of ', mainItems.length, '</span></p>',
+    compactNumber(mainItems.length), '</strong><span class="result-shown">Showing ', compactNumber(Math.min(12, mainItems.length)),
+    ' of ', compactNumber(mainItems.length), '</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -415,7 +420,7 @@ function categoriesOverviewPage(absolute, counts) {
       '<span class="category-overview-body"><strong>', tag(name), '</strong>',
       '<span class="category-overview-description">', tag(description), '</span></span>',
       '<span class="category-overview-foot"><span class="category-overview-count"><b>',
-      count, '</b> ', count === 1 ? 'service' : 'services', '</span>',
+      compactNumber(count), '</b> ', count === 1 ? 'service' : 'services', '</span>',
       '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'), '</span></span>',
       '</a>',
     ].join('');
@@ -561,8 +566,9 @@ function detailPage(item, absolute) {
     item.eligibility === 'existing-users-only'
       ? '<p class="eligibility-note detail-eligibility"><strong>Legacy only</strong> · Only qualifying existing accounts keep this free allowance; new signups may not qualify.</p>' : '',
     '<div class="detail-highlight">', glyph('layers'),
-    '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p>', tag(item.free_limit),
-    '</p></div></div>',
+    '<div><strong>', limited ? 'TIME-LIMITED OFFER' : 'INCLUDED FREE ALLOWANCE', '</strong><p"',
+    compactQuantityText(item.free_limit) !== item.free_limit ? ' title="' + tag(item.free_limit) + '" aria-label="' + tag(item.free_limit) + '"' : '',
+    '>', tag(compactQuantityText(item.free_limit)), '</p></div></div>',
     // A prominent mobile CTA avoids forcing phone visitors to scroll past the specification list.
     '<div class="detail-mobile-action"><a class="button primary" href="', link,
     '" target="_blank" rel="noopener noreferrer">View official documentation ',
@@ -570,7 +576,9 @@ function detailPage(item, absolute) {
     '<p class="classification-detail-link"><a href="', tag(absolute('about/classifications/')),
     '">What do these plan and deployment labels mean?</a></p><dl class="spec-list">', specs, '</dl>',
     '<h2>Important restrictions</h2><div class="detail-warning">',
-    glyph('alert'), '<p>', tag(item.watch_out), '</p></div>',
+    glyph('alert'), '<p',
+    compactQuantityText(item.watch_out) !== item.watch_out ? ' title="' + tag(item.watch_out) + '" aria-label="' + tag(item.watch_out) + '"' : '',
+    '>', tag(compactQuantityText(item.watch_out)), '</p></div>',
     '<div class="detail-action"><a class="button primary" href="', link,
     '" target="_blank" rel="noopener noreferrer">View official documentation ',
     glyph('arrow'), '</a></div>',
@@ -886,7 +894,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }
-  for (const name of ['site.css', 'directory-url.js', 'site.js', 'compare.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
+  for (const name of ['site.css', 'directory-url.js', 'site.js', 'compare.js', 'compact-numbers.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
     const dest = path.join(output, 'assets', name);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(path.join(ROOT, 'site/assets', name), dest);
