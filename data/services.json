@@ -12779,6 +12779,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mockly-multiprotocol-mock-server",
+    "name": "Mockly Multi-Protocol Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local mock server with HTTP, WebSocket, gRPC, GraphQL, SMTP and other protocol simulation, built-in web UI, scenarios and fault injection; no vendor-enforced usage quota or expiry for the self-run binary.",
+    "watch_out": "Run the binary or Docker image on your own computer or CI infrastructure; CPU, storage, network and CI runner costs are not included. This is not a free hosted mock-server allocation.",
+    "pricing_url": "https://github.com/dever-labs/mockly",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-04",
+    "deployment_model": "local"
+  },
+  {
     "id": "mockserver-open-source-self-hosted",
     "name": "MockServer Open Source Self-Hosted",
     "category": "testing-qa",
