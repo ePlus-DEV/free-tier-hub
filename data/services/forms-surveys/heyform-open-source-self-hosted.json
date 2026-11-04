@@ -1,0 +1,13 @@
+{
+  "id": "heyform-open-source-self-hosted",
+  "name": "HeyForm Open Source Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0 self-hosted form builder software; no vendor-imposed subscription or response quota for the self-hosted software. Server and database capacity are self-managed.",
+  "watch_out": "Self-hosting requires infrastructure, database and maintenance; AGPL-3.0 source-disclosure obligations apply to modifications. Commercializing a modified HeyForm version requires additional attribution and links per the official license guidance. Hosted HeyForm plans/trials are separate and not included.",
+  "pricing_url": "https://docs.heyform.net/open-source/license",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
