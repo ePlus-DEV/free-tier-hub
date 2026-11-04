@@ -1,0 +1,13 @@
+{
+  "id": "ory-dockertest-go-integration-testing",
+  "name": "Ory Dockertest Go Integration Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed Go integration-testing library that starts and manages Docker containers for tests, with readiness checks and cleanup; no vendor software quota or expiry.",
+  "watch_out": "Requires access to a Docker-compatible daemon and container images; local or CI compute, image downloads and any hosted runner charges are not included. This is a Go testing library, not a hosted testing platform.",
+  "pricing_url": "https://github.com/ory/dockertest",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "local"
+}
