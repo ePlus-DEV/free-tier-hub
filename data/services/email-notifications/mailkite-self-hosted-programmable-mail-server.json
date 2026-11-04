@@ -1,0 +1,13 @@
+{
+  "id": "mailkite-self-hosted-programmable-mail-server",
+  "name": "MailKite Self-Hosted Programmable Mail Server",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-licensed self-hosted mail server with SMTP inbound/submission, IMAP, reference SQLite backend, REST API and web console; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Pre-1.0 software: reference backend and console are newer than the production SMTP/IMAP edges. Provide your own server, DNS, TLS, storage and mail deliverability; external relays and MailKite Cloud are separate and may cost money. AGPL-3.0 source-sharing obligations apply when modified software is offered over a network.",
+  "pricing_url": "https://github.com/mailkite/server",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
