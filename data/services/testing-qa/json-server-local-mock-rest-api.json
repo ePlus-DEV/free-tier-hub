@@ -1,0 +1,13 @@
+{
+  "id": "json-server-local-mock-rest-api",
+  "name": "JSON Server Local Mock REST API",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed CLI for generating a local mock REST API from a JSON or JSON5 data file; unlimited local use of the software without hosted API quota.",
+  "watch_out": "Current v1 documentation is beta and may have breaking changes; this is a mock server, not a hosted production API. User supplies compute, network and any CI resources; exposing mock data publicly requires independent access controls.",
+  "pricing_url": "https://github.com/typicode/json-server",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}
