@@ -210,10 +210,30 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Fail closed if a branch already exists. Never rewrite contributor history.
+          # Recover a previous delivery that pushed its branch but failed before
+          # opening a PR. Never rewrite the remote branch or contributor history.
           if git ls-remote --exit-code --heads origin "$DELIVERY_BRANCH" >/dev/null; then
-            echo "::error::Branch $DELIVERY_BRANCH already exists; review or finish its existing PR instead of overwriting it"
-            exit 1
+            git fetch origin "refs/heads/$DELIVERY_BRANCH:refs/remotes/origin/$DELIVERY_BRANCH"
+            EXPECTED_SHARD="data/services/$(node --input-type=module -e 'import fs from "node:fs"; const c=JSON.parse(fs.readFileSync("/tmp/candidate.json","utf8")); process.stdout.write(c.category+"/"+c.id+".json")')"
+            ACTUAL_FILES="$(git diff --name-only "origin/main...origin/$DELIVERY_BRANCH")"
+            if [ "$ACTUAL_FILES" != "$EXPECTED_SHARD" ]; then
+              echo "::error::Existing branch $DELIVERY_BRANCH has unexpected changes; manual review required"
+              exit 1
+            fi
+            EXPECTED_SHARD="$EXPECTED_SHARD" DELIVERY_BRANCH="$DELIVERY_BRANCH" node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          const expected = JSON.parse(fs.readFileSync('/tmp/candidate.json', 'utf8'));
+          const actual = JSON.parse(execFileSync('git', ['show',
+            'origin/' + process.env.DELIVERY_BRANCH + ':' + process.env.EXPECTED_SHARD],
+            { encoding: 'utf8' }));
+          if (JSON.stringify(Object.entries(expected).sort()) !==
+              JSON.stringify(Object.entries(actual).sort())) {
+            throw Error('Existing branch shard differs from validated candidate; manual review required');
+          }
+          NODE
+            echo "Reusing existing validated delivery branch $DELIVERY_BRANCH without pushing"
+            exit 0
           fi
           git switch -c "$DELIVERY_BRANCH"
           git add -- data/services/
