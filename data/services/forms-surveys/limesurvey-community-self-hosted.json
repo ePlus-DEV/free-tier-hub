@@ -1,0 +1,13 @@
+{
+  "id": "limesurvey-community-self-hosted",
+  "name": "LimeSurvey Community Edition Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "GPL-2.0-or-later open-source self-hosted survey platform; free Community Edition download and operation on your own infrastructure without vendor-managed response or survey quotas.",
+  "watch_out": "Requires your own PHP web server, database, backups, updates and outbound email configuration. Hosting, support, email and integrations can cost money; LimeSurvey Cloud is a separate hosted product. GPL conditions and provider trademarks remain applicable.",
+  "pricing_url": "https://community.limesurvey.org/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}

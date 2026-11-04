@@ -1,0 +1,13 @@
+{
+  "id": "mock-service-worker-local",
+  "name": "Mock Service Worker Local API Mocking",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed browser and Node.js API mocking library for REST, GraphQL and other network requests; no vendor-imposed mock-handler, request or test-run quota for the local package.",
+  "watch_out": "Mocks run in your app or test environment; no managed mock API hosting or persistent cloud service is included. Your own test infrastructure and any external network dependencies may cost money. Consult the versioned MSW docs when upgrading handlers or request interception.",
+  "pricing_url": "https://mswjs.io/docs/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "local"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "listmonk-self-hosted",
+  "name": "listmonk Self-Hosted Newsletter Manager",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0 self-hosted mailing-list, newsletter and campaign manager; no vendor-enforced subscriber, campaign or monthly-send quota for the software.",
+  "watch_out": "Requires your own PostgreSQL database and server, plus SMTP/email delivery infrastructure or a third-party sending provider. Hosting, outgoing mail and deliverability may cost money. AGPLv3 obligations apply, including to modified versions offered over a network; this is not a hosted free email quota.",
+  "pricing_url": "https://listmonk.app/docs/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-03",
+  "deployment_model": "self-hosted"
+}
