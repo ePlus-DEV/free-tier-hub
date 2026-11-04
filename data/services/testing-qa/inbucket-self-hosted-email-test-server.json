@@ -1,0 +1,13 @@
+{
+  "id": "inbucket-self-hosted-email-test-server",
+  "name": "Inbucket Self-Hosted Email Test Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted disposable SMTP inbox server with built-in web UI, REST API and POP3; no vendor-imposed software quota or expiry.",
+  "watch_out": "Runs on your own Docker host or machine; compute and storage are not included. Test inboxes accept mail without account setup and are not suitable for confidential production mailboxes; configure retention and mailbox caps.",
+  "pricing_url": "https://github.com/inbucket/inbucket",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-04",
+  "deployment_model": "self-hosted"
+}
