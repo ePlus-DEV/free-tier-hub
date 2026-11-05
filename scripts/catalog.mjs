@@ -6,12 +6,20 @@ import { fileURLToPath } from "node:url";
 import { loadServices, hasServiceShards, aggregateCatalog, COMPATIBILITY_FILE } from './catalog-source.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-// The README badge is a first-party SVG generated from the same ongoing
-// and recurring-credit entries as the Home directory. No external badge service.
+// First-party badges share the deployed catalog source, but show distinct scopes.
 export const SERVICE_BADGE_URL = "https://free-tier.eplus.dev/badges/services.svg";
+export const FREE_TIER_BADGE_URL = "https://free-tier.eplus.dev/badges/free-tiers.svg";
+export const LIMITED_OFFER_BADGE_URL = "https://free-tier.eplus.dev/badges/limited-offers.svg";
 export function hasDynamicServiceBadge(readme) {
-  const badges = [...readme.matchAll(/!\[Catalog\]\(([^)]+)\)/g)];
-  return badges.length === 1 && badges[0][1] === SERVICE_BADGE_URL;
+  return [
+    ['Catalog', SERVICE_BADGE_URL],
+    ['Free tiers', FREE_TIER_BADGE_URL],
+    ['Limited offers', LIMITED_OFFER_BADGE_URL],
+  ].every(([label, url]) => {
+    const badges = [...readme.matchAll(/!\[([^\]]+)\]\(([^)]+)\)/g)]
+      .filter(match => match[1] === label);
+    return badges.length === 1 && badges[0][2] === url;
+  });
 }
 
 export const CATEGORIES = [

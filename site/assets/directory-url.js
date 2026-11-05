@@ -2,28 +2,26 @@
 (function (root) {
   "use strict";
   root.FreeTierDirectoryURL = {
-    // The prominent counter describes the current result set. The unfiltered
-    // offer scope is context only, never the search result count.
+    // Catalog-wide counts are always visible in their own summary row.
+    // The result counter describes only the current filtered and paged subset.
     summarizeResults: function (matchedCount, scopeCount, shownCount, state) {
       var narrowed = !!((state.q || "").trim() || state.category || state.hosting ||
         state.noCard || state.commercial);
       var offer = state.offer || "";
-      var scopeName = offer === "limited" ? "limited offers"
-        : offer === "monthly-credit" ? "monthly credits"
-        : offer === "ongoing" ? "ongoing free tiers" : "free tiers";
       var label = narrowed ? "Matching services"
         : offer === "limited" ? "Limited offers"
         : offer === "monthly-credit" ? "Monthly credits"
-        : offer === "ongoing" ? "Ongoing free tiers" : "Total free tiers";
+        : offer === "ongoing" ? "Ongoing free tiers"
+        : offer === "free" ? "Free tiers" : "All services";
       return {
         label: label,
         total: String(matchedCount),
-        shown: "Showing " + Math.min(shownCount, matchedCount) + " of " + matchedCount +
-          (narrowed ? " · " + scopeCount + " " + scopeName + " total" : "")
+        shown: "Showing " + Math.min(shownCount, matchedCount) + " of " + matchedCount
       };
     },
     matchesOffer: function (plan, offer) {
-      if (offer === "") return plan === "ongoing" || plan === "monthly-credit";
+      if (offer === "") return ["ongoing", "monthly-credit", "limited-duration", "temporary-resource"].includes(plan);
+      if (offer === "free") return plan === "ongoing" || plan === "monthly-credit";
       if (offer === "limited") return plan === "limited-duration" || plan === "temporary-resource";
       return ["ongoing", "monthly-credit"].includes(offer) && plan === offer;
     },
@@ -33,7 +31,7 @@
       var sort = params.get("sort") || "default";
       return {
         hosting: ["cloud", "self-hosted", "hybrid", "local", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
-        offer: ["ongoing", "monthly-credit", "limited"].includes(params.get("offer")) ? params.get("offer") : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(params.get("offer")) ? params.get("offer") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",
@@ -45,7 +43,7 @@
       var url = new URL(href);
       var values = {
         hosting: state.hosting || "",
-        offer: ["ongoing", "monthly-credit", "limited"].includes(state.offer) ? state.offer : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(state.offer) ? state.offer : "",
         q: state.q || "",
         category: state.category || "",
         sort: state.sort === "default" ? "" : state.sort,

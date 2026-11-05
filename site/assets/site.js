@@ -997,6 +997,8 @@
       q: search.value, category: category, hosting: hostingModel, offer: offerType,
       noCard: noCard.checked, commercial: commercial.checked
     });
+    // The right-hand counter owns the current result total for both unfiltered
+    // and filtered views. Dropdown options disclose each catalog-wide scope.
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
     totalBadge.textContent = compactUiCount(summary.total);
