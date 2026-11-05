@@ -1,0 +1,13 @@
+{
+  "id": "smtp-dev-server",
+  "name": "smtp-dev-server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free BSD-3-Clause local SMTP capture server for macOS and Linux with a browser UI; retains up to 500 messages by default (configurable with -max-messages), with no provider-imposed subscription or expiry.",
+  "watch_out": "Development/testing only: accepts arbitrary SMTP AUTH credentials, binds to localhost by default, and does not deliver real email. Messages are stored locally; do not expose its SMTP/UI ports publicly. Hosting and storage are user-provided; this is a distinct Go implementation inspired by smtp4dev.",
+  "pricing_url": "https://github.com/wrxck/smtp-dev-server",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "local"
+}
