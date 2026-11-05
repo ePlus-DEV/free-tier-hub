@@ -680,21 +680,35 @@ body:has(.cookie-notice:not([hidden])) .support-widget{display:none}
 }
 @media(prefers-reduced-motion:reduce){.category-overview-card{transition:none}.category-overview-card:hover{transform:none}}
 
-/* Home catalog navigation: keep fast category filters and the category directory distinct.
-   The directory link is pinned beside scrollable quick filters, even on phones. */
-.catalog-toolbar .category-bar{display:flex;align-items:center;gap:10px;min-width:0}
-.catalog-toolbar .category-shortcuts{flex:1;min-width:0}
-.catalog-toolbar .category-index-shortcut{flex-shrink:0;min-height:38px}
+/* Compact discovery toolbar: camera-style single-row segmented controls.
+   Category chips scroll horizontally when space runs out; they never wrap and
+   force the right-side billing controls onto another line. */
+.catalog-toolbar{column-gap:12px;row-gap:8px;padding-bottom:12px}
+.catalog-toolbar .category-bar{display:flex;align-items:center;gap:7px;min-width:0}
+.catalog-toolbar .category-shortcuts{display:flex;flex:1;min-width:0;align-items:center;gap:3px;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0}
+.catalog-toolbar .category-shortcuts::-webkit-scrollbar{display:none}
+.catalog-toolbar .category-chip{flex:0 0 auto;min-height:34px;padding:6px 9px;border-radius:8px;white-space:nowrap}
+.catalog-toolbar .category-index-shortcut{flex:0 0 auto;min-height:34px;padding:6px 8px;white-space:nowrap}
 .category-chip-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;padding:0 5px;margin-left:4px;border-radius:6px;background:var(--surface-muted);color:var(--ink-soft);font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
 .category-chip[aria-pressed="true"] .category-chip-count{background:var(--brand-tint);color:var(--brand-ink)}
 .category-filter-index-link{margin:-7px 0 3px;font-size:12px;color:var(--muted)}
 .category-filter-index-link a{display:inline-flex;align-items:center;gap:5px;color:var(--brand-ink);font-weight:700;text-underline-offset:3px}
 .category-filter-index-link svg{width:12px;height:12px}
+@media(min-width:681px){
+  /* Override the old <=1100px 3-row breakpoint with one compact category row. */
+  .catalog-toolbar{grid-template-columns:minmax(0,1fr) max-content}
+  .catalog-toolbar .category-bar{grid-column:1;grid-row:2}
+  .catalog-toolbar .quick-filters{grid-column:2;grid-row:2;display:flex;align-items:center;flex-wrap:nowrap;gap:2px;min-width:0;padding:3px;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+  .catalog-toolbar .quick-filter{flex:0 0 auto;min-height:30px;padding:5px 8px;gap:6px;border-color:transparent;border-radius:6px;background:transparent;white-space:nowrap;font-size:11px}
+  .catalog-toolbar .quick-filter input{width:14px;height:14px}
+  .catalog-toolbar .quick-filter:has(input:checked){border-color:var(--brand);background:var(--brand-tint);color:var(--brand-ink)}
+  .catalog-toolbar .quick-filter:hover{background:var(--surface-muted)}
+}
 @media(max-width:680px){
   .catalog-toolbar .category-bar{display:flex;grid-column:1/-1;gap:5px;min-width:0}
-  .catalog-toolbar .category-shortcuts{display:flex;flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;padding:2px 1px 5px}
-  .catalog-toolbar .category-chip{flex-shrink:0;min-height:38px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px}
-  .catalog-toolbar .category-index-shortcut{flex-shrink:0;max-width:123px;min-height:38px;padding:7px 8px;font-size:11px;white-space:nowrap}
+  .catalog-toolbar .category-shortcuts{display:flex;flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 1px}
+  .catalog-toolbar .category-chip{flex:0 0 auto;min-height:36px;padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:11px}
+  .catalog-toolbar .category-index-shortcut{flex:0 0 auto;max-width:115px;min-height:36px;padding:6px 7px;font-size:11px;white-space:nowrap}
   .category-filter-index-link{margin:-6px 0 0;font-size:13px}
 }
 
