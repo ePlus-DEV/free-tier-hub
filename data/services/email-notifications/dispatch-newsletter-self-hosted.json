@@ -1,0 +1,13 @@
+{
+  "id": "dispatch-newsletter-self-hosted",
+  "name": "Dispatch Self-Hosted Newsletter Service",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted newsletter and transactional email software; no provider-imposed message quota or software expiry. Supports subscriber lists, scheduled sends, REST API, CLI and MCP.",
+  "watch_out": "Requires your own server, storage and SMTP/SES/Mailgun or other relay; delivery costs, provider quotas, DNS setup, abuse controls and infrastructure are not included. Software is not free hosted email sending.",
+  "pricing_url": "https://github.com/markedo-org/dispatch",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
