@@ -627,8 +627,24 @@ function comparePage(absolute) {
     '</div></section>',
   ].join('');
 }
-// GitHub Markdown cannot evaluate JSON. These tiny SVG assets show the latest
-// deployed catalog counts without bot commits or external image services.
+// GitHub Markdown cannot evaluate JSON. These SVG badges are generated
+// directly from the same canonical free-tier subset as the Home page.
+export function serviceCountSVG(count) {
+  if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid free-tier count');
+  const display = compactNumber(count);
+  const labelWidth = 72;
+  const valueWidth = Math.max(45, 18 + display.length * 8);
+  const width = labelWidth + valueWidth;
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
+    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + count + ' ongoing free tiers and recurring credits">' +
+    '<title>' + count + ' ongoing free tiers and recurring credits</title>' +
+    '<rect width="' + width + '" height="22" rx="4" fill="#168b47"/>' +
+    '<path d="M4 0H72V22H4A4 4 0 0 1 0 18V4A4 4 0 0 1 4 0Z" fill="#414852"/>' +
+    '<text x="36" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" ' +
+    'font-size="11" font-weight="600">services</text>' +
+    '<text x="' + (labelWidth + valueWidth / 2) + '" y="15" text-anchor="middle" fill="#ffffff" ' +
+    'font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">' + display + '</text></svg>';
+}
 export function categoryCountSVG(count) {
   if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid category count');
   const number = String(count);
@@ -899,6 +915,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     limited_offer_count: limitedItems.length,
     total_services: items.length,
   }, null, 2) + '\n');
+  file(output, 'badges/services.svg', serviceCountSVG(mainItems.length));
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }
