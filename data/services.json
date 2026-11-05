@@ -12961,6 +12961,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "maillaser-self-hosted-email-webhook",
+    "name": "MailLaser Self-Hosted Email-to-Webhook",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted MIT-licensed SMTP receiver converts incoming emails into JSON webhook POSTs; supports Docker or standalone binaries, attachment forwarding, optional SPF/DKIM/DMARC checks, retries and signed webhooks. No vendor-imposed subscription period or message quota documented for the software.",
+    "watch_out": "You must provide your own server, DNS/MX records and webhook endpoint; infrastructure, S3-compatible attachment storage and downstream integrations may incur charges. Configure recipient restrictions, sender authentication and webhook signing before exposing SMTP publicly. Not a hosted email delivery allowance.",
+    "pricing_url": "https://github.com/Govcraft/mail-laser",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mailtrap-local",
     "name": "Mailtrap Local Email Sandbox",
     "category": "testing-qa",
