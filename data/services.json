@@ -12545,6 +12545,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "incus-self-hosted-container-vm-manager",
+    "name": "Incus Self-Hosted Container and VM Manager",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source software for managing Linux system containers and virtual machines on user-provided Linux hosts; no vendor-imposed software quota, expiry or recurring credit limit.",
+    "watch_out": "This is self-hosted virtualization software, NOT a free hosted VPS or cloud compute allowance. Supply and pay for host hardware, storage, networking and operations. Protect daemon socket and remote API because local socket access grants host-level control. Optional commercial support is paid.",
+    "pricing_url": "https://linuxcontainers.org/incus/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "innernet-wireguard-self-hosted",
     "name": "innernet Self-Hosted WireGuard Private Networking",
     "category": "tunneling-networking",
