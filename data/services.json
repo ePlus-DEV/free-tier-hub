@@ -13156,6 +13156,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "orbeon-forms-community-edition",
+    "name": "Orbeon Forms Community Edition Self-Hosted",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "LGPL-2.1 open-source Community Edition for self-hosted form building and form runtime; no vendor-managed form or response quota for your own installation.",
+    "watch_out": "Requires self-managed Java servlet container, database, storage, updates and backups. Community Edition is self-supported; Professional Edition subscriptions, commercial support and some advanced features cost extra. Free Docker trial is for PE, not an ongoing hosted free tier. LGPL and third-party license obligations apply.",
+    "pricing_url": "https://www.orbeon.com/download",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "ory-dockertest-go-integration-testing",
     "name": "Ory Dockertest Go Integration Testing",
     "category": "testing-qa",
