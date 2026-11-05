@@ -75,9 +75,14 @@ test('search index and card shard assets work for small custom catalogs without 
     const home = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
     const cards = JSON.parse(fs.readFileSync(path.join(output, 'search/cards/developer-tools.json'), 'utf8'));
     assert.equal(index.rows.length, 2);
-    assert.equal(home.split('class="service-card"').length - 1, 1);
+    assert.equal(home.split('class="service-card"').length - 1, 2);
     assert.ok(cards['search-test-ongoing']);
     assert.ok(cards['search-test-limited']);
-    assert.equal(home.includes('data-service-id="search-test-limited"'), false);
+    assert.equal(home.includes('data-service-id="search-test-limited"'), true);
+    assert.ok(home.includes('class="limited-offer-shortcut"'));
+    const schema = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    const list = schema['@graph'].find(item => item['@type'] === 'CollectionPage').mainEntity.itemListElement;
+    assert.deepEqual(list.map(item => item.name), tiny.map(item => item.name),
+      'SSR and structured data include the limited listing in All services');
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });
