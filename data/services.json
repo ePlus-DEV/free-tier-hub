@@ -13468,6 +13468,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "struisict-smtp-test-tool",
+    "name": "StruisICT SMTP Test Tool",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free local CLI and GUI binaries for SMTP, IMAP and POP3 connectivity diagnostics, TLS/authentication testing, email DNS checks (MX/SPF/DMARC/DKIM), and optional Microsoft 365 OAuth; no software subscription, vendor-imposed usage quota or expiration.",
+    "watch_out": "Local diagnostic tool, not a hosted SMTP relay or free mailbox. Requires access to existing mail servers and valid credentials; external mail-provider charges and rate limits still apply. Optional DNS and OAuth features depend on network access and Microsoft 365 permissions; some test actions interact with real mail systems.",
+    "pricing_url": "https://github.com/StruisICT/smtp-test-tool",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "local"
+  },
+  {
     "id": "surveyjs-form-library-local",
     "name": "SurveyJS Form Library Open Source",
     "category": "forms-surveys",
