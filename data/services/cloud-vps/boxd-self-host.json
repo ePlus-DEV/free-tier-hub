@@ -1,0 +1,13 @@
+{
+  "id": "boxd-self-host",
+  "name": "boxd Self-Host (Free Cluster)",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Run a self-managed boxd microVM cluster without a boxd license key, up to 16 total logical worker-host vCPUs across the cluster (not guest-VM vCPUs). Includes the console, API, DNS, SSH/HTTPS access, snapshots and automation.",
+  "watch_out": "You must supply and pay for your own GCP/AWS instances, storage, networking, DNS, or bare-metal hosts; this is NOT free hosted compute. Above 16 total worker-host vCPUs, existing machines continue running but the cluster refuses new machines until capacity is reduced or a paid license key is installed. Installer code is Apache-2.0, but downloaded boxd binaries/images are separately licensed under PolyForm Internal Use with restrictions: personal use and a company's internal operations are permitted; redistribution is prohibited. Workers require KVM/nested virtualization; clusters send hourly usage telemetry.",
+  "pricing_url": "https://github.com/boxd-sh/self-host/blob/main/README.md",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
