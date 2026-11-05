@@ -350,7 +350,8 @@ test('All services includes limited offers while the free-tier subset stays sepa
     assert.equal(result.free_tier_count, main.length);
     assert.equal(result.limited_offer_count, limited.length);
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
-    assert.ok(home.includes('<strong class="result-total">' + compactNumber(all.length) + '</strong>'));
+    assert.ok(home.includes('<strong class="hero-stat-value">' + compactNumber(all.length) +
+      '</strong><span class="hero-stat-label">All services</span>'));
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
