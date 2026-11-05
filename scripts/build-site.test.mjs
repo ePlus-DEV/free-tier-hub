@@ -314,7 +314,8 @@ test('category count badges are generated from source JSON and update on rebuild
       serviceCountSVG(stats.free_tier_count, 'free tiers'));
     assert.equal(fs.readFileSync(path.join(second, 'badges/limited-offers.svg'), 'utf8'),
       serviceCountSVG(stats.limited_offer_count, 'limited offers'));
-    assert.throws(() => serviceCountSVG(-1), /Invalid free-tier count/);
+    assert.throws(() => serviceCountSVG(-1), /Invalid service count/);
+    assert.throws(() => serviceCountSVG(1, 'unknown'), /Invalid service badge label/);
     const category = items[0].category;
     const count = items.filter(item => item.category === category &&
       (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
