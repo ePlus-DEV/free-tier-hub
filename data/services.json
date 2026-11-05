@@ -13546,6 +13546,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "testnizer-offline-api-testing",
+    "name": "Testnizer Offline API Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed offline desktop API testing client for HTTP/REST, SOAP, GraphQL, gRPC, WebSocket, SSE and MCP, with local SQLite collections and test suites; no vendor-enforced request, seat or time quota for the locally run software.",
+    "watch_out": "Runs on the user's Windows, macOS or Linux computer; not a hosted API testing service. Network API providers, AI model APIs and external services may impose separate fees or quotas. Beta binaries may show OS signing warnings; verify downloads and do not assume production security certification.",
+    "pricing_url": "https://github.com/apinizer/testnizer",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "local"
+  },
+  {
     "id": "twitterapi-io-signup-credits",
     "name": "TwitterAPI.io New-Account Credits",
     "category": "developer-tools",
