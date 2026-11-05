@@ -119,15 +119,23 @@ test('directory exposes unique search/category controls and official sources for
       serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.match(badge, /<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
     assert.match(badge, /<text[^>]*>services<\/text>/);
-    assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.total_services) + '</strong>'),
-      'README total-services badge and Home All services must have identical counts');
-    assert.ok(html.includes('<div class="catalog-metrics" aria-label="Catalog totals">'),
-      'catalog totals must have their own group separate from filtered search results');
-    assert.ok(html.includes('<span>All</span><strong>' + compactNumber(stats.total_services) + '</strong>'));
-    assert.ok(html.includes('<span>Free tiers</span><strong>' + compactNumber(stats.free_tier_count) + '</strong>'));
-    assert.ok(html.includes('<span>Limited offers</span><strong>' + compactNumber(stats.limited_offer_count) + '</strong>'));
-    assert.doesNotMatch(html, /result-breakdown/,
-      'do not stack catalog-wide counts as tiny text under active search results');
+    // Hero totals are independent of sorting, pagination, or filters.
+    const hero = html.slice(html.indexOf('<section class="hero">'), html.indexOf('</section>', html.indexOf('<section class="hero">')));
+    assert.ok(hero.includes('<div class="hero-stats" role="group" aria-label="Catalog statistics">'),
+      'full catalog totals belong inside the Hero');
+    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.total_services) +
+      '</strong><span class="hero-stat-label">All services</span>'));
+    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.free_tier_count) +
+      '</strong><span class="hero-stat-label">Free tiers</span>'));
+    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.limited_offer_count) +
+      '</strong><span class="hero-stat-label">Limited offers</span>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' +
+      compactNumber(Math.min(12, stats.free_tier_count)) + ' of ' + compactNumber(stats.total_services) + '</span>'));
+    assert.doesNotMatch(html, /catalog-metrics|result-breakdown/,
+      'do not repeat catalog totals inside the Explore heading');
+    assert.match(css, /\.hero-stats\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+    assert.match(css, /\.hero-stat\+\.hero-stat\{border-left:1px solid var\(--line\)\}/);
+    assert.match(css, /@media\(max-width:680px\)\{\s*\.hero\{padding-bottom:20px\}/);
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
@@ -461,14 +469,17 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<strong class="result-total">' + compactNumber(catalog.length) +
-      '</strong><span class="result-label">All services</span>'));
-    assert.match(html, /<div class="directory-heading-main"><h2>Explore services<\/h2>/);
-    assert.ok(html.includes('<div class="catalog-metrics" aria-label="Catalog totals">'));
-    assert.doesNotMatch(html, /result-breakdown/);
+    assert.ok(html.includes('<strong class="hero-stat-value">' + compactNumber(catalog.length) +
+      '</strong><span class="hero-stat-label">All services</span>'));
+    assert.match(html, /<div class="directory-heading"><h2>Explore services<\/h2>/);
+    assert.doesNotMatch(html, /catalog-metrics|result-breakdown/);
+    assert.doesNotMatch(html, /<strong class="result-total">/,
+      'unfiltered SSR result heading should not duplicate the Hero total');
     assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
+    assert.match(runtime, /totalBadge\.hidden = !hasFilters/);
+    assert.match(runtime, /totalLabel\.hidden = !hasFilters/);
     assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
 });
