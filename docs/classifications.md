@@ -10,8 +10,8 @@ This is the human-readable classification policy for the **specific cataloged pr
 | --- | --- | --- | --- |
 | `ongoing` | Ongoing free allowance / Free tier or free software | No announced fixed end date for the **specific** free allowance or licensed software, subject to quota and policy changes | Yes |
 | `monthly-credit` | Recurring monthly credit | Free credits renew every billing period; separate introductory signup credits do not count as recurring | Yes |
-| `limited-duration` | Time-limited offer | Account-level trial, one-time signup promotion or credit that ends after a fixed period or is exhausted | No; browse in /offers/ |
-| `temporary-resource` | Expiring free resource | A specific resource itself expires or is deleted, e.g. a database after 30 days | No; browse in /offers/ |
+| `limited-duration` | Time-limited offer | Account-level trial, one-time signup promotion or credit that ends after a fixed period or is exhausted | Yes in All services; excluded from Free tiers and category pages |
+| `temporary-resource` | Expiring free resource | A specific resource itself expires or is deleted, e.g. a database after 30 days | Yes in All services; excluded from Free tiers and category pages |
 
 **Mixed offers:** If a provider offers a 14-day premium trial then an ongoing Free plan, catalog the ongoing Free allowance and disclose the trial separately. If only a 30-day trial exists, use `limited-duration`. A 30-day log **retention** period, monthly quota **reset** or required account **renewal** does not by itself make the free plan time-limited.
 

@@ -145,7 +145,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' +
       compactNumber(stats.total_services) + '</strong>'));
     assert.ok(html.includes('<span class="result-shown">Showing ' +
-      compactNumber(Math.min(12, stats.free_tier_count)) + ' of ' + compactNumber(stats.total_services) + '</span>'));
+      compactNumber(Math.min(12, stats.total_services)) + ' of ' + compactNumber(stats.total_services) + '</span>'));
     assert.match(css, /\.results-meta\{[^}]*margin-left:auto/);
     assert.match(css, /@media\(max-width:680px\)\{\s*\.directory-heading\{flex-wrap:nowrap/);
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
@@ -270,8 +270,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="catalog-toolbar"><div class="category-bar"/);
     assert.match(html, /class="search-filter-row"><form class="hero-search directory-search"/);
     assert.doesNotMatch(html, /class="hero-discovery"/);
-    assert.equal((html.match(/class="official-link"/g) || []).length, Math.min(12, mainEntries.length));
-    assert.equal((html.match(/data-card-category=/g) || []).length, Math.min(12, mainEntries.length));
+    assert.equal((html.match(/class="official-link"/g) || []).length, Math.min(12, entries.length));
+    assert.equal((html.match(/data-card-category=/g) || []).length, Math.min(12, entries.length));
     const fragmentHTML = Object.values(fragments).flatMap(group => Object.values(group)).join('');
     assert.equal((fragmentHTML.match(/class="official-link"/g) || []).length, entries.length);
     assert.match(fragmentHTML, /data-card-category="databases" href="https:\/\/free-tier\.eplus\.dev\/\?category=databases"/);
@@ -376,14 +376,18 @@ test('All services includes limited offers while the free-tier subset stays sepa
       compactNumber(limited.length) + ')</option>'));
     assert.ok(home.includes('<span class="result-label">All services</span><strong class="result-total">' +
       compactNumber(all.length) + '</strong>'));
-    assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
+    assert.ok(home.includes('class="limited-offer-shortcut" href="https://free-tier.eplus.dev/?offer=limited#explore"'));
+    assert.ok(home.includes(compactNumber(limited.length) + ' limited offers</a>'));
+    assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, all.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
     assert.equal(index.rows.length, all.length);
     assert.equal(index.rows.filter(row => row[3] === 'limited-duration' || row[3] === 'temporary-resource').length, limited.length);
     assert.equal((offers.match(/class="service-card"/g) || []).length, limited.length);
     for (const item of limited) {
-      assert.ok(!home.includes('data-service-id="' + item.id + '"'), item.id);
+      assert.equal(home.includes('data-service-id="' + item.id + '"'),
+        all.slice(0, 12).some(entry => entry.id === item.id),
+        item.id + ': SSR uses the same full All services scope as search');
       const shard = JSON.parse(fs.readFileSync(path.join(output, 'search/cards', item.category + '.json'), 'utf8'));
       assert.ok(shard[item.id].includes('data-service-id="' + item.id + '"'), item.id);
       assert.ok(offers.includes('data-service-id="' + item.id + '"'), item.id);
@@ -500,9 +504,11 @@ test('search result headline reflects matches rather than the entire offer pool'
     assert.doesNotMatch(html, /catalog-metrics|result-breakdown|hero-stats/);
     assert.ok(html.includes('<option value="free">Free tiers (' +
       compactNumber(free.length) + ')</option>'));
-    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, catalog.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
+    assert.match(runtime, /if \(nextCategory === ""\) resetDirectoryFilters\(\)/);
+    assert.match(runtime, /function resetDirectoryFilters\(\)/);
     assert.match(runtime, /count\.replaceChildren\(totalLabel, totalBadge, shownLabel\)/);
     assert.doesNotMatch(runtime, /totalBadge\.hidden = !hasFilters/);
     assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);

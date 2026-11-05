@@ -278,9 +278,9 @@ function homePage(items, absolute, counts, searchVersion) {
     ['cloud', 'self-hosted', 'hybrid', 'local', 'unclassified']
       .map(model => [model, items.filter(item => hostingModel(item) === model).length])
   );
-  // Show the full catalog in All services. Server-render the first 12 ongoing
-  // cards for a stable initial view; interactive search includes all offers.
-  const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
+  // All services includes every offer, including limited/expiring entries.
+  // Keep the SSR page in the same catalog order as the lazy-loaded index.
+  const cards = items.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) +
     ' (' + compactNumber(counts[category]) + ')</option>').join('');
@@ -365,7 +365,11 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="result-count" id="results-count" aria-live="polite">',
     '<span class="result-label">All services</span><strong class="result-total">',
     compactNumber(items.length), '</strong><span class="result-shown">Showing ',
-    compactNumber(Math.min(12, mainItems.length)), ' of ', compactNumber(items.length), '</span></p>',
+    compactNumber(Math.min(12, items.length)), ' of ', compactNumber(items.length), '</span></p>',
+    limitedItems.length
+      ? '<a class="limited-offer-shortcut" href="' + tag(absolute('?offer=limited#explore')) +
+        '" aria-label="Show time-limited and expiring offers">' + compactNumber(limitedItems.length) +
+        ' limited offers</a>' : '',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -373,7 +377,8 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="search-load-status" id="search-load-status" role="status" aria-live="polite" hidden></p>',
     '<noscript><p class="search-noscript">Showing the first 12 services. ',
     '<a href="', tag(absolute('categories/')), '">Browse all categories</a>',
-    ' to explore the full catalog without JavaScript.</p></noscript>',
+    ' or <a href="', tag(absolute('offers/')), '">limited offers</a>',
+    ' without JavaScript.</p></noscript>',
     '<div class="load-more-wrap" id="load-more-wrap" hidden>',
     '<button class="load-more" type="button" id="load-more">Show more services</button>',
     '<span class="load-more-hint">Browse all matching services</span></div>',
@@ -744,10 +749,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   const latest = items.map(item => item.last_checked).sort().at(-1);
   const pageURLs = [];
   const siteName = 'Free Tier Hub';
-  // Home initially renders only 12 cards. Keep structured data in sync with
-  // content actually present in the HTML, not thousands of lazy-only results.
-  // All other services are linked from crawlable category pages and sitemap.
-  const homeVisibleItems = mainItems.slice(0, 12);
+  // Match Home's ItemList to the 12 server-rendered cards from the full catalog.
+  // Keep all other items discoverable through their detail pages and sitemap.
+  const homeVisibleItems = items.slice(0, 12);
   const homeSchema = { '@context': 'https://schema.org', '@graph': [
     { '@type': 'WebSite', name: siteName, url: base,
       description: 'An independently maintained directory of developer free tiers.' },
@@ -874,7 +878,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '# Free Tier Hub', '',
     '> Independent developer free-tier directory with usage caveats and official provider links.', '',
     '## Primary resources',
-    '- [Directory](' + base + '): first 12 ongoing service cards; full catalog is navigable through static category pages.',
+    '- [Directory](' + base + '): first 12 catalog cards; full catalog is navigable through static category pages and limited offers.',
     '- [All categories](' + absolute('categories/') + '): all service categories with live counts and category landing pages.',
     '- [Offer classifications](' + absolute('about/classifications/') + '): definitions of plan, deployment, eligibility and verification labels.',
     '- [Limited offers](' + absolute('offers/') + '): time-limited promotions and expiring resources, excluded from primary counts.',
@@ -887,7 +891,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       '- [' + CATEGORY_NAMES[category] + '](' + absolute('category/' + category + '/') + ')'),
     '', '## Interpretation',
     '- Home loads additional cards through JavaScript; for complete crawlable service links, follow the category pages and sitemap.',
-    '- The main free-tier directory counts ongoing allowances and recurring credits only; trials and expiring resources are listed separately.',
+    '- All services includes limited and expiring offers; the free-tier count includes only ongoing allowances and recurring credits.',
     '- An unknown card or commercial-use value means check the provider; it does not mean permission is granted.',
     '- Official provider links in the JSON are the primary sources of current billing and limits.',
     '- Review dates are editorial snapshots, not a guarantee that a provider has not changed its terms.', '',
