@@ -34,12 +34,20 @@ test('compact index and category HTML shards preserve complete search and card c
         item.deployment_model || 'unclassified', item.credit_card, item.commercial_use
       ]);
       assert.equal(row[8], item.last_checked);
+      assert.ok(row[9].includes(item.id), 'search must match the canonical service ID');
       assert.ok(row[9].includes(item.free_limit.toLowerCase()));
       assert.ok(row[9].includes(item.watch_out.toLowerCase()));
       assert.ok(cards[item.id].includes('data-service-id="' + item.id + '"'));
       assert.ok(cards[item.id].includes('href="https://free-tier.eplus.dev/service/' + item.id + '/"'));
       assert.ok(fs.existsSync(path.join(root, 'service', item.id, 'index.html')));
     }
+    // PR #1908: "Quill Forms" is a spaced display name, but people search "quillforms".
+    const quill = index.rows.find(row => row[0] === 'quillforms-open-source-form-builder');
+    assert.ok(quill, 'Quill Forms must be present in the published index');
+    assert.ok(quill[9].includes('quillforms'), 'joined brand name should match');
+    assert.ok(quill[9].includes('quill forms'), 'display name should still match');
+    assert.ok(cards[quill[0]].includes('data-search="quillforms-'),
+      'SSR card and lazy search index must share the same searchable ID');
     assert.equal(result.service_count, catalog.length);
     assert.equal(result.free_tier_count, main.length);
     for (const category of CATEGORIES) {
