@@ -10,11 +10,13 @@
       var offer = state.offer || "";
       var scopeName = offer === "limited" ? "limited offers"
         : offer === "monthly-credit" ? "monthly credits"
-        : offer === "ongoing" ? "ongoing free tiers" : "free tiers";
+        : offer === "ongoing" ? "ongoing free tiers"
+        : offer === "free" ? "free tiers" : "services";
       var label = narrowed ? "Matching services"
         : offer === "limited" ? "Limited offers"
         : offer === "monthly-credit" ? "Monthly credits"
-        : offer === "ongoing" ? "Ongoing free tiers" : "Total free tiers";
+        : offer === "ongoing" ? "Ongoing free tiers"
+        : offer === "free" ? "Free tiers" : "All services";
       return {
         label: label,
         total: String(matchedCount),
@@ -23,7 +25,8 @@
       };
     },
     matchesOffer: function (plan, offer) {
-      if (offer === "") return plan === "ongoing" || plan === "monthly-credit";
+      if (offer === "") return ["ongoing", "monthly-credit", "limited-duration", "temporary-resource"].includes(plan);
+      if (offer === "free") return plan === "ongoing" || plan === "monthly-credit";
       if (offer === "limited") return plan === "limited-duration" || plan === "temporary-resource";
       return ["ongoing", "monthly-credit"].includes(offer) && plan === offer;
     },
@@ -33,7 +36,7 @@
       var sort = params.get("sort") || "default";
       return {
         hosting: ["cloud", "self-hosted", "hybrid", "local", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
-        offer: ["ongoing", "monthly-credit", "limited"].includes(params.get("offer")) ? params.get("offer") : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(params.get("offer")) ? params.get("offer") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",
@@ -45,7 +48,7 @@
       var url = new URL(href);
       var values = {
         hosting: state.hosting || "",
-        offer: ["ongoing", "monthly-credit", "limited"].includes(state.offer) ? state.offer : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(state.offer) ? state.offer : "",
         q: state.q || "",
         category: state.category || "",
         sort: state.sort === "default" ? "" : state.sort,
