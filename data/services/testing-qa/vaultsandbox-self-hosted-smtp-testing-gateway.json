@@ -1,0 +1,13 @@
+{
+  "id": "vaultsandbox-self-hosted-smtp-testing-gateway",
+  "name": "VaultSandbox Self-Hosted SMTP Testing Gateway",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed self-hosted SMTP testing gateway with web UI, REST API, SPF/DKIM/DMARC checks, TLS and configurable email retention; no software quota or expiration stated.",
+  "watch_out": "Public Beta; self-hosted receive-only testing gateway, not a free hosted email-sending service. Provide compute, storage, DNS or VSX DNS, and reachable ports; 7-day retention is the configurable default. Infrastructure costs apply.",
+  "pricing_url": "https://github.com/vaultsandbox/gateway",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
