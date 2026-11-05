@@ -1,0 +1,13 @@
+{
+  "id": "alphorn-self-hosted-notification-router",
+  "name": "Alphorn Self-Hosted Notification Router",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Self-host the AGPL-3.0-or-later notification router for webhook-triggered delivery to 20+ channels, with filtering, retries and delivery history; no vendor-imposed software quota or expiry.",
+  "watch_out": "Requires your own Docker/Node.js and PostgreSQL infrastructure; SMTP, SMS and other outbound providers may charge separately. AGPL network-use obligations apply to modified deployments; commercial licensing is optional for organizations unable to comply. Hosted Alphorn Free is a separate limited-quota offering.",
+  "pricing_url": "https://github.com/alphorn-dev/alphorn",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
