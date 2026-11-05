@@ -2,7 +2,7 @@
 
 **Build More, Spend Less.** Discover and compare free developer tools and services in one independent, community-maintained directory. Understand free allowances, usage limits, deployment options, and potential costs before signing up.
 
-![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ffree-tier.eplus.dev%2Fcatalog.json&query=%24.length&label=services&color=brightgreen&cacheSeconds=300) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
+![Catalog](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ffree-tier.eplus.dev%2Fcatalog-stats.json&query=%24.free_tier_count&label=services&color=brightgreen&cacheSeconds=300) [![Catalog checks](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml/badge.svg?branch=main)](https://github.com/ePlus-DEV/free-tier-hub/actions/workflows/validate-catalog.yml) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 
 **[Explore the directory](https://free-tier.eplus.dev/)** · **[Search & filter](https://free-tier.eplus.dev/#explore)** · [Browse categories](https://free-tier.eplus.dev/categories/) · [Suggest a service](https://github.com/ePlus-DEV/free-tier-hub/issues/new?template=suggest-service.yml)
 
@@ -44,7 +44,7 @@ Explore [all categories online](https://free-tier.eplus.dev/categories/) or use 
 | Testing & QA | ![Count](https://free-tier.eplus.dev/badges/categories/testing-qa.svg) | [Browse](docs/testing-qa.md) |
 | Forms & surveys | ![Count](https://free-tier.eplus.dev/badges/categories/forms-surveys.svg) | [Browse](docs/forms-surveys.md) |
 
-The dynamic service and category badges reflect the **deployed catalog**, so GitHub Pages deployment and image caching may briefly delay count updates. [Browse the full catalog JSON](https://free-tier.eplus.dev/catalog.json).
+The service badge counts **ongoing free allowances and recurring credits**, matching the Home directory and category badges. Time-limited and expiring offers remain in the full catalog but are counted separately. Badges reflect the **deployed catalog**, so GitHub Pages deployment and image caching may briefly delay updates. [View live counts](https://free-tier.eplus.dev/catalog-stats.json) · [Browse the full catalog JSON](https://free-tier.eplus.dev/catalog.json).
 
 ## Contributing
 
