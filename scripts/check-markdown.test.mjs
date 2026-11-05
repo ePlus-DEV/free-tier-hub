@@ -32,7 +32,7 @@ test('malformed columns and separators fail; fenced sample is ignored', () => {
   assert.deepEqual(scanTables('~~~md\n| sample | row |\n| missing |\n~~~', 'test.md').errors, []);
 });
 test('badge, README count, category row and extra table corruptions fail', () => {
-  const wrongBadge = readme.replace('query=%24.length', 'query=%24.notLength');
+  const wrongBadge = readme.replace('query=%24.free_tier_count', 'query=%24.notTheFreeTierCount');
   assert.notEqual(wrongBadge, readme);
   assert.ok(validateDocuments(ROOT, data, wrongBadge, pages).some(x => x.includes('badge')));
   const row = '| Static & frontend hosting | ' + categoryCountBadge('static-hosting') + ' |';
