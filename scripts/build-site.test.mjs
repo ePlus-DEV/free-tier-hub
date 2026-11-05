@@ -78,9 +78,17 @@ test('directory exposes unique search/category controls and official sources for
       compactNumber(entries.length) + ')</option>'));
     assert.ok(html.includes('Browse all ' + CATEGORIES.length + ' categories'),
       'filter shortcut must display the current category count');
-    assert.match(css, /\.catalog-toolbar \.category-bar\{display:flex;grid-column:1\/-1;gap:5px;min-width:0\}/);
-    assert.match(css, /\.catalog-toolbar \.category-shortcuts\{display:flex;flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto/);
-    assert.match(css, /\.catalog-toolbar \.category-index-shortcut\{flex-shrink:0;max-width:123px/);
+    // At every desktop/tablet width the category and quick-billing filters
+    // share one row; categories scroll instead of wrapping and breaking layout.
+    assert.match(css, /\.catalog-toolbar \.category-shortcuts\{display:flex;flex:1;min-width:0;align-items:center;gap:3px;flex-wrap:nowrap;overflow-x:auto/);
+    assert.match(css, /\.catalog-toolbar \.category-shortcuts::-webkit-scrollbar\{display:none\}/);
+    assert.match(css, /@media\(min-width:681px\)\{[\s\S]*?\.catalog-toolbar\{grid-template-columns:minmax\(0,1fr\) max-content\}/);
+    assert.match(css, /\.catalog-toolbar \.quick-filters\{grid-column:2;grid-row:2;[^}]*flex-wrap:nowrap/);
+    assert.match(css, /\.catalog-toolbar \.category-chip\{flex:0 0 auto;min-height:34px/);
+    assert.match(css, /@media\(max-width:680px\)\{\s*\.catalog-toolbar \.category-bar\{display:flex;grid-column:1\/-1/);
+    assert.match(css, /\.catalog-toolbar \.category-index-shortcut\{flex:0 0 auto;max-width:115px/);
+    assert.match(js, /advancedFilters\.insertBefore\(quickFilters, document\.getElementById\("filter-show-results"\)\)/,
+      'iPhone billing filters must remain in the existing filter sheet');
 
     const offersHtml = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
     const classificationsHtml = fs.readFileSync(path.join(output, 'about/classifications/index.html'), 'utf8');
