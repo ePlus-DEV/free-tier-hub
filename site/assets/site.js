@@ -1009,7 +1009,7 @@
     shownLabel.className = "result-shown";
     shownLabel.textContent = summary.shown.replace(/\b\d{4,}\b/g, compactUiCount);
     shownLabel.title = summary.shown;
-    count.replaceChildren(totalLabel, totalBadge, shownLabel);
+    count.replaceChildren(totalBadge, totalLabel, shownLabel);
     empty.hidden = matched.length !== 0;
     if (moreWrap) moreWrap.hidden = matched.length <= visible;
     if (more) more.textContent = "Show more (" + compactUiCount(matched.length - shown) + " remaining)";
