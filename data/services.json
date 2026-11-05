@@ -12727,6 +12727,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kukuroo-self-hosted-web-push",
+    "name": "Kukuroo Self-Hosted Web Push",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-managed Web Push software for Safari Declarative Web Push on iOS 18.4+ and macOS Safari 18.5+; no software-imposed notification quota or expiry is documented.",
+    "watch_out": "Requires deploying and operating a Cloudflare Worker and KV namespace; Cloudflare usage quotas, billing and possible overages are separate and are NOT included as free hosting. Receivers require Safari on supported Apple OS versions and an installed Home Screen web app; Chrome, Firefox and Android cannot enroll. Secure and back up credentials.",
+    "pricing_url": "https://github.com/saiday/kukuroo",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "lego-acme-client-local",
     "name": "lego Open-Source ACME Client and DNS-01 Automation",
     "category": "dns-cdn",
