@@ -12571,6 +12571,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hitop-api-testing",
+    "name": "HITOP API Testing CLI",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Rust HTTP API testing CLI with file-based request collections, JavaScript scripting, Postman collection import, environment variables, and JUnit/JSON CI reports; no software subscription, seat quota or expiry.",
+    "watch_out": "Free local CLI software, not a free hosted API or cloud testing allowance. Requires a user-managed machine or CI runner; target APIs, CI minutes and network usage may have separate limits or costs. Hosted web and app-store editions are separate offerings and are not included in this listing.",
+    "pricing_url": "https://github.com/bohdaq/hitop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "local"
+  },
+  {
     "id": "hoverfly-open-source-api-simulation",
     "name": "Hoverfly Open-Source API Simulation",
     "category": "testing-qa",
