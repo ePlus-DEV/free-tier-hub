@@ -264,12 +264,12 @@ jobs:
                   throw Error('Deployed ' + label + ' badge SVG is stale or invalid');
                 }
               }
-              if (!home.includes('<strong class="result-total">' + display + '</strong>') ||
-                  !home.includes('<div class="catalog-metrics" aria-label="Catalog totals">') ||
-                  !home.includes('<span>All</span><strong>' + display + '</strong>') ||
-                  !home.includes('<span>Free tiers</span><strong>' + freeDisplay + '</strong>') ||
-                  !home.includes('<span>Limited offers</span><strong>' + limitedDisplay + '</strong>')) {
-                throw Error('Home catalog metrics or active result count do not match README badges');
+              if (!home.includes('<div class="hero-stats" role="group" aria-label="Catalog statistics">') ||
+                  !home.includes('<strong class="hero-stat-value">' + display + '</strong><span class="hero-stat-label">All services</span>') ||
+                  !home.includes('<strong class="hero-stat-value">' + freeDisplay + '</strong><span class="hero-stat-label">Free tiers</span>') ||
+                  !home.includes('<strong class="hero-stat-value">' + limitedDisplay + '</strong><span class="hero-stat-label">Limited offers</span>') ||
+                  !home.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, expected)) + ' of ' + display + '</span>')) {
+                throw Error('Home Hero totals or initial result count do not match README badges');
               }
               console.log('Live service badges verified:', entries.length, 'all;',
                 expected, 'ongoing and recurring;', expectedLimited, 'limited');
