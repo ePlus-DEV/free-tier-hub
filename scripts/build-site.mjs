@@ -270,11 +270,19 @@ function document(absolute, title, description, relative, content, structuredDat
 function homePage(items, absolute, counts, searchVersion) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const planCounts = Object.fromEntries(
+    ['ongoing', 'monthly-credit'].map(plan => [plan, items.filter(item => item.plan === plan).length])
+  );
+  const deploymentCounts = Object.fromEntries(
+    ['cloud', 'self-hosted', 'hybrid', 'local', 'unclassified']
+      .map(model => [model, items.filter(item => hostingModel(item) === model).length])
+  );
   // Show the full catalog in All services. Server-render the first 12 ongoing
   // cards for a stable initial view; interactive search includes all offers.
   const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
-    '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
+    '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) +
+    ' (' + compactNumber(counts[category]) + ')</option>').join('');
   const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
     (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + compactNumber(counts[category]) + '</span>' : '') +
@@ -284,15 +292,6 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="hero-kicker">The free-tier directory</p>',
     '<h1>Find the right tools. Build for free.</h1>',
     '<p>Compare free services, limits and conditions.</p>',
-    '</div><div class="hero-stats" role="group" aria-label="Catalog statistics">',
-    '<div class="hero-stat"><strong class="hero-stat-value">', compactNumber(items.length),
-    '</strong><span class="hero-stat-label">All services</span></div>',
-    '<div class="hero-stat"><strong class="hero-stat-value">', compactNumber(mainItems.length),
-    '</strong><span class="hero-stat-label">Free tiers</span></div>',
-    '<a class="hero-stat hero-stat-link" href="', tag(absolute('offers/')),
-    '" aria-label="View ', limitedItems.length, ' limited and expiring offers">',
-    '<strong class="hero-stat-value">', compactNumber(limitedItems.length),
-    '</strong><span class="hero-stat-label">Limited offers</span></a>',
     '</div></section><section id="explore" class="section catalog-section">',
     '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="catalog-toolbar">',
@@ -324,15 +323,16 @@ function homePage(items, absolute, counts, searchVersion) {
     '<div class="filter-popover-heading"><strong id="filter-dialog-title">Filters</strong><span>Results update as you choose</span>',
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
-    '<select id="category-filter"><option value="">All categories</option>', options, '</select></label>',
+    '<select id="category-filter"><option value="">All categories (', compactNumber(items.length),
+    ')</option>', options, '</select></label>',
     '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
     '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
-    '<select id="offer-filter"><option value="">All services (', items.length, ')</option>',
-    '<option value="free">Ongoing &amp; recurring free tiers (', mainItems.length, ')</option>',
-    '<option value="ongoing">Ongoing free allowance</option>',
-    '<option value="monthly-credit">Recurring monthly credit</option>',
-    '<option value="limited">Time-limited &amp; expiring offers (', limitedItems.length,
+    '<select id="offer-filter"><option value="">All services (', compactNumber(items.length), ')</option>',
+    '<option value="free">Free tiers (', compactNumber(mainItems.length), ')</option>',
+    '<option value="ongoing">Ongoing free allowance (', compactNumber(planCounts.ongoing), ')</option>',
+    '<option value="monthly-credit">Recurring monthly credit (', compactNumber(planCounts['monthly-credit']), ')</option>',
+    '<option value="limited">Time-limited &amp; expiring offers (', compactNumber(limitedItems.length),
     ')</option></select></label>',
     '<details class="classification-help"><summary>How are these offers classified?</summary>',
     '<div class="classification-help-panel"><p class="classification-help-intro">Labels describe the listed offer, not every plan a provider sells.</p>',
@@ -344,9 +344,13 @@ function homePage(items, absolute, counts, searchVersion) {
     '<a href="', tag(absolute('about/classifications/')), '" target="_blank" rel="noopener noreferrer">Full classification guide ↗</a></div></details>',
     '<label class="hosting-model-field" for="hosting-filter"><span>Deployment model</span>',
     '<select id="hosting-filter" aria-describedby="hosting-model-note">',
-    '<option value="">All deployment models</option><option value="cloud">Cloud</option>',
-    '<option value="self-hosted">Self-hosted</option><option value="hybrid">Cloud + self-hosted</option>',
-    '<option value="local">Local / embedded</option><option value="unclassified">Not specified</option></select></label>',
+    '<option value="">All deployment models (', compactNumber(items.length), ')</option>',
+    '<option value="cloud">Cloud (', compactNumber(deploymentCounts.cloud), ')</option>',
+    '<option value="self-hosted">Self-hosted (', compactNumber(deploymentCounts['self-hosted']), ')</option>',
+    '<option value="hybrid">Cloud + self-hosted (', compactNumber(deploymentCounts.hybrid), ')</option>',
+    '<option value="local">Local / embedded (', compactNumber(deploymentCounts.local), ')</option>',
+    '<option value="unclassified">Not specified (', compactNumber(deploymentCounts.unclassified),
+    ')</option></select></label>',
     '<p class="hosting-model-note" id="hosting-model-note">Deployment specified for ' + compactNumber(items.filter(item => hostingModel(item) !== 'unclassified').length) + ' of ' + compactNumber(items.length) + ' services. Self-hosting may incur infrastructure costs.</p>',
     '<button type="button" class="filter-show-results" id="filter-show-results">Show results</button>',
     '</div>',
@@ -358,8 +362,9 @@ function homePage(items, absolute, counts, searchVersion) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite">',
-    '<span class="result-shown">Showing ', compactNumber(Math.min(12, mainItems.length)),
-    ' of ', compactNumber(items.length), '</span></p>',
+    '<span class="result-label">All services</span><strong class="result-total">',
+    compactNumber(items.length), '</strong><span class="result-shown">Showing ',
+    compactNumber(Math.min(12, mainItems.length)), ' of ', compactNumber(items.length), '</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
