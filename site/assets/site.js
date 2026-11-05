@@ -1019,7 +1019,10 @@
       (!noCard || !noCard.checked) && (!commercial || !commercial.checked);
 
     categoryButtons.forEach(function (button) {
-      var isActive = button.getAttribute("data-filter-category") === category;
+      var chipCategory = button.getAttribute("data-filter-category");
+      var allFiltersClear = !term && !hostingModel && !offerType &&
+        !noCard.checked && !commercial.checked;
+      var isActive = chipCategory === category && (chipCategory !== "" || allFiltersClear);
       button.setAttribute("aria-pressed", String(isActive));
     });
     if (mobileCategory && mobileCategory.value !== category) {
@@ -1049,6 +1052,22 @@
   function changeCategory(next) {
     category = next;
     visible = pageSize;
+    render();
+  }
+  function resetDirectoryFilters() {
+    // The "All services" chip represents the entire catalog, not just all categories.
+    category = "";
+    hostingModel = "";
+    if (hostingSelect) hostingSelect.value = "";
+    offerType = "";
+    if (offerSelect) offerSelect.value = "";
+    search.value = "";
+    if (headerSearch) headerSearch.value = "";
+    if (heroSearch) heroSearch.value = "";
+    noCard.checked = false;
+    commercial.checked = false;
+    visible = pageSize;
+    updateFilterCount();
     render();
   }
   if (headerSearch) headerSearch.addEventListener("input", function () {
@@ -1162,7 +1181,9 @@
   }
   categoryButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      changeCategory(button.getAttribute("data-filter-category"));
+      var nextCategory = button.getAttribute("data-filter-category");
+      if (nextCategory === "") resetDirectoryFilters();
+      else changeCategory(nextCategory);
     });
   });
   if (sort) sort.addEventListener("change", function () {
@@ -1182,17 +1203,7 @@
   });
   if (more) more.addEventListener("click", function () { visible += pageSize; render(); });
   if (clear) clear.addEventListener("click", function () {
-    hostingModel = "";
-    if (hostingSelect) hostingSelect.value = "";
-    offerType = "";
-    if (offerSelect) offerSelect.value = "";
-    search.value = "";
-    if (headerSearch) headerSearch.value = "";
-    if (heroSearch) heroSearch.value = "";
-    if (noCard) noCard.checked = false;
-    if (commercial) commercial.checked = false;
-    updateFilterCount();
-    changeCategory("");
+    resetDirectoryFilters();
     search.focus();
   });
   var searchLinks = document.querySelectorAll("[data-focus-search]");
