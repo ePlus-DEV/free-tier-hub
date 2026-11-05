@@ -111,7 +111,8 @@ const isMainFreeOffer = item => item.plan === 'ongoing' || item.plan === 'monthl
 function card(item, absolute, initiallyHidden = false) {
   const dest = absolute('service/' + item.id + '/');
   const group = CATEGORY_NAMES[item.category];
-  const searchable = [item.name, group, item.free_limit, item.watch_out].join(' ').toLowerCase();
+  // Include the canonical ID: users often search joined brand names such as "quillforms".
+  const searchable = [item.id, item.name, group, item.free_limit, item.watch_out].join(' ').toLowerCase();
   return [
     '<article class="service-card"', initiallyHidden ? ' hidden' : '', ' data-service-id="', tag(item.id),
     '" data-category="', tag(item.category),
@@ -730,7 +731,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     rows: items.map(item => [
       item.id, item.name, item.category, item.plan, hostingModel(item),
       item.credit_card, item.commercial_use, item.added_at || '', item.last_checked,
-      [item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
+      // Match the server-rendered card search data and accept service slugs/brand aliases.
+      [item.id, item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
     ])
   };
   // Category directory pages continue to list ongoing/recurring offers only.
