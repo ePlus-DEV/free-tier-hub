@@ -13195,6 +13195,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "polly-self-hosted-polling",
+    "name": "Polly Self-Hosted Polling",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted surveys, meeting polls and event signups; no vendor-imposed submission quota or software expiry.",
+    "watch_out": "Beta release; self-funded Docker/PostgreSQL hosting. Installation seeds default administrator credentials that must be replaced before public exposure. Email delivery infrastructure not included.",
+    "pricing_url": "https://github.com/manfredsteger/polly",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "portabase-self-hosted-backups",
     "name": "Portabase Self-Hosted Database Backups",
     "category": "storage",
