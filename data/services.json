@@ -13429,6 +13429,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "yuzushi-open-survey-builder",
+    "name": "Open Survey Builder (yuzushi-dev)",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted form and survey builder with no vendor-enforced form, response, or seat quota; includes visual editing, conditional logic, analytics and CSV exports.",
+    "watch_out": "Requires self-managed Docker/Node.js and PostgreSQL, storage, backups and SMTP relay for email notifications; infrastructure and third-party mail costs are not included. Production security and maintenance are operator responsibilities.",
+    "pricing_url": "https://github.com/yuzushi-dev/Open-Survey-Builder",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "zero-email-self-hosted",
     "name": "Zero Open-Source Self-Hosted Email App",
     "category": "email-notifications",
