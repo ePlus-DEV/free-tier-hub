@@ -12974,6 +12974,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mailtub-self-hosted",
+    "name": "MailTub Self-Hosted Disposable Email",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted disposable-email server with WebSocket inbox updates and no subscription expiry; default maximum 5 concurrent inboxes per session, 20 mailbox creations per IP per hour, and selectable mailbox lifetimes of 1 hour, 6 hours, 24 hours or 7 days.",
+    "watch_out": "You supply a server, domain, MX/DNS, storage and SMTP port access; hosting is not free. API access is open unless API_KEY is set, and STARTTLS is disabled by default. One-commit upstream repository with limited operational track record; evaluate security and reliability before production use. Mailbox expiry is not a trial expiry.",
+    "pricing_url": "https://github.com/DML-Labs/MailTub",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "messagepit-email-sms-testing",
     "name": "MessagePit Email and SMS Testing",
     "category": "testing-qa",
