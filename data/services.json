@@ -13169,6 +13169,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "quillforms-open-source-form-builder",
+    "name": "Quill Forms Open-Source Form Builder",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "LGPL-3.0 open-source React/TypeScript conversational form renderer and WordPress plugin; self-managed installation has no published vendor-imposed software quota or expiry.",
+    "watch_out": "Requires your own React/Next.js application or WordPress hosting and maintenance. Hosted Quill Forms Studio and premium add-ons are separate offerings; no free hosted submission, storage or traffic quota is claimed. Verify feature-specific licenses before adopting paid extensions.",
+    "pricing_url": "https://github.com/quillforms/quillforms",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "rauthy-self-hosted-oidc",
     "name": "Rauthy Open-Source Self-Hosted OIDC Identity Provider",
     "category": "auth-security",
