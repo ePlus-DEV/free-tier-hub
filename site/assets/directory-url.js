@@ -2,16 +2,12 @@
 (function (root) {
   "use strict";
   root.FreeTierDirectoryURL = {
-    // The prominent counter describes the current result set. The unfiltered
-    // offer scope is context only, never the search result count.
+    // Catalog-wide counts are always visible in their own summary row.
+    // The result counter describes only the current filtered and paged subset.
     summarizeResults: function (matchedCount, scopeCount, shownCount, state) {
       var narrowed = !!((state.q || "").trim() || state.category || state.hosting ||
         state.noCard || state.commercial);
       var offer = state.offer || "";
-      var scopeName = offer === "limited" ? "limited offers"
-        : offer === "monthly-credit" ? "monthly credits"
-        : offer === "ongoing" ? "ongoing free tiers"
-        : offer === "free" ? "free tiers" : "services";
       var label = narrowed ? "Matching services"
         : offer === "limited" ? "Limited offers"
         : offer === "monthly-credit" ? "Monthly credits"
@@ -20,8 +16,7 @@
       return {
         label: label,
         total: String(matchedCount),
-        shown: "Showing " + Math.min(shownCount, matchedCount) + " of " + matchedCount +
-          (narrowed ? " · " + scopeCount + " " + scopeName + " total" : "")
+        shown: "Showing " + Math.min(shownCount, matchedCount) + " of " + matchedCount
       };
     },
     matchesOffer: function (plan, offer) {
