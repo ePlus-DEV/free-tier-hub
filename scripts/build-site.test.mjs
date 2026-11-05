@@ -64,7 +64,7 @@ test('directory exposes unique search/category controls and official sources for
       ['ai-assistants', 'AI assistants'], ['storage', 'Storage'],
       ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']
     ]) {
-      const expected = mainEntries.filter(item => item.category === id).length;
+      const expected = entries.filter(item => item.category === id).length;
       assert.ok(html.includes('data-filter-category="' + id + '" aria-pressed="false">' +
         label + ' <span class="category-chip-count" aria-label="' + expected +
         ' services">' + compactNumber(expected) + '</span>'), id + ': count agrees with category overview');
@@ -112,11 +112,17 @@ test('directory exposes unique search/category controls and official sources for
     });
     assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
     const badge = fs.readFileSync(path.join(output, 'badges/services.svg'), 'utf8');
-    assert.equal(badge, serviceCountSVG(stats.free_tier_count));
+    assert.equal(badge, serviceCountSVG(stats.total_services));
+    assert.equal(fs.readFileSync(path.join(output, 'badges/free-tiers.svg'), 'utf8'),
+      serviceCountSVG(stats.free_tier_count, 'free tiers'));
+    assert.equal(fs.readFileSync(path.join(output, 'badges/limited-offers.svg'), 'utf8'),
+      serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.match(badge, /<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
     assert.match(badge, /<text[^>]*>services<\/text>/);
-    assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.free_tier_count) + '</strong>'),
-      'README badge stats and Home directory must have identical counts');
+    assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.total_services) + '</strong>'),
+      'README total-services badge and Home All services must have identical counts');
+    assert.ok(html.includes('class="result-breakdown">' + compactNumber(stats.free_tier_count) +
+      ' ongoing + recurring'), 'Home must clearly disclose the ongoing vs limited split');
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
@@ -137,7 +143,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.doesNotMatch(dialog, /id="sort"|id="filter-no-card"|id="filter-commercial"/);
     assert.match(html, /class="result-controls"><label class="sort-field"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
-    assert.match(html, /<select id="offer-filter"><option value="">All free tiers/);
+    assert.match(html, /<select id="offer-filter"><option value="">All services \(/);
+    assert.match(html, /<option value="free">Ongoing &amp; recurring free tiers \(/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
     assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
     for (const id of ['koyeb', 'steadystack-initiate']) {
@@ -301,8 +308,12 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.equal(stats.limited_offer_count, items.length - stats.free_tier_count);
     const firstBadge = fs.readFileSync(path.join(first, 'badges/services.svg'), 'utf8');
     const nextBadge = fs.readFileSync(path.join(second, 'badges/services.svg'), 'utf8');
-    assert.equal(nextBadge, serviceCountSVG(stats.free_tier_count));
-    assert.notEqual(nextBadge, firstBadge, 'badge must update when an ongoing service is added');
+    assert.equal(nextBadge, serviceCountSVG(stats.total_services));
+    assert.notEqual(nextBadge, firstBadge, 'total badge must update when a service is added');
+    assert.equal(fs.readFileSync(path.join(second, 'badges/free-tiers.svg'), 'utf8'),
+      serviceCountSVG(stats.free_tier_count, 'free tiers'));
+    assert.equal(fs.readFileSync(path.join(second, 'badges/limited-offers.svg'), 'utf8'),
+      serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.throws(() => serviceCountSVG(-1), /Invalid free-tier count/);
     const category = items[0].category;
     const count = items.filter(item => item.category === category &&
@@ -311,7 +322,7 @@ test('category count badges are generated from source JSON and update on rebuild
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 });
 
-test('time-limited offers remain accessible but are excluded from the primary free-tier counts', () => {
+test('All services includes limited offers while the free-tier subset stays separate', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'limited-offers-'));
   try {
     const all = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
@@ -325,7 +336,7 @@ test('time-limited offers remain accessible but are excluded from the primary fr
     assert.equal(result.free_tier_count, main.length);
     assert.equal(result.limited_offer_count, limited.length);
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
-    assert.ok(home.includes('<strong class="result-total">' + compactNumber(main.length) + '</strong>'));
+    assert.ok(home.includes('<strong class="result-total">' + compactNumber(all.length) + '</strong>'));
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
@@ -381,13 +392,19 @@ test('URL filters round trip, reject unknown values, preserve unrelated params a
   assert.equal(api.matchesOffer('monthly-credit', 'monthly-credit'), true);
   assert.equal(api.matchesOffer('ongoing', 'monthly-credit'), false);
   assert.equal(api.matchesOffer('ongoing', ''), true);
-  assert.equal(api.matchesOffer('limited-duration', ''), false);
+  assert.equal(api.matchesOffer('limited-duration', ''), true);
+  assert.equal(api.matchesOffer('temporary-resource', ''), true);
+  assert.equal(api.matchesOffer('ongoing', 'free'), true);
+  assert.equal(api.matchesOffer('monthly-credit', 'free'), true);
+  assert.equal(api.matchesOffer('limited-duration', 'free'), false);
   assert.equal(api.matchesOffer('temporary-resource', 'limited'), true);
   assert.equal(api.matchesOffer('limited-duration', 'limited'), true);
   assert.equal(api.matchesOffer('ongoing', 'limited'), false);
   assert.equal(api.matchesOffer('limited-duration', 'ongoing'), false);
   assert.equal(api.matchesOffer('monthly-credit', 'invalid'), false);
   assert.equal(new URL(api.write('https://free-tier.eplus.dev/', {...state, offer:'limited'})).searchParams.get('offer'), 'limited');
+  assert.equal(new URL(api.write('https://free-tier.eplus.dev/', {...state, offer:'free'})).searchParams.get('offer'), 'free');
+  assert.equal(api.read('https://free-tier.eplus.dev/?offer=free', [''], ['default']).offer, 'free');
   const reset = new URL(api.write(href, {q:'', category:'', sort:'default', noCard:false, commercial:false}));
   assert.equal(reset.search, '?utm_source=test');
   assert.deepEqual(api.read('https://free-tier.eplus.dev/?hosting=bad&offer=limited-duration&category=bad&sort=bad&no_card=0&commercial=false', [''], ['default']),
@@ -400,19 +417,19 @@ test('search result headline reflects matches rather than the entire offer pool'
   assert.equal(typeof summarize, 'function');
 
   assert.deepEqual(summarize(926, 926, 12, {}), {
-    label: 'Total free tiers', total: '926', shown: 'Showing 12 of 926'
+    label: 'All services', total: '926', shown: 'Showing 12 of 926'
   });
   assert.deepEqual(summarize(49, 926, 12, { q: 'chat' }), {
     label: 'Matching services', total: '49',
-    shown: 'Showing 12 of 49 · 926 free tiers total'
+    shown: 'Showing 12 of 49 · 926 services total'
   });
   assert.deepEqual(summarize(49, 926, 24, { q: 'chat', category: '' }), {
     label: 'Matching services', total: '49',
-    shown: 'Showing 24 of 49 · 926 free tiers total'
+    shown: 'Showing 24 of 49 · 926 services total'
   });
   assert.deepEqual(summarize(0, 926, 12, { q: 'notfound' }), {
     label: 'Matching services', total: '0',
-    shown: 'Showing 0 of 0 · 926 free tiers total'
+    shown: 'Showing 0 of 0 · 926 services total'
   });
   assert.deepEqual(summarize(4, 4, 12, { offer: 'limited' }), {
     label: 'Limited offers', total: '4', shown: 'Showing 4 of 4'
@@ -426,10 +443,10 @@ test('search result headline reflects matches rather than the entire offer pool'
   });
   assert.deepEqual(summarize(13, 926, 12, { noCard: true }), {
     label: 'Matching services', total: '13',
-    shown: 'Showing 12 of 13 · 926 free tiers total'
+    shown: 'Showing 12 of 13 · 926 services total'
   });
   assert.deepEqual(summarize(926, 926, 12, { q: '   ', sort: 'newest' }), {
-    label: 'Total free tiers', total: '926', shown: 'Showing 12 of 926'
+    label: 'All services', total: '926', shown: 'Showing 12 of 926'
   });
 
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-summary-'));
@@ -438,8 +455,8 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<span class="result-label">Total free tiers</span><strong class="result-total">' + compactNumber(free.length) + '</strong>'));
-    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(free.length) + '</span>'));
+    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' + compactNumber(catalog.length) + '</strong>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
     assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);
