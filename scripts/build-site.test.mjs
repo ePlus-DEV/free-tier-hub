@@ -121,8 +121,13 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(badge, /<text[^>]*>services<\/text>/);
     assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.total_services) + '</strong>'),
       'README total-services badge and Home All services must have identical counts');
-    assert.ok(html.includes('class="result-breakdown">' + compactNumber(stats.free_tier_count) +
-      ' ongoing + recurring'), 'Home must clearly disclose the ongoing vs limited split');
+    assert.ok(html.includes('<div class="catalog-metrics" aria-label="Catalog totals">'),
+      'catalog totals must have their own group separate from filtered search results');
+    assert.ok(html.includes('<span>All</span><strong>' + compactNumber(stats.total_services) + '</strong>'));
+    assert.ok(html.includes('<span>Free tiers</span><strong>' + compactNumber(stats.free_tier_count) + '</strong>'));
+    assert.ok(html.includes('<span>Limited offers</span><strong>' + compactNumber(stats.limited_offer_count) + '</strong>'));
+    assert.doesNotMatch(html, /result-breakdown/,
+      'do not stack catalog-wide counts as tiny text under active search results');
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
@@ -422,29 +427,29 @@ test('search result headline reflects matches rather than the entire offer pool'
   });
   assert.deepEqual(summarize(49, 926, 12, { q: 'chat' }), {
     label: 'Matching services', total: '49',
-    shown: 'Showing 12 of 49 · 926 services total'
+    shown: 'Showing 12 of 49'
   });
   assert.deepEqual(summarize(49, 926, 24, { q: 'chat', category: '' }), {
     label: 'Matching services', total: '49',
-    shown: 'Showing 24 of 49 · 926 services total'
+    shown: 'Showing 24 of 49'
   });
   assert.deepEqual(summarize(0, 926, 12, { q: 'notfound' }), {
     label: 'Matching services', total: '0',
-    shown: 'Showing 0 of 0 · 926 services total'
+    shown: 'Showing 0 of 0'
   });
   assert.deepEqual(summarize(4, 4, 12, { offer: 'limited' }), {
     label: 'Limited offers', total: '4', shown: 'Showing 4 of 4'
   });
   assert.deepEqual(summarize(1, 4, 12, { offer: 'limited', category: 'ai-assistants' }), {
     label: 'Matching services', total: '1',
-    shown: 'Showing 1 of 1 · 4 limited offers total'
+    shown: 'Showing 1 of 1'
   });
   assert.deepEqual(summarize(30, 30, 12, { offer: 'monthly-credit' }), {
     label: 'Monthly credits', total: '30', shown: 'Showing 12 of 30'
   });
   assert.deepEqual(summarize(13, 926, 12, { noCard: true }), {
     label: 'Matching services', total: '13',
-    shown: 'Showing 12 of 13 · 926 services total'
+    shown: 'Showing 12 of 13'
   });
   assert.deepEqual(summarize(926, 926, 12, { q: '   ', sort: 'newest' }), {
     label: 'All services', total: '926', shown: 'Showing 12 of 926'
@@ -456,7 +461,11 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' + compactNumber(catalog.length) + '</strong>'));
+    assert.ok(html.includes('<strong class="result-total">' + compactNumber(catalog.length) +
+      '</strong><span class="result-label">All services</span>'));
+    assert.match(html, /<div class="directory-heading-main"><h2>Explore services<\/h2>/);
+    assert.ok(html.includes('<div class="catalog-metrics" aria-label="Catalog totals">'));
+    assert.doesNotMatch(html, /result-breakdown/);
     assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
