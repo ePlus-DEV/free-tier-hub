@@ -1,0 +1,13 @@
+{
+  "id": "badsmtp",
+  "name": "BadSMTP",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0 self-hosted SMTP test server with configurable SMTP error responses, TLS/authentication simulations, message inspection and optional local storage; no vendor-imposed usage quota or expiry for the software.",
+  "watch_out": "Testing only: does not relay mail to real recipients. Bring your own host/CI resources and storage; GPL-3.0 obligations apply to redistribution. No free hosted SMTP delivery or infrastructure is included.",
+  "pricing_url": "https://github.com/BadSMTP/BadSMTP",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
