@@ -74,7 +74,8 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(bar.includes('class="category-shortcuts"'));
     assert.ok(bar.includes('</div><a class="category-index-shortcut" href="https://free-tier.eplus.dev/categories/"'),
       'all categories link is separate from and alongside quick filter controls');
-    assert.match(html, /id="category-filter"><option value="">All categories<\/option>/);
+    assert.ok(html.includes('id="category-filter"><option value="">All categories (' +
+      compactNumber(entries.length) + ')</option>'));
     assert.ok(html.includes('Browse all ' + CATEGORIES.length + ' categories'),
       'filter shortcut must display the current category count');
     assert.match(css, /\.catalog-toolbar \.category-bar\{display:flex;grid-column:1\/-1;gap:5px;min-width:0\}/);
@@ -119,23 +120,26 @@ test('directory exposes unique search/category controls and official sources for
       serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.match(badge, /<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
     assert.match(badge, /<text[^>]*>services<\/text>/);
-    // Hero totals are independent of sorting, pagination, or filters.
+    // No catalog-count decoration in Hero: the Offer type dropdown owns group totals.
     const hero = html.slice(html.indexOf('<section class="hero">'), html.indexOf('</section>', html.indexOf('<section class="hero">')));
-    assert.ok(hero.includes('<div class="hero-stats" role="group" aria-label="Catalog statistics">'),
-      'full catalog totals belong inside the Hero');
-    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.total_services) +
-      '</strong><span class="hero-stat-label">All services</span>'));
-    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.free_tier_count) +
-      '</strong><span class="hero-stat-label">Free tiers</span>'));
-    assert.ok(hero.includes('<strong class="hero-stat-value">' + compactNumber(stats.limited_offer_count) +
-      '</strong><span class="hero-stat-label">Limited offers</span>'));
+    assert.doesNotMatch(hero, /hero-stats|hero-stat-value/);
+    assert.doesNotMatch(css, /\.hero-stats\{/);
+    assert.ok(html.includes('<select id="offer-filter"><option value="">All services (' +
+      compactNumber(stats.total_services) + ')</option>'));
+    assert.ok(html.includes('<option value="free">Free tiers (' +
+      compactNumber(stats.free_tier_count) + ')</option>'));
+    assert.ok(html.includes('<option value="ongoing">Ongoing free allowance (' +
+      compactNumber(entries.filter(item => item.plan === 'ongoing').length) + ')</option>'));
+    assert.ok(html.includes('<option value="monthly-credit">Recurring monthly credit (' +
+      compactNumber(entries.filter(item => item.plan === 'monthly-credit').length) + ')</option>'));
+    assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' +
+      compactNumber(stats.limited_offer_count) + ')</option>'));
+    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' +
+      compactNumber(stats.total_services) + '</strong>'));
     assert.ok(html.includes('<span class="result-shown">Showing ' +
       compactNumber(Math.min(12, stats.free_tier_count)) + ' of ' + compactNumber(stats.total_services) + '</span>'));
-    assert.doesNotMatch(html, /catalog-metrics|result-breakdown/,
-      'do not repeat catalog totals inside the Explore heading');
-    assert.match(css, /\.hero-stats\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
-    assert.match(css, /\.hero-stat\+\.hero-stat\{border-left:1px solid var\(--line\)\}/);
-    assert.match(css, /@media\(max-width:680px\)\{\s*\.hero\{padding-bottom:20px\}/);
+    assert.match(css, /\.results-meta\{[^}]*margin-left:auto/);
+    assert.match(css, /@media\(max-width:680px\)\{\s*\.directory-heading\{flex-wrap:nowrap/);
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
@@ -157,8 +161,17 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /class="result-controls"><label class="sort-field"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
     assert.match(html, /<select id="offer-filter"><option value="">All services \(/);
-    assert.match(html, /<option value="free">Ongoing &amp; recurring free tiers \(/);
-    assert.match(html, /<option value="monthly-credit">Recurring monthly credit<\/option>/);
+    assert.match(html, /<option value="free">Free tiers \(/);
+    assert.match(html, /<option value="monthly-credit">Recurring monthly credit \(/);
+    for (const model of ['cloud', 'self-hosted', 'hybrid', 'local', 'unclassified']) {
+      const label = {
+        cloud: 'Cloud', 'self-hosted': 'Self-hosted', hybrid: 'Cloud + self-hosted',
+        local: 'Local / embedded', unclassified: 'Not specified'
+      }[model];
+      assert.ok(html.includes('<option value="' + model + '">' + label + ' (' +
+        compactNumber(searchIndex.rows.filter(row => row[4] === model).length) + ')</option>'),
+        'deployment model count for ' + model);
+    }
     assert.match(html, /<details class="classification-help"><summary>How are these offers classified\?<\/summary>/);
     for (const id of ['koyeb', 'steadystack-initiate']) {
       const entry = entries.find(s => s.id === id);
@@ -193,13 +206,15 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(detailCss, /main:has\(\.detail-mobile-action\)\{padding-bottom:/);
     assert.match(detailCss, /body:has\(\.detail-mobile-action\) \.back-to-top\{[\s\S]*?bottom:calc\(86px \+ env\(safe-area-inset-bottom\)\)/);
     assert.match(detailCss, /body:has\(\.detail-mobile-action\) \.site-footer\{/);
-    assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedEntries.length + ')</option>'));
+    assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' +
+      compactNumber(limitedEntries.length) + ')</option>'));
     assert.doesNotMatch(html, /Only ongoing free allowances and recurring credits are counted here/);
     assert.ok(html.includes('data-offer-plan="ongoing"'));
     assert.ok(searchIndex.rows.some(row => row[3] === 'monthly-credit'));
     assert.ok(searchIndex.rows.some(row => row[3] === 'limited-duration'));
     assert.ok(html.includes('data-filter-category="ci-cd"'));
-    assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines</option>'));
+    assert.ok(html.includes('<option value="ci-cd">CI/CD &amp; pipelines (' +
+      compactNumber(entries.filter(item => item.category === 'ci-cd').length) + ')</option>'));
     assert.ok(fs.existsSync(path.join(output, 'category/ci-cd/index.html')));
     const categoryHtml = fs.readFileSync(path.join(output, 'category/static-hosting/index.html'), 'utf8');
     assert.ok(categoryHtml.includes('class="service-grid category-service-grid" id="category-service-grid"'));
@@ -349,9 +364,10 @@ test('All services includes limited offers while the free-tier subset stays sepa
     assert.equal(result.service_count, all.length);
     assert.equal(result.free_tier_count, main.length);
     assert.equal(result.limited_offer_count, limited.length);
-    assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limited.length + ')</option>'));
-    assert.ok(home.includes('<strong class="hero-stat-value">' + compactNumber(all.length) +
-      '</strong><span class="hero-stat-label">All services</span>'));
+    assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' +
+      compactNumber(limited.length) + ')</option>'));
+    assert.ok(home.includes('<span class="result-label">All services</span><strong class="result-total">' +
+      compactNumber(all.length) + '</strong>'));
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, main.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));
@@ -470,17 +486,17 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<strong class="hero-stat-value">' + compactNumber(catalog.length) +
-      '</strong><span class="hero-stat-label">All services</span>'));
+    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' +
+      compactNumber(catalog.length) + '</strong>'));
     assert.match(html, /<div class="directory-heading"><h2>Explore services<\/h2>/);
-    assert.doesNotMatch(html, /catalog-metrics|result-breakdown/);
-    assert.doesNotMatch(html, /<strong class="result-total">/,
-      'unfiltered SSR result heading should not duplicate the Hero total');
+    assert.doesNotMatch(html, /catalog-metrics|result-breakdown|hero-stats/);
+    assert.ok(html.includes('<option value="free">Free tiers (' +
+      compactNumber(free.length) + ')</option>'));
     assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, free.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
-    assert.match(runtime, /totalBadge\.hidden = !hasFilters/);
-    assert.match(runtime, /totalLabel\.hidden = !hasFilters/);
+    assert.match(runtime, /count\.replaceChildren\(totalLabel, totalBadge, shownLabel\)/);
+    assert.doesNotMatch(runtime, /totalBadge\.hidden = !hasFilters/);
     assert.doesNotMatch(runtime, /totalBadge\.textContent = String\(pool\.length\)/);
   } finally { fs.rmSync(output, { recursive: true, force: true }); }
 });
