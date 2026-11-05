@@ -13442,6 +13442,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "soft-ground-api-tester",
+    "name": "Soft Ground API Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local desktop and self-hosted Docker API testing software; saved requests, history, variables, chained scenarios and CSV/JSON-driven test runs; no software seat or request quota advertised.",
+    "watch_out": "Self-hosted deployment requires Docker and PostgreSQL; hosting, storage, target API usage and network costs are not included. Server executes requests and stores request/response history, so secure credentials and access before public exposure.",
+    "pricing_url": "https://github.com/soft-ground/api-tester",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "sosse-self-hosted-search-archive",
     "name": "Sosse Self-Hosted Search and Web Archive",
     "category": "search",
