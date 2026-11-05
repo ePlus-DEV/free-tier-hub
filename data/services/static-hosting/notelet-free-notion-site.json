@@ -1,0 +1,13 @@
+{
+  "id": "notelet-free-notion-site",
+  "name": "Notelet Free Notion Website Hosting",
+  "category": "static-hosting",
+  "plan": "ongoing",
+  "free_limit": "1 hosted website or blog on a free notelet.so subdomain, edited from Notion; no published expiry for the free site allowance.",
+  "watch_out": "Custom domains and additional sites require the paid $7/month offering. Card requirement, traffic/storage caps, commercial-use terms and overage behavior are not explicitly confirmed on the public landing page; manual review required before treating as production-ready.",
+  "pricing_url": "https://notelet.so/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-05",
+  "deployment_model": "cloud"
+}
