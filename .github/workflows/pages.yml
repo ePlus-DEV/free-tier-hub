@@ -95,6 +95,8 @@ jobs:
           test -s dist/llms.txt
           test -s dist/agents.md
           test -s dist/catalog.json
+          test -s dist/catalog-stats.json
+          test -s dist/badges/services.svg
           test -s dist/search/index.json
           test -s dist/search/cards/static-hosting.json
           test -s dist/badges/categories/static-hosting.svg
@@ -214,6 +216,50 @@ jobs:
             if (attempt < 6) await new Promise(resolve => setTimeout(resolve, 15000));
           }
           console.error('::error::Deployed search index does not match canonical main catalog: ' + failure);
+          process.exit(1);
+          NODE
+      - name: Verify deployed README badge, stats and Home totals
+        env:
+          PUBLIC_ORIGIN: https://free-tier.eplus.dev/
+        run: |
+          node --input-type=module <<'NODE'
+          import { loadServices } from './scripts/catalog-source.mjs';
+          import { compactNumber } from './site/assets/compact-numbers.js';
+          const entries = loadServices();
+          const expected = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length;
+          const expectedLimited = entries.length - expected;
+          const display = compactNumber(expected);
+          let failure = '';
+          for (let attempt = 1; attempt <= 6; attempt++) {
+            try {
+              const suffix = '?verify=' + process.env.GITHUB_SHA + '-' + attempt;
+              const urls = ['catalog-stats.json', 'badges/services.svg', ''];
+              const results = await Promise.all(urls.map(async file => {
+                const response = await fetch(process.env.PUBLIC_ORIGIN + file + suffix, {
+                  headers: { 'Cache-Control': 'no-cache' },
+                  signal: AbortSignal.timeout(15000),
+                });
+                if (!response.ok) throw Error(file + ': HTTP ' + response.status);
+                return response;
+              }));
+              const [stats, badge, home] = await Promise.all([
+                results[0].json(), results[1].text(), results[2].text()
+              ]);
+              if (stats.free_tier_count !== expected ||
+                  stats.limited_offer_count !== expectedLimited ||
+                  stats.total_services !== entries.length) throw Error('Deployed catalog stats do not match main');
+              if (!badge.includes('<title>' + expected + ' ongoing free tiers and recurring credits</title>') ||
+                  !badge.includes('>' + display + '</text>')) throw Error('README badge SVG count is stale or invalid');
+              if (!home.includes('<strong class="result-total">' + display + '</strong>')) {
+                throw Error('Home free-tier count does not match README badge');
+              }
+              console.log('Live service badge verified:', expected, 'ongoing and recurring;', expectedLimited, 'limited');
+              process.exit(0);
+            } catch (error) { failure = error.message; }
+            console.log('Badge verification attempt ' + attempt + '/6: ' + failure);
+            if (attempt < 6) await new Promise(resolve => setTimeout(resolve, 15000));
+          }
+          console.error('::error::Deployed README badge or stats do not match Home: ' + failure);
           process.exit(1);
           NODE
       - name: Require a successful Pages deployment
