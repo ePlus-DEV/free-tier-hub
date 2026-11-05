@@ -32,9 +32,12 @@ test('malformed columns and separators fail; fenced sample is ignored', () => {
   assert.deepEqual(scanTables('~~~md\n| sample | row |\n| missing |\n~~~', 'test.md').errors, []);
 });
 test('badge, README count, category row and extra table corruptions fail', () => {
-  const wrongBadge = readme.replace('badges/services.svg', 'badges/incorrect.svg');
-  assert.notEqual(wrongBadge, readme);
-  assert.ok(validateDocuments(ROOT, data, wrongBadge, pages).some(x => x.includes('badge')));
+  for (const file of ['services.svg', 'free-tiers.svg', 'limited-offers.svg']) {
+    const wrongBadge = readme.replace('badges/' + file, 'badges/incorrect.svg');
+    assert.notEqual(wrongBadge, readme);
+    assert.ok(validateDocuments(ROOT, data, wrongBadge, pages).some(x => x.includes('badge')),
+      'must reject incorrect ' + file + ' badge URL');
+  }
   const row = '| Static & frontend hosting | ' + categoryCountBadge('static-hosting') + ' |';
   const wrongCount = readme.replace(row, '| Static & frontend hosting | 999 |');
   assert.notEqual(wrongCount, readme);
