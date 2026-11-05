@@ -892,6 +892,13 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     file(output, 'search/cards/' + category + '.json', JSON.stringify(fragments) + '\n');
   }
   file(output, 'catalog.json', JSON.stringify(items, null, 2) + '\n');
+  // GitHub README's dynamic badge must show the same number as the Home directory.
+  // Keep the full public catalog unchanged for existing API consumers.
+  file(output, 'catalog-stats.json', JSON.stringify({
+    free_tier_count: mainItems.length,
+    limited_offer_count: limitedItems.length,
+    total_services: items.length,
+  }, null, 2) + '\n');
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }

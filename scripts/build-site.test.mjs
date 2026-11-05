@@ -104,6 +104,15 @@ test('directory exposes unique search/category controls and official sources for
     assert.equal(result.service_count, entries.length);
     const published = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     assert.equal(published.length, entries.length);
+    const stats = JSON.parse(fs.readFileSync(path.join(output, 'catalog-stats.json'), 'utf8'));
+    assert.deepEqual(stats, {
+      free_tier_count: mainEntries.length,
+      limited_offer_count: limitedEntries.length,
+      total_services: entries.length,
+    });
+    assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
+    assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.free_tier_count) + '</strong>'),
+      'README badge stats and Home directory must have identical counts');
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
@@ -282,6 +291,10 @@ test('category count badges are generated from source JSON and update on rebuild
     fs.writeFileSync(source, JSON.stringify(items));
     const second = path.join(tmp, 'second');
     build(second, undefined, source);
+    const stats = JSON.parse(fs.readFileSync(path.join(second, 'catalog-stats.json'), 'utf8'));
+    assert.equal(stats.total_services, items.length, 'badge stats must update on rebuild');
+    assert.equal(stats.free_tier_count, items.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length);
+    assert.equal(stats.limited_offer_count, items.length - stats.free_tier_count);
     const category = items[0].category;
     const count = items.filter(item => item.category === category &&
       (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
