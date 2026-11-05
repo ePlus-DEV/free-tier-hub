@@ -1,0 +1,13 @@
+{
+  "id": "mailcue-self-hosted-email-testing-server",
+  "name": "MailCue Self-Hosted Email Testing Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted email testing stack with SMTP capture, IMAP/POP3, web UI, REST API, DKIM/DMARC checks and spam filtering; no vendor-enforced usage quota or expiry for the self-managed software.",
+  "watch_out": "Self-hosted software only: provide and pay for your own Docker host, storage, network, DNS and email infrastructure. Default demo credentials must be changed; production mode can send real email and requires security hardening. No free hosted email delivery, compute or storage is included.",
+  "pricing_url": "https://github.com/Olib-AI/mailcue",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
