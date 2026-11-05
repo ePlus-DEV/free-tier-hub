@@ -417,35 +417,23 @@ body.filter-sheet-open{overflow:hidden}
 
 
 
-/* Catalog-wide figures live in the Hero, separate from transient search results. */
-.hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:650px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-.hero-stat{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;gap:4px;padding:0 20px;color:var(--ink);text-decoration:none}
-.hero-stat:first-child{padding-left:0}
-.hero-stat+.hero-stat{border-left:1px solid var(--line)}
-.hero-stat-value{color:var(--ink);font-size:clamp(22px,2.3vw,28px);font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.035em;line-height:1.2}
-.hero-stat-label{color:var(--muted);font-size:12px;line-height:1.4}
-.hero-stat-link:hover .hero-stat-label{color:var(--brand-ink);text-decoration:underline;text-underline-offset:3px}
-.hero-stat-link:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:4px}
+/* Keep the dynamic result total aligned right. Catalog-wide totals now live
+   inside the existing offer/category/deployment dropdown options, not the Hero. */
 .directory-heading{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;margin:24px 0 18px}
 .directory-heading h2{margin:0;font-size:22px;line-height:1.3;letter-spacing:-.035em}
-.results-meta{display:flex;align-items:flex-end;justify-content:flex-end;min-width:0}
+.results-meta{display:flex;align-items:flex-end;justify-content:flex-end;min-width:0;margin-left:auto}
 .result-count{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:1px 7px;margin:0;text-align:right}
 .result-total{padding:0;border:0;background:none;color:var(--brand-ink);font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;line-height:1.2}
 .result-label{color:var(--ink-soft);font-size:12px;font-weight:500}
-.result-shown{grid-column:1/-1;color:var(--muted);font-size:12px;line-height:1.5}
+.result-shown{grid-column:1/-1;color:var(--muted);font-size:11px;line-height:1.5}
 @media(max-width:680px){
-.hero{padding-bottom:20px}
-.hero-stats{max-width:none;margin-top:18px;padding-top:14px}
-.hero-stat{gap:4px;padding:0 10px}
-.hero-stat-value{font-size:clamp(19px,5.3vw,24px)}
-.hero-stat-label{font-size:11px}
-.directory-heading{flex-wrap:wrap;gap:4px 12px;margin:18px 0 14px}
-.directory-heading h2{font-size:20px}
-.results-meta{align-items:flex-start;justify-content:flex-start;width:100%}
-.result-count{display:flex;align-items:baseline;justify-content:flex-start;flex-wrap:wrap;gap:3px 6px;text-align:left}
-.result-total{font-size:20px}
-.result-label{font-size:12px}
-.result-shown{width:100%;font-size:12px}
+.directory-heading{flex-wrap:nowrap;gap:8px;margin:18px 0 14px}
+.directory-heading h2{flex:0 1 auto;min-width:0;font-size:18px}
+.results-meta{align-items:flex-end;justify-content:flex-end;max-width:60%}
+.result-count{gap:1px 5px}
+.result-total{font-size:19px}
+.result-label{font-size:11px}
+.result-shown{font-size:10px}
 }
 
 /* One compact phone row; secondary conditions live in the existing filter sheet. */
