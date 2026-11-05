@@ -1,0 +1,13 @@
+{
+  "id": "formflow-self-hosted",
+  "name": "FormFlow Self-Hosted Forms",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted conversational form and survey builder with conditional logic, response analytics, CSV/JSON export and SQLite storage; no vendor-imposed per-response fee, software subscription or expiry.",
+  "watch_out": "Free software only; Docker/server, storage, backups, TLS and outbound connectivity are self-managed and may cost money. Default public write rate limit is 120 requests/IP/minute and upload limit is 10 MB, both configurable. New project with limited adoption; secure first administrator registration before exposing publicly.",
+  "pricing_url": "https://github.com/authorTom/formflow",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-05",
+  "deployment_model": "self-hosted"
+}
