@@ -12909,6 +12909,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "messagepit-email-sms-testing",
+    "name": "MessagePit Email and SMS Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local/self-hosted email and SMS testing software with SMTP capture, SendGrid v3 API stub, Twilio-compatible SMS ingest, webhook capture, delivery-event simulation, web UI and Docker deployment; no vendor-imposed software quota or expiration.",
+    "watch_out": "Unofficial Mailpit fork adding distinct SMS and provider API simulation; existing Mailpit catalog entry covers email-only testing. Intended for local/development/staging testing, not actual SMS or email delivery. Self-hosting hardware, storage, network and maintenance are user-provided; protect exposed ports and optional authentication. No free hosted infrastructure included.",
+    "pricing_url": "https://github.com/coreydaley/messagepit",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mock-service-worker-local",
     "name": "Mock Service Worker Local API Mocking",
     "category": "testing-qa",
