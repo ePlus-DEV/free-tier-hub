@@ -997,19 +997,15 @@
       q: search.value, category: category, hosting: hostingModel, offer: offerType,
       noCard: noCard.checked, commercial: commercial.checked
     });
-    // Hero already shows the full catalog count; highlight an additional
-    // total here only when the visitor has narrowed the result set.
-    var hasFilters = !!(term || category || hostingModel || offerType ||
-      (noCard && noCard.checked) || (commercial && commercial.checked));
+    // The right-hand counter owns the current result total for both unfiltered
+    // and filtered views. Dropdown options disclose each catalog-wide scope.
     var totalBadge = document.createElement("strong");
     totalBadge.className = "result-total";
-    totalBadge.hidden = !hasFilters;
     totalBadge.textContent = compactUiCount(summary.total);
     totalBadge.title = summary.total;
     totalBadge.setAttribute("aria-label", summary.total + " results");
     var totalLabel = document.createElement("span");
     totalLabel.className = "result-label";
-    totalLabel.hidden = !hasFilters;
     totalLabel.textContent = summary.label;
     var shownLabel = document.createElement("span");
     shownLabel.className = "result-shown";
