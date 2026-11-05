@@ -270,9 +270,8 @@ function document(absolute, title, description, relative, content, structuredDat
 function homePage(items, absolute, counts, searchVersion) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
-  // Keep limited entries present for the Offer type filter, but hidden by default.
-  // Server-render only the first 12 ongoing cards. Other results are loaded
-  // from lean search metadata and category HTML fragments on demand.
+  // Show the full catalog in All services. Server-render the first 12 ongoing
+  // cards for a stable initial view; interactive search includes all offers.
   const cards = mainItems.slice(0, 12).map(item => card(item, absolute)).join('');
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) + '</option>').join('');
@@ -320,7 +319,8 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
     '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
-    '<select id="offer-filter"><option value="">All free tiers</option>',
+    '<select id="offer-filter"><option value="">All services (', items.length, ')</option>',
+    '<option value="free">Ongoing &amp; recurring free tiers (', mainItems.length, ')</option>',
     '<option value="ongoing">Ongoing free allowance</option>',
     '<option value="monthly-credit">Recurring monthly credit</option>',
     '<option value="limited">Time-limited &amp; expiring offers (', limitedItems.length,
@@ -348,9 +348,9 @@ function homePage(items, absolute, counts, searchVersion) {
     '<button id="clear-filters" class="clear-filters" type="button">Clear</button></div></div>',
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
-    '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">Total free tiers</span><strong class="result-total">',
-    compactNumber(mainItems.length), '</strong><span class="result-shown">Showing ', compactNumber(Math.min(12, mainItems.length)),
-    ' of ', compactNumber(mainItems.length), '</span></p>',
+    '<p class="result-count" id="results-count" aria-live="polite"><span class="result-label">All services</span><strong class="result-total">',
+    compactNumber(items.length), '</strong><span class="result-shown">Showing ', compactNumber(Math.min(12, mainItems.length)),
+    ' of ', compactNumber(items.length), '</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -629,19 +629,20 @@ function comparePage(absolute) {
 }
 // GitHub Markdown cannot evaluate JSON. These SVG badges are generated
 // directly from the same canonical free-tier subset as the Home page.
-export function serviceCountSVG(count) {
-  if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid free-tier count');
+export function serviceCountSVG(count, label = 'services') {
+  if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid service count');
+  if (!['services', 'free tiers', 'limited offers'].includes(label)) throw Error('Invalid service badge label');
   const display = compactNumber(count);
-  const labelWidth = 72;
+  const labelWidth = Math.max(72, 16 + label.length * 7);
   const valueWidth = Math.max(45, 18 + display.length * 8);
   const width = labelWidth + valueWidth;
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
-    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + count + ' ongoing free tiers and recurring credits">' +
-    '<title>' + count + ' ongoing free tiers and recurring credits</title>' +
+    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + count + ' ' + label + '">' +
+    '<title>' + count + ' ' + label + '</title>' +
     '<rect width="' + width + '" height="22" rx="4" fill="#168b47"/>' +
-    '<path d="M4 0H72V22H4A4 4 0 0 1 0 18V4A4 4 0 0 1 4 0Z" fill="#414852"/>' +
-    '<text x="36" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" ' +
-    'font-size="11" font-weight="600">services</text>' +
+    '<path d="M4 0H' + labelWidth + 'V22H4A4 4 0 0 1 0 18V4A4 4 0 0 1 4 0Z" fill="#414852"/>' +
+    '<text x="' + (labelWidth / 2) + '" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" ' +
+    'font-size="11" font-weight="600">' + label + '</text>' +
     '<text x="' + (labelWidth + valueWidth / 2) + '" y="15" text-anchor="middle" fill="#ffffff" ' +
     'font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">' + display + '</text></svg>';
 }
@@ -718,8 +719,12 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       [item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
     ])
   };
+  // Category directory pages continue to list ongoing/recurring offers only.
+  // Home's All services shortcuts must instead count every searchable offer.
   const counts = Object.fromEntries(CATEGORIES.map(category =>
     [category, mainItems.filter(item => item.category === category).length]));
+  const homeCounts = Object.fromEntries(CATEGORIES.map(category =>
+    [category, items.filter(item => item.category === category).length]));
   const latest = items.map(item => item.last_checked).sort().at(-1);
   const pageURLs = [];
   const siteName = 'Free Tier Hub';
@@ -739,7 +744,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, 'index.html', document(absolute,
     'Free Tier Hub | Free Hosting, Cloud, Databases & Developer Tools',
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
-    '', homePage(items, absolute, counts, searchVersion), homeSchema));
+    '', homePage(items, absolute, homeCounts, searchVersion), homeSchema));
   pageURLs.push(['', latest]);
   const categoriesRelative = 'categories/';
   const categoriesSchema = { '@context': 'https://schema.org', '@graph': [
@@ -915,7 +920,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     limited_offer_count: limitedItems.length,
     total_services: items.length,
   }, null, 2) + '\n');
-  file(output, 'badges/services.svg', serviceCountSVG(mainItems.length));
+  file(output, 'badges/services.svg', serviceCountSVG(items.length));
+  file(output, 'badges/free-tiers.svg', serviceCountSVG(mainItems.length, 'free tiers'));
+  file(output, 'badges/limited-offers.svg', serviceCountSVG(limitedItems.length, 'limited offers'));
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }
