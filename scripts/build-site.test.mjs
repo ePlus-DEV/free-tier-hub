@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
+import { build, categoryCountSVG, serviceCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
 
@@ -111,6 +111,10 @@ test('directory exposes unique search/category controls and official sources for
       total_services: entries.length,
     });
     assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
+    const badge = fs.readFileSync(path.join(output, 'badges/services.svg'), 'utf8');
+    assert.equal(badge, serviceCountSVG(stats.free_tier_count));
+    assert.match(badge, /<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+    assert.match(badge, /<text[^>]*>services<\/text>/);
     assert.ok(html.includes('<strong class="result-total">' + compactNumber(stats.free_tier_count) + '</strong>'),
       'README badge stats and Home directory must have identical counts');
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
@@ -295,6 +299,11 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.equal(stats.total_services, items.length, 'badge stats must update on rebuild');
     assert.equal(stats.free_tier_count, items.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length);
     assert.equal(stats.limited_offer_count, items.length - stats.free_tier_count);
+    const firstBadge = fs.readFileSync(path.join(first, 'badges/services.svg'), 'utf8');
+    const nextBadge = fs.readFileSync(path.join(second, 'badges/services.svg'), 'utf8');
+    assert.equal(nextBadge, serviceCountSVG(stats.free_tier_count));
+    assert.notEqual(nextBadge, firstBadge, 'badge must update when an ongoing service is added');
+    assert.throws(() => serviceCountSVG(-1), /Invalid free-tier count/);
     const category = items[0].category;
     const count = items.filter(item => item.category === category &&
       (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
