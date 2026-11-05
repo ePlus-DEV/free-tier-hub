@@ -13065,6 +13065,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "notifkit",
+    "name": "notifkit",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted notification infrastructure with no vendor-imposed message quota or software expiry; email, SMS, push, chat and webhook routing via bring-your-own providers.",
+    "watch_out": "Requires self-managed Node.js, PostgreSQL, Redis and hosting; third-party email/SMS/push providers may charge per message. No free hosted infrastructure or delivery credits included.",
+    "pricing_url": "https://github.com/devkitshq/notifkit",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "nx-open-source-local-build",
     "name": "Nx Open-Source Monorepo Build CLI (Local)",
     "category": "ci-cd",
