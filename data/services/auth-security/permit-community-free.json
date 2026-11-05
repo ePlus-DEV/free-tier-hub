@@ -4,7 +4,7 @@
   "category": "auth-security",
   "plan": "ongoing",
   "free_limit": "1,000 monthly active users; 20 tenants; unlimited authorization queries; 3 environments; 25 roles",
-  "watch_out": "Single deployment region; 14-day log retention; best-effort cloud uptime/support; enterprise compliance and SSO not included. Commercial-use terms not explicitly confirmed.",
+  "watch_out": "Community is Free Forever for up to 1,000 MAU and 20 tenants. The 14-day audit-log retention advertised on the provider's payment comparison is a Pro feature, not a verified Community allowance; do not assume it is included in Free. Enterprise compliance, SSO and premium support require separate terms. Commercial-use rights remain unconfirmed.",
   "pricing_url": "https://www.permit.io/pricing",
   "credit_card": "no",
   "commercial_use": "check",
