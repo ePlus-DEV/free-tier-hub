@@ -417,23 +417,34 @@ body.filter-sheet-open{overflow:hidden}
 
 
 
-/* Keep catalog size and the visible/filtered subset together with explicit labels. */
-.directory-heading{align-items:center;justify-content:space-between;gap:8px 16px}
-.results-meta{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:3px;flex:1;min-width:0}
-.result-breakdown{margin:0;color:var(--muted);font-size:10px;line-height:1.4;text-align:right}
-.result-breakdown a{color:var(--brand-ink);text-decoration:underline;text-underline-offset:2px}
-.result-count{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:1px 8px;margin:0;text-align:right}
+/* Keep catalog-wide totals separate from the active search results.
+   No stacked microcopy or repeated catalog totals in a narrow counter. */
+.directory-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px 20px;margin:24px 0 18px}
+.directory-heading-main{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0}
+.directory-heading h2{margin:0;font-size:22px;line-height:1.3;letter-spacing:-.035em}
+.catalog-metrics{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-width:0}
+.catalog-metric{display:inline-flex;align-items:baseline;gap:7px;padding:5px 9px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink-soft);font-size:11px;line-height:1.35;white-space:nowrap}
+.catalog-metric strong{color:var(--ink);font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.catalog-metric-link{text-decoration:none}
+.catalog-metric-link:hover,.catalog-metric-link:focus-visible{border-color:var(--brand);color:var(--brand-ink)}
+.catalog-metric-link:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.results-meta{display:flex;align-items:flex-end;justify-content:flex-end;min-width:0}
+.result-count{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:1px 7px;margin:0;text-align:right}
+.result-total{padding:0;border:0;background:none;color:var(--brand-ink);font-size:24px;font-weight:750;font-variant-numeric:tabular-nums;line-height:1.2}
 .result-label{color:var(--ink-soft);font-size:12px;font-weight:500}
-.result-total{padding:0;border:0;background:none;color:var(--brand-ink);font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;line-height:1.2}
 .result-shown{grid-column:1/-1;color:var(--muted);font-size:11px;line-height:1.5}
 @media(max-width:680px){
-.directory-heading{flex-wrap:nowrap;gap:8px}
-.directory-heading h2{flex-basis:auto;font-size:18px}
-.results-meta{flex-basis:auto}
-.result-count{gap:1px 5px}
-.result-label{font-size:11px}
-.result-total{font-size:19px}
-.result-shown{font-size:10px}
+.directory-heading{grid-template-columns:minmax(0,1fr);gap:10px;margin:20px 0 14px}
+.directory-heading-main{gap:8px;width:100%}
+.directory-heading h2{font-size:20px}
+.catalog-metrics{gap:6px}
+.catalog-metric{padding:6px 8px;font-size:11px}
+.catalog-metric strong{font-size:12px}
+.results-meta{align-items:flex-start;justify-content:flex-start;width:100%}
+.result-count{display:flex;align-items:baseline;justify-content:flex-start;flex-wrap:wrap;gap:3px 6px;text-align:left}
+.result-total{font-size:20px}
+.result-label{font-size:12px}
+.result-shown{width:100%;font-size:11px}
 }
 
 /* One compact phone row; secondary conditions live in the existing filter sheet. */
