@@ -396,8 +396,8 @@ body.filter-sheet-open{overflow:hidden}
 .card-filter-link::before{content:"";position:absolute;inset:-5px -2px}
 
 
-.cookie-notice{position:fixed;inset:auto 16px 16px;z-index:1100;display:flex;align-items:center;gap:16px;max-width:960px;margin:auto;padding:14px 18px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow-hover)}
-.cookie-notice p{margin:0;flex:1;font-size:12px;line-height:1.6}
+.cookie-notice{position:fixed;inset:auto 16px calc(16px + env(safe-area-inset-bottom,0px));z-index:1100;display:flex;align-items:center;gap:16px;max-width:960px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px - env(safe-area-inset-bottom,0px));margin:auto;padding:14px 18px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow-hover);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.cookie-notice p{margin:0;flex:1;min-width:0;overflow-wrap:anywhere;font-size:12px;line-height:1.6}
 .cookie-actions{display:flex;gap:8px;flex-shrink:0}
 .cookie-actions button,.cookie-settings,.history-clear{min-height:36px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--brand-ink);font-size:12px}
 .cookie-actions button:last-child{background:var(--brand);color:#fff;border-color:var(--brand)}
@@ -408,7 +408,12 @@ body.filter-sheet-open{overflow:hidden}
 .history-item{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface-muted);color:var(--ink-soft);font-size:12px;text-align:left;overflow-wrap:anywhere}
 .history-item:hover{border-color:var(--brand);color:var(--brand-ink)}
 .history-clear{margin-top:8px}
-@media(max-width:680px){.cookie-notice{inset:auto 10px 10px;padding:12px;gap:10px;align-items:stretch;flex-direction:column}.cookie-actions{justify-content:flex-end}}
+@media(max-width:680px){
+.cookie-notice{inset:auto calc(10px + env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) calc(10px + env(safe-area-inset-left,0px));width:auto;min-width:0;max-width:none;max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));padding:14px;gap:12px;align-items:stretch;flex-direction:column}
+.cookie-notice p{font-size:13px;line-height:1.55}
+.cookie-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:10px}
+.cookie-actions button{min-width:0;min-height:44px;padding:10px 12px;font-size:14px}
+}
 
 
 

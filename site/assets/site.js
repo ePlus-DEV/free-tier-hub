@@ -31,8 +31,31 @@
   } else {
     window.addEventListener("resize", syncHeaderHeight);
   }
-  var consent = null;
-  try { consent = window.localStorage.getItem('fth-consent-v1'); } catch (_error) {}
+  // Safari can block or clear localStorage independently of first-party cookies.
+  // Keep a strictly scoped preference cookie as a fallback, not as a tracker.
+  var consentKey = 'fth-consent-v1';
+  function isValidConsent(value) {
+    return value === 'accepted' || value === 'rejected';
+  }
+  function readConsent() {
+    var stored = null;
+    try { stored = window.localStorage.getItem(consentKey); } catch (_error) {}
+    if (isValidConsent(stored)) return stored;
+    try {
+      var match = document.cookie.match(/(?:^|;\s*)fth-consent-v1=(accepted|rejected)(?:;|$)/);
+      if (match) return match[1];
+    } catch (_error) {}
+    return null;
+  }
+  function persistConsent(choice) {
+    try { window.localStorage.setItem(consentKey, choice); } catch (_error) {}
+    try {
+      document.cookie = consentKey + '=' + choice +
+        '; Max-Age=31536000; Path=/; SameSite=Lax' +
+        (window.location.protocol === 'https:' ? '; Secure' : '');
+    } catch (_error) {}
+  }
+  var consent = readConsent();
   var analyticsLoaded = false;
   function loadAnalytics() {
     var config = document.querySelector('meta[name="fth-analytics"]');
@@ -66,33 +89,47 @@
   var cookieSettings = document.createElement('button');
   cookieSettings.type = 'button'; cookieSettings.className = 'cookie-settings';
   cookieSettings.textContent = 'Cookie settings';
-  cookieSettings.addEventListener('click', function () { notice.hidden = false; acceptCookies.focus(); });
+  var consentOpenedFromSettings = false;
+  cookieSettings.addEventListener('click', function () {
+    consentOpenedFromSettings = true;
+    notice.hidden = false;
+    acceptCookies.focus();
+  });
   (document.querySelector('footer') || document.body).appendChild(cookieSettings);
   function chooseConsent(choice) {
     consent = choice;
-    try {
-      window.localStorage.setItem('fth-consent-v1', choice);
-      if (choice === 'rejected') {
-        ['fth-directory-last', 'fth-directory-history', 'fth-sort'].forEach(function (key) { window.localStorage.removeItem(key); });
-      }
-    } catch (_error) {}
+    persistConsent(choice);
+    if (choice === 'rejected') {
+      ['fth-directory-last', 'fth-directory-history', 'fth-sort'].forEach(function (key) {
+        try { window.localStorage.removeItem(key); } catch (_error) {}
+      });
+    }
     notice.hidden = true;
-    cookieSettings.focus({preventScroll:true});
+    // The footer settings control can be far off-screen on iPhone. Do not
+    // jump down the page after dismissing a first-visit consent banner.
+    if (consentOpenedFromSettings) {
+      consentOpenedFromSettings = false;
+      try { cookieSettings.focus({ preventScroll: true }); } catch (_error) { cookieSettings.focus(); }
+    }
     window.dispatchEvent(new Event('fth-consent-change'));
     if (choice === 'rejected') {
       // Revoke a previously loaded analytics session and remove its first-party cookies.
       var config = document.querySelector('meta[name="fth-analytics"]');
       if (config) window['ga-disable-' + config.content] = true;
-      document.cookie.split(';').forEach(function (cookie) {
-        var name = cookie.split('=')[0].trim();
-        if (!/^_ga(?:_|$)/.test(name)) return;
-        var domains = window.location.hostname.split('.');
-        document.cookie = name + '=; Max-Age=0; path=/';
-        while (domains.length > 1) {
-          document.cookie = name + '=; Max-Age=0; path=/; domain=.' + domains.join('.');
-          domains.shift();
-        }
-      });
+      try {
+        document.cookie.split(';').forEach(function (cookie) {
+          var name = cookie.split('=')[0].trim();
+          if (!/^_ga(?:_|$)/.test(name)) return;
+          var domains = window.location.hostname.split('.');
+          document.cookie = name + '=; Max-Age=0; path=/';
+          while (domains.length > 1) {
+            document.cookie = name + '=; Max-Age=0; path=/; domain=.' + domains.join('.');
+            domains.shift();
+          }
+        });
+      } catch (_error) {
+        // Cookie access can be denied by Safari privacy settings.
+      }
       if (analyticsLoaded) window.location.reload();
     } else loadAnalytics();
   }
