@@ -116,9 +116,13 @@ test('manual candidate queue uses trusted REST issue author association', () => 
   assert.match(workflow, /\[\[ "\$ISSUE_NUMBER" =~ \^\[0-9\]\+\$ \]\]/);
   assert.match(workflow, /gh api "repos\/\$GITHUB_REPOSITORY\/issues\/\$ISSUE_NUMBER" > \/tmp\/issue\.json/);
   assert.doesNotMatch(workflow, /gh issue view "[^"]+" --json[^\n]*authorAssociation/);
-  assert.match(workflow, /issue\.state !== 'open' \|\| issue\.pull_request/);
+  // Both invalid Issue cases are checked separately to give actionable errors.
+  assert.match(workflow, /if \(issue\.pull_request\) throw Error/);
+  assert.match(workflow, /if \(issue\.state !== 'open'\) throw Error/);
   assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]\.includes\(issue\.author_association\)/);
-  assert.match(workflow, /\['OWNER', 'MEMBER', 'COLLABORATOR'\]\.includes\(issue\.author_association\)/);
+  assert.match(workflow, /fs\.appendFileSync\(process\.env\.GITHUB_STEP_SUMMARY/);
+  assert.match(workflow, /process\.env\.GITHUB_EVENT_NAME === 'workflow_dispatch'/);
+  assert.match(workflow, /throw Error\('Manual delivery blocked: missing valid trusted deployment evidence comment'\)/);
   assert.match(workflow, /if: steps\.capacity\.outputs\.available == 'true'/);
   assert.match(workflow, /open_count" -ge 3/);
 });
@@ -140,6 +144,14 @@ test('candidate delivery validates the committed service before branch push', ()
   assert.ok(commit >= 0 && commit < verify && verify < checked && checked < push,
     'verify the actual local commit before pushing the candidate branch');
   assert.match(delivery, /git ls-remote --exit-code --heads origin/);
+  assert.match(delivery, /ACTUAL_FILES=.*git diff --name-only/, 'reuse only a branch changing its expected shard');
+  assert.match(delivery, /Existing branch .* has unexpected changes; manual review required/,
+    'reject an existing branch with unexpected changes');
+  assert.match(delivery, /Existing branch shard differs from validated candidate/,
+    'reject an existing branch with altered candidate contents');
+  assert.match(delivery, /Reusing existing validated delivery branch/,
+    'resume interrupted delivery without rewriting an existing branch');
+  assert.doesNotMatch(delivery, /git push --force/, 'never overwrite existing delivery history');
   assert.match(delivery, /x-access-token:\$BOT_TOKEN@github.com/, 'branch push uses the bot token to trigger PR CI');
   assert.doesNotMatch(workflow, /git commit --allow-empty/, 'no synthetic CI-trigger commit');
   assert.match(workflow, /writeService\(process\.cwd\(\), candidate\)/,
