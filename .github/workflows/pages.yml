@@ -265,8 +265,11 @@ jobs:
                 }
               }
               if (!home.includes('<strong class="result-total">' + display + '</strong>') ||
-                  !home.includes('class="result-breakdown">' + freeDisplay + ' ongoing + recurring')) {
-                throw Error('Home All services count or free-tier breakdown does not match README badges');
+                  !home.includes('<div class="catalog-metrics" aria-label="Catalog totals">') ||
+                  !home.includes('<span>All</span><strong>' + display + '</strong>') ||
+                  !home.includes('<span>Free tiers</span><strong>' + freeDisplay + '</strong>') ||
+                  !home.includes('<span>Limited offers</span><strong>' + limitedDisplay + '</strong>')) {
+                throw Error('Home catalog metrics or active result count do not match README badges');
               }
               console.log('Live service badges verified:', entries.length, 'all;',
                 expected, 'ongoing and recurring;', expectedLimited, 'limited');
