@@ -12519,6 +12519,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "gomailtesttool",
+    "name": "gomailtesttool",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local command-line toolkit for testing SMTP, IMAP, POP3, JMAP, Exchange EWS, Microsoft Graph and Gmail connectivity, authentication, mail operations and TLS; no software subscription, usage quota or expiry.",
+    "watch_out": "Runs on the user's Windows, Linux or macOS machine; not a hosted email service, inbox or free email sending allowance. Real mail accounts, Microsoft 365/Google Workspace access, credentials, network connectivity and provider API limits or fees remain separate. Some commands can send, export or delete real messages.",
+    "pricing_url": "https://github.com/ehlo-pl/gomailtesttool",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-05",
+    "deployment_model": "local"
+  },
+  {
     "id": "greenmail-open-source-email-testing",
     "name": "GreenMail Open-Source Email Testing",
     "category": "email-notifications",
