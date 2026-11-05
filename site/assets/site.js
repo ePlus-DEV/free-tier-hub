@@ -42,7 +42,7 @@
     try { stored = window.localStorage.getItem(consentKey); } catch (_error) {}
     if (isValidConsent(stored)) return stored;
     try {
-      var match = document.cookie.match(/(?:^|;\\s*)fth-consent-v1=(accepted|rejected)(?:;|$)/);
+      var match = document.cookie.match(/(?:^|;\s*)fth-consent-v1=(accepted|rejected)(?:;|$)/);
       if (match) return match[1];
     } catch (_error) {}
     return null;
