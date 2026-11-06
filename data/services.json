@@ -14014,6 +14014,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "wateaminbox-self-hosted",
+    "name": "WATeamInbox Self-Hosted",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted team inbox for WhatsApp linked devices and Telegram bots; no software seat or message quota published.",
+    "watch_out": "Open-source beta, not production-hardened by default. Unofficial WhatsApp linked-device integration risks restrictions or bans. Hosting, storage, backups, transactional email provider and channel costs are separate; email inbox integration is not yet available. Third-party whatsmeow is MPL-2.0.",
+    "pricing_url": "https://github.com/ygncode/wateaminbox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "webhookwhisper-free-webhook-testing",
     "name": "WebhookWhisper Free Webhook Testing",
     "category": "webhooks-events",
