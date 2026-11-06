@@ -1,0 +1,13 @@
+{
+  "id": "surveyplanet-free",
+  "name": "SurveyPlanet Free Surveys",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited hosted surveys, questions and responses in the $0 Basic plan, with anonymous surveys, embedding, basic themes and in-app reporting.",
+  "watch_out": "CSV/Excel export, advanced branching, custom themes and some premium reporting/sharing features require SurveyPlanet Pro. The hosted Free offer is separate from any self-hosted software; payment-card and commercial-use terms are not explicitly confirmed.",
+  "pricing_url": "https://surveyplanet.com/pricing-features",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}
