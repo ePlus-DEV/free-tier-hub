@@ -39,7 +39,7 @@ test('SEO/AEO stays consistent after per-service migration and lazy Home search'
     assert.equal(jsonLD(postgresHTML)['@graph'].find(item => item['@type'] === 'WebPage')
       .description, postgresSEODescription);
     assert.doesNotMatch(postgresSEODescription, /Aiven for MySQL Free/);
-    assert.match(postgresHTML, /<link rel="canonical" href="https:\\/\\/free-tier\\.eplus\\.dev\\/service\\/aiven-postgres\\/">/);
+    assert.ok(postgresHTML.includes('<link rel="canonical" href="' + base + 'service/aiven-postgres/">'));
     const json = JSON.parse(read('catalog.json'));
     const index = JSON.parse(read('search/index.json'));
 
