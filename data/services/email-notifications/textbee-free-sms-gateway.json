@@ -1,0 +1,13 @@
+{
+  "id": "textbee-free-sms-gateway",
+  "name": "textbee Free SMS Gateway",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Hosted Free plan: 1 active Android device, up to 50 SMS messages/day and 300 SMS messages/month; send/receive SMS and webhook notifications.",
+  "watch_out": "Requires Android 7+ phone and own SIM/carrier plan; carrier SMS charges and fair-use restrictions apply. Hosted plan is not free SMS infrastructure; commercial eligibility and provider terms should be checked before business use.",
+  "pricing_url": "https://textbee.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}
