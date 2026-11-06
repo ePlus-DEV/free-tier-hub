@@ -265,6 +265,42 @@ html.js-enabled .service-card[data-paged-hidden=true]{display:none}
 .load-more-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px}
 .load-more{min-height:44px;padding:10px 20px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);font-size:13px}
 .load-more-hint{color:var(--muted);font-size:11px}
+/* Category pages: scoped, compact discovery toolbar. No home filters duplicated. */
+.category-tools{position:relative;z-index:8;margin:0 0 20px;padding:14px 16px 12px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}
+.category-tools-primary{display:grid;grid-template-columns:minmax(0,1fr) minmax(172px,200px) auto;align-items:center;gap:10px}
+.category-search-field{display:flex;align-items:center;gap:9px;min-width:0;min-height:44px;padding:0 12px;border:1px solid var(--line-strong);border-radius:9px;color:var(--muted);background:var(--surface)}
+.category-search-field:focus-within{outline:2px solid var(--brand);outline-offset:1px}
+.category-search-field svg{width:17px;height:17px;flex-shrink:0}
+.category-search-field input{min-width:0;width:100%;min-height:42px;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:14px}
+.category-search-field input::placeholder{color:var(--muted)}
+.category-sort-field{display:flex;align-items:center;gap:7px;min-width:0;color:var(--muted);font-size:11px;white-space:nowrap}
+.category-sort-field select{width:100%;min-width:0;min-height:44px;padding:8px;border:1px solid var(--line-strong);border-radius:9px;background:var(--surface);color:var(--ink);font-size:13px}
+.category-filter-details{position:relative;min-width:0}
+.category-filter-details>summary{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:9px;background:var(--surface);color:var(--ink-soft);font-size:13px;font-weight:650;cursor:pointer;list-style:none;white-space:nowrap}
+.category-filter-details>summary::-webkit-details-marker{display:none}
+.category-filter-details[open]>summary,.category-filter-details>summary:hover{border-color:var(--brand);background:var(--brand-tint);color:var(--brand-ink)}
+.category-filter-active{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:9px;background:var(--brand);color:var(--bg);font-size:10px;font-weight:750}
+.category-filter-panel{position:absolute;top:calc(100% + 7px);right:0;z-index:15;display:grid;gap:13px;width:min(300px,calc(100vw - 40px));padding:15px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface);box-shadow:var(--shadow-hover)}
+.category-filter-panel>label:not(.category-filter-checkbox){display:grid;gap:6px;color:var(--ink-soft);font-size:12px;font-weight:600}
+.category-filter-panel select{width:100%;min-height:42px;padding:8px 10px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);font-size:13px}
+.category-filter-checkbox{display:flex;align-items:center;gap:9px;color:var(--ink-soft);font-size:12px;cursor:pointer}
+.category-filter-checkbox input{width:17px;height:17px;margin:0;accent-color:var(--brand);flex-shrink:0}
+.category-tools-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:11px;min-height:18px}
+.category-tools-meta .category-page-status{margin:0}
+.category-clear-filters{padding:3px 1px;border:0;background:none;color:var(--brand-ink);font-size:12px;font-weight:650}
+.category-no-results{margin:0 0 20px}
+@media(max-width:680px){
+  .category-tools{padding:11px;margin-bottom:14px}
+  .category-tools-primary{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  .category-search-field{grid-column:1/-1;min-height:42px}
+  .category-search-field input{min-height:40px;font-size:16px}
+  .category-sort-field>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .category-sort-field select{min-height:42px;font-size:16px}
+  .category-filter-details>summary{min-height:42px;padding:8px 12px}
+  .category-filter-panel{width:min(300px,calc(100vw - 54px))}
+  .category-filter-panel select{font-size:16px}
+}
+
 /* Category-only progressive pagination; with JS disabled every card stays visible. */
 .category-pagination{display:flex;flex-direction:column;align-items:center;gap:12px;margin:24px 0 0}
 .category-page-status{margin:0;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}

@@ -403,8 +403,8 @@
     panels.forEach(function (panel) { panel.open = false; });
     if (summary) summary.focus({preventScroll:true});
   });
-  // Category pages share the directory's 12-at-a-time browsing behavior.
-  // All cards remain in the server-rendered HTML when JavaScript is unavailable.
+  // Category pages have their own in-page controls and don't need Home's
+  // remote search index. Keep every card server-rendered for SEO/no-JS.
   var categoryGrid = document.getElementById("category-service-grid");
   var categoryPagination = document.getElementById("category-pagination");
   var categoryMore = document.getElementById("category-load-more");
@@ -413,42 +413,171 @@
   if (categoryGrid && categoryPagination && categoryMore && categoryMoreWrap && categoryStatus) {
     var categoryCards = Array.prototype.slice.call(categoryGrid.querySelectorAll(".service-card"));
     var categoryPageSize = 12;
-    var categoryMaxPage = Math.max(1, Math.ceil(categoryCards.length / categoryPageSize));
+    var categoryTools = document.getElementById("category-tools");
+    var categorySearch = document.getElementById("category-search");
+    var categorySort = document.getElementById("category-sort");
+    var categoryPlan = document.getElementById("category-plan");
+    var categoryHosting = document.getElementById("category-hosting");
+    var categoryNoCard = document.getElementById("category-no-card");
+    var categoryCommercial = document.getElementById("category-commercial");
+    var categoryFilterActive = document.getElementById("category-filter-active");
+    var categoryClear = document.getElementById("category-clear-filters");
+    var categoryEmpty = document.getElementById("category-no-results");
+    var hasCategoryControls = !!(categoryTools && categorySearch && categorySort &&
+      categoryPlan && categoryHosting && categoryNoCard && categoryCommercial &&
+      categoryFilterActive && categoryClear && categoryEmpty);
+    var categoryItems = hasCategoryControls ? categoryCards.map(function (card, index) {
+      var title = card.querySelector(".card-identity h3 a");
+      return {
+        card: card, order: index, name: (title && title.textContent) || "",
+        search: (card.getAttribute("data-search") || "").toLowerCase(),
+        added: card.getAttribute("data-added-at-utc") || "",
+        checked: card.getAttribute("data-last-checked") || "",
+        plan: card.getAttribute("data-offer-plan") || "",
+        hosting: card.getAttribute("data-hosting-model") || "",
+        credit: card.getAttribute("data-credit-card") || "",
+        commercial: card.getAttribute("data-commercial-use") || ""
+      };
+    }) : [];
+    var categoryMatched = categoryCards;
+    var categoryCurrentPage = 1;
     function categoryPageFromURL() {
       var raw = new URL(window.location.href).searchParams.get("page");
-      return raw && /^[1-9][0-9]*$/.test(raw) ? Math.min(categoryMaxPage, Number(raw)) : 1;
+      var lastPage = Math.max(1, Math.ceil(categoryMatched.length / categoryPageSize));
+      return raw && /^[1-9][0-9]*$/.test(raw) ? Math.min(lastPage, Number(raw)) : 1;
     }
-    var categoryCurrentPage = categoryPageFromURL();
-    function renderCategoryPage() {
-      var shown = Math.min(categoryCards.length, categoryCurrentPage * categoryPageSize);
-      categoryCards.forEach(function (card, index) { card.hidden = index >= shown; });
-      categoryStatus.textContent = "Showing " + compactUiCount(shown) + " of " + compactUiCount(categoryCards.length) + " services";
-      categoryMoreWrap.hidden = shown >= categoryCards.length;
-      if (!categoryMoreWrap.hidden) {
-        categoryMore.textContent = "Show " + compactUiCount(Math.min(categoryPageSize, categoryCards.length - shown)) + " more services";
+    function categoryStateFromURL() {
+      var params = new URL(window.location.href).searchParams;
+      var allowedSort = ["default", "newest", "oldest", "verified", "name", "name-desc"];
+      var allowedPlan = ["ongoing", "monthly-credit"];
+      var allowedHosting = ["cloud", "self-hosted", "hybrid", "local", "unclassified"];
+      categorySearch.value = params.get("q") || "";
+      categorySort.value = allowedSort.includes(params.get("sort")) ? params.get("sort") : "default";
+      categoryPlan.value = allowedPlan.includes(params.get("offer")) ? params.get("offer") : "";
+      categoryHosting.value = allowedHosting.includes(params.get("hosting")) ? params.get("hosting") : "";
+      categoryNoCard.checked = params.get("no_card") === "1";
+      categoryCommercial.checked = params.get("commercial") === "1";
+    }
+    function categoryWriteURL(replace) {
+      var url = new URL(window.location.href);
+      var values = {
+        q: categorySearch.value.trim(), sort: categorySort.value === "default" ? "" : categorySort.value,
+        offer: categoryPlan.value, hosting: categoryHosting.value,
+        no_card: categoryNoCard.checked ? "1" : "",
+        commercial: categoryCommercial.checked ? "1" : ""
+      };
+      Object.keys(values).forEach(function (key) {
+        if (values[key]) url.searchParams.set(key, values[key]);
+        else url.searchParams.delete(key);
+      });
+      // Changed filters start a new 12-card page; unrelated referral parameters survive.
+      url.searchParams.delete("page");
+      var next = url.pathname + url.search + url.hash;
+      if (url.href !== window.location.href) {
+        window.history[replace ? "replaceState" : "pushState"](null, "", next);
       }
-      categoryPagination.hidden = false;
+    }
+    function categoryApplyFilters() {
+      if (!hasCategoryControls) return categoryCards;
+      var query = categorySearch.value.toLowerCase().normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "").trim();
+      var matched = categoryItems.filter(function (entry) {
+        return (!query || entry.search.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query)) &&
+          (!categoryPlan.value || entry.plan === categoryPlan.value) &&
+          (!categoryHosting.value || entry.hosting === categoryHosting.value) &&
+          (!categoryNoCard.checked || entry.credit === "no") &&
+          (!categoryCommercial.checked || entry.commercial === "yes");
+      });
+      var mode = categorySort.value;
+      matched.sort(function (a, b) {
+        if (mode === "name" || mode === "name-desc") {
+          var order = a.name.localeCompare(b.name, "en");
+          return (mode === "name" ? order : -order) || a.order - b.order;
+        }
+        if (mode === "newest" || mode === "oldest") {
+          var added = (mode === "newest" ? b.added.localeCompare(a.added)
+            : a.added.localeCompare(b.added));
+          return added || a.order - b.order;
+        }
+        if (mode === "verified") return b.checked.localeCompare(a.checked) || a.order - b.order;
+        return a.order - b.order;
+      });
+      var active = Number(!!categoryPlan.value) + Number(!!categoryHosting.value) +
+        Number(categoryNoCard.checked) + Number(categoryCommercial.checked);
+      categoryFilterActive.textContent = String(active);
+      categoryFilterActive.hidden = active === 0;
+      categoryClear.hidden = !(active || query || mode !== "default");
+      categoryEmpty.hidden = matched.length > 0;
+      // Move the existing server-rendered DOM nodes, never re-parse HTML.
+      // Matched cards retain keyboard handlers, compare buttons, and official links.
+      matched.forEach(function (entry) { categoryGrid.appendChild(entry.card); });
+      return matched.map(function (entry) { return entry.card; });
+    }
+    function renderCategoryPage() {
+      if (hasCategoryControls) categoryMatched = categoryApplyFilters();
+      var shown = Math.min(categoryMatched.length, categoryCurrentPage * categoryPageSize);
+      categoryCards.forEach(function (card) { card.hidden = true; });
+      categoryMatched.forEach(function (card, index) { card.hidden = index >= shown; });
+      categoryStatus.textContent = "Showing " + compactUiCount(shown) + " of " +
+        compactUiCount(categoryMatched.length) + (hasCategoryControls &&
+          categoryMatched.length !== categoryCards.length ? " matching services" : " services");
+      categoryMoreWrap.hidden = shown >= categoryMatched.length;
+      if (!categoryMoreWrap.hidden) {
+        categoryMore.textContent = "Show " +
+          compactUiCount(Math.min(categoryPageSize, categoryMatched.length - shown)) + " more services";
+      }
+      categoryPagination.hidden = categoryMatched.length === 0;
+    }
+    function categoryControlsChanged(replace) {
+      categoryCurrentPage = 1;
+      categoryWriteURL(replace);
+      renderCategoryPage();
     }
     categoryMore.addEventListener("click", function () {
-      if (categoryCurrentPage >= categoryMaxPage) return;
+      if (categoryCurrentPage * categoryPageSize >= categoryMatched.length) return;
       var previousShown = categoryCurrentPage * categoryPageSize;
       categoryCurrentPage++;
       var url = new URL(window.location.href);
       url.searchParams.set("page", String(categoryCurrentPage));
       window.history.pushState(null, "", url.pathname + url.search + url.hash);
       renderCategoryPage();
-      // Place keyboard and touch users at the first newly revealed service.
-      var firstNewLink = categoryCards[previousShown] &&
-        categoryCards[previousShown].querySelector(".card-identity h3 a");
+      // Focus the first newly revealed matched card, not a hidden or filtered one.
+      var firstNewLink = categoryMatched[previousShown] &&
+        categoryMatched[previousShown].querySelector(".card-identity h3 a");
       if (firstNewLink) {
         firstNewLink.focus({ preventScroll: true });
         firstNewLink.scrollIntoView({ block: "start" });
       }
     });
+    if (hasCategoryControls) {
+      categoryStateFromURL();
+      categoryMatched = categoryApplyFilters();
+      categoryTools.hidden = false;
+      categorySearch.addEventListener("input", function () { categoryControlsChanged(true); });
+      [categorySort, categoryPlan, categoryHosting, categoryNoCard, categoryCommercial]
+        .forEach(function (control) {
+          control.addEventListener("change", function () { categoryControlsChanged(false); });
+        });
+      categoryClear.addEventListener("click", function () {
+        categorySearch.value = "";
+        categorySort.value = "default";
+        categoryPlan.value = "";
+        categoryHosting.value = "";
+        categoryNoCard.checked = false;
+        categoryCommercial.checked = false;
+        categoryControlsChanged(false);
+        categorySearch.focus();
+      });
+    }
     window.addEventListener("popstate", function () {
+      if (hasCategoryControls) {
+        categoryStateFromURL();
+        categoryMatched = categoryApplyFilters();
+      }
       categoryCurrentPage = categoryPageFromURL();
       renderCategoryPage();
     });
+    categoryCurrentPage = categoryPageFromURL();
     renderCategoryPage();
   }
 
