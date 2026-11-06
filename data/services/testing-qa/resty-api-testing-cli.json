@@ -1,0 +1,13 @@
+{
+  "id": "resty-api-testing-cli",
+  "name": "Resty API Testing CLI",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local CLI for REST API tests in Markdown/YAML files, with variables, response assertions/capture, and text/JSON/JUnit XML/HTML reports; no vendor-imposed test or seat quota documented.",
+  "watch_out": "Requires local .NET build/runtime or a self-contained build. No hosted testing infrastructure is included; API endpoints and external services may charge separately. The CLI's own software has no subscription or expiry.",
+  "pricing_url": "https://github.com/kodybrown/resty",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "local"
+}
