@@ -13559,6 +13559,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "requesto-self-hosted",
+    "name": "Requesto (Self-hosted)",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed API client for desktop or self-hosted Docker; no software usage quota or expiration published.",
+    "watch_out": "Self-hosting requires your own compute/storage; external API requests may incur provider costs. Docker exposes ports 4747 and optionally 4748 for mock APIs; secure network access before production.",
+    "pricing_url": "https://github.com/t3rr11/Requesto",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "restate-cloud-free",
     "name": "Restate Cloud Free",
     "category": "queues-jobs",
