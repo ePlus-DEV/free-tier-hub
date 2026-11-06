@@ -786,7 +786,7 @@
     "category": "databases",
     "plan": "ongoing",
     "free_limit": "One ongoing Free Aiven PostgreSQL service per organization: single node, 1 CPU, 1 GB RAM and 1 GB disk; no credit card required",
-    "watch_out": "No VPC, static IP, service integrations, connection pooling, SLA or Aiven support; maximum 20 concurrent database connections. Free services have no fixed expiry but may be powered off after sustained inactivity and can be restarted; upgrading to paid requires a payment method.",
+    "watch_out": "No VPC, static IP, service integrations, connection pooling, SLA or Aiven support; maximum 20 concurrent database connections. Free services have no fixed expiry but may be powered off after sustained inactivity and can be restarted; upgrading to paid requires a payment method. Aiven for MySQL Free is a separate, discontinued offer: new free MySQL service creation ended 6 November 2026; remaining MySQL Free services and their backups are scheduled for deletion 21 December 2026. This does not affect PostgreSQL Free.",
     "pricing_url": "https://aiven.io/docs/products/postgresql/concepts/pg-free-tier",
     "credit_card": "no",
     "commercial_use": "yes",
