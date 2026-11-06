@@ -1,0 +1,13 @@
+{
+  "id": "temps-self-hosted-paas",
+  "name": "Temps Self-Hosted PaaS",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free open-source self-hosted PaaS with unlimited local projects, deployments and users; Git push deployments, managed service provisioning, analytics, session replay, error monitoring and uptime monitoring.",
+  "watch_out": "The MIT/Apache-2.0 licensed self-hosted software is free, but servers, storage, networking, database resources and email-delivery infrastructure are not included. Temps Cloud and enterprise/premium features are separate paid offerings; do not confuse them with free self-hosting.",
+  "pricing_url": "https://temps.sh/about",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
