@@ -346,6 +346,12 @@ test('category README badges show a compact new-service delta only when positive
   const withNew = categoryCountSVG(46, 3);
   assert.match(withNew, /<title>46 services, 3 added in the last 48 hours \(UTC\)<\/title>/);
   assert.match(withNew, />\+3<\/text>/);
+  // The original category total and +N are two distinct pills with a visible gap.
+  assert.match(withNew, /<rect width="32" height="22" rx="7" fill="#e8f0ec"\/>/);
+  assert.match(withNew, /<rect x="38" y="1" width="32" height="20" rx="7" fill="#eef2ff"\/>/);
+  assert.doesNotMatch(withNew, /<path d="M32 5V17"/);
+  assert.equal((withNew.match(/<rect /g) || []).length, 2);
+  assert.equal((base.match(/<rect /g) || []).length, 1);
   assert.ok(Number(withNew.match(/width="(\d+)"/)[1]) > Number(base.match(/width="(\d+)"/)[1]));
   assert.equal(categoryCountSVG(46, 0), base);
   assert.throws(() => categoryCountSVG(-1), /Invalid category count/);

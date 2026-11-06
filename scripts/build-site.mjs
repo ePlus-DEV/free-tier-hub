@@ -691,19 +691,23 @@ export function categoryCountSVG(count, newCount = 0) {
   const display = compactNumber(count);
   const baseWidth = Math.max(28, 16 + display.length * 8);
   const newDisplay = '+' + compactNumber(newCount);
-  const newWidth = newCount > 0 ? Math.max(32, 12 + newDisplay.length * 8) : 0;
-  const width = baseWidth + newWidth;
+  // Two visually separate, evenly spaced pills — not a cramped split pill.
+  // Fit naturally inside the README's narrow Services table column.
+  const gap = newCount > 0 ? 6 : 0;
+  const newWidth = newCount > 0 ? Math.max(32, 14 + newDisplay.length * 7) : 0;
+  const width = baseWidth + gap + newWidth;
   const accessible = number + ' services' +
     (newCount > 0 ? ', ' + newCount + ' added in the last 48 hours (UTC)' : '');
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
     'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + accessible + '">' +
     '<title>' + accessible + '</title>' +
-    '<rect width="' + width + '" height="22" rx="7" fill="#e8f0ec"/>' +
+    '<rect width="' + baseWidth + '" height="22" rx="7" fill="#e8f0ec"/>' +
     '<text x="' + baseWidth / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
     'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + display + '</text>' +
     (newCount > 0
-      ? '<path d="M' + baseWidth + ' 5V17" stroke="#c9ded3"/>' +
-        '<text x="' + (baseWidth + newWidth / 2) + '" y="15" text-anchor="middle" fill="#1d4ed8" ' +
+      ? '<rect x="' + (baseWidth + gap) + '" y="1" width="' + newWidth +
+        '" height="20" rx="7" fill="#eef2ff"/>' +
+        '<text x="' + (baseWidth + gap + newWidth / 2) + '" y="15" text-anchor="middle" fill="#1d4ed8" ' +
         'font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">' + newDisplay + '</text>'
       : '') + '</svg>';
 }
