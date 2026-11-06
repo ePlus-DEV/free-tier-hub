@@ -13234,6 +13234,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "mailu-self-hosted-mail-server",
+    "name": "Mailu Self-Hosted Mail Server",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted mail server software with SMTP, IMAP, webmail and administration; no software usage quota or expiration published.",
+    "watch_out": "Requires your own server, public IP, domain, DNS/TLS configuration and storage; hosting, email relay and operational costs are not included. Email deliverability and port 25 restrictions depend on infrastructure.",
+    "pricing_url": "https://github.com/Mailu/Mailu",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "messagepit-email-sms-testing",
     "name": "MessagePit Email and SMS Testing",
     "category": "testing-qa",
