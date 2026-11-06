@@ -283,9 +283,14 @@ function document(absolute, title, description, relative, content, structuredDat
 }
 // Provider lifecycle alerts are notices, not catalog entries or plan classifications.
 // Aiven's official retirement applies to MySQL Free only; PostgreSQL Free remains listed.
-function aivenMySQLFreeRetirementNotice() {
+const AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT = '2026-12-22T00:00:00Z';
+// End the forward-looking notice after the announced retirement date (UTC).
+// Historical context remains in the separate PostgreSQL Free catalog entry.
+export function aivenMySQLFreeRetirementNotice(now = Date.now()) {
+  if (now >= Date.parse(AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT)) return '';
   return [
-    '<aside class="provider-retirement-notice" role="note" aria-label="Aiven for MySQL Free retirement">',
+    '<aside class="provider-retirement-notice" role="note" aria-label="Aiven for MySQL Free retirement" ',
+    'data-expires-at="', AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT, '">',
     '<strong>Aiven for MySQL Free is being retired</strong>',
     '<p>New MySQL Free services are unavailable since 6 November 2026. Existing free MySQL services ',
     'will be powered off and their data and backups permanently deleted on 21 December 2026. ',
