@@ -1,0 +1,13 @@
+{
+  "id": "emitd-free-email-api",
+  "name": "emitd Free Email API",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "5,000 emails/month (150/day), 1 custom domain, 2 webhook endpoints and 25 AI design credits/month; transactional API, SMTP proxy and inbound inbox included.",
+  "watch_out": "Free is $0/month without a credit card and sending pauses at the monthly or daily cap; paid pay-as-you-go has extra-email charges and pre-purchased credits expire after 365 days. Commercial-use permissions for Free should be checked with the provider.",
+  "pricing_url": "https://emitd.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}
