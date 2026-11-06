@@ -763,7 +763,7 @@ test('category search, offer/hosting/billing filters, sort and URL state work to
       getAttribute(name) { return this.attrs[name] ?? null; },
       focus() { this.focused = true; },
       scrollIntoView() { this.scrolled = true; },
-      appendChild() {}, querySelector() { return null; },
+      append() {}, appendChild() {}, querySelector() { return null; },
     };
   }
   const items = Array.from({length: 26}, (_, i) => {
