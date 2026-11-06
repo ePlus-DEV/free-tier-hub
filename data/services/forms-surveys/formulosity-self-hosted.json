@@ -1,0 +1,13 @@
+{
+  "id": "formulosity-self-hosted",
+  "name": "Formulosity Self-Hosted Surveys as Code",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted survey software with YAML survey definitions, respondent UI, API, response export and Docker Compose deployment; no published software usage quota or expiration.",
+  "watch_out": "Hosting, PostgreSQL, storage and operations are not included. Advanced question types are unfinished; assess production security and maintenance before deployment.",
+  "pricing_url": "https://github.com/plutov/formulosity",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
