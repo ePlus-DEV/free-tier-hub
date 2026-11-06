@@ -12447,6 +12447,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dovecot-imaptest-local",
+    "name": "Dovecot ImapTest",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed IMAP server compliance, scripted, stress and benchmark testing software; no published usage quota or expiry. Runs locally or via Docker.",
+    "watch_out": "No free hosted infrastructure or IMAP server included. Requires an IMAP server under your control and compute resources; stress tests may consume substantial resources. Dovecot-linked libraries may have LGPLv2.1 obligations.",
+    "pricing_url": "https://github.com/dovecot/imaptest",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "local"
+  },
+  {
     "id": "e2a-hosted-free",
     "name": "e2a Hosted Free",
     "category": "email-notifications",
