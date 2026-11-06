@@ -1,0 +1,13 @@
+{
+  "id": "r0iz-domain-monitor-self-hosted",
+  "name": "R0iZ Domain Monitor Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted domain expiration monitor with unlimited domains documented in upstream README; automated WHOIS/RDAP checks and email, Telegram, Discord, Slack and webhook alerts. No vendor software subscription or expiry.",
+  "watch_out": "Requires own PHP 8.1+ hosting, database, scheduled cron, backups, HTTPS and secure configuration; SMTP and third-party notification services may charge. WHOIS/RDAP coverage varies by TLD. This is free software, not free hosted monitoring. Independently maintained fork of Hosteroid/domain-monitor.",
+  "pricing_url": "https://github.com/R0iZ/Monitor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
