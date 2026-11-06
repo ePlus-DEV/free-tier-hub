@@ -3,9 +3,54 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
+import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL, aivenMySQLFreeRetirementNotice } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
+
+test('Aiven MySQL retirement notice expires at 00:00 UTC on 22 December 2026', () => {
+  assert.match(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-21T23:59:59Z')),
+    /data-expires-at="2026-12-22T00:00:00Z"/);
+  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-22T00:00:00Z')), '');
+  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2027-01-01T00:00:00Z')), '');
+});
+
+test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL Free listing', () => {
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'aiven-retirement-'));
+  try {
+    const summary = build(output);
+    const home = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
+    const databases = fs.readFileSync(path.join(output, 'category/databases/index.html'), 'utf8');
+    const postgres = fs.readFileSync(path.join(output, 'service/aiven-postgres/index.html'), 'utf8');
+    const unrelated = fs.readFileSync(path.join(output, 'category/ci-cd/index.html'), 'utf8');
+    const catalog = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
+    const notice = 'Aiven for MySQL Free is being retired';
+    const announcement = 'https://aiven.io/changelog/507f8b1b-dd8f-4841-ac4a-940ac492b688';
+    for (const page of [home, databases, postgres]) {
+      assert.ok(page.includes(notice));
+      assert.ok(page.includes(announcement));
+      assert.ok(page.includes('6 November 2026'));
+      assert.ok(page.includes('21 December 2026'));
+    }
+    assert.ok(!unrelated.includes(notice), 'other categories must not show a MySQL-specific notice');
+    const browserJS = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
+    assert.match(browserJS, /function expireProviderNotices\(\)/);
+    assert.match(browserJS, /window\.setTimeout\(expireProviderNotices/);
+    const postgresEntry = catalog.find(item => item.id === 'aiven-postgres');
+    assert.equal(postgresEntry.plan, 'ongoing');
+    assert.match(postgresEntry.watch_out, /MySQL Free is a separate, discontinued offer/);
+    assert.match(postgresEntry.watch_out, /6 November 2026/);
+    assert.match(postgresEntry.watch_out, /21 December 2026/);
+    assert.equal(postgresEntry.pricing_url,
+      'https://aiven.io/docs/products/postgresql/concepts/pg-free-tier');
+    assert.ok(!catalog.some(item => /Aiven.*MySQL/i.test(item.name)),
+      'retired MySQL Free must not appear as a sign-up eligible free service');
+    assert.equal(summary.service_count, catalog.length, 'advisory must not change badge counts');
+    assert.ok(!postgres.includes('Aiven for MySQL Free | Free Tier Hub'),
+      'notice must not produce a fake MySQL service detail page');
+  } finally {
+    fs.rmSync(output, { recursive: true, force: true });
+  }
+});
 
 test('NEW uses an exact UTC 48-hour window, not verification or daily date rounding', () => {
   const now = Date.parse('2026-11-06T12:00:00Z');

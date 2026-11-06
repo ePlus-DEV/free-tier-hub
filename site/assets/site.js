@@ -44,6 +44,24 @@
     });
   }
   refreshNewServiceBadges(document);
+  // The static HTML may be cached before retirement. Hide expiring notices on
+  // the visitor's clock, including an already-open tab at the UTC cutoff.
+  function expireProviderNotices() {
+    var notices = document.querySelectorAll('.provider-retirement-notice[data-expires-at]');
+    var nextExpiry = Infinity;
+    var now = Date.now();
+    notices.forEach(function (notice) {
+      var expiry = Date.parse(notice.getAttribute('data-expires-at') || '');
+      if (!Number.isFinite(expiry)) return;
+      notice.hidden = now >= expiry;
+      if (!notice.hidden) nextExpiry = Math.min(nextExpiry, expiry);
+    });
+    if (Number.isFinite(nextExpiry)) {
+      // Limit the delay to a day to avoid the 32-bit setTimeout ceiling.
+      window.setTimeout(expireProviderNotices, Math.max(1, Math.min(nextExpiry - now, 86400000)));
+    }
+  }
+  expireProviderNotices();
   document.addEventListener("visibilitychange", function () {
     refreshNewServiceBadges(document);
   });
