@@ -1,0 +1,13 @@
+{
+  "id": "zyntra-free-email-testing",
+  "name": "Zyntra Free Email Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "150 received test emails/month and 500 API requests/month across temporary and permanent test inboxes, web inbox viewer, REST API and Node.js SDK.",
+  "watch_out": "$0 Free plan has no time limit, but permanent inbox messages are retained for 7 days and temporary inbox messages for 1 day; daily CI suites may need a paid tier for larger quotas. Payment-card and commercial-use requirements on Free are not clearly stated.",
+  "pricing_url": "https://www.zyntra.app/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}
