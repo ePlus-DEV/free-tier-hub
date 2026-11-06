@@ -796,6 +796,7 @@ test('category search, offer/hosting/billing filters, sort and URL state work to
     'category-no-card', 'category-commercial', 'category-filter-active',
     'category-clear-filters', 'category-no-results'
   ].map(id => [id, el()]));
+  nodes['category-service-grid'] = grid;
   nodes['category-sort'].value = 'default';
   const document = {
     body: el(), createElement: el,
