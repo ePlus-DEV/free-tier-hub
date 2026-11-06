@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {prepare} from './prepare-preview.mjs';
 export function safePreviewPath(name) {
   return typeof name === 'string' && name.length > 0 && !name.startsWith('/') &&
     !name.includes('\\') && name.split('/').every(p => p && p !== '..' && p !== '.' && p !== '.git');
@@ -18,6 +19,13 @@ export function validatePreview(root) {
 }
 export function matchesPreview(meta, pr) {
   return pr.state === 'open' && meta.pr_number === pr.number && meta.head_sha === pr.head.sha;
+}
+// Snapshots created before the navigation fix have production URLs embedded
+// in JSON card fragments and Compare attributes. Repair every collected
+// snapshot as it enters the deployed bundle, without modifying its branch.
+export function finalizePreview(directory) {
+  validatePreview(directory);
+  return prepare(directory, 'https://free-tier.eplus.dev/');
 }
 function git(...args) {return execFileSync('git', args, {maxBuffer:64*1024*1024});}
 function collect(output) {
@@ -45,6 +53,7 @@ function collect(output) {
         fs.mkdirSync(path.dirname(dest),{recursive:true});
         fs.writeFileSync(dest,git('show',ref+':'+name));
       }
+      finalizePreview(target);
       console.log('Included preview:',pr.number,meta.head_sha);
     } catch(error) {console.log('Preview unavailable:',pr.number,error.message.split('\n')[0]);}
   }
