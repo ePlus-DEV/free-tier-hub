@@ -11,6 +11,10 @@ test('sort dates are immutable across later provider checks and normalized to UT
   assert.deepEqual(Object.fromEntries(parseAddedDates(log)), {
     'first-service': '2026-10-22', 'second-service': '2026-10-27',
   });
+  assert.deepEqual(Object.fromEntries(parseAddedDates(log, true)), {
+    'first-service': '2026-10-22T05:59:00.000Z',
+    'second-service': '2026-10-27T11:00:00.000Z',
+  });
 });
 
 test('published added_at uses merge day rather than candidate PR creation day', () => {
@@ -41,6 +45,8 @@ test('published added_at uses merge day rather than candidate PR creation day', 
     run(['add', '.']);
     run(['commit', '-qm', 'verify old'], { GIT_COMMITTER_DATE: '2026-10-28T10:00:00Z' });
     assert.equal(serviceAddedDates(root).get('old-service'), '2026-10-20');
+    assert.equal(serviceAddedDates(root, { includeTime: true }).get('new-service'),
+      '2026-10-27T10:00:00.000Z');
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
@@ -123,5 +129,8 @@ test('shard parser ignores updates and rejects invalid commit timestamps', () =>
     + '@@FREE_TIER_CATALOG_COMMIT@@2026-11-02T13:00:00Z\n'
     + 'data/services/developer-tools/new-entry.json\n';
   assert.deepEqual(Object.fromEntries(parseShardAddedDates(log)), { 'new-entry': '2026-11-01' });
+  assert.deepEqual(Object.fromEntries(parseShardAddedDates(log, true)), {
+    'new-entry': '2026-11-01T13:00:00.000Z',
+  });
   assert.throws(() => parseShardAddedDates('@@FREE_TIER_CATALOG_COMMIT@@broken'), /Invalid/);
 });

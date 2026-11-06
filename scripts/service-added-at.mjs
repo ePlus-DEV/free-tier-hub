@@ -9,7 +9,7 @@ const COMMIT_MARKER = '@@FREE_TIER_CATALOG_COMMIT@@';
  * Use first-parent history so an old PR's creation date is not mistaken for
  * the day that PR was eventually merged into main.
  */
-export function parseAddedDates(log) {
+export function parseAddedDates(log, includeTime = false) {
   const dates = new Map();
   let addedOn = '';
   for (const line of log.split(/\r?\n/)) {
@@ -17,7 +17,7 @@ export function parseAddedDates(log) {
       const timestamp = line.slice(COMMIT_MARKER.length).trim();
       const date = new Date(timestamp);
       if (!Number.isFinite(date.getTime())) throw Error('Invalid Git commit timestamp in catalog history');
-      addedOn = date.toISOString().slice(0, 10);
+      addedOn = includeTime ? date.toISOString() : date.toISOString().slice(0, 10);
       continue;
     }
     if (!addedOn || !line.startsWith('+') || line.startsWith('+++')) continue;
@@ -28,14 +28,14 @@ export function parseAddedDates(log) {
 }
 
 /** First publication of individually versioned service records (post migration). */
-export function parseShardAddedDates(log) {
+export function parseShardAddedDates(log, includeTime = false) {
   const dates = new Map();
   let addedOn = '';
   for (const line of log.split(/\r?\n/)) {
     if (line.startsWith(COMMIT_MARKER)) {
       const date = new Date(line.slice(COMMIT_MARKER.length).trim());
       if (!Number.isFinite(date.getTime())) throw Error('Invalid Git commit timestamp in service shard history');
-      addedOn = date.toISOString().slice(0, 10);
+      addedOn = includeTime ? date.toISOString() : date.toISOString().slice(0, 10);
       continue;
     }
     if (!addedOn) continue;
@@ -45,7 +45,7 @@ export function parseShardAddedDates(log) {
   return dates;
 }
 
-export function serviceAddedDates(repoRoot) {
+export function serviceAddedDates(repoRoot, { includeTime = false } = {}) {
   const cwd = path.resolve(repoRoot);
   let shallow;
   try {
@@ -67,12 +67,12 @@ export function serviceAddedDates(repoRoot) {
     'log', '--first-parent', '--diff-merges=first-parent', '--reverse',
     '--no-ext-diff', '--no-color', `--format=${COMMIT_MARKER}%cI`,
     '-p', ref, '--', 'data/services.json',
-  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }), includeTime);
   const readShardDates = ref => parseShardAddedDates(execFileSync('git', [
     'log', '--first-parent', '--diff-merges=first-parent', '--diff-filter=A',
     '--reverse', '--no-ext-diff', '--no-color',
     `--format=${COMMIT_MARKER}%cI`, '--name-only', ref, '--', 'data/services/',
-  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
+  ], { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }), includeTime);
   let publishedRef = 'HEAD';
   try {
     execFileSync('git', ['rev-parse', '--verify', 'refs/remotes/origin/main'], {

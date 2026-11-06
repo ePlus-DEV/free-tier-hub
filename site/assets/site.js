@@ -21,6 +21,22 @@
     return String(input);
   }
 
+  // Evaluate NEW on the visitor's clock, not from a cached build-time HTML flag.
+  function refreshNewServiceBadges(scope) {
+    var now = Date.now();
+    scope.querySelectorAll(".service-card").forEach(function (card) {
+      var badge = card.querySelector(".new-service-badge");
+      if (!badge) return;
+      var published = Date.parse(card.getAttribute("data-added-at-utc") || "");
+      badge.hidden = !(Number.isFinite(published) && published <= now &&
+        now - published < 48 * 60 * 60 * 1000);
+    });
+  }
+  refreshNewServiceBadges(document);
+  document.addEventListener("visibilitychange", function () {
+    refreshNewServiceBadges(document);
+  });
+
   var siteHeader = document.querySelector(".site-header");
   function syncHeaderHeight() {
     if (siteHeader) doc.style.setProperty("--site-header-height", siteHeader.getBoundingClientRect().height + "px");
@@ -594,6 +610,7 @@
         fragment.appendChild(node);
       });
       grid.replaceChildren(fragment);
+      refreshNewServiceBadges(grid);
       bindContextHelp(grid);
       lastDrawn = identity;
       grid.removeAttribute("aria-busy");

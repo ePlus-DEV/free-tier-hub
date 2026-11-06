@@ -15,6 +15,11 @@ test("Pages workflow separates PR build concurrency from serialized main deploys
   assert.doesNotMatch(concurrency, /cancel-in-progress: true/);
 });
 
+test("rolling new-services README badge gets a periodic refresh without dropping main serialization", () => {
+  assert.match(yaml, /schedule:\n    - cron: '7 \*\/6 \* \* \*'/);
+  assert.match(yaml, /test -s dist\/badges\/new-48h\.svg/);
+});
+
 test("Pages deploy remains restricted to main and requires a successful build", () => {
   assert.match(yaml, /push:\n    branches: \[main\]/);
   assert.match(yaml, /if: github\.ref == 'refs\/heads\/main' && github\.event_name != 'pull_request'/);

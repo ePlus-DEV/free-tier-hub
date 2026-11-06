@@ -10,11 +10,13 @@ const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 
 export const SERVICE_BADGE_URL = "https://free-tier.eplus.dev/badges/services.svg";
 export const FREE_TIER_BADGE_URL = "https://free-tier.eplus.dev/badges/free-tiers.svg";
 export const LIMITED_OFFER_BADGE_URL = "https://free-tier.eplus.dev/badges/limited-offers.svg";
+export const NEW_48H_BADGE_URL = "https://free-tier.eplus.dev/badges/new-48h.svg";
 export function hasDynamicServiceBadge(readme) {
   return [
     ['Catalog', SERVICE_BADGE_URL],
     ['Free tiers', FREE_TIER_BADGE_URL],
     ['Limited offers', LIMITED_OFFER_BADGE_URL],
+    ['New (48h)', NEW_48H_BADGE_URL],
   ].every(([label, url]) => {
     const badges = [...readme.matchAll(/!\[([^\]]+)\]\(([^)]+)\)/g)]
       .filter(match => match[1] === label);

@@ -3,9 +3,22 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, serviceCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
+import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
+
+test('NEW uses an exact UTC 48-hour window, not verification or daily date rounding', () => {
+  const now = Date.parse('2026-11-06T12:00:00Z');
+  const entries = [
+    { added_at_utc: '2026-11-04T12:00:00Z' }, // exactly 48h, expired
+    { added_at_utc: '2026-11-04T12:00:01Z' }, // within 48h
+    { added_at_utc: '2026-11-06T12:00:00Z' }, // just added
+    { added_at_utc: '2026-11-06T12:00:01Z' }, // future is not published
+    { added_at: '2026-11-06', last_checked: '2026-11-06' }, // no fabricated precision
+    { added_at_utc: 'broken', last_checked: '2026-11-06' },
+  ];
+  assert.equal(countNewIn48Hours(entries, now), 2);
+});
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -118,7 +131,11 @@ test('directory exposes unique search/category controls and official sources for
       free_tier_count: mainEntries.length,
       limited_offer_count: limitedEntries.length,
       total_services: entries.length,
+      new_48h_count: countNewIn48Hours(published, Date.parse(stats.generated_at_utc)),
+      new_48h_window_hours: 48,
+      generated_at_utc: stats.generated_at_utc,
     });
+    assert.ok(!Number.isNaN(Date.parse(stats.generated_at_utc)));
     assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
     const badge = fs.readFileSync(path.join(output, 'badges/services.svg'), 'utf8');
     assert.equal(badge, serviceCountSVG(stats.total_services));
@@ -151,6 +168,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
+    assert.match(html, /data-added-at-utc="\d{4}-\d{2}-\d{2}T[^"]+Z"/);
+    assert.match(html, /class="new-service-badge" hidden title="First published within the last 48 hours \(UTC\)"/);
+    assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}T[^\s]+Z$/.test(item.added_at_utc)));
     assert.doesNotMatch(html, /data-added-at=""/);
     // The public added date is distinct from last_checked and also shown in details.
     const candidate = published.find(item => item.id === 'chatgpt-free');
@@ -319,17 +339,51 @@ test('provider referral attribution preserves URLs, existing parameters, hash an
     'https://vendor.example/?foo=bar&amp;' + src + '&amp;' + med);
 });
 
+test('category README badges show a compact new-service delta only when positive', () => {
+  const base = categoryCountSVG(46);
+  assert.match(base, /<title>46 services<\/title>/);
+  assert.doesNotMatch(base, /\+0/);
+  const withNew = categoryCountSVG(46, 3);
+  assert.match(withNew, /<title>46 services, 3 added in the last 48 hours \(UTC\)<\/title>/);
+  assert.match(withNew, />\+3<\/text>/);
+  assert.ok(Number(withNew.match(/width="(\d+)"/)[1]) > Number(base.match(/width="(\d+)"/)[1]));
+  assert.equal(categoryCountSVG(46, 0), base);
+  assert.throws(() => categoryCountSVG(-1), /Invalid category count/);
+  for (const added of [-1, 47, 1.5, NaN]) {
+    assert.throws(() => categoryCountSVG(46, added), /Invalid new category count/);
+  }
+  // Display only eligible offers in a category; limited promotions are never a +N here.
+  const now = Date.parse('2026-11-06T12:00:00Z');
+  const entries = [
+    { category: 'storage', plan: 'ongoing', added_at_utc: '2026-11-05T08:00:00Z' },
+    { category: 'storage', plan: 'monthly-credit', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'storage', plan: 'limited-duration', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'databases', plan: 'ongoing', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'storage', plan: 'ongoing', added_at_utc: '2026-11-03T08:00:00Z' },
+  ];
+  const storageFree = entries.filter(item => item.category === 'storage' &&
+    (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+  assert.equal(storageFree.length, 3);
+  assert.equal(countNewIn48Hours(storageFree, now), 2);
+  assert.match(categoryCountSVG(storageFree.length, countNewIn48Hours(storageFree, now)),
+    />\+2<\/text>/);
+});
+
 test('category count badges are generated from source JSON and update on rebuild', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-badges-'));
   try {
     const items = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
     const first = path.join(tmp, 'first');
     build(first);
+    const firstPublished = JSON.parse(fs.readFileSync(path.join(first, 'catalog.json'), 'utf8'));
+    const firstStats = JSON.parse(fs.readFileSync(path.join(first, 'catalog-stats.json'), 'utf8'));
     for (const category of CATEGORIES) {
-      const count = items.filter(item => item.category === category &&
-        (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
+      const subset = firstPublished.filter(item => item.category === category &&
+        (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+      const count = subset.length;
+      const added = countNewIn48Hours(subset, Date.parse(firstStats.generated_at_utc));
       const svg = fs.readFileSync(path.join(first, 'badges', 'categories', category + '.svg'), 'utf8');
-      assert.equal(svg, categoryCountSVG(count));
+      assert.equal(svg, categoryCountSVG(count, added));
       assert.match(svg, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg"/);
       assert.match(svg, /role="img"/);
     }
@@ -342,6 +396,12 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.equal(stats.total_services, items.length, 'badge stats must update on rebuild');
     assert.equal(stats.free_tier_count, items.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length);
     assert.equal(stats.limited_offer_count, items.length - stats.free_tier_count);
+    const published = JSON.parse(fs.readFileSync(path.join(second, 'catalog.json'), 'utf8'));
+    assert.equal(stats.new_48h_window_hours, 48);
+    assert.ok(!Number.isNaN(Date.parse(stats.generated_at_utc)));
+    assert.equal(stats.new_48h_count, countNewIn48Hours(published, Date.parse(stats.generated_at_utc)));
+    assert.equal(fs.readFileSync(path.join(second, 'badges/new-48h.svg'), 'utf8'),
+      serviceCountSVG(stats.new_48h_count, 'new (48h)'));
     const firstBadge = fs.readFileSync(path.join(first, 'badges/services.svg'), 'utf8');
     const nextBadge = fs.readFileSync(path.join(second, 'badges/services.svg'), 'utf8');
     assert.equal(nextBadge, serviceCountSVG(stats.total_services));
@@ -352,10 +412,17 @@ test('category count badges are generated from source JSON and update on rebuild
       serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.throws(() => serviceCountSVG(-1), /Invalid service count/);
     assert.throws(() => serviceCountSVG(1, 'unknown'), /Invalid service badge label/);
+    const runtime = fs.readFileSync(path.join(second, 'assets/site.js'), 'utf8');
+    assert.match(runtime, /refreshNewServiceBadges\(document\)/);
+    assert.match(runtime, /refreshNewServiceBadges\(grid\)/);
+    assert.match(runtime, /now - published < 48 \* 60 \* 60 \* 1000/);
     const category = items[0].category;
-    const count = items.filter(item => item.category === category &&
-      (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
-    assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'), categoryCountSVG(count));
+    const subset = published.filter(item => item.category === category &&
+      (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+    const count = subset.length;
+    const added = countNewIn48Hours(subset, Date.parse(stats.generated_at_utc));
+    assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'),
+      categoryCountSVG(count, added));
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 });
 
