@@ -27,6 +27,11 @@ test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL F
     assert.ok(!unrelated.includes(notice), 'other categories must not show a MySQL-specific notice');
     const postgresEntry = catalog.find(item => item.id === 'aiven-postgres');
     assert.equal(postgresEntry.plan, 'ongoing');
+    assert.match(postgresEntry.watch_out, /MySQL Free is a separate, discontinued offer/);
+    assert.match(postgresEntry.watch_out, /6 November 2026/);
+    assert.match(postgresEntry.watch_out, /21 December 2026/);
+    assert.equal(postgresEntry.pricing_url,
+      'https://aiven.io/docs/products/postgresql/concepts/pg-free-tier');
     assert.ok(!catalog.some(item => /Aiven.*MySQL/i.test(item.name)),
       'retired MySQL Free must not appear as a sign-up eligible free service');
     assert.equal(summary.service_count, catalog.length, 'advisory must not change badge counts');
