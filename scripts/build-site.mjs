@@ -680,17 +680,32 @@ export function serviceCountSVG(count, label = 'services') {
     '<text x="' + (labelWidth + valueWidth / 2) + '" y="15" text-anchor="middle" fill="#ffffff" ' +
     'font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">' + display + '</text></svg>';
 }
-export function categoryCountSVG(count) {
+// README category badge: keep the original total, append +N for new free tiers.
+// Both figures use the same ongoing/recurring category subset. Hide +0.
+export function categoryCountSVG(count, newCount = 0) {
   if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid category count');
+  if (!Number.isSafeInteger(newCount) || newCount < 0 || newCount > count) {
+    throw Error('Invalid new category count');
+  }
   const number = String(count);
   const display = compactNumber(count);
-  const width = Math.max(28, 16 + display.length * 8);
+  const baseWidth = Math.max(28, 16 + display.length * 8);
+  const newDisplay = '+' + compactNumber(newCount);
+  const newWidth = newCount > 0 ? Math.max(32, 12 + newDisplay.length * 8) : 0;
+  const width = baseWidth + newWidth;
+  const accessible = number + ' services' +
+    (newCount > 0 ? ', ' + newCount + ' added in the last 48 hours (UTC)' : '');
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
-    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + number + ' services">' +
-    '<title>' + number + ' services</title>' +
+    'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + accessible + '">' +
+    '<title>' + accessible + '</title>' +
     '<rect width="' + width + '" height="22" rx="7" fill="#e8f0ec"/>' +
-    '<text x="' + width / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
-    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + display + '</text></svg>';
+    '<text x="' + baseWidth / 2 + '" y="15" text-anchor="middle" fill="#166534" ' +
+    'font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">' + display + '</text>' +
+    (newCount > 0
+      ? '<path d="M' + baseWidth + ' 5V17" stroke="#c9ded3"/>' +
+        '<text x="' + (baseWidth + newWidth / 2) + '" y="15" text-anchor="middle" fill="#1d4ed8" ' +
+        'font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700">' + newDisplay + '</text>'
+      : '') + '</svg>';
 }
 
 // GitHub Pages serves static HTML rather than HTTP 301s. This page keeps old
@@ -967,7 +982,10 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, 'badges/limited-offers.svg', serviceCountSVG(limitedItems.length, 'limited offers'));
   file(output, 'badges/new-48h.svg', serviceCountSVG(new48hCount, 'new (48h)'));
   for (const category of CATEGORIES) {
-    file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
+    // Use the same snapshot as the global new-48h badge, scoped to this free-tier category.
+    const fresh = countNewIn48Hours(mainItems.filter(item => item.category === category),
+      Date.parse(generatedAt));
+    file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category], fresh));
   }
   for (const name of ['site.css', 'directory-url.js', 'site.js', 'compare.js', 'compact-numbers.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
     const dest = path.join(output, 'assets', name);

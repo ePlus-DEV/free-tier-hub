@@ -339,17 +339,51 @@ test('provider referral attribution preserves URLs, existing parameters, hash an
     'https://vendor.example/?foo=bar&amp;' + src + '&amp;' + med);
 });
 
+test('category README badges show a compact new-service delta only when positive', () => {
+  const base = categoryCountSVG(46);
+  assert.match(base, /<title>46 services<\/title>/);
+  assert.doesNotMatch(base, /\+0/);
+  const withNew = categoryCountSVG(46, 3);
+  assert.match(withNew, /<title>46 services, 3 added in the last 48 hours \(UTC\)<\/title>/);
+  assert.match(withNew, />\+3<\/text>/);
+  assert.ok(Number(withNew.match(/width="(\d+)"/)[1]) > Number(base.match(/width="(\d+)"/)[1]));
+  assert.equal(categoryCountSVG(46, 0), base);
+  assert.throws(() => categoryCountSVG(-1), /Invalid category count/);
+  for (const added of [-1, 47, 1.5, NaN]) {
+    assert.throws(() => categoryCountSVG(46, added), /Invalid new category count/);
+  }
+  // Display only eligible offers in a category; limited promotions are never a +N here.
+  const now = Date.parse('2026-11-06T12:00:00Z');
+  const entries = [
+    { category: 'storage', plan: 'ongoing', added_at_utc: '2026-11-05T08:00:00Z' },
+    { category: 'storage', plan: 'monthly-credit', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'storage', plan: 'limited-duration', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'databases', plan: 'ongoing', added_at_utc: '2026-11-06T08:00:00Z' },
+    { category: 'storage', plan: 'ongoing', added_at_utc: '2026-11-03T08:00:00Z' },
+  ];
+  const storageFree = entries.filter(item => item.category === 'storage' &&
+    (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+  assert.equal(storageFree.length, 3);
+  assert.equal(countNewIn48Hours(storageFree, now), 2);
+  assert.match(categoryCountSVG(storageFree.length, countNewIn48Hours(storageFree, now)),
+    />\+2<\/text>/);
+});
+
 test('category count badges are generated from source JSON and update on rebuild', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-badges-'));
   try {
     const items = JSON.parse(fs.readFileSync(new URL('../data/services.json', import.meta.url), 'utf8'));
     const first = path.join(tmp, 'first');
     build(first);
+    const firstPublished = JSON.parse(fs.readFileSync(path.join(first, 'catalog.json'), 'utf8'));
+    const firstStats = JSON.parse(fs.readFileSync(path.join(first, 'catalog-stats.json'), 'utf8'));
     for (const category of CATEGORIES) {
-      const count = items.filter(item => item.category === category &&
-        (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
+      const subset = firstPublished.filter(item => item.category === category &&
+        (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+      const count = subset.length;
+      const added = countNewIn48Hours(subset, Date.parse(firstStats.generated_at_utc));
       const svg = fs.readFileSync(path.join(first, 'badges', 'categories', category + '.svg'), 'utf8');
-      assert.equal(svg, categoryCountSVG(count));
+      assert.equal(svg, categoryCountSVG(count, added));
       assert.match(svg, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg"/);
       assert.match(svg, /role="img"/);
     }
@@ -383,9 +417,12 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.match(runtime, /refreshNewServiceBadges\(grid\)/);
     assert.match(runtime, /now - published < 48 \* 60 \* 60 \* 1000/);
     const category = items[0].category;
-    const count = items.filter(item => item.category === category &&
-      (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;
-    assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'), categoryCountSVG(count));
+    const subset = published.filter(item => item.category === category &&
+      (item.plan === 'ongoing' || item.plan === 'monthly-credit'));
+    const count = subset.length;
+    const added = countNewIn48Hours(subset, Date.parse(stats.generated_at_utc));
+    assert.equal(fs.readFileSync(path.join(second, 'badges', 'categories', category + '.svg'), 'utf8'),
+      categoryCountSVG(count, added));
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 });
 

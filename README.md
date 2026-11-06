@@ -17,7 +17,7 @@
 
 ## Browse all categories
 
-Explore [all categories online](https://free-tier.eplus.dev/categories/) or use the live per-category counts below.
+Explore [all categories online](https://free-tier.eplus.dev/categories/) or use the live per-category counts below. Category badges show the **total eligible free tiers** plus a **+N** suffix when N new services were first published in that category during the last **48 hours (UTC)** (for example, `46 +3`). **+0 is hidden**. Only ongoing allowances and recurring credits count in the category badges; the overall **New (48h)** badge above includes time-limited offers too, so the two totals can differ. The SVG numbers are refreshed on new deployments and scheduled builds, with possible image-cache delay.
 
 | Category | Services | Browse |
 | --- | ---: | --- |
