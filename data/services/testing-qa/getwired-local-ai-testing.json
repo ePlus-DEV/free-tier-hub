@@ -1,0 +1,13 @@
+{
+  "id": "getwired-local-ai-testing",
+  "name": "GetWired Local AI Testing CLI",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local CLI for AI-driven exploratory testing of localhost web applications and Android/iOS emulators, with HTML test reports and MCP integration; no vendor-imposed test-run quota documented for the software.",
+  "watch_out": "Requires a configured AI agent/provider (Claude Code, Auggie, Codex or local OpenCode); external AI subscriptions or API usage may cost money. Web testing targets localhost/loopback only, not public remote URLs. Mobile testing requires emulator/simulator tooling; software does not include hosted compute.",
+  "pricing_url": "https://github.com/GetWiredDev/getwired",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "local"
+}
