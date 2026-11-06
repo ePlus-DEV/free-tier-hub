@@ -4,7 +4,7 @@
   "category": "observability",
   "plan": "ongoing",
   "free_limit": "1,000,000 logs/crashes/events per month; 30-day retention; 1 app; 1 team member; email alerts; 3 AI RCA and 3 AI Session Summaries per month",
-  "watch_out": "Free plan limits usage to 1 app and 1 team member; AI RCA and AI Session Summaries are limited to 3 each per month.",
+  "watch_out": "Free is limited to 1 app, 1 team member, 30-day retention, and 3 AI RCA plus 3 AI Session Summaries per month. Provider pricing says it notifies users approaching the 1M monthly log/event quota and offers paid extra log capacity at $10 per 50M logs/month; it does not establish a guaranteed hard stop for Free. Confirm over-quota enforcement before relying on it for production cost protection; do not assume paid capacity is automatically purchased on Free.",
   "pricing_url": "https://www.logtrics.io/pricing",
   "credit_card": "no",
   "commercial_use": "yes",
