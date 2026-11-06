@@ -1,0 +1,13 @@
+{
+  "id": "fillout-free-forms",
+  "name": "Fillout Free Forms",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited forms and seats with 1,000 responses/month on a forever-free hosted plan; includes multi-page forms, embeds, conditional logic and payments.",
+  "watch_out": "The 1,000-response monthly cap applies to the Free plan; Starter and higher tiers increase allowances and enable paid-only customization and advanced features. Provider does not clearly specify payment-card and commercial-use requirements for the Free plan on its pricing page.",
+  "pricing_url": "https://www.fillout.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}

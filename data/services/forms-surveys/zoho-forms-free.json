@@ -1,0 +1,13 @@
+{
+  "id": "zoho-forms-free",
+  "name": "Zoho Forms Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Three hosted forms, 500 submissions/month, 200 MB file storage and one user on the Free plan; includes up to ten payment submissions per month and basic webhook integrations.",
+  "watch_out": "The 500-submission limit resets monthly. Multi-user access, branding removal, custom domains and some advanced workflow options require paid tiers; payment processor fees can apply separately. Free plan card requirement and commercial-use terms are not explicitly verified.",
+  "pricing_url": "https://www.zoho.com/forms/pricing.html",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}
