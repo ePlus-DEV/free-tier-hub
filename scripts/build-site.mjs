@@ -281,23 +281,20 @@ function document(absolute, title, description, relative, content, structuredDat
     '</button></body></html>',
   ].join('');
 }
-// Provider lifecycle alerts are notices, not catalog entries or plan classifications.
-// Aiven's official retirement applies to MySQL Free only; PostgreSQL Free remains listed.
-const AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT = '2026-12-22T00:00:00Z';
-// End the forward-looking notice after the announced retirement date (UTC).
-// Historical context remains in the separate PostgreSQL Free catalog entry.
-export function aivenMySQLFreeRetirementNotice(now = Date.now()) {
-  if (now >= Date.parse(AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT)) return '';
+// A related provider offer's retirement is a separate service notice, not
+// part of the listed PostgreSQL free-tier allowance or SEO description.
+export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
+  const notice = item?.related_offer_notice;
+  if (!notice) return '';
+  const expiresAt = Date.parse(notice.expires_at);
+  if (!Number.isFinite(expiresAt) || now >= expiresAt) return '';
   return [
     '<aside class="provider-retirement-notice" role="note" aria-label="Aiven for MySQL Free retirement" ',
-    'data-expires-at="', AIVEN_MYSQL_FREE_NOTICE_EXPIRES_AT, '">',
-    '<strong>Aiven for MySQL Free is being retired</strong>',
-    '<p>New MySQL Free services are unavailable since 6 November 2026. Existing free MySQL services ',
-    'will be powered off and their data and backups permanently deleted on 21 December 2026. ',
-    'Export or migrate your data before that date. Aiven for PostgreSQL Free remains available. ',
-    '<a href="https://aiven.io/changelog/507f8b1b-dd8f-4841-ac4a-940ac492b688" ',
-    'target="_blank" rel="noopener noreferrer">Official Aiven announcement ↗</a></p>',
-    '</aside>',
+    'data-expires-at="', tag(notice.expires_at), '">',
+    '<strong>', tag(notice.title), '</strong>',
+    '<p>', tag(notice.message), ' ',
+    '<a href="', tag(notice.source_url), '" target="_blank" rel="noopener noreferrer">',
+    'Official Aiven announcement ↗</a></p></aside>',
   ].join('');
 }
 
@@ -326,7 +323,7 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="hero-kicker">The free-tier directory</p>',
     '<h1>Find the right tools. Build for free.</h1>',
     '<p>Compare free services, limits and conditions.</p>',
-    '</div></section>', aivenMySQLFreeRetirementNotice(),
+    '</div></section>', aivenMySQLFreeRetirementNotice(items.find(item => item.id === 'aiven-postgres')),
     '<section id="explore" class="section catalog-section">',
     '<div class="catalog-layout">',
     '<div class="catalog-main"><div class="catalog-toolbar">',
@@ -525,7 +522,7 @@ function categoryPage(category, subset, absolute) {
     '<section class="page-intro"><p class="kicker">CATEGORY · ', compactNumber(subset.length),
     ' SERVICES', recentCountMarkup(subset), '</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
-    category === 'databases' ? aivenMySQLFreeRetirementNotice() : '',
+    category === 'databases' ? aivenMySQLFreeRetirementNotice(subset.find(item => item.id === 'aiven-postgres')) : '',
     // Native, self-contained category controls: no remote index or new catalog.
     // Without JS the tools remain hidden and all service cards remain readable.
     '<section class="category-tools" id="category-tools" aria-label="Search and filter ', tag(name), ' services" hidden>',
@@ -665,7 +662,7 @@ function detailPage(item, absolute) {
     '<p class="detail-lead">', limited
       ? 'This is a time-limited or expiring offer, not an ongoing free tier. Verify eligibility, expiration and billing before use.'
       : 'Explore this developer service’s ongoing no-cost allowance, restrictions and official documentation before deploying.', '</p>',
-    item.id === 'aiven-postgres' ? aivenMySQLFreeRetirementNotice() : '',
+    item.id === 'aiven-postgres' ? aivenMySQLFreeRetirementNotice(item) : '',
     item.eligibility === 'existing-users-only'
       ? '<p class="eligibility-note detail-eligibility"><strong>Legacy only</strong> · Only qualifying existing accounts keep this free allowance; new signups may not qualify.</p>' : '',
     '<div class="detail-highlight">', glyph('layers'),

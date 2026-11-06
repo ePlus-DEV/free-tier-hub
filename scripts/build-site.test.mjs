@@ -8,10 +8,13 @@ import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
 
 test('Aiven MySQL retirement notice expires at 00:00 UTC on 22 December 2026', () => {
-  assert.match(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-21T23:59:59Z')),
+  const aiven = JSON.parse(fs.readFileSync(new URL(
+    '../data/services/databases/aiven-postgres.json', import.meta.url), 'utf8'));
+  assert.match(aivenMySQLFreeRetirementNotice(aiven, Date.parse('2026-12-21T23:59:59Z')),
     /data-expires-at="2026-12-22T00:00:00Z"/);
-  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-22T00:00:00Z')), '');
-  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2027-01-01T00:00:00Z')), '');
+  assert.equal(aivenMySQLFreeRetirementNotice(aiven, Date.parse('2026-12-22T00:00:00Z')), '');
+  assert.equal(aivenMySQLFreeRetirementNotice(aiven, Date.parse('2027-01-01T00:00:00Z')), '');
+  assert.equal(aivenMySQLFreeRetirementNotice(null), '');
 });
 
 test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL Free listing', () => {
@@ -25,11 +28,16 @@ test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL F
     const catalog = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
     const notice = 'Aiven for MySQL Free is being retired';
     const announcement = 'https://aiven.io/changelog/507f8b1b-dd8f-4841-ac4a-940ac492b688';
+    const beforeRetirementNoticeExpiry = Date.now() < Date.parse('2026-12-22T00:00:00Z');
     for (const page of [home, databases, postgres]) {
-      assert.ok(page.includes(notice));
-      assert.ok(page.includes(announcement));
-      assert.ok(page.includes('6 November 2026'));
-      assert.ok(page.includes('21 December 2026'));
+      if (beforeRetirementNoticeExpiry) {
+        assert.ok(page.includes(notice));
+        assert.ok(page.includes(announcement));
+        assert.ok(page.includes('6 November 2026'));
+        assert.ok(page.includes('21 December 2026'));
+      } else {
+        assert.ok(!page.includes('class="provider-retirement-notice"'));
+      }
     }
     assert.ok(!unrelated.includes(notice), 'other categories must not show a MySQL-specific notice');
     const browserJS = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
@@ -37,9 +45,12 @@ test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL F
     assert.match(browserJS, /window\.setTimeout\(expireProviderNotices/);
     const postgresEntry = catalog.find(item => item.id === 'aiven-postgres');
     assert.equal(postgresEntry.plan, 'ongoing');
-    assert.match(postgresEntry.watch_out, /MySQL Free is a separate, discontinued offer/);
-    assert.match(postgresEntry.watch_out, /6 November 2026/);
-    assert.match(postgresEntry.watch_out, /21 December 2026/);
+    assert.doesNotMatch(postgresEntry.watch_out, /MySQL Free/);
+    assert.equal(postgresEntry.related_offer_notice.title, notice);
+    assert.equal(postgresEntry.related_offer_notice.source_url, announcement);
+    assert.equal(postgresEntry.related_offer_notice.expires_at, '2026-12-22T00:00:00Z');
+    assert.match(postgresEntry.related_offer_notice.message, /6 November 2026/);
+    assert.match(postgresEntry.related_offer_notice.message, /21 December 2026/);
     assert.equal(postgresEntry.pricing_url,
       'https://aiven.io/docs/products/postgresql/concepts/pg-free-tier');
     assert.ok(!catalog.some(item => /Aiven.*MySQL/i.test(item.name)),

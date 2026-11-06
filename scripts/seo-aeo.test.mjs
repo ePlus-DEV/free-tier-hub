@@ -29,6 +29,17 @@ test('SEO/AEO stays consistent after per-service migration and lazy Home search'
     const llms = read('llms.txt');
     const agents = read('agents.md');
     const home = read('index.html');
+    // Related MySQL retirement warnings must not replace PostgreSQL SEO text.
+    const aiven = canonical.find(item => item.id === 'aiven-postgres');
+    assert.ok(aiven?.related_offer_notice, 'Provider notice remains in service/API metadata');
+    const postgresHTML = read('service/aiven-postgres/index.html');
+    const postgresSEODescription = aiven.free_limit + '. ' + aiven.watch_out;
+    assert.ok(postgresHTML.includes('<meta name="description" content="' +
+      tag(postgresSEODescription) + '">'));
+    assert.equal(jsonLD(postgresHTML)['@graph'].find(item => item['@type'] === 'WebPage')
+      .description, postgresSEODescription);
+    assert.doesNotMatch(postgresSEODescription, /Aiven for MySQL Free/);
+    assert.ok(postgresHTML.includes('<link rel="canonical" href="' + base + 'service/aiven-postgres/">'));
     const json = JSON.parse(read('catalog.json'));
     const index = JSON.parse(read('search/index.json'));
 
