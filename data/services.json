@@ -12766,6 +12766,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "jotform-starter-free",
+    "name": "Jotform Starter Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Five hosted forms with 100 submissions/month, 100 MB file storage, 10,000 monthly form views and 10 payment submissions/month; 500 stored submissions total.",
+    "watch_out": "Monthly submission and payment limits are account-wide. Exceeding a cap can disable collection until reset or paid upgrade; 500-entry storage ceiling and Jotform branding apply. Card and commercial-use policies on Starter need confirmation; processors may charge fees.",
+    "pricing_url": "https://www.jotform.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "json-server-local-mock-rest-api",
     "name": "JSON Server Local Mock REST API",
     "category": "testing-qa",
@@ -13715,6 +13728,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "surveyplanet-free",
+    "name": "SurveyPlanet Free Surveys",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Unlimited hosted surveys, questions and responses in the $0 Basic plan, with anonymous surveys, embedding, basic themes and in-app reporting.",
+    "watch_out": "CSV/Excel export, advanced branching, custom themes and some premium reporting/sharing features require SurveyPlanet Pro. The hosted Free offer is separate from any self-hosted software; payment-card and commercial-use terms are not explicitly confirmed.",
+    "pricing_url": "https://surveyplanet.com/pricing-features",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "temps-self-hosted-paas",
     "name": "Temps Self-Hosted PaaS",
     "category": "app-hosting",
@@ -13817,6 +13843,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "typeform-free",
+    "name": "Typeform Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Unlimited hosted Typeform questionnaires with 10 collected responses/month in total across the account; includes basic logic, embeds and result export.",
+    "watch_out": "Only 10 responses/month across ALL forms; not ten per form. Typeform says it experiments with Free plan pricing/eligibility, so actual in-account allowances may vary. Larger quotas and premium features need payment; credit-card and commercial-use terms require confirmation.",
+    "pricing_url": "https://help.typeform.com/hc/en-us/articles/360032972852-Free-plan",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
   },
   {
     "id": "vaex-local-dataframe",
