@@ -1038,7 +1038,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
       Date.parse(generatedAt));
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category], fresh));
   }
-  for (const name of ['site.css', 'directory-url.js', 'site.js', 'compare.js', 'compact-numbers.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
+  for (const name of ['site.css', 'directory-url.js', 'site.js', 'preview-fallback.js', 'compare.js', 'compact-numbers.js', 'icon.svg', 'og-image.png', 'og-image.svg', 'fontawesome-LICENSE.txt']) {
     const dest = path.join(output, 'assets', name);
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(path.join(ROOT, 'site/assets', name), dest);
@@ -1047,8 +1047,21 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, '404.html', document(absolute,
     'Page not found | Free Tier Hub', 'The requested page could not be found.',
     '404.html',
-    '<section class="page-intro"><h1>Page not found</h1><p>Browse our current directory instead.</p>' +
-    '<a class="button primary" href="' + tag(base) + '">Back to Free Tier Hub</a></section>',
+    '<section class="page-intro" id="generic-not-found">' +
+    '<h1>Page not found</h1><p>Browse our current directory instead.</p>' +
+    '<a class="button primary" href="' + tag(base) + '">Back to Free Tier Hub</a></section>' +
+    '<section class="page-intro preview-expired" id="preview-expired" hidden>' +
+    '<p class="kicker">PR PREVIEW UNAVAILABLE</p>' +
+    '<h1>This preview is no longer available</h1>' +
+    '<p>Preview <strong id="preview-pr-number"></strong> is no longer available. ' +
+    'Redirecting to the corresponding production page in ' +
+    '<strong class="preview-countdown" id="preview-countdown" aria-live="polite">5</strong> seconds.</p>' +
+    '<div class="preview-destination"><span>Production destination</span>' +
+    '<code id="preview-target-path"></code></div>' +
+    '<a class="button primary" id="preview-go-now" href="' + tag(base) +
+    '">Go to production page now</a></section>' +
+    '<script src="' + tag(absolute('assets/preview-fallback.js?v=' +
+    assetVersion('preview-fallback.js'))) + '" defer></script>',
     { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Page not found',
       url: absolute('404.html') }, 'noindex,follow'));
   return { service_count: items.length, free_tier_count: mainItems.length,

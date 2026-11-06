@@ -56,6 +56,8 @@ Home includes only the first **12 server-rendered service cards**. Search/filter
 
 The PR preview preparation step rewrites search URLs to preview-relative paths so the preview uses its **own index and card fragments**, not stale production search data. Verify that `/search/index.json` and at least one `/search/cards/<category>.json` exist in build artifacts before releasing. Site search and API assets deploy together from the same revision.
 
+When a PR closes or merges, the next Pages publication removes its `/pr-preview/pr-<number>/` snapshot. An expired preview URL is handled by the root `404.html`: it shows a **5-second countdown** and a direct production link to the same nested page, preserving the query string and hash. For example, `/pr-preview/pr-1955/category/webhooks-events/?sort=newest` leads to `/category/webhooks-events/?sort=newest`. Ordinary 404 URLs are **not** redirected, and the fallback remains `noindex,follow`.
+
 ## Safe rollback
 
 If a release fails after the per-service migration, follow the

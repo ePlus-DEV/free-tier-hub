@@ -932,3 +932,83 @@ test('service card plan badges stay at the top-right without arbitrary 110px wra
   assert.doesNotMatch(badgeRule[1], /max-width:110px|overflow-wrap:anywhere/);
   assert.match(css, /@media\(max-width:360px\)\{[\s\S]*?\.service-card \.card-top>\.badge\{grid-column:2;grid-row:1;justify-self:end\}/);
 });
+
+
+test('expired PR preview 404 counts down to matching production route with query and hash', async () => {
+  const { runInNewContext } = await import('node:vm');
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'preview-404-recovery-'));
+  try {
+    build(output);
+    const html = fs.readFileSync(path.join(output, '404.html'), 'utf8');
+    const css = fs.readFileSync(path.join(output, 'assets/site.css'), 'utf8');
+    const script = fs.readFileSync(path.join(output, 'assets/preview-fallback.js'), 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex,follow">/);
+    assert.match(html, /id="generic-not-found"/);
+    assert.match(html, /id="preview-expired" hidden/);
+    assert.match(html, /id="preview-countdown" aria-live="polite">5<\/strong>/);
+    assert.match(html, /id="preview-target-path"/);
+    assert.match(html, /assets\/preview-fallback\.js\?v=[0-9a-f]{12}/);
+    assert.match(css, /\.preview-expired\{max-width:740px/);
+
+    function visit(href) {
+      const elements = Object.fromEntries([
+        'generic-not-found', 'preview-expired', 'preview-pr-number',
+        'preview-countdown', 'preview-target-path', 'preview-go-now',
+      ].map(id => [id, {hidden: id === 'preview-expired', textContent: '', href: ''}]));
+      const location = new URL(href);
+      let redirected = null;
+      let interval = null;
+      let delay = null;
+      let cleared = null;
+      location.replace = url => { redirected = url; };
+      const window = {
+        location,
+        setInterval(fn, ms) { interval = fn; delay = ms; return 23; },
+        clearInterval(id) { cleared = id; },
+      };
+      const document = { getElementById(id) { return elements[id] || null; } };
+      runInNewContext(script, {window, document, URL});
+      return {elements, tick() {if (interval) interval();}, get redirected() {return redirected;},
+        get delay() {return delay;}, get cleared() {return cleared;}};
+    }
+
+    const expired = visit('https://free-tier.eplus.dev/pr-preview/pr-1955/category/webhooks-events/?sort=newest&utm_source=review#results');
+    const target = 'https://free-tier.eplus.dev/category/webhooks-events/?sort=newest&utm_source=review#results';
+    assert.equal(expired.elements['generic-not-found'].hidden, true);
+    assert.equal(expired.elements['preview-expired'].hidden, false);
+    assert.equal(expired.elements['preview-pr-number'].textContent, '#1955');
+    assert.equal(expired.elements['preview-target-path'].textContent,
+      '/category/webhooks-events/?sort=newest&utm_source=review#results');
+    assert.equal(expired.elements['preview-go-now'].href, target);
+    assert.equal(expired.elements['preview-countdown'].textContent, '5');
+    assert.equal(expired.delay, 1000);
+    for (const value of ['4', '3', '2', '1']) {
+      expired.tick();
+      assert.equal(expired.elements['preview-countdown'].textContent, value);
+      assert.equal(expired.redirected, null);
+    }
+    expired.tick();
+    assert.equal(expired.elements['preview-countdown'].textContent, '0');
+    assert.equal(expired.redirected, target);
+    assert.equal(expired.cleared, 23);
+
+    const nested = visit('https://free-tier.eplus.dev/pr-preview/pr-1955/service/vercel/?q=cloud%20run');
+    assert.equal(nested.elements['preview-go-now'].href,
+      'https://free-tier.eplus.dev/service/vercel/?q=cloud%20run');
+    const root = visit('https://free-tier.eplus.dev/pr-preview/pr-1955/');
+    assert.equal(root.elements['preview-go-now'].href, 'https://free-tier.eplus.dev/');
+    for (const ordinary of [
+      'https://free-tier.eplus.dev/category/webhooks-events/?sort=newest',
+      'https://free-tier.eplus.dev/pr-preview/foo/category/webhooks-events/',
+      'https://free-tier.eplus.dev/pr-preview/pr-0/category/webhooks-events/',
+      'https://free-tier.eplus.dev/pr-preview/pr-1955//evil.example/',
+      'https://free-tier.eplus.dev/pr-preview/pr-1955/%2F%2Fevil.example/',
+    ]) {
+      const ignored = visit(ordinary);
+      assert.equal(ignored.elements['generic-not-found'].hidden, false, ordinary);
+      assert.equal(ignored.elements['preview-expired'].hidden, true, ordinary);
+      assert.equal(ignored.delay, null, ordinary);
+      assert.equal(ignored.redirected, null, ordinary);
+    }
+  } finally { fs.rmSync(output, {recursive: true, force: true}); }
+});
