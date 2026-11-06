@@ -1,0 +1,13 @@
+{
+  "id": "fortio-local-load-testing",
+  "name": "Fortio Local Load Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source HTTP/gRPC load-testing CLI, server and web UI; local runs have no software-enforced request quota or expiry.",
+  "watch_out": "Runs on your own machine or infrastructure; compute, network traffic, target services and optional hosted environments may cost money. Load tests can affect target availability; use only on authorized systems.",
+  "pricing_url": "https://github.com/fortio/fortio",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "local"
+}
