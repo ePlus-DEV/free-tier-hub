@@ -12220,6 +12220,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "apiflow-self-hosted",
+    "name": "Apiflow Self-Hosted",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted API development and testing platform with REST/WebSocket testing, mock servers, OpenAPI import/export, workspaces and team collaboration; upstream states no paid feature limits or per-user quota for the software.",
+    "watch_out": "Self-hosting requires Docker Compose and MongoDB plus your own server/storage; external AI model providers may charge separately. Change the documented default admin password before production use. This entry does not promise free hosted infrastructure.",
+    "pricing_url": "https://github.com/trueleaf/apiflow",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "badsmtp",
     "name": "BadSMTP",
     "category": "testing-qa",
