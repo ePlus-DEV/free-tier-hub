@@ -131,7 +131,11 @@ test('directory exposes unique search/category controls and official sources for
       free_tier_count: mainEntries.length,
       limited_offer_count: limitedEntries.length,
       total_services: entries.length,
+      new_48h_count: countNewIn48Hours(published, Date.parse(stats.generated_at_utc)),
+      new_48h_window_hours: 48,
+      generated_at_utc: stats.generated_at_utc,
     });
+    assert.ok(!Number.isNaN(Date.parse(stats.generated_at_utc)));
     assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
     const badge = fs.readFileSync(path.join(output, 'badges/services.svg'), 'utf8');
     assert.equal(badge, serviceCountSVG(stats.total_services));
