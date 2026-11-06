@@ -356,13 +356,19 @@ test('category README badges show a compact new-service delta only when positive
   const withNew = categoryCountSVG(46, 3);
   assert.match(withNew, /<title>46 services, 3 added in the last 48 hours \(UTC\)<\/title>/);
   assert.match(withNew, />\+3<\/text>/);
-  // The original category total and +N are two distinct pills with a visible gap.
-  assert.match(withNew, /<rect width="32" height="22" rx="7" fill="#e8f0ec"\/>/);
-  assert.match(withNew, /<rect x="38" y="1" width="32" height="20" rx="7" fill="#eef2ff"\/>/);
-  assert.doesNotMatch(withNew, /<path d="M32 5V17"/);
-  assert.equal((withNew.match(/<rect /g) || []).length, 2);
+  // One shared background; the smaller blue delta sits above the main count.
+  assert.equal((withNew.match(/<rect /g) || []).length, 1);
   assert.equal((base.match(/<rect /g) || []).length, 1);
+  assert.match(withNew, /<rect width="46" height="22" rx="7" fill="#e8f0ec"\/>/);
+  assert.match(withNew, /<text x="16" y="15"[^>]+font-size="12"[^>]*>46<\/text>/);
+  assert.match(withNew, /<text x="37" y="10"[^>]+font-size="9"[^>]*>\+3<\/text>/);
+  assert.doesNotMatch(withNew, /fill="#eef2ff"|<path d="M32 5V17"/);
   assert.ok(Number(withNew.match(/width="(\d+)"/)[1]) > Number(base.match(/width="(\d+)"/)[1]));
+  // Multi-digit deltas and larger totals still fit without a second pill.
+  const large = categoryCountSVG(1234, 22);
+  assert.match(large, /<title>1234 services, 22 added in the last 48 hours \(UTC\)<\/title>/);
+  assert.equal((large.match(/<rect /g) || []).length, 1);
+  assert.match(large, /font-size="9" font-weight="700">\+22<\/text>/);
   assert.equal(categoryCountSVG(46, 0), base);
   assert.throws(() => categoryCountSVG(-1), /Invalid category count/);
   for (const added of [-1, 47, 1.5, NaN]) {
