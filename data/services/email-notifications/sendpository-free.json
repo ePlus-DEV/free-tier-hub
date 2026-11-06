@@ -1,0 +1,13 @@
+{
+  "id": "sendpository-free",
+  "name": "Sendpository Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "6,000 sent emails/month (up to 200/day), 1 sending domain, 2 webhook endpoints, 3 receiving addresses and up to 300 received emails/day; full API and delivery logs.",
+  "watch_out": "Free is an ongoing $0 plan for side projects; throughput is limited to 2 API requests/second and 200 outgoing emails/day. Higher volumes and scheduled sending require paid Pro. Payment-card and commercial-use requirements are not explicitly confirmed.",
+  "pricing_url": "https://www.sendpository.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}

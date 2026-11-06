@@ -1,0 +1,13 @@
+{
+  "id": "e2a-hosted-free",
+  "name": "e2a Hosted Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "3,000 outbound emails/month (20 sends/day), 3 agents, 3 custom domains and 1 GiB storage on the hosted Free plan; agent inboxes and WebSocket delivery included.",
+  "watch_out": "Free sending is capped at 20/day unless an add-on lifts it; outgoing email carries a 'Created with e2a' footer. Domain setup and SPF/DKIM are needed for custom-domain delivery. A paid Starter plan is separate. Payment-card and commercial-use terms for hosted Free are not explicitly confirmed.",
+  "pricing_url": "https://e2a.dev/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}

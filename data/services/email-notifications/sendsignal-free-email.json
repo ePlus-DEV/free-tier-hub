@@ -1,0 +1,13 @@
+{
+  "id": "sendsignal-free-email",
+  "name": "SendSignal Free Email",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "3,000 emails/month with REST API and SMTP relay, DKIM-verified sending domains, webhooks, templates, contacts, suppressions and test mode.",
+  "watch_out": "Free is $0 forever and no card is required; sending pauses when the monthly quota is exhausted unless the account switches to a paid plan or optional pay-as-you-go. Inbound parsing and broadcasts/automations are on paid Pro. Confirm commercial-use policy directly.",
+  "pricing_url": "https://sendsignal.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-06",
+  "deployment_model": "cloud"
+}
