@@ -12324,6 +12324,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cognito-forms-individual-free",
+    "name": "Cognito Forms Individual Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Unlimited hosted forms, 100 entries/month, 100 MB storage and one user on the always-free Individual plan; supports basic calculations and payment acceptance.",
+    "watch_out": "The free quota is 100 entries/month across the account, forms include Cognito branding, and advanced workflows, electronic signatures and additional users require paid plans. No card needed for Individual; commercial-use terms need confirmation.",
+    "pricing_url": "https://www.cognitoforms.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "cosmos-server-self-hosted",
     "name": "Cosmos Server Self-Hosted",
     "category": "app-hosting",
@@ -12454,6 +12467,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "fillout-free-forms",
+    "name": "Fillout Free Forms",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Unlimited forms and seats with 1,000 responses/month on a forever-free hosted plan; includes multi-page forms, embeds, conditional logic and payments.",
+    "watch_out": "The 1,000-response monthly cap applies to the Free plan; Starter and higher tiers increase allowances and enable paid-only customization and advanced features. Provider does not clearly specify payment-card and commercial-use requirements for the Free plan on its pricing page.",
+    "pricing_url": "https://www.fillout.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "firezone-starter-free",
     "name": "Firezone Starter Free Zero Trust Access",
     "category": "tunneling-networking",
@@ -12556,6 +12582,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "local"
+  },
+  {
+    "id": "formsapp-free",
+    "name": "forms.app Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Up to 5 hosted forms with unlimited submissions, responses, questions, views and team members, plus 10 MB total file storage on the free-forever plan.",
+    "watch_out": "10 MB of file storage can limit upload-heavy use, and more forms, branding removal and custom subdomains require paid plans. No credit card is required on Free. Any payment-processing or integration fees are separate; commercial-use policy needs confirmation.",
+    "pricing_url": "https://forms.app/en/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
   },
   {
     "id": "formto-self-hosted-form-backend",
@@ -14012,6 +14051,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zoho-forms-free",
+    "name": "Zoho Forms Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Three hosted forms, 500 submissions/month, 200 MB file storage and one user on the Free plan; includes up to ten payment submissions per month and basic webhook integrations.",
+    "watch_out": "The 500-submission limit resets monthly. Multi-user access, branding removal, custom domains and some advanced workflow options require paid tiers; payment processor fees can apply separately. Free plan card requirement and commercial-use terms are not explicitly verified.",
+    "pricing_url": "https://www.zoho.com/forms/pricing.html",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "deployment_model": "cloud",
+    "last_checked": "2026-11-06"
   },
   {
     "id": "zyntra-free-email-testing",
