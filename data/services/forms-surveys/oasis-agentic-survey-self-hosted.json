@@ -1,0 +1,13 @@
+{
+  "id": "oasis-agentic-survey-self-hosted",
+  "name": "OASIS Open Agentic Survey Interview System",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-only self-hosted conversational survey and research interview platform with text and voice workflows, participant tracking, and transcript export; no software subscription or vendor-imposed usage quota.",
+  "watch_out": "Supply your own Docker infrastructure, PostgreSQL, Redis, and model/STT/TTS resources. External LLM, voice, or Twilio APIs may charge per use; voice-to-voice relies on proprietary providers. AGPL network-service source-sharing obligations apply to modifications; project is young.",
+  "pricing_url": "https://github.com/oasis-surveys/oasis-platform",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
