@@ -170,11 +170,16 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
     assert.match(html, /data-added-at-utc="\d{4}-\d{2}-\d{2}T[^"]+Z"/);
     assert.match(html, /class="new-service-badge" hidden title="First published within the last 48 hours \(UTC\)"/);
+    assert.match(css, /\.detail-new-badge\{margin-left:8px;font-size:10px\}/);
+    assert.match(css, /\.recent-count\{display:inline-flex/);
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}T[^\s]+Z$/.test(item.added_at_utc)));
     assert.doesNotMatch(html, /data-added-at=""/);
     // The public added date is distinct from last_checked and also shown in details.
     const candidate = published.find(item => item.id === 'chatgpt-free');
     const detail = fs.readFileSync(path.join(output, 'service/chatgpt-free/index.html'), 'utf8');
+    assert.match(detail, /<article class="detail" data-added-at-utc="\d{4}-\d{2}-\d{2}T[^"]+Z">/);
+    assert.match(detail, /class="new-service-badge detail-new-badge" hidden title="First published within the last 48 hours \(UTC\)"/);
+    assert.ok(detail.includes('<h1>ChatGPT Free</h1>'), 'Preserve service H1 and SEO');
     assert.ok(detail.includes('Added to directory (UTC)'));
     assert.ok(detail.includes(candidate.added_at));
     assert.ok(published.some(item => item.added_at !== item.last_checked));
@@ -375,6 +380,39 @@ test('category README badges show a compact new-service delta only when positive
     />\+2<\/text>/);
 });
 
+test('recent service indicators span category overview, category, offers and service detail', () => {
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'new-badges-everywhere-'));
+  try {
+    build(output);
+    const catalog = JSON.parse(fs.readFileSync(path.join(output, 'catalog.json'), 'utf8'));
+    const now = Date.now();
+    const eligible = catalog.filter(item => (item.plan === 'ongoing' || item.plan === 'monthly-credit') &&
+      countNewIn48Hours([item], now) > 0);
+    assert.ok(eligible.length > 0, 'fixture should contain recent services');
+    const first = eligible[0];
+    const overview = fs.readFileSync(path.join(output, 'categories/index.html'), 'utf8');
+    const category = fs.readFileSync(path.join(output, 'category', first.category, 'index.html'), 'utf8');
+    const detail = fs.readFileSync(path.join(output, 'service', first.id, 'index.html'), 'utf8');
+    assert.match(overview, /class="category-overview-count"[\s\S]*?class="recent-count" data-new-published-times="/);
+    assert.match(category, /CATEGORY · [^<]+<span class="recent-count" data-new-published-times="/);
+    assert.match(category, /class="new-service-badge" hidden title="First published within the last 48 hours/);
+    assert.ok(detail.includes('data-added-at-utc="' + first.added_at_utc + '"'));
+    assert.match(detail, /class="new-service-badge detail-new-badge" hidden/);
+    const limited = catalog.filter(item => item.plan === 'limited-duration' || item.plan === 'temporary-resource');
+    if (limited.length) {
+      const offers = fs.readFileSync(path.join(output, 'offers/index.html'), 'utf8');
+      assert.ok(offers.includes('class="service-grid category-service-grid"'));
+      assert.ok(offers.includes('class="new-service-badge" hidden'));
+      if (countNewIn48Hours(limited, now) > 0) {
+        assert.match(offers, /LIMITED OFFERS · [^<]+<span class="recent-count" data-new-published-times="/);
+      }
+    }
+    assert.doesNotMatch(detail, /<h1>[^<]+<span class="new-service-badge"/);
+  } finally {
+    fs.rmSync(output, {recursive: true, force: true});
+  }
+});
+
 test('category count badges are generated from source JSON and update on rebuild', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-badges-'));
   try {
@@ -420,6 +458,8 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.throws(() => serviceCountSVG(1, 'unknown'), /Invalid service badge label/);
     const runtime = fs.readFileSync(path.join(second, 'assets/site.js'), 'utf8');
     assert.match(runtime, /refreshNewServiceBadges\(document\)/);
+    assert.match(runtime, /querySelectorAll\("\.service-card, \.detail"\)/);
+    assert.match(runtime, /querySelectorAll\("\.recent-count"\)/);
     assert.match(runtime, /refreshNewServiceBadges\(grid\)/);
     assert.match(runtime, /now - published < 48 \* 60 \* 60 \* 1000/);
     const category = items[0].category;
