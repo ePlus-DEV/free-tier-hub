@@ -1,0 +1,13 @@
+{
+  "id": "harvester-hci-self-hosted",
+  "name": "Harvester HCI Self-Hosted Virtualization",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Open-source Kubernetes-based hyperconverged infrastructure for bare-metal VM clusters, with integrated virtualization, distributed storage, networking and Rancher integration; no software usage quota.",
+  "watch_out": "Requires your own compatible bare-metal servers, disks, networking and operations: Harvester does NOT provide any free hosted virtual machine, bandwidth or cloud credits. Enterprise services/support, hardware and hosting incur separate costs; Apache-2.0 license terms apply.",
+  "pricing_url": "https://github.com/harvester/harvester",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "deployment_model": "self-hosted",
+  "last_checked": "2026-11-06"
+}

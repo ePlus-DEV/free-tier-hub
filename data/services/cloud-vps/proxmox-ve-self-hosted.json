@@ -1,0 +1,13 @@
+{
+  "id": "proxmox-ve-self-hosted",
+  "name": "Proxmox VE Self-Hosted Virtualization",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Open-source self-hosted virtualization platform for KVM virtual machines and LXC containers, with web management, clustering, storage and software-defined networking; no vendor-side per-VM allowance or time limit.",
+  "watch_out": "Requires your own physical servers, CPU, RAM, storage, networking and administration; this is NOT a free cloud-hosted VPS. The no-subscription repository lacks the tested Enterprise Repository, and commercial support and enterprise updates require paid subscriptions. AGPLv3 license obligations apply.",
+  "pricing_url": "https://proxmox.com/en/proxmox-virtual-environment/overview",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "deployment_model": "self-hosted",
+  "last_checked": "2026-11-06"
+}

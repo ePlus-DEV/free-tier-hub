@@ -1,0 +1,13 @@
+{
+  "id": "apache-cloudstack-self-hosted",
+  "name": "Apache CloudStack Self-Hosted IaaS",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Free open-source IaaS cloud orchestration platform to provision and manage private/public cloud virtual machines, compute hosts, networking, templates, storage and accounts via an API and web UI.",
+  "watch_out": "CloudStack software is open source, not a provider-hosted free VPS or pre-funded compute credit. You must provide and operate your own hypervisors/physical compute hosts, networking, storage and associated cloud infrastructure; commercial support is optional and separate.",
+  "pricing_url": "https://cloudstack.apache.org/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "deployment_model": "self-hosted",
+  "last_checked": "2026-11-06"
+}

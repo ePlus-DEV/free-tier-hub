@@ -1,0 +1,13 @@
+{
+  "id": "kubevirt-self-hosted",
+  "name": "KubeVirt Self-Hosted Virtual Machines",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 Kubernetes virtualization API and runtime to create and manage virtual machines within your own Kubernetes cluster, without per-VM software usage fees.",
+  "watch_out": "KubeVirt is a self-hosted VM orchestration component, NOT a free public VPS or a hosted cloud allocation. Requires an operational Kubernetes cluster, virtualization-capable nodes, storage, networking and platform expertise; those costs remain yours.",
+  "pricing_url": "https://github.com/kubevirt/kubevirt",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "deployment_model": "self-hosted",
+  "last_checked": "2026-11-06"
+}
