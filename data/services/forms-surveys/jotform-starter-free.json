@@ -1,0 +1,13 @@
+{
+  "id": "jotform-starter-free",
+  "name": "Jotform Starter Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Five hosted forms with 100 submissions/month, 100 MB file storage, 10,000 monthly form views and 10 payment submissions/month; 500 stored submissions total.",
+  "watch_out": "Monthly submission and payment limits are account-wide. Exceeding a cap can disable collection until reset or paid upgrade; 500-entry storage ceiling and Jotform branding apply. Card and commercial-use policies on Starter need confirmation; processors may charge fees.",
+  "pricing_url": "https://www.jotform.com/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}

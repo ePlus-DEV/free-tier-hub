@@ -1,0 +1,13 @@
+{
+  "id": "typeform-free",
+  "name": "Typeform Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited hosted Typeform questionnaires with 10 collected responses/month in total across the account; includes basic logic, embeds and result export.",
+  "watch_out": "Only 10 responses/month across ALL forms; not ten per form. Typeform says it experiments with Free plan pricing/eligibility, so actual in-account allowances may vary. Larger quotas and premium features need payment; credit-card and commercial-use terms require confirmation.",
+  "pricing_url": "https://help.typeform.com/hc/en-us/articles/360032972852-Free-plan",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}
