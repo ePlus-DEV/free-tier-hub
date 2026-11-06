@@ -12207,6 +12207,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "apache-cloudstack-self-hosted",
+    "name": "Apache CloudStack Self-Hosted IaaS",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Free open-source IaaS cloud orchestration platform to provision and manage private/public cloud virtual machines, compute hosts, networking, templates, storage and accounts via an API and web UI.",
+    "watch_out": "CloudStack software is open source, not a provider-hosted free VPS or pre-funded compute credit. You must provide and operate your own hypervisors/physical compute hosts, networking, storage and associated cloud infrastructure; commercial support is optional and separate.",
+    "pricing_url": "https://cloudstack.apache.org/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "apache-hugegraph-self-hosted-graph",
     "name": "Apache HugeGraph Open-Source Graph Database",
     "category": "databases",
@@ -12636,6 +12649,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "harvester-hci-self-hosted",
+    "name": "Harvester HCI Self-Hosted Virtualization",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Open-source Kubernetes-based hyperconverged infrastructure for bare-metal VM clusters, with integrated virtualization, distributed storage, networking and Rancher integration; no software usage quota.",
+    "watch_out": "Requires your own compatible bare-metal servers, disks, networking and operations: Harvester does NOT provide any free hosted virtual machine, bandwidth or cloud credits. Enterprise services/support, hardware and hosting incur separate costs; Apache-2.0 license terms apply.",
+    "pricing_url": "https://github.com/harvester/harvester",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-11-06"
+  },
+  {
     "id": "heyform-open-source-self-hosted",
     "name": "HeyForm Open Source Self-Hosted",
     "category": "forms-surveys",
@@ -12855,6 +12881,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-06",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "kubevirt-self-hosted",
+    "name": "KubeVirt Self-Hosted Virtual Machines",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 Kubernetes virtualization API and runtime to create and manage virtual machines within your own Kubernetes cluster, without per-VM software usage fees.",
+    "watch_out": "KubeVirt is a self-hosted VM orchestration component, NOT a free public VPS or a hosted cloud allocation. Requires an operational Kubernetes cluster, virtualization-capable nodes, storage, networking and platform expertise; those costs remain yours.",
+    "pricing_url": "https://github.com/kubevirt/kubevirt",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-11-06"
   },
   {
     "id": "kubo-ipfs-self-hosted-node",
@@ -13479,6 +13518,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "proxmox-ve-self-hosted",
+    "name": "Proxmox VE Self-Hosted Virtualization",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Open-source self-hosted virtualization platform for KVM virtual machines and LXC containers, with web management, clustering, storage and software-defined networking; no vendor-side per-VM allowance or time limit.",
+    "watch_out": "Requires your own physical servers, CPU, RAM, storage, networking and administration; this is NOT a free cloud-hosted VPS. The no-subscription repository lacks the tested Enterprise Repository, and commercial support and enterprise updates require paid subscriptions. AGPLv3 license obligations apply.",
+    "pricing_url": "https://proxmox.com/en/proxmox-virtual-environment/overview",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "deployment_model": "self-hosted",
+    "last_checked": "2026-11-06"
   },
   {
     "id": "quillforms-open-source-form-builder",
