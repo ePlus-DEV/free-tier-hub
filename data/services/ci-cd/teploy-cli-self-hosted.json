@@ -1,0 +1,13 @@
+{
+  "id": "teploy-cli-self-hosted",
+  "name": "Teploy CLI Self-Hosted",
+  "category": "ci-cd",
+  "plan": "ongoing",
+  "free_limit": "Free open-source CLI for SSH-based zero-downtime Docker deployments on your own server; automatic rollback, Caddy HTTPS, multi-server support, previews and configuration-based deploys.",
+  "watch_out": "The CLI and related open-source tools have no Teploy subscription, account or usage meter, but require your own servers, Docker/SSH infrastructure and operational management. Teploy Cloud is a separate paid managed offering; comply with the applicable MIT/AGPL license.",
+  "pricing_url": "https://www.teploy.com/docs/getting-started/introduction",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
