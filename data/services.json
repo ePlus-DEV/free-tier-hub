@@ -14059,6 +14059,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "vayu-local-api-load-testing",
+    "name": "Vayu Local API Client and Load Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free local desktop API client and native C++ load-testing engine with no subscription, paid tier or feature gating; no vendor-imposed usage quota or expiry.",
+    "watch_out": "Runs on the user's own computer; no free hosted load generators, cloud compute or bandwidth. Engine is AGPL-3.0 and UI Apache-2.0; network-service modifications to AGPL code can trigger source-sharing obligations. Load tests may incur costs or violate target API rate limits.",
+    "pricing_url": "https://github.com/athrvk/vayu",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "local"
+  },
+  {
     "id": "vitest-open-source-local",
     "name": "Vitest Open-Source Test Runner",
     "category": "testing-qa",
