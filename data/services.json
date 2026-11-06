@@ -12272,6 +12272,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "bunmail-self-hosted-email-api",
+    "name": "BunMail Self-Hosted Email API",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted transactional email server with REST API, SMTP submission, inbound mail, templates, DKIM, webhooks, and dashboard; no software subscription or per-email vendor fee.",
+    "watch_out": "Bring your own server, PostgreSQL, domain and DNS; outbound port 25 may be blocked by VPS providers. Deliverability depends on IP reputation and SPF/DKIM/DMARC. API rate limits and hosting costs still apply; not a free hosted email-sending quota.",
+    "pricing_url": "https://github.com/mohamedboukari/bunmail",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cacti-network-graphing-self-hosted",
     "name": "Cacti Open-Source Network Graphing (Self-Hosted)",
     "category": "observability",
