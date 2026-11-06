@@ -440,12 +440,25 @@ function categoryGlyph(category) {
     'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + body + '</svg>';
 }
 
-function categoriesOverviewPage(absolute, counts) {
+// Lightweight timestamps let +N expire without requiring a fresh network request.
+function recentCountMarkup(items, now = Date.now()) {
+  const recent = items.filter(item => {
+    const added = Date.parse(item.added_at_utc || '');
+    return Number.isFinite(added) && added <= now && now - added < 48 * 60 * 60 * 1000;
+  }).map(item => item.added_at_utc);
+  return recent.length
+    ? '<span class="recent-count" data-new-published-times="' +
+      tag(recent.join(',')) + '" hidden></span>'
+    : '';
+}
+
+function categoriesOverviewPage(absolute, counts, mainItems) {
   const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
   const entries = CATEGORIES.map(category => {
     const name = CATEGORY_NAMES[category];
     const description = CATEGORY_DESCRIPTIONS[category];
     const count = counts[category];
+    const recent = recentCountMarkup(mainItems.filter(item => item.category === category));
     return [
       '<a class="category-overview-card" href="', tag(absolute('category/' + category + '/')),
       '" data-category-name="', tag(name.toLowerCase()), '">',
@@ -453,7 +466,7 @@ function categoriesOverviewPage(absolute, counts) {
       '<span class="category-overview-body"><strong>', tag(name), '</strong>',
       '<span class="category-overview-description">', tag(description), '</span></span>',
       '<span class="category-overview-foot"><span class="category-overview-count"><b>',
-      compactNumber(count), '</b> ', count === 1 ? 'service' : 'services', '</span>',
+      compactNumber(count), '</b> ', count === 1 ? 'service' : 'services', recent, '</span>',
       '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'), '</span></span>',
       '</a>',
     ].join('');
@@ -489,7 +502,7 @@ function categoryPage(category, subset, absolute) {
     '">Home</a><span aria-hidden="true">/</span><a href="', tag(absolute('categories/')),
     '">Categories</a><span aria-hidden="true">/</span><span>', tag(name), '</span></nav>',
     '<section class="page-intro"><p class="kicker">CATEGORY · ', compactNumber(subset.length),
-    ' SERVICES</p><h1>', tag(name), '</h1>',
+    ' SERVICES', recentCountMarkup(subset), '</p><h1>', tag(name), '</h1>',
     '<p>Compare included quotas, restrictions and official provider documentation.</p></section>',
     // Render all cards into HTML for no-JS users, discovery, and search indexing.
     // JavaScript progressively reveals batches without changing the catalog data.
@@ -555,7 +568,7 @@ function limitedOffersPage(items, absolute) {
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><span>Limited offers</span></nav>',
     '<section class="page-intro"><p class="kicker">LIMITED OFFERS · ', compactNumber(items.length),
-    ' ENTRIES</p><h1>Time-limited and expiring offers</h1>',
+    ' ENTRIES', recentCountMarkup(items), '</p><h1>Time-limited and expiring offers</h1>',
     '<p>These promotions, trials and expiring resources are not ongoing free tiers. ',
     'They are excluded from the main directory counts. Check the provider for current eligibility, renewal fees and expiration rules. ',
     '<a href="', tag(absolute('about/classifications/#plans')), '">How we classify offers</a>.</p></section>',
@@ -588,11 +601,14 @@ function detailPage(item, absolute) {
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><a href="', tag(listingURL),
     '">', tag(listingName), '</a><span aria-hidden="true">/</span><span>', tag(name),
-    '</span></nav><div class="detail-layout"><article class="detail">',
+    '</span></nav><div class="detail-layout"><article class="detail" data-added-at-utc="',
+    tag(item.added_at_utc || ''), '">',
     '<div class="detail-head"><span class="detail-icon" aria-hidden="true">',
     serviceLogo(item), '</span><span class="badge" data-plan="',
     tag(item.plan), '">', tag(PLAN_NAMES[item.plan]), '</span></div>',
-    '<p class="kicker">', tag(category), '</p><h1>', tag(name), '</h1>',
+    '<p class="kicker">', tag(category),
+    '<span class="new-service-badge detail-new-badge" hidden title="First published within the last 48 hours (UTC)" ',
+    'aria-label="New service in the last 48 hours">NEW</span></p><h1>', tag(name), '</h1>',
     '<p class="detail-lead">', limited
       ? 'This is a time-limited or expiring offer, not an ongoing free tier. Verify eligibility, expiration and billing before use.'
       : 'Explore this developer service’s ongoing no-cost allowance, restrictions and official documentation before deploying.', '</p>',
@@ -815,7 +831,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, categoriesRelative + 'index.html', document(absolute,
     'All Categories | Free Tier Hub',
     'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
-    categoriesRelative, categoriesOverviewPage(absolute, counts), categoriesSchema));
+    categoriesRelative, categoriesOverviewPage(absolute, counts, mainItems), categoriesSchema));
   pageURLs.push([categoriesRelative, latest]);
   const compareRelative = 'compare/';
   file(output, compareRelative + 'index.html', document(absolute,

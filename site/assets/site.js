@@ -24,12 +24,23 @@
   // Evaluate NEW on the visitor's clock, not from a cached build-time HTML flag.
   function refreshNewServiceBadges(scope) {
     var now = Date.now();
-    scope.querySelectorAll(".service-card").forEach(function (card) {
+    scope.querySelectorAll(".service-card, .detail").forEach(function (card) {
       var badge = card.querySelector(".new-service-badge");
       if (!badge) return;
       var published = Date.parse(card.getAttribute("data-added-at-utc") || "");
       badge.hidden = !(Number.isFinite(published) && published <= now &&
         now - published < 48 * 60 * 60 * 1000);
+    });
+    scope.querySelectorAll(".recent-count").forEach(function (badge) {
+      var timestamps = (badge.getAttribute("data-new-published-times") || "").split(",");
+      var count = timestamps.filter(function (value) {
+        var published = Date.parse(value);
+        return Number.isFinite(published) && published <= now &&
+          now - published < 48 * 60 * 60 * 1000;
+      }).length;
+      badge.textContent = count ? "+" + count + " new" : "";
+      badge.hidden = count === 0;
+      badge.setAttribute("aria-label", count + " services first published in the last 48 hours (UTC)");
     });
   }
   refreshNewServiceBadges(document);
