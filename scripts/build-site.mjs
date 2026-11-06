@@ -104,6 +104,16 @@ function planBadge(item) {
   return 'Free tier';
 }
 
+// A service is NEW only during the 48 hours following first publication.
+// Provider re-verification and catalog rebuilds never reset this timestamp.
+export function countNewIn48Hours(items, now = Date.now()) {
+  const windowMs = 48 * 60 * 60 * 1000;
+  return items.filter(item => {
+    const added = Date.parse(item.added_at_utc || '');
+    return Number.isFinite(added) && added <= now && now - added < windowMs;
+  }).length;
+}
+
 // Only ongoing allowances and recurring credits belong in the main free-tier directory.
 // Time-limited trials and expiring resources stay available in a separate archive.
 const isMainFreeOffer = item => item.plan === 'ongoing' || item.plan === 'monthly-credit';
@@ -120,13 +130,16 @@ function card(item, absolute, initiallyHidden = false) {
     '" data-offer-plan="', tag(item.plan),
     '" data-eligibility="', tag(item.eligibility || ''),
     '" data-added-at="', tag(item.added_at || ''),
+     '" data-added-at-utc="', tag(item.added_at_utc || ''),
     '" data-last-checked="', tag(item.last_checked),
     '" data-credit-card="', tag(item.credit_card),
     '" data-commercial-use="', tag(item.commercial_use),
     '" data-search="', tag(searchable), '">',
     '<div class="card-top"><span class="service-icon" aria-hidden="true">',
     serviceLogo(item), '</span><div class="card-identity"><h3><a href="', tag(dest),
-    '">', tag(item.name), '</a></h3><span class="eyebrow">',
+    '">', tag(item.name), '</a><span class="new-service-badge" hidden ',
+     'title="First published within the last 48 hours (UTC)" ',
+     'aria-label="New service in the last 48 hours">NEW</span></h3><span class="eyebrow">',
     '<a class="card-filter-link" data-card-category="', tag(item.category), '" href="', tag(absolute('?category=' + encodeURIComponent(item.category))),
     '" aria-label="Filter by category: ', tag(CATEGORY_LABELS[item.category]), '">', tag(CATEGORY_LABELS[item.category]), '</a>',
     hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"><span aria-hidden="true"> · </span><a class="card-filter-link" data-card-hosting="' + hostingModel(item) + '" href="' + tag(absolute('?hosting=' + hostingModel(item))) + '" aria-label="Filter by deployment model: ' + HOSTING_LABELS[hostingModel(item)] + '">' + HOSTING_LABELS[hostingModel(item)] + '</a></span>' : '', '</span></div>',
@@ -651,7 +664,7 @@ function comparePage(absolute) {
 // directly from the same canonical free-tier subset as the Home page.
 export function serviceCountSVG(count, label = 'services') {
   if (!Number.isSafeInteger(count) || count < 0) throw Error('Invalid service count');
-  if (!['services', 'free tiers', 'limited offers'].includes(label)) throw Error('Invalid service badge label');
+  if (!['services', 'free tiers', 'limited offers', 'new (48h)'].includes(label)) throw Error('Invalid service badge label');
   const display = compactNumber(count);
   const labelWidth = Math.max(72, 16 + label.length * 7);
   const valueWidth = Math.max(45, 18 + display.length * 8);
@@ -659,7 +672,8 @@ export function serviceCountSVG(count, label = 'services') {
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="22" ' +
     'viewBox="0 0 ' + width + ' 22" role="img" aria-label="' + count + ' ' + label + '">' +
     '<title>' + count + ' ' + label + '</title>' +
-    '<rect width="' + width + '" height="22" rx="4" fill="#168b47"/>' +
+    '<rect width="' + width + '" height="22" rx="4" fill="' +
+    (label === 'new (48h)' ? '#2563eb' : '#168b47') + '"/>' +
     '<path d="M4 0H' + labelWidth + 'V22H4A4 4 0 0 1 0 18V4A4 4 0 0 1 4 0Z" fill="#414852"/>' +
     '<text x="' + (labelWidth / 2) + '" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" ' +
     'font-size="11" font-weight="600">' + label + '</text>' +
@@ -706,12 +720,15 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     ? loadServices(ROOT) : JSON.parse(fs.readFileSync(catalogPath, 'utf8')));
   const serviceAliases = activeServiceAliases(source,
     path.resolve(catalogPath) === path.join(ROOT, 'data/services.json'));
-  const publishedDates = serviceAddedDates(ROOT);
+  const publishedTimes = serviceAddedDates(ROOT, { includeTime: true });
   // Derive dates from the commit when each service first became visible on
   // the current branch. In particular, an old PR merged today is new today.
   // Never use last_checked or build time: both would corrupt Newest added.
   const items = source.map(item => ({
-    ...item, ...(publishedDates.has(item.id) ? { added_at: publishedDates.get(item.id) } : {}),
+    ...item, ...(publishedTimes.has(item.id) ? {
+      added_at: publishedTimes.get(item.id).slice(0, 10),
+      added_at_utc: publishedTimes.get(item.id),
+    } : {}),
   }));
   // A preview using a synthetic custom catalog may contain IDs absent from Git.
   // The published source catalog must never silently ship undated services.
@@ -728,6 +745,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   fs.mkdirSync(output, { recursive: true });
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const generatedAt = new Date().toISOString();
+  const new48hCount = countNewIn48Hours(items, Date.parse(generatedAt));
   const searchVersion = createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
   const searchIndex = {
     version: 1,
@@ -735,7 +754,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     // [id, name, category, plan, deployment, card, commercial, added, checked, searchable].
     rows: items.map(item => [
       item.id, item.name, item.category, item.plan, hostingModel(item),
-      item.credit_card, item.commercial_use, item.added_at || '', item.last_checked,
+      item.credit_card, item.commercial_use, item.added_at_utc || item.added_at || '', item.last_checked,
       // Match the server-rendered card search data and accept service slugs/brand aliases.
       [item.id, item.name, CATEGORY_NAMES[item.category], item.free_limit, item.watch_out].join(' ').toLowerCase()
     ])
@@ -939,10 +958,14 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     free_tier_count: mainItems.length,
     limited_offer_count: limitedItems.length,
     total_services: items.length,
+    new_48h_count: new48hCount,
+    new_48h_window_hours: 48,
+    generated_at_utc: generatedAt,
   }, null, 2) + '\n');
   file(output, 'badges/services.svg', serviceCountSVG(items.length));
   file(output, 'badges/free-tiers.svg', serviceCountSVG(mainItems.length, 'free tiers'));
   file(output, 'badges/limited-offers.svg', serviceCountSVG(limitedItems.length, 'limited offers'));
+  file(output, 'badges/new-48h.svg', serviceCountSVG(new48hCount, 'new (48h)'));
   for (const category of CATEGORIES) {
     file(output, 'badges/categories/' + category + '.svg', categoryCountSVG(counts[category]));
   }
@@ -960,7 +983,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Page not found',
       url: absolute('404.html') }, 'noindex,follow'));
   return { service_count: items.length, free_tier_count: mainItems.length,
-    limited_offer_count: limitedItems.length, category_count: CATEGORIES.length,
+    limited_offer_count: limitedItems.length, new_48h_count: new48hCount,
+    category_count: CATEGORIES.length,
     page_count: pageURLs.length, urls: pageURLs.map(([relative]) => absolute(relative)),
     site_url: base, output };
 }

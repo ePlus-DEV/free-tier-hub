@@ -3,9 +3,22 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, serviceCountSVG, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
+import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
+
+test('NEW uses an exact UTC 48-hour window, not verification or daily date rounding', () => {
+  const now = Date.parse('2026-11-06T12:00:00Z');
+  const entries = [
+    { added_at_utc: '2026-11-04T12:00:00Z' }, // exactly 48h, expired
+    { added_at_utc: '2026-11-04T12:00:01Z' }, // within 48h
+    { added_at_utc: '2026-11-06T12:00:00Z' }, // just added
+    { added_at_utc: '2026-11-06T12:00:01Z' }, // future is not published
+    { added_at: '2026-11-06', last_checked: '2026-11-06' }, // no fabricated precision
+    { added_at_utc: 'broken', last_checked: '2026-11-06' },
+  ];
+  assert.equal(countNewIn48Hours(entries, now), 2);
+});
 
 test('directory exposes unique search/category controls and official sources for every service', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-design-'));
@@ -151,6 +164,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
       'All published service dates must come from Git history');
     assert.match(html, /data-added-at="\d{4}-\d{2}-\d{2}"/);
+    assert.match(html, /data-added-at-utc="\d{4}-\d{2}-\d{2}T[^"]+Z"/);
+    assert.match(html, /class="new-service-badge" hidden title="First published within the last 48 hours \(UTC\)"/);
+    assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}T[^\s]+Z$/.test(item.added_at_utc)));
     assert.doesNotMatch(html, /data-added-at=""/);
     // The public added date is distinct from last_checked and also shown in details.
     const candidate = published.find(item => item.id === 'chatgpt-free');
@@ -342,6 +358,12 @@ test('category count badges are generated from source JSON and update on rebuild
     assert.equal(stats.total_services, items.length, 'badge stats must update on rebuild');
     assert.equal(stats.free_tier_count, items.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length);
     assert.equal(stats.limited_offer_count, items.length - stats.free_tier_count);
+    const published = JSON.parse(fs.readFileSync(path.join(second, 'catalog.json'), 'utf8'));
+    assert.equal(stats.new_48h_window_hours, 48);
+    assert.ok(!Number.isNaN(Date.parse(stats.generated_at_utc)));
+    assert.equal(stats.new_48h_count, countNewIn48Hours(published, Date.parse(stats.generated_at_utc)));
+    assert.equal(fs.readFileSync(path.join(second, 'badges/new-48h.svg'), 'utf8'),
+      serviceCountSVG(stats.new_48h_count, 'new (48h)'));
     const firstBadge = fs.readFileSync(path.join(first, 'badges/services.svg'), 'utf8');
     const nextBadge = fs.readFileSync(path.join(second, 'badges/services.svg'), 'utf8');
     assert.equal(nextBadge, serviceCountSVG(stats.total_services));
@@ -352,6 +374,10 @@ test('category count badges are generated from source JSON and update on rebuild
       serviceCountSVG(stats.limited_offer_count, 'limited offers'));
     assert.throws(() => serviceCountSVG(-1), /Invalid service count/);
     assert.throws(() => serviceCountSVG(1, 'unknown'), /Invalid service badge label/);
+    const runtime = fs.readFileSync(path.join(second, 'assets/site.js'), 'utf8');
+    assert.match(runtime, /refreshNewServiceBadges\(document\)/);
+    assert.match(runtime, /refreshNewServiceBadges\(grid\)/);
+    assert.match(runtime, /now - published < 48 \* 60 \* 60 \* 1000/);
     const category = items[0].category;
     const count = items.filter(item => item.category === category &&
       (item.plan === 'ongoing' || item.plan === 'monthly-credit')).length;

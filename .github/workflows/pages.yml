@@ -38,6 +38,9 @@ on:
       - 'package.json'
       - '.nvmrc'
       - '.github/workflows/pages.yml'
+  # SVG badges are static snapshots: refresh the rolling 48h count even without merges.
+  schedule:
+    - cron: '7 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -99,6 +102,7 @@ jobs:
           test -s dist/badges/services.svg
           test -s dist/badges/free-tiers.svg
           test -s dist/badges/limited-offers.svg
+          test -s dist/badges/new-48h.svg
           test -s dist/search/index.json
           test -s dist/search/cards/static-hosting.json
           test -s dist/badges/categories/static-hosting.svg
