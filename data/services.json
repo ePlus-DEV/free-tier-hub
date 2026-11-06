@@ -12415,6 +12415,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dodo-self-hosted-reminders",
+    "name": "dodo Self-Hosted Reminders",
+    "category": "queues-jobs",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted recurring task and reminder scheduler with Telegram bot and browser notifications; no vendor-imposed software quota or subscription expiry.",
+    "watch_out": "Requires your own Docker/server, SQLite storage and backups; Telegram notifications require a user-managed bot. Browser notifications require the web app to remain open and HTTPS/localhost; no hosted infrastructure is included. Designed for private Tailscale deployments.",
+    "pricing_url": "https://github.com/mtzanidakis/dodo",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "e2a-hosted-free",
     "name": "e2a Hosted Free",
     "category": "email-notifications",
