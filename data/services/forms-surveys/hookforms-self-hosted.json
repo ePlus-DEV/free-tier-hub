@@ -1,0 +1,13 @@
+{
+  "id": "hookforms-self-hosted",
+  "name": "HookForms Self-Hosted Webhook Inbox",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form submission and webhook inbox software; no provider-imposed subscription or submission quota. Default 100 requests per 60 seconds per IP, 2 MB request body, and 10 emails per 10 minutes per inbox.",
+  "watch_out": "Requires own Docker hosting, PostgreSQL, Redis, DNS and configured notification channels; external email/SMS providers may charge. Default event retention is 30 days. Rate limits apply; project is relatively new.",
+  "pricing_url": "https://github.com/h1n054ur/hookforms",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
