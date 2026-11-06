@@ -12779,6 +12779,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kook-self-hosted-webhook-gateway",
+    "name": "Kook Self-Hosted Webhook Gateway",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook gateway with signature verification, retry queues, replay, API keys and audit logs; no software subscription or published event quota.",
+    "watch_out": "Requires own Docker/PHP infrastructure with PostgreSQL and Redis, configured secrets and public HTTPS endpoint; outbound email providers may charge. Young upstream project; review security and production readiness.",
+    "pricing_url": "https://github.com/enioladev1/kook",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "kubo-ipfs-self-hosted-node",
     "name": "Kubo Self-Hosted IPFS Node",
     "category": "storage",
