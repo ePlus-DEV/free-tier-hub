@@ -13234,6 +13234,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "openformy-self-hosted",
+    "name": "OpenFormy",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted form builder; no software-imposed form or submission quota documented. Runs on your own infrastructure.",
+    "watch_out": "Self-hosting, persistent SQLite storage, backups, domain and email/AI integrations may incur costs. Production deployment requires configuring secrets and persistent storage; optional OpenAI API usage is billed separately.",
+    "pricing_url": "https://github.com/pansani/openformy",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "opennms-horizon-self-hosted",
     "name": "OpenNMS Horizon Community (Self-Hosted)",
     "category": "observability",
