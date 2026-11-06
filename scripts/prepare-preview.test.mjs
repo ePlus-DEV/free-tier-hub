@@ -73,7 +73,7 @@ test('preview keeps static, dynamic and redirected navigation inside its preview
     assert.match(page, /href="\.\.\/\.\.\/index\.html"/);
     assert.ok(page.includes('action="../../index.html#explore"'));
     assert.match(page, /rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/service\/vercel\/"/);
-    assert.match(cmp, /data-compare-url="\.\.\/compare\/index\.html"/);
+    assert.match(cmp, /data-compare-url="index\.html"/);
     assert.match(cmp, /data-service-base="\.\.\/service\/"/);
     assert.match(cmp, /data-catalog-url="\.\.\/catalog\.json"/);
     assert.match(cmp, /href="\.\.\/service\/vercel\/index\.html"/);
