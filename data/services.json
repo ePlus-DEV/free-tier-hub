@@ -13364,6 +13364,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "posta-self-hosted-email-platform",
+    "name": "Posta Self-Hosted Email Platform",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0-or-later self-hosted email platform with REST API, SMTP inbound/outbound relay, templates, campaigns, webhooks and web-form ingestion; no software message quota or reset period advertised.",
+    "watch_out": "Requires own PostgreSQL, Redis, storage, domain/DNS and SMTP infrastructure; outbound SMTP providers, VPS, deliverability and managed hosting may cost extra. Production deployment should run dedicated workers; AGPL network-use obligations apply.",
+    "pricing_url": "https://github.com/goposta/posta",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "posthorn-self-hosted-email-gateway",
     "name": "Posthorn Self-Hosted Email Gateway",
     "category": "email-notifications",
