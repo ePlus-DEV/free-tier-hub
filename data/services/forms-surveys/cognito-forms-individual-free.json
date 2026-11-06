@@ -1,0 +1,13 @@
+{
+  "id": "cognito-forms-individual-free",
+  "name": "Cognito Forms Individual Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited hosted forms, 100 entries/month, 100 MB storage and one user on the always-free Individual plan; supports basic calculations and payment acceptance.",
+  "watch_out": "The free quota is 100 entries/month across the account, forms include Cognito branding, and advanced workflows, electronic signatures and additional users require paid plans. No card needed for Individual; commercial-use terms need confirmation.",
+  "pricing_url": "https://www.cognitoforms.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}

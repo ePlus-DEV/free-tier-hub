@@ -1,0 +1,13 @@
+{
+  "id": "formsapp-free",
+  "name": "forms.app Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Up to 5 hosted forms with unlimited submissions, responses, questions, views and team members, plus 10 MB total file storage on the free-forever plan.",
+  "watch_out": "10 MB of file storage can limit upload-heavy use, and more forms, branding removal and custom subdomains require paid plans. No credit card is required on Free. Any payment-processing or integration fees are separate; commercial-use policy needs confirmation.",
+  "pricing_url": "https://forms.app/en/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-06"
+}
