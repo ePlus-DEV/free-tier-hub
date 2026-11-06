@@ -12376,6 +12376,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "e2a-hosted-free",
+    "name": "e2a Hosted Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "3,000 outbound emails/month (20 sends/day), 3 agents, 3 custom domains and 1 GiB storage on the hosted Free plan; agent inboxes and WebSocket delivery included.",
+    "watch_out": "Free sending is capped at 20/day unless an add-on lifts it; outgoing email carries a 'Created with e2a' footer. Domain setup and SPF/DKIM are needed for custom-domain delivery. A paid Starter plan is separate. Payment-card and commercial-use terms for hosted Free are not explicitly confirmed.",
+    "pricing_url": "https://e2a.dev/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-06",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "emitd-free-email-api",
+    "name": "emitd Free Email API",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "5,000 emails/month (150/day), 1 custom domain, 2 webhook endpoints and 25 AI design credits/month; transactional API, SMTP proxy and inbound inbox included.",
+    "watch_out": "Free is $0/month without a credit card and sending pauses at the monthly or daily cap; paid pay-as-you-go has extra-email charges and pre-purchased credits expire after 365 days. Commercial-use permissions for Free should be checked with the provider.",
+    "pricing_url": "https://emitd.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-06",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "endatix-headless-form-api",
     "name": "Endatix Headless Form API",
     "category": "forms-surveys",
@@ -13533,6 +13559,32 @@
     "deployment_model": "local"
   },
   {
+    "id": "sendpository-free",
+    "name": "Sendpository Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "6,000 sent emails/month (up to 200/day), 1 sending domain, 2 webhook endpoints, 3 receiving addresses and up to 300 received emails/day; full API and delivery logs.",
+    "watch_out": "Free is an ongoing $0 plan for side projects; throughput is limited to 2 API requests/second and 200 outgoing emails/day. Higher volumes and scheduled sending require paid Pro. Payment-card and commercial-use requirements are not explicitly confirmed.",
+    "pricing_url": "https://www.sendpository.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-06",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "sendsignal-free-email",
+    "name": "SendSignal Free Email",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "3,000 emails/month with REST API and SMTP relay, DKIM-verified sending domains, webhooks, templates, contacts, suppressions and test mode.",
+    "watch_out": "Free is $0 forever and no card is required; sending pauses when the monthly quota is exhausted unless the account switches to a paid plan or optional pay-as-you-go. Inbound parsing and broadcasts/automations are on paid Pro. Confirm commercial-use policy directly.",
+    "pricing_url": "https://sendsignal.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-06",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "smokeping-latency-monitoring-self-hosted",
     "name": "SmokePing Latency Monitoring (Self-Hosted)",
     "category": "observability",
@@ -13648,6 +13700,32 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "local"
+  },
+  {
+    "id": "temps-self-hosted-paas",
+    "name": "Temps Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free open-source self-hosted PaaS with unlimited local projects, deployments and users; Git push deployments, managed service provisioning, analytics, session replay, error monitoring and uptime monitoring.",
+    "watch_out": "The MIT/Apache-2.0 licensed self-hosted software is free, but servers, storage, networking, database resources and email-delivery infrastructure are not included. Temps Cloud and enterprise/premium features are separate paid offerings; do not confuse them with free self-hosting.",
+    "pricing_url": "https://temps.sh/about",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
+    "id": "teploy-cli-self-hosted",
+    "name": "Teploy CLI Self-Hosted",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "Free open-source CLI for SSH-based zero-downtime Docker deployments on your own server; automatic rollback, Caddy HTTPS, multi-server support, previews and configuration-based deploys.",
+    "watch_out": "The CLI and related open-source tools have no Teploy subscription, account or usage meter, but require your own servers, Docker/SSH infrastructure and operational management. Teploy Cloud is a separate paid managed offering; comply with the applicable MIT/AGPL license.",
+    "pricing_url": "https://www.teploy.com/docs/getting-started/introduction",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "terramate-cli-local-iac",
