@@ -13422,6 +13422,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "openagentemail-self-hosted",
+    "name": "OpenAgentEmail Self-Hosted",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted agent email and task-handoff platform with SMTP/IMAP mailbox integration, REST/MCP APIs, approval threads and webhooks; no per-identity software license fee or expiry. Default sending rate limit is 20 messages/hour per identity, configurable.",
+    "watch_out": "Self-hosting does not include a free domain, VPS, mailbox, SMTP relay or outbound delivery. Bundled mailserver needs DNS and reachable mail ports; API-only mode needs an external catch-all mailbox. Ordinary mail defaults to 30-day retention. Secure API tokens and TLS; provider limits and infrastructure costs apply.",
+    "pricing_url": "https://github.com/openagentemail/openagentemail",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-06",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "openformy-self-hosted",
     "name": "OpenFormy",
     "category": "forms-surveys",
