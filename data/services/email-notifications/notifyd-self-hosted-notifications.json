@@ -1,0 +1,13 @@
+{
+  "id": "notifyd-self-hosted-notifications",
+  "name": "notifyd Self-Hosted Notifications",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted notification server with email, SMS, push and in-app inbox; no software license fee, expiry or published software usage quota. Runs with PostgreSQL via Docker or standalone binary.",
+  "watch_out": "Hosting and PostgreSQL are not included. External delivery providers (SMTP, Resend, Twilio, Telnyx, push services) may charge or impose their own limits; configure API keys, secrets and provider accounts. No free hosted notifications are included.",
+  "pricing_url": "https://github.com/rmzlb/notifyd",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
