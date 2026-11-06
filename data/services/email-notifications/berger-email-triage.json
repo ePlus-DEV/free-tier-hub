@@ -1,0 +1,13 @@
+{
+  "id": "berger-email-triage",
+  "name": "Berger Email Triage",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free AGPL-3.0-or-later self-hosted Rust email triage daemon with rule-based tagging, optional LLM classification, IMAP folder actions, webhook triggers, and Docker Compose deployment; no software usage quota published.",
+  "watch_out": "Requires a separate running Bichon mail archiver, IMAP credentials and your own host. Optional LLM calls may incur provider fees. Modified network-served versions carry AGPL source-sharing obligations; no hosted compute or email account is included.",
+  "pricing_url": "https://github.com/mmaudet/berger",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-06",
+  "deployment_model": "self-hosted"
+}
