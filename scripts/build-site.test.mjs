@@ -252,6 +252,11 @@ test('directory exposes unique search/category controls and official sources for
     const categoryHtml = fs.readFileSync(path.join(output, 'category/static-hosting/index.html'), 'utf8');
     assert.ok(categoryHtml.includes('class="service-grid category-service-grid" id="category-service-grid"'));
     assert.ok(categoryHtml.includes('id="category-pagination" hidden'));
+    for (const id of ['category-tools', 'category-search', 'category-sort', 'category-plan',
+      'category-hosting', 'category-no-card', 'category-commercial', 'category-clear-filters',
+      'category-no-results']) assert.ok(categoryHtml.includes('id="' + id + '"'), id);
+    assert.ok(categoryHtml.includes('id="category-tools" aria-label="Search and filter Static &amp; frontend hosting services" hidden'));
+    assert.ok(categoryHtml.includes('<h1>Static &amp; frontend hosting</h1>'));
     assert.ok(categoryHtml.includes('id="category-page-status" role="status" aria-live="polite"'));
     assert.ok(categoryHtml.includes('id="category-load-more" aria-controls="category-service-grid"') ||
       categoryHtml.includes('id="category-load-more"'));
@@ -745,6 +750,124 @@ test('category Load more keeps batches, URL history, and links usable without a 
   assert.equal(small.wrap.hidden, true);
   const css = fs.readFileSync(new URL('../site/assets/site.css', import.meta.url), 'utf8');
   assert.ok(css.includes('.category-pagination .load-more{width:100%;min-width:0;min-height:46px}'));
+});
+
+test('category search, offer/hosting/billing filters, sort and URL state work together', async () => {
+  const { runInNewContext } = await import('node:vm');
+  const source = fs.readFileSync(new URL('../site/assets/site.js', import.meta.url), 'utf8');
+  function el() {
+    return {
+      hidden: false, checked: false, value: '', textContent: '', listeners: {}, attrs: {},
+      addEventListener(name, fn) { (this.listeners[name] ||= []).push(fn); },
+      setAttribute(name, value) { this.attrs[name] = value; },
+      getAttribute(name) { return this.attrs[name] ?? null; },
+      focus() { this.focused = true; },
+      scrollIntoView() { this.scrolled = true; },
+      appendChild() {}, querySelector() { return null; },
+    };
+  }
+  const items = Array.from({length: 26}, (_, i) => {
+    const card = el(), link = el();
+    link.textContent = 'Service ' + String(i).padStart(2, '0');
+    card.attrs = {
+      'data-search': (link.textContent + ' api tools').toLowerCase(),
+      'data-offer-plan': i < 5 ? 'monthly-credit' : 'ongoing',
+      'data-hosting-model': i % 2 === 0 ? 'cloud' : 'self-hosted',
+      'data-credit-card': i % 3 === 0 ? 'no' : 'yes',
+      'data-commercial-use': i % 4 === 0 ? 'yes' : 'no',
+      'data-added-at-utc': '2026-11-05T00:' + String(i).padStart(2, '0') + ':00.000Z',
+      'data-last-checked': i % 2 ? '2026-11-01' : '2026-11-05',
+    };
+    card.querySelector = () => link;
+    card.link = link;
+    return card;
+  });
+  const grid = el();
+  grid.order = items.slice();
+  grid.querySelectorAll = () => items;
+  grid.appendChild = function (card) {
+    this.order.splice(this.order.indexOf(card), 1);
+    this.order.push(card);
+  };
+  const nodes = Object.fromEntries([
+    'category-service-grid', 'category-pagination', 'category-load-more',
+    'category-load-more-wrap', 'category-page-status', 'category-tools',
+    'category-search', 'category-sort', 'category-plan', 'category-hosting',
+    'category-no-card', 'category-commercial', 'category-filter-active',
+    'category-clear-filters', 'category-no-results'
+  ].map(id => [id, el()]));
+  nodes['category-sort'].value = 'default';
+  const document = {
+    body: el(), createElement: el,
+    documentElement: {style: {setProperty() {}}, setAttribute() {}},
+    getElementById(id) {return nodes[id] || null;},
+    querySelector() {return null;}, querySelectorAll() {return [];}, addEventListener() {},
+  };
+  const window = {
+    location: {href: 'https://free-tier.eplus.dev/category/webhooks-events/?utm_source=chatgpt.com#results'},
+    listeners: {}, addEventListener(type, fn) {(this.listeners[type] ||= []).push(fn);},
+    localStorage: {getItem() {return 'rejected';}},
+    matchMedia() {return {matches: false};},
+  };
+  for (const kind of ['pushState', 'replaceState']) window.history ||= {};
+  window.history.pushState = window.history.replaceState = (_state, _title, url) => {
+    window.location.href = new URL(url, window.location.href).href;
+  };
+  runInNewContext(source, {document, window, URL});
+  const fire = (id, type) => nodes[id].listeners[type][0]();
+  const visible = () => grid.order.filter(item => !item.hidden).map(item => item.link.textContent);
+  assert.equal(nodes['category-tools'].hidden, false);
+  assert.equal(visible().length, 12);
+  assert.equal(nodes['category-page-status'].textContent, 'Showing 12 of 26 services');
+  nodes['category-sort'].value = 'newest';
+  fire('category-sort', 'change');
+  assert.equal(visible()[0], 'Service 25');
+  assert.equal(new URL(window.location.href).searchParams.get('sort'), 'newest');
+  nodes['category-plan'].value = 'monthly-credit';
+  fire('category-plan', 'change');
+  assert.equal(visible().length, 5);
+  assert.equal(nodes['category-page-status'].textContent, 'Showing 5 of 5 matching services');
+  assert.equal(nodes['category-filter-active'].textContent, '1');
+  assert.equal(new URL(window.location.href).searchParams.get('offer'), 'monthly-credit');
+  nodes['category-hosting'].value = 'cloud';
+  fire('category-hosting', 'change');
+  assert.equal(visible().length, 3);
+  assert.deepEqual(visible(), ['Service 04', 'Service 02', 'Service 00']);
+  nodes['category-no-card'].checked = true;
+  fire('category-no-card', 'change');
+  assert.deepEqual(visible(), ['Service 00']);
+  nodes['category-commercial'].checked = true;
+  fire('category-commercial', 'change');
+  assert.deepEqual(visible(), ['Service 00']);
+  assert.equal(nodes['category-filter-active'].textContent, '4');
+  nodes['category-search'].value = 'no such service';
+  fire('category-search', 'input');
+  assert.equal(visible().length, 0);
+  assert.equal(nodes['category-no-results'].hidden, false);
+  assert.equal(nodes['category-pagination'].hidden, true);
+  assert.equal(new URL(window.location.href).searchParams.get('q'), 'no such service');
+  assert.equal(new URL(window.location.href).searchParams.get('utm_source'), 'chatgpt.com');
+  assert.equal(new URL(window.location.href).hash, '#results');
+  fire('category-clear-filters', 'click');
+  assert.equal(visible().length, 12);
+  assert.equal(nodes['category-filter-active'].hidden, true);
+  assert.equal(nodes['category-clear-filters'].hidden, true);
+  assert.ok(nodes['category-search'].focused);
+  assert.equal(new URL(window.location.href).searchParams.get('q'), null);
+  assert.equal(new URL(window.location.href).searchParams.get('offer'), null);
+  fire('category-load-more', 'click');
+  assert.equal(visible().length, 24);
+  assert.ok(items[12].link.focused && items[12].link.scrolled);
+  const shared = new URL(window.location.href);
+  assert.equal(shared.searchParams.get('page'), '2');
+  shared.searchParams.set('q', 'Service 01');
+  shared.searchParams.delete('page');
+  window.location.href = shared.href;
+  window.listeners.popstate[0]();
+  assert.deepEqual(visible(), ['Service 01']);
+  assert.equal(nodes['category-search'].value, 'Service 01');
+  assert.equal(nodes['category-page-status'].textContent, 'Showing 1 of 1 matching services');
+  assert.equal(items.filter(item => !item.hidden).length, 1);
 });
 
 test('deployment filtering reads offer metadata rather than ID or product-name guesses', async () => {
