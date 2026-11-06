@@ -3,9 +3,16 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL } from './build-site.mjs';
+import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL, aivenMySQLFreeRetirementNotice } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
+
+test('Aiven MySQL retirement notice expires at 00:00 UTC on 22 December 2026', () => {
+  assert.match(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-21T23:59:59Z')),
+    /data-expires-at="2026-12-22T00:00:00Z"/);
+  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2026-12-22T00:00:00Z')), '');
+  assert.equal(aivenMySQLFreeRetirementNotice(Date.parse('2027-01-01T00:00:00Z')), '');
+});
 
 test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL Free listing', () => {
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'aiven-retirement-'));
@@ -25,6 +32,9 @@ test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL F
       assert.ok(page.includes('21 December 2026'));
     }
     assert.ok(!unrelated.includes(notice), 'other categories must not show a MySQL-specific notice');
+    const browserJS = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
+    assert.match(browserJS, /function expireProviderNotices\(\)/);
+    assert.match(browserJS, /window\.setTimeout\(expireProviderNotices/);
     const postgresEntry = catalog.find(item => item.id === 'aiven-postgres');
     assert.equal(postgresEntry.plan, 'ongoing');
     assert.match(postgresEntry.watch_out, /MySQL Free is a separate, discontinued offer/);
