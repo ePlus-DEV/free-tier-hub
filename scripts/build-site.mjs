@@ -8,6 +8,7 @@ import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
 import { compactNumber, compactQuantityText } from '../site/assets/compact-numbers.js';
 import { activeServiceAliases } from './service-aliases.mjs';
+import { relatedServiceMap } from './service-relations.mjs';
 import {
   CATEGORY_NAMES, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS, PLAN_NAMES, CARD_NAMES, COMMERCIAL_NAMES,
   CATEGORY_ICONS, SERVICE_LOGO_DOMAINS,
@@ -641,7 +642,7 @@ function limitedOffersPage(items, absolute) {
     '">← Back to ongoing free tiers</a></p>',
   ].join('');
 }
-function detailPage(item, absolute) {
+function detailPage(item, absolute, related = []) {
   const limited = !isMainFreeOffer(item);
   const name = item.name;
   const category = CATEGORY_NAMES[item.category];
@@ -692,6 +693,19 @@ function detailPage(item, absolute) {
     glyph('alert'), '<p',
     compactQuantityText(item.watch_out) !== item.watch_out ? ' title="' + tag(item.watch_out) + '" aria-label="' + tag(item.watch_out) + '"' : '',
     '>', tag(compactQuantityText(item.watch_out)), '</p></div>',
+    related.length ? [
+      '<section class="related-services" aria-labelledby="related-services-heading">',
+      '<div class="related-services-heading"><h2 id="related-services-heading">Related services</h2>',
+      '<p>Other listed offerings from the same provider. Limits and eligibility are separate.</p></div>',
+      '<ul class="related-services-list">',
+      ...related.map(other => [
+        '<li><a class="related-service-link" href="', tag(absolute('service/' + other.id + '/')), '">',
+        '<span class="related-service-name">', tag(other.name), '</span>',
+        '<span class="related-service-meta">', tag(CATEGORY_LABELS[other.category]), ' · ',
+        tag(PLAN_NAMES[other.plan]), '</span></a></li>',
+      ].join('')),
+      '</ul></section>',
+    ].join('') : '',
     '<div class="detail-action"><a class="button primary" href="', link,
     '" target="_blank" rel="noopener noreferrer">View official documentation ',
     glyph('arrow'), '</a></div>',
@@ -839,6 +853,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   }
   const output = path.resolve(outputDir);
   fs.mkdirSync(output, { recursive: true });
+  const relatedById = relatedServiceMap(items);
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const generatedAt = new Date().toISOString();
@@ -973,7 +988,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     file(output, relative + 'index.html', document(absolute,
       item.name + ' — ' + offerLabel + ' | Free Tier Hub',
       item.free_limit + '. ' + item.watch_out, relative,
-      detailPage(item, absolute), schema));
+      detailPage(item, absolute, relatedById.get(item.id)), schema));
     pageURLs.push([relative, item.last_checked]);
   }
   // Compatibility pages are deliberately excluded from the canonical sitemap,

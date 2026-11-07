@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadServices, hasServiceShards, aggregateCatalog, COMPATIBILITY_FILE } from './catalog-source.mjs';
+import { relatedServiceMap } from './service-relations.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // First-party badges share the deployed catalog source, but show distinct scopes.
@@ -137,6 +138,8 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     }
   }
   if (errors.length) throw Error(errors.join("\n"));
+  // validateData is also used on single-service test fixtures and intake
+  // samples. Referential checks require the COMPLETE catalog (see render).
   return data;
 }
 
@@ -155,6 +158,8 @@ export function validateCandidate(candidate, today = new Date().toISOString().sl
 
 export function render(root = DEFAULT_ROOT) {
   const data = validateData(loadServices(root));
+  // A shard can reference another category; resolve after loading all shards.
+  relatedServiceMap(data);
   let readme = read(root, "README.md");
   const lines = readme.split("\n");
   const start = lines.findIndex(line => line.trim() === NAV);
