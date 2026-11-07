@@ -13295,6 +13295,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "lmeterx-api-load-testing",
+    "name": "LMeterX API and LLM Load Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source self-hosted load-testing platform for LLM inference, HTTP APIs, A2A and MCP services; no software quota or expiration.",
+    "watch_out": "Requires own Docker/Kubernetes compute (at least 4 GB free RAM and 5 GB disk for quick start), MySQL and metrics services. Load generation and tested cloud LLM/API endpoints can incur provider usage charges; no free hosted compute or model tokens included. Secure default credentials before production exposure.",
+    "pricing_url": "https://github.com/MigoXLab/LMeterX",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "lnav-local-log-navigator",
     "name": "lnav Open-Source Logfile Navigator",
     "category": "observability",
