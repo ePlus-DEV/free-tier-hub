@@ -14522,6 +14522,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "vegha-local-api-client",
+    "name": "Vegha Local API Testing Client",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local desktop API client and headless CLI for HTTP, GraphQL, gRPC, WebSocket and SOAP testing, assertions, scripting, local collections and import; no software usage quota or expiration stated.",
+    "watch_out": "Runs on user-provided Windows, macOS or Linux hardware; cloud hosting and managed test execution are not included. External APIs, Azure Key Vault or AWS Secrets Manager may incur separate provider charges. Some integrations are roadmap-only.",
+    "pricing_url": "https://github.com/vegha-ai/Vegha",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "vercel-for-startups-credits",
     "name": "Vercel for Startups Credits",
     "category": "static-hosting",
