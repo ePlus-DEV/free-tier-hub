@@ -22,6 +22,7 @@ Relations are editorial, not automatically guessed from company domains, brand t
 ## Presentation
 
 - Display links on both existing static detail pages, even when the pair crosses categories or an ongoing/limited-duration boundary.
+- **Approved detail-card composition:** one quiet outlined panel with a chain-link icon immediately before **Related services**; each full-width internal link is a single row with a bold service name, smaller category + plan metadata, and an **up-right arrow** at the right; a separated muted note below all rows states that limits and eligibility are separate. On mobile, rows wrap names without clipping, retain generous tap targets and use the same hierarchy. Do not replace this with bare stacked text links or extra colorful badges.
 - Show each target's actual category and plan beside its name; do not imply common API quotas, account entitlements, limits or billing.
 - Do not show a related section for services without curated links.
 - The source is the existing catalog. Keep links internal and canonical, escaped, keyboard accessible, same-tab and consistent with mobile/dark mode.
