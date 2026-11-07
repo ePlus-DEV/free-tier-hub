@@ -9,5 +9,8 @@
   "credit_card": "no",
   "commercial_use": "check",
   "last_checked": "2026-10-13",
-  "deployment_model": "cloud"
+  "deployment_model": "cloud",
+  "related_services": [
+    "gemini-api"
+  ]
 }
