@@ -1,0 +1,13 @@
+{
+  "id": "vercel-for-startups-credits",
+  "name": "Vercel for Startups Credits",
+  "category": "static-hosting",
+  "plan": "limited-duration",
+  "free_limit": "Up to $30,000 in a one-time Vercel flexible platform credit commitment over one year for approved partner-affiliated startups, covering eligible compute, data transfer, seats, AI Gateway, v0 and other Vercel services.",
+  "watch_out": "Startup must be Series A or earlier, within 12 months of its latest funding, have a company website/email and proof of partner affiliation; previous startup-credit recipients are excluded. Actual award varies by partner. A valid payment method is mandatory. Only up to 50% of the commitment may be applied to AI Gateway and unused balance expires after one year; paid rates apply afterward.",
+  "pricing_url": "https://vercel.com/startups/credits",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
