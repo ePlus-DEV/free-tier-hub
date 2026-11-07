@@ -1,0 +1,13 @@
+{
+  "id": "owasp-apicheck-local",
+  "name": "OWASP APICheck",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 REST API DevSecOps testing toolkit; run its tools locally or on your own infrastructure, without a published software usage quota or expiry.",
+  "watch_out": "Requires your own execution environment and setup; API targets, CI compute and infrastructure are not included. Project documentation references its earlier BBVA repository.",
+  "pricing_url": "https://github.com/OWASP/apicheck",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "local"
+}
