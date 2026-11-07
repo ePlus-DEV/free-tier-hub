@@ -1,0 +1,13 @@
+{
+  "id": "locust-grasshopper-local-load-testing",
+  "name": "Grasshopper Locust Load Testing Framework",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 Python framework for local API load testing using Locust and pytest, with scenario configuration, checks, latency thresholds, custom trends and metrics integrations; no software usage quota or expiry.",
+  "watch_out": "Requires Python, Locust and pytest setup plus your own load-generation compute. Optional InfluxDB or Datadog metrics backends and hosted CI infrastructure may incur charges; no hosted load-testing capacity is included.",
+  "pricing_url": "https://github.com/alteryx/locust-grasshopper",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "local"
+}
