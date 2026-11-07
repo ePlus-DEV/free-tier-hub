@@ -1,0 +1,13 @@
+{
+  "id": "mongodb-for-startups-credits",
+  "name": "MongoDB for Startups Credits",
+  "category": "databases",
+  "plan": "limited-duration",
+  "free_limit": "Approved early-stage and funded startups may receive non-recurring MongoDB Atlas promotional credits and Voyage AI tokens, with tier-dependent award sizes, technical advice and possible partner perks; exact credit amounts depend on the approved tier.",
+  "watch_out": "Must apply and receive a promo code; publicly listed program tiers do not promise a uniform cash amount. Promo codes must be activated within 12 months and Atlas credits generally expire 12 months after activation; extensions are discretionary. Billing beyond promotional credit and optional Developer Support can incur charges. Payment-card and commercial-use terms are not stated clearly.",
+  "pricing_url": "https://www.mongodb.com/solutions/startups",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}

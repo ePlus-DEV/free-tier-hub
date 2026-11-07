@@ -1,0 +1,13 @@
+{
+  "id": "openai-for-startups-api-credits",
+  "name": "OpenAI for Startups API Credits",
+  "category": "ai-ml",
+  "plan": "limited-duration",
+  "free_limit": "Eligible startups backed by participating venture-capital partners may apply for non-recurring OpenAI API credits and potential rate-limit or technical-support benefits. The official program does not publish a universal credit amount or duration.",
+  "watch_out": "Credits are not available merely by joining a general founder community; a participating VC referral code, company/business email, product details and funding details are required. Partner eligibility and credit size must be confirmed with the VC. Once the credit is exhausted, API usage automatically switches to standard paid billing; monitor costs and current program terms.",
+  "pricing_url": "https://openai.com/business/why-openai/startups/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
