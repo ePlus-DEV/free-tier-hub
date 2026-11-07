@@ -12681,6 +12681,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "gatling-community-edition",
+    "name": "Gatling Community Edition",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free local/CI load testing engine for HTTP, WebSocket, SSE and JMS; no software-imposed test duration or virtual-user cap for protocols in the Community Edition repository.",
+    "watch_out": "Community Edition is self-run and does not include Gatling Enterprise managed load generators, enterprise features, CI runner capacity, target infrastructure or network bandwidth; those resources may cost money.",
+    "pricing_url": "https://github.com/gatling/gatling",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "getwired-local-ai-testing",
     "name": "GetWired Local AI Testing CLI",
     "category": "testing-qa",
