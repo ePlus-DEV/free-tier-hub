@@ -1,0 +1,13 @@
+{
+  "id": "simulai-self-hosted",
+  "name": "simulai Conversational Survey Builder",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free AGPL-3.0 self-hosted conversational survey builder with block editor and optional bring-your-own AI API; no published software quota or expiry.",
+  "watch_out": "Project README describes limited functionality; self-hosting, compute and any external AI API usage are not free. AGPL-3.0 obligations apply to modified network deployments.",
+  "pricing_url": "https://github.com/simulaiofficial/simulai",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
