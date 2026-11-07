@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadServices, hasServiceShards, aggregateCatalog, COMPATIBILITY_FILE } from './catalog-source.mjs';
+import { relatedServiceMap } from './service-relations.mjs';
 
 const DEFAULT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // First-party badges share the deployed catalog source, but show distinct scopes.
@@ -137,6 +138,9 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     }
   }
   if (errors.length) throw Error(errors.join("\n"));
+  // Validate all explicitly curated related IDs against the complete catalog.
+  // Never infer ownership from a shared pricing domain or partial name match.
+  relatedServiceMap(data);
   return data;
 }
 
