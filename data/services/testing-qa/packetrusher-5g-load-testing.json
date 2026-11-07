@@ -1,0 +1,13 @@
+{
+  "id": "packetrusher-5g-load-testing",
+  "name": "PacketRusher 5G Core Load Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source 5G UE/gNodeB simulator and 5G core performance test tool; no software usage quota or expiry.",
+  "watch_out": "Self-run software only; Linux host, root privileges, SCTP/kernel support and compute/network resources required. No free cloud/VPS capacity included; validate security and 5G test environment before production use.",
+  "pricing_url": "https://github.com/HewlettPackard/PacketRusher",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "local"
+}
