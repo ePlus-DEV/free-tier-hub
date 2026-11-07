@@ -14527,6 +14527,19 @@
     "last_checked": "2026-11-06"
   },
   {
+    "id": "zoyla-http-load-testing",
+    "name": "Zoyla HTTP Load Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed desktop HTTP load-testing application for Windows, macOS and Linux; run local HTTP/2 load tests with live RPS, latency, throughput and error metrics, saved test configurations, and JSON/CSV export. No software usage quota or expiry is stated.",
+    "watch_out": "Runs on the user's own computer; CPU, network traffic, test targets and any external infrastructure are not provided free. macOS and Windows installers are not code-signed and may trigger OS security warnings. No hosted load generators are included.",
+    "pricing_url": "https://github.com/behnamazimi/zoyla",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "zyntra-free-email-testing",
     "name": "Zyntra Free Email Testing",
     "category": "testing-qa",
