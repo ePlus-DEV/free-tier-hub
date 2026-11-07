@@ -1,0 +1,13 @@
+{
+  "id": "aws-activate-startup-credits",
+  "name": "AWS Activate Startup Credits",
+  "category": "cloud-vps",
+  "plan": "limited-duration",
+  "free_limit": "Approved startups can receive one-time AWS promotional credits: self-funded Activate Founders starts at $1,000, with selected applicants eligible up to $5,000; eligible Activate Portfolio startups may receive up to $200,000. Credits cover eligible AWS services, not a recurring free allowance.",
+  "watch_out": "Startup must be under 10 years old and pre-Series B; Portfolio tier requires an Activate Provider organization ID. An AWS paid-tier account is required. Approved award, eligible services, credit validity and AWS Promotional Credit Terms depend on the offer. Charges beyond eligible credit balances are payable; approval and maximum award are not guaranteed.",
+  "pricing_url": "https://aws.amazon.com/startups/credits/",
+  "credit_card": "yes",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}

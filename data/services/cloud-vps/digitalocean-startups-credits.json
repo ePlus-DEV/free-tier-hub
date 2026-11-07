@@ -1,0 +1,13 @@
+{
+  "id": "digitalocean-startups-credits",
+  "name": "DigitalOcean Startups Program Credits",
+  "category": "cloud-vps",
+  "plan": "limited-duration",
+  "free_limit": "Approved startups receive an individually awarded, one-time DigitalOcean credit allocation toward eligible DigitalOcean infrastructure and AI services for a 12-month startup-program term; the amount is specified in the acceptance/onboarding email, not a public guaranteed sum.",
+  "watch_out": "Requires a valid DigitalOcean account and approval under the DigitalOcean Startups Program (successor to the discontinued Hatch program). Credit awards and monthly consumption caps are individualized; third-party or excluded services and usage over monthly limits can be billed. Unused credits expire after 12 months and are not extendable under the published program conditions.",
+  "pricing_url": "https://www.digitalocean.com/startups",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
