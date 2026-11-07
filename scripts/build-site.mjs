@@ -301,7 +301,6 @@ export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
 }
 
 function homePage(items, absolute, counts, searchVersion) {
-  const relatedById = relatedServiceMap(items);
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const startupItems = items.filter(item => item.program === 'startup');
@@ -854,6 +853,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   }
   const output = path.resolve(outputDir);
   fs.mkdirSync(output, { recursive: true });
+  const relatedById = relatedServiceMap(items);
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const generatedAt = new Date().toISOString();
