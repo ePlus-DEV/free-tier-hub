@@ -1,0 +1,13 @@
+{
+  "id": "claude-for-startups-api-credits",
+  "name": "Claude for Startups API Credits",
+  "category": "ai-ml",
+  "plan": "limited-duration",
+  "free_limit": "Early-stage startup founders can apply to be considered for one-time first-party Claude API credits and priority rate limits. Anthropic does not promise a public fixed credit amount for each applicant.",
+  "watch_out": "General founder community access does not guarantee free credits. Claude credits/extras require qualifying institutional equity funding, company age within four years and no previous Anthropic startup credits; an Anthropic/Claude Console account, company email and site are required. Credits are not valid for AWS Bedrock or Google Vertex AI; standard API billing applies after the program credit is exhausted.",
+  "pricing_url": "https://claude.com/programs/startups",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}

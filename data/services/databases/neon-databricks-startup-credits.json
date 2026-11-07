@@ -1,0 +1,13 @@
+{
+  "id": "neon-databricks-startup-credits",
+  "name": "Neon and Databricks Startup Credits",
+  "category": "databases",
+  "plan": "limited-duration",
+  "free_limit": "Self-funded early-stage startups can receive up to $1,000 in Neon credits; eligible VC/accelerator-backed startups may receive up to $200,000 in credits jointly across Neon and Databricks, valid for 12 months after acceptance.",
+  "watch_out": "The $200,000 figure is a combined Neon + Databricks maximum, NOT a guaranteed $200,000 solely for Neon. Funded applicants generally need at least $1 million raised or participation in a recognized accelerator; acceptance and individual award vary. Normal paid usage continues after credit expiry/exhaustion. Card requirement is not explicitly confirmed.",
+  "pricing_url": "https://neon.com/startups",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
