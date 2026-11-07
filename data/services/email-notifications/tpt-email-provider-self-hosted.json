@@ -1,0 +1,13 @@
+{
+  "id": "tpt-email-provider-self-hosted",
+  "name": "TPT Email Provider Self-Hosted",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted Windows SMTP/IMAP email server with REST API and dashboard; no software license fee, vendor-imposed message quota or expiration documented.",
+  "watch_out": "Requires Windows 10/11 or Windows Server, Node.js 20+, self-managed infrastructure, static IP, business-grade connectivity and reverse DNS for deliverability. ISP port restrictions, IP reputation, domain, storage and operations may incur costs. No free hosted email delivery or infrastructure is included; production security and deliverability require independent assessment.",
+  "pricing_url": "https://github.com/tpt-solutions/tpt-email-provider",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
