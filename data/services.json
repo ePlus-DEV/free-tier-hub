@@ -14033,6 +14033,19 @@
     "last_checked": "2026-11-06"
   },
   {
+    "id": "taurus-load-testing",
+    "name": "Taurus Open Source Load Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source local test orchestration CLI (bzt) for performance and functional testing with JMeter, Gatling, Locust and Selenium; no Taurus software usage quota or expiry.",
+    "watch_out": "Requires installing and configuring underlying test runners; compute, CI infrastructure, target services and optional BlazeMeter hosted reporting can cost money. Free software does not include hosted load generators.",
+    "pricing_url": "https://github.com/Blazemeter/taurus",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "temps-self-hosted-paas",
     "name": "Temps Self-Hosted PaaS",
     "category": "app-hosting",
