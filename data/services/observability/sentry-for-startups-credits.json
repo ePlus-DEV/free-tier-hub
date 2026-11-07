@@ -1,0 +1,13 @@
+{
+  "id": "sentry-for-startups-credits",
+  "name": "Sentry for Startups Credits",
+  "category": "observability",
+  "plan": "limited-duration",
+  "free_limit": "Up to $5,000 in one-time Sentry product credits, valid for 12 months, plus priority support for startups accepted into the Sentry for Startups program.",
+  "watch_out": "Eligibility requires startup founded in the past two years, under $5 million in venture funding, and new to paying for Sentry. Application approval is not automatic; separate YC/a16z partner deals cannot stack. Monitor bills and plan limits when credit expires or runs out. Card and commercial-use requirements for the program are not explicitly confirmed.",
+  "pricing_url": "https://sentry.io/for/startups/apply/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
