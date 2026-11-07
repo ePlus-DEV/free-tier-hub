@@ -12265,6 +12265,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "aws-activate-startup-credits",
+    "name": "AWS Activate Startup Credits",
+    "category": "cloud-vps",
+    "plan": "limited-duration",
+    "free_limit": "Approved startups can receive one-time AWS promotional credits: self-funded Activate Founders starts at $1,000, with selected applicants eligible up to $5,000; eligible Activate Portfolio startups may receive up to $200,000. Credits cover eligible AWS services, not a recurring free allowance.",
+    "watch_out": "Startup must be under 10 years old and pre-Series B; Portfolio tier requires an Activate Provider organization ID. An AWS paid-tier account is required. Approved award, eligible services, credit validity and AWS Promotional Credit Terms depend on the offer. Charges beyond eligible credit balances are payable; approval and maximum award are not guaranteed.",
+    "pricing_url": "https://aws.amazon.com/startups/credits/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "badsmtp",
     "name": "BadSMTP",
     "category": "testing-qa",
@@ -12356,6 +12369,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "cloudflare-for-startups-credits",
+    "name": "Cloudflare for Startups Credits",
+    "category": "serverless",
+    "plan": "limited-duration",
+    "free_limit": "Approved tech startups may receive $10,000 (self-funded), $100,000 (eligible partner-backed), or up to $350,000 (higher-funded partner-backed) in one-time credits for eligible Workers, Workers AI, D1, R2, KV, Queues, Pages and related usage-based services, for up to one year.",
+    "watch_out": "Approval depends on company age, funding, stage, public website, company email and other rules; the tier is not guaranteed. Credit coverage excludes registrar and AI Gateway; Workers AI has a $50,000 subcap and R2 a $10,000 subcap. A valid card is required, and automatic paid overage/expiry billing applies. Credits are one time and non-transferable.",
+    "pricing_url": "https://www.cloudflare.com/startups/",
+    "credit_card": "yes",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "cognito-forms-individual-free",
     "name": "Cognito Forms Individual Free",
     "category": "forms-surveys",
@@ -12419,6 +12445,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "local"
+  },
+  {
+    "id": "digitalocean-startups-credits",
+    "name": "DigitalOcean Startups Program Credits",
+    "category": "cloud-vps",
+    "plan": "limited-duration",
+    "free_limit": "Approved startups receive an individually awarded, one-time DigitalOcean credit allocation toward eligible DigitalOcean infrastructure and AI services for a 12-month startup-program term; the amount is specified in the acceptance/onboarding email, not a public guaranteed sum.",
+    "watch_out": "Requires a valid DigitalOcean account and approval under the DigitalOcean Startups Program (successor to the discontinued Hatch program). Credit awards and monthly consumption caps are individualized; third-party or excluded services and usage over monthly limits can be billed. Unused credits expire after 12 months and are not extendable under the published program conditions.",
+    "pricing_url": "https://www.digitalocean.com/startups",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
   },
   {
     "id": "dispatch-newsletter-self-hosted",
@@ -12757,6 +12796,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-05",
     "deployment_model": "local"
+  },
+  {
+    "id": "google-cloud-startup-program",
+    "name": "Google for Startups Cloud Program",
+    "category": "cloud-vps",
+    "plan": "limited-duration",
+    "free_limit": "Eligible startup applicants can receive up to $350,000 in one-time Google Cloud credits over two years; Start tier offers $2,000 to eligible early-stage MVPs, while funded Scale and Scale AI tiers offer higher limits.",
+    "watch_out": "Startup age, funding stage, usage history, business eligibility and country restrictions apply. For AI startups the listed maximum includes up to $250,000 in first-year 100% credits and up to $100,000 in second-year 20% coverage; it is NOT a flat $350,000 immediately redeemable balance. Other startups have lower caps, and third-party models may be excluded. Uncovered charges remain payable.",
+    "pricing_url": "https://cloud.google.com/startup",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
   },
   {
     "id": "greenmail-open-source-email-testing",
@@ -13355,6 +13407,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-05",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "microsoft-startups-azure-credits",
+    "name": "Microsoft for Startups Azure Credits",
+    "category": "cloud-vps",
+    "plan": "limited-duration",
+    "free_limit": "Eligible privately held software startups can apply for Microsoft for Startups and unlock up to $150,000 in one-time Azure startup credits over progressive program stages; an initial credit allocation may be available after application.",
+    "watch_out": "Application and business eligibility review required; startup must operate where Azure is supported and must not be Series C or later, a consultancy, agency or other excluded entity. Credits increase only with verified progress and Azure adoption. Microsoft documents show inconsistent starter-credit examples; do not assume a fixed initial award. Third-party marketplace and some model charges may not be covered; monitor paid Azure usage.",
+    "pricing_url": "https://learn.microsoft.com/en-us/startups/benefits/azure-for-startups",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
   },
   {
     "id": "mock-service-worker-local",
