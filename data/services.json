@@ -13178,6 +13178,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kurrier",
+    "name": "Kurrier Self-Hosted Workspace",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0-or-later self-hosted software for unified email, calendars, contacts and WebDAV/S3 storage; no software usage quota or expiry stated.",
+    "watch_out": "Bring your own IMAP/SMTP or email delivery provider, storage, database and server. Provider fees and infrastructure are not included. Modified network deployments must comply with AGPL source-sharing obligations.",
+    "pricing_url": "https://github.com/kurrier-org/kurrier",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "larasend-self-hosted-email-platform",
     "name": "Larasend Self-Hosted Transactional Email",
     "category": "email-notifications",
