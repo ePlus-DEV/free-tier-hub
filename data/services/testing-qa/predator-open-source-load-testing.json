@@ -1,0 +1,13 @@
+{
+  "id": "predator-open-source-load-testing",
+  "name": "Predator Open Source Load Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 self-hosted API load-testing platform with scheduled and distributed runs, reports, REST API and Docker/Kubernetes deployment; no software license fee or published software usage quota.",
+  "watch_out": "Self-hosting requires compute, storage and potentially Kubernetes/database resources at your expense. Use tagged releases and matching Predator Runner versions; no free hosted load-generator infrastructure is included.",
+  "pricing_url": "https://github.com/predator-oss/predator",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
