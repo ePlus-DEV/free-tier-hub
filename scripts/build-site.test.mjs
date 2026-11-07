@@ -63,6 +63,70 @@ test('Aiven MySQL retirement notice is distinct from the continuing PostgreSQL F
   }
 });
 
+test('Startup Programs filter is explicit, shareable and isolated from ordinary trials', async () => {
+  const { runInNewContext } = await import('node:vm');
+  const { loadServices } = await import('./catalog-source.mjs');
+  const source = loadServices();
+  const startup = source.filter(item => item.program === 'startup');
+  assert.ok(startup.length >= 13, 'the approved startup-program records are explicitly tagged');
+  assert.ok(startup.every(item => item.plan === 'limited-duration'));
+  assert.equal(source.filter(item => item.plan === 'ongoing' && item.program === 'startup').length, 0);
+  assert.ok(source.some(item => item.plan === 'limited-duration' && !item.program),
+    'ordinary trial and signup offers must not be treated as startup programs');
+
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'startup-program-filter-'));
+  try {
+    build(output);
+    const read = name => fs.readFileSync(path.join(output, name), 'utf8');
+    const index = JSON.parse(read('search/index.json'));
+    const home = read('index.html');
+    const offers = read('offers/index.html');
+    const css = read('assets/site.css');
+    const runtime = read('assets/site.js');
+    const ids = startup.map(item => item.id);
+    assert.deepEqual(index.startup_program_ids, ids);
+    assert.ok(index.rows.every(row => row.length === 10), 'keep 10-column lazy-search schema');
+    assert.match(home, new RegExp('<option value="startup">Startup programs \\(' + ids.length + '\\)</option>'));
+    assert.match(home, /href="https:\/\/free-tier\.eplus\.dev\/\?offer=startup#explore"/);
+    assert.match(offers, /id="offers-program-filters" role="group" aria-label="Filter limited offers" hidden/);
+    assert.match(offers, new RegExp('data-offers-mode="startup" aria-pressed="false">Startup programs \\(' + ids.length + '\\)</button>'));
+    assert.match(offers, /id="offers-service-grid"/);
+    assert.match(offers, /data-program="startup"/);
+    assert.match(offers, /data-offer-plan="limited-duration" data-program=""/);
+    assert.match(css, /\.offers-program-filters button\[aria-pressed="true"\]/);
+    assert.match(runtime, /function renderOffersProgramFilter\(\)/);
+    assert.match(runtime, /urlState\.matchesOffer\(entry\.plan, offerType, entry\.program\)/);
+    for (const item of startup) {
+      assert.match(offers, new RegExp('data-service-id="' + item.id + '"[^>]*data-program="startup"'));
+    }
+    assert.match(home, /<meta name="robots" content="index,follow">/);
+    assert.match(offers, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/offers\/"/);
+    assert.doesNotMatch(read('sitemap.xml'), /\?offer=startup/);
+
+    const context = { URL };
+    runInNewContext(read('assets/directory-url.js'), context);
+    const api = context.FreeTierDirectoryURL;
+    assert.equal(api.matchesOffer('limited-duration', 'startup', 'startup'), true);
+    assert.equal(api.matchesOffer('limited-duration', 'startup', ''), false);
+    assert.equal(api.matchesOffer('ongoing', 'startup', 'startup'), false);
+    assert.equal(api.matchesOffer('limited-duration', 'limited', ''), true);
+    assert.equal(api.matchesOffer('ongoing', 'free', ''), true);
+    const query = api.write('https://free-tier.eplus.dev/?utm_source=review#explore',
+      { offer: 'startup', q: '', category: '', hosting: '', sort: 'newest', noCard: false, commercial: false });
+    const parsed = new URL(query);
+    assert.equal(parsed.searchParams.get('offer'), 'startup');
+    assert.equal(parsed.searchParams.get('utm_source'), 'review');
+    assert.equal(parsed.hash, '#explore');
+    const state = api.read(query, [''], ['default', 'newest']);
+    assert.equal(state.offer, 'startup');
+    assert.equal(state.sort, 'newest');
+    assert.equal(api.summarizeResults(ids.length, ids.length, 12, {offer:'startup'}).label,
+      'Startup programs');
+  } finally {
+    fs.rmSync(output, {recursive:true,force:true});
+  }
+});
+
 test('NEW uses an exact UTC 48-hour window, not verification or daily date rounding', () => {
   const now = Date.parse('2026-11-06T12:00:00Z');
   const entries = [

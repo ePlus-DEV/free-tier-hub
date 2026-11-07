@@ -116,6 +116,12 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     if (Object.hasOwn(item, "deployment_model") && !DEPLOYMENT_MODELS.includes(item.deployment_model)) {
       errors.push(String(id) + ": invalid deployment_model");
     }
+    // Startup programs are eligibility-gated, one-time promotional offers.
+    // Classify explicitly; never infer eligibility from product names or quotas.
+    if (Object.hasOwn(item, "program") &&
+        (item.program !== "startup" || item.plan !== "limited-duration")) {
+      errors.push(String(id) + ": invalid program (startup must be limited-duration)");
+    }
     // Optional, verified eligibility exception. Not a fifth plan type or a blanket rule.
     if (Object.hasOwn(item, "eligibility") &&
         (item.eligibility !== "existing-users-only" || item.plan !== "ongoing")) {

@@ -9,5 +9,6 @@
   "credit_card": "check",
   "commercial_use": "check",
   "last_checked": "2026-11-07",
-  "deployment_model": "cloud"
+  "deployment_model": "cloud",
+  "program": "startup"
 }

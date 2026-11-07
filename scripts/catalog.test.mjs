@@ -79,6 +79,14 @@ test("rejects duplicate IDs, invalid URLs, unsupported plans and future dates", 
   }
 });
 
+test("Startup Programs must be explicit limited-duration offers", () => {
+  const ordinary = {...sourceData.find(item => item.plan === "ongoing"), program: "startup"};
+  assert.throws(() => validateData([ordinary]), /invalid program/);
+  const limited = {...sourceData.find(item => item.plan === "limited-duration"), program: "startup"};
+  assert.doesNotThrow(() => validateData([limited]));
+  assert.throws(() => validateData([{...limited, program: "generic"}]), /invalid program/);
+});
+
 test("rejects bulk-import placeholder descriptions", () => {
   const placeholder = structuredClone(sourceData);
   placeholder[0].free_limit = "Free offering available; review provider documentation for current limits.";

@@ -599,6 +599,43 @@
     renderCategoryPage();
   }
 
+  // On the static limited-offers archive, filter already-rendered cards in place.
+  // Canonical SEO and complete no-JavaScript HTML remain unchanged.
+  var offersFilters = document.getElementById("offers-program-filters");
+  var offersGrid = document.getElementById("offers-service-grid");
+  if (offersFilters && offersGrid) {
+    var offerCards = Array.prototype.slice.call(offersGrid.querySelectorAll(".service-card"));
+    var offerButtons = Array.prototype.slice.call(offersFilters.querySelectorAll("[data-offers-mode]"));
+    function renderOffersProgramFilter() {
+      var active = new URL(window.location.href).searchParams.get("offer") === "startup";
+      offerCards.forEach(function (card) {
+        card.hidden = active && card.getAttribute("data-program") !== "startup";
+      });
+      offerButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed",
+          String((button.getAttribute("data-offers-mode") === "startup") === active));
+      });
+    }
+    offersButtonsSetup();
+    function offersButtonsSetup() {
+      offersFilters.hidden = false;
+      offerButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var url = new URL(window.location.href);
+          if (button.getAttribute("data-offers-mode") === "startup") {
+            url.searchParams.set("offer", "startup");
+          } else {
+            url.searchParams.delete("offer");
+          }
+          window.history.pushState(null, "", url.pathname + url.search + url.hash);
+          renderOffersProgramFilter();
+        });
+      });
+      window.addEventListener("popstate", renderOffersProgramFilter);
+      renderOffersProgramFilter();
+    }
+  }
+
   var search = document.getElementById("search");
   var heroSearch = document.getElementById("hero-search");
   var filterToggle = document.getElementById("advanced-filter-toggle");
@@ -684,6 +721,12 @@
       }).then(function (payload) {
         if (!payload || payload.version !== 1 || !/^[a-f0-9]{12}$/.test(payload.revision) ||
             !Array.isArray(payload.rows)) throw Error("Unsupported search index version");
+        if (!Array.isArray(payload.startup_program_ids) ||
+            !payload.startup_program_ids.every(function (id) {
+              return typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id);
+            })) throw Error("Invalid startup program index");
+        var startupIds = new Set(payload.startup_program_ids);
+        if (startupIds.size !== payload.startup_program_ids.length) throw Error("Duplicate startup program IDs");
         var known = Object.create(null);
         var next = payload.rows.map(function (row, order) {
           if (!Array.isArray(row) || row.length !== 10 ||
@@ -694,9 +737,14 @@
           known[row[0]] = true;
           return { id: row[0], name: row[1], category: row[2], plan: row[3],
             hosting: row[4], credit: row[5], commercial: row[6],
-            added: row[7], checked: row[8], search: normalize(row[9]), order: order };
+            added: row[7], checked: row[8], search: normalize(row[9]), order: order,
+            program: startupIds.has(row[0]) ? "startup" : "" };
         });
         if (!next.length) throw Error("Empty search index");
+        if (next.filter(function (entry) { return entry.program === "startup" && entry.plan !== "limited-duration"; }).length ||
+            payload.startup_program_ids.some(function (id) { return !known[id]; })) {
+          throw Error("Invalid startup program catalog references");
+        }
         cards = next;
         searchRevision = payload.revision;
         searchReady = true;
@@ -1156,7 +1204,7 @@
     });
     var term = normalize(search.value);
     var pool = cards.filter(function (entry) {
-      return urlState.matchesOffer(entry.plan, offerType);
+      return urlState.matchesOffer(entry.plan, offerType, entry.program);
     });
     var matched = pool.filter(function (entry) {
       return (!term || entry.search.indexOf(term) !== -1) &&
