@@ -65,6 +65,15 @@ test('static detail pages link related services reciprocally, without altering m
     const pages = read('service/github-pages/index.html');
     const unrelated = read('service/claude-free/index.html');
     assert.match(chatgpt, /aria-labelledby="related-services-heading"/);
+    assert.match(chatgpt, /class="related-services-header"/);
+    assert.match(chatgpt, /class="related-services-icon" aria-hidden="true"/);
+    assert.match(chatgpt, /<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"/,
+      'header contains the inline chain-link icon from the proposed layout');
+    assert.match(chatgpt, /class="related-service-content"/);
+    assert.match(chatgpt, /class="related-service-arrow" viewBox="0 0 24 24"/,
+      'each related-service row has the proposed arrow icon');
+    assert.match(chatgpt, /<\/ul><p class="related-services-note">Limits and eligibility are separate for each offering\.<\/p>/,
+      'disclaimer appears below the linked service rows');
     assert.match(chatgpt, /href="https:\/\/free-tier\.eplus\.dev\/service\/openai-for-startups-api-credits\/"/);
     assert.match(chatgpt, /AI &amp; ML · Time-limited offer/);
     assert.match(credits, /href="https:\/\/free-tier\.eplus\.dev\/service\/chatgpt-free\/"/);
@@ -75,6 +84,11 @@ test('static detail pages link related services reciprocally, without altering m
     assert.doesNotMatch(unrelated, /class="related-services"/);
     assert.match(chatgpt, /Limits and eligibility are separate/);
     assert.match(read('assets/site.css'), /\.related-service-link:focus-visible/);
+    const css = read('assets/site.css');
+    assert.match(css, /\.related-services-header\{display:flex/);
+    assert.match(css, /\.related-services-note\{border-top:1px solid var\(--line\)/);
+    assert.match(css, /@media\(max-width:480px\)\{\.related-services\{padding:15px\}/);
+    assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{\.related-service-link\{transition:none\}/);
     assert.match(read('sitemap.xml'), /service\/openai-for-startups-api-credits\//);
     assert.ok(!read('index.html').includes('class="related-services"'),
       'related links belong only to details, never the lazy home list');
