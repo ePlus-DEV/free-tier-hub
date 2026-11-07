@@ -128,6 +128,7 @@ function card(item, absolute, initiallyHidden = false) {
     '" data-category="', tag(item.category),
     '" data-hosting-model="', hostingModel(item),
     '" data-offer-plan="', tag(item.plan),
+    '" data-program="', tag(item.program || ''),
     '" data-eligibility="', tag(item.eligibility || ''),
     '" data-added-at="', tag(item.added_at || ''),
      '" data-added-at-utc="', tag(item.added_at_utc || ''),
@@ -144,7 +145,7 @@ function card(item, absolute, initiallyHidden = false) {
     '" aria-label="Filter by category: ', tag(CATEGORY_LABELS[item.category]), '">', tag(CATEGORY_LABELS[item.category]), '</a>',
     hostingModel(item) !== 'unclassified' ? '<span class="deployment-meta"><span aria-hidden="true"> · </span><a class="card-filter-link" data-card-hosting="' + hostingModel(item) + '" href="' + tag(absolute('?hosting=' + hostingModel(item))) + '" aria-label="Filter by deployment model: ' + HOSTING_LABELS[hostingModel(item)] + '">' + HOSTING_LABELS[hostingModel(item)] + '</a></span>' : '', '</span></div>',
     '<span class="badge" data-plan="', tag(item.plan), '">',
-    tag(planBadge(item)), '</span></div>',
+    tag(item.program === 'startup' ? 'Startup program' : planBadge(item)), '</span></div>',
     item.eligibility === 'existing-users-only'
       ? '<div class="eligibility-note"><strong>Legacy only</strong> · Free allowance reserved for eligible existing accounts. ' +
         '<details class="eligibility-help"><summary>Why?</summary>' +
@@ -301,6 +302,7 @@ export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
 function homePage(items, absolute, counts, searchVersion) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const startupItems = items.filter(item => item.program === 'startup');
   const planCounts = Object.fromEntries(
     ['ongoing', 'monthly-credit'].map(plan => [plan, items.filter(item => item.plan === plan).length])
   );
@@ -365,6 +367,8 @@ function homePage(items, absolute, counts, searchVersion) {
     '<option value="ongoing">Ongoing free allowance (', compactNumber(planCounts.ongoing), ')</option>',
     '<option value="monthly-credit">Recurring monthly credit (', compactNumber(planCounts['monthly-credit']), ')</option>',
     '<option value="limited">Time-limited &amp; expiring offers (', compactNumber(limitedItems.length),
+    ')</option>',
+    '<option value="startup">Startup programs (', compactNumber(startupItems.length),
     ')</option></select></label>',
     '<details class="classification-help"><summary>How are these offers classified?</summary>',
     '<div class="classification-help-panel"><p class="classification-help-intro">Labels describe the listed offer, not every plan a provider sells.</p>',
@@ -401,6 +405,10 @@ function homePage(items, absolute, counts, searchVersion) {
       ? '<a class="limited-offer-shortcut" href="' + tag(absolute('?offer=limited#explore')) +
         '" aria-label="Show time-limited and expiring offers">' + compactNumber(limitedItems.length) +
         ' limited offers</a>' : '',
+    startupItems.length
+      ? '<a class="startup-offer-shortcut" href="' + tag(absolute('?offer=startup#explore')) +
+        '" aria-label="Show startup programs">' + compactNumber(startupItems.length) +
+        ' startup programs</a>' : '',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -614,6 +622,7 @@ function classificationsPage(absolute) {
   ].join('');
 }
 function limitedOffersPage(items, absolute) {
+  const startupCount = items.filter(item => item.program === 'startup').length;
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><span>Limited offers</span></nav>',
@@ -622,7 +631,11 @@ function limitedOffersPage(items, absolute) {
     '<p>These promotions, trials and expiring resources are not ongoing free tiers. ',
     'They are excluded from the main directory counts. Check the provider for current eligibility, renewal fees and expiration rules. ',
     '<a href="', tag(absolute('about/classifications/#plans')), '">How we classify offers</a>.</p></section>',
-    '<div class="service-grid category-service-grid">',
+    startupCount ? '<div class="offers-program-filters" id="offers-program-filters" role="group" aria-label="Filter limited offers" hidden>' +
+      '<button type="button" data-offers-mode="all" aria-pressed="true">All limited offers (' + compactNumber(items.length) + ')</button>' +
+      '<button type="button" data-offers-mode="startup" aria-pressed="false">Startup programs (' + compactNumber(startupCount) + ')</button>' +
+      '</div>' : '',
+    '<div class="service-grid category-service-grid" id="offers-service-grid">',
     items.map(item => card(item, absolute)).join(''), '</div>',
     '<p class="back-link"><a href="', tag(absolute()),
     '">← Back to ongoing free tiers</a></p>',
@@ -835,6 +848,9 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     version: 1,
     revision: searchVersion,
     // [id, name, category, plan, deployment, card, commercial, added, checked, searchable].
+    // Startup classification is a compact explicit ID set, not inferred from names;
+    // keep the existing 10-field row contract for clients and compare UI.
+    startup_program_ids: items.filter(item => item.program === 'startup').map(item => item.id),
     rows: items.map(item => [
       item.id, item.name, item.category, item.plan, hostingModel(item),
       item.credit_card, item.commercial_use, item.added_at_utc || item.added_at || '', item.last_checked,

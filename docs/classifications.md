@@ -15,6 +15,15 @@ This is the human-readable classification policy for the **specific cataloged pr
 
 **Mixed offers:** If a provider offers a 14-day premium trial then an ongoing Free plan, catalog the ongoing Free allowance and disclose the trial separately. If only a 30-day trial exists, use `limited-duration`. A 30-day log **retention** period, monthly quota **reset** or required account **renewal** does not by itself make the free plan time-limited.
 
+## Startup programs (`program: "startup"`)
+
+Startup programs are **explicitly tagged promotional offers**, not a separate kind of ongoing free tier. A verified entry with `"program": "startup"` must use `"plan": "limited-duration"` and describe the grant's eligibility, expiration, billing risk and maximum/conditional award in its official source. Never infer startup eligibility from the service name, provider brand, or a search keyword.
+
+- Home's **Offer type → Startup programs** and its shortcut use `?offer=startup`, while the limited-offers page provides an in-page startup filter with the same URL parameter.
+- These entries remain part of **All services** and **Time-limited & expiring offers**; they are excluded from ongoing Free tiers and README category badge totals.
+- The startup search index stores a compact list of explicitly tagged IDs. New entries will not appear in this filter until their canonical service shard carries verified `program` metadata.
+- Not all startups qualify. Check application, funding, geography, partner eligibility, credit expiry and post-credit charges.
+
 ## Deployment model (`deployment_model`)
 
 | Value | Meaning |

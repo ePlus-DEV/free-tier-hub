@@ -9,6 +9,7 @@
         state.noCard || state.commercial);
       var offer = state.offer || "";
       var label = narrowed ? "Matching services"
+        : offer === "startup" ? "Startup programs"
         : offer === "limited" ? "Limited offers"
         : offer === "monthly-credit" ? "Monthly credits"
         : offer === "ongoing" ? "Ongoing free tiers"
@@ -19,7 +20,8 @@
         shown: "Showing " + Math.min(shownCount, matchedCount) + " of " + matchedCount
       };
     },
-    matchesOffer: function (plan, offer) {
+    matchesOffer: function (plan, offer, program) {
+      if (offer === "startup") return plan === "limited-duration" && program === "startup";
       if (offer === "") return ["ongoing", "monthly-credit", "limited-duration", "temporary-resource"].includes(plan);
       if (offer === "free") return plan === "ongoing" || plan === "monthly-credit";
       if (offer === "limited") return plan === "limited-duration" || plan === "temporary-resource";
@@ -31,7 +33,7 @@
       var sort = params.get("sort") || "default";
       return {
         hosting: ["cloud", "self-hosted", "hybrid", "local", "unclassified"].includes(params.get("hosting")) ? params.get("hosting") : "",
-        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(params.get("offer")) ? params.get("offer") : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited", "startup"].includes(params.get("offer")) ? params.get("offer") : "",
         q: params.get("q") || "",
         category: categories.includes(category) ? category : "",
         sort: sorts.includes(sort) ? sort : "default",
@@ -43,7 +45,7 @@
       var url = new URL(href);
       var values = {
         hosting: state.hosting || "",
-        offer: ["free", "ongoing", "monthly-credit", "limited"].includes(state.offer) ? state.offer : "",
+        offer: ["free", "ongoing", "monthly-credit", "limited", "startup"].includes(state.offer) ? state.offer : "",
         q: state.q || "",
         category: state.category || "",
         sort: state.sort === "default" ? "" : state.sort,
