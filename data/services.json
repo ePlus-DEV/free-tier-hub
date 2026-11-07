@@ -13032,6 +13032,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "kaioken-local-http-load-testing",
+    "name": "Kaioken Local HTTP Load Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free local Rust CLI for HTTP load testing with real-time terminal metrics, configurable arrival rates, latency thresholds, request checks, regression comparison and JSON/CSV/HTML reports; no software usage quota or expiration.",
+    "watch_out": "Runs on user-provided machines or CI runners; target infrastructure, network traffic and CI resources may incur costs. Does not include a managed load-testing service. Optional integrations require separate setup.",
+    "pricing_url": "https://github.com/lance0/kaioken",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "kanzo-local-ai-kanban",
     "name": "Kanzo Local AI Kanban",
     "category": "developer-tools",
