@@ -12369,6 +12369,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "claude-for-startups-api-credits",
+    "name": "Claude for Startups API Credits",
+    "category": "ai-ml",
+    "plan": "limited-duration",
+    "free_limit": "Early-stage startup founders can apply to be considered for one-time first-party Claude API credits and priority rate limits. Anthropic does not promise a public fixed credit amount for each applicant.",
+    "watch_out": "General founder community access does not guarantee free credits. Claude credits/extras require qualifying institutional equity funding, company age within four years and no previous Anthropic startup credits; an Anthropic/Claude Console account, company email and site are required. Credits are not valid for AWS Bedrock or Google Vertex AI; standard API billing applies after the program credit is exhausted.",
+    "pricing_url": "https://claude.com/programs/startups",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "cloudflare-for-startups-credits",
     "name": "Cloudflare for Startups Credits",
     "category": "serverless",
@@ -13487,6 +13500,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mongodb-for-startups-credits",
+    "name": "MongoDB for Startups Credits",
+    "category": "databases",
+    "plan": "limited-duration",
+    "free_limit": "Approved early-stage and funded startups may receive non-recurring MongoDB Atlas promotional credits and Voyage AI tokens, with tier-dependent award sizes, technical advice and possible partner perks; exact credit amounts depend on the approved tier.",
+    "watch_out": "Must apply and receive a promo code; publicly listed program tiers do not promise a uniform cash amount. Promo codes must be activated within 12 months and Atlas credits generally expire 12 months after activation; extensions are discretionary. Billing beyond promotional credit and optional Developer Support can incur charges. Payment-card and commercial-use terms are not stated clearly.",
+    "pricing_url": "https://www.mongodb.com/solutions/startups",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "monika-synthetic-monitor-local",
     "name": "Monika Open-Source Synthetic Monitoring CLI",
     "category": "observability",
@@ -13524,6 +13550,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "neon-databricks-startup-credits",
+    "name": "Neon and Databricks Startup Credits",
+    "category": "databases",
+    "plan": "limited-duration",
+    "free_limit": "Self-funded early-stage startups can receive up to $1,000 in Neon credits; eligible VC/accelerator-backed startups may receive up to $200,000 in credits jointly across Neon and Databricks, valid for 12 months after acceptance.",
+    "watch_out": "The $200,000 figure is a combined Neon + Databricks maximum, NOT a guaranteed $200,000 solely for Neon. Funded applicants generally need at least $1 million raised or participation in a recognized accelerator; acceptance and individual award vary. Normal paid usage continues after credit expiry/exhaustion. Card requirement is not explicitly confirmed.",
+    "pricing_url": "https://neon.com/startups",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
   },
   {
     "id": "netalertx-network-discovery-self-hosted",
@@ -13615,6 +13654,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-06",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "openai-for-startups-api-credits",
+    "name": "OpenAI for Startups API Credits",
+    "category": "ai-ml",
+    "plan": "limited-duration",
+    "free_limit": "Eligible startups backed by participating venture-capital partners may apply for non-recurring OpenAI API credits and potential rate-limit or technical-support benefits. The official program does not publish a universal credit amount or duration.",
+    "watch_out": "Credits are not available merely by joining a general founder community; a participating VC referral code, company/business email, product details and funding details are required. Partner eligibility and credit size must be confirmed with the VC. Once the credit is exhausted, API usage automatically switches to standard paid billing; monitor costs and current program terms.",
+    "pricing_url": "https://openai.com/business/why-openai/startups/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
   },
   {
     "id": "openformy-self-hosted",
