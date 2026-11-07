@@ -1,0 +1,13 @@
+{
+  "id": "larasend-self-hosted-email-platform",
+  "name": "Larasend Self-Hosted Transactional Email",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted transactional email control plane with HTTP API, dashboard, API keys, delivery logs, webhooks and Laravel transport; no software subscription or vendor-imposed sending quota.",
+  "watch_out": "Requires your own Docker hosting, PostgreSQL, Redis, durable MIME storage, and a configured Amazon SES account or Cloudflare Email Service (Workers Paid plan). Sending, infrastructure, storage and provider overages are not free; this is not a hosted email quota.",
+  "pricing_url": "https://github.com/savvyagents/larasend",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
