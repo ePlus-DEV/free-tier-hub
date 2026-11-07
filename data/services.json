@@ -12210,7 +12210,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-06",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "alphorn-self-hosted-notification-router",
@@ -12275,7 +12276,8 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "badsmtp",
@@ -12379,7 +12381,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "cloudflare-for-startups-credits",
@@ -12392,7 +12395,8 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "cognito-forms-individual-free",
@@ -12470,7 +12474,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "dispatch-newsletter-self-hosted",
@@ -12782,7 +12787,8 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "gocraft-work-redis-jobs-self-hosted",
@@ -12834,7 +12840,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "greenmail-open-source-email-testing",
@@ -13458,7 +13465,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "mock-service-worker-local",
@@ -13536,7 +13544,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "monika-synthetic-monitor-local",
@@ -13588,7 +13597,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "netalertx-network-discovery-self-hosted",
@@ -13692,7 +13702,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "openformy-self-hosted",
@@ -14069,7 +14080,8 @@
     "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "smokeping-latency-monitoring-self-hosted",
@@ -14381,7 +14393,8 @@
     "credit_card": "yes",
     "commercial_use": "check",
     "last_checked": "2026-11-07",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "program": "startup"
   },
   {
     "id": "vitest-open-source-local",
