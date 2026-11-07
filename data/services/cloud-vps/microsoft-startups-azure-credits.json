@@ -1,0 +1,13 @@
+{
+  "id": "microsoft-startups-azure-credits",
+  "name": "Microsoft for Startups Azure Credits",
+  "category": "cloud-vps",
+  "plan": "limited-duration",
+  "free_limit": "Eligible privately held software startups can apply for Microsoft for Startups and unlock up to $150,000 in one-time Azure startup credits over progressive program stages; an initial credit allocation may be available after application.",
+  "watch_out": "Application and business eligibility review required; startup must operate where Azure is supported and must not be Series C or later, a consultancy, agency or other excluded entity. Credits increase only with verified progress and Azure adoption. Microsoft documents show inconsistent starter-credit examples; do not assume a fixed initial award. Third-party marketplace and some model charges may not be covered; monitor paid Azure usage.",
+  "pricing_url": "https://learn.microsoft.com/en-us/startups/benefits/azure-for-startups",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}

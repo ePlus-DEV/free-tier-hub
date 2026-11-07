@@ -1,0 +1,13 @@
+{
+  "id": "google-cloud-startup-program",
+  "name": "Google for Startups Cloud Program",
+  "category": "cloud-vps",
+  "plan": "limited-duration",
+  "free_limit": "Eligible startup applicants can receive up to $350,000 in one-time Google Cloud credits over two years; Start tier offers $2,000 to eligible early-stage MVPs, while funded Scale and Scale AI tiers offer higher limits.",
+  "watch_out": "Startup age, funding stage, usage history, business eligibility and country restrictions apply. For AI startups the listed maximum includes up to $250,000 in first-year 100% credits and up to $100,000 in second-year 20% coverage; it is NOT a flat $350,000 immediately redeemable balance. Other startups have lower caps, and third-party models may be excluded. Uncovered charges remain payable.",
+  "pricing_url": "https://cloud.google.com/startup",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-07",
+  "deployment_model": "cloud"
+}
