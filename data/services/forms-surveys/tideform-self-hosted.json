@@ -1,0 +1,13 @@
+{
+  "id": "tideform-self-hosted",
+  "name": "Tideform Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form builder with form creation, response collection and analytics; no software usage quota or expiry stated.",
+  "watch_out": "Hosting, PostgreSQL, storage and bandwidth are not included. Anthropic AI features may incur API charges. Upstream roadmap lists conditional logic, CSV export and integrations as incomplete; verify production readiness before sensitive deployments.",
+  "pricing_url": "https://github.com/Madaroon/tideform",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
