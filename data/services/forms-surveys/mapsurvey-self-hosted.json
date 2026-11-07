@@ -1,0 +1,13 @@
+{
+  "id": "mapsurvey-self-hosted",
+  "name": "Mapsurvey Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free AGPLv3 self-hosted geospatial surveys with 13 question types, map-based point/line/polygon responses, and GeoJSON/CSV exports; no software quota or expiry stated.",
+  "watch_out": "Requires own Docker/PostGIS infrastructure and operations; Mapbox basemaps may need an access token and incur charges. Managed mapsurvey.org cloud is a separate paid offering. AGPLv3 network-source obligations apply to modified deployments; project name/logo are not freely rebrandable.",
+  "pricing_url": "https://github.com/ganjasan/mapsurvey",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
