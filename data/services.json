@@ -49,7 +49,10 @@
     "credit_card": "no",
     "commercial_use": "no",
     "last_checked": "2026-10-31",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "related_services": [
+      "github-actions"
+    ]
   },
   {
     "id": "firebase-hosting",
@@ -1671,7 +1674,10 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-13",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "related_services": [
+      "openai-for-startups-api-credits"
+    ]
   },
   {
     "id": "gemini-app-free",
@@ -1684,7 +1690,10 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-10-13",
-    "deployment_model": "cloud"
+    "deployment_model": "cloud",
+    "related_services": [
+      "gemini-api"
+    ]
   },
   {
     "id": "perplexity-standard-free",
