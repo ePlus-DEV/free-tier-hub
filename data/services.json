@@ -1495,7 +1495,7 @@
     "category": "observability",
     "plan": "ongoing",
     "free_limit": "50 monitors; 3-minute checks (1 minute for first 10); 1 public status page",
-    "watch_out": "Launch cohort grandfathered terms; 3-day log retention",
+    "watch_out": "The Initiate is grandfathered to eligible early launch-cohort accounts: official pricing promises to honor launch terms permanently for early accounts, not unrestricted access to this $0 allowance for new signups. The separate 14-day trial applies to paid plans and does not make this ongoing legacy allowance a time-limited trial. Free retains logs for 3 days and includes one SteadyStack-branded public status page; official pricing explicitly permits commercial use and says no credit card is required to start.",
     "pricing_url": "https://steadystack.dev/pricing",
     "credit_card": "no",
     "commercial_use": "yes",
