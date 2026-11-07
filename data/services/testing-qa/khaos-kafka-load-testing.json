@@ -1,0 +1,13 @@
+{
+  "id": "khaos-kafka-load-testing",
+  "name": "Khaos Kafka Load Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 CLI for local Kafka data generation, load testing and chaos scenarios; no software usage quota or expiry stated.",
+  "watch_out": "Requires a local or external Kafka cluster; bundled Docker Compose cluster uses your own compute and storage. Managed Kafka, CI resources and network traffic may cost money; no hosted free Kafka resources are included.",
+  "pricing_url": "https://github.com/aleksandarskrbic/khaos",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "local"
+}
