@@ -138,9 +138,8 @@ export function validateData(data, today = new Date().toISOString().slice(0, 10)
     }
   }
   if (errors.length) throw Error(errors.join("\n"));
-  // Validate all explicitly curated related IDs against the complete catalog.
-  // Never infer ownership from a shared pricing domain or partial name match.
-  relatedServiceMap(data);
+  // validateData is also used on single-service test fixtures and intake
+  // samples. Referential checks require the COMPLETE catalog (see render).
   return data;
 }
 
@@ -159,6 +158,8 @@ export function validateCandidate(candidate, today = new Date().toISOString().sl
 
 export function render(root = DEFAULT_ROOT) {
   const data = validateData(loadServices(root));
+  // A shard can reference another category; resolve after loading all shards.
+  relatedServiceMap(data);
   let readme = read(root, "README.md");
   const lines = readme.split("\n");
   const start = lines.findIndex(line => line.trim() === NAV);
