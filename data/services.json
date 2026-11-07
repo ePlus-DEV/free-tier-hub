@@ -13679,6 +13679,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "observiq-blitz-telemetry-generator",
+    "name": "observIQ Blitz Telemetry Generator",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed local telemetry generation CLI and Docker tool for synthetic logs and load testing OpenTelemetry collectors; configurable generators, rates and output targets, with no vendor-enforced software quota or expiry.",
+    "watch_out": "Free software only; generating and ingesting telemetry can incur compute, bandwidth, collector, storage and observability-backend costs. Not the unrelated blitz.cloud hosting service. Configure output destinations and rates to avoid unexpected ingestion charges.",
+    "pricing_url": "https://github.com/observIQ/blitz",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "openagentemail-self-hosted",
     "name": "OpenAgentEmail Self-Hosted",
     "category": "email-notifications",
