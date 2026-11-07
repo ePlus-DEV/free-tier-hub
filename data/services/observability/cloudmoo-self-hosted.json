@@ -1,0 +1,13 @@
+{
+  "id": "cloudmoo-self-hosted",
+  "name": "CloudMoo Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted multi-cloud infrastructure monitoring dashboard with scheduled asset status checks, 30-day uptime history, team access and email alerts; no software subscription or expiry stated.",
+  "watch_out": "Requires self-provided compute, PostgreSQL, RabbitMQ and provider API credentials; cloud resources and external SMTP delivery are not included. Configure read-only cloud credentials and review security before production use.",
+  "pricing_url": "https://github.com/bilal414/cloudmoo",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-07",
+  "deployment_model": "self-hosted"
+}
