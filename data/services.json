@@ -12380,6 +12380,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "carbon-core-local-ai-testing",
+    "name": "CARBON Core Local AI Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local QA plugin and MCP runtime for risk-based testing, accessibility checks, regression planning, and HTML/JSON evidence reports; no CARBON account or paid feature unlock required.",
+    "watch_out": "Requires a compatible coding agent and Node.js 22+; the host model subscription/API may incur charges or usage limits. Optional integrations and CARBON Pro are separate. Local execution can send context to the configured model provider; command analytics vary by edition.",
+    "pricing_url": "https://github.com/jarbon/carbon-free",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-07",
+    "deployment_model": "local"
+  },
+  {
     "id": "claude-for-startups-api-credits",
     "name": "Claude for Startups API Credits",
     "category": "ai-ml",
