@@ -14353,6 +14353,19 @@
     "last_checked": "2026-11-06"
   },
   {
+    "id": "swaks-local-smtp-protocol-tester",
+    "name": "Swaks Local SMTP Protocol Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-2.0-licensed command-line SMTP/ESMTP/LMTP protocol testing utility with TLS, authentication and scripted message transactions; no vendor-hosted sending quota.",
+    "watch_out": "Runs on user-provided systems and requires access to an SMTP server for tests; external SMTP delivery, accounts and infrastructure are not included. Maintained by one developer without guaranteed support.",
+    "pricing_url": "https://github.com/jetmore/swaks",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "taurus-load-testing",
     "name": "Taurus Open Source Load Testing",
     "category": "testing-qa",
