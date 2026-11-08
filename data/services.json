@@ -13818,6 +13818,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "nowlert-ce-self-hosted-notifications",
+    "name": "Nowlert CE Self-Hosted Infrastructure Notifications",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted Community Edition for receiving SMTP, authenticated HTTP webhook and Redfish infrastructure events, normalizing and routing notifications to Discord, Teams, Slack, generic webhooks, MQTT and ntfy; no vendor software usage quota or expiry stated.",
+    "watch_out": "Requires your own Docker host, persistent SQLite storage and secure event ingress. External notification destinations and infrastructure can have separate limits or charges. Community Edition is not a free hosted notification service; verify destination credentials and routing before production use.",
+    "pricing_url": "https://github.com/Theriark/nowlert-ce",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "nx-open-source-local-build",
     "name": "Nx Open-Source Monorepo Build CLI (Local)",
     "category": "ci-cd",
