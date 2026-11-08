@@ -1,0 +1,13 @@
+{
+  "id": "go-guerrilla-self-hosted-smtp",
+  "name": "Go-Guerrilla Self-Hosted SMTP Receiver",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted Go SMTP receiving daemon and embeddable library with TLS, configurable processors and MySQL/Redis backend integrations; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Inbound SMTP receiver, not an outbound email sending service or hosted mailbox. Bring your own host, domain, DNS, storage and SMTP network access; infrastructure and third-party services may cost extra. Original flashmob repository says maintenance moved to phires/go-guerrilla; review fork maintenance and secure configuration before production.",
+  "pricing_url": "https://github.com/phires/go-guerrilla",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
