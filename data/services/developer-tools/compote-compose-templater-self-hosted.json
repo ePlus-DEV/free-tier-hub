@@ -1,0 +1,13 @@
+{
+  "id": "compote-compose-templater-self-hosted",
+  "name": "Compote Compose Templater (Self-Hosted)",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted Docker Compose visual editor; no software license fee, usage quota or expiry specified. Docker deployment stores project data in local SQLite.",
+  "watch_out": "Self-hosted software only: provide Docker host, storage and maintenance. No free VPS, container hosting or third-party registry usage is included. Browser-only edition uses local IndexedDB and is distinct from this self-hosted offering.",
+  "pricing_url": "https://github.com/aicrafted/compote",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
