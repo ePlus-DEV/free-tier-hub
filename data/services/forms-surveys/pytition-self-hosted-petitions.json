@@ -1,0 +1,13 @@
+{
+  "id": "pytition-self-hosted-petitions",
+  "name": "Pytition Self-Hosted Petition Forms",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "BSD-3-Clause self-hosted petition and signature collection software; no software usage quota or expiry stated.",
+  "watch_out": "Petition-specific forms, not a general survey builder. Bring your own server, database, domain, and SMTP; infrastructure and email may cost money. Production installation and security maintenance are your responsibility.",
+  "pricing_url": "https://github.com/pytition/Pytition",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
