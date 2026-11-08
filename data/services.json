@@ -12930,6 +12930,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "goku-local-http-load-testing",
+    "name": "Goku Local HTTP Load Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Rust HTTP load-testing CLI with concurrent clients, request-rate limits, multi-step scenarios, HTTP/2, latency reports and optional MCP integration; no software usage quota or expiry stated.",
+    "watch_out": "Runs on your own machine or CI runner; compute, bandwidth and target API usage may incur costs. Optional Observability Insight reporting is a separate hosted integration with its own terms. Test only systems you are authorized to load-test.",
+    "pricing_url": "https://github.com/jcaromiq/goku",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "gomailtesttool",
     "name": "gomailtesttool",
     "category": "testing-qa",
