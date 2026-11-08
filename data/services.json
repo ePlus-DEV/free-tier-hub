@@ -14249,6 +14249,19 @@
     "program": "startup"
   },
   {
+    "id": "serenibase-self-hosted-backend",
+    "name": "SereniBase Self-Hosted Backend",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted backend platform with PostgreSQL, automatic REST APIs, JWT authentication, storage, SMTP notifications and ClamAV scanning; no software usage quota or expiration stated.",
+    "watch_out": "Beta software; requires your own Docker host, PostgreSQL, storage and operational maintenance. External SMTP, S3 or cloud infrastructure may incur separate charges; the public demo is not a free hosted production plan.",
+    "pricing_url": "https://github.com/aptlogica/sereni-base",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "simulai-self-hosted",
     "name": "simulai Conversational Survey Builder",
     "category": "forms-surveys",
