@@ -14301,6 +14301,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "shoutrrr-local-notification-cli",
+    "name": "Shoutrrr Local Notification CLI",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local Go notification CLI and library; no software usage quota or expiration. Supports configured third-party notification transports.",
+    "watch_out": "Does not provide free email, SMS, push delivery or hosting. Requires configured third-party endpoints/accounts; their limits, billing, and overages apply. Users provide local or CI runtime and credentials.",
+    "pricing_url": "https://github.com/containrrr/shoutrrr",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "simulai-self-hosted",
     "name": "simulai Conversational Survey Builder",
     "category": "forms-surveys",
