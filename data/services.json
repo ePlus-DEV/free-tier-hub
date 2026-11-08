@@ -14066,6 +14066,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "polonium-local-api-tester",
+    "name": "Polonium Local API Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed locally run REST API and WebSocket testing application with reusable request collections and no software usage quota or expiry stated.",
+    "watch_out": "Run the Next.js application on your own machine; Node.js/pnpm setup and access to target APIs are required. Hosting, network, and third-party API usage are not included. Upstream documents a development startup; production deployment readiness and maintenance should be reviewed before public exposure.",
+    "pricing_url": "https://github.com/Reche13/polonium",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "portabase-self-hosted-backups",
     "name": "Portabase Self-Hosted Database Backups",
     "category": "storage",
