@@ -1,0 +1,13 @@
+{
+  "id": "cassowary-local-http-load-testing",
+  "name": "Cassowary Local HTTP Load Tester",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local HTTP/S load-testing CLI for Windows, macOS and Linux with concurrent requests, duration settings, POST payloads and metrics export; no software quota or expiry.",
+  "watch_out": "Runs on your own computer or infrastructure; no free hosted load generators or cloud compute are included. Prometheus, CloudWatch and target infrastructure may incur separate costs. Run load tests only against systems you are authorized to test.",
+  "pricing_url": "https://github.com/rogerwelin/cassowary",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "local"
+}
