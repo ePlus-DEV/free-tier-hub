@@ -1,0 +1,13 @@
+{
+  "id": "notifo-self-hosted",
+  "name": "Notifo Self-Hosted",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted multichannel notification server with REST API, templates, delivery tracking, and email, SMS, web push and webhook integrations; no software usage quota or expiry stated.",
+  "watch_out": "Requires own server, database, HTTPS domain/TLS and secret rotation; outbound SMTP, SMS and third-party notification providers can charge separately. Hosted app.notifo.io is not the free offer.",
+  "pricing_url": "https://github.com/notifo-io/notifo",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
