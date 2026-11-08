@@ -13975,6 +13975,19 @@
     "program": "startup"
   },
   {
+    "id": "openautocatch-self-hosted-mail-receiver",
+    "name": "OpenAutocatch Self-Hosted Catch-All Mail Receiver",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted catch-all SMTP receiver with Postfix, Rspamd spam filtering, Maildir message storage, DNSSEC resolution, optional webhook forwarding and Docker deployment; no software subscription or published license quota.",
+    "watch_out": "Requires your own server with reachable inbound TCP port 25, domain MX/DNS configuration, persistent storage and security maintenance. TLS certificates, IP reputation, storage and infrastructure are not supplied; the separately advertised hosted autocatch.mx offering is not included.",
+    "pricing_url": "https://github.com/Autocatch-mx/autocatch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "openformy-self-hosted",
     "name": "OpenFormy",
     "category": "forms-surveys",
