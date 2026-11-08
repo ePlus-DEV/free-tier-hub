@@ -1,0 +1,13 @@
+{
+  "id": "doable-self-hosted-ai-app-builder",
+  "name": "Doable Self-Hosted AI App Builder",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted multi-tenant AI application builder with workspaces, role-based access, sandboxed previews, code export and Docker deployment; no software license quota or expiry published.",
+  "watch_out": "Requires your own Docker-capable host or VPS, database and operational maintenance. AI model APIs may charge for tokens; Cloudflare domains, DNS and third-party hosting can also incur fees. Free software does not include hosted compute or free AI inference.",
+  "pricing_url": "https://github.com/doable-me/Doable",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
