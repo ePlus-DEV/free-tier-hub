@@ -12826,6 +12826,19 @@
     "program": "startup"
   },
   {
+    "id": "goat-http-api-tester",
+    "name": "Goat HTTP API Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free BSD-3-Clause local CLI for scripted HTTP API integration tests; no software usage quota or expiry.",
+    "watch_out": "Requires your own machine or CI runner and reachable API endpoints; external services and CI infrastructure may incur costs. Not a hosted testing service.",
+    "pricing_url": "https://github.com/studio-b12/goat",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "gocraft-work-redis-jobs-self-hosted",
     "name": "gocraft/work Redis-backed Go Jobs",
     "category": "queues-jobs",
