@@ -12669,6 +12669,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "fastertest-self-hosted",
+    "name": "FasterTest Self-Hosted",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "ISC-licensed self-hosted web UI for running k6 load tests, with cURL import, live metrics, JWT/RBAC and report history; no subscription or software usage quota. Runs on user-provided infrastructure.",
+    "watch_out": "Requires self-managed Docker/Node.js, k6 and optional MySQL; one active k6 process per instance, with default 1000-VU and 24-hour run caps. k6 bundled binary is AGPL-3.0 with redistribution obligations. No free hosted load generators, compute or network bandwidth included.",
+    "pricing_url": "https://github.com/alirezaedalat/fastertest",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "fillout-free-forms",
     "name": "Fillout Free Forms",
     "category": "forms-surveys",
