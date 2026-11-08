@@ -12354,6 +12354,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "bugtraceai-self-hosted",
+    "name": "BugTraceAI Self-Hosted Security Testing Suite",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed self-hosted web and API security testing components (CLI, WEB, API and Launcher); no software usage quota or expiry stated.",
+    "watch_out": "Use only on authorized targets. Requires local/Docker infrastructure and configuration; AI-assisted features can require third-party paid model API keys or local models. Current component releases include beta versions and upstream says fresh install/live scan validation remains pending.",
+    "pricing_url": "https://github.com/BugTraceAI/BugTraceAI",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "bunmail-self-hosted-email-api",
     "name": "BunMail Self-Hosted Email API",
     "category": "email-notifications",
