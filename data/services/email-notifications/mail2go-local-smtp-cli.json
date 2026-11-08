@@ -1,0 +1,13 @@
+{
+  "id": "mail2go-local-smtp-cli",
+  "name": "Mail2Go Local SMTP CLI",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed command-line SMTP client for sending plain-text or HTML messages with multiple recipients and attachments; no software usage quota or expiry.",
+  "watch_out": "Requires a separately provided SMTP server/account; provider sending limits, fees, and overages are not included. TLS-skip mode bypasses certificate verification and should not be used for production.",
+  "pricing_url": "https://github.com/KeepSec-Technologies/Mail2Go",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "local"
+}
