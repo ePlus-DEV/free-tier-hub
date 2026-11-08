@@ -1,0 +1,13 @@
+{
+  "id": "leepanel-local-server-management",
+  "name": "LeePanel Local Server Management",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed desktop SSH/SFTP and Linux server management app for Windows, macOS and Linux; no software seat, server-count or expiry limit stated by upstream.",
+  "watch_out": "Runs on the user's desktop and manages existing Ubuntu/Debian servers over SSH. No free VPS, cloud compute, hosting or network resources included; administrator SSH access and any remote infrastructure are user-provided. Other distributions not yet fully tested.",
+  "pricing_url": "https://github.com/gna1280072/LeePanel",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "local"
+}
