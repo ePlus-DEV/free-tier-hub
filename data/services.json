@@ -12486,6 +12486,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "datacircle-api",
+    "name": "Datacircle API",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Open API with no key: every GTM API on the sheet, who is best for each, and every plan by API, provider or price; 60 calls a minute from one address",
+    "watch_out": "Read-only. The limit is per address and there is no sign-up, so no higher tier to buy.",
+    "pricing_url": "https://api.datacircle.dev/v1/openapi.json",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-07",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "devspace-kubernetes-cli-local",
     "name": "DevSpace Open-Source Kubernetes Development CLI (Local)",
     "category": "ci-cd",
