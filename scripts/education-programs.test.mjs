@@ -74,7 +74,13 @@ test('Education Benefits is reachable from Home chips and the offer filter witho
     assert.match(home, /<option value="education">Education benefits \(/);
     assert.match(home, /href="https:\/\/free-tier\.eplus\.dev\/education\/" id="education-filter-destination"/);
     assert.match(home, /class="education-filter-link"/);
-    assert.match(home, /class="education-results-shortcut"/);
+    // Only the catalog total and visible count belong in the compact results summary.
+    const heading = home.match(/<div class="directory-heading">([\s\S]*?)<div class="service-grid"/);
+    assert.ok(heading, 'Home renders a directory heading');
+    assert.match(heading[1], /<span class="result-label">All services<\/span><strong class="result-total">/);
+    assert.match(heading[1], /<span class="result-shown">Showing /);
+    assert.doesNotMatch(heading[1], /<a\b|limited offers|startup programs|education benefits/i,
+      'Do not clutter the result count with category/program links');
     const runtime = read('assets/site.js');
     assert.match(runtime, /offerSelect\.value === "education"/);
     assert.match(runtime, /window\.location\.assign\(document\.getElementById\("education-filter-destination"\)\.href\)/);

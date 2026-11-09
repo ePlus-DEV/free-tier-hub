@@ -87,7 +87,7 @@ test('Startup Programs filter is explicit, shareable and isolated from ordinary 
     assert.deepEqual(index.startup_program_ids, ids);
     assert.ok(index.rows.every(row => row.length === 10), 'keep 10-column lazy-search schema');
     assert.match(home, new RegExp('<option value="startup">Startup programs \\(' + ids.length + '\\)</option>'));
-    assert.match(home, /href="https:\/\/free-tier\.eplus\.dev\/\?offer=startup#explore"/);
+    assert.doesNotMatch(home, /class="startup-offer-shortcut"/, 'Startup count belongs in the Offer type filter, not summary');
     assert.match(offers, /id="offers-program-filters" role="group" aria-label="Filter limited offers" hidden/);
     assert.match(offers, new RegExp('data-offers-mode="startup" aria-pressed="false">Startup programs \\(' + ids.length + '\\)</button>'));
     assert.match(offers, /id="offers-service-grid"/);
@@ -620,8 +620,7 @@ test('All services includes limited offers while the free-tier subset stays sepa
       compactNumber(limited.length) + ')</option>'));
     assert.ok(home.includes('<span class="result-label">All services</span><strong class="result-total">' +
       compactNumber(all.length) + '</strong>'));
-    assert.ok(home.includes('class="limited-offer-shortcut" href="https://free-tier.eplus.dev/?offer=limited#explore"'));
-    assert.ok(home.includes(compactNumber(limited.length) + ' limited offers</a>'));
+    assert.doesNotMatch(home, /class="limited-offer-shortcut"/, 'Limited offer count belongs in the Offer type filter, not summary');
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, all.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
     const index = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'), 'utf8'));

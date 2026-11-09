@@ -417,17 +417,6 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<span class="result-label">All services</span><strong class="result-total">',
     compactNumber(items.length), '</strong><span class="result-shown">Showing ',
     compactNumber(Math.min(12, items.length)), ' of ', compactNumber(items.length), '</span></p>',
-    limitedItems.length
-      ? '<a class="limited-offer-shortcut" href="' + tag(absolute('?offer=limited#explore')) +
-        '" aria-label="Show time-limited and expiring offers">' + compactNumber(limitedItems.length) +
-        ' limited offers</a>' : '',
-    startupItems.length
-      ? '<a class="startup-offer-shortcut" href="' + tag(absolute('?offer=startup#explore')) +
-        '" aria-label="Show startup programs">' + compactNumber(startupItems.length) +
-        ' startup programs</a>' : '',
-    '<a class="education-results-shortcut" href="', tag(absolute('education/')),
-    '" aria-label="Browse education benefits for students and teachers">',
-    compactNumber(educationCount), ' education benefits ↗</a>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),

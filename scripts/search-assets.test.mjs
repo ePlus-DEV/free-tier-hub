@@ -87,7 +87,10 @@ test('search index and card shard assets work for small custom catalogs without 
     assert.ok(cards['search-test-ongoing']);
     assert.ok(cards['search-test-limited']);
     assert.equal(home.includes('data-service-id="search-test-limited"'), true);
-    assert.ok(home.includes('class="limited-offer-shortcut"'));
+    assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (1)</option>'),
+      'Time-limited offers remain discoverable in the Offer type dropdown');
+    assert.doesNotMatch(home, /class="limited-offer-shortcut"/,
+      'No promotional links should clutter the compact result count');
     const schema = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const list = schema['@graph'].find(item => item['@type'] === 'CollectionPage').mainEntity.itemListElement;
     assert.deepEqual(list.map(item => item.name), tiny.map(item => item.name),
