@@ -12328,6 +12328,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "bewitch-linux-monitor",
+    "name": "bewitch Linux Server Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 licensed Linux server monitoring daemon and terminal UI with local DuckDB metrics history, hardware health checks, alerts and SQL console; self-managed software with no vendor-imposed usage quota or expiry.",
+    "watch_out": "Free software only, not free VPS or hosted monitoring. Requires your own Linux server and storage; alert delivery and remote access require configuration. Runs a per-machine daemon rather than a centralized hosted service. Review security and production suitability before installation.",
+    "pricing_url": "https://github.com/duggan/bewitch",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "boxbox-self-hosted-file-manager",
     "name": "BoxBox Self-Hosted File Manager",
     "category": "storage",
