@@ -14248,6 +14248,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "panel-human-evaluation-self-hosted",
+    "name": "PANEL Self-Hosted Human Evaluation Studies",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted web platform for unlimited locally operated human evaluation studies with questionnaires, pairwise comparisons, participant consent, screening, response exports and analysis; no vendor-enforced subscription or expiration for the software.",
+    "watch_out": "No hosted survey service, participant recruitment, storage, compute, or AI model usage is included. Requires your own Django-compatible server and database, secure public deployment and data protection controls; compensation and third-party model/API costs are separate.",
+    "pricing_url": "https://github.com/matteospanio/panel",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "perch-ai-starter",
     "name": "Perch AI Starter",
     "category": "ai-assistants",
