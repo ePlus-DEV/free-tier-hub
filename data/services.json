@@ -14352,6 +14352,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "qqueue-core-self-hosted",
+    "name": "QQueue Core Self-Hosted Email Platform",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0 self-hosted QQueue Core email platform with transactional SMTP integrations, campaigns, queues, workers, templates, contacts, sender identities, DKIM, webhooks and dashboard; no vendor-enforced software quota or expiry is documented.",
+    "watch_out": "Early beta; complete upstream security/launch checklist before production. Requires your own VPS (at least 2 GB RAM), Docker, domain/DNS, PostgreSQL, Redis, storage and SMTP provider credentials; infrastructure, outbound mail, sending limits and deliverability may incur separate costs. QQueue Cloud is a distinct managed offering and not included.",
+    "pricing_url": "https://github.com/qqueue-app/qqueue",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "quillforms-open-source-form-builder",
     "name": "Quill Forms Open-Source Form Builder",
     "category": "forms-surveys",
