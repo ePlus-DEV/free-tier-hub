@@ -12604,6 +12604,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "docklet-self-hosted",
+    "name": "Docklet (Self-Hosted)",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted VPS control panel for Docker app deployment, PostgreSQL management, reverse proxy, domains and server monitoring; no software subscription fee or stated usage quota.",
+    "watch_out": "Requires your own VPS/server, Docker 24+, Docker Compose 2+, domain/DNS for public apps and open ports; VPS, storage, bandwidth and optional NVIDIA AI API costs are not included. Protect privileged Docker and database access.",
+    "pricing_url": "https://github.com/Docklet-Official/docklet",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dodo-self-hosted-reminders",
     "name": "dodo Self-Hosted Reminders",
     "category": "queues-jobs",
