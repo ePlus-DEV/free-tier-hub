@@ -1,0 +1,13 @@
+{
+  "id": "scrapeman-local-api-client",
+  "name": "Scrapeman Local API Client",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 desktop API client for Windows, macOS and Linux with local Git-friendly collections, unlimited local history, HTTP/2, WebSocket and built-in request load testing; no subscription or account required.",
+  "watch_out": "Runs on your own computer; no free hosted API infrastructure or Scrape.do proxy credits included. Optional Scrape.do proxy usage is separately billed. Response bodies are capped at 200 MB; installers may trigger OS unsigned-app warnings.",
+  "pricing_url": "https://github.com/scrape-do/scrapeman",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
