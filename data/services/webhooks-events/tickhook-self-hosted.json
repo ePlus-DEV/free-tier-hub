@@ -1,0 +1,13 @@
+{
+  "id": "tickhook-self-hosted",
+  "name": "TickHook Self-Hosted Webhook Scheduler",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted webhook scheduler for one-shot and fixed-interval recurring HTTP jobs; no vendor-imposed job quota or software expiry. Redis and compute are user-provided.",
+  "watch_out": "Requires Redis and self-managed hosting; V1 is single-consumer, at-least-once delivery with no HA or cron expressions, and a documented crash window may lose jobs. Secure the bearer token and account for infrastructure and outbound API costs.",
+  "pricing_url": "https://github.com/cr0hn/TickHook",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "self-hosted"
+}
