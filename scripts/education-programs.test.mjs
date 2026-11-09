@@ -47,3 +47,28 @@ test('education landing has independent counts, shareable audience filters and c
     assert.ok(filter.includes("card.hidden = !(matchAudience && matchBenefit)"));
   } finally { fs.rmSync(temp, {recursive:true, force:true}); }
 });
+
+test('Education Benefits is reachable from Home chips and the offer filter without changing catalog totals', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fth-education-navigation-'));
+  try {
+    const result = build(temp);
+    const read = p => fs.readFileSync(path.join(temp, p), 'utf8');
+    const home = read('index.html');
+    const stats = JSON.parse(read('catalog-stats.json'));
+    const programs = JSON.parse(read('education-programs.json'));
+    assert.equal(stats.total_services, result.service_count);
+    assert.equal(programs.length, input.length);
+    assert.match(home, /class="category-chip education-program-chip" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
+    assert.match(home, /<option value="education">Education benefits \(/);
+    assert.match(home, /data-education-url="https:\/\/free-tier\.eplus\.dev\/education\/"/);
+    assert.match(home, /class="education-filter-link"/);
+    assert.match(home, /class="education-results-shortcut"/);
+    const runtime = read('assets/site.js');
+    assert.match(runtime, /offerSelect\.value === "education"/);
+    assert.match(runtime, /window\.location\.assign\(offerSelect\.getAttribute\("data-education-url"\)\)/);
+    assert.ok(runtime.indexOf('window.location.assign(offerSelect.getAttribute("data-education-url"))') <
+      runtime.indexOf('offerType = offerSelect.value;'), 'navigate before filtering general free tiers');
+    assert.match(read('assets/site.css'), /\.education-program-chip/);
+    assert.match(read('education/index.html'), /id="education-audience"/);
+  } finally { fs.rmSync(temp, { recursive: true, force: true }); }
+});

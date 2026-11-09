@@ -303,7 +303,7 @@ export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
   ].join('');
 }
 
-function homePage(items, absolute, counts, searchVersion) {
+function homePage(items, absolute, counts, searchVersion, educationCount) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const startupItems = items.filter(item => item.program === 'startup');
@@ -320,10 +320,17 @@ function homePage(items, absolute, counts, searchVersion) {
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) +
     ' (' + compactNumber(counts[category]) + ')</option>').join('');
-  const shortcuts = [['', 'All services'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
-    '<button type="button" class="category-chip" data-filter-category="' + tag(category) + '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
-    (category ? ' <span class="category-chip-count" aria-label="' + counts[category] + ' services">' + compactNumber(counts[category]) + '</span>' : '') +
-    '</button>').join('');
+  const shortcuts = [['', 'All services'], ['education', 'Education benefits'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
+    category === 'education'
+      ? '<a class="category-chip education-program-chip" href="' + tag(absolute('education/')) +
+        '" aria-label="Browse ' + educationCount + ' education benefits">' + tag(label) +
+        ' <span class="category-chip-count" aria-label="' + educationCount + ' education benefits">' +
+        compactNumber(educationCount) + '</span></a>'
+      : '<button type="button" class="category-chip" data-filter-category="' + tag(category) +
+        '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
+        (category ? ' <span class="category-chip-count" aria-label="' + counts[category] +
+          ' services">' + compactNumber(counts[category]) + '</span>' : '') +
+        '</button>').join('');
   return [
     '<section class="hero"><div class="hero-copy">',
     '<p class="hero-kicker">The free-tier directory</p>',
@@ -366,14 +373,20 @@ function homePage(items, absolute, counts, searchVersion) {
     '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
     '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
-    '<select id="offer-filter"><option value="">All services (', compactNumber(items.length), ')</option>',
+    '<select id="offer-filter" data-education-url="', tag(absolute('education/')),
+    '"><option value="">All services (', compactNumber(items.length), ')</option>',
     '<option value="free">Free tiers (', compactNumber(mainItems.length), ')</option>',
     '<option value="ongoing">Ongoing free allowance (', compactNumber(planCounts.ongoing), ')</option>',
     '<option value="monthly-credit">Recurring monthly credit (', compactNumber(planCounts['monthly-credit']), ')</option>',
     '<option value="limited">Time-limited &amp; expiring offers (', compactNumber(limitedItems.length),
     ')</option>',
     '<option value="startup">Startup programs (', compactNumber(startupItems.length),
-    ')</option></select></label>',
+    ')</option><optgroup label="Special programs">',
+    '<option value="education">Education benefits (', compactNumber(educationCount),
+    ') — opens dedicated page</option></optgroup></select></label>',
+    '<p class="education-filter-link">For students and teachers: <a href="',
+    tag(absolute('education/')), '">Browse ', compactNumber(educationCount),
+    ' education benefits ↗</a>. Eligibility verification required.</p>',
     '<details class="classification-help"><summary>How are these offers classified?</summary>',
     '<div class="classification-help-panel"><p class="classification-help-intro">Labels describe the listed offer, not every plan a provider sells.</p>',
     '<dl><div><dt>Ongoing free allowance</dt><dd>No announced fixed end date. Usage limits and policies can still change.</dd></div>',
@@ -413,6 +426,9 @@ function homePage(items, absolute, counts, searchVersion) {
       ? '<a class="startup-offer-shortcut" href="' + tag(absolute('?offer=startup#explore')) +
         '" aria-label="Show startup programs">' + compactNumber(startupItems.length) +
         ' startup programs</a>' : '',
+    '<a class="education-results-shortcut" href="', tag(absolute('education/')),
+    '" aria-label="Browse education benefits for students and teachers">',
+    compactNumber(educationCount), ' education benefits ↗</a>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -960,7 +976,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, 'index.html', document(absolute,
     'Free Tier Hub | Free Hosting, Cloud, Databases & Developer Tools',
     'Explore free-tier hosting, databases, cloud, queues, AI APIs and developer tools with official pricing links and usage caveats.',
-    '', homePage(items, absolute, homeCounts, searchVersion), homeSchema));
+    '', homePage(items, absolute, homeCounts, searchVersion, educationPrograms.length), homeSchema));
   pageURLs.push(['', latest]);
   const categoriesRelative = 'categories/';
   const categoriesSchema = { '@context': 'https://schema.org', '@graph': [

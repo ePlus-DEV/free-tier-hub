@@ -958,3 +958,11 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
 .education-empty{padding:1.5rem;border:1px dashed var(--border,#cbd5e1);border-radius:1rem}
 .education-card[hidden]{display:none}
 @media(max-width:620px){.education-filters{display:grid;grid-template-columns:1fr}.education-card .card-top{align-items:flex-start;gap:.5rem}.education-card .education-badge{white-space:normal}}
+
+/* Special programs are reachable from Home's visible shortcuts and filter menu. */
+.category-shortcuts .education-program-chip{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;text-decoration:none;border:1px solid var(--line);background:var(--brand-tint);color:var(--brand-ink);font-weight:650}
+.category-shortcuts .education-program-chip:hover,.category-shortcuts .education-program-chip:focus-visible{background:var(--surface);border-color:var(--brand);text-decoration:none;outline-offset:2px}
+.education-filter-link{margin:0;padding:10px 11px;border-radius:7px;background:var(--surface-muted);color:var(--ink-soft);font-size:12px;line-height:1.5}
+.education-filter-link a,.education-results-shortcut{color:var(--brand-ink);font-weight:650;text-decoration:underline;text-underline-offset:2px}
+.education-results-shortcut{font-size:11px;white-space:nowrap}
+@media(max-width:680px){.category-shortcuts .education-program-chip{min-height:32px;padding:6px 9px}.education-results-shortcut{font-size:10px;white-space:normal}}
