@@ -13881,6 +13881,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mockzilla-local-openapi-mock",
+    "name": "Mockzilla Local OpenAPI Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local OpenAPI mock server and Go codegen tool with no vendor software quota or expiry; supports schema-derived responses, request validation, latency/error simulation, upstream proxy fallback and offline CI use.",
+    "watch_out": "This listing covers the free local CLI/source, not Mockzilla Cloud hosting. You supply your own machine or CI runner and OpenAPI specifications; remote upstream API calls or infrastructure can incur separate costs. No hosted endpoints, cloud credits or SLA are included.",
+    "pricing_url": "https://github.com/mockzilla/mockzilla",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
+  },
+  {
     "id": "mongodb-for-startups-credits",
     "name": "MongoDB for Startups Credits",
     "category": "databases",
