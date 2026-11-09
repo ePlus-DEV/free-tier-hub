@@ -14443,6 +14443,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "qlarr-self-hosted",
+    "name": "Qlarr Self-Hosted",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Self-hosted survey editor and response collection with JSON/JavaScript survey logic, offline-first workflows, branching, validation and multilingual surveys; no vendor-imposed software usage quota or expiration documented.",
+    "watch_out": "Requires your own server, database and Docker infrastructure; hosting costs are not included. AGPL-3.0 obligations apply to modified network deployments. README quick-start references an older frontend repository path; verify current deploy/ instructions and replace default admin credentials before production use. Hosted Qlarr Console is a separate offering.",
+    "pricing_url": "https://github.com/qlarr-surveys/qlarr",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "qqueue-core-self-hosted",
     "name": "QQueue Core Self-Hosted Email Platform",
     "category": "email-notifications",
