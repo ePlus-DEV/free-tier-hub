@@ -12512,6 +12512,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "dapta-forms-self-hosted",
+    "name": "Dapta Forms (Self-Hosted)",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted form builder with multi-step forms, conditional logic, lead scoring, submissions, webhooks and analytics; no vendor-imposed software usage quota or expiry.",
+    "watch_out": "Self-hosting only; provide your own server, PostgreSQL, TLS, authentication and email delivery. SQLite and local authentication stub are for development/evaluation, not secure production deployment. Hosted dforms.ai plan is separate and not included.",
+    "pricing_url": "https://github.com/Dapta-Tech/dapta-forms",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dask-local-parallel-analytics",
     "name": "Dask Open-Source Parallel Analytics (Local)",
     "category": "analytics",
@@ -12615,6 +12628,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-09",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "docuhog-local-docusign-mock",
+    "name": "DocuHog Local DocuSign API Mock",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local mock DocuSign eSignature REST API server with mock OAuth, envelope and template endpoints, status simulation, web UI and Docker/Node.js deployment; no software usage quota stated.",
+    "watch_out": "For development and CI simulation only: no actual signing ceremony or real DocuSign delivery. Own compute/storage required; optional SMTP delivery uses an external mail server. Docker data is ephemeral without a mounted volume.",
+    "pricing_url": "https://github.com/dwelch2344/docuhog",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
   },
   {
     "id": "dodo-self-hosted-reminders",
@@ -13035,6 +13061,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "happydeliver-self-hosted-email-deliverability",
+    "name": "HappyDeliver Self-Hosted Email Deliverability Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "AGPL-3.0-or-later self-hosted email deliverability analysis software with REST API, SMTP/LMTP test ingestion, SPF/DKIM/DMARC, DNS and spam scoring; no software usage quota or expiry stated.",
+    "watch_out": "Bring your own server, domain, DNS, storage and inbound SMTP port 25 (often blocked by cloud providers). Optional VirusTotal and third-party reputation API services have separate quotas/terms; AGPL network-use obligations apply. No free hosted email sending or infrastructure is included.",
+    "pricing_url": "https://github.com/happyDomain/happydeliver",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "harvester-hci-self-hosted",
     "name": "Harvester HCI Self-Hosted Virtualization",
     "category": "cloud-vps",
@@ -13098,6 +13137,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "httap-local-http-interception",
+    "name": "httap Local HTTP Interception",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local HTTP/HTTPS interception and mocking tool with project-scoped proxy, terminal UI, CLI, TypeScript interceptors and MCP integration; no software usage quota or expiry stated.",
+    "watch_out": "Runs on user-provided computer and network; no hosted proxy or cloud infrastructure included. HTTPS interception creates a local CA certificate and captures potentially sensitive request data; secure local storage and use only on authorized traffic. Some clients require proxy or certificate configuration.",
+    "pricing_url": "https://github.com/mtford90/httap",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
   },
   {
     "id": "httpmon-local-http-debugging-proxy",
@@ -14157,6 +14209,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "pewpew-local-http-stress-testing",
+    "name": "Pewpew Local HTTP Stress Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local CLI for HTTP stress and fixed-rate benchmark testing; supports multiple targets, configurable concurrency, HTTP/2 and JSON/TSV exports; no software usage quota or expiry.",
+    "watch_out": "You supply the test machine, network capacity and target systems; load can disrupt services. No free hosted load generators, infrastructure or managed testing service is included. Use only against systems you are authorized to test.",
+    "pricing_url": "https://github.com/bengadbois/pewpew",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
+  },
+  {
     "id": "playwright-open-source-local",
     "name": "Playwright Open-Source Browser Testing",
     "category": "testing-qa",
@@ -14352,6 +14417,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "resterm-local-api-client",
+    "name": "Resterm Local API Client",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 open-source terminal API client for HTTP, GraphQL, gRPC, WebSocket and SSE; local .http/.rest request files, scripted assertions, mocks and CI runner, with no software usage quota or expiry stated.",
+    "watch_out": "Runs on the user's own machine or CI runner; network, target API, tunnels and CI infrastructure may incur separate costs. No hosted API testing capacity is included; secure request files and credentials before committing them.",
+    "pricing_url": "https://github.com/unkn0wn-root/resterm",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
+  },
+  {
     "id": "resty-api-testing-cli",
     "name": "Resty API Testing CLI",
     "category": "testing-qa",
@@ -14376,6 +14454,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "rustman-local-api-client",
+    "name": "Rustman Local API Client",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed native desktop API client for HTTP and WebSocket requests, local collections and history, OpenAPI/Postman import, and pre-request/test scripts; no subscription, account, or usage quota.",
+    "watch_out": "Runs on your own Windows, macOS, or Linux device; no hosted API testing infrastructure, cloud sync, or included external API usage. Scripts use Rustman's custom language rather than JavaScript; some variable substitution and import features are limited.",
+    "pricing_url": "https://github.com/rust-man-org/rustman",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
   },
   {
     "id": "s3proxy-self-hosted-s3-gateway",
@@ -15002,6 +15093,19 @@
     "commercial_use": "check",
     "deployment_model": "cloud",
     "last_checked": "2026-11-06"
+  },
+  {
+    "id": "zorvik-local-api-testing",
+    "name": "Zorvik Local API Testing Workbench",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free local desktop and CLI API testing, mocking and load testing on Windows, macOS and Linux; all features included without account, subscription, seat quota or expiry.",
+    "watch_out": "Runs on user-provided hardware; API targets, network access and any external services may incur separate costs. No free hosted compute or managed testing capacity is included. MIT or Apache-2.0 license; follow license notices.",
+    "pricing_url": "https://github.com/LibreGuild/zorvik",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-08",
+    "deployment_model": "local"
   },
   {
     "id": "zoyla-http-load-testing",
