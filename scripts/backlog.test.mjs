@@ -242,13 +242,13 @@ test('catalog recovery keeps both guarded paths in one hourly workflow', () => {
 
 test('backlog consumer projects paginated API responses before buffering full PR history', () => {
   const workflow = fs.readFileSync(path.join(ROOT, '.github/workflows/catalog-backlog-consumer.yml'), 'utf8');
-  assert.match(workflow, /'--jq', 'flatten \\| ' \\+ projection/,
+  assert.match(workflow, /'--jq', 'flatten \| ' \+ projection/,
     'the GitHub CLI must reduce each historical API response before Node captures it');
-  assert.match(workflow, /map\\(\\{number, state, head:/, 'open PR coverage still needs state and number');
-  assert.match(workflow, /map\\(\\{filename, previous_filename\\}\\)/, 'preserve rename deduplication');
-  assert.match(workflow, /select\\(\\.title \\| startswith/, 'only candidate issue bodies need to be retained');
-  assert.match(workflow, /map\\(\\{head: \\{ref: \\.head\\.ref\\}\\}\\)/,
+  assert.match(workflow, /map\(\{number, state, head:/, 'open PR coverage still needs state and number');
+  assert.match(workflow, /map\(\{filename, previous_filename\}\)/, 'preserve rename deduplication');
+  assert.match(workflow, /select\(\.title \| startswith/, 'only candidate issue bodies need to be retained');
+  assert.match(workflow, /map\(\{head: \{ref: \.head\.ref\}\}\)/,
     'closed PR history should contain only branch refs');
-  assert.doesNotMatch(workflow, /'--slurp', 'repos\\/'/,
+  assert.doesNotMatch(workflow, /'--slurp', 'repos\/'/,
     'do not buffer large unprojected GitHub API responses');
 });
