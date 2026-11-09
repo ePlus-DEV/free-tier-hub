@@ -1,0 +1,13 @@
+{
+  "id": "unemail-local-email-api-library",
+  "name": "Unemail (Open-Source Email API Library)",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed TypeScript library for a unified email-sending API across SMTP and supported third-party providers; no software subscription or usage quota imposed by the library.",
+  "watch_out": "This is a developer library, not a hosted email service. SMTP infrastructure and third-party delivery providers (such as SES, Resend, or Postmark) have separate pricing, quotas, account requirements and possible overage charges.",
+  "pricing_url": "https://github.com/productdevbook/unemail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
