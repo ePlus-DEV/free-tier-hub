@@ -62,11 +62,23 @@ jobs:
           // Project only the required fields in gh/jq before passing results to Node.
           // Full historical PR payloads exceeded execFileSync's output buffer
           // (ENOBUFS), preventing merged PRs from resuming queued candidates.
-          const api = (endpoint, projection) => JSON.parse(execFileSync(
-            'gh', ['api', '--paginate', '--slurp', '--jq', 'flatten | ' + projection,
-              'repos/' + repo + '/' + endpoint],
-            { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
-          ));
+          // gh api --jq projects *each page*; --slurp cannot be combined with
+          // --jq. Emit one compact JSON array per page so historical results
+          // remain bounded, complete, and reliably parseable.
+          const api = (endpoint, projection) => {
+            const raw = execFileSync('gh', [
+              'api', '--paginate', '--jq', projection + ' | @json',
+              'repos/' + repo + '/' + endpoint
+            ], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }).trim();
+            if (!raw) return [];
+            return raw.split(/\r?\n/).flatMap((line, index) => {
+              const page = JSON.parse(line);
+              if (!Array.isArray(page)) {
+                throw Error('Expected a JSON array from GitHub API page ' + (index + 1));
+              }
+              return page;
+            });
+          };
           const openPRs = api('pulls?state=open&per_page=100',
             'map({number, state, head: {ref: .head.ref}})');
           // Do not deliver the same service while ANY open PR (including a
