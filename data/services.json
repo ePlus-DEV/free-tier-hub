@@ -13842,6 +13842,19 @@
     "program": "startup"
   },
   {
+    "id": "mimikos-local-openapi-mock-server",
+    "name": "Mimikos Local OpenAPI Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed local OpenAPI 3.0/3.1 mock server with deterministic and in-memory stateful API responses; no provider-enforced usage quota or expiration for the self-run software.",
+    "watch_out": "Alpha (0.x): output and behavior may change between minor versions. Stateful resources are in memory and lost on restart; default maximum is 10,000 resources (configurable). Self-run binary only; hosting, CI runners and external integrations are not included. Go 1.25+ required when building from source.",
+    "pricing_url": "https://github.com/mimikos-io/mimikos",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
+  },
+  {
     "id": "mock-service-worker-local",
     "name": "Mock Service Worker Local API Mocking",
     "category": "testing-qa",
