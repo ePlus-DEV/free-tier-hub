@@ -1,0 +1,13 @@
+{
+  "id": "nodepress-self-hosted-headless-cms",
+  "name": "NodePress Self-Hosted Headless CMS",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted headless CMS with REST and GraphQL APIs, visual content types, forms, roles, and unlimited self-managed use; no vendor-enforced free quota or expiry is stated.",
+  "watch_out": "Self-hosting requires user-provided compute, PostgreSQL, Redis and deployment resources; email delivery, domains and third-party integrations can incur costs. No managed cloud allowance is included; new project with smaller ecosystem.",
+  "pricing_url": "https://github.com/buildwithkode/nodepress",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "self-hosted"
+}
