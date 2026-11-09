@@ -1,0 +1,13 @@
+{
+  "id": "tokajer-smtprelayd-self-hosted",
+  "name": "smtprelayd Self-Hosted SMTP Relay",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0-or-later self-hosted SMTP relay software for Windows and Linux with durable queue, SMTP submission, routing, OAuth2/XOAUTH2 Microsoft 365 smarthost integration, JSON API and metrics; no vendor software quota or expiry.",
+  "watch_out": "Not a free mailbox or hosted email sending service. Requires your own Windows/Linux host, secure SMTP configuration and an existing smarthost (such as Microsoft 365) with separate licensing, sending limits and possible charges. Harden network access to avoid an open relay; upstream reports production use but deployment security remains operator responsibility.",
+  "pricing_url": "https://github.com/tokajer/smtprelayd",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
