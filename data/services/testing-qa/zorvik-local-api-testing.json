@@ -1,0 +1,13 @@
+{
+  "id": "zorvik-local-api-testing",
+  "name": "Zorvik Local API Testing Workbench",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free local desktop and CLI API testing, mocking and load testing on Windows, macOS and Linux; all features included without account, subscription, seat quota or expiry.",
+  "watch_out": "Runs on user-provided hardware; API targets, network access and any external services may incur separate costs. No free hosted compute or managed testing capacity is included. MIT or Apache-2.0 license; follow license notices.",
+  "pricing_url": "https://github.com/LibreGuild/zorvik",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "local"
+}

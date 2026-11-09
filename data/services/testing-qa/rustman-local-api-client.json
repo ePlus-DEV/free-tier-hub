@@ -1,0 +1,13 @@
+{
+  "id": "rustman-local-api-client",
+  "name": "Rustman Local API Client",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed native desktop API client for HTTP and WebSocket requests, local collections and history, OpenAPI/Postman import, and pre-request/test scripts; no subscription, account, or usage quota.",
+  "watch_out": "Runs on your own Windows, macOS, or Linux device; no hosted API testing infrastructure, cloud sync, or included external API usage. Scripts use Rustman's custom language rather than JavaScript; some variable substitution and import features are limited.",
+  "pricing_url": "https://github.com/rust-man-org/rustman",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}

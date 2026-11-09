@@ -1,0 +1,13 @@
+{
+  "id": "docuhog-local-docusign-mock",
+  "name": "DocuHog Local DocuSign API Mock",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local mock DocuSign eSignature REST API server with mock OAuth, envelope and template endpoints, status simulation, web UI and Docker/Node.js deployment; no software usage quota stated.",
+  "watch_out": "For development and CI simulation only: no actual signing ceremony or real DocuSign delivery. Own compute/storage required; optional SMTP delivery uses an external mail server. Docker data is ephemeral without a mounted volume.",
+  "pricing_url": "https://github.com/dwelch2344/docuhog",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
