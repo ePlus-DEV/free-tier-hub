@@ -60,13 +60,13 @@ test('Education Benefits is reachable from Home chips and the offer filter witho
     assert.equal(programs.length, input.length);
     assert.match(home, /class="category-chip education-program-chip" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
     assert.match(home, /<option value="education">Education benefits \(/);
-    assert.match(home, /data-education-url="https:\/\/free-tier\.eplus\.dev\/education\/"/);
+    assert.match(home, /href="https:\/\/free-tier\.eplus\.dev\/education\/" id="education-filter-destination"/);
     assert.match(home, /class="education-filter-link"/);
     assert.match(home, /class="education-results-shortcut"/);
     const runtime = read('assets/site.js');
     assert.match(runtime, /offerSelect\.value === "education"/);
-    assert.match(runtime, /window\.location\.assign\(offerSelect\.getAttribute\("data-education-url"\)\)/);
-    assert.ok(runtime.indexOf('window.location.assign(offerSelect.getAttribute("data-education-url"))') <
+    assert.match(runtime, /window\.location\.assign\(document\.getElementById\("education-filter-destination"\)\.href\)/);
+    assert.ok(runtime.indexOf('window.location.assign(document.getElementById("education-filter-destination").href)') <
       runtime.indexOf('offerType = offerSelect.value;'), 'navigate before filtering general free tiers');
     assert.match(read('assets/site.css'), /\.education-program-chip/);
     assert.match(read('education/index.html'), /id="education-audience"/);
