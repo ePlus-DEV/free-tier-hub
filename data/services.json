@@ -14991,6 +14991,19 @@
     "program": "startup"
   },
   {
+    "id": "vessel-local-vps-control-plane",
+    "name": "Vessel Local VPS Control Plane",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed desktop VPS management application for Windows, Linux and macOS; no software subscription, usage quota or expiry. Connects over SSH/SFTP to manage remote files, systemd services, Docker, Nginx/Caddy and server resources.",
+    "watch_out": "Free software only: no VPS, compute, bandwidth or hosting is included. Requires an existing Linux server and SSH credentials; remote infrastructure and any third-party services may incur charges. Project is early-stage; validate security and compatibility before production use.",
+    "pricing_url": "https://github.com/shihebamrii/vessel",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
+  },
+  {
     "id": "vitest-open-source-local",
     "name": "Vitest Open-Source Test Runner",
     "category": "testing-qa",
