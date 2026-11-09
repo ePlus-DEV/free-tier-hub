@@ -1,0 +1,13 @@
+{
+  "id": "curlit-local-api-client",
+  "name": "CurlIt Local API Client",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed open-source API testing client for HTTP, GraphQL and WebSocket with request collections, environments, automated assertions, schema validation, benchmark runs, CLI and Electron desktop; no vendor software quota or expiry.",
+  "watch_out": "Free local software, not a hosted API testing service or free cloud resource. Browser mode may require running the included Express proxy or local agent to reach private APIs. User supplies own compute, network and target API access; third-party API usage may incur costs. Assess the project's security and production maturity before handling secrets.",
+  "pricing_url": "https://github.com/abhimanyusinghal/curlit",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
