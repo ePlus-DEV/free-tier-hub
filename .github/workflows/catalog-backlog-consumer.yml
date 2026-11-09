@@ -59,23 +59,32 @@ jobs:
           import { candidateCollisions, dedupMessage } from './scripts/catalog-dedup.mjs';
 
           const repo = process.env.GITHUB_REPOSITORY;
-          const api = (endpoint) => JSON.parse(execFileSync(
-            'gh', ['api', '--paginate', '--slurp', 'repos/' + repo + '/' + endpoint],
+          // Project only the required fields in gh/jq before passing results to Node.
+          // Full historical PR payloads exceeded execFileSync's output buffer
+          // (ENOBUFS), preventing merged PRs from resuming queued candidates.
+          const api = (endpoint, projection) => JSON.parse(execFileSync(
+            'gh', ['api', '--paginate', '--slurp', '--jq', 'flatten | ' + projection,
+              'repos/' + repo + '/' + endpoint],
             { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }
-          )).flat();
-          const openPRs = api('pulls?state=open&per_page=100');
+          ));
+          const openPRs = api('pulls?state=open&per_page=100',
+            'map({number, state, head: {ref: .head.ref}})');
           // Do not deliver the same service while ANY open PR (including a
           // maintainer batch PR with a non-catalog/add branch) already changes
           // its canonical shard. Fail closed if changed-file lookup fails.
           const proposedIds = proposedServiceIds(openPRs, pr =>
-            api('pulls/' + pr.number + '/files?per_page=100'));
+            api('pulls/' + pr.number + '/files?per_page=100',
+              'map({filename, previous_filename})'));
           const openCatalog = openPRs.filter(pr => pr.head?.ref?.startsWith('catalog/add-'));
           if (openCatalog.length >= 3) {
             console.log(openCatalog.length + ' catalog PRs already open; keep backlog queued.');
             process.exit(0);
           }
-          const issues = api('issues?state=all&per_page=100');
-          const prs = api('pulls?state=all&per_page=100');
+          const issues = api('issues?state=all&per_page=100',
+            'map(select(.title | startswith("[catalog-candidate] ")) | ' +
+            '{number, state, title, body, author_association, pull_request})');
+          const prs = api('pulls?state=all&per_page=100',
+            'map({head: {ref: .head.ref}})');
           const { loadServices } = await import('./scripts/catalog-source.mjs');
           const catalogIds = new Set(loadServices().map(service => service.id));
 
@@ -109,7 +118,8 @@ jobs:
             let resolved;
             try {
               validateCandidate(candidate);
-              const comments = api('issues/' + issue.number + '/comments?per_page=100');
+              const comments = api('issues/' + issue.number + '/comments?per_page=100',
+                'map({body, author_association})');
               resolved = resolveCandidateDeployment(candidate, comments);
               if (resolved) validateCandidate(resolved);
             } catch (error) {
