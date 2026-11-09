@@ -1,0 +1,13 @@
+{
+  "id": "infradash-self-hosted",
+  "name": "InfraDash Self-Hosted Infrastructure Dashboard",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Self-hostable infrastructure inventory and visual dashboard for servers, VMs, disks, IP addresses and network connections, with user roles and optional separate monitoring agent. Source available under GPL-3.0; no vendor software quota or expiry documented.",
+  "watch_out": "Free software only: no VPS, VM, hosting, storage or bandwidth included. Requires your own Docker/Compose host, PostgreSQL and HTTPS reverse proxy; infrastructure costs apply. Change seeded default credentials and secrets before deployment. Upstream README says MIT but actual LICENSE file is GPL-3.0; follow LICENSE and review obligations before redistribution or commercial integration. Monitoring and integrations include roadmap items, not all shipped features.",
+  "pricing_url": "https://github.com/M4xyll/InfraDash",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "self-hosted"
+}
