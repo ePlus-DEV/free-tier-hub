@@ -1,0 +1,13 @@
+{
+  "id": "perch-ai-starter",
+  "name": "Perch AI Starter",
+  "category": "ai-assistants",
+  "plan": "monthly-credit",
+  "free_limit": "Free Starter includes 20,000 PT (up to US$20 of Perch-hosted model usage) per calendar month, resetting in UTC; Web, Desktop and CLI access.",
+  "watch_out": "No direct public API access; hosted models and limits may change. Starter Data Program is enabled by default but can be disabled in Privacy settings. No overage charges; usage may pause or be throttled at limits. BYOK inference costs are separate. Commercial-use permission for Starter is not explicitly confirmed.",
+  "pricing_url": "https://www.perchai.app/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-09",
+  "deployment_model": "cloud"
+}
