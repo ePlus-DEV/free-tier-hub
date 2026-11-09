@@ -1,0 +1,13 @@
+{
+  "id": "vibeboard-self-hosted-conference-cfp",
+  "name": "vibeboard Self-Hosted Conference CFP",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-managed conference proposal forms, submissions, reviewer scorecards, speaker onboarding and event scheduling; no software-enforced submission quota published.",
+  "watch_out": "Requires deployment to your own Cloudflare account and associated Workers/database/storage resources; Cloudflare usage limits and potential charges apply. Specialized for conference calls for papers, not a general survey SaaS. Email delivery integrations may incur costs.",
+  "pricing_url": "https://github.com/RRaphaell/vibeboard",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "self-hosted"
+}
