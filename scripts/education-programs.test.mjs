@@ -39,6 +39,18 @@ test('education landing has independent counts, shareable audience filters and c
     assert.ok(html.includes('id="education-audience"') && html.includes('id="education-benefit"'));
     assert.match(html, /data-audiences="student teacher"/);
     assert.match(html, /data-benefit-type="credit"/);
+    // Shared service-card headers require 3 direct children, matching CSS grid columns.
+    // A previous two-child header placed the provider title inside the 36px icon column.
+    assert.equal((html.match(/class="service-card education-card"/g) || []).length, input.length);
+    assert.match(html, /class="card-top"><span class="service-icon" aria-hidden="true">/);
+    assert.match(html, /<\/span><div class="card-identity"><h3>/);
+    assert.match(html, /<\/span><\/div><span class="badge education-badge">/);
+    assert.doesNotMatch(html, /class="education-identity"/);
+    const css = read('assets/site.css');
+    assert.match(css, /#education-service-grid\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+    assert.match(css, /@media\(max-width:820px\)\{#education-service-grid\{grid-template-columns:minmax\(0,1fr\)\}\}/);
+    assert.match(css, /\.education-card \.card-top>\.card-identity\{grid-column:2;grid-row:1/);
+    assert.match(css, /\.education-card \.card-top>\.badge\{grid-column:3;grid-row:1/);
     assert.match(html, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
     assert.ok(read('sitemap.xml').includes('https://free-tier.eplus.dev/education/'));
     assert.ok(read('llms.txt').includes('Education benefits'));
