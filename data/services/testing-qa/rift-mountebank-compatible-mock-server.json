@@ -1,0 +1,13 @@
+{
+  "id": "rift-mountebank-compatible-mock-server",
+  "name": "Rift Mock Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 HTTP/HTTPS mock server with Mountebank-compatible imposters, request matching, record/replay and Java, Node, Go and Scala embedding; no software usage quota or expiry stated.",
+  "watch_out": "Run locally or provide your own server/container and networking; no free hosted compute included. HTTP/HTTPS scope, not all Mountebank protocols; check documented compatibility differences before migration.",
+  "pricing_url": "https://github.com/achird-labs/rift",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
