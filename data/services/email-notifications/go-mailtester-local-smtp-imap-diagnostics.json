@@ -1,0 +1,13 @@
+{
+  "id": "go-mailtester-local-smtp-imap-diagnostics",
+  "name": "go-mailtester Local SMTP and IMAP Diagnostics",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed Go CLI for local SMTP and IMAP connection, TLS, authentication, mailbox and delivery diagnostics; no vendor-imposed usage quota or software expiry.",
+  "watch_out": "Requires user-provided machine, network access and existing SMTP/IMAP servers. Sending test messages may incur provider charges or deliver real mail; do not expose credentials in shell history, and avoid -skip-verify outside controlled tests. No hosted mailbox, relay or infrastructure included.",
+  "pricing_url": "https://github.com/btafoya/go-mailtester",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
