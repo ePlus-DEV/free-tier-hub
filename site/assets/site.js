@@ -1189,6 +1189,12 @@
     render();
   });
   if (offerSelect) offerSelect.addEventListener("change", function () {
+    // Educational benefits have separate eligibility and credit rules.
+    // Treat this menu option as navigation, never as a free-tier filter value.
+    if (offerSelect.value === "education") {
+      window.location.assign(document.getElementById("education-filter-destination").href);
+      return;
+    }
     offerType = offerSelect.value;
     visible = pageSize;
     render();

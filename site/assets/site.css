@@ -941,3 +941,43 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
   .compare-dialog .compare-page-heading h1{font-size:23px}
   .compare-dialog .compare-table-wrap{max-height:48dvh}
 }
+
+
+/* Education benefits are a separate catalog: no changes to free-tier card metrics. */
+.education-filters{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0 12px;align-items:end}
+.education-filters label{display:flex;flex:1 1 190px;min-width:0;flex-direction:column;gap:6px;font-size:12px;font-weight:650;color:var(--ink-soft)}
+.education-filters select{font:inherit;font-size:14px;min-height:44px;width:100%;min-width:0;padding:10px 12px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink)}
+.education-filters select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.education-results{margin:0 0 16px;font-size:12px;color:var(--muted)}
+#education-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.education-card{min-width:0;padding:20px}
+.education-card .card-top{grid-template-columns:36px minmax(0,1fr) auto;gap:8px 12px;align-items:start;margin-bottom:16px}
+.education-card .card-top>.service-icon{grid-column:1;grid-row:1}
+.education-card .card-top>.card-identity{grid-column:2;grid-row:1;min-width:0}
+.education-card .card-top>.badge{grid-column:3;grid-row:1;justify-self:end;max-width:138px;min-width:0;text-align:center;white-space:normal;overflow-wrap:break-word}
+.education-card .card-identity h3{font-size:16px;line-height:1.35;overflow-wrap:anywhere}
+.education-card .card-identity .eyebrow{margin-top:6px;overflow-wrap:anywhere}
+.education-card .allowance-block{margin:0 0 14px;padding:13px 14px}
+.education-card .education-facts{display:grid;gap:0;margin:0 0 20px;min-width:0}
+.education-card .education-facts dt{font-size:11px;font-weight:700;line-height:1.4;color:var(--ink-soft);margin:12px 0 3px}
+.education-card .education-facts dd{font-size:12px;line-height:1.6;margin:0;color:var(--muted);overflow-wrap:anywhere}
+.education-card .education-badge{font-size:10px;font-weight:700;line-height:1.4}
+.education-card .card-bottom{gap:10px;font-size:11px}
+.education-empty{padding:20px;border:1px dashed var(--line-strong);border-radius:10px}
+.education-card[hidden]{display:none}
+@media(max-width:820px){#education-service-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){
+  .education-filters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .education-filters select{font-size:16px}
+  .education-card{padding:16px}
+  .education-card .card-top{grid-template-columns:36px minmax(0,1fr);gap:8px 10px}
+  .education-card .card-top>.badge{grid-column:2;grid-row:2;justify-self:start;max-width:100%}
+}
+
+/* Special programs are reachable from Home's visible shortcuts and filter menu. */
+.category-shortcuts .education-program-chip{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;text-decoration:none;border:1px solid var(--line);background:var(--brand-tint);color:var(--brand-ink);font-weight:650}
+.category-shortcuts .education-program-chip:hover,.category-shortcuts .education-program-chip:focus-visible{background:var(--surface);border-color:var(--brand);text-decoration:none;outline-offset:2px}
+.education-filter-link{margin:0;padding:10px 11px;border-radius:7px;background:var(--surface-muted);color:var(--ink-soft);font-size:12px;line-height:1.5}
+.education-filter-link a,.education-results-shortcut{color:var(--brand-ink);font-weight:650;text-decoration:underline;text-underline-offset:2px}
+.education-results-shortcut{font-size:11px;white-space:nowrap}
+@media(max-width:680px){.category-shortcuts .education-program-chip{min-height:32px;padding:6px 9px}.education-results-shortcut{font-size:10px;white-space:normal}}
