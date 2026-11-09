@@ -14157,6 +14157,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "openpage-self-hosted-website-builder",
+    "name": "OpenPage Self-Hosted Website Builder",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed visual website builder with drag-and-drop editing, JSON-first site configuration, 19 block types and standalone HTML export; no vendor-enforced usage quota or software expiry for self-managed use.",
+    "watch_out": "Run and maintain the editor yourself. AI generation requires a separately configured Gemini API key and serverless endpoint, which may incur API or hosting charges; exported sites also require your own hosting. The public demo is not a free managed hosting allowance.",
+    "pricing_url": "https://github.com/buildingopen/openpage",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "opensurvey-self-hosted",
     "name": "OpenSurvey Self-Hosted",
     "category": "forms-surveys",
