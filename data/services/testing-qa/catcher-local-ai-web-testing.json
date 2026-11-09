@@ -1,0 +1,13 @@
+{
+  "id": "catcher-local-ai-web-testing",
+  "name": "Catcher Local AI Web Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local-first Electron desktop application for natural-language browser end-to-end tests using Playwright; free software with no vendor-imposed test quota or expiry.",
+  "watch_out": "Bring your own LLM API key or compatible local model; external model inference may cost money. No hosted browser/testing infrastructure is included. Unsigned Windows/macOS installers may trigger operating-system warnings; browser sessions and screenshots can be sent to the configured LLM provider when enabled.",
+  "pricing_url": "https://github.com/Catcher2026/Catcher",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
