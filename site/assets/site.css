@@ -941,3 +941,20 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
   .compare-dialog .compare-page-heading h1{font-size:23px}
   .compare-dialog .compare-table-wrap{max-height:48dvh}
 }
+
+
+/* Education benefits are a separate catalog: no changes to free-tier card metrics. */
+.education-filters{display:flex;flex-wrap:wrap;gap:1rem;margin:1.2rem 0;align-items:end}
+.education-filters label{display:flex;flex:1 1 190px;flex-direction:column;gap:.4rem;font-size:.88rem;font-weight:700}
+.education-filters select{font:inherit;width:100%;padding:.75rem;border:1px solid var(--border,#cbd5e1);border-radius:.75rem;background:var(--surface,#fff);color:inherit}
+.education-results{margin:0 0 1rem;font-size:.9rem;color:var(--muted,#64748b)}
+.education-card .allowance-block,.education-card .restriction-block{margin-top:.9rem}
+.education-card .education-identity{display:flex;align-items:center;gap:.65rem}
+.education-card .education-identity h3{margin:0}
+.education-card .education-facts{font-size:.9rem;line-height:1.6;margin:.75rem 0}
+.education-card .education-facts dt{font-weight:700;margin-top:.5rem}
+.education-card .education-facts dd{margin:0}
+.education-card .education-badge{font-size:.75rem;font-weight:700;white-space:nowrap}
+.education-empty{padding:1.5rem;border:1px dashed var(--border,#cbd5e1);border-radius:1rem}
+.education-card[hidden]{display:none}
+@media(max-width:620px){.education-filters{display:grid;grid-template-columns:1fr}.education-card .card-top{align-items:flex-start;gap:.5rem}.education-card .education-badge{white-space:normal}}

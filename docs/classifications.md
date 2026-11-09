@@ -4,6 +4,27 @@
 
 This is the human-readable classification policy for the **specific cataloged product or plan**, not every edition a vendor sells. The source of truth for each listing is `data/services.json` and its official `pricing_url`. Do not infer plan type, availability, deployment model or billing rights from product names.
 
+## Education benefits (separate catalog)
+
+Free software licenses, educational subscription upgrades, credits and discounts
+requiring verified student or educator status are curated in
+[\`data/education-programs.json\`](../data/education-programs.json) and published
+at [Education benefits](https://free-tier.eplus.dev/education/).
+
+- This **is not a new free-tier category or an additional \`plan\` enum**. It does
+  not change \`data/services.json\`, ongoing free-tier counts, category badges,
+  the 48-hour new-services badge, or the time-limited offer count.
+- Each benefit records who qualifies, the official HTTPS source, verification
+  date, duration/renewal and important limitations. A provider may withdraw an
+  offer or restrict it by region, institution or educational usage rights.
+- \`free\`: an entitlement priced at zero while eligible; \`credit\`: monetary or
+  usage grant that can expire; \`discount\`: a reduced price, **not** free.
+- Audiences may be \`student\`, \`teacher\`, \`school\`, \`nonprofit\`, or
+  \`opensource\`. Never infer audience eligibility without official evidence.
+- Do not duplicate an open-to-everyone free tier as an education entitlement
+  unless the program offers a distinct benefit. Never count fixed-duration
+  student credits as recurring monthly credits.
+
 ## Plan type (`plan`)
 
 | Value | Displayed as | Criteria | Counts in default directory? |

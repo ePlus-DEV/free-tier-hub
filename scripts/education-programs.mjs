@@ -1,0 +1,48 @@
+// Curated, independently verified education benefits. Not part of the free-tier
+// catalog: conditionally free educational access does not increase free-tier counts.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const AUDIENCES = ['student', 'teacher', 'school', 'nonprofit', 'opensource'];
+export const BENEFIT_TYPES = ['free', 'credit', 'discount'];
+const REQUIRED = ['id', 'name', 'audiences', 'benefit_type', 'benefit', 'eligibility', 'duration', 'restrictions', 'source_url', 'last_checked'];
+
+export function validateEducationPrograms(programs, today = new Date().toISOString().slice(0, 10)) {
+  if (!Array.isArray(programs)) throw Error('Education benefits must be an array');
+  const ids = new Set();
+  for (const item of programs) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) throw Error('Invalid education benefit');
+    if (REQUIRED.some(key => !Object.hasOwn(item, key)) ||
+        Object.keys(item).some(key => !REQUIRED.includes(key))) throw Error('Unexpected education benefit fields');
+    if (typeof item.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.id) || ids.has(item.id)) {
+      throw Error('Invalid or duplicate education benefit ID');
+    }
+    ids.add(item.id);
+    if (!Array.isArray(item.audiences) || !item.audiences.length ||
+        new Set(item.audiences).size !== item.audiences.length ||
+        item.audiences.some(a => !AUDIENCES.includes(a))) throw Error('Invalid education audience: ' + item.id);
+    if (!BENEFIT_TYPES.includes(item.benefit_type)) throw Error('Invalid education benefit type: ' + item.id);
+    for (const key of ['name', 'benefit', 'eligibility', 'duration', 'restrictions']) {
+      if (typeof item[key] !== 'string' || !item[key].trim()) throw Error('Missing education field ' + key + ': ' + item.id);
+    }
+    let url;
+    try { url = new URL(item.source_url); } catch { throw Error('Invalid education source URL: ' + item.id); }
+    if (url.protocol !== 'https:' || !url.hostname || url.username || url.password) {
+      throw Error('Education sources must be public HTTPS: ' + item.id);
+    }
+    const checked = typeof item.last_checked === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(item.last_checked)
+      ? new Date(item.last_checked + 'T00:00:00Z') : null;
+    if (!checked || Number.isNaN(checked.getTime()) ||
+        checked.toISOString().slice(0, 10) !== item.last_checked || item.last_checked > today) {
+      throw Error('Invalid education review date: ' + item.id);
+    }
+  }
+  return programs;
+}
+
+export function loadEducationPrograms(root = ROOT) {
+  return validateEducationPrograms(JSON.parse(fs.readFileSync(
+    path.join(root, 'data/education-programs.json'), 'utf8')));
+}
