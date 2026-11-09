@@ -1,0 +1,13 @@
+{
+  "id": "dapta-forms-self-hosted",
+  "name": "Dapta Forms (Self-Hosted)",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form builder with multi-step forms, conditional logic, lead scoring, submissions, webhooks and analytics; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Self-hosting only; provide your own server, PostgreSQL, TLS, authentication and email delivery. SQLite and local authentication stub are for development/evaluation, not secure production deployment. Hosted dforms.ai plan is separate and not included.",
+  "pricing_url": "https://github.com/Dapta-Tech/dapta-forms",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "self-hosted"
+}

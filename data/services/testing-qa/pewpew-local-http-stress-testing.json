@@ -1,0 +1,13 @@
+{
+  "id": "pewpew-local-http-stress-testing",
+  "name": "Pewpew Local HTTP Stress Tester",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local CLI for HTTP stress and fixed-rate benchmark testing; supports multiple targets, configurable concurrency, HTTP/2 and JSON/TSV exports; no software usage quota or expiry.",
+  "watch_out": "You supply the test machine, network capacity and target systems; load can disrupt services. No free hosted load generators, infrastructure or managed testing service is included. Use only against systems you are authorized to test.",
+  "pricing_url": "https://github.com/bengadbois/pewpew",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "local"
+}

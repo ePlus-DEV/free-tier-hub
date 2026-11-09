@@ -1,0 +1,13 @@
+{
+  "id": "resterm-local-api-client",
+  "name": "Resterm Local API Client",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source terminal API client for HTTP, GraphQL, gRPC, WebSocket and SSE; local .http/.rest request files, scripted assertions, mocks and CI runner, with no software usage quota or expiry stated.",
+  "watch_out": "Runs on the user's own machine or CI runner; network, target API, tunnels and CI infrastructure may incur separate costs. No hosted API testing capacity is included; secure request files and credentials before committing them.",
+  "pricing_url": "https://github.com/unkn0wn-root/resterm",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}

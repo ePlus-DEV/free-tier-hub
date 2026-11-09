@@ -1,0 +1,13 @@
+{
+  "id": "httap-local-http-interception",
+  "name": "httap Local HTTP Interception",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local HTTP/HTTPS interception and mocking tool with project-scoped proxy, terminal UI, CLI, TypeScript interceptors and MCP integration; no software usage quota or expiry stated.",
+  "watch_out": "Runs on user-provided computer and network; no hosted proxy or cloud infrastructure included. HTTPS interception creates a local CA certificate and captures potentially sensitive request data; secure local storage and use only on authorized traffic. Some clients require proxy or certificate configuration.",
+  "pricing_url": "https://github.com/mtford90/httap",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}

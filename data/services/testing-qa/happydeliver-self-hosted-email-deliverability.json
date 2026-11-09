@@ -1,0 +1,13 @@
+{
+  "id": "happydeliver-self-hosted-email-deliverability",
+  "name": "HappyDeliver Self-Hosted Email Deliverability Tester",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-or-later self-hosted email deliverability analysis software with REST API, SMTP/LMTP test ingestion, SPF/DKIM/DMARC, DNS and spam scoring; no software usage quota or expiry stated.",
+  "watch_out": "Bring your own server, domain, DNS, storage and inbound SMTP port 25 (often blocked by cloud providers). Optional VirusTotal and third-party reputation API services have separate quotas/terms; AGPL network-use obligations apply. No free hosted email sending or infrastructure is included.",
+  "pricing_url": "https://github.com/happyDomain/happydeliver",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-08",
+  "deployment_model": "self-hosted"
+}
