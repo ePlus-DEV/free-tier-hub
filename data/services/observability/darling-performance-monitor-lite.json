@@ -1,0 +1,13 @@
+{
+  "id": "darling-performance-monitor-lite",
+  "name": "Darling Data Performance Monitor Lite",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local desktop application for on-demand SQL Server and Azure SQL monitoring, including collectors, alerts, query analysis and local DuckDB/Parquet storage; no software subscription, per-server quota or expiry stated.",
+  "watch_out": "Lite runs on a Windows workstation and monitors existing SQL Server instances remotely; it does not include SQL Server, Azure/RDS database resources or hosting. Monitoring credentials need VIEW SERVER STATE permission. Paid support is optional; Darling continuous-collection edition is a separate deployment model.",
+  "pricing_url": "https://github.com/erikdarlingdata/PerformanceMonitor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
