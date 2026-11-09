@@ -14939,6 +14939,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "wirebench-local-api-workbench",
+    "name": "Wirebench Local API and SSH Workbench",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 desktop application and CLI for local SOAP, REST, GraphQL, gRPC, WebSocket and MCP API testing, saved requests, CI runs and SSH workflows; no account, subscription, vendor usage quota or expiry for the desktop/CLI.",
+    "watch_out": "This entry covers the local desktop/CLI only, not Wirebench Server. The separate self-hosted Server uses Elastic License 2.0 and its Community edition is limited to five seats; paid Team/Enterprise licenses apply. Users supply their own computer, target APIs and any infrastructure; external API usage may incur charges.",
+    "pricing_url": "https://github.com/wirebench/wirebench",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-09",
+    "deployment_model": "local"
+  },
+  {
     "id": "xtdb-self-hosted-bitemporal-sql",
     "name": "XTDB Open-Source Bitemporal SQL Database",
     "category": "databases",
