@@ -100,5 +100,191 @@
     "restrictions": "Education access is not a general commercial license. Products and regional eligibility vary; verify terms before use.",
     "source_url": "https://www.autodesk.com/support/account/education/admin/get-started",
     "last_checked": "2026-11-09"
+  },
+  {
+    "id": "github-student-developer-pack",
+    "name": "GitHub Student Developer Pack",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Access to a changing collection of partner developer tools, learning resources, subscriptions and promotional credits through GitHub Education.",
+    "eligibility": "Verified current students aged 13+ in a qualifying degree- or diploma-granting program with a personal GitHub account.",
+    "duration": "GitHub Education student verification lasts up to two years; individual partner offer durations vary.",
+    "restrictions": "Partner offers have separate eligibility, country and usage rules; one-time offers generally cannot be redeemed repeatedly or stacked. Not available to faculty through the Student Pack.",
+    "source_url": "https://docs.github.com/en/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "zed-student-pro",
+    "name": "Zed Student Pro",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Zed Pro free for 12 months with unlimited edit predictions, collaborative editing, and US$10 in hosted AI token credits each month.",
+    "eligibility": "Currently enrolled university students aged 18+; apply with a GitHub account at least 30 days old and a current university email.",
+    "duration": "One year after approval; included monthly AI credits reset each month.",
+    "restrictions": "Some premium models are excluded; verification and plan eligibility required. Unused monthly credits do not accumulate.",
+    "source_url": "https://zed.dev/education",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "kiro-students",
+    "name": "Kiro for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "credit",
+    "benefit": "1,000 Kiro credits each month for 12 months, with IDE, CLI and eligible premium agent features included at no cost.",
+    "eligibility": "Students aged 18+ at participating universities must use their university-linked email and verify through SheerID.",
+    "duration": "12 months; the balance resets each month, with no rollover; then reverts to Kiro Free.",
+    "restrictions": "Only listed participating universities qualify. No credit add-ons on this student tier, and the one-time student verification cannot be repeated.",
+    "source_url": "https://kiro.dev/students/",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "firecrawl-student-credits",
+    "name": "Firecrawl Student Program",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "credit",
+    "benefit": "One-time grant of 10,000 Firecrawl API credits for web crawling and data extraction.",
+    "eligibility": "Currently enrolled students with a valid academic email address at a college, university or accredited program.",
+    "duration": "One-time promotional credit grant, not a recurring monthly allowance.",
+    "restrictions": "Credits are intended for educational or personal projects; use the official student coupon workflow. Check provider terms for expiration and usage restrictions.",
+    "source_url": "https://www.firecrawl.dev/student-program",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "termius-student",
+    "name": "Termius Pro and Team for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Full Termius Pro and Team features for SSH management, cross-device synchronization and team sharing at no charge.",
+    "eligibility": "An active GitHub Student Developer Pack is required; connect the eligible GitHub account to Termius.",
+    "duration": "While an eligible and active GitHub Student Developer Pack member, subject to partner terms.",
+    "restrictions": "Verification and partner entitlement required; this is not an unrestricted general free plan.",
+    "source_url": "https://termius.com/education",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "working-copy-student",
+    "name": "Working Copy Pro for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Unlocks the Pro features of the Working Copy Git client on iPhone and iPad, normally sold as an in-app purchase.",
+    "eligibility": "Students verified through the GitHub Student Developer Pack must sign in with the same GitHub account in the iOS app.",
+    "duration": "While logged in with an eligible student GitHub account.",
+    "restrictions": "iPhone/iPad application only; entitlement depends on active GitHub Student Developer Pack status.",
+    "source_url": "https://workingcopy.app/education/",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "dbeaver-academic",
+    "name": "DBeaver Academic License",
+    "audiences": [
+      "student",
+      "teacher"
+    ],
+    "benefit_type": "free",
+    "benefit": "Free DBeaver Enterprise academic license with access to the product for one year, for educational use.",
+    "eligibility": "Students or teachers must apply through DBeaver and verify academic affiliation, normally with a university email or supporting documentation.",
+    "duration": "One year; a new request and academic verification are required for another year.",
+    "restrictions": "Academic use only; not permitted in a corporate environment. No technical support is included. Manual review can take several business days.",
+    "source_url": "https://dbeaver.com/license-types/",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "crowdin-academic-open",
+    "name": "Crowdin Academic Open License",
+    "audiences": [
+      "student",
+      "teacher",
+      "school"
+    ],
+    "benefit_type": "free",
+    "benefit": "Free Crowdin Open Academic License for public educational localization projects, including unlimited project participants.",
+    "eligibility": "Academic project at an educational institution; apply with an educational email matching the institution's domain.",
+    "duration": "Subject to the academic license approval and terms; no fixed public term stated.",
+    "restrictions": "Free Open Academic licenses require publicly accessible projects. Private Academic licenses are discounted 50%, not free; educational use only.",
+    "source_url": "https://crowdin.com/product/for-academic",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "qt-educational-license",
+    "name": "Qt Educational License",
+    "audiences": [
+      "student",
+      "teacher"
+    ],
+    "benefit_type": "free",
+    "benefit": "Free access to Qt professional commercial development/design features for educational projects, including Qt for Developers or Designers packages.",
+    "eligibility": "Students or instructors at recognized higher education institutions with an active institutional email.",
+    "duration": "12 months; renewable through an eligibility renewal process.",
+    "restrictions": "Strictly for learning; no commercial use or commercial distribution. No professional technical support is included.",
+    "source_url": "https://www.qt.io/development/qt-educational-license",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "cloudflare-students-workers",
+    "name": "Cloudflare Workers for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Waives the base US$5 per month Workers Paid subscription fee for up to 12 months, with paid-plan developer usage allowances.",
+    "eligibility": "US students aged 18+ with a verified .edu billing email address and an eligible Cloudflare account.",
+    "duration": "12 months of waived base subscription fees, then the account can revert to Free if not renewed.",
+    "restrictions": "Requires adding a valid credit card and activating Workers Paid. Usage above included allowances can be billed. Not generally available outside eligible US institutions.",
+    "source_url": "https://www.cloudflare.com/students/",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "doppler-students",
+    "name": "Doppler Team for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Free Doppler Team secret-management subscription, normally priced at US$21 per user per month.",
+    "eligibility": "Must be an active verified GitHub Education student and activate through Doppler's student program.",
+    "duration": "While eligible as an active student, subject to GitHub and Doppler partner terms.",
+    "restrictions": "Github Education eligibility must remain active; do not interpret the student entitlement as a public unrestricted Team plan.",
+    "source_url": "https://www.doppler.com/secretsops-for-students",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "testmail-student-essential",
+    "name": "testmail.app Essential for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "Free Essential plan during eligible studies with up to 10,000 test emails per month, full API access and 1–3 day message retention.",
+    "eligibility": "Verified active students redeem the Essential plan through GitHub Student Developer Pack.",
+    "duration": "While the user remains an eligible student under the partner offer.",
+    "restrictions": "A single random namespace and limited message retention apply. Not the same as the provider's separate ongoing Free plan (100 emails/month).",
+    "source_url": "https://education.github.com/pack",
+    "last_checked": "2026-11-10"
+  },
+  {
+    "id": "godaddy-empower-students",
+    "name": "GoDaddy Empower for Students",
+    "audiences": [
+      "student"
+    ],
+    "benefit_type": "free",
+    "benefit": "One standard .com domain and an AI-powered website builder with commerce features at no charge for three years.",
+    "eligibility": "Students aged 18+ at participating institutions or approved programs must complete eligibility verification.",
+    "duration": "Three years per approved redemption; then renewal is at prevailing retail prices.",
+    "restrictions": "Limited to one domain and website per participant. No card is required to redeem, but optional auto-renew plus a payment method can cause renewal charges.",
+    "source_url": "https://www.godaddy.com/en/godaddy-for-good/empower",
+    "last_checked": "2026-11-10"
   }
 ]
