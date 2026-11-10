@@ -15133,6 +15133,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "uppcoder-spark",
+    "name": "Uppcoder Spark Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "1 hosted app with 1 PostgreSQL, MySQL or MariaDB database, 2 GB RAM and 2 GB disk; browser VS Code, terminal, SSH, HTTPS and nightly backups included",
+    "watch_out": "Free Spark requires signup and email verification but no payment card, with no stated end date. Limited to one app and one database; check provider resource/usage quotas and paid upgrade terms before deploying. The provider promises at least 60 days' email notice if it changes or withdraws Spark. Commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://portal.uppcoder.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-10",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "vaex-local-dataframe",
     "name": "Vaex Open-Source Out-of-Core DataFrames (Local)",
     "category": "analytics",
