@@ -1,0 +1,13 @@
+{
+  "id": "tech-sentinel-monitor",
+  "name": "Tech Sentinel Monitor Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted uptime monitoring software with HTTP/TCP/ping/heartbeat probes, alert channels, status pages, Docker/Helm server edition and Windows standalone edition; no vendor software quota or expiry stated.",
+  "watch_out": "Requires own server or Windows machine; TimescaleDB, Redis, networking, backups and operations are self-managed. Third-party Slack/PagerDuty/SMS integrations may charge separately. Project describes itself as early but working; review security and deployment readiness before production. No free hosted monitoring resources included.",
+  "pricing_url": "https://github.com/ronaldgoodchild/tech-sentinel-monitor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
