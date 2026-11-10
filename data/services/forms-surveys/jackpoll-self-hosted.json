@@ -1,0 +1,13 @@
+{
+  "id": "jackpoll-self-hosted",
+  "name": "Jackpoll Self-Hosted Surveys and Quizzes",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted survey and quiz builder with form authoring, response collection and analysis; Docker Compose and Swarm deployment supported without a published software usage quota or expiry.",
+  "watch_out": "Requires self-provided compute, storage, PostgreSQL, MinIO, Keycloak, Redis and email configuration; infrastructure and operational costs are not included. The self-host stack pulls published GHCR images; confirm production configuration, TLS and secrets before public deployment. Not a claim about Jackpoll's hosted plan.",
+  "pricing_url": "https://github.com/jackpoll-org/jackpoll",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
