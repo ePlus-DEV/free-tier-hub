@@ -12380,6 +12380,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "builderz-mission-control",
+    "name": "Builderz Labs Mission Control",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted agent orchestration dashboard with task dispatch, agent monitoring, scheduling, RBAC, audit logs and SQLite storage; no software usage quota published.",
+    "watch_out": "Alpha software; self-hosting and agent/model provider usage are not included. Review security hardening, authentication and external gateway/API costs before production use.",
+    "pricing_url": "https://github.com/builderz-labs/mission-control",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "bunmail-self-hosted-email-api",
     "name": "BunMail Self-Hosted Email API",
     "category": "email-notifications",
