@@ -7,12 +7,19 @@ const yaml = readFileSync(
   "utf8",
 );
 
-test("Pages workflow separates PR build concurrency from serialized main deploys", () => {
+test("PR builds stay isolated while main deploys and preview publisher share a Pages lock", () => {
   const concurrency = yaml.match(/^concurrency:\n(?:  .*\n)+/m)?.[0];
-  assert.ok(concurrency, "workflow-level concurrency must exist");
-  assert.match(concurrency, /group: github-pages-\$\{\{ github\.ref \}\}/);
+  assert.ok(concurrency, "Pages workflow-level concurrency must exist");
+  assert.match(concurrency, /github\.event_name == 'pull_request'/);
+  assert.match(concurrency, /github-pages-pr-\{0\}/);
+  assert.match(concurrency, /\|\| 'github-pages'/);
   assert.match(concurrency, /cancel-in-progress: false/);
-  assert.doesNotMatch(concurrency, /cancel-in-progress: true/);
+  const preview = readFileSync(new URL("../.github/workflows/publish-pr-preview.yml", import.meta.url),"utf8");
+  assert.match(preview, /concurrency:\n  group: github-pages\n  cancel-in-progress: false/);
+  assert.match(preview, /education\/index\.html/);
+  assert.match(preview, /html\.includes\('id="education-service-grid"'\)/);
+  assert.match(preview, /Live Education preview not available/);
+  assert.match(preview, /\[Preview Education\]/);
 });
 
 test("rolling new-services README badge gets a periodic refresh without dropping main serialization", () => {
