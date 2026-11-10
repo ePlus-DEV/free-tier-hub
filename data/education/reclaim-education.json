@@ -1,0 +1,16 @@
+{
+  "id": "reclaim-education",
+  "name": "Reclaim Education Discount",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "discount",
+  "benefit": "50% off an eligible paid Reclaim scheduling plan for up to 12 months.",
+  "eligibility": "Students, educators and school administrators at accredited degree-granting nonprofit educational institutions, age 13+.",
+  "duration": "Up to 12 months on approved monthly or annual subscriptions.",
+  "restrictions": "This is a paid discount, not a free plan; Enterprise is excluded. Apply with a school email and wait for approval.",
+  "source_url": "https://help.reclaim.ai/en/articles/6211178-education-discount-at-reclaim-ai",
+  "last_checked": "2026-11-10"
+}

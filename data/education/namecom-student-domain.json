@@ -1,0 +1,14 @@
+{
+  "id": "namecom-student-domain",
+  "name": "Name.com GitHub Student Domain",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One eligible domain under selected TLDs, plus Domain Safe, free for its first registration year.",
+  "eligibility": "Approved GitHub Student Developer Pack members redeem through the Name.com student promotion.",
+  "duration": "One year free for the eligible registration.",
+  "restrictions": "Only selected extensions qualify; normal renewal and optional service fees apply after the free period. Valid domain contact information is required.",
+  "source_url": "https://cs.name.com/hc/en-us/articles/360036364834-Signing-up-for-GitHub-Student-Developer-Pack",
+  "last_checked": "2026-11-10"
+}

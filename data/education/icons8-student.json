@@ -1,0 +1,14 @@
+{
+  "id": "icons8-student",
+  "name": "Icons8 Student Developer Pack",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Three months of access to eligible Icons8 icons, illustrations, photos and music through the student license.",
+  "eligibility": "Verified GitHub Student Developer Pack membership; redeem through Icons8 with GitHub sign-in.",
+  "duration": "Three-month student subscription.",
+  "restrictions": "Only the licensed asset library and permitted uses are included; read asset licensing and subscription renewal terms.",
+  "source_url": "https://icons8.com/github-students",
+  "last_checked": "2026-11-10"
+}

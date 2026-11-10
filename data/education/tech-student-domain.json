@@ -1,0 +1,14 @@
+{
+  "id": "tech-student-domain",
+  "name": ".TECH Domain for GitHub Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One standard .TECH domain name free for one year through the GitHub Student Developer Pack.",
+  "eligibility": "Verified GitHub Student Developer Pack members redeem the partner domain offer.",
+  "duration": "First registration year only.",
+  "restrictions": "Premium domains may be excluded and later renewals are paid at the provider's prevailing rate.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "browserstack-student-automate",
+  "name": "BrowserStack for GitHub Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One-year BrowserStack student testing license including Live and Automate Mobile; the official Pack lists one Automate Mobile parallel and one user.",
+  "eligibility": "Students verified in the GitHub Student Developer Pack must redeem with GitHub.",
+  "duration": "One year from successful activation.",
+  "restrictions": "Concurrency is limited; this student plan does not unlock unlimited parallel sessions or every enterprise testing feature.",
+  "source_url": "https://www.browserstack.com/github-students",
+  "last_checked": "2026-11-10"
+}

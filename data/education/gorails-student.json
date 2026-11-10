@@ -1,0 +1,14 @@
+{
+  "id": "gorails-student",
+  "name": "GoRails Student Course Access",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free access to GoRails video courses and lessons for Ruby, Rails and web development.",
+  "eligibility": "Eligible GitHub Student Developer Pack students redeem the partner benefit.",
+  "duration": "Twelve months of course access.",
+  "restrictions": "Premium materials are included only for the promotional period; renewal or other training programs may require payment.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

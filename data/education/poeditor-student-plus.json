@@ -1,0 +1,14 @@
+{
+  "id": "poeditor-student-plus",
+  "name": "POEditor Plus for GitHub Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of the POEditor Plus plan for translation and localization management, at no subscription cost.",
+  "eligibility": "Verified GitHub Student Developer Pack members redeem through the official POEditor GitHub Education registration.",
+  "duration": "One-year student promotional subscription.",
+  "restrictions": "Student eligibility and Plus-plan limits apply; do not treat this as free unlimited enterprise localization.",
+  "source_url": "https://poeditor.com/register/github_education",
+  "last_checked": "2026-11-10"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "xojo-student-pro",
+  "name": "Xojo Pro Student License",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Xojo Pro license for building cross-platform native desktop, mobile and web applications.",
+  "eligibility": "Students with an active and verified GitHub Student Developer Pack benefit.",
+  "duration": "While eligible as a student under the partner offer.",
+  "restrictions": "Not an unrestricted organization subscription; verify licensing and deployment rights with Xojo.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

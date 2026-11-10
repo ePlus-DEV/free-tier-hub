@@ -1,0 +1,14 @@
+{
+  "id": "sentry-student",
+  "name": "Sentry Team for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Student Team features with allowances listed by the partner: 50,000 errors, 100,000 transactions, 1 GB attachments and 500 replays.",
+  "eligibility": "Verified GitHub Student Developer Pack members claiming the Sentry student offer.",
+  "duration": "One year per term, potentially renewable with renewed eligibility.",
+  "restrictions": "On-demand paid usage is disabled in this offer; quotas are capped and renewal needs student verification.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

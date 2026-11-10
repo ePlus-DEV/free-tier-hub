@@ -1,0 +1,14 @@
+{
+  "id": "navicat-academic-student",
+  "name": "Navicat Academic Partner Student License",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One-year noncommercial academic access to eligible Navicat Premium, Data Modeler, Monitor and Cloud Pro products.",
+  "eligibility": "Students at accredited nonprofit high schools, universities or community colleges with a valid student email.",
+  "duration": "One year; standard student application is limited to one redemption per student.",
+  "restrictions": "Not for commercial use or third-party benefit. Unaccredited institutions and training centers do not qualify.",
+  "source_url": "https://www.navicat.com/en/sponsorship/education/student.html",
+  "last_checked": "2026-11-10"
+}

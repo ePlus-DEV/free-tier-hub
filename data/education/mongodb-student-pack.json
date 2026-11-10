@@ -1,0 +1,14 @@
+{
+  "id": "mongodb-student-pack",
+  "name": "MongoDB Student Pack",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "One-time US$50 MongoDB Atlas cloud credit plus free certification after completing an eligible learning path.",
+  "eligibility": "Approved GitHub Student Developer Pack members verify their student status with MongoDB.",
+  "duration": "Promotional Atlas credit must be applied within 90 days; usable for 12 months once applied.",
+  "restrictions": "Credit redeems once at organization level. Paid clusters can incur further charges after the credit; certification requires completing the learning path.",
+  "source_url": "https://www.mongodb.com/students",
+  "last_checked": "2026-11-10"
+}

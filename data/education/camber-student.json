@@ -1,0 +1,14 @@
+{
+  "id": "camber-student",
+  "name": "Camber Student Research Compute",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Monthly student allowances of 40 CPU hours, 5 GPU hours, 50 GB storage and 50 AI-agent messages for data-science projects.",
+  "eligibility": "Enrolled students verified for the Camber offer through the GitHub Student Developer Pack.",
+  "duration": "Monthly allowances while the student remains enrolled and eligible.",
+  "restrictions": "CPU/GPU and agent budgets are capped; cloud data, storage and integrations may have separate conditions. No unlimited compute entitlement.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

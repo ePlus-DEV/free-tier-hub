@@ -1,0 +1,16 @@
+{
+  "id": "office365-a1-education",
+  "name": "Office 365 Education A1",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Office 365 A1 online productivity applications, including Word, Excel and PowerPoint, through eligible schools.",
+  "eligibility": "Students and educators with a qualifying educational email address at a verified school.",
+  "duration": "While enrolled or employed at an eligible institution; Microsoft may recheck eligibility.",
+  "restrictions": "Web-based A1 is not the same as a paid Microsoft 365 desktop/personal subscription. Institutional access ends when academic eligibility is lost.",
+  "source_url": "https://www.microsoft.com/en-us/education/products/office",
+  "last_checked": "2026-11-10"
+}

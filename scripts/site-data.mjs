@@ -121,6 +121,20 @@ export const CATEGORY_ICONS = {
 // Actual website favicons, with product domains for shared corporate sources.
 // Unlisted providers derive their logo domain from their official pricing URL.
 export const SERVICE_LOGO_DOMAINS = {
+  // Education partner offers link to the official GitHub Student Pack;
+  // retain the actual partner brand favicon rather than showing GitHub for every card.
+  'camber-student': 'cambercloud.com',
+  'tech-student-domain': 'get.tech',
+  'bootstrap-studio-student': 'bootstrapstudio.io',
+  'xojo-student-pro': 'xojo.com',
+  'gorails-student': 'gorails.com',
+  'honeybadger-student': 'honeybadger.io',
+  'deepscan-student': 'deepscan.io',
+  'newrelic-student': 'newrelic.com',
+  'sentry-student': 'sentry.io',
+  'simpleanalytics-student': 'simpleanalytics.com',
+  'popsql-student': 'popsql.com',
+  'localstack-student': 'localstack.cloud',
   'chatgpt-free': 'chatgpt.com',
   'gemini-app-free': 'gemini.google.com',
   'gemini-api': 'aistudio.google.com',
