@@ -6,6 +6,7 @@ import path from 'node:path';
 import { build, categoryCountSVG, serviceCountSVG, countNewIn48Hours, tag, serviceLogoURL, providerReferralURL, aivenMySQLFreeRetirementNotice } from './build-site.mjs';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { compactNumber } from '../site/assets/compact-numbers.js';
+import { loadEducationPrograms } from './education-programs.mjs';
 
 test('Aiven MySQL retirement notice expires at 00:00 UTC on 22 December 2026', () => {
   const aiven = JSON.parse(fs.readFileSync(new URL(
@@ -249,8 +250,8 @@ test('directory exposes unique search/category controls and official sources for
     const stats = JSON.parse(fs.readFileSync(path.join(output, 'catalog-stats.json'), 'utf8'));
     assert.deepEqual(stats, {
       service_offer_count: entries.length,
-      education_offer_count: 51,
-      total_offers: entries.length + 51,
+      education_offer_count: loadEducationPrograms().length,
+      total_offers: entries.length + loadEducationPrograms().length,
       product_deduplication: 'not_verified',
       free_tier_count: mainEntries.length,
       limited_offer_count: limitedEntries.length,
@@ -634,7 +635,7 @@ test('All services includes limited offers while the free-tier subset stays sepa
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' +
       compactNumber(limited.length) + ')</option>'));
     assert.ok(home.includes('<span class="result-label">All offers</span><strong class="result-total">' +
-      compactNumber(all.length + 51) + '</strong>'));
+      compactNumber(all.length + loadEducationPrograms().length) + '</strong>'));
     assert.doesNotMatch(home, /class="limited-offer-shortcut"/, 'Limited offer count belongs in the Offer type filter, not summary');
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, all.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
@@ -761,7 +762,7 @@ test('search result headline reflects matches rather than the entire offer pool'
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
     assert.ok(html.includes('<span class="result-label">All offers</span><strong class="result-total">' +
-      compactNumber(catalog.length + 51) + '</strong>'));
+      compactNumber(catalog.length + loadEducationPrograms().length) + '</strong>'));
     assert.match(html, /<div class="directory-heading"><h2>Explore services<\/h2>/);
     assert.doesNotMatch(html, /catalog-metrics|result-breakdown|hero-stats/);
     assert.ok(html.includes('<option value="free">Free tiers (' +
