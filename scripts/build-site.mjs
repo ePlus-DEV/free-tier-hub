@@ -307,6 +307,7 @@ export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
 function homePage(items, absolute, counts, searchVersion, educationCount) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const allOffersCount = items.length + educationCount;
   const startupItems = items.filter(item => item.program === 'startup');
   const planCounts = Object.fromEntries(
     ['ongoing', 'monthly-credit'].map(plan => [plan, items.filter(item => item.plan === plan).length])
@@ -321,12 +322,12 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) +
     ' (' + compactNumber(counts[category]) + ')</option>').join('');
-  const shortcuts = [['', 'All services'], ['education', 'Education benefits'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
+  const shortcuts = [['', 'All offers'], ['education', 'Education benefits'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     category === 'education'
-      ? '<a class="category-chip education-program-chip" href="' + tag(absolute('education/')) +
-        '" aria-label="Browse ' + educationCount + ' education benefits">' + tag(label) +
-        ' <span class="category-chip-count" aria-label="' + educationCount + ' education benefits">' +
-        compactNumber(educationCount) + '</span></a>'
+      ? '<button type="button" class="category-chip education-program-chip" data-filter-category="education" ' +
+        'aria-pressed="false" aria-label="Filter education benefits in the main directory">' +
+        tag(label) + ' <span class="category-chip-count">' +
+        compactNumber(educationCount) + '</span></button>'
       : '<button type="button" class="category-chip" data-filter-category="' + tag(category) +
         '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
         (category ? ' <span class="category-chip-count" aria-label="' + counts[category] +
@@ -369,12 +370,13 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<div class="filter-popover-heading"><strong id="filter-dialog-title">Filters</strong><span>Results update as you choose</span>',
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
-    '<select id="category-filter"><option value="">All categories (', compactNumber(items.length),
-    ')</option>', options, '</select></label>',
+    '<select id="category-filter"><option value="">All categories (', compactNumber(allOffersCount),
+    ')</option>', options, '<option value="education">Education (', compactNumber(educationCount),
+    ')</option></select></label>',
     '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
     '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
-    '<select id="offer-filter"><option value="">All services (', compactNumber(items.length), ')</option>',
+    '<select id="offer-filter"><option value="">All offers (', compactNumber(allOffersCount), ')</option>',
     '<option value="free">Free tiers (', compactNumber(mainItems.length), ')</option>',
     '<option value="ongoing">Ongoing free allowance (', compactNumber(planCounts.ongoing), ')</option>',
     '<option value="monthly-credit">Recurring monthly credit (', compactNumber(planCounts['monthly-credit']), ')</option>',
@@ -383,7 +385,7 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<option value="startup">Startup programs (', compactNumber(startupItems.length),
     ')</option><optgroup label="Special programs">',
     '<option value="education">Education benefits (', compactNumber(educationCount),
-    ') — opens dedicated page</option></optgroup></select></label>',
+    ')</option></optgroup></select></label>',
     '<p class="education-filter-link">For students and teachers: <a href="',
     tag(absolute('education/')), '" id="education-filter-destination">Browse ', compactNumber(educationCount),
     ' education benefits ↗</a>. Eligibility verification required.</p>',
@@ -415,9 +417,9 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite">',
-    '<span class="result-label">All services</span><strong class="result-total">',
-    compactNumber(items.length), '</strong><span class="result-shown">Showing ',
-    compactNumber(Math.min(12, items.length)), ' of ', compactNumber(items.length), '</span></p>',
+    '<span class="result-label">All offers</span><strong class="result-total">',
+    compactNumber(allOffersCount), '</strong><span class="result-shown">Showing ',
+    compactNumber(Math.min(12, items.length)), ' of ', compactNumber(allOffersCount), '</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
