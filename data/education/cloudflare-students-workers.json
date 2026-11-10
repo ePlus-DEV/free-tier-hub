@@ -1,0 +1,14 @@
+{
+  "id": "cloudflare-students-workers",
+  "name": "Cloudflare Workers for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Waives the base US$5 per month Workers Paid subscription fee for up to 12 months, with paid-plan developer usage allowances.",
+  "eligibility": "US students aged 18+ with a verified .edu billing email address and an eligible Cloudflare account.",
+  "duration": "12 months of waived base subscription fees, then the account can revert to Free if not renewed.",
+  "restrictions": "Requires adding a valid credit card and activating Workers Paid. Usage above included allowances can be billed. Not generally available outside eligible US institutions.",
+  "source_url": "https://www.cloudflare.com/students/",
+  "last_checked": "2026-11-10"
+}

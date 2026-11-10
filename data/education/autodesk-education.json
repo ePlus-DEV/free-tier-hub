@@ -1,0 +1,15 @@
+{
+  "id": "autodesk-education",
+  "name": "Autodesk Education Access",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of free educational access to eligible Autodesk software and services, renewable annually.",
+  "eligibility": "Proof of enrollment or educator affiliation at a qualified educational institution; verification may be handled by SheerID.",
+  "duration": "One year, renewable while eligible.",
+  "restrictions": "Education access is not a general commercial license. Products and regional eligibility vary; verify terms before use.",
+  "source_url": "https://www.autodesk.com/support/account/education/admin/get-started",
+  "last_checked": "2026-11-09"
+}

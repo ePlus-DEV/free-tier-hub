@@ -1,5 +1,5 @@
-// Curated, independently verified education benefits. Not part of the free-tier
-// catalog: conditionally free educational access does not increase free-tier counts.
+// Education benefits are curated separately from universal free tiers.
+// Canonical source: one verified, independently reviewable JSON file per offer.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +8,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const AUDIENCES = ['student', 'teacher', 'school', 'nonprofit', 'opensource'];
 export const BENEFIT_TYPES = ['free', 'credit', 'discount'];
 const REQUIRED = ['id', 'name', 'audiences', 'benefit_type', 'benefit', 'eligibility', 'duration', 'restrictions', 'source_url', 'last_checked'];
+const DIRECTORY = 'data/education';
 
 export function validateEducationPrograms(programs, today = new Date().toISOString().slice(0, 10)) {
   if (!Array.isArray(programs)) throw Error('Education benefits must be an array');
@@ -43,6 +44,17 @@ export function validateEducationPrograms(programs, today = new Date().toISOStri
 }
 
 export function loadEducationPrograms(root = ROOT) {
-  return validateEducationPrograms(JSON.parse(fs.readFileSync(
-    path.join(root, 'data/education-programs.json'), 'utf8')));
+  const directory = path.join(root, DIRECTORY);
+  const shards = fs.readdirSync(directory, {withFileTypes: true})
+    .filter(entry => entry.isFile() && entry.name.endsWith('.json'))
+    .map(entry => entry.name).sort();
+  if (!shards.length) throw Error('No canonical education benefits found in ' + DIRECTORY);
+  const programs = shards.map(filename => {
+    const offer = JSON.parse(fs.readFileSync(path.join(directory, filename), 'utf8'));
+    if (offer.id + '.json' !== filename) {
+      throw Error('Education file name must match ID: ' + filename);
+    }
+    return offer;
+  });
+  return validateEducationPrograms(programs);
 }

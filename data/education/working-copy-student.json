@@ -1,0 +1,14 @@
+{
+  "id": "working-copy-student",
+  "name": "Working Copy Pro for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Unlocks the Pro features of the Working Copy Git client on iPhone and iPad, normally sold as an in-app purchase.",
+  "eligibility": "Students verified through the GitHub Student Developer Pack must sign in with the same GitHub account in the iOS app.",
+  "duration": "While logged in with an eligible student GitHub account.",
+  "restrictions": "iPhone/iPad application only; entitlement depends on active GitHub Student Developer Pack status.",
+  "source_url": "https://workingcopy.app/education/",
+  "last_checked": "2026-11-10"
+}

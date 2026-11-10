@@ -1,0 +1,15 @@
+{
+  "id": "dbeaver-academic",
+  "name": "DBeaver Academic License",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free DBeaver Enterprise academic license with access to the product for one year, for educational use.",
+  "eligibility": "Students or teachers must apply through DBeaver and verify academic affiliation, normally with a university email or supporting documentation.",
+  "duration": "One year; a new request and academic verification are required for another year.",
+  "restrictions": "Academic use only; not permitted in a corporate environment. No technical support is included. Manual review can take several business days.",
+  "source_url": "https://dbeaver.com/license-types/",
+  "last_checked": "2026-11-10"
+}

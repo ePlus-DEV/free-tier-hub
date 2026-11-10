@@ -1,0 +1,15 @@
+{
+  "id": "notion-education",
+  "name": "Notion Education Plan",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Education plan for a one-member workspace, with unlimited uploads, 30-day version history and up to 100 guests.",
+  "eligibility": "Students or educators at accredited colleges and universities recognized by WHED, using a valid primary institutional email.",
+  "duration": "Reverify the education email annually to retain the benefit.",
+  "restrictions": "Not offered to K-12 users under this higher-education plan. Extra workspace members disqualify the individual plan; losing eligibility returns to Free.",
+  "source_url": "https://www.notion.com/help/notion-for-education",
+  "last_checked": "2026-11-09"
+}

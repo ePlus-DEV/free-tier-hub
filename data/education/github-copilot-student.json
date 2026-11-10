@@ -1,0 +1,14 @@
+{
+  "id": "github-copilot-student",
+  "name": "GitHub Copilot Student",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free access to Copilot Student features for verified GitHub Education students.",
+  "eligibility": "Verify eligible student status through GitHub Education; activation is separate from approval.",
+  "duration": "Eligibility is reevaluated monthly.",
+  "restrictions": "Some features and premium limits are plan-dependent. Do not purchase if only paid signup appears; check approval/activation status.",
+  "source_url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students",
+  "last_checked": "2026-11-09"
+}

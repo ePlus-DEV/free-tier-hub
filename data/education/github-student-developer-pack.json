@@ -1,0 +1,14 @@
+{
+  "id": "github-student-developer-pack",
+  "name": "GitHub Student Developer Pack",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Access to a changing collection of partner developer tools, learning resources, subscriptions and promotional credits through GitHub Education.",
+  "eligibility": "Verified current students aged 13+ in a qualifying degree- or diploma-granting program with a personal GitHub account.",
+  "duration": "GitHub Education student verification lasts up to two years; individual partner offer durations vary.",
+  "restrictions": "Partner offers have separate eligibility, country and usage rules; one-time offers generally cannot be redeemed repeatedly or stacked. Not available to faculty through the Student Pack.",
+  "source_url": "https://docs.github.com/en/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack",
+  "last_checked": "2026-11-10"
+}

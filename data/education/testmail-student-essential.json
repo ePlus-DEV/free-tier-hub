@@ -1,0 +1,14 @@
+{
+  "id": "testmail-student-essential",
+  "name": "testmail.app Essential for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Essential plan during eligible studies with up to 10,000 test emails per month, full API access and 1–3 day message retention.",
+  "eligibility": "Verified active students redeem the Essential plan through GitHub Student Developer Pack.",
+  "duration": "While the user remains an eligible student under the partner offer.",
+  "restrictions": "A single random namespace and limited message retention apply. Not the same as the provider's separate ongoing Free plan (100 emails/month).",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

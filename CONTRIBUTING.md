@@ -67,6 +67,10 @@ Use this route if you want to edit the catalog yourself. **You do not need Node.
 - If the official source conflicts with an existing row, update its claims and review date; do not silently omit caveats.
 - Keep descriptions concise, factual, and in English. Do not submit secrets or personal account credentials.
 
+## Educational benefit submissions
+
+Education-only benefits (such as verified-student software, credits and academic licenses) are a **separate, category-like directory** at [Education benefits](https://free-tier.eplus.dev/education/). Unlike regular service entries, create or edit **one canonical file at \`data/education/<id>.json\`**. Use the existing education fields and provide a public first-party HTTPS source, eligibility, duration, restrictions and last checked date. Do not commit a consolidated \`data/education-programs.json\` file; the build generates the public \`/education-programs.json\` feed from shards. A student-only benefit does not increase ordinary free-tier service counts.
+
 ## Logos, categories, and website reports
 
 - **Logos:** the site displays provider website favicons through Google's favicon cache. Keep `pricing_url` pointed at the official plan evidence, even if that page is hosted on a documentation or corporate domain. Do not change a pricing source just to change its logo.

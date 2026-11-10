@@ -1,0 +1,14 @@
+{
+  "id": "azure-for-students",
+  "name": "Microsoft Azure for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "US$100 in Azure credit for the first 12 months, plus selected free services; no card required at signup.",
+  "eligibility": "Full-time students age 18+ at accredited two- or four-year degree-granting institutions, verified with an academic email.",
+  "duration": "One-time 12-month student credit; do not count as recurring credit.",
+  "restrictions": "Not for MOOCs or for-profit professional training. Limited activation supply; usage outside included services or credit may require a different subscription.",
+  "source_url": "https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p",
+  "last_checked": "2026-11-09"
+}

@@ -8,12 +8,13 @@ This is the human-readable classification policy for the **specific cataloged pr
 
 Free software licenses, educational subscription upgrades, credits and discounts
 requiring verified student or educator status are curated in
-[\`data/education-programs.json\`](../data/education-programs.json) and published
+[\`data/education/\`](../data/education/) (one JSON shard per offer) and published
 at [Education benefits](https://free-tier.eplus.dev/education/).
 
 - This **is not a new free-tier category or an additional \`plan\` enum**. It does
   not change \`data/services.json\`, ongoing free-tier counts, category badges,
   the 48-hour new-services badge, or the time-limited offer count.
+- The build derives the public \`/education-programs.json\` from canonical shards; do not hand-edit an aggregate in source control.
 - Each benefit records who qualifies, the official HTTPS source, verification
   date, duration/renewal and important limitations. A provider may withdraw an
   offer or restrict it by region, institution or educational usage rights.

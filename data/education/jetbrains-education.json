@@ -1,0 +1,15 @@
+{
+  "id": "jetbrains-education",
+  "name": "JetBrains Student and Teacher Pack",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "IntelliJ IDEA Ultimate, ReSharper and other JetBrains IDEs and .NET tools under an educational license.",
+  "eligibility": "Students and faculty at accredited institutions; student study programs generally must be long-term and full-time.",
+  "duration": "Free while educational eligibility remains valid; renewal/verification required.",
+  "restrictions": "Educational licenses may not be used for commercial work. Short-term bootcamps are generally ineligible.",
+  "source_url": "https://sales.jetbrains.com/hc/en-gb/articles/207241195-Do-you-offer-free-educational-licenses-for-students-and-teachers",
+  "last_checked": "2026-11-09"
+}
