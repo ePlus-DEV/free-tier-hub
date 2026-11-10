@@ -41,11 +41,13 @@ category pages/badges and tests through a reviewed PR. Category regression
 checks must derive the current taxonomy and allow new services or retired
 offers; do not freeze a category's exact service count in CI tests.
 
-## Education benefits (separate eligibility-gated directory)
+## Education benefits (unified discovery, eligibility-gated source)
 
 - Add or modify **one canonical** \`data/education/<id>.json\` per education-only offer. Do not recreate or hand-edit \`data/education-programs.json\`: it is not a source file; the build generates the public \`/education-programs.json\` compatibility feed.
 - Keep verified education offers separate from normal service totals and recurring free-tier counts. Record first-party benefit evidence, eligibility, renewal and billing restrictions. Do not put education-only offers in a general service category merely to improve visibility.
 - Use the existing \`education/\` page and searchable filters; update schema and tests when new fields are introduced.
+- Education offers also appear in **Home's shared search/filter UI** via `education_rows` and `search/cards/education.json` generated at build time. They are tagged as Education, not inferred to be permanent free tiers. Never create a second manually maintained search catalog.
+- Report **`total_offers = service_offer_count + education_offer_count`** for combined discovery. Preserve service-only `total_services`, README badges and recurring free-tier counts for backward compatibility. Do **not** report unique product counts without verified product-to-offer identity mappings.
 
 ## Non-negotiable catalog rules
 
