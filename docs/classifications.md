@@ -6,6 +6,15 @@ This is the human-readable classification policy for the **specific cataloged pr
 
 ## Education benefits (separate catalog)
 
+The Education landing includes live counts derived at build time from individual
+`data/education/<id>.json` records: **listed offers, nonempty categories, and latest
+source-review date**. Category counts only reflect reviewed items in this repository,
+not the totals from third-party directories. Each offer may include a single editorial
+`category` value from `EDUCATION_CATEGORIES` in `scripts/education-programs.mjs`;
+items awaiting editorial classification appear as `Other / to classify`.
+Featured offers are editorial picks, not a ranking of clicks or verified popularity.
+
+
 Free software licenses, educational subscription upgrades, credits and discounts
 requiring verified student or educator status are curated in
 [\`data/education/\`](../data/education/) (one JSON shard per offer) and published

@@ -944,3 +944,22 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
 /* A navigation link must look identical to the adjacent category-chip buttons. */
 .category-shortcuts a.category-chip{display:inline-flex;align-items:center;text-decoration:none}
 .category-shortcuts a.category-chip:hover{color:var(--ink);background:var(--surface-muted)}
+
+/* Education homepage stats and category chips reuse Free Tier Hub design tokens,
+   category-chip buttons, service-card grid and shared headings. */
+.education-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 26px}
+.education-stat{display:flex;flex-direction:column;gap:6px;justify-content:center;padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:var(--surface);min-width:0}
+.education-stat strong{font-size:clamp(20px,2.3vw,29px);letter-spacing:-.04em;line-height:1.25;font-weight:800;color:var(--ink);overflow-wrap:anywhere}
+.education-stat span{font-size:12px;color:var(--muted)}
+.education-category-index,.education-featured{margin:0 0 32px}
+.education-category-index[hidden],.education-featured[hidden]{display:none}
+.education-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.education-category-chip.category-chip{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;min-height:72px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-align:left;font:inherit;font-size:13px;cursor:pointer}
+.education-category-chip strong{min-width:0;overflow-wrap:anywhere}
+.education-category-chip .category-chip-count{flex:0 0 auto;white-space:nowrap}
+.education-category-chip[aria-pressed=true]{border-color:var(--brand);background:var(--brand-tint);color:var(--brand-ink)}
+.education-category-chip:hover{border-color:var(--line-strong)}
+.education-directory .section-heading{margin-bottom:16px}
+.education-featured-card .allowance-block{margin-bottom:17px}
+@media(max-width:920px){.education-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.education-stats{gap:7px}.education-stat{padding:12px 10px}.education-stat strong{font-size:17px}.education-stat span{font-size:10px}.education-category-grid{grid-template-columns:minmax(0,1fr)}.education-category-chip.category-chip{min-height:55px}}
