@@ -1,0 +1,13 @@
+{
+  "id": "fieldcraft-react-form-engine",
+  "name": "FieldCraft React Form Engine",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local TypeScript form engine with React renderer, schema-based multi-step forms, conditional validation, draft persistence, and optional submission adapters; no software subscription or provider-imposed usage quota.",
+  "watch_out": "A developer library, not a hosted form collection service or visual form builder. Requires a React application and your own submission backend/storage; hosting, databases and third-party integrations may cost money. Maintainer notes irregular releases and known gaps.",
+  "pricing_url": "https://github.com/SquaredR98/fieldcraft",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "local"
+}
