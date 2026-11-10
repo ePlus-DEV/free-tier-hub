@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
 import { loadEducationPrograms } from './education-programs.mjs';
+import { educationSearchRows, unifiedOfferStats } from './unified-offers.mjs';
 import { compactNumber, compactQuantityText } from '../site/assets/compact-numbers.js';
 import { activeServiceAliases } from './service-aliases.mjs';
 import { relatedServiceMap } from './service-relations.mjs';
@@ -629,6 +630,31 @@ function classificationsPage(absolute) {
     '<a href="', tag(REPOSITORY + '/blob/main/docs/classifications.md'), '">Read the repository guide</a></p>',
   ].join('');
 }
+function educationSearchCard(item, absolute) {
+  const key='edu-'+item.id;
+  const dest=tag(absolute('education/'+item.id+'/'));
+  const audience={student:'Students',teacher:'Teachers',school:'Schools',
+    nonprofit:'Nonprofits',opensource:'Open-source maintainers'};
+  return [
+    '<article class="service-card" data-service-id="',tag(key),
+    '" data-category="education" data-program="education">',
+    '<div class="card-top"><span class="service-icon" aria-hidden="true">',
+    serviceLogo({id:item.id,name:item.name,pricing_url:item.source_url}),
+    '</span><div class="card-identity"><h3><a href="',dest,'">',
+    tag(item.name),'</a></h3><span class="eyebrow">',
+    tag(item.audiences.map(a=>audience[a]).join(' · ')),
+    '</span></div><span class="badge">Education · ',tag(item.benefit_type),
+    '</span></div>',
+    '<div class="allowance-block"><span class="card-label">Education benefit</span>',
+    '<p class="allowance">',tag(item.benefit),'</p></div>',
+    '<div class="restriction-block"><span class="card-label">Who qualifies?</span>',
+    '<p class="restriction">',tag(item.eligibility),'</p></div>',
+    '<div class="card-bottom"><span class="education-reviewed">Checked ',
+    tag(item.last_checked),'</span><a href="',dest,'">View details ',
+    glyph('arrow'),'</a></div></article>'
+  ].join('');
+}
+
 function educationBenefitsPage(programs, absolute) {
   // Reuse the existing category-page toolbar, service cards, and shared design tokens.
   // Education keeps a separate dataset, eligibility filters, and totals.
@@ -1004,7 +1030,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const generatedAt = new Date().toISOString();
   const new48hCount = countNewIn48Hours(items, Date.parse(generatedAt));
-  const searchVersion = createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
+  const searchVersion = createHash('sha256').update(JSON.stringify([items,educationPrograms])).digest('hex').slice(0, 12);
+  const educationRows = educationSearchRows(items,educationPrograms);
   const searchIndex = {
     version: 1,
     revision: searchVersion,
@@ -1012,6 +1039,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     // Startup classification is a compact explicit ID set, not inferred from names;
     // keep the existing 10-field row contract for clients and compare UI.
     startup_program_ids: items.filter(item => item.program === 'startup').map(item => item.id),
+    // Service rows remain backward-compatible; education is an additive extension.
+    education_rows: educationRows,
     rows: items.map(item => [
       item.id, item.name, item.category, item.plan, hostingModel(item),
       item.credit_card, item.commercial_use, item.added_at_utc || item.added_at || '', item.last_checked,
@@ -1246,6 +1275,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   // Public catalog remains unchanged for external API users; the browser only
   // requests the compact index and HTML for categories currently on screen.
   file(output, 'search/index.json', JSON.stringify(searchIndex) + '\n');
+  file(output, 'search/cards/education.json', JSON.stringify(Object.fromEntries(
+    educationPrograms.map(item => ['edu-' + item.id, educationSearchCard(item,absolute)]))) + '\n');
   for (const category of CATEGORIES) {
     const fragments = Object.fromEntries(items.filter(item => item.category === category)
       .map(item => [item.id, card(item, absolute)]));
@@ -1255,6 +1286,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   // GitHub README's dynamic badge must show the same number as the Home directory.
   // Keep the full public catalog unchanged for existing API consumers.
   file(output, 'catalog-stats.json', JSON.stringify({
+    ...unifiedOfferStats(items,educationPrograms),
     free_tier_count: mainItems.length,
     limited_offer_count: limitedItems.length,
     total_services: items.length,
