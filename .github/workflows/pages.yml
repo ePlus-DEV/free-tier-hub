@@ -49,9 +49,12 @@ permissions:
 
 # Isolate PR builds from main deployments. GitHub cancels older pending runs
 # within a shared group even when cancel-in-progress is false.
-# Keep all main/dispatch production deployments serialized by ref.
+# Main/dispatch/schedule use the SAME repository-wide group as the preview publisher.
+# Separate PR-only build runs from deployments to prevent one Pages release
+# from overwriting the other workflow's preview snapshot.
 concurrency:
-  group: github-pages-${{ github.ref }}
+  group: ${{ github.event_name == 'pull_request' && format('github-pages-pr-{0}', github.event.pull_request.number) || 'github-pages' }}
+  queue: max
   cancel-in-progress: false
 
 jobs:
