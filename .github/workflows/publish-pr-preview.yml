@@ -83,6 +83,18 @@ jobs:
         run: |
           npm run build
           node scripts/collect-pr-previews.mjs dist
+          # The collector intentionally skips stale/missing unrelated PRs.
+          # Fail closed for THIS PR: never deploy and claim success without it.
+          PREVIEW_ROOT="dist/pr-preview/pr-${{ steps.pr.outputs.number }}"
+          test -s "$PREVIEW_ROOT/index.html"
+          test -s "$PREVIEW_ROOT/education/index.html"
+          PREVIEW_ROOT="$PREVIEW_ROOT" node --input-type=module - <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const meta = JSON.parse(readFileSync(process.env.PREVIEW_ROOT+'/preview-meta.json','utf8'));
+          if (meta.head_sha !== '${{ steps.pr.outputs.sha }}') {
+            throw Error('Collected preview revision does not match current PR head');
+          }
+          NODE
       - uses: actions/configure-pages@v5
         if: steps.pr.outputs.number != ''
       - uses: actions/upload-pages-artifact@v4

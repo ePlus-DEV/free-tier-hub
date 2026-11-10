@@ -17,6 +17,8 @@ test("PR builds stay isolated while main deploys and preview publisher share a P
   const preview = readFileSync(new URL("../.github/workflows/publish-pr-preview.yml", import.meta.url),"utf8");
   assert.match(preview, /concurrency:\n  group: github-pages\n  cancel-in-progress: false/);
   assert.match(preview, /education\/index\.html/);
+  assert.match(preview, /PREVIEW_ROOT/);
+  assert.match(preview, /Collected preview revision does not match current PR head/);
   assert.match(preview, /html\.includes\('id="education-service-grid"'\)/);
   assert.match(preview, /Live Education preview not available/);
   assert.match(preview, /\[Preview Education\]/);
