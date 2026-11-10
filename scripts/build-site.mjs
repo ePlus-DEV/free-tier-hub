@@ -677,20 +677,18 @@ function educationBenefitsPage(programs, absolute) {
       '" data-name="', tag(item.name.toLocaleLowerCase('en-US')), '">',
       '<div class="card-top"><span class="service-icon" aria-hidden="true">',
       serviceLogo({ id: item.id, name: item.name, pricing_url: item.source_url }),
-      '</span><div class="card-identity"><h3><a href="', tag(providerReferralURL(item.source_url)),
-      '" target="_blank" rel="noopener noreferrer">', tag(item.name), '</a></h3>',
+      '</span><div class="card-identity"><h3><a href="',
+      tag(absolute('education/' + item.id + '/')), '">', tag(item.name), '</a></h3>',
       '<span class="eyebrow">', tag(item.audiences.map(a => audienceLabels[a]).join(' · ')),
       '</span></div><span class="badge">', tag(benefitLabels[item.benefit_type]), '</span></div>',
       '<div class="allowance-block"><span class="card-label">Education benefit</span>',
       '<p class="allowance">', tag(item.benefit), '</p></div>',
       '<div class="restriction-block"><span class="card-label">Who qualifies?</span>',
       '<p class="restriction">', tag(item.eligibility), '</p></div>',
-      '<details class="education-conditions"><summary>Duration &amp; important limits</summary>',
-      '<div class="education-conditions-body"><strong>Duration / renewal</strong><p>',
-      tag(item.duration), '</p><strong>Important limits</strong><p>',
-      tag(item.restrictions), '</p></div></details>',
       '<div class="card-bottom"><span class="education-reviewed">Checked ', tag(item.last_checked),
-      '</span><a class="official-link" href="', tag(providerReferralURL(item.source_url)),
+      '</span><a href="', tag(absolute('education/' + item.id + '/')),
+      '" aria-label="View ', tag(item.name), ' education benefit details">View details ', glyph('arrow'),
+      '</a><a class="official-link" href="', tag(providerReferralURL(item.source_url)),
       '" target="_blank" rel="noopener noreferrer" aria-label="Official source for ',
       tag(item.name), '">Official source ↗</a></div></article>'
     ].join('')).join(''),
@@ -702,6 +700,60 @@ function educationBenefitsPage(programs, absolute) {
     '">Browse all services</a></p>',
     '<script src="', tag(absolute('assets/education.js?v=' + assetVersion('education.js'))),
     '" defer></script>',
+  ].join('');
+}
+
+function educationDetailPage(item, absolute) {
+  // Education is an eligibility-gated section, but uses the exact Services
+  // detail layout, CTA, spec list and provider-source pattern.
+  const audienceLabels = {student: 'Students', teacher: 'Teachers', school: 'Schools',
+    nonprofit: 'Nonprofits', opensource: 'Open-source maintainers'};
+  const benefitLabels = {free: 'Free access', credit: 'Credits', discount: 'Discount'};
+  const fields = [
+    ['Audience', item.audiences.map(a => audienceLabels[a]).join(' · ')],
+    ['Benefit type', benefitLabels[item.benefit_type]],
+    ['Who qualifies', item.eligibility],
+    ['Duration / renewal', item.duration],
+    ['Last checked', item.last_checked],
+  ];
+  const specs = fields.map(([key, value]) =>
+    '<div class="spec"><dt>' + tag(key) + '</dt><dd>' + tag(value) + '</dd></div>').join('');
+  const link = tag(providerReferralURL(item.source_url));
+  const directory = tag(absolute('education/'));
+  return [
+    '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
+    '">Home</a><span aria-hidden="true">/</span><a href="', directory,
+    '">Education benefits</a><span aria-hidden="true">/</span><span>', tag(item.name),
+    '</span></nav><div class="detail-layout"><article class="detail">',
+    '<div class="detail-head"><span class="detail-icon" aria-hidden="true">',
+    serviceLogo({ id: item.id, name: item.name, pricing_url: item.source_url }),
+    '</span><span class="badge">', tag(benefitLabels[item.benefit_type]), '</span></div>',
+    '<p class="kicker">EDUCATION BENEFIT</p><h1>', tag(item.name), '</h1>',
+    '<p class="detail-lead">A verified student or educator offer. Check eligibility, renewal and ',
+    'limits before applying. Not included in general free-tier service counts.</p>',
+    '<div class="detail-highlight">', glyph('layers'),
+    '<div><strong>INCLUDED EDUCATION BENEFIT</strong><p>', tag(item.benefit),
+    '</p></div></div>',
+    '<div class="detail-mobile-action"><a class="button primary" href="', link,
+    '" target="_blank" rel="noopener noreferrer">View official offer ', glyph('arrow'),
+    '</a></div><h2>Program details</h2><dl class="spec-list">', specs, '</dl>',
+    '<h2>Important restrictions</h2><div class="detail-warning">',
+    glyph('alert'), '<p>', tag(item.restrictions), '</p></div>',
+    '<div class="detail-action"><a class="button primary" href="', link,
+    '" target="_blank" rel="noopener noreferrer">View official offer ',
+    glyph('arrow'), '</a></div>',
+    '<p class="disclaimer">Educational benefits may change, require independent verification, ',
+    'or expire. Always confirm current conditions with the provider.</p>',
+    '</article><aside class="detail-aside"><p class="kicker">SOURCE OF TRUTH</p>',
+    '<h2>Verify eligibility</h2><p>Check the provider\'s official documentation for ',
+    'up-to-date academic requirements and pricing.</p>',
+    '<a class="button secondary" href="', link,
+    '" target="_blank" rel="noopener noreferrer">Official source ',
+    glyph('arrow'), '</a><hr><h2>More education benefits</h2>',
+    '<p>Browse other verified academic licenses, student credits and educator offers.</p>',
+    '<a class="text-link" href="', directory, '">Browse Education ', glyph('arrow'),
+    '</a></aside></div><p class="back-link"><a href="', directory,
+    '">← Back to Education benefits</a></p>',
   ].join('');
 }
 
@@ -1017,7 +1069,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
         numberOfItems: educationPrograms.length,
         itemListElement: educationPrograms.map((program, i) => ({
           '@type': 'ListItem', position: i + 1, name: program.name,
-          url: program.source_url
+          url: absolute('education/' + program.id + '/')
         })) } },
     { '@type': 'BreadcrumbList', itemListElement: breadcrumb([
       ['Home', base], ['Education benefits', absolute(educationRelative)]
@@ -1028,6 +1080,25 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     'Compare verified free educational software, student credits and educator benefits with official eligibility and renewal restrictions.',
     educationRelative, educationBenefitsPage(educationPrograms, absolute), educationSchema));
   pageURLs.push([educationRelative, educationPrograms.map(x => x.last_checked).sort().at(-1) || latest]);
+  // Stable per-benefit canonical detail pages, including SEO breadcrumbs and sitemap.
+  for (const program of educationPrograms) {
+    const relative = 'education/' + program.id + '/';
+    const crumbs = [['Home', base], ['Education benefits', absolute(educationRelative)],
+      [program.name, absolute(relative)]];
+    const schema = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'WebPage', name: program.name + ' — Education benefits',
+        url: absolute(relative),
+        description: program.benefit + '. ' + program.restrictions,
+        dateModified: program.last_checked,
+        about: { '@type': 'Thing', name: program.name, url: program.source_url } },
+      { '@type': 'BreadcrumbList', itemListElement: breadcrumb(crumbs).itemListElement },
+    ] };
+    file(output, relative + 'index.html', document(absolute,
+      program.name + ' — Education benefits | Free Tier Hub',
+      program.benefit + '. ' + program.restrictions,
+      relative, educationDetailPage(program, absolute), schema));
+    pageURLs.push([relative, program.last_checked]);
+  }
   file(output, 'education-programs.json', JSON.stringify(educationPrograms, null, 2) + '\n');
   const compareRelative = 'compare/';
   file(output, compareRelative + 'index.html', document(absolute,
@@ -1156,7 +1227,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '- Machine-readable catalog: ' + absolute('catalog.json'),
     '- Sitemap: ' + absolute('sitemap.xml'),
     '- LLM summary: ' + absolute('llms.txt'), '',
-    'All service detail pages have stable canonical HTML URLs and server-rendered content.',
+    'Service and Education benefit detail pages have stable canonical HTML URLs and server-rendered content.',
     'Home initially shows 12 listings; use category pages and the sitemap for complete link discovery.', '',
     '## Data model',
     'Each catalog entry includes id, name, category, plan, free_limit, watch_out, pricing_url,',

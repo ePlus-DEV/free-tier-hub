@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateEducationPrograms, loadEducationPrograms } from './education-programs.mjs';
-import { build } from './build-site.mjs';
+import { build, tag } from './build-site.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const input = loadEducationPrograms();
 
@@ -70,12 +70,37 @@ test('Education reuses category and service UI components, preserves filters, fe
     assert.match(html, /class="allowance-block"><span class="card-label">Education benefit/);
     assert.match(html, /class="restriction-block"><span class="card-label">Who qualifies/);
     assert.match(html, /class="card-bottom"/);
-    assert.match(html, /class="education-conditions"><summary>Duration &amp; important limits/);
+    assert.doesNotMatch(html, /class="education-conditions"/);
+    assert.match(html, /View details/);
+    assert.match(html, /href="https:\/\/free-tier\.eplus\.dev\/education\/github-copilot-student\/"/);
     assert.doesNotMatch(html, /class="education-hero"|class="education-grid"|class="education-card"/);
     assert.match(html, /data-benefit-type="credit"/);
     assert.match(html, /data-audiences="student teacher"/);
     assert.match(html, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
     assert.ok(read('sitemap.xml').includes('https://free-tier.eplus.dev/education/'));
+    // Every canonical education shard gets a stable, directly linked internal detail.
+    const sitemap = read('sitemap.xml');
+    const urls = [...html.matchAll(/<a href="https:\/\/free-tier\.eplus\.dev\/education\/([a-z0-9-]+)\/"/g)]
+      .map(match => match[1]);
+    assert.ok(urls.includes('github-copilot-student'));
+    for (const program of input) {
+      const relative = 'education/' + program.id + '/';
+      const url = 'https://free-tier.eplus.dev/' + relative;
+      assert.ok(sitemap.includes('<loc>' + url + '</loc>'), 'Education page absent from sitemap: ' + program.id);
+      const detail = read(relative + 'index.html');
+      assert.ok(detail.includes('<link rel="canonical" href="' + url + '"'), 'Missing canonical: ' + program.id);
+      assert.match(detail, /class="detail-layout"/);
+      assert.match(detail, /class="detail-highlight"/);
+      assert.match(detail, /class="spec-list"/);
+      assert.match(detail, /class="detail-warning"/);
+      assert.match(detail, /Back to Education benefits/);
+      assert.ok(detail.includes(program.source_url.replaceAll('&', '&amp;').replaceAll('"', '&quot;')) ||
+        detail.includes(program.source_url), 'Missing first-party link: ' + program.id);
+      for (const field of [program.benefit, program.eligibility, program.duration, program.restrictions]) {
+        // Compare with the same HTML escaping used by the static renderer.
+        assert.ok(detail.includes(tag(field)), 'Missing detail data for ' + program.id);
+      }
+    }
     assert.ok(read('llms.txt').includes('Education benefits'));
     const css = read('assets/site.css');
     assert.match(css, /\.service-grid,\.category-service-grid\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
