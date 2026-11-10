@@ -940,12 +940,6 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
 
 /* Education intentionally shares the category UI: page-intro, category-tools,
    service-card, badge, allowance/restriction blocks, and card-bottom. */
-.education-conditions{margin:-6px 0 16px;font-size:12px;line-height:1.6;color:var(--muted)}
-.education-conditions summary{display:list-item;cursor:pointer;color:var(--brand-ink);font-weight:650;min-height:26px}
-.education-conditions summary:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-.education-conditions-body{padding:9px 0 0}
-.education-conditions-body strong{display:block;font-size:11px;color:var(--ink-soft);margin-top:8px}
-.education-conditions-body p{margin:3px 0 9px;overflow-wrap:anywhere}
 .education-reviewed{color:var(--muted);font-size:11px}
 /* A navigation link must look identical to the adjacent category-chip buttons. */
 .category-shortcuts a.category-chip{display:inline-flex;align-items:center;text-decoration:none}
