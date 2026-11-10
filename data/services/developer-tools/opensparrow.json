@@ -1,0 +1,13 @@
+{
+  "id": "opensparrow",
+  "name": "OpenSparrow Self-Hosted App Builder",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "LGPL-3.0-licensed self-hosted PHP platform for schema-driven CRUD apps, forms, dashboards and calendars on PostgreSQL; no vendor software usage quota or expiry documented.",
+  "watch_out": "Requires PHP 8.4+, PostgreSQL 14+ and your own hosting/storage; Render/Railway deployment may incur provider charges. Optional RAG uses local Ollama or separately billed AI APIs. LGPL-3.0 obligations apply when distributing modified code; review security before production.",
+  "pricing_url": "https://github.com/wrobeltomasz/OpenSparrow",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
