@@ -7,9 +7,12 @@
   const benefit = document.querySelector('#education-benefit');
   const sort = document.querySelector('#education-sort');
   const count = document.querySelector('#education-results');
+  const tools = document.querySelector('#education-tools');
+  const activeCount = document.querySelector('#education-filter-active');
   const clear = document.querySelector('#education-clear');
   const empty = document.querySelector('#education-empty');
-  if (!grid || !search || !audience || !benefit || !sort || !count) return;
+  if (!grid || !search || !audience || !benefit || !sort || !count || !tools) return;
+  tools.hidden = false;
   const allowedAudiences = new Set(['all', 'student', 'teacher', 'school', 'nonprofit', 'opensource']);
   const allowedBenefits = new Set(['all', 'free', 'credit', 'discount']);
   const allowedSorts = new Set(['name', 'recent']);
@@ -38,7 +41,9 @@
       if (!card.hidden) shown++;
     }
     grid.append(...sorted);
-    count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' benefits';
+    count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' education benefits';
+    const filterTotal = Number(audience.value !== 'all') + Number(benefit.value !== 'all');
+    if (activeCount) { activeCount.textContent = filterTotal; activeCount.hidden = filterTotal === 0; }
     const active = Boolean(search.value.trim()) || audience.value !== 'all' ||
       benefit.value !== 'all' || sort.value !== 'name';
     if (clear) clear.hidden = !active;
