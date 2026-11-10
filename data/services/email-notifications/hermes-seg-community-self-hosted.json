@@ -1,0 +1,13 @@
+{
+  "id": "hermes-seg-community-self-hosted",
+  "name": "Hermes Secure Email Gateway Community Edition",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free self-hosted Community Edition mail security gateway and mail server with spam and malware filtering, encryption, mailboxes, archiving and administration; no software usage quota or expiry published.",
+  "watch_out": "Bring your own Linux/Docker host, storage, DNS, static IP and TLS certificates; recommended minimum 4 vCPUs, 8 GB RAM and 120 GB OS/config disk. Pro-only features require a paid license. AGPLv3 obligations apply to covered Community code; external mail services and infrastructure may cost money.",
+  "pricing_url": "https://github.com/deeztek/Hermes-Secure-Email-Gateway",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
