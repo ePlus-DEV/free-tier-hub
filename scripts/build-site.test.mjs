@@ -209,7 +209,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.ok(bar.includes('</div><a class="category-index-shortcut" href="https://free-tier.eplus.dev/categories/"'),
       'all categories link is separate from and alongside quick filter controls');
     assert.ok(html.includes('id="category-filter"><option value="">All categories (' +
-      compactNumber(entries.length) + ')</option>'));
+      compactNumber(entries.length + loadEducationPrograms().length) + ')</option>'));
     assert.ok(html.includes('Browse all ' + CATEGORIES.length + ' categories'),
       'filter shortcut must display the current category count');
     // At every desktop/tablet width the category and quick-billing filters
@@ -767,7 +767,7 @@ test('search result headline reflects matches rather than the entire offer pool'
     assert.doesNotMatch(html, /catalog-metrics|result-breakdown|hero-stats/);
     assert.ok(html.includes('<option value="free">Free tiers (' +
       compactNumber(free.length) + ')</option>'));
-    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, catalog.length)) + ' of ' + compactNumber(catalog.length) + '</span>'));
+    assert.ok(html.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, catalog.length)) + ' of ' + compactNumber(catalog.length + loadEducationPrograms().length) + '</span>'));
     const runtime = fs.readFileSync(path.join(output, 'assets/site.js'), 'utf8');
     assert.match(runtime, /urlState\.summarizeResults\(matched\.length, pool\.length, shown/);
     assert.match(runtime, /if \(nextCategory === ""\) resetDirectoryFilters\(\)/);
