@@ -54,6 +54,7 @@ permissions:
 # from overwriting the other workflow's preview snapshot.
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('github-pages-pr-{0}', github.event.pull_request.number) || 'github-pages' }}
+  queue: max
   cancel-in-progress: false
 
 jobs:

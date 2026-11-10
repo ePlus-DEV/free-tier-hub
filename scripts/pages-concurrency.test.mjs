@@ -13,9 +13,10 @@ test("PR builds stay isolated while main deploys and preview publisher share a P
   assert.match(concurrency, /github\.event_name == 'pull_request'/);
   assert.match(concurrency, /github-pages-pr-\{0\}/);
   assert.match(concurrency, /\|\| 'github-pages'/);
+  assert.match(concurrency, /queue: max/);
   assert.match(concurrency, /cancel-in-progress: false/);
   const preview = readFileSync(new URL("../.github/workflows/publish-pr-preview.yml", import.meta.url),"utf8");
-  assert.match(preview, /concurrency:\n  group: github-pages\n  cancel-in-progress: false/);
+  assert.match(preview, /concurrency:\n  group: github-pages\n  queue: max\n  cancel-in-progress: false/);
   assert.match(preview, /education\/index\.html/);
   assert.match(preview, /PREVIEW_ROOT/);
   assert.match(preview, /Collected preview revision does not match current PR head/);
