@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateEducationPrograms, loadEducationPrograms } from './education-programs.mjs';
-import { build } from './build-site.mjs';
+import { build, tag } from './build-site.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const input = loadEducationPrograms();
 
@@ -97,9 +97,8 @@ test('Education reuses category and service UI components, preserves filters, fe
       assert.ok(detail.includes(program.source_url.replaceAll('&', '&amp;').replaceAll('"', '&quot;')) ||
         detail.includes(program.source_url), 'Missing first-party link: ' + program.id);
       for (const field of [program.benefit, program.eligibility, program.duration, program.restrictions]) {
-        // HTML escaping may affect a tiny subset of source text, so compare with an escaped approximation.
-        const escaped = field.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-        assert.ok(detail.includes(escaped), 'Missing detail data for ' + program.id);
+        // Compare with the same HTML escaping used by the static renderer.
+        assert.ok(detail.includes(tag(field)), 'Missing detail data for ' + program.id);
       }
     }
     assert.ok(read('llms.txt').includes('Education benefits'));
