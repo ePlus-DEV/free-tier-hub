@@ -1,0 +1,13 @@
+{
+  "id": "acruxcore-self-hosted",
+  "name": "AcruxCore Self-Hosted",
+  "category": "ai-ml",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source self-hosted LLM gateway, prompt and tool versioning, tracing, evaluation and audit logging; no software usage quota or expiry stated",
+  "watch_out": "Bring your own Postgres, Redis, server resources and AI provider API keys; provider inference and infrastructure may incur charges. Hosted AcruxCore is a separate offering. Production deployment requires configured secrets, database and reverse proxy; no free hosted capacity is included.",
+  "pricing_url": "https://github.com/AcruxCore/AcruxCore",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
