@@ -15212,6 +15212,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "victorantos-email-verifier-local",
+    "name": "Victor Antos Email Verifier CLI",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed Python CLI for local CSV email validation using syntax, MX and SMTP RCPT checks; no software-imposed usage quota or expiration.",
+    "watch_out": "Requires Python 3.9+, DNS/network access and outbound SMTP port 25; large mailbox providers may return unknown results, and bulk SMTP probing may violate provider policies or local law. Run only on addresses you are authorized to verify; infrastructure and network costs are not included.",
+    "pricing_url": "https://github.com/victorantos/email-verifier",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "local"
+  },
+  {
     "id": "vitest-open-source-local",
     "name": "Vitest Open-Source Test Runner",
     "category": "testing-qa",
