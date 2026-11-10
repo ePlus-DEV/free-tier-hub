@@ -1,0 +1,13 @@
+{
+  "id": "formkit-open-source-form-framework",
+  "name": "FormKit Open Source Form Framework",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed React and Vue form framework with native HTML inputs, validation, JSON schemas, i18n and accessibility; no software usage quota or expiry.",
+  "watch_out": "FormKit Pro premium inputs require separate paid licensing. This is a local application library, not hosted form submissions; application hosting, storage and backend are not included.",
+  "pricing_url": "https://github.com/formkit/formkit",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "local"
+}
