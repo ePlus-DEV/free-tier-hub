@@ -11,5 +11,6 @@
   "duration": "While approved for the academic Education plan.",
   "restrictions": "Advanced compute machines, scheduling and Deepnote AI are not included. Higher compute tiers/GPU require a payment method.",
   "source_url": "https://deepnote.com/docs/education-faqs",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "learning-research"
 }
