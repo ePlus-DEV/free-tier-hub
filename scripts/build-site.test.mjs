@@ -248,6 +248,10 @@ test('directory exposes unique search/category controls and official sources for
     assert.equal(published.length, entries.length);
     const stats = JSON.parse(fs.readFileSync(path.join(output, 'catalog-stats.json'), 'utf8'));
     assert.deepEqual(stats, {
+      service_offer_count: entries.length,
+      education_offer_count: 51,
+      total_offers: entries.length + 51,
+      product_deduplication: 'not_verified',
       free_tier_count: mainEntries.length,
       limited_offer_count: limitedEntries.length,
       total_services: entries.length,
@@ -257,6 +261,17 @@ test('directory exposes unique search/category controls and official sources for
     });
     assert.ok(!Number.isNaN(Date.parse(stats.generated_at_utc)));
     assert.equal(stats.free_tier_count + stats.limited_offer_count, stats.total_services);
+    assert.equal(stats.total_offers, stats.total_services + stats.education_offer_count);
+    assert.equal(stats.education_offer_count,
+      JSON.parse(fs.readFileSync(path.join(output, 'education-programs.json'),'utf8')).length);
+    assert.equal(stats.product_deduplication, 'not_verified');
+    const combined = JSON.parse(fs.readFileSync(path.join(output, 'search/index.json'),'utf8'));
+    assert.equal(combined.rows.length, stats.total_services);
+    assert.equal(combined.education_rows.length, stats.education_offer_count);
+    const educationCards = JSON.parse(fs.readFileSync(path.join(output,'search/cards/education.json'),'utf8'));
+    assert.equal(Object.keys(educationCards).length, stats.education_offer_count);
+    assert.ok(combined.education_rows.every(row=>row.length===10 && row[0].startsWith('edu-')));
+    assert.ok(educationCards['edu-github-copilot-student'].includes('href="https://free-tier.eplus.dev/education/github-copilot-student/"'));
     const badge = fs.readFileSync(path.join(output, 'badges/services.svg'), 'utf8');
     assert.equal(badge, serviceCountSVG(stats.total_services));
     assert.equal(fs.readFileSync(path.join(output, 'badges/free-tiers.svg'), 'utf8'),
@@ -269,8 +284,8 @@ test('directory exposes unique search/category controls and official sources for
     const hero = html.slice(html.indexOf('<section class="hero">'), html.indexOf('</section>', html.indexOf('<section class="hero">')));
     assert.doesNotMatch(hero, /hero-stats|hero-stat-value/);
     assert.doesNotMatch(css, /\.hero-stats\{/);
-    assert.ok(html.includes('<select id="offer-filter"><option value="">All services (' +
-      compactNumber(stats.total_services) + ')</option>'));
+    assert.ok(html.includes('<select id="offer-filter"><option value="">All offers (' +
+      compactNumber(stats.total_offers) + ')</option>'));
     assert.ok(html.includes('<option value="free">Free tiers (' +
       compactNumber(stats.free_tier_count) + ')</option>'));
     assert.ok(html.includes('<option value="ongoing">Ongoing free allowance (' +
@@ -279,10 +294,10 @@ test('directory exposes unique search/category controls and official sources for
       compactNumber(entries.filter(item => item.plan === 'monthly-credit').length) + ')</option>'));
     assert.ok(html.includes('<option value="limited">Time-limited &amp; expiring offers (' +
       compactNumber(stats.limited_offer_count) + ')</option>'));
-    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' +
-      compactNumber(stats.total_services) + '</strong>'));
+    assert.ok(html.includes('<span class="result-label">All offers</span><strong class="result-total">' +
+      compactNumber(stats.total_offers) + '</strong>'));
     assert.ok(html.includes('<span class="result-shown">Showing ' +
-      compactNumber(Math.min(12, stats.total_services)) + ' of ' + compactNumber(stats.total_services) + '</span>'));
+      compactNumber(Math.min(12, stats.total_services)) + ' of ' + compactNumber(stats.total_offers) + '</span>'));
     assert.match(css, /\.results-meta\{[^}]*margin-left:auto/);
     assert.match(css, /@media\(max-width:680px\)\{\s*\.directory-heading\{flex-wrap:nowrap/);
     assert.ok(published.every(item => /^\d{4}-\d{2}-\d{2}$/.test(item.added_at)),
@@ -313,7 +328,7 @@ test('directory exposes unique search/category controls and official sources for
     assert.doesNotMatch(dialog, /id="sort"|id="filter-no-card"|id="filter-commercial"/);
     assert.match(html, /class="result-controls"><label class="sort-field"/);
     assert.match(html, /class="category-shortcuts"[^>]+aria-label="Popular categories"/);
-    assert.match(html, /<select id="offer-filter"><option value="">All services \(/);
+    assert.match(html, /<select id="offer-filter"><option value="">All offers \(/);
     assert.match(html, /<option value="free">Free tiers \(/);
     assert.match(html, /<option value="monthly-credit">Recurring monthly credit \(/);
     for (const model of ['cloud', 'self-hosted', 'hybrid', 'local', 'unclassified']) {
@@ -618,8 +633,8 @@ test('All services includes limited offers while the free-tier subset stays sepa
     assert.equal(result.limited_offer_count, limited.length);
     assert.ok(home.includes('<option value="limited">Time-limited &amp; expiring offers (' +
       compactNumber(limited.length) + ')</option>'));
-    assert.ok(home.includes('<span class="result-label">All services</span><strong class="result-total">' +
-      compactNumber(all.length) + '</strong>'));
+    assert.ok(home.includes('<span class="result-label">All offers</span><strong class="result-total">' +
+      compactNumber(all.length + 51) + '</strong>'));
     assert.doesNotMatch(home, /class="limited-offer-shortcut"/, 'Limited offer count belongs in the Offer type filter, not summary');
     assert.equal((home.match(/class="service-card"/g) || []).length, Math.min(12, all.length));
     assert.ok(home.includes('data-search-index="https://free-tier.eplus.dev/search/index.json?v='));
@@ -675,6 +690,10 @@ test('URL filters round trip, reject unknown values, preserve unrelated params a
   assert.equal(new URL(href).searchParams.get('utm_source'), 'test');
   assert.equal(new URL(href).hash, '#explore');
   assert.equal(new URL(href).searchParams.get('offer'), 'monthly-credit');
+  assert.equal(api.matchesOffer('education','', 'education'), true);
+  assert.equal(api.matchesOffer('education','education','education'), true);
+  assert.equal(api.matchesOffer('education','free','education'), false);
+  assert.equal(api.matchesOffer('ongoing','education',''), false);
   assert.equal(api.matchesOffer('monthly-credit', 'monthly-credit'), true);
   assert.equal(api.matchesOffer('ongoing', 'monthly-credit'), false);
   assert.equal(api.matchesOffer('ongoing', ''), true);
@@ -703,36 +722,36 @@ test('search result headline reflects matches rather than the entire offer pool'
   assert.equal(typeof summarize, 'function');
 
   assert.deepEqual(summarize(926, 926, 12, {}), {
-    label: 'All services', total: '926', shown: 'Showing 12 of 926'
+    label: 'All offers', total: '926', shown: 'Showing 12 of 926'
   });
   assert.deepEqual(summarize(49, 926, 12, { q: 'chat' }), {
-    label: 'Matching services', total: '49',
+    label: 'Matching offers', total: '49',
     shown: 'Showing 12 of 49'
   });
   assert.deepEqual(summarize(49, 926, 24, { q: 'chat', category: '' }), {
-    label: 'Matching services', total: '49',
+    label: 'Matching offers', total: '49',
     shown: 'Showing 24 of 49'
   });
   assert.deepEqual(summarize(0, 926, 12, { q: 'notfound' }), {
-    label: 'Matching services', total: '0',
+    label: 'Matching offers', total: '0',
     shown: 'Showing 0 of 0'
   });
   assert.deepEqual(summarize(4, 4, 12, { offer: 'limited' }), {
     label: 'Limited offers', total: '4', shown: 'Showing 4 of 4'
   });
   assert.deepEqual(summarize(1, 4, 12, { offer: 'limited', category: 'ai-assistants' }), {
-    label: 'Matching services', total: '1',
+    label: 'Matching offers', total: '1',
     shown: 'Showing 1 of 1'
   });
   assert.deepEqual(summarize(30, 30, 12, { offer: 'monthly-credit' }), {
     label: 'Monthly credits', total: '30', shown: 'Showing 12 of 30'
   });
   assert.deepEqual(summarize(13, 926, 12, { noCard: true }), {
-    label: 'Matching services', total: '13',
+    label: 'Matching offers', total: '13',
     shown: 'Showing 12 of 13'
   });
   assert.deepEqual(summarize(926, 926, 12, { q: '   ', sort: 'newest' }), {
-    label: 'All services', total: '926', shown: 'Showing 12 of 926'
+    label: 'All offers', total: '926', shown: 'Showing 12 of 926'
   });
 
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'directory-summary-'));
@@ -741,8 +760,8 @@ test('search result headline reflects matches rather than the entire offer pool'
     const free = catalog.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit');
     build(output);
     const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
-    assert.ok(html.includes('<span class="result-label">All services</span><strong class="result-total">' +
-      compactNumber(catalog.length) + '</strong>'));
+    assert.ok(html.includes('<span class="result-label">All offers</span><strong class="result-total">' +
+      compactNumber(catalog.length + 51) + '</strong>'));
     assert.match(html, /<div class="directory-heading"><h2>Explore services<\/h2>/);
     assert.doesNotMatch(html, /catalog-metrics|result-breakdown|hero-stats/);
     assert.ok(html.includes('<option value="free">Free tiers (' +
