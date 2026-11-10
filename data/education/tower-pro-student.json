@@ -10,5 +10,6 @@
   "duration": "Twelve months, renewable on successful re-verification of student status.",
   "restrictions": "No payment card required. Free access expires when eligibility cannot be renewed; existing paid fees are not refunded.",
   "source_url": "https://www.git-tower.com/students",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

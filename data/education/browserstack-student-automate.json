@@ -10,5 +10,6 @@
   "duration": "One year from successful activation.",
   "restrictions": "Concurrency is limited; this student plan does not unlock unlimited parallel sessions or every enterprise testing feature.",
   "source_url": "https://www.browserstack.com/github-students",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

@@ -10,5 +10,6 @@
   "duration": "One year of student access.",
   "restrictions": "Only most Standard features are included; not the full unrestricted subscription. Terms after the first year may differ.",
   "source_url": "https://www.sqlgate.com/student-pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }
