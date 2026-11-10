@@ -1,0 +1,13 @@
+{
+  "id": "opentrashmail-self-hosted",
+  "name": "Open Trashmail Self-Hosted",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed self-hosted disposable/catch-all inbound email server with web inbox, JSON API, RSS feeds, per-address webhooks, attachments and Docker deployment; no vendor-imposed software usage quota or expiration.",
+  "watch_out": "Receive-only disposable mail infrastructure, not a hosted email inbox or outbound transactional SMTP provider. Supply your own server, domain, MX/DNS, TLS, storage and backups. Restrict domains with DISCARD_UNKNOWN=true and protect web/API/admin access; otherwise mail and attachments may be exposed or the server may attract abuse. Hosting costs are separate.",
+  "pricing_url": "https://github.com/HaschekSolutions/opentrashmail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
