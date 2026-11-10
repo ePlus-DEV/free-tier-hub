@@ -10,5 +10,6 @@
   "duration": "One-time promotional credit grant, not a recurring monthly allowance.",
   "restrictions": "Credits are intended for educational or personal projects; use the official student coupon workflow. Check provider terms for expiration and usage restrictions.",
   "source_url": "https://www.firecrawl.dev/student-program",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

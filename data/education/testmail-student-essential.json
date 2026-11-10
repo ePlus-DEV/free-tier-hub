@@ -10,5 +10,6 @@
   "duration": "While the user remains an eligible student under the partner offer.",
   "restrictions": "A single random namespace and limited message retention apply. Not the same as the provider's separate ongoing Free plan (100 emails/month).",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

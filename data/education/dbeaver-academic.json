@@ -11,5 +11,6 @@
   "duration": "One year; a new request and academic verification are required for another year.",
   "restrictions": "Academic use only; not permitted in a corporate environment. No technical support is included. Manual review can take several business days.",
   "source_url": "https://dbeaver.com/license-types/",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }
