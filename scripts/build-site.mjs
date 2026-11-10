@@ -489,7 +489,7 @@ function recentCountMarkup(items, now = Date.now()) {
     : '';
 }
 
-function categoriesOverviewPage(absolute, counts, mainItems) {
+function categoriesOverviewPage(absolute, counts, mainItems, educationCount) {
   const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
   const entries = CATEGORIES.map(category => {
     const name = CATEGORY_NAMES[category];
@@ -508,6 +508,17 @@ function categoriesOverviewPage(absolute, counts, mainItems) {
       '</a>',
     ].join('');
   }).join('');
+  const educationEntry = [
+    '<a class="category-overview-card" href="', tag(absolute('?offer=education#explore')),
+    '" data-category-name="education student teacher academic">',
+    '<span class="category-overview-icon" aria-hidden="true">', glyph('layers'), '</span>',
+    '<span class="category-overview-body"><strong>Education benefits</strong>',
+    '<span class="category-overview-description">Student and educator offers within the unified directory, with eligibility checks.</span></span>',
+    '<span class="category-overview-foot"><span class="category-overview-count"><b>',
+    compactNumber(educationCount), '</b> offers · collection</span>',
+    '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'),
+    '</span></span></a>'
+  ].join('');
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><span>Categories</span></nav>',
@@ -525,7 +536,7 @@ function categoriesOverviewPage(absolute, counts, mainItems) {
     glyph('search'), '<span class="sr-only">Search categories</span>',
     '<input id="category-overview-search" type="search" autocomplete="off"',
     ' placeholder="Search categories..." aria-controls="category-overview-grid"></label></div>',
-    '<div class="category-overview-grid" id="category-overview-grid">', entries, '</div>',
+    '<div class="category-overview-grid" id="category-overview-grid">', entries, educationEntry, '</div>',
     '<p class="category-overview-empty" id="category-overview-empty" role="status" aria-live="polite" hidden>No matching categories. Try another search.</p>',
     '</section><p class="back-link"><a href="', tag(absolute('#explore')),
     '">← Browse all services</a></p>',
@@ -1091,7 +1102,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, categoriesRelative + 'index.html', document(absolute,
     'All Categories | Free Tier Hub',
     'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
-    categoriesRelative, categoriesOverviewPage(absolute, counts, mainItems), categoriesSchema));
+    categoriesRelative, categoriesOverviewPage(absolute, counts, mainItems, educationPrograms.length), categoriesSchema));
   pageURLs.push([categoriesRelative, latest]);
   const educationRelative = 'education/';
   const educationSchema = { '@context': 'https://schema.org', '@graph': [
