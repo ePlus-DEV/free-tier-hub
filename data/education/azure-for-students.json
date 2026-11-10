@@ -10,5 +10,6 @@
   "duration": "One-time 12-month student credit; do not count as recurring credit.",
   "restrictions": "Not for MOOCs or for-profit professional training. Limited activation supply; usage outside included services or credit may require a different subscription.",
   "source_url": "https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p",
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "category": "cloud-hosting"
 }

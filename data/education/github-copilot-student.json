@@ -10,5 +10,6 @@
   "duration": "Eligibility is reevaluated monthly.",
   "restrictions": "Some features and premium limits are plan-dependent. Do not purchase if only paid signup appears; check approval/activation status.",
   "source_url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students",
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "category": "ai-assistants"
 }

@@ -10,5 +10,6 @@
   "duration": "12 months; the balance resets each month, with no rollover; then reverts to Kiro Free.",
   "restrictions": "Only listed participating universities qualify. No credit add-ons on this student tier, and the one-time student verification cannot be repeated.",
   "source_url": "https://kiro.dev/students/",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }
