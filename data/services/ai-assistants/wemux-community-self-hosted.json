@@ -1,0 +1,13 @@
+{
+  "id": "wemux-community-self-hosted",
+  "name": "Wemux Community Edition (Self-Hosted)",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed self-hosted AI agent collaboration platform with control plane, worker daemons, task/workspace orchestration, isolated Git worktrees, BYOK model configuration and self-managed cloud-node runtimes; no software usage quota or expiry stated.",
+  "watch_out": "Free software does not include hosted model gateway, managed cloud-node pool, subscription credits, VPS, PostgreSQL/object storage, or AI model/API usage. Operate and secure your own workers and credentials; commercial hosted services are separate.",
+  "pricing_url": "https://github.com/wemux-ai/wemux",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
