@@ -13529,6 +13529,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "leodeim-vpsmon",
+    "name": "leodeim vpsmon",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted Linux VPS monitoring dashboard with live CPU, RAM, swap, disk, network, Docker container and process metrics; no software quota or expiry.",
+    "watch_out": "Runs on your own Linux VPS; hosting, bandwidth and optional domain/TLS infrastructure are not included. Protect the web dashboard with a bcrypt password and HTTPS; disabling authentication or exposing port 8088 publicly increases risk. Separate vpsmon.cloud multi-server service is not included.",
+    "pricing_url": "https://github.com/leodeim/vpsmon",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "levelrail-self-hosted-paas",
     "name": "LevelRail Open-Source Self-Hosted PaaS",
     "category": "app-hosting",
