@@ -1,0 +1,13 @@
+{
+  "id": "surveyjs-ai-form-response-extractor",
+  "name": "SurveyJS AI Form Response Extractor",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed JavaScript library for extracting structured answers from scanned paper forms, images and PDFs into SurveyJS response schemas using a configured multimodal LLM; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Library is free, not a hosted document-processing allowance. Requires a supported multimodal model (OpenAI, Anthropic or self-hosted Ollama); paid model APIs, compute and storage may cost extra. Extraction confidence is not a guarantee; review sensitive or low-confidence responses. SurveyJS Creator is separately commercially licensed for production.",
+  "pricing_url": "https://github.com/surveyjs/ai-form-response-extractor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "local"
+}
