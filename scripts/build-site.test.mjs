@@ -407,7 +407,9 @@ test('directory exposes unique search/category controls and official sources for
     assert.match(categoriesHtml, /"@type":"BreadcrumbList"/);
     assert.match(categoriesHtml, /aria-current="page">Categories<\/a>/);
     assert.match(categoriesHtml, /id="category-overview-search" type="search"/);
-    assert.equal((categoriesHtml.match(/class="category-overview-card"/g) || []).length, CATEGORIES.length);
+    assert.equal((categoriesHtml.match(/class="category-overview-card"/g) || []).length, CATEGORIES.length + 1);
+    assert.ok(categoriesHtml.includes('data-category-name="education student teacher academic"'));
+    assert.ok(categoriesHtml.includes('href="https://free-tier.eplus.dev/?offer=education#explore"'));
     assert.ok(categoriesHtml.includes('<strong>' + CATEGORIES.length + '</strong> categories'));
     assert.ok(categoriesHtml.includes('<strong>' + compactNumber(mainEntries.length) +
       '</strong> ongoing free tiers &amp; recurring credits'));
