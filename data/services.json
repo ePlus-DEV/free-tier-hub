@@ -15498,6 +15498,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "youneedgreg-notification-system",
+    "name": "Notification System Self-Hosted Email and Push Microservices",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted NestJS notification microservices with a unified REST API for email and push, template management, RabbitMQ queues, retry handling and monitoring; no software license fee or vendor-enforced message quota.",
+    "watch_out": "Runs on your own Docker infrastructure with PostgreSQL, RabbitMQ, Redis and monitoring services. Production email needs a separately configured SMTP provider (such as SendGrid or Mailtrap), and push uses Firebase Cloud Messaging; provider charges or restrictions may apply. Change example credentials and secrets before deployment; no free hosted infrastructure or delivery allowance is included.",
+    "pricing_url": "https://github.com/youneedgreg/notification-system",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "yuzushi-open-survey-builder",
     "name": "Open Survey Builder (yuzushi-dev)",
     "category": "forms-surveys",
