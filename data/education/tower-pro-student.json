@@ -1,0 +1,14 @@
+{
+  "id": "tower-pro-student",
+  "name": "Tower Pro for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Full Tower Pro Git desktop client for macOS and Windows without subscription payment during the qualifying year.",
+  "eligibility": "Students at accredited colleges/universities; verify via GitHub Student Developer Pack or academic email and evidence.",
+  "duration": "Twelve months, renewable on successful re-verification of student status.",
+  "restrictions": "No payment card required. Free access expires when eligibility cannot be renewed; existing paid fees are not refunded.",
+  "source_url": "https://www.git-tower.com/students",
+  "last_checked": "2026-11-10"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "astah-uml-student",
+  "name": "Astah UML Free Student License",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free personal Astah UML license for creating UML models while studying.",
+  "eligibility": "Current college or university students with an academic email address apply for a student license.",
+  "duration": "Academic/student license duration is subject to the issued license and ongoing eligibility.",
+  "restrictions": "Personal noncommercial education use only. Teachers are not eligible for the student license, and shared computers are excluded.",
+  "source_url": "https://astah.net/products/students/",
+  "last_checked": "2026-11-10"
+}

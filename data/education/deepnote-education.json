@@ -1,0 +1,15 @@
+{
+  "id": "deepnote-education",
+  "name": "Deepnote Education Plan",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free education workspace with most Team collaboration features and unlimited Basic compute hours per member (up to 5 GB RAM and 2 vCPU).",
+  "eligibility": "Students, teachers and researchers link a valid school email to their Deepnote account.",
+  "duration": "While approved for the academic Education plan.",
+  "restrictions": "Advanced compute machines, scheduling and Deepnote AI are not included. Higher compute tiers/GPU require a payment method.",
+  "source_url": "https://deepnote.com/docs/education-faqs",
+  "last_checked": "2026-11-10"
+}

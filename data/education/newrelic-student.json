@@ -1,0 +1,14 @@
+{
+  "id": "newrelic-student",
+  "name": "New Relic for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Student access to New Relic application observability tools under the GitHub Education offer (advertised value US$300/month).",
+  "eligibility": "GitHub Student Developer Pack members who activate New Relic's student offer.",
+  "duration": "While eligible as a student, subject to the partner program.",
+  "restrictions": "Advertised value is not a cash credit or guarantee of unlimited ingest. Confirm account usage limits and any paid overages with New Relic.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

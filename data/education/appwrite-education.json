@@ -1,0 +1,14 @@
+{
+  "id": "appwrite-education",
+  "name": "Appwrite Education Cloud",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Appwrite Education plan with two cloud projects and Pro-equivalent resource limits excluding email support.",
+  "eligibility": "Students currently verified through GitHub Student Developer Pack; sign up for the Appwrite Education program.",
+  "duration": "Six months from joining, one enrollment per account; six-month terms began being enforced November 1, 2026.",
+  "restrictions": "Educational/noncommercial use only. Add-ons are excluded. Choose another plan before expiry or the organization may be disabled; resource retention is not indefinite.",
+  "source_url": "https://appwrite.io/education",
+  "last_checked": "2026-11-10"
+}

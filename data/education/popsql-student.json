@@ -1,0 +1,14 @@
+{
+  "id": "popsql-student",
+  "name": "PopSQL Premium for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "PopSQL Premium collaborative SQL editor subscription free for eligible students.",
+  "eligibility": "Students who claim the PopSQL benefit from GitHub Student Developer Pack.",
+  "duration": "While verified as an eligible student, subject to continued partner offering.",
+  "restrictions": "Student-only Premium entitlement; verify product availability, workspace features and renewal with the provider.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

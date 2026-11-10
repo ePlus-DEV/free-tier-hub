@@ -1,0 +1,14 @@
+{
+  "id": "honeybadger-student",
+  "name": "Honeybadger Small for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of Honeybadger Small monitoring for application errors, uptime checks and cron jobs.",
+  "eligibility": "Verified GitHub Student Developer Pack members claiming the Honeybadger student partner offer.",
+  "duration": "One year of the Small account.",
+  "restrictions": "Service quotas are those of the Small plan, not an unlimited account; check billing if continuing after expiration.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

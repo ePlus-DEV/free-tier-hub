@@ -1,0 +1,14 @@
+{
+  "id": "heroku-github-student-credits",
+  "name": "Heroku Platform Credits for GitHub Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "US$312 total in Heroku platform credits, applied at a maximum of US$13 each month for 24 months.",
+  "eligibility": "Verified GitHub Student Developer Pack participants must apply for Heroku's student program.",
+  "duration": "Twenty-four months; the US$13 monthly allowance does not roll over.",
+  "restrictions": "Credits exclude third-party add-ons. Monthly charges above US$13 can be billed to the payment card; credits cannot be consumed all at once.",
+  "source_url": "https://www.heroku.com/github-students/",
+  "last_checked": "2026-11-10"
+}

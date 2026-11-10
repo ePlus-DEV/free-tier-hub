@@ -1,0 +1,14 @@
+{
+  "id": "iconscout-student-icons",
+  "name": "IconScout Student Pack",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Up to 60 premium icons per month from selected IconScout contributors, plus unlimited eligible free assets.",
+  "eligibility": "GitHub Student Developer Pack members sign in to IconScout with the verified GitHub account.",
+  "duration": "One year of student-plan access; premium selection resets monthly.",
+  "restrictions": "Not all premium contributors or asset types are eligible. Asset-license conditions remain applicable.",
+  "source_url": "https://help.iconscout.com/how-can-i-get-a-student-plan",
+  "last_checked": "2026-11-10"
+}

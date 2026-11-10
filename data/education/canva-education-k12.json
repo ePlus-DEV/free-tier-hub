@@ -1,0 +1,16 @@
+{
+  "id": "canva-education-k12",
+  "name": "Canva Education for K–12",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free access to Canva Education classroom design, collaboration and premium teaching resources for eligible K–12 schools.",
+  "eligibility": "Accredited K–12 teachers, school librarians, approved schools and invited K–12 students; teacher or school verifies eligibility.",
+  "duration": "While verified and entitled to the K–12 education program.",
+  "restrictions": "University/college students and higher-education institutions are not eligible for this K–12 program. Students must be invited by an eligible teacher.",
+  "source_url": "https://www.canva.com/help/about-canva-for-education/",
+  "last_checked": "2026-11-10"
+}

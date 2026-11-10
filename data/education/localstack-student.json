@@ -1,0 +1,14 @@
+{
+  "id": "localstack-student",
+  "name": "LocalStack Student Cloud Emulator",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Student license to LocalStack's advanced AWS service emulation in a ready-to-use cloud environment.",
+  "eligibility": "Verified GitHub Student Developer Pack members accessing the LocalStack partner offer.",
+  "duration": "While the qualifying student benefit remains available; no specific public duration in the Pack listing.",
+  "restrictions": "This is an emulator, not AWS cloud service credit. Availability and feature scope can change; use the partner redemption terms.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-10"
+}

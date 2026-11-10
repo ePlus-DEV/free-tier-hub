@@ -1,0 +1,14 @@
+{
+  "id": "sqlgate-student-standard",
+  "name": "SQLGate Standard for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Access to most SQLGate Standard subscription features for SQL database management at no charge.",
+  "eligibility": "Verified GitHub Student Developer Pack members must activate with GitHub.",
+  "duration": "One year of student access.",
+  "restrictions": "Only most Standard features are included; not the full unrestricted subscription. Terms after the first year may differ.",
+  "source_url": "https://www.sqlgate.com/student-pack",
+  "last_checked": "2026-11-10"
+}

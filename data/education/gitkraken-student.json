@@ -1,0 +1,14 @@
+{
+  "id": "gitkraken-student",
+  "name": "GitKraken Student Plan",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Six months free access to GitKraken Desktop, GitLens, CLI and developer tools with Pro-style features.",
+  "eligibility": "Verified GitHub Student Developer Pack members sign up using or connect the qualifying GitHub identity.",
+  "duration": "Six months free; then an optional 75–80% student discount on Pro while eligible.",
+  "restrictions": "One individual seat; AI token limits apply. A payment method may be requested, so check renewal and cancel before paid billing if not continuing.",
+  "source_url": "https://www.gitkraken.com/github-student-developer-pack-bundle",
+  "last_checked": "2026-11-10"
+}
