@@ -1,0 +1,13 @@
+{
+  "id": "mokapi-local-multiprotocol-api-mocking",
+  "name": "Mokapi Local Multi-Protocol API Mocking",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local mock server for OpenAPI and AsyncAPI; supports HTTP, Kafka, MQTT, WebSocket, LDAP and SMTP, with no provider-imposed usage quota or expiration.",
+  "watch_out": "Runs on your own machine or CI infrastructure; no free hosted compute or managed mock endpoints are included. External infrastructure and integrations may incur charges. Configure exposed ports and test data securely.",
+  "pricing_url": "https://github.com/marle3003/mokapi",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-09",
+  "deployment_model": "local"
+}
