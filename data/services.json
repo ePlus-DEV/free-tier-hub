@@ -13997,6 +13997,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "microcks-self-hosted-api-mocking",
+    "name": "Microcks Open Source API Mocking and Contract Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 open-source API mocking and contract testing platform for self-managed deployments; imports OpenAPI, AsyncAPI, gRPC, GraphQL and Postman assets, with no vendor-imposed software quota or expiration.",
+    "watch_out": "Requires your own Docker/Kubernetes infrastructure, storage and operational maintenance; compute, networking and CI runners are not included. Configure authentication and secure mock endpoints before exposing them. This is not a free managed cloud API mocking allowance.",
+    "pricing_url": "https://github.com/microcks/microcks",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "microsoft-startups-azure-credits",
     "name": "Microsoft for Startups Azure Credits",
     "category": "cloud-vps",
