@@ -1,0 +1,13 @@
+{
+  "id": "mockllm-local-llm-api-mock-server",
+  "name": "mockllm Local LLM API Mock Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local mock server for LLM provider APIs, with configurable deterministic responses, simulated errors and SSE streaming; no software usage quota or expiration published.",
+  "watch_out": "Run the Go binary or Docker image on your own computer/CI infrastructure; no hosted LLM inference, model access or compute is included. Generated provider specifications may require updates to match changing APIs; do not expose mock endpoints publicly without access controls.",
+  "pricing_url": "https://github.com/Daviey/mockllm",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "local"
+}
