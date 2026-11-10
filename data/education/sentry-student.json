@@ -10,5 +10,6 @@
   "duration": "One year per term, potentially renewable with renewed eligibility.",
   "restrictions": "On-demand paid usage is disabled in this offer; quotas are capped and renewal needs student verification.",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

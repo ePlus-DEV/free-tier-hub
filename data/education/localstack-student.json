@@ -10,5 +10,6 @@
   "duration": "While the qualifying student benefit remains available; no specific public duration in the Pack listing.",
   "restrictions": "This is an emulator, not AWS cloud service credit. Availability and feature scope can change; use the partner redemption terms.",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "cloud-hosting"
 }
