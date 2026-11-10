@@ -1,0 +1,13 @@
+{
+  "id": "mailrise-smtp-apprise-gateway",
+  "name": "Mailrise SMTP-to-Apprise Gateway",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed self-hosted SMTP gateway that converts incoming email into Apprise notifications; no software-enforced message quota or expiration documented.",
+  "watch_out": "Requires your own server/container, configuration and reachable SMTP endpoint. Third-party notification destinations may charge fees or impose limits; secure SMTP access to prevent abuse.",
+  "pricing_url": "https://github.com/YoRyan/mailrise",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-10",
+  "deployment_model": "self-hosted"
+}
