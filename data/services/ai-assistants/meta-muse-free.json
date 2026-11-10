@@ -1,0 +1,13 @@
+{
+  "id": "meta-muse-free",
+  "name": "Meta Muse Free",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Free personal AI agent for web, iOS and Android with a usage allowance that refreshes after the free limit is reached; Meta does not publish a fixed free token quota on its product overview.",
+  "watch_out": "Availability is region-gated; Meta has announced launches in the US, Japan and Singapore, while other accounts may encounter a waitlist. Higher usage requires a paid subscription. One-time referral token bonuses are separate from the ongoing free allowance and are not included in this listing.",
+  "pricing_url": "https://ai.meta.com/muse/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-10",
+  "deployment_model": "cloud"
+}
