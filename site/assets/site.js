@@ -741,6 +741,23 @@
             program: startupIds.has(row[0]) ? "startup" : "" };
         });
         if (!next.length) throw Error("Empty search index");
+        // Add educational benefits to the SAME Home search and card renderer.
+        // Keep the legacy 10-field service rows unchanged for API consumers.
+        var educationRows = payload.education_rows || [];
+        if (!Array.isArray(educationRows)) throw Error("Invalid education search rows");
+        educationRows.forEach(function (row) {
+          if (!Array.isArray(row) || row.length !== 10 ||
+              row.some(function (value) { return typeof value !== "string"; }) ||
+              !/^edu-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(row[0]) ||
+              row[2] !== "education" || row[3] !== "education" || known[row[0]]) {
+            throw Error("Invalid or duplicate education search entry");
+          }
+          known[row[0]] = true;
+          next.push({ id:row[0], name:row[1], category:"education", plan:"education",
+            hosting:"unclassified", credit:"check", commercial:"check",
+            added:row[7], checked:row[8], search:normalize(row[9]),
+            order:next.length, program:"education" });
+        });
         if (next.filter(function (entry) { return entry.program === "startup" && entry.plan !== "limited-duration"; }).length ||
             payload.startup_program_ids.some(function (id) { return !known[id]; })) {
           throw Error("Invalid startup program catalog references");
@@ -1189,12 +1206,7 @@
     render();
   });
   if (offerSelect) offerSelect.addEventListener("change", function () {
-    // Educational benefits have separate eligibility and credit rules.
-    // Treat this menu option as navigation, never as a free-tier filter value.
-    if (offerSelect.value === "education") {
-      window.location.assign(document.getElementById("education-filter-destination").href);
-      return;
-    }
+    // Education is a first-class offer filter, not a navigation to another UI.
     offerType = offerSelect.value;
     visible = pageSize;
     render();
