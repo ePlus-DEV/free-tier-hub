@@ -1,0 +1,14 @@
+{
+  "id": "kiro-students",
+  "name": "Kiro for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "1,000 Kiro credits each month for 12 months, with IDE, CLI and eligible premium agent features included at no cost.",
+  "eligibility": "Students aged 18+ at participating universities must use their university-linked email and verify through SheerID.",
+  "duration": "12 months; the balance resets each month, with no rollover; then reverts to Kiro Free.",
+  "restrictions": "Only listed participating universities qualify. No credit add-ons on this student tier, and the one-time student verification cannot be repeated.",
+  "source_url": "https://kiro.dev/students/",
+  "last_checked": "2026-11-10"
+}

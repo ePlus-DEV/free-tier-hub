@@ -1,0 +1,14 @@
+{
+  "id": "godaddy-empower-students",
+  "name": "GoDaddy Empower for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One standard .com domain and an AI-powered website builder with commerce features at no charge for three years.",
+  "eligibility": "Students aged 18+ at participating institutions or approved programs must complete eligibility verification.",
+  "duration": "Three years per approved redemption; then renewal is at prevailing retail prices.",
+  "restrictions": "Limited to one domain and website per participant. No card is required to redeem, but optional auto-renew plus a payment method can cause renewal charges.",
+  "source_url": "https://www.godaddy.com/en/godaddy-for-good/empower",
+  "last_checked": "2026-11-10"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "figma-education",
+  "name": "Figma for Education",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Eligible classroom students and educators can access Figma Education features and a monthly AI-credit allocation.",
+  "eligibility": "Current students and classroom educators must verify with a school email; selected structured bootcamps and academies may qualify.",
+  "duration": "Subject to ongoing educational eligibility and program conditions.",
+  "restrictions": "Available only in select regions; some AI and publishing features are limited. Non-teaching school staff, self-study and startups do not qualify.",
+  "source_url": "https://help.figma.com/hc/en-us/articles/360041061214-Figma-for-Education",
+  "last_checked": "2026-11-09"
+}

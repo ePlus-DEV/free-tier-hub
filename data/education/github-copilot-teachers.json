@@ -1,0 +1,14 @@
+{
+  "id": "github-copilot-teachers",
+  "name": "GitHub Copilot for verified teachers",
+  "audiences": [
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free GitHub Copilot Pro access for verified GitHub Education teachers.",
+  "eligibility": "Educators, faculty or researchers must apply through GitHub Education and verify institutional affiliation.",
+  "duration": "While verified and eligible, subject to GitHub's program terms.",
+  "restrictions": "Teacher approval is required. This is a conditional educational benefit, not a general Copilot Free-plan quota.",
+  "source_url": "https://docs.github.com/en/education/about-github-education/github-education-for-teachers/about-github-education-for-teachers",
+  "last_checked": "2026-11-09"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "zed-student-pro",
+  "name": "Zed Student Pro",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Zed Pro free for 12 months with unlimited edit predictions, collaborative editing, and US$10 in hosted AI token credits each month.",
+  "eligibility": "Currently enrolled university students aged 18+; apply with a GitHub account at least 30 days old and a current university email.",
+  "duration": "One year after approval; included monthly AI credits reset each month.",
+  "restrictions": "Some premium models are excluded; verification and plan eligibility required. Unused monthly credits do not accumulate.",
+  "source_url": "https://zed.dev/education",
+  "last_checked": "2026-11-10"
+}

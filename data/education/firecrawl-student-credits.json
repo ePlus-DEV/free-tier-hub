@@ -1,0 +1,14 @@
+{
+  "id": "firecrawl-student-credits",
+  "name": "Firecrawl Student Program",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "One-time grant of 10,000 Firecrawl API credits for web crawling and data extraction.",
+  "eligibility": "Currently enrolled students with a valid academic email address at a college, university or accredited program.",
+  "duration": "One-time promotional credit grant, not a recurring monthly allowance.",
+  "restrictions": "Credits are intended for educational or personal projects; use the official student coupon workflow. Check provider terms for expiration and usage restrictions.",
+  "source_url": "https://www.firecrawl.dev/student-program",
+  "last_checked": "2026-11-10"
+}

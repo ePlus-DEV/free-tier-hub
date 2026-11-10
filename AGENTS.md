@@ -10,6 +10,7 @@ maintainer review, and GitHub Actions remain authoritative.
 
 | Task | Read first |
 | --- | --- |
+| Add or update an education benefit | \`data/education/<id>.json\`, \`scripts/education-programs.mjs\`, \`docs/classifications.md\` |
 | Add or update a service | `CONTRIBUTING.md`, `docs/classifications.md`, `scripts/catalog.mjs` |
 | Validate official provider claims | `docs/source-audit.md`, `docs/cost-safety.md` |
 | Repair catalog build / JSON | `scripts/catalog-source.mjs`, `scripts/catalog.mjs`, `scripts/catalog.test.mjs` |
@@ -39,6 +40,12 @@ to the category taxonomy must update navigation, documentation, generated
 category pages/badges and tests through a reviewed PR. Category regression
 checks must derive the current taxonomy and allow new services or retired
 offers; do not freeze a category's exact service count in CI tests.
+
+## Education benefits (separate eligibility-gated directory)
+
+- Add or modify **one canonical** \`data/education/<id>.json\` per education-only offer. Do not recreate or hand-edit \`data/education-programs.json\`: it is not a source file; the build generates the public \`/education-programs.json\` compatibility feed.
+- Keep verified education offers separate from normal service totals and recurring free-tier counts. Record first-party benefit evidence, eligibility, renewal and billing restrictions. Do not put education-only offers in a general service category merely to improve visibility.
+- Use the existing \`education/\` page and searchable filters; update schema and tests when new fields are introduced.
 
 ## Non-negotiable catalog rules
 

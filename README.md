@@ -56,7 +56,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for instructions.
 
 ## Documentation
 
-- **Special programs:** [Education benefits for students & educators](https://free-tier.eplus.dev/education/) — eligibility-gated offers are separate from free-tier counts.
+- **Special programs:** [Education benefits for students & educators](https://free-tier.eplus.dev/education/) — searchable eligibility-gated offers, each stored in \`data/education/<id>.json\`, separate from free-tier counts.
 - **Using the directory:** [Offer classifications](docs/classifications.md) · [Example free-tier stacks](docs/use-cases.md) · [Cost & data safety](docs/cost-safety.md)
 - **For contributors:** [Contribution guide](CONTRIBUTING.md) · [Catalog data](data/services/) · [Official-source audits](docs/source-audit.md)
 - **For maintainers and AI agents:** [AI agent instructions](AGENTS.md) · [Catalog delivery and guarded auto-merge](docs/catalog-backlog-consumer.md) · [Deployment, SEO & troubleshooting](docs/deployment.md) · [GitHub Actions](https://github.com/ePlus-DEV/free-tier-hub/actions)

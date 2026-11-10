@@ -8,14 +8,20 @@ import { validateEducationPrograms, loadEducationPrograms } from './education-pr
 import { build } from './build-site.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const input = loadEducationPrograms();
-test('education benefits are independently sourced and schema validated', () => {
-  assert.ok(input.length >= 5);
+
+test('education benefits are canonical independent shards, not an editable monolith', () => {
+  const dir = path.join(ROOT, 'data/education');
+  const names = fs.readdirSync(dir).filter(name => name.endsWith('.json')).sort();
+  assert.equal(input.length, names.length);
+  assert.ok(input.length >= 20);
+  assert.ok(!fs.existsSync(path.join(ROOT, 'data/education-programs.json')));
+  assert.deepEqual(names, input.map(item => item.id + '.json').sort());
   assert.deepEqual(validateEducationPrograms(input), input);
-  assert.ok(input.some(x => x.audiences.includes('teacher')));
-  assert.ok(input.some(x => x.benefit_type === 'credit'));
-  assert.ok(input.every(x => x.last_checked && x.source_url.startsWith('https://')));
+  assert.ok(input.some(item => item.audiences.includes('teacher')));
+  assert.ok(input.some(item => item.benefit_type === 'credit'));
+  assert.ok(input.every(item => item.last_checked && item.source_url.startsWith('https://')));
 });
-test('education source validation rejects invalid fields and duplicates', () => {
+test('education schema rejects duplicates and unsafe or invalid sources', () => {
   const item = structuredClone(input[0]);
   assert.throws(() => validateEducationPrograms([item, item]), /duplicate/);
   assert.throws(() => validateEducationPrograms([{...item, source_url:'http://example.com'}]), /HTTPS/);
@@ -23,7 +29,18 @@ test('education source validation rejects invalid fields and duplicates', () => 
   assert.throws(() => validateEducationPrograms([{...item, last_checked:'2030-01-01'}]), /review date/);
   assert.throws(() => validateEducationPrograms([{...item, benefit_type:'recurring'}]), /type/);
 });
-test('education landing has independent counts, shareable audience filters and canonical SEO', () => {
+test('education loader rejects incorrectly named shards to prevent silent duplicates', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fth-education-shards-'));
+  try {
+    const dir = path.join(temp, 'data/education');
+    fs.mkdirSync(dir, {recursive:true});
+    fs.writeFileSync(path.join(dir, 'wrong-name.json'), JSON.stringify(input[0]));
+    assert.throws(() => loadEducationPrograms(temp), /file name must match ID/);
+    fs.renameSync(path.join(dir, 'wrong-name.json'), path.join(dir, input[0].id + '.json'));
+    assert.deepEqual(loadEducationPrograms(temp), [input[0]]);
+  } finally { fs.rmSync(temp, {recursive:true, force:true}); }
+});
+test('education page is a compact searchable category-like directory with canonical SEO', () => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fth-education-'));
   try {
     const result = build(temp);
@@ -32,35 +49,31 @@ test('education landing has independent counts, shareable audience filters and c
     const stats = JSON.parse(read('catalog-stats.json'));
     const catalog = JSON.parse(read('catalog.json'));
     const subset = JSON.parse(read('education-programs.json'));
-    assert.equal(subset.length, input.length);
+    assert.deepEqual(subset, input);
     assert.equal(stats.total_services, catalog.length);
     assert.equal(result.service_count, catalog.length);
     assert.ok(!catalog.some(x => x.id === 'azure-for-students'));
-    assert.ok(html.includes('id="education-audience"') && html.includes('id="education-benefit"'));
-    assert.match(html, /data-audiences="student teacher"/);
+    for (const id of ['education-search','education-audience','education-benefit','education-sort','education-clear','education-results','education-empty']) {
+      assert.ok(html.includes('id="' + id + '"'), 'Missing education control ' + id);
+    }
+    assert.equal((html.match(/class="education-card" data-education-id="/g) || []).length, input.length);
+    assert.match(html, /class="education-disclosure"><summary>Eligibility &amp; important details/);
     assert.match(html, /data-benefit-type="credit"/);
-    // Shared service-card headers require 3 direct children, matching CSS grid columns.
-    // A previous two-child header placed the provider title inside the 36px icon column.
-    assert.equal((html.match(/class="service-card education-card"/g) || []).length, input.length);
-    assert.match(html, /class="card-top"><span class="service-icon" aria-hidden="true">/);
-    assert.match(html, /<\/span><div class="card-identity"><h3>/);
-    assert.match(html, /<\/span><\/div><span class="badge education-badge">/);
-    assert.doesNotMatch(html, /class="education-identity"/);
-    const css = read('assets/site.css');
-    assert.match(css, /#education-service-grid\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
-    assert.match(css, /@media\(max-width:820px\)\{#education-service-grid\{grid-template-columns:minmax\(0,1fr\)\}\}/);
-    assert.match(css, /\.education-card \.card-top>\.card-identity\{grid-column:2;grid-row:1/);
-    assert.match(css, /\.education-card \.card-top>\.badge\{grid-column:3;grid-row:1/);
+    assert.match(html, /data-audiences="student teacher"/);
     assert.match(html, /<link rel="canonical" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
     assert.ok(read('sitemap.xml').includes('https://free-tier.eplus.dev/education/'));
     assert.ok(read('llms.txt').includes('Education benefits'));
-    const filter = read('assets/education.js');
-    assert.ok(filter.includes('new URLSearchParams(location.search)'));
-    assert.ok(filter.includes("card.hidden = !(matchAudience && matchBenefit)"));
+    const css = read('assets/site.css');
+    assert.match(css, /\.education-grid\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+    assert.match(css, /@media\(max-width:820px\)\{\.education-grid\{grid-template-columns:minmax\(0,1fr\)\}\}/);
+    const script = read('assets/education.js');
+    assert.match(script, /new URLSearchParams\(location\.search\)/);
+    assert.match(script, /search\.addEventListener\('input', update\)/);
+    assert.match(script, /matchAudience && matchBenefit && matchSearch/);
+    assert.match(script, /history\.replaceState/);
   } finally { fs.rmSync(temp, {recursive:true, force:true}); }
 });
-
-test('Education Benefits is reachable from Home chips and the offer filter without changing catalog totals', () => {
+test('Education navigation remains available without altering ordinary service totals', () => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fth-education-navigation-'));
   try {
     const result = build(temp);
@@ -72,21 +85,8 @@ test('Education Benefits is reachable from Home chips and the offer filter witho
     assert.equal(programs.length, input.length);
     assert.match(home, /class="category-chip education-program-chip" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
     assert.match(home, /<option value="education">Education benefits \(/);
-    assert.match(home, /href="https:\/\/free-tier\.eplus\.dev\/education\/" id="education-filter-destination"/);
-    assert.match(home, /class="education-filter-link"/);
-    // Only the catalog total and visible count belong in the compact results summary.
-    const heading = home.match(/<div class="directory-heading">([\s\S]*?)<div class="service-grid"/);
-    assert.ok(heading, 'Home renders a directory heading');
-    assert.match(heading[1], /<span class="result-label">All services<\/span><strong class="result-total">/);
-    assert.match(heading[1], /<span class="result-shown">Showing /);
-    assert.doesNotMatch(heading[1], /<a\b|limited offers|startup programs|education benefits/i,
-      'Do not clutter the result count with category/program links');
-    const runtime = read('assets/site.js');
-    assert.match(runtime, /offerSelect\.value === "education"/);
-    assert.match(runtime, /window\.location\.assign\(document\.getElementById\("education-filter-destination"\)\.href\)/);
-    assert.ok(runtime.indexOf('window.location.assign(document.getElementById("education-filter-destination").href)') <
-      runtime.indexOf('offerType = offerSelect.value;'), 'navigate before filtering general free tiers');
-    assert.match(read('assets/site.css'), /\.education-program-chip/);
-    assert.match(read('education/index.html'), /id="education-audience"/);
-  } finally { fs.rmSync(temp, { recursive: true, force: true }); }
+    assert.match(home, /id="education-filter-destination"/);
+    assert.match(read('education/index.html'), /class="education-hero"/);
+    assert.doesNotMatch(read('education/index.html'), /data-pricing-url/);
+  } finally { fs.rmSync(temp, {recursive:true, force:true}); }
 });

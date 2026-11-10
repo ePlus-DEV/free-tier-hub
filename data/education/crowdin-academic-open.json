@@ -1,0 +1,16 @@
+{
+  "id": "crowdin-academic-open",
+  "name": "Crowdin Academic Open License",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Crowdin Open Academic License for public educational localization projects, including unlimited project participants.",
+  "eligibility": "Academic project at an educational institution; apply with an educational email matching the institution's domain.",
+  "duration": "Subject to the academic license approval and terms; no fixed public term stated.",
+  "restrictions": "Free Open Academic licenses require publicly accessible projects. Private Academic licenses are discounted 50%, not free; educational use only.",
+  "source_url": "https://crowdin.com/product/for-academic",
+  "last_checked": "2026-11-10"
+}
