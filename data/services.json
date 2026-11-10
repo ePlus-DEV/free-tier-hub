@@ -13945,6 +13945,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "manymail-sandbox-self-hosted",
+    "name": "ManyMail Sandbox SMTP",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted SMTP testing server with web inbox and REST API; no software usage quota or expiry published.",
+    "watch_out": "Testing sandbox, not a production outbound email provider. Self-hosting resources are not included; change default root credentials, configure TLS certificates, and restrict exposed SMTP/web ports. In-memory message retention depends on configuration.",
+    "pricing_url": "https://github.com/manymail/manymail-sandbox",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mapsurvey-self-hosted",
     "name": "Mapsurvey Self-Hosted",
     "category": "forms-surveys",
