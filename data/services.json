@@ -13100,6 +13100,19 @@
     "program": "startup"
   },
   {
+    "id": "grafana-smtprelay-self-hosted",
+    "name": "Grafana smtprelay Self-Hosted SMTP Proxy",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed SMTP relay/proxy software for self-hosted mail forwarding, with Prometheus metrics, structured logs and OpenTelemetry tracing; no software usage quota or expiry stated.",
+    "watch_out": "Grafana states this internally used project is not generally supported and may introduce breaking changes without notice. Requires a separately operated SMTP upstream, server, networking and secure credentials; email delivery or third-party SMTP fees are not included.",
+    "pricing_url": "https://github.com/grafana/smtprelay",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-10",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "greenmail-open-source-email-testing",
     "name": "GreenMail Open-Source Email Testing",
     "category": "email-notifications",
