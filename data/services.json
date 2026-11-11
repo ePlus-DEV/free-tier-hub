@@ -13360,6 +13360,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hookwitness-self-hosted",
+    "name": "Hookwitness Self-Hosted",
+    "category": "webhooks-events",
+    "plan": "ongoing",
+    "free_limit": "Free Apache-2.0 self-hosted webhook inspection and testing software: request capture, signature and schema checks, scripted responses, replay, reports, REST API and MCP; no published software quota or expiration.",
+    "watch_out": "Version 0.2 may change APIs before 1.0. You supply hosting, persistent storage, HTTPS and backups; configure admin authentication before exposing it publicly. External webhook senders or infrastructure may incur charges.",
+    "pricing_url": "https://github.com/petroladkin/hookwitness",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "hora-self-hosted-uptime-monitor",
     "name": "Hora Self-Hosted Uptime Monitor",
     "category": "observability",
