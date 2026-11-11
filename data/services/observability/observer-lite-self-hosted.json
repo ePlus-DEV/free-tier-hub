@@ -1,0 +1,13 @@
+{
+  "id": "observer-lite-self-hosted",
+  "name": "Observer Lite Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted uptime monitoring with HTTP, ICMP, SSL and heartbeat checks, email/Telegram alerts and dashboard; no vendor-enforced software usage quota or expiry documented.",
+  "watch_out": "Self-hosted software only: provide Docker host, persistent SQLite storage, HTTPS, backups and SMTP/Telegram services. Upstream advertises monitoring 500+ endpoints but this is not a guaranteed free hosting quota. Change default admin/admin credentials on first login and set a strong SECRET_KEY before exposing the service.",
+  "pricing_url": "https://github.com/cagatayuresin/observer-lite",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
