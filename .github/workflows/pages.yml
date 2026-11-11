@@ -122,7 +122,7 @@ jobs:
         run: node scripts/prepare-preview.mjs --site dist --base-url https://free-tier.eplus.dev/
       - name: Upload downloadable PR preview
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: free-tier-hub-pr-preview
           path: dist/
@@ -156,10 +156,10 @@ jobs:
           git push origin HEAD:refs/heads/main
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -182,7 +182,7 @@ jobs:
       # fails; never treat a failed deployment as a successful job.
       - name: Deploy GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         continue-on-error: true
       - name: Wait before retrying a failed Pages deployment
         if: steps.deployment.outcome == 'failure'
@@ -190,7 +190,7 @@ jobs:
       - name: Retry GitHub Pages deployment once
         if: steps.deployment.outcome == 'failure'
         id: retry_deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
       - name: Checkout canonical catalog for live verification
         uses: actions/checkout@v7
         with:
