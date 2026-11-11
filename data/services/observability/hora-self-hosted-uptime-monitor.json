@@ -1,0 +1,13 @@
+{
+  "id": "hora-self-hosted-uptime-monitor",
+  "name": "Hora Self-Hosted Uptime Monitor",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed self-hosted uptime monitoring with HTTP/service checks, SQLite history, status pages, alerts and peer confirmations; no software usage quota or expiry stated.",
+  "watch_out": "Requires user-provided host, storage and network; Telegram/SMTP or other notification providers may incur costs. Configure monitoring targets and secrets securely; no free hosted monitoring infrastructure included.",
+  "pricing_url": "https://github.com/uplg/hora",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
