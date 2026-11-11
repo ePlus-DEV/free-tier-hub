@@ -1,0 +1,13 @@
+{
+  "id": "authport-self-hosted",
+  "name": "AuthPort Self-Hosted Authentication Gateway",
+  "category": "auth-security",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted authentication gateway software with no published software usage quota or expiry; host your own Bun runtime and PostgreSQL.",
+  "watch_out": "Production requires HTTPS, PostgreSQL, and configured Cloudflare Email Service and Twilio credentials for transactional email/SMS; provider messaging and infrastructure may incur charges. Redis recommended for multiple instances. No free hosted infrastructure included.",
+  "pricing_url": "https://github.com/arpan404/authport",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
