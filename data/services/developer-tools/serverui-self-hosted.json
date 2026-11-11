@@ -1,0 +1,13 @@
+{
+  "id": "serverui-self-hosted",
+  "name": "ServerUI Self-Hosted",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free Apache-2.0 self-hosted web server-management panel with SSH terminal, SFTP file manager, multi-server monitoring and encrypted stored credentials; no software quota or expiry published.",
+  "watch_out": "Requires your own servers, SSH access and web deployment infrastructure (Docker, Go backend and PostgreSQL); no free VPS or hosted compute included. Web terminal and stored SSH credentials are security-sensitive; restrict access and review deployment hardening. Desktop edition is separate.",
+  "pricing_url": "https://github.com/rakhechashubham/serverui",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
