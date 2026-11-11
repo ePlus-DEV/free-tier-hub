@@ -15276,6 +15276,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "signalpost-self-hosted-status-page",
+    "name": "Signalpost Self-Hosted Status Page",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted status page and uptime monitor with HTTP, TCP, ping, DNS and heartbeat checks, incident and maintenance timelines, alerts, and SQLite storage; no vendor software quota or expiry published.",
+    "watch_out": "Requires your own Docker host, persistent storage, backups and HTTPS; email, ntfy and other outbound alert services may have separate costs. Individual check results default to 14-day retention, with daily summaries kept longer. Set a strong admin password and protect the admin interface; no hosted monitoring infrastructure is included.",
+    "pricing_url": "https://github.com/VikkarDev/Signalpost",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "simulai-self-hosted",
     "name": "simulai Conversational Survey Builder",
     "category": "forms-surveys",
