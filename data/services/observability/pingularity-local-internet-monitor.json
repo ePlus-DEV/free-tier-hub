@@ -1,0 +1,13 @@
+{
+  "id": "pingularity-local-internet-monitor",
+  "name": "Pingularity Local Internet Monitor",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed local internet monitoring software with outage history, latency and DNS checks, scheduled speed tests, webhook alerts, Prometheus metrics, and a local dashboard; no software usage quota or expiry published.",
+  "watch_out": "Runs on your own Linux, macOS, Windows or Docker host; no free VPS, bandwidth, storage or external notification service is included. Speed tests consume internet data; Docker network and NET_RAW permissions need care, and optional Ookla speed tests use external servers.",
+  "pricing_url": "https://github.com/pingular/pingularity",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "local"
+}
