@@ -15536,6 +15536,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "uptop-self-hosted",
+    "name": "uptop Self-Hosted Uptime Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted uptime monitor with HTTP, ping, TCP/port, DNS and push checks, SSH terminal dashboard, status pages, and alert integrations; no software usage quota or expiration stated.",
+    "watch_out": "Bring your own server, storage, networking and notification providers; no free hosted compute or email delivery included. Requires SSH public-key admin setup; Docker ICMP checks need ping_group_range configuration. PostgreSQL recommended for production clustering.",
+    "pricing_url": "https://github.com/lerkolabs/uptop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "vaex-local-dataframe",
     "name": "Vaex Open-Source Out-of-Core DataFrames (Local)",
     "category": "analytics",
