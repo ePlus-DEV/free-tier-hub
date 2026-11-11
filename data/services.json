@@ -14677,6 +14677,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "pantau-agentless-server-monitor",
+    "name": "Pantau Agentless Server Monitor",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted Go application for agentless SSH monitoring of Linux and Windows hosts, resource metrics, drift checks, remote terminals and file operations; no vendor-enforced software quota or expiration.",
+    "watch_out": "Requires your own machine and SSH access to monitored hosts; hosting, storage, backups and any external notification services are not included. Privileged SSH and browser terminal access require careful access control, HTTPS, key management and production security review. Historical metrics retention defaults to 7 days.",
+    "pricing_url": "https://github.com/herliansyah/pantau",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "perch-ai-starter",
     "name": "Perch AI Starter",
     "category": "ai-assistants",
