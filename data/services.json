@@ -14781,6 +14781,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "preloop-self-hosted",
+    "name": "Preloop (Self-Hosted OSS)",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted AI agent control plane with MCP firewall, model gateway, policy rules, human approvals, agent flows, private runners and runtime observability; no published software usage quota or expiry.",
+    "watch_out": "Self-hosted OSS does not include free compute, model API calls or managed cloud runners. Team RBAC, account-level role controls and some enterprise features require Cloud/Enterprise; self-hosted operators must secure credentials and infrastructure.",
+    "pricing_url": "https://github.com/preloop/preloop",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "privacyidea-community-self-hosted",
     "name": "privacyIDEA Community Self-Hosted Multi-Factor Authentication",
     "category": "auth-security",
