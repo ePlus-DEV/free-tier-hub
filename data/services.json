@@ -14612,6 +14612,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "playkeeper-self-hosted",
+    "name": "Playkeeper Self-Hosted Game Server Manager",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted dashboard for managing Minecraft Java servers, mods, players, backups and updates on your own Linux VPS; no software quota or expiration published.",
+    "watch_out": "Requires an existing Linux VPS, game server compute, disk and bandwidth; these are not free. Early v0.4.2 release; some integrations and ARM environments are not yet tested on real infrastructure. AGPL-3.0 obligations apply to modified network deployments; review privileged installer before running.",
+    "pricing_url": "https://github.com/CIYAhq/playkeeper",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "playwright-open-source-local",
     "name": "Playwright Open-Source Browser Testing",
     "category": "testing-qa",
