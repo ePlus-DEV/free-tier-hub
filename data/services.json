@@ -12525,6 +12525,19 @@
     "program": "startup"
   },
   {
+    "id": "cloudmock-local-aws-emulator",
+    "name": "CloudMock Local AWS Emulator",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local AWS API emulator with S3, DynamoDB, SQS, Lambda and other service mocks, Docker/CLI deployment, test mode and observability dashboard; no software quota or expiry published.",
+    "watch_out": "Emulates AWS APIs locally; does not provide free AWS cloud resources or guarantee complete service fidelity. Users supply their own CPU, memory, storage and CI infrastructure; validate compatibility for each integration.",
+    "pricing_url": "https://github.com/Viridian-Inc/cloudmock",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "local"
+  },
+  {
     "id": "cloudmoo-self-hosted",
     "name": "CloudMoo Self-Hosted",
     "category": "observability",
