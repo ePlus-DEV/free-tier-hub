@@ -1,0 +1,13 @@
+{
+  "id": "easymonitor-self-hosted",
+  "name": "EasyMonitor Self-Hosted Monitoring",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted website and API monitoring with HTTP, ICMP and TCP checks, SSL expiry alerts, multi-region probes, status pages and incident notifications; no vendor software quota or expiry stated.",
+  "watch_out": "Requires self-operated Docker infrastructure with PostgreSQL/TimescaleDB, Redis and sufficient RAM (about 2 GB minimum). Remote probes, SMTP, storage, domains and optional third-party alert services may incur costs; no free managed hosting is included.",
+  "pricing_url": "https://github.com/easymonitordev/easymonitor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
