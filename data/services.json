@@ -15575,6 +15575,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "trusca-self-hosted",
+    "name": "TRUSCA Self-Hosted SCA Portal",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted software for SBOM, CVE and license compliance management; no per-seat software license fee or published usage expiry. Deploy with Docker Compose or Helm.",
+    "watch_out": "Self-hosted software only; provide your own compute, PostgreSQL, Redis, storage, HTTPS, backups and security maintenance. Vulnerability database updates and third-party scanner dependencies require network/resources; no free managed hosting is included.",
+    "pricing_url": "https://github.com/trustedoss/trusca",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "twitterapi-io-signup-credits",
     "name": "TwitterAPI.io New-Account Credits",
     "category": "developer-tools",
