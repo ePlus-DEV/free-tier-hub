@@ -1,0 +1,13 @@
+{
+  "id": "retrogemini-self-hosted",
+  "name": "RetroGemini Self-Hosted",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Unrestricted self-hosted Scrum retrospective boards, team health checks and collaboration; no software usage quota or expiry published.",
+  "watch_out": "Bring your own server and persistent SQLite/PostgreSQL storage; configure HTTPS and stable session secret for production. Optional SMTP, Jira and AI integrations may cost extra. Render demo uses ephemeral storage and is not a durable free hosted plan.",
+  "pricing_url": "https://github.com/republique-et-canton-de-geneve/RetroGemini",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
