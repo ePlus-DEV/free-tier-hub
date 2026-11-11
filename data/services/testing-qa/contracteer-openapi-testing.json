@@ -1,0 +1,13 @@
+{
+  "id": "contracteer-openapi-testing",
+  "name": "Contracteer OpenAPI Contract Testing",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed local CLI and JVM libraries for OpenAPI contract verification, linting and mock servers; no software usage quota or expiration published.",
+  "watch_out": "Runs on your own workstation, CI or server; infrastructure and CI usage are not included. JVM integrations require Java 21+; Spring integration requires Spring Boot 3.x. Not a free hosted API testing service.",
+  "pricing_url": "https://github.com/contracteer-dev/contracteer",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "local"
+}
