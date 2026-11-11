@@ -12773,6 +12773,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "embrapa-openapi-tests-local",
+    "name": "Embrapa OpenApiTests Local Contract Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed .NET CLI that generates HTTP contract tests from OpenAPI specifications, executes tests against user-provided REST APIs and produces HTML reports; no software subscription, usage quota or expiry stated.",
+    "watch_out": "Requires a local .NET runtime and reachable API/test environment; does not include free hosted test infrastructure, API hosting or CI minutes. Tests can send real HTTP requests and modify data; use safe test environments. Upstream README contains formatting errors, so validate scenarios before production CI use.",
+    "pricing_url": "https://github.com/embrapa/openapitests",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "local"
+  },
+  {
     "id": "emitd-free-email-api",
     "name": "emitd Free Email API",
     "category": "email-notifications",
