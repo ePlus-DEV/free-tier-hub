@@ -12838,6 +12838,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "eonvelope-self-hosted",
+    "name": "Eonvelope Self-Hosted Email Archive",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0-or-later self-hosted email archiving software; no software seat, storage, or time quota stated. Supports IMAP, POP, Exchange and JMAP fetching, search, import and export.",
+    "watch_out": "Bring your own server, persistent storage, and mail accounts; infrastructure and email provider charges are not included. AGPL-3.0-or-later obligations apply to modified network deployments. Primary development is on GitLab; GitHub is a read-only mirror. Assess retention, backup, privacy and production reliability independently.",
+    "pricing_url": "https://github.com/Dacid99/eonvelope",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "faiss-local-vector-search",
     "name": "Faiss Open-Source Local Vector Similarity Search",
     "category": "search",
