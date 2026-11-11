@@ -12288,6 +12288,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "argentum-local-ai-coding-agent",
+    "name": "Argentum Local AI Coding Agent",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local-first Rust AI coding agent with desktop and CLI modes; no software subscription, usage quota or expiration published. Supports local models and bring-your-own model providers.",
+    "watch_out": "Windows x64 v0.1.0-rc.1 is an unsigned pre-release; production maturity is unproven. Model API calls, local hardware and remote inference are not included; paid provider billing may apply. Review agent command/file permissions and retain backups. License requires attribution to Argentum by AG064.",
+    "pricing_url": "https://github.com/AG064/argentum",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-11",
+    "deployment_model": "local"
+  },
+  {
     "id": "authport-self-hosted",
     "name": "AuthPort Self-Hosted Authentication Gateway",
     "category": "auth-security",
