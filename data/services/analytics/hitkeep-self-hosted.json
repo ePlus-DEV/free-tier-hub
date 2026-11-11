@@ -1,0 +1,13 @@
+{
+  "id": "hitkeep-self-hosted",
+  "name": "HitKeep Self-Hosted",
+  "category": "analytics",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted web analytics software with cookieless traffic tracking, events, goals, funnels, ecommerce reports, Search Console integration, AI visibility, custom tracking domains, and team SSO; no software seat or usage quota published.",
+  "watch_out": "Requires your own server, storage, backups, HTTPS and operational maintenance; optional external integrations or AI services may incur costs. The separately managed HitKeep Cloud plan is not included. Self-hosted installation uses a local Go binary or Docker Compose with embedded DuckDB and NSQ.",
+  "pricing_url": "https://github.com/HitKeep/hitkeep",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-11",
+  "deployment_model": "self-hosted"
+}
