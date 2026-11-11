@@ -66,7 +66,7 @@ jobs:
             case "$COMMENT_ASSOCIATION" in OWNER|MEMBER|COLLABORATOR) ;; *) exit 1 ;; esac
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
