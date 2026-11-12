@@ -14611,6 +14611,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "notifico-self-hosted",
+    "name": "Notifico Self-Hosted Notification Server",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0 self-hosted notification server with pipelines, templates, and API delivery through SMTP email, SMS and messaging transport integrations; no software subscription or vendor-enforced message quota.",
+    "watch_out": "Bring your own server, database and transport credentials; SMTP/SMS/messaging providers may charge separately or impose quotas. No free hosted sending allowance is included. Review deployment security and maintenance before production.",
+    "pricing_url": "https://github.com/notificohq/notifico",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "notifkit",
     "name": "notifkit",
     "category": "email-notifications",
