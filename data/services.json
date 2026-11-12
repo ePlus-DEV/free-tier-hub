@@ -12301,6 +12301,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "atkinsonbg-simple-mock-server",
+    "name": "Simple Mock Server (atkinsonbg)",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed Docker-based HTTP API mock server with no software-enforced usage quota or expiry. Load JSON mock definitions from a mounted /api/Mocks directory; match request URL, method, body and headers and return configured responses.",
+    "watch_out": "Self-hosted software only: Docker host, network and storage are not provided for free. The project is intentionally minimal: no recording, replay, sharing or management UI. README demonstrates Docker image atkinsonbg/mock-server:0.1 on port 5000; verify image availability and maintenance before production use. Avoid publicly exposing test routes or sensitive mock payloads.",
+    "pricing_url": "https://github.com/atkinsonbg/simple-mock-server",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "authport-self-hosted",
     "name": "AuthPort Self-Hosted Authentication Gateway",
     "category": "auth-security",
