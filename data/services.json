@@ -15497,6 +15497,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "submify-self-hosted-form-backend",
+    "name": "Submify Self-Hosted Form Backend",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0-licensed self-hosted form submission backend with Docker Compose, PostgreSQL dashboard, project submission inbox, XLSX/PDF exports, client portals and optional Telegram notifications. No software subscription or time-limited license; usage depends on your own server and configured rate limits.",
+    "watch_out": "Requires self-managed Docker hosting, PostgreSQL and security/backup maintenance. SMTP email, external S3-compatible storage and hosting may cost extra; not a free hosted form API. AGPL-3.0 obligations apply, including source disclosure for modified network-served versions. Form UI must be built separately; no drag-and-drop form builder.",
+    "pricing_url": "https://github.com/Raktim94/Submify",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "surveyjs-ai-form-response-extractor",
     "name": "SurveyJS AI Form Response Extractor",
     "category": "forms-surveys",
