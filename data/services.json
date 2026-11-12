@@ -15275,6 +15275,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "sen-contact-form",
+    "name": "SEN Contact Form Self-Hosted Backend",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted PHP 8.2/ Slim 4 contact form backend with JSONL submission storage, admin-token-protected submissions endpoint, honeypot, time gate, per-IP rate limiting and optional webhook forwarding; no software license quota or expiration.",
+    "watch_out": "Requires your own PHP hosting or Docker, storage, security updates and backups; hosting and downstream webhook providers are not free. Built-in anti-spam controls include 5 submissions per IP per hour and a 3-second minimum form completion time; these are configurable software protections, not a hosted free-tier allowance. Webhook forwarding is fire-and-forget without retry. No managed hosted plan or SMTP sending included.",
+    "pricing_url": "https://github.com/sen-ltd/contact-form",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "sendpository-free",
     "name": "Sendpository Free",
     "category": "email-notifications",
