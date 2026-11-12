@@ -1,0 +1,13 @@
+{
+  "id": "bulwark-webmail-self-hosted",
+  "name": "Bulwark Webmail (self-hosted)",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-only self-hosted webmail client for Stalwart Mail Server: JMAP mail, calendar, contacts, files, inbox search, templates and scheduled sending; no vendor-imposed client seat or usage quota documented.",
+  "watch_out": "Requires a separately deployed compatible Stalwart Mail Server (0.16.6+ per upstream), server resources, domain/TLS and mail delivery configuration; does not include free email hosting or outbound mail capacity. AGPL-3.0 obligations apply, including special provisional app-store distribution permission; review upstream LICENSE. Verify deployment/security before production.",
+  "pricing_url": "https://github.com/bulwarkmail/webmail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
