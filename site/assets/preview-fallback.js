@@ -1,4 +1,4 @@
-/* Expired PR preview recovery: serve the matching production route, never Home by default. */
+/* Expired PR preview recovery: immediately open the same production route. */
 (function () {
   "use strict";
   var current = new URL(window.location.href);
@@ -17,25 +17,19 @@
   var fallback = document.getElementById("generic-not-found");
   var panel = document.getElementById("preview-expired");
   var number = document.getElementById("preview-pr-number");
-  var count = document.getElementById("preview-countdown");
   var destination = document.getElementById("preview-target-path");
   var link = document.getElementById("preview-go-now");
-  if (!fallback || !panel || !number || !count || !destination || !link) return;
+  // Keep the destination link as a fallback if browser navigation is blocked.
+  // Missing optional page markup must never prevent the redirect.
+  if (fallback && panel && number && destination && link) {
+    number.textContent = "#" + match[1];
+    destination.textContent = target.pathname + target.search + target.hash;
+    link.href = target.href;
+    fallback.hidden = true;
+    panel.hidden = false;
+  }
 
-  number.textContent = "#" + match[1];
-  destination.textContent = target.pathname + target.search + target.hash;
-  link.href = target.href;
-  fallback.hidden = true;
-  panel.hidden = false;
-
-  var remaining = 5;
-  count.textContent = String(remaining);
-  var timer = window.setInterval(function () {
-    remaining -= 1;
-    count.textContent = String(Math.max(0, remaining));
-    if (remaining <= 0) {
-      window.clearInterval(timer);
-      window.location.replace(target.href);
-    }
-  }, 1000);
+  // GitHub Pages serves 404.html for deleted previews. Navigate immediately,
+  // without a countdown or keeping the expired URL in browser history.
+  window.location.replace(target.href);
 })();
