@@ -1,0 +1,13 @@
+{
+  "id": "laya-ai-notification-command-center",
+  "name": "Laya AI Notification Command Center",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed local-first desktop notification aggregator and AI action-staging app. Free software for Windows, macOS and Linux, with local n8n workflows, event cards and integrations for Gmail, Slack, GitHub, Jira, Outlook and calendars; local Ollama or LM Studio inference can be used without a hosted Laya subscription or vendor-imposed software usage quota.",
+  "watch_out": "No free hosted AI inference or provider API credits are included. Cloud model usage and third-party integrations can incur separate costs or quotas; local LLMs require your own CPU/GPU and disk. User must configure service connections and protect OAuth/API credentials; external actions are staged for approval. Software is a local desktop app, not a free hosted email delivery or VPS service.",
+  "pricing_url": "https://github.com/aayushch/laya",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "local"
+}
