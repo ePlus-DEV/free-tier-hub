@@ -1,0 +1,13 @@
+{
+  "id": "boxes-dev",
+  "name": "Boxes.dev Cloud Agent Devboxes (Trial)",
+  "category": "developer-tools",
+  "plan": "limited-duration",
+  "free_limit": "One-time free trial of cloud development boxes; homepage currently advertises 20 compute box-hours, up to 3 awake devboxes plus a template box and 2 projects. Sleeping devboxes do not consume box-hours.",
+  "watch_out": "This is a finite trial, not a recurring free cloud allowance. Official help/plans-and-box-hours still lists 10 box-hours and 2 awake devboxes, conflicting with the homepage; confirm the allowance in account Billing. Some teams must add a payment method before starting. After trial hours expire, paid access is required. Codex/Claude subscriptions or API usage are separate; compute beyond included trial is not free.",
+  "pricing_url": "https://boxes.dev/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-12",
+  "deployment_model": "cloud"
+}
