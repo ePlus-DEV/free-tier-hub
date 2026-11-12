@@ -1,0 +1,13 @@
+{
+  "id": "billionmail-self-hosted-email-marketing",
+  "name": "BillionMail Self-Hosted Email Marketing and Mail Server",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0-licensed self-hosted mail server and email marketing platform with newsletters, campaign templates, analytics, list management and Docker deployment; no vendor-imposed software sending quota or expiry stated.",
+  "watch_out": "Requires your own server, domain, DNS records, IP reputation, storage and outbound SMTP deliverability. Provider claims of unlimited sending refer to software restrictions, not guaranteed delivery or free external SMTP infrastructure; VPS, relay services and IP reputation management may cost money. Observe anti-spam laws and AGPL-3.0 network source obligations.",
+  "pricing_url": "https://github.com/Billionmail/BillionMail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
