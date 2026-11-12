@@ -1,0 +1,13 @@
+{
+  "id": "reqpad",
+  "name": "ReqPad Mobile API Client",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free forever local mobile API client for REST/HTTP and WebSocket requests, Basic/Bearer/API-key/JWT authentication, collections, environments, request history, cURL import/export and 5 optional AI actions per month. No account or card required for core local features.",
+  "watch_out": "Free edition excludes GraphQL, gRPC, MQTT, Socket.IO, MCP, pre-request/test scripts, Collection Runner, advanced authentication and most imports; those require Pro. Pro offers a separate 7-day trial and paid subscriptions. Third-party APIs may charge independently. Optional AI actions send limited data to external inference; secrets are filtered locally. Proprietary mobile app, not open-source or hosted API capacity. Commercial-use permissions are not explicitly stated in the published terms; review before claiming permission.",
+  "pricing_url": "https://reqpad.app/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-12",
+  "deployment_model": "local"
+}
