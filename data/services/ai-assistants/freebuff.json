@@ -1,0 +1,13 @@
+{
+  "id": "freebuff",
+  "name": "Freebuff AI Coding Agent",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Ad-supported Free coding agent for desktop, CLI and web, with unlimited messages per hour-long session and daily hours that reset at local midnight. Official November 7 guide says 5 hours/day in countries outside listed full-access regions (4 via VPN); country, model multipliers and account eligibility affect effective hours.",
+  "watch_out": "Homepage says unlimited, but free usage is daily-hour-limited and model-dependent; /plans advertises full-access figures that do not apply globally. Free access requires a human present, one account per person, and may require phone or identity verification. No direct API, scripted/bot use, resale or account sharing; terms and quotas may change. Ad-supported; code and prompts are processed by the service/model providers. Cloud inference is included, not a self-hosted free inference service.",
+  "pricing_url": "https://freebuff.com/plans",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-12",
+  "deployment_model": "cloud"
+}
