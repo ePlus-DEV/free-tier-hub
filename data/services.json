@@ -14427,6 +14427,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mokkify-self-hosted-api-mocking",
+    "name": "Mokkify Self-Hosted API Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted REST API mocking application with response templates, OpenAPI import, request logs, delays, relay hooks, API keys and MCP integration; no vendor-imposed software quota or expiry.",
+    "watch_out": "Requires your own Node.js >=20.17, pnpm 10, SQLite storage and server/compute resources; hosted infrastructure and outbound relay services are not included. Set a unique JWT_SECRET and protect admin/API/MCP endpoints before exposing publicly. Upstream demo credentials are not safe production credentials.",
+    "pricing_url": "https://github.com/Wavix/Mokkify",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mongodb-for-startups-credits",
     "name": "MongoDB for Startups Credits",
     "category": "databases",
