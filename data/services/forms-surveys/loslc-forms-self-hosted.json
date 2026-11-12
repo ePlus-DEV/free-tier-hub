@@ -1,0 +1,13 @@
+{
+  "id": "loslc-forms-self-hosted",
+  "name": "LOSLC Forms Self-Hosted",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "GPL-3.0-licensed self-hosted form builder with form creation, public responses, role-based access, response analytics and exports. No upstream software-imposed form/submission quota or expiry documented; requires own Docker, PostgreSQL and compute.",
+  "watch_out": "No free hosted service or infrastructure included. README quick-start uses placeholder clone URL and DEBUG=True with HTTP endpoints, so deployment instructions require correction and security hardening (DEBUG=False, HTTPS, secure database secrets) before production; no independent production deployment verified. GPL-3.0 redistribution/source obligations apply. Maintenance activity is limited (last upstream push in 2025).",
+  "pricing_url": "https://github.com/LOSLC/openforms",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
