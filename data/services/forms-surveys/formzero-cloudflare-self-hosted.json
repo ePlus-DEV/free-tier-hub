@@ -1,0 +1,13 @@
+{
+  "id": "formzero-cloudflare-self-hosted",
+  "name": "FormZero Cloudflare Self-Hosted Form Backend",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed FormZero source with unlimited forms and no vendor-imposed software subscription or expiry. Deploy your own form submission endpoint and analytics/CSV dashboard on Cloudflare Workers and D1. The project documents a deployment fitting Cloudflare's free tier (up to 100,000 submissions/day and 4,000,000 stored submissions in its example), subject to Cloudflare's independently changing quotas.",
+  "watch_out": "Free FormZero software is distinct from Cloudflare Workers/D1 hosted resources; infrastructure quotas, billing and overages follow Cloudflare's current plan. Requires your own Cloudflare account and deployment. README marks spam-protection and Resend email notifications as coming soon, not available features. No FormZero-managed free hosted service or VPS is included; avoid interpreting unlimited submissions as unlimited Cloudflare usage.",
+  "pricing_url": "https://github.com/BohdanPetryshyn/formzero",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
