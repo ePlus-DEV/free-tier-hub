@@ -1,0 +1,13 @@
+{
+  "id": "serveros",
+  "name": "ServerOS (14-Day Pro Trial)",
+  "category": "app-hosting",
+  "plan": "limited-duration",
+  "free_limit": "New workspaces receive a one-time 14-day trial of ServerOS Pro with up to 5 connected machines, unlimited apps and sites on those machines, deployments, backups, workflows, monitoring, status pages and 2,500 AI tool calls/month within plan limits. No payment details required to start trial.",
+  "watch_out": "Not an ongoing free hosted PaaS or free VPS. The managed control panel requires a paid subscription after 14 days (Essential from $6/month; Pro from $12/month on the currently displayed pricing page); server infrastructure is separately billed. Without a plan, existing apps remain running on your own servers and limited control functions remain, but deployments, monitoring, alerts, workflows, AI calls and adding machines are suspended. ServerOS Cloud VPS is separately paid starting at £5/month; a £3 first-month discount for paid subscribers is not free recurring credit. The open-source daemon is not a self-hostable replacement for the paid control panel.",
+  "pricing_url": "https://serveros.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "cloud"
+}
