@@ -1288,8 +1288,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     '<p class="kicker">PR PREVIEW UNAVAILABLE</p>' +
     '<h1>This preview is no longer available</h1>' +
     '<p>Preview <strong id="preview-pr-number"></strong> is no longer available. ' +
-    'Redirecting to the corresponding production page in ' +
-    '<strong class="preview-countdown" id="preview-countdown" aria-live="polite">5</strong> seconds.</p>' +
+    'Redirecting to the corresponding production page now.</p>' +
     '<div class="preview-destination"><span>Production destination</span>' +
     '<code id="preview-target-path"></code></div>' +
     '<a class="button primary" id="preview-go-now" href="' + tag(base) +

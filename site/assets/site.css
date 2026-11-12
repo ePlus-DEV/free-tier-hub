@@ -80,7 +80,6 @@ main{padding-bottom:64px;min-height:70vh}
 .preview-expired .kicker{margin:0 0 9px}
 .preview-expired h1{margin:0 0 14px}
 .preview-expired>p:not(.kicker){max-width:580px;color:var(--ink-soft);line-height:1.75}
-.preview-countdown{color:var(--brand-ink);font-weight:800;font-variant-numeric:tabular-nums}
 .preview-destination{display:grid;gap:5px;max-width:100%;margin:18px 0 23px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:var(--surface-muted)}
 .preview-destination span{color:var(--muted);font-size:11px;font-weight:650}
 .preview-destination code{color:var(--ink);font-size:12px;overflow-wrap:anywhere;white-space:pre-wrap}
