@@ -1,0 +1,13 @@
+{
+  "id": "hookdash-self-hosted",
+  "name": "Hookdash Self-Hosted Webhook Gateway",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted webhook ingestion, signature verification, SQLite-backed delivery queue, retry/backoff, dead-letter queue, replay and dashboard. No vendor-imposed event quota or expiration for the software; capacity depends on own infrastructure.",
+  "watch_out": "Software only: no free managed webhook endpoint, compute, storage, or bandwidth. Dashboard authentication and per-source rate limiting are listed as roadmap items, not shipped features; do not expose dashboard publicly without independent access controls, HTTPS and network restrictions. Very early-stage project with no upstream push observed since 2026-07-11; production reliability, security and maintenance are unverified. Review license and deployed dependencies before commercial deployment.",
+  "pricing_url": "https://github.com/me-npm/hookdash",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
