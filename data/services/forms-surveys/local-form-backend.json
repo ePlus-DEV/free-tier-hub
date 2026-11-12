@@ -1,0 +1,13 @@
+{
+  "id": "local-form-backend",
+  "name": "Local Form Backend (Self-Hosted)",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted form submission backend for static sites and small apps. Runs on Node.js 22.13+ with SQLite or Docker; provides per-form HTTP endpoints, admin submission inbox, CSV export, optional SMTP/webhook notifications, honeypot and per-IP/per-form rate limiting. No vendor-enforced license expiry or hosted submission quota; software runs on infrastructure you supply.",
+  "watch_out": "No managed hosted service, VPS, storage, SMTP or email delivery allowance is included. Bring your own infrastructure and SMTP/webhook providers, which may have charges or separate quotas. Default per-form anti-abuse limits include 10 submissions per minute per IP and 64 KiB request bodies; these are application controls, not free-tier allowances. Before production, set a strong persistent ADMIN_TOKEN, configure HTTPS/reverse proxy and BASE_URL, persist and back up SQLite data, and set TRUST_PROXY only behind a trusted proxy. Repository production instructions have not been independently deployment-tested.",
+  "pricing_url": "https://github.com/beernathan87/local-form-backend",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
