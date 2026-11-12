@@ -12734,6 +12734,19 @@
     "program": "startup"
   },
   {
+    "id": "discord-docker-updater-self-hosted",
+    "name": "Discord Docker Updater (Self-Hosted)",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted Discord bot that receives Diun Docker image-update webhooks, posts interactive Discord alerts, and lets an authorized operator approve Docker Compose updates; no vendor-imposed software quota or expiry.",
+    "watch_out": "Requires your own Docker host, Docker Compose, Diun, a Discord bot token and Discord server; infrastructure is not included. Bot can control Docker through the Docker socket and execute container updates, creating privileged host security and availability risks. Protect webhook endpoints, credentials and agent access; inspect changes and back up before approving updates. Discord platform policies apply; not a hosted notification allowance.",
+    "pricing_url": "https://github.com/aaronpowell/discord-docker-updater",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "dispatch-newsletter-self-hosted",
     "name": "Dispatch Self-Hosted Newsletter Service",
     "category": "email-notifications",
