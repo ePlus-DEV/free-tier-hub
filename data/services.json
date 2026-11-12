@@ -13893,6 +13893,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "llmock-local-llm-api-mock-server",
+    "name": "llmock Local LLM API Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local HTTP mock server and Node.js package for deterministic OpenAI, Anthropic Claude and Google Gemini API testing, including streaming SSE, JSON fixtures, error injection and request inspection; no vendor-imposed software usage quota or expiry.",
+    "watch_out": "Runs on your own machine or CI runner; no hosted inference, real model tokens or cloud compute included. Tests must redirect SDK base URLs to the local mock; mock fixtures are not real model responses. Use a trusted network and avoid exposing the test server publicly.",
+    "pricing_url": "https://github.com/1omega/llmock",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "local"
+  },
+  {
     "id": "lmeterx-api-load-testing",
     "name": "LMeterX API and LLM Load Testing",
     "category": "testing-qa",
