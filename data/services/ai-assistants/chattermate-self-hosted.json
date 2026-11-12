@@ -1,0 +1,13 @@
+{
+  "id": "chattermate-self-hosted",
+  "name": "ChatterMate Self-Hosted",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 open-source AI customer support chatbot with shared inbox, human handoff, web chat widget, knowledge-base answers and bring-your-own LLM; self-hosted core has no provider-imposed usage quota.",
+  "watch_out": "Requires your own server, database and model/API provider; LLM tokens and messaging-channel services can cost money. Enterprise features and support are separately licensed. Production security and external integrations require configuration; no free cloud infrastructure is included.",
+  "pricing_url": "https://github.com/chattermate/chattermate.chat",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
