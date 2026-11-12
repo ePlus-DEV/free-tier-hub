@@ -13711,6 +13711,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "kubeara-self-hosted-paas",
+    "name": "Kubeara Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted control plane for deploying apps, databases and AI services on your own servers; official README states no software feature, seat or time limits, with 200+ deployment templates.",
+    "watch_out": "Does not provide free VPS, compute, GPUs, storage, domains or AI inference; you supply and secure your own servers and Docker infrastructure. Kubeara Cloud is a distinct hosted control-plane offer with a separate one-server free tier; do not confuse it with this self-hosted edition. Enterprise SSO, LDAP, SLA and priority support are separate.",
+    "pricing_url": "https://github.com/kubeara/core",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-12",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "kubevirt-self-hosted",
     "name": "KubeVirt Self-Hosted Virtual Machines",
     "category": "cloud-vps",
