@@ -1,0 +1,13 @@
+{
+  "id": "mensfeld-hookshot-webhook-relay",
+  "name": "Hookshot Rails Self-Hosted Webhook Relay",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Rails 8 self-hosted webhook receiver and relay with named inbound endpoints, routing filters, multiple delivery targets, replay, delivery retries and admin dashboard; no vendor-imposed software quota or expiry.",
+  "watch_out": "Self-hosting requires Ruby 4, SQLite, Node.js for assets and your own server; no free managed webhook delivery or compute is included. Change insecure default HTTP Basic credentials (admin/changeme) before exposure, use HTTPS, protect the admin/MCP endpoint, validate incoming webhook sources and manage payload retention. Production Solid Queue worker is needed for retries and cleanup. License notices must be retained.",
+  "pricing_url": "https://github.com/mensfeld/hookshot",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
