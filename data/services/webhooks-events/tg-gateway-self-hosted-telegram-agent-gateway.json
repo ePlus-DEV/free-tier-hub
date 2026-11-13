@@ -1,0 +1,13 @@
+{
+  "id": "tg-gateway-self-hosted-telegram-agent-gateway",
+  "name": "TG-Gateway Self-Hosted Telegram Agent Gateway",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted Telegram agent communication gateway with HTTP APIs, interactive prompts, signed callbacks, multi-channel routing and Docker deployment; no software-enforced usage quota published.",
+  "watch_out": "Requires own server, PostgreSQL, Telegram bot tokens and network access; no free VPS or hosted messaging resources included. Telegram platform limits apply. Configure strong secrets and API authentication; verify production security independently.",
+  "pricing_url": "https://github.com/nexteralabs/tg_gateway",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
