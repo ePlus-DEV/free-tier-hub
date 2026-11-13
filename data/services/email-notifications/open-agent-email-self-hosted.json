@@ -1,0 +1,13 @@
+{
+  "id": "open-agent-email-self-hosted",
+  "name": "Open Agent Email Self-Hosted",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 self-hosted email infrastructure for AI agents: inbound SMTP inboxes, REST/MCP APIs, signed webhooks, approval workflows, and SQLite/PostgreSQL storage; no vendor-imposed software usage quota or expiry.",
+  "watch_out": "Free software only, not free hosted email. Production inbound mail requires a public server, domain/MX records and port 25 access; outbound mail requires a separately configured SMTP relay (potential charges). Secure keys, backups, deliverability and operational maintenance are the operator's responsibility.",
+  "pricing_url": "https://github.com/Anil-matcha/open-agent-email",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
