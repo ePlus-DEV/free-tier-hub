@@ -1,0 +1,13 @@
+{
+  "id": "instabox-cloud-sandboxes",
+  "name": "InstaBox Cloud Sandboxes",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Free plan includes one hosted Linux microVM sandbox (4 vCPUs, 8 GiB RAM, 20 GiB persistent disk), five snapshots and 100 GiB outbound transfer per month; free machine runtime is subject to automatic idle pause and maximum-run limits.",
+  "watch_out": "Official homepage/pricing page still advertises five free machines, but current account pricing and limits documentation specifies ONE; five was a grandfathered beta allowance ending 2026-12-01. Free machines auto-pause when idle and have maximum continuous runtime restrictions, so this is not an always-on VPS. Paid tiers and extra resources are billed; verify account limits, card requirements and commercial-use terms before production use.",
+  "pricing_url": "https://instabox.sh/docs/account/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-13",
+  "deployment_model": "cloud"
+}
