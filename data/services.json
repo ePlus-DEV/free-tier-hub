@@ -14819,6 +14819,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "notify-relay-local-p2p-notifications",
+    "name": "notify-relay Local P2P Notifications",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed local peer-to-peer notification relay with encrypted libp2p pub/sub, LAN discovery, Linux desktop notifications and optional ntfy forwarding; no published software quota or expiry.",
+    "watch_out": "Build and operate your own Go binary on participating devices. Linux desktop notifications use D-Bus; WAN connectivity may require bootstrap peers or a self-provided VPS, and optional ntfy or network services have separate terms and costs. This is not a free hosted notification delivery plan.",
+    "pricing_url": "https://github.com/xtruder/notify-relay",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "local"
+  },
+  {
     "id": "notifyd-self-hosted-notifications",
     "name": "notifyd Self-Hosted Notifications",
     "category": "email-notifications",
