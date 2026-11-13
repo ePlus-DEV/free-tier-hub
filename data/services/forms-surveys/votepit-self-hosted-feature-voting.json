@@ -1,0 +1,13 @@
+{
+  "id": "votepit-self-hosted-feature-voting",
+  "name": "Votepit Self-Hosted Feature Voting",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited self-hosted feature-voting boards, ideas, up/down votes, comments and roadmap views under MIT-licensed software; no vendor-hosted resource quota is included.",
+  "watch_out": "Requires your own PHP 8.2+ and MySQL/MariaDB hosting, plus SMTP for passwordless sign-in. No free managed hosting or email sending is included. Set up and maintain server security, backups and mail delivery yourself.",
+  "pricing_url": "https://github.com/silvio-l/votepit",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
