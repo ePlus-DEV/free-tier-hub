@@ -15913,6 +15913,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "swiftwave-self-hosted-paas",
+    "name": "SwiftWave Self-Hosted PaaS",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "Apache-2.0-licensed self-hosted PaaS software for deploying and managing applications on user-owned servers; no published software quota or subscription expiry.",
+    "watch_out": "Requires your own VPS, bare-metal server or Raspberry Pi; hosting, bandwidth, storage, domains and third-party infrastructure are not included. Self-hosted software is free, not a free hosted VPS.",
+    "pricing_url": "https://github.com/swiftwave-org/swiftwave",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "taurus-load-testing",
     "name": "Taurus Open Source Load Testing",
     "category": "testing-qa",
