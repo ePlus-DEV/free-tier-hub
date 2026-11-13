@@ -1,0 +1,13 @@
+{
+  "id": "docker-dash-self-hosted",
+  "name": "Docker Dash Self-Hosted Dashboard",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted Docker management dashboard with standalone and high-availability deployment modes; no software subscription expiry or published usage quota.",
+  "watch_out": "Requires a user-managed Docker host and infrastructure; optional high-availability mode uses Redis and multiple replicas. Docker daemon access is privileged and should be secured. No hosted cloud compute or managed service included.",
+  "pricing_url": "https://github.com/bogdanpricop/docker-dash",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
