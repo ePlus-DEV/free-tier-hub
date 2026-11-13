@@ -1,0 +1,13 @@
+{
+  "id": "mailsandbox-postmark-mcp",
+  "name": "MailSandbox (Postmark API and MCP testing)",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed self-hosted SMTP testing sandbox with web UI, REST API, optional Postmark API emulation and MCP debugging tools; local message retention defaults to 500 messages and is configurable. No vendor subscription or expiry.",
+  "watch_out": "Fork of Mailpit with distinct Postmark/MCP functionality; not a hosted free email service or production delivery provider. Run your own binary/Docker infrastructure and protect the SMTP and web ports; SMTP testing captures messages rather than sending them to recipients. Hosting and storage cost extra.",
+  "pricing_url": "https://github.com/btafoya/mailsandbox",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
