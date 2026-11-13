@@ -1,0 +1,13 @@
+{
+  "id": "postal-blackhole-self-hosted",
+  "name": "Postal Blackhole HTTP and SMTP Test Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free self-hosted HTTP and SMTP test server with configurable response behavior; no provider-enforced usage quota or expiration is documented.",
+  "watch_out": "A test sink for HTTP/SMTP interactions, not an email delivery provider or hosted VPS. SMTP requests are logged and simulated; infrastructure, network access and operational security are user-managed. Do not use to deliver production email.",
+  "pricing_url": "https://github.com/postalserver/blackhole",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
