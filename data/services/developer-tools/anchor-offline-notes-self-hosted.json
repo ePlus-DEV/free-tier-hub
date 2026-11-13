@@ -1,0 +1,13 @@
+{
+  "id": "anchor-offline-notes-self-hosted",
+  "name": "Anchor Offline Notes (Self-Hosted)",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0 self-hosted offline-first notes application with web/mobile sync, tags, attachments, reminders, sharing, note history, and Google Keep import; no vendor-imposed software license quota.",
+  "watch_out": "Requires your own Docker host and persistent storage; hosting and network costs are separate. AGPL-3.0 obligations apply to modified network-served versions; iOS app distribution is currently TestFlight beta, and real-time collaborative editing is not yet implemented.",
+  "pricing_url": "https://github.com/ZhFahim/anchor",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
