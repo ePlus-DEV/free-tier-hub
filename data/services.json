@@ -16317,6 +16317,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "yep-anywhere-self-hosted-agent-ui",
+    "name": "Yep Anywhere Self-Hosted Agent UI",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted browser interface for existing Claude Code and Codex CLI sessions, including mobile approvals, session management, file/diff review and notifications; no software seat quota or expiry stated.",
+    "watch_out": "Requires user-provided machine, Node.js and installed/authenticated Claude Code or Codex CLI. Agent subscriptions or API usage are not included and may cost money. Optional public relay is third-party infrastructure; direct self-hosted access requires secure networking and authentication. Desktop installers are beta.",
+    "pricing_url": "https://github.com/kzahel/yepanywhere",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "youneedgreg-notification-system",
     "name": "Notification System Self-Hosted Email and Push Microservices",
     "category": "email-notifications",
