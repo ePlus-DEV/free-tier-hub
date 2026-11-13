@@ -1,0 +1,13 @@
+{
+  "id": "go-virtual-self-hosted",
+  "name": "Go-Virtual Self-Hosted OpenAPI Mock Server",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted OpenAPI 3 mock server with manual responses, templating, proxy recording, Starlark scripts, session state, tracing and an admin UI; no vendor-imposed request quota or expiry.",
+  "watch_out": "Requires your own compute and storage. Optional AI response generation may incur third-party model API charges; protect the admin interface and captured request data before public exposure.",
+  "pricing_url": "https://github.com/prasenjit-net/go-virtual",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
