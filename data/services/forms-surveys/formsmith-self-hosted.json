@@ -1,0 +1,13 @@
+{
+  "id": "formsmith-self-hosted",
+  "name": "Formsmith (self-hosted)",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted AGPL-3.0 core: unlimited forms, responses and seats; form builder, logic, scoring, webhooks, API and CSV/JSON exports. No vendor-imposed usage quota.",
+  "watch_out": "Requires your own Docker/PostgreSQL hosting, TLS, backups and security configuration. AI interviewer needs your own model/API key and may cost money; SMTP is bring-your-own. Enterprise SSO/SCIM/RBAC modules require a commercial license. Early v0.1.0 release; production reliability unverified. AGPL obligations apply to modified network-served software.",
+  "pricing_url": "https://github.com/formsmithapp/formsmith/blob/main/docs/pricing.md",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-12",
+  "deployment_model": "self-hosted"
+}
