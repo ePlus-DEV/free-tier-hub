@@ -12196,6 +12196,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "agent-relay-self-hosted",
+    "name": "Agent Relay Self-Hosted Encrypted Agent Inbox",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted encrypted inbox for AI agent artifacts, human approval of email drafts and passkey access; no software subscription, expiry or vendor-imposed self-hosting quota stated.",
+    "watch_out": "Requires your own PostgreSQL, S3-compatible storage, HTTPS/WebAuthn origin and email verification delivery; infrastructure and outbound email can cost money. Self-hosted edition is distinct from arelay.app hosted plans. Upstream is young; review security and operational readiness. Default artifact/account limits may be enforced by application configuration.",
+    "pricing_url": "https://github.com/mmmikael/arelay",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "agenticseek-local-ai-assistant",
     "name": "AgenticSeek Local AI Assistant",
     "category": "ai-assistants",
@@ -13696,6 +13709,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-01",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "instabox-cloud-sandboxes",
+    "name": "InstaBox Cloud Sandboxes",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Free plan includes one hosted Linux microVM sandbox (4 vCPUs, 8 GiB RAM, 20 GiB persistent disk), five snapshots and 100 GiB outbound transfer per month; free machine runtime is subject to automatic idle pause and maximum-run limits.",
+    "watch_out": "Official homepage/pricing page still advertises five free machines, but current account pricing and limits documentation specifies ONE; five was a grandfathered beta allowance ending 2026-12-01. Free machines auto-pause when idle and have maximum continuous runtime restrictions, so this is not an always-on VPS. Paid tiers and extra resources are billed; verify account limits, card requirements and commercial-use terms before production use.",
+    "pricing_url": "https://instabox.sh/docs/account/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-13",
+    "deployment_model": "cloud"
   },
   {
     "id": "instatic-self-hosted-cms",
