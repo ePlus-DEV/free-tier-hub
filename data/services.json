@@ -13412,6 +13412,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "gripmock-grpc-mock-server",
+    "name": "GripMock gRPC Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local/self-hosted gRPC mock server supporting .proto/.pb descriptors, unary and streaming RPCs, YAML/JSON stubs, runtime stub edits, request matching, errors/delays, and a web dashboard; no vendor-imposed software quota or expiration.",
+    "watch_out": "Runs on your own machine, Docker host or CI runner; no free hosted endpoints, compute, network or storage included. Secure the management API/dashboard if exposed; optional upstream proxy/capture may contact external systems. Plugin builds depend on compatible Go platform and image variants.",
+    "pricing_url": "https://github.com/bavix/gripmock",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "happydeliver-self-hosted-email-deliverability",
     "name": "HappyDeliver Self-Hosted Email Deliverability Tester",
     "category": "testing-qa",
