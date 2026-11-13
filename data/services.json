@@ -14505,6 +14505,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mmock-local-http-mock-server",
+    "name": "Mmock Local HTTP Mock Server",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local/self-hosted HTTP mock server with JSON/YAML definitions, request inspection, scenarios, verification API and proxy mode; no vendor-enforced usage quota or expiration.",
+    "watch_out": "Runs on your own machine or infrastructure; hosting, networking and operating costs are separate. This is a local HTTP mocking tool, not a hosted API testing allowance. Verify deployment security and maintenance suitability before exposing the web console publicly.",
+    "pricing_url": "https://github.com/jmartin82/mmock",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "local"
+  },
+  {
     "id": "mock-service-worker-local",
     "name": "Mock Service Worker Local API Mocking",
     "category": "testing-qa",
