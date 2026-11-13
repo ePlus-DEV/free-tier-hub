@@ -1,0 +1,13 @@
+{
+  "id": "agent-relay-self-hosted",
+  "name": "Agent Relay Self-Hosted Encrypted Agent Inbox",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted encrypted inbox for AI agent artifacts, human approval of email drafts and passkey access; no software subscription, expiry or vendor-imposed self-hosting quota stated.",
+  "watch_out": "Requires your own PostgreSQL, S3-compatible storage, HTTPS/WebAuthn origin and email verification delivery; infrastructure and outbound email can cost money. Self-hosted edition is distinct from arelay.app hosted plans. Upstream is young; review security and operational readiness. Default artifact/account limits may be enforced by application configuration.",
+  "pricing_url": "https://github.com/mmmikael/arelay",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
