@@ -13490,6 +13490,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hammerdb-local-database-benchmark",
+    "name": "HammerDB Local Database Benchmark",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free GPL-3.0 database benchmarking software for local/self-managed use; no vendor-imposed usage quota or expiration stated.",
+    "watch_out": "Benchmark workloads consume your own CPU, memory, storage and database capacity; database licenses, cloud instances and infrastructure are not included. GPL-3.0 obligations apply when distributing modified software.",
+    "pricing_url": "https://github.com/TPC-Council/HammerDB",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "local"
+  },
+  {
     "id": "happydeliver-self-hosted-email-deliverability",
     "name": "HappyDeliver Self-Hosted Email Deliverability Tester",
     "category": "testing-qa",
