@@ -1,0 +1,13 @@
+{
+  "id": "alexandrie-self-hosted-knowledge-base",
+  "name": "Alexandrie Self-Hosted Knowledge Base",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted knowledge base and technical documentation wiki with Markdown editing, offline-first PWA, team workspaces, full-text search, diagrams, OIDC/SSO and import/export; no vendor-imposed software quota or expiry published.",
+  "watch_out": "Free software only, not free hosted compute. Requires your own Docker host, MySQL and S3-compatible object storage (for example RustFS), configured secrets, HTTPS, backups and maintenance. External storage, server, domain or identity-provider services may incur costs.",
+  "pricing_url": "https://github.com/Smaug6739/Alexandrie",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
