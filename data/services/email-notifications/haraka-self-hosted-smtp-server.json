@@ -1,0 +1,13 @@
+{
+  "id": "haraka-self-hosted-smtp-server",
+  "name": "Haraka Self-Hosted SMTP Server",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed Node.js SMTP server and outbound delivery engine with extensible plugins; free to run on your own infrastructure without a software license fee or published usage quota.",
+  "watch_out": "Self-hosted software only: provide server, DNS, IP reputation, storage/IMAP backend if needed, monitoring and outbound connectivity. Haraka is not an IMAP server or mailbox store. SMTP port restrictions, provider bandwidth and third-party plugin/service costs may apply.",
+  "pricing_url": "https://github.com/haraka/Haraka",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
