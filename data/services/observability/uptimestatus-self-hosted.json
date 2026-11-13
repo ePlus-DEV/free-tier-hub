@@ -1,0 +1,13 @@
+{
+  "id": "uptimestatus-self-hosted",
+  "name": "uptimestatus Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free MIT/Apache-2.0 dual-licensed self-hosted uptime monitor and public status pages with HTTP, TCP, DNS, ICMP, database, gRPC and MQTT checks; incidents, 90-day status bars, email/webhook alerts and SQLite/PostgreSQL/Turso support. No vendor software quota or expiration documented.",
+  "watch_out": "Requires your own server or Docker host, storage, HTTPS, backups and GitHub OAuth application for admin login. Email delivery and optional managed databases/object storage may cost extra. Protect encryption keys and admin credentials; the upstream describes this as a hobby project, so production readiness and scale require independent testing. No hosted infrastructure is included.",
+  "pricing_url": "https://github.com/mscno/uptimestatus",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
