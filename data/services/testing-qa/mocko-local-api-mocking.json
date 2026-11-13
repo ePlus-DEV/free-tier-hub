@@ -1,0 +1,13 @@
+{
+  "id": "mocko-local-api-mocking",
+  "name": "Mocko Local API Mocking",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0-licensed local API mocking server with dynamic HTTP responses, file-based mocks, proxy fallback, persisted scenario flags and test SDK; self-run software has no provider-enforced request quota or expiration.",
+  "watch_out": "Run locally or on your own Docker/Kubernetes/CI infrastructure; hosting, compute and Redis costs are not included. Protect the control panel and mock endpoints before network exposure. Distinct from Mockoon; no managed cloud free allocation is claimed.",
+  "pricing_url": "https://github.com/mocko-app/mocko",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "local"
+}
