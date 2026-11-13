@@ -1,0 +1,13 @@
+{
+  "id": "hookrail-self-hosted",
+  "name": "Hookrail Self-Hosted Webhook Delivery",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "Apache-2.0 licensed self-hosted Go webhook delivery service with durable PostgreSQL-backed at-least-once delivery, retries, HMAC signing, idempotency, dead-letter replay and per-endpoint rate limiting; no vendor-imposed software event quota or expiry.",
+  "watch_out": "No free managed webhook hosting, VPS, PostgreSQL, Redis or network capacity is included. Operate and secure your own infrastructure and dashboard; at-least-once delivery may duplicate events, so consumers need idempotency. Project is pre-1.0 without compatibility guarantees; protect admin credentials and follow Apache-2.0 notice obligations.",
+  "pricing_url": "https://github.com/mit112/hookrail",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "self-hosted"
+}
