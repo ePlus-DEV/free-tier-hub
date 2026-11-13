@@ -13228,6 +13228,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "fortherecord-notification-email-bridge",
+    "name": "ForTheRecord Notification-to-Email Bridge",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted notification gateway that accepts SMTP, ntfy, Apprise, Shoutrrr, cURL and JSON webhook inputs and stores notifications in an existing Gmail or IMAP inbox; no software usage quota or expiry documented.",
+    "watch_out": "Requires an existing Gmail/IMAP account and your own host or container. Gmail mode requires Google Cloud OAuth client configuration and Gmail API access; provider limits, account policies and hosting costs still apply. Distinct from Mailrise, which forwards SMTP messages to Apprise notification destinations.",
+    "pricing_url": "https://github.com/YoRyan/ForTheRecord",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "fortio-local-load-testing",
     "name": "Fortio Local Load Testing",
     "category": "testing-qa",
