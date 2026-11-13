@@ -13503,6 +13503,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hookradar-self-hosted",
+    "name": "HookRadar Self-Hosted Webhook Tester",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted webhook testing and debugging software with endpoint creation, real-time payload inspection, request replay/forwarding, custom responses, CSV export and SQLite request history; upstream advertises unlimited self-hosted usage without a software subscription or expiry.",
+    "watch_out": "Requires your own Docker/Node.js hosting, storage, public HTTPS endpoint and access controls. Webhook payloads may contain secrets; protect workspaces and SQLite backups. The public shared Railway instance is a separate deployment and is not a guaranteed free hosting allowance; no free VPS, domain or network bandwidth included. Enterprise SSO/custom domains are planned, not included.",
+    "pricing_url": "https://github.com/aniketmishra-0/Hookradar",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-13",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "hookrail-self-hosted",
     "name": "Hookrail Self-Hosted Webhook Delivery",
     "category": "webhooks-events",
