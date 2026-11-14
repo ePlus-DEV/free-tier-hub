@@ -12890,6 +12890,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dockrune-self-hosted-deployment-daemon",
+    "name": "dockrune Self-Hosted Deployment Daemon",
+    "category": "ci-cd",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted Go deployment daemon for GitHub push-webhook-triggered Docker deployments; no software subscription or vendor-enforced usage quota. Run the binary or Docker container on your own server.",
+    "watch_out": "Requires a user-provided VPS or server, Docker, GitHub webhook configuration and TLS/security hardening; infrastructure, domain and network charges are not included. Webhook secret and admin credentials must be configured. Do not mistake free self-hosted software for free hosted compute.",
+    "pricing_url": "https://github.com/ejfox/dockrune",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "docuhog-local-docusign-mock",
     "name": "DocuHog Local DocuSign API Mock",
     "category": "testing-qa",
