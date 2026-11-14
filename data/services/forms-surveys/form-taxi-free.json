@@ -1,0 +1,13 @@
+{
+  "id": "form-taxi-free",
+  "name": "Form.taxi Free Form Backend",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "3 hosted forms and 40 form submissions per month; email notifications to 5 recipients, spam protection, monthly archive, custom success page, automation tools and webhooks.",
+  "watch_out": "Once the monthly submission limit is reached, additional submissions are stored but their contents cannot be viewed without upgrading. File uploads, API access and larger quotas require paid plans. Card requirement for the free registration is not explicitly confirmed on the official pricing page.",
+  "pricing_url": "https://form.taxi/en/plans",
+  "credit_card": "check",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "cloud"
+}
