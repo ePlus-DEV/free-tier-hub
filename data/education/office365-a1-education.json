@@ -12,5 +12,6 @@
   "duration": "While enrolled or employed at an eligible institution; Microsoft may recheck eligibility.",
   "restrictions": "Web-based A1 is not the same as a paid Microsoft 365 desktop/personal subscription. Institutional access ends when academic eligibility is lost.",
   "source_url": "https://www.microsoft.com/en-us/education/products/office",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "productivity"
 }

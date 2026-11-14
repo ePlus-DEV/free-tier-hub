@@ -10,5 +10,6 @@
   "duration": "While eligible as a student, subject to the partner program.",
   "restrictions": "Advertised value is not a cash credit or guarantee of unlimited ingest. Confirm account usage limits and any paid overages with New Relic.",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

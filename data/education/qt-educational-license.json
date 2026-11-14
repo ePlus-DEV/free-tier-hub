@@ -11,5 +11,6 @@
   "duration": "12 months; renewable through an eligibility renewal process.",
   "restrictions": "Strictly for learning; no commercial use or commercial distribution. No professional technical support is included.",
   "source_url": "https://www.qt.io/development/qt-educational-license",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

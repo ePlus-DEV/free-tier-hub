@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateEducationPrograms, loadEducationPrograms } from './education-programs.mjs';
+import { validateEducationPrograms, loadEducationPrograms, EDUCATION_CATEGORIES, educationCategory } from './education-programs.mjs';
 import { build, tag } from './build-site.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const input = loadEducationPrograms();
@@ -28,6 +28,8 @@ test('education schema rejects duplicates and unsafe or invalid sources', () => 
   assert.throws(() => validateEducationPrograms([{...item, audiences:['invented']}]), /audience/);
   assert.throws(() => validateEducationPrograms([{...item, last_checked:'2030-01-01'}]), /review date/);
   assert.throws(() => validateEducationPrograms([{...item, benefit_type:'recurring'}]), /type/);
+  assert.throws(() => validateEducationPrograms([{...item, category:'not-a-category'}]), /category/);
+  assert.ok(input.every(item => Object.hasOwn(EDUCATION_CATEGORIES, educationCategory(item))));
 });
 test('education loader rejects incorrectly named shards to prevent silent duplicates', () => {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fth-education-shards-'));
@@ -59,6 +61,24 @@ test('Education reuses category and service UI components, preserves filters, fe
       assert.ok(html.includes('id="' + id + '"'), 'Missing education control ' + id);
     }
     assert.match(html, /class="page-intro"/);
+    assert.match(html, /class="education-stats"/);
+    assert.match(html, /class="education-category-grid"/);
+    assert.match(html, /id="education-category-index"/);
+    assert.match(html, /data-education-category="developer-tools"/);
+    assert.match(html, /id="education-featured"/);
+    assert.match(html, /Selected programs worth exploring first, not a ranking by views/);
+    assert.ok(html.includes('Listed benefits') && html.includes('Active categories'));
+    assert.doesNotMatch(html, /258 offers|9 categories/);
+    assert.equal((html.match(/data-education-id="/g) || []).length, input.length);
+    const expectedCategories = new Set(input.map(educationCategory));
+    assert.ok(html.includes('>' + expectedCategories.size + '</strong><span>Active categories</span>'));
+    for (const category of expectedCategories) {
+      const count = input.filter(item => educationCategory(item) === category).length;
+      assert.ok(html.includes('data-education-category="' + category + '"'),
+        'Category not on landing: ' + category);
+      assert.ok(html.includes('>' + count + ' offers</span>'),
+        'Category count absent: ' + category);
+    }
     assert.match(html, /class="category-tools" id="education-tools"/);
     assert.match(html, /class="category-tools-primary"/);
     assert.match(html, /class="category-filter-details"/);
@@ -103,6 +123,8 @@ test('Education reuses category and service UI components, preserves filters, fe
     }
     assert.ok(read('llms.txt').includes('Education benefits'));
     const css = read('assets/site.css');
+    assert.match(css, /\.education-stats\{/);
+    assert.match(css, /\.education-category-chip\.category-chip\{/);
     assert.match(css, /\.service-grid,\.category-service-grid\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
     assert.doesNotMatch(css, /\.education-grid\{|\.education-hero\{|\.education-toolbar\{/);
     const script = read('assets/education.js');
@@ -111,6 +133,9 @@ test('Education reuses category and service UI components, preserves filters, fe
     assert.match(script, /search\.addEventListener\('input', update\)/);
     assert.match(script, /matchAudience && matchBenefit && matchSearch/);
     assert.match(script, /history\.replaceState/);
+    assert.match(script, /selectedCategory/);
+    assert.match(script, /matchCategory/);
+    assert.match(script, /categoryButtons/);
   } finally { fs.rmSync(temp, {recursive:true, force:true}); }
 });
 test('Education navigation remains available without altering ordinary service totals', () => {

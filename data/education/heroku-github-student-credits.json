@@ -10,5 +10,6 @@
   "duration": "Twenty-four months; the US$13 monthly allowance does not roll over.",
   "restrictions": "Credits exclude third-party add-ons. Monthly charges above US$13 can be billed to the payment card; credits cannot be consumed all at once.",
   "source_url": "https://www.heroku.com/github-students/",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "cloud-hosting"
 }

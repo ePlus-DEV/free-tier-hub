@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
-import { loadEducationPrograms } from './education-programs.mjs';
+import { loadEducationPrograms, EDUCATION_CATEGORIES, educationCategory } from './education-programs.mjs';
 import { compactNumber, compactQuantityText } from '../site/assets/compact-numbers.js';
 import { activeServiceAliases } from './service-aliases.mjs';
 import { relatedServiceMap } from './service-relations.mjs';
@@ -630,21 +630,82 @@ function classificationsPage(absolute) {
   ].join('');
 }
 function educationBenefitsPage(programs, absolute) {
-  // Reuse the existing category-page toolbar, service cards, and shared design tokens.
-  // Education keeps a separate dataset, eligibility filters, and totals.
+  // One design system: shared service cards, category chips, filters and page-intro.
   const audienceLabels = {student: 'Students', teacher: 'Teachers', school: 'Schools',
     nonprofit: 'Nonprofits', opensource: 'Open-source maintainers'};
   const benefitLabels = {free: 'Free access', credit: 'Credits', discount: 'Discount'};
   const options = (values, labels) => values.map(value =>
     '<option value="' + tag(value) + '">' + tag(labels[value]) + '</option>').join('');
+  const categoryCounts = new Map(Object.keys(EDUCATION_CATEGORIES).map(key => [key, 0]));
+  for (const program of programs) {
+    const key = educationCategory(program);
+    categoryCounts.set(key, categoryCounts.get(key) + 1);
+  }
+  const categories = Object.entries(EDUCATION_CATEGORIES)
+    .filter(([key]) => categoryCounts.get(key) > 0);
+  const latest = programs.map(program => program.last_checked).sort().at(-1);
+  const latestLabel = latest
+    ? new Date(latest + 'T00:00:00Z').toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'
+    }) : 'Not reviewed';
+  // Editorial picks rather than fictitious popularity statistics.
+  const programById = new Map(programs.map(program => [program.id, program]));
+  const featured = [
+    'github-student-developer-pack', 'jetbrains-education', 'figma-education',
+    'notion-education', 'azure-for-students', 'zed-student-pro'
+  ].map(id => programById.get(id)).filter(Boolean);
+  const featureCard = item => [
+    '<article class="service-card education-featured-card">',
+    '<div class="card-top"><span class="service-icon" aria-hidden="true">',
+    serviceLogo({ id: item.id, name: item.name, pricing_url: item.source_url }),
+    '</span><div class="card-identity"><h3><a href="',
+    tag(absolute('education/' + item.id + '/')), '">', tag(item.name), '</a></h3>',
+    '<span class="eyebrow">', tag(EDUCATION_CATEGORIES[educationCategory(item)]),
+    '</span></div><span class="badge">', tag(benefitLabels[item.benefit_type]),
+    '</span></div><div class="allowance-block"><span class="card-label">Education benefit</span>',
+    '<p class="allowance">', tag(item.benefit), '</p></div>',
+    '<div class="card-bottom"><a href="', tag(absolute('education/' + item.id + '/')),
+    '">View details ', glyph('arrow'), '</a><a class="official-link" href="',
+    tag(providerReferralURL(item.source_url)), '" target="_blank" rel="noopener noreferrer">',
+    'Official source ↗</a></div></article>'
+  ].join('');
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><a href="', tag(absolute('categories/')),
     '">Categories</a><span aria-hidden="true">/</span><span>Education</span></nav>',
-    '<section class="page-intro"><p class="kicker">CATEGORY · ', compactNumber(programs.length),
-    ' EDUCATION BENEFITS</p><h1>Education benefits</h1>',
-    '<p>Find verified student and educator discounts, software and credits. ',
-    'Eligibility requirements apply; these offers are not counted as universal free tiers.</p></section>',
+    '<section class="page-intro"><p class="kicker">EDUCATION · STUDENT &amp; TEACHER BENEFITS</p>',
+    '<h1>Education benefits</h1>',
+    '<p>Browse independently checked student and educator software, credits and discounts. ',
+    'These offers are separate from universal free tiers and require eligibility verification.</p></section>',
+    '<section class="education-stats" aria-label="Education directory statistics">',
+    '<div class="education-stat"><strong>', compactNumber(programs.length),
+    '</strong><span>Listed benefits</span></div>',
+    '<div class="education-stat"><strong>', compactNumber(categories.length),
+    '</strong><span>Active categories</span></div>',
+    '<div class="education-stat"><strong>', tag(latestLabel),
+    '</strong><span>Latest source review</span></div></section>',
+    '<section class="education-category-index" id="education-category-index" hidden>',
+    '<div class="section-heading"><div><h2>Explore by category</h2>',
+    '<p>Choose a category to filter the offers below.</p></div></div>',
+    '<div class="education-category-grid" role="group" aria-label="Education categories">',
+    categories.map(([key, label]) => [
+      '<button class="category-chip education-category-chip" type="button" ',
+      'data-education-category="', tag(key),
+      '" aria-pressed="false" aria-controls="education-service-grid">',
+      '<strong>', tag(label), '</strong>',
+      '<span class="category-chip-count">', compactNumber(categoryCounts.get(key)),
+      ' offers</span></button>'
+    ].join('')).join(''), '</div></section>',
+    featured.length ? [
+      '<section class="education-featured" id="education-featured">',
+      '<div class="section-heading"><div><h2>Featured education benefits</h2>',
+      '<p>Selected programs worth exploring first, not a ranking by views.</p></div></div>',
+      '<div class="service-grid category-service-grid">',
+      featured.map(featureCard).join(''), '</div></section>'
+    ].join('') : '',
+    '<section class="education-directory" aria-label="Browse all education benefits">',
+    '<div class="section-heading"><div><h2>All education benefits</h2>',
+    '<p>Search across all verified offers, or refine by eligibility and benefit type.</p></div></div>',
     '<section class="category-tools" id="education-tools" aria-label="Search and filter education benefits" hidden>',
     '<div class="category-tools-primary">',
     '<label class="category-search-field" for="education-search">', glyph('search'),
@@ -672,6 +733,7 @@ function educationBenefitsPage(programs, absolute) {
     '<div class="service-grid category-service-grid" id="education-service-grid">',
     programs.map(item => [
       '<article class="service-card" data-education-id="', tag(item.id),
+      '" data-education-group="', tag(educationCategory(item)),
       '" data-audiences="', tag(item.audiences.join(' ')),
       '" data-benefit-type="', tag(item.benefit_type), '" data-date="', tag(item.last_checked),
       '" data-name="', tag(item.name.toLocaleLowerCase('en-US')), '">',
@@ -679,7 +741,8 @@ function educationBenefitsPage(programs, absolute) {
       serviceLogo({ id: item.id, name: item.name, pricing_url: item.source_url }),
       '</span><div class="card-identity"><h3><a href="',
       tag(absolute('education/' + item.id + '/')), '">', tag(item.name), '</a></h3>',
-      '<span class="eyebrow">', tag(item.audiences.map(a => audienceLabels[a]).join(' · ')),
+      '<span class="eyebrow">', tag(EDUCATION_CATEGORIES[educationCategory(item)]),
+      ' · ', tag(item.audiences.map(a => audienceLabels[a]).join(' · ')),
       '</span></div><span class="badge">', tag(benefitLabels[item.benefit_type]), '</span></div>',
       '<div class="allowance-block"><span class="card-label">Education benefit</span>',
       '<p class="allowance">', tag(item.benefit), '</p></div>',
@@ -694,7 +757,7 @@ function educationBenefitsPage(programs, absolute) {
     ].join('')).join(''),
     '</div><div class="category-no-results no-results" id="education-empty" hidden>',
     glyph('search'), '<h3>No matching benefits</h3>',
-    '<p>Try another keyword or clear the filters.</p></div>',
+    '<p>Try another keyword or clear the filters.</p></div></section>',
     '<p class="back-link"><a href="', tag(absolute('categories/')),
     '">← All categories</a> · <a href="', tag(absolute('#explore')),
     '">Browse all services</a></p>',
@@ -710,6 +773,7 @@ function educationDetailPage(item, absolute) {
     nonprofit: 'Nonprofits', opensource: 'Open-source maintainers'};
   const benefitLabels = {free: 'Free access', credit: 'Credits', discount: 'Discount'};
   const fields = [
+    ['Category', EDUCATION_CATEGORIES[educationCategory(item)]],
     ['Audience', item.audiences.map(a => audienceLabels[a]).join(' · ')],
     ['Benefit type', benefitLabels[item.benefit_type]],
     ['Who qualifies', item.eligibility],

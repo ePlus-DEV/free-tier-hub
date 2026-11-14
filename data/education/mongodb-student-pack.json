@@ -10,5 +10,6 @@
   "duration": "Promotional Atlas credit must be applied within 90 days; usable for 12 months once applied.",
   "restrictions": "Credit redeems once at organization level. Paid clusters can incur further charges after the credit; certification requires completing the learning path.",
   "source_url": "https://www.mongodb.com/students",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "cloud-hosting"
 }

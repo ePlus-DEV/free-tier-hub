@@ -7,6 +7,21 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const AUDIENCES = ['student', 'teacher', 'school', 'nonprofit', 'opensource'];
 export const BENEFIT_TYPES = ['free', 'credit', 'discount'];
+// Editorial taxonomy for education-only offers; never included in the general service count.
+export const EDUCATION_CATEGORIES = Object.freeze({
+  'ai-assistants': 'AI Assistants',
+  'developer-tools': 'Developer Tools',
+  'cloud-hosting': 'Cloud & Hosting',
+  'productivity': 'Productivity',
+  'design-creative': 'Design & Creative',
+  'learning-research': 'Learning & Research',
+  'security-privacy': 'Security & Privacy',
+  'entertainment': 'Entertainment',
+  'shopping-living': 'Shopping & Living',
+  'other': 'Other / to classify',
+});
+export const educationCategory = item =>
+  item.category && Object.hasOwn(EDUCATION_CATEGORIES, item.category) ? item.category : 'other';
 const REQUIRED = ['id', 'name', 'audiences', 'benefit_type', 'benefit', 'eligibility', 'duration', 'restrictions', 'source_url', 'last_checked'];
 const DIRECTORY = 'data/education';
 
@@ -16,7 +31,7 @@ export function validateEducationPrograms(programs, today = new Date().toISOStri
   for (const item of programs) {
     if (!item || typeof item !== 'object' || Array.isArray(item)) throw Error('Invalid education benefit');
     if (REQUIRED.some(key => !Object.hasOwn(item, key)) ||
-        Object.keys(item).some(key => !REQUIRED.includes(key))) throw Error('Unexpected education benefit fields');
+        Object.keys(item).some(key => !REQUIRED.includes(key) && key !== 'category')) throw Error('Unexpected education benefit fields');
     if (typeof item.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.id) || ids.has(item.id)) {
       throw Error('Invalid or duplicate education benefit ID');
     }
@@ -25,6 +40,9 @@ export function validateEducationPrograms(programs, today = new Date().toISOStri
         new Set(item.audiences).size !== item.audiences.length ||
         item.audiences.some(a => !AUDIENCES.includes(a))) throw Error('Invalid education audience: ' + item.id);
     if (!BENEFIT_TYPES.includes(item.benefit_type)) throw Error('Invalid education benefit type: ' + item.id);
+    if (item.category !== undefined && !Object.hasOwn(EDUCATION_CATEGORIES, item.category)) {
+      throw Error('Invalid education category: ' + item.id);
+    }
     for (const key of ['name', 'benefit', 'eligibility', 'duration', 'restrictions']) {
       if (typeof item[key] !== 'string' || !item[key].trim()) throw Error('Missing education field ' + key + ': ' + item.id);
     }

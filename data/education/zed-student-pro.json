@@ -10,5 +10,6 @@
   "duration": "One year after approval; included monthly AI credits reset each month.",
   "restrictions": "Some premium models are excluded; verification and plan eligibility required. Unused monthly credits do not accumulate.",
   "source_url": "https://zed.dev/education",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

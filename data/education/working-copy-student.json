@@ -10,5 +10,6 @@
   "duration": "While logged in with an eligible student GitHub account.",
   "restrictions": "iPhone/iPad application only; entitlement depends on active GitHub Student Developer Pack status.",
   "source_url": "https://workingcopy.app/education/",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

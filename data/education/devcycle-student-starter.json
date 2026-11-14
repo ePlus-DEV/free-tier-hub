@@ -10,5 +10,6 @@
   "duration": "One-year promotional Starter subscription; not a permanent free-tier allowance.",
   "restrictions": "Redemption requires GitHub Student Developer Pack eligibility. After the year, check the current plan and charges before continuing.",
   "source_url": "https://www.devcycle.com/github-education",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

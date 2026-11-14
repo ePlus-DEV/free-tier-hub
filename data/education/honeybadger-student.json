@@ -10,5 +10,6 @@
   "duration": "One year of the Small account.",
   "restrictions": "Service quotas are those of the Small plan, not an unlimited account; check billing if continuing after expiration.",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "developer-tools"
 }

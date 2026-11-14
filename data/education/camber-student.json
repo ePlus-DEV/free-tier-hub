@@ -10,5 +10,6 @@
   "duration": "Monthly allowances while the student remains enrolled and eligible.",
   "restrictions": "CPU/GPU and agent budgets are capped; cloud data, storage and integrations may have separate conditions. No unlimited compute entitlement.",
   "source_url": "https://education.github.com/pack",
-  "last_checked": "2026-11-10"
+  "last_checked": "2026-11-10",
+  "category": "cloud-hosting"
 }
