@@ -14569,6 +14569,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "micro-timetravel-local-http-debugger",
+    "name": "Micro-TimeTravel Local HTTP Debugger",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local HTTP reverse proxy for Docker services with request/response capture, live Web UI, replay and configurable mock responses. Free self-run software without published license usage quota or expiry; default in-memory trace buffer stores 1,000 entries.",
+    "watch_out": "MVP has no authentication and must stay on a trusted local network; captured traces and mock rules are lost on restart. WebSocket frames are not captured and Docker image build has not yet been verified in upstream CI. Requires own Docker/Node infrastructure; no hosted proxy or free compute is included.",
+    "pricing_url": "https://github.com/codexforjob-alt/micro-timetravel",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "local"
+  },
+  {
     "id": "microcks-self-hosted-api-mocking",
     "name": "Microcks Open Source API Mocking and Contract Testing",
     "category": "testing-qa",
