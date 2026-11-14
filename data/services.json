@@ -14166,6 +14166,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "lanqin-email-self-hosted",
+    "name": "LanQin Email (Self-Hosted)",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "GPL-3.0-only self-hosted mail server and webmail software; no vendor-hosted mailbox or sending quota included. Operator supplies infrastructure and sets mailbox/send limits.",
+    "watch_out": "Requires Docker, own server/domain, DNS MX/SPF/DKIM/DMARC, TLS, available SMTP ports and mail deliverability setup; VPS and storage may cost money. GPL-3.0 obligations apply to redistribution/modifications. Production security configuration required.",
+    "pricing_url": "https://github.com/LanQin996/LanQin-Email",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "larasend-self-hosted-email-platform",
     "name": "Larasend Self-Hosted Transactional Email",
     "category": "email-notifications",
