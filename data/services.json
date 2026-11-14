@@ -13033,6 +13033,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "envry-local-email-testing",
+    "name": "Envry Local Email Testing",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed local email testing app and headless server for Windows, macOS and Linux. Captures SMTP messages without delivering them externally; includes per-recipient mailboxes, POP3/IMAP, REST API, simulated provider APIs and failure testing. No provider-imposed message quota or subscription expiry is stated.",
+    "watch_out": "Early development before v1.0 with possible breaking changes. Unsigned desktop installers may trigger OS security warnings. Local SMTP accepts any credentials by default; use only in trusted development environments, protect test mail and ports, and provide your own device, CI resources and storage.",
+    "pricing_url": "https://github.com/arifurrahmanns/envry",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "local"
+  },
+  {
     "id": "eonvelope-self-hosted",
     "name": "Eonvelope Self-Hosted Email Archive",
     "category": "email-notifications",
