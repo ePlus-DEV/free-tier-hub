@@ -1,0 +1,13 @@
+{
+  "id": "gomailserver-self-hosted",
+  "name": "gomailserver Self-Hosted Mail Server",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "AGPL-3.0 self-hosted mail server software; no software-enforced mailbox or message quota stated. Includes SMTP, IMAP, CalDAV and CardDAV; hosting and delivery resources not included.",
+  "watch_out": "Requires own server, DNS, TLS, storage and outbound SMTP connectivity; VPS/provider fees and SMTP port restrictions may apply. AGPL-3.0 obligations apply to modified network deployments. Operational reliability and security require independent evaluation.",
+  "pricing_url": "https://github.com/btafoya/gomailserver",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
