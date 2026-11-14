@@ -13437,6 +13437,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "gonnotda-survey-builder-self-hosted",
+    "name": "GoNNoTDa Survey Builder (Self-Hosted)",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted PHP/MySQL survey builder with 16 question types, bilingual surveys, QR sharing and response analytics; no vendor-hosted quota or expiry.",
+    "watch_out": "Requires your own Apache/PHP and MySQL/MariaDB hosting, HTTPS, storage, backups and security maintenance; infrastructure is not free. Remove install.php after setup. New upstream project with limited adoption.",
+    "pricing_url": "https://github.com/GoNNoTDa/survey-builder",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "google-cloud-startup-program",
     "name": "Google for Startups Cloud Program",
     "category": "cloud-vps",
