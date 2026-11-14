@@ -1,0 +1,13 @@
+{
+  "id": "instantmailcheck-local-mail-server-diagnostics",
+  "name": "instantmailcheck",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed local CLI for DNS, SMTP, IMAP, POP3, TLS, email authentication and mail-server security diagnostics; no published usage quota.",
+  "watch_out": "Runs locally and provides no hosted email or server resources. Authenticated tests require your own mail credentials; active send/security checks should target only systems you are authorized to test. Early-stage upstream project.",
+  "pricing_url": "https://github.com/rest-mail/instantmailcheck",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "local"
+}
