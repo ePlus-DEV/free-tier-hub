@@ -1,0 +1,13 @@
+{
+  "id": "hiai-observe-self-hosted",
+  "name": "HiAi Observe Self-Hosted",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted observability software with error tracking, uptime checks, Docker logs, OpenTelemetry traces and metrics, public status pages, and AI tracing; no published software usage quota or expiry. Runs on user-provided infrastructure.",
+  "watch_out": "Self-hosted software only: VPS, storage, SMTP notifications, and external integrations may cost extra. Configure authentication, TLS, secrets, backups and public endpoints before production use; project maturity and upstream deployment claims require operator validation.",
+  "pricing_url": "https://github.com/HiAi-gg/hiai-observe",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
