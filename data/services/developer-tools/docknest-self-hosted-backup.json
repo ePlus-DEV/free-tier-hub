@@ -1,0 +1,13 @@
+{
+  "id": "docknest-self-hosted-backup",
+  "name": "DockNest Self-Hosted Docker Backup",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free AGPL-3.0 self-hosted Docker and nginx site backup/restore dashboard with per-site schedules, encrypted SFTP or S3-compatible backups, and recovery-point verification; no software usage quota published.",
+  "watch_out": "Beta software: automatic recovery after server reboot is not production-ready; restore-test support is limited and must be independently validated. Requires your own Linux Docker host, SSH access to target servers, backup storage and capacity; storage/provider costs are not included. Protect master encryption keys and backup access.",
+  "pricing_url": "https://github.com/DahanItamar/DockNest",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
