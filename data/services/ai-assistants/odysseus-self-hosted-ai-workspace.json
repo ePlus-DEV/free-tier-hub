@@ -1,0 +1,13 @@
+{
+  "id": "odysseus-self-hosted-ai-workspace",
+  "name": "Odysseus Self-Hosted AI Workspace",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted AI workspace software for chat, agents, documents, research and local model management; no software usage quota or expiration stated.",
+  "watch_out": "Bring your own hardware and models; optional external model APIs and integrations may incur charges. Secure authentication and network access before deployment; third-party components retain their own licenses.",
+  "pricing_url": "https://github.com/apexEvan/odysseus",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
