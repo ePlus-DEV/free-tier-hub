@@ -13607,6 +13607,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "guga-nexus-local-notifications",
+    "name": "GuGa Nexus",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed Linux-to-Android notification bridge with terminal/OS alerts, encrypted pairing, Android app and local server; no software subscription or published message quota.",
+    "watch_out": "Requires a Linux host and Android device; internet access may use Cloudflare Tunnel subject to its own terms. Self-hosted software does not include hosting or third-party network resources. Remote command execution must be secured; MCP SSE remote support is marked as problematic upstream.",
+    "pricing_url": "https://github.com/PositiveMatician/GuGa-Nexus",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "local"
+  },
+  {
     "id": "hammerdb-local-database-benchmark",
     "name": "HammerDB Local Database Benchmark",
     "category": "testing-qa",
