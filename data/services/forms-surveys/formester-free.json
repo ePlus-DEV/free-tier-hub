@@ -1,0 +1,13 @@
+{
+  "id": "formester-free",
+  "name": "Formester Free Form Builder",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Unlimited hosted forms, fields and monthly responses on the Free plan, with AI form creation, custom email notifications, payment collection and quiz auto-scoring; 2 AI form generations per day and $0.25 in monthly AI credits.",
+  "watch_out": "Free tier is positioned for individuals. Formester branding remains; conditional logic, backend-only forms, API access, team collaboration and advanced integrations require paid tiers. Commercial-use permission for this specific free plan is not explicitly confirmed; verify before production business use. Payment collection may incur processor charges.",
+  "pricing_url": "https://www.formester.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-14",
+  "deployment_model": "cloud"
+}
