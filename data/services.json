@@ -12445,6 +12445,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "bot-relay-mcp-local",
+    "name": "bot-relay-mcp Local Agent Coordination",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed local-first MCP coordination server with durable SQLite agent inboxes, tasks, channels, and optional HTTP/SSE integration; no software subscription or hosted quota.",
+    "watch_out": "Free software only, not hosted AI inference or compute. Bring your own agent clients, model subscriptions/API usage, and infrastructure. Default local-trust HTTP endpoints should not be exposed on shared/public networks; configure dashboard and HTTP secrets for remote/team use. Some federation features are roadmap-only.",
+    "pricing_url": "https://github.com/Maxlumiere/bot-relay-mcp",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "local"
+  },
+  {
     "id": "boxbox-self-hosted-file-manager",
     "name": "BoxBox Self-Hosted File Manager",
     "category": "storage",
