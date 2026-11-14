@@ -1,0 +1,13 @@
+{
+  "id": "orveil-self-hosted",
+  "name": "Orveil Self-Hosted Monitoring",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "MIT-licensed self-hosted monitoring software; 43 monitor types, incidents, SLA reports, alerts and status pages; no published software usage quota or expiry.",
+  "watch_out": "Requires your own Docker host, MongoDB, storage and operations. Configure JWT secret, admin credentials, TLS and network access before public deployment; optional notification, AI and S3 services may incur external costs. Free software does not include free VPS resources.",
+  "pricing_url": "https://github.com/zlimteck/Orveil",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
