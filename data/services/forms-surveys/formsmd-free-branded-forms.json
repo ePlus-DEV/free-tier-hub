@@ -1,0 +1,13 @@
+{
+  "id": "formsmd-free-branded-forms",
+  "name": "Forms.md Free Branded Forms",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free forever: all form features, unlimited form responses, and one end product for personal or client use, with Forms.md branding. Open-source form renderer can be installed with npm or browser assets.",
+  "watch_out": "Free plan retains Forms.md branding and excludes email/chat support; removing branding requires a one-time paid license. The published free-plan terms specify one end product; check licensing scope before deploying multiple branded products. You supply a submission endpoint and any hosting, storage or email services. Do not confuse the Apache-2.0 library with a free hosted form-response backend.",
+  "pricing_url": "https://forms.md/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-13",
+  "deployment_model": "local"
+}
