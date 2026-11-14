@@ -4,17 +4,25 @@
 
 This is the human-readable classification policy for the **specific cataloged product or plan**, not every edition a vendor sells. The source of truth for each listing is `data/services.json` and its official `pricing_url`. Do not infer plan type, availability, deployment model or billing rights from product names.
 
-## Education benefits (separate catalog)
+## Education benefits (unified offer discovery)
 
 Free software licenses, educational subscription upgrades, credits and discounts
 requiring verified student or educator status are curated in
 [\`data/education/\`](../data/education/) (one JSON shard per offer) and published
 at [Education benefits](https://free-tier.eplus.dev/education/).
 
+Home's main directory also searches and filters these benefits in **one UI**;
+`/education/` remains a canonical browsable collection with existing detail URLs.
+The build writes education rows into `search/index.json` as an **additive**
+`education_rows` field, plus `search/cards/education.json` for the same card
+renderer used by Services. The existing service `rows` contract remains unchanged.
+
+
 - This **is not a new free-tier category or an additional \`plan\` enum**. It does
   not change \`data/services.json\`, ongoing free-tier counts, category badges,
   the 48-hour new-services badge, or the time-limited offer count.
 - The build derives the public \`/education-programs.json\` from canonical shards; do not hand-edit an aggregate in source control.
+- The public `catalog-stats.json` additionally reports `service_offer_count`, `education_offer_count` and **`total_offers`**, reflecting unique scoped **offer records** rather than unique vendors/products. The legacy `total_services` field and free-tier badges remain service-only. We intentionally do not publish a deduplicated product count until each education offer can be explicitly linked to a verified product identity.
 - Each benefit records who qualifies, the official HTTPS source, verification
   date, duration/renewal and important limitations. A provider may withdraw an
   offer or restrict it by region, institution or educational usage rights.

@@ -122,8 +122,15 @@ test('Education navigation remains available without altering ordinary service t
     const stats = JSON.parse(read('catalog-stats.json'));
     const programs = JSON.parse(read('education-programs.json'));
     assert.equal(stats.total_services, result.service_count);
+    assert.equal(stats.total_offers, stats.total_services + input.length);
+    assert.equal(stats.education_offer_count, input.length);
+    const combined = JSON.parse(read('search/index.json'));
+    assert.equal(combined.education_rows.length, input.length);
+    assert.ok(combined.education_rows.some(row=>row[0]==='edu-github-copilot-student'));
+    const eduFragments=JSON.parse(read('search/cards/education.json'));
+    assert.ok(eduFragments['edu-github-copilot-student'].includes('/education/github-copilot-student/'));
     assert.equal(programs.length, input.length);
-    assert.match(home, /class="category-chip education-program-chip" href="https:\/\/free-tier\.eplus\.dev\/education\/"/);
+    assert.match(home, /class="category-chip education-program-chip" data-filter-category="education"/);
     assert.match(home, /<option value="education">Education benefits \(/);
     assert.match(home, /id="education-filter-destination"/);
     assert.match(read('education/index.html'), /class="page-intro"/);

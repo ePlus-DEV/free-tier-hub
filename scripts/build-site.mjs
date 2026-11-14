@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { CATEGORIES, validateData } from './catalog.mjs';
 import { loadServices } from './catalog-source.mjs';
 import { loadEducationPrograms } from './education-programs.mjs';
+import { educationSearchRows, unifiedOfferStats } from './unified-offers.mjs';
 import { compactNumber, compactQuantityText } from '../site/assets/compact-numbers.js';
 import { activeServiceAliases } from './service-aliases.mjs';
 import { relatedServiceMap } from './service-relations.mjs';
@@ -306,6 +307,7 @@ export function aivenMySQLFreeRetirementNotice(item, now = Date.now()) {
 function homePage(items, absolute, counts, searchVersion, educationCount) {
   const mainItems = items.filter(isMainFreeOffer);
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
+  const allOffersCount = items.length + educationCount;
   const startupItems = items.filter(item => item.program === 'startup');
   const planCounts = Object.fromEntries(
     ['ongoing', 'monthly-credit'].map(plan => [plan, items.filter(item => item.plan === plan).length])
@@ -320,12 +322,12 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
   const options = CATEGORIES.map(category =>
     '<option value="' + tag(category) + '">' + tag(CATEGORY_NAMES[category]) +
     ' (' + compactNumber(counts[category]) + ')</option>').join('');
-  const shortcuts = [['', 'All services'], ['education', 'Education benefits'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
+  const shortcuts = [['', 'All offers'], ['education', 'Education benefits'], ['static-hosting', 'Hosting'], ['email-notifications', 'Email'], ['databases', 'Databases'], ['ai-assistants', 'AI assistants'], ['storage', 'Storage'], ['ci-cd', 'CI/CD'], ['developer-tools', 'Developer tools']].map(([category, label]) =>
     category === 'education'
-      ? '<a class="category-chip education-program-chip" href="' + tag(absolute('education/')) +
-        '" aria-label="Browse ' + educationCount + ' education benefits">' + tag(label) +
-        ' <span class="category-chip-count" aria-label="' + educationCount + ' education benefits">' +
-        compactNumber(educationCount) + '</span></a>'
+      ? '<button type="button" class="category-chip education-program-chip" data-filter-category="education" ' +
+        'aria-pressed="false" aria-label="Filter education benefits in the main directory">' +
+        tag(label) + ' <span class="category-chip-count">' +
+        compactNumber(educationCount) + '</span></button>'
       : '<button type="button" class="category-chip" data-filter-category="' + tag(category) +
         '" aria-pressed="' + (category === '' ? 'true' : 'false') + '">' + tag(label) +
         (category ? ' <span class="category-chip-count" aria-label="' + counts[category] +
@@ -368,12 +370,13 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<div class="filter-popover-heading"><strong id="filter-dialog-title">Filters</strong><span>Results update as you choose</span>',
     '<button class="filter-sheet-close" type="button" aria-label="Close filters">', glyph('close'), '</button></div>',
     '<label class="all-categories" for="category-filter"><span>Category</span>',
-    '<select id="category-filter"><option value="">All categories (', compactNumber(items.length),
-    ')</option>', options, '</select></label>',
+    '<select id="category-filter"><option value="">All categories (', compactNumber(allOffersCount),
+    ')</option>', options, '<option value="education">Education (', compactNumber(educationCount),
+    ')</option></select></label>',
     '<p class="category-filter-index-link">Want to explore? <a href="', tag(absolute('categories/')),
     '">Browse all ', CATEGORIES.length, ' categories ', glyph('arrow'), '</a></p>',
     '<label class="offer-type-field" for="offer-filter"><span>Offer type</span>',
-    '<select id="offer-filter"><option value="">All services (', compactNumber(items.length), ')</option>',
+    '<select id="offer-filter"><option value="">All offers (', compactNumber(allOffersCount), ')</option>',
     '<option value="free">Free tiers (', compactNumber(mainItems.length), ')</option>',
     '<option value="ongoing">Ongoing free allowance (', compactNumber(planCounts.ongoing), ')</option>',
     '<option value="monthly-credit">Recurring monthly credit (', compactNumber(planCounts['monthly-credit']), ')</option>',
@@ -382,7 +385,7 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<option value="startup">Startup programs (', compactNumber(startupItems.length),
     ')</option><optgroup label="Special programs">',
     '<option value="education">Education benefits (', compactNumber(educationCount),
-    ') — opens dedicated page</option></optgroup></select></label>',
+    ')</option></optgroup></select></label>',
     '<p class="education-filter-link">For students and teachers: <a href="',
     tag(absolute('education/')), '" id="education-filter-destination">Browse ', compactNumber(educationCount),
     ' education benefits ↗</a>. Eligibility verification required.</p>',
@@ -414,9 +417,9 @@ function homePage(items, absolute, counts, searchVersion, educationCount) {
     '<div class="directory-heading">',
     '<h2>Explore services</h2><div class="results-meta">',
     '<p class="result-count" id="results-count" aria-live="polite">',
-    '<span class="result-label">All services</span><strong class="result-total">',
-    compactNumber(items.length), '</strong><span class="result-shown">Showing ',
-    compactNumber(Math.min(12, items.length)), ' of ', compactNumber(items.length), '</span></p>',
+    '<span class="result-label">All offers</span><strong class="result-total">',
+    compactNumber(allOffersCount), '</strong><span class="result-shown">Showing ',
+    compactNumber(Math.min(12, items.length)), ' of ', compactNumber(allOffersCount), '</span></p>',
     '</div></div>',
     '<div class="service-grid" id="service-grid" data-search-index="',
     tag(absolute('search/index.json?v=' + searchVersion)),
@@ -486,7 +489,7 @@ function recentCountMarkup(items, now = Date.now()) {
     : '';
 }
 
-function categoriesOverviewPage(absolute, counts, mainItems) {
+function categoriesOverviewPage(absolute, counts, mainItems, educationCount) {
   const total = CATEGORIES.reduce((sum, category) => sum + counts[category], 0);
   const entries = CATEGORIES.map(category => {
     const name = CATEGORY_NAMES[category];
@@ -505,6 +508,17 @@ function categoriesOverviewPage(absolute, counts, mainItems) {
       '</a>',
     ].join('');
   }).join('');
+  const educationEntry = [
+    '<a class="category-overview-card" href="', tag(absolute('?offer=education#explore')),
+    '" data-category-name="education student teacher academic">',
+    '<span class="category-overview-icon" aria-hidden="true">', glyph('layers'), '</span>',
+    '<span class="category-overview-body"><strong>Education benefits</strong>',
+    '<span class="category-overview-description">Student and educator offers within the unified directory, with eligibility checks.</span></span>',
+    '<span class="category-overview-foot"><span class="category-overview-count"><b>',
+    compactNumber(educationCount), '</b> offers · collection</span>',
+    '<span class="category-overview-arrow" aria-hidden="true">', glyph('arrow'),
+    '</span></span></a>'
+  ].join('');
   return [
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="', tag(absolute()),
     '">Home</a><span aria-hidden="true">/</span><span>Categories</span></nav>',
@@ -522,7 +536,7 @@ function categoriesOverviewPage(absolute, counts, mainItems) {
     glyph('search'), '<span class="sr-only">Search categories</span>',
     '<input id="category-overview-search" type="search" autocomplete="off"',
     ' placeholder="Search categories..." aria-controls="category-overview-grid"></label></div>',
-    '<div class="category-overview-grid" id="category-overview-grid">', entries, '</div>',
+    '<div class="category-overview-grid" id="category-overview-grid">', entries, educationEntry, '</div>',
     '<p class="category-overview-empty" id="category-overview-empty" role="status" aria-live="polite" hidden>No matching categories. Try another search.</p>',
     '</section><p class="back-link"><a href="', tag(absolute('#explore')),
     '">← Browse all services</a></p>',
@@ -629,6 +643,31 @@ function classificationsPage(absolute) {
     '<a href="', tag(REPOSITORY + '/blob/main/docs/classifications.md'), '">Read the repository guide</a></p>',
   ].join('');
 }
+function educationSearchCard(item, absolute) {
+  const key='edu-'+item.id;
+  const dest=tag(absolute('education/'+item.id+'/'));
+  const audience={student:'Students',teacher:'Teachers',school:'Schools',
+    nonprofit:'Nonprofits',opensource:'Open-source maintainers'};
+  return [
+    '<article class="service-card" data-service-id="',tag(key),
+    '" data-category="education" data-program="education">',
+    '<div class="card-top"><span class="service-icon" aria-hidden="true">',
+    serviceLogo({id:item.id,name:item.name,pricing_url:item.source_url}),
+    '</span><div class="card-identity"><h3><a href="',dest,'">',
+    tag(item.name),'</a></h3><span class="eyebrow">',
+    tag(item.audiences.map(a=>audience[a]).join(' · ')),
+    '</span></div><span class="badge">Education · ',tag(item.benefit_type),
+    '</span></div>',
+    '<div class="allowance-block"><span class="card-label">Education benefit</span>',
+    '<p class="allowance">',tag(item.benefit),'</p></div>',
+    '<div class="restriction-block"><span class="card-label">Who qualifies?</span>',
+    '<p class="restriction">',tag(item.eligibility),'</p></div>',
+    '<div class="card-bottom"><span class="education-reviewed">Checked ',
+    tag(item.last_checked),'</span><a href="',dest,'">View details ',
+    glyph('arrow'),'</a></div></article>'
+  ].join('');
+}
+
 function educationBenefitsPage(programs, absolute) {
   // Reuse the existing category-page toolbar, service cards, and shared design tokens.
   // Education keeps a separate dataset, eligibility filters, and totals.
@@ -1004,7 +1043,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   const limitedItems = items.filter(item => !isMainFreeOffer(item));
   const generatedAt = new Date().toISOString();
   const new48hCount = countNewIn48Hours(items, Date.parse(generatedAt));
-  const searchVersion = createHash('sha256').update(JSON.stringify(items)).digest('hex').slice(0, 12);
+  const searchVersion = createHash('sha256').update(JSON.stringify([items,educationPrograms])).digest('hex').slice(0, 12);
+  const educationRows = educationSearchRows(items,educationPrograms);
   const searchIndex = {
     version: 1,
     revision: searchVersion,
@@ -1012,6 +1052,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     // Startup classification is a compact explicit ID set, not inferred from names;
     // keep the existing 10-field row contract for clients and compare UI.
     startup_program_ids: items.filter(item => item.program === 'startup').map(item => item.id),
+    // Service rows remain backward-compatible; education is an additive extension.
+    education_rows: educationRows,
     rows: items.map(item => [
       item.id, item.name, item.category, item.plan, hostingModel(item),
       item.credit_card, item.commercial_use, item.added_at_utc || item.added_at || '', item.last_checked,
@@ -1060,7 +1102,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   file(output, categoriesRelative + 'index.html', document(absolute,
     'All Categories | Free Tier Hub',
     'Browse all free-tier categories, from hosting and databases to developer tools, security, AI and monitoring, with live catalog counts.',
-    categoriesRelative, categoriesOverviewPage(absolute, counts, mainItems), categoriesSchema));
+    categoriesRelative, categoriesOverviewPage(absolute, counts, mainItems, educationPrograms.length), categoriesSchema));
   pageURLs.push([categoriesRelative, latest]);
   const educationRelative = 'education/';
   const educationSchema = { '@context': 'https://schema.org', '@graph': [
@@ -1246,6 +1288,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   // Public catalog remains unchanged for external API users; the browser only
   // requests the compact index and HTML for categories currently on screen.
   file(output, 'search/index.json', JSON.stringify(searchIndex) + '\n');
+  file(output, 'search/cards/education.json', JSON.stringify(Object.fromEntries(
+    educationPrograms.map(item => ['edu-' + item.id, educationSearchCard(item,absolute)]))) + '\n');
   for (const category of CATEGORIES) {
     const fragments = Object.fromEntries(items.filter(item => item.category === category)
       .map(item => [item.id, card(item, absolute)]));
@@ -1255,6 +1299,7 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
   // GitHub README's dynamic badge must show the same number as the Home directory.
   // Keep the full public catalog unchanged for existing API consumers.
   file(output, 'catalog-stats.json', JSON.stringify({
+    ...unifiedOfferStats(items,educationPrograms),
     free_tier_count: mainItems.length,
     limited_offer_count: limitedItems.length,
     total_services: items.length,

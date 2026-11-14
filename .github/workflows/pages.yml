@@ -233,8 +233,12 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import { loadServices } from './scripts/catalog-source.mjs';
+          import { loadEducationPrograms } from './scripts/education-programs.mjs';
           import { compactNumber } from './site/assets/compact-numbers.js';
           const entries = loadServices();
+          const educationCount = loadEducationPrograms().length;
+          const offerTotal = entries.length + educationCount;
+          const offerDisplay = compactNumber(offerTotal);
           const expected = entries.filter(item => item.plan === 'ongoing' || item.plan === 'monthly-credit').length;
           const expectedLimited = entries.length - expected;
           const display = compactNumber(entries.length);
@@ -259,7 +263,10 @@ jobs:
               ]);
               if (stats.free_tier_count !== expected ||
                   stats.limited_offer_count !== expectedLimited ||
-                  stats.total_services !== entries.length) throw Error('Deployed catalog stats do not match main');
+                  stats.total_services !== entries.length ||
+                  stats.total_offers !== offerTotal ||
+                  stats.education_offer_count !== educationCount ||
+                  stats.service_offer_count !== entries.length) throw Error('Deployed catalog stats do not match main');
               const expectedBadges = [
                 [badge, entries.length, display, 'services'],
                 [freeBadge, expected, freeDisplay, 'free tiers'],
@@ -272,11 +279,12 @@ jobs:
                 }
               }
               if (home.includes('class="hero-stats"') ||
-                  !home.includes('<span class="result-label">All services</span><strong class="result-total">' + display + '</strong>') ||
-                  !home.includes('<select id="offer-filter"><option value="">All services (' + display + ')</option>') ||
+                  !home.includes('<span class="result-label">All offers</span><strong class="result-total">' + offerDisplay + '</strong>') ||
+                  !home.includes('<select id="offer-filter"><option value="">All offers (' + offerDisplay + ')</option>') ||
+                  !home.includes('<option value="education">Education benefits (' + compactNumber(educationCount) + ')</option>') ||
                   !home.includes('<option value="free">Free tiers (' + freeDisplay + ')</option>') ||
                   !home.includes('<option value="limited">Time-limited &amp; expiring offers (' + limitedDisplay + ')</option>') ||
-                  !home.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, expected)) + ' of ' + display + '</span>')) {
+                  !home.includes('<span class="result-shown">Showing ' + compactNumber(Math.min(12, entries.length)) + ' of ' + offerDisplay + '</span>')) {
                 throw Error('Home filter counts or right-aligned result count do not match README badges');
               }
               console.log('Live service badges verified:', entries.length, 'all;',
