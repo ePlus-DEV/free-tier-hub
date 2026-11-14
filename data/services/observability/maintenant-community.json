@@ -1,0 +1,13 @@
+{
+  "id": "maintenant-community",
+  "name": "maintenant Community",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Self-hosted Community edition: 1 host, 10 endpoints, 5 heartbeats, 5 certificate monitors, 7 days of resource history, 3 status-page components; Discord and webhook alerts. Free indefinitely.",
+  "watch_out": "Community edition limits apply; email/Telegram alerts, remote hosts and extended retention require paid editions. Hosting, storage and operations are not included. Apache-2.0 covers the core; paid-feature source files have a separate commercial license. No built-in authentication; protect the dashboard behind an authenticated reverse proxy. Anonymous telemetry is opt-out.",
+  "pricing_url": "https://maintenant.dev/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-14",
+  "deployment_model": "self-hosted"
+}
