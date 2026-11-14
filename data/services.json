@@ -12668,6 +12668,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "codewizdevs-uptime-self-hosted",
+    "name": "codewizdevs Uptime Self-Hosted",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "MIT-licensed self-hosted uptime monitoring software with HTTP/HTTPS, TCP, ICMP, DNS, TLS certificate and domain-expiry checks; cron heartbeats, alert channels, public status pages, and Prometheus metrics. No software subscription or published monitor quota; capacity depends on your own server.",
+    "watch_out": "Requires your own Node.js 20+ server, SQLite or MySQL storage, networking and maintenance; optional Docker. SMTP, notification integrations and hosting may incur external costs. Upstream is a small project with limited adoption; review production security, backups and operational readiness independently. This is not a free hosted monitoring account.",
+    "pricing_url": "https://github.com/codewizdevs/uptime",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-14",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "cognito-forms-individual-free",
     "name": "Cognito Forms Individual Free",
     "category": "forms-surveys",
