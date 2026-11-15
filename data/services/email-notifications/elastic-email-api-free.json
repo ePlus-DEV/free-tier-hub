@@ -1,0 +1,13 @@
+{
+  "id": "elastic-email-api-free",
+  "name": "Elastic Email API Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Up to 3,000 emails/month, with a 100-emails/day sending cap; SMTP relay and HTTP email API.",
+  "watch_out": "Daily sending cap applies even below monthly allowance. Paid Starter/Pro plans and optional add-ons cost extra; credit-card requirement and explicit commercial-use permission for the Free plan are not confirmed on the public pricing page.",
+  "pricing_url": "https://elasticemail.com/email-api-pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
