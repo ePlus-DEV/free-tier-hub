@@ -1,0 +1,13 @@
+{
+  "id": "forminit-free",
+  "name": "Forminit Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "1 hosted form, 100 submissions per month and 100 MB file storage; includes file uploads, email notifications, workflow, redirects, validation and spam protection.",
+  "watch_out": "Free plan is described for personal projects and trying Forminit; commercial use is not confirmed. Pro plan is required for 5,000 monthly submissions and 15 forms. No credit card required for free signup.",
+  "pricing_url": "https://forminit.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
