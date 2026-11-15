@@ -13475,6 +13475,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "getyoutubetranscript-api-signup-credits",
+    "name": "GetYouTubeTranscript API Sign-up Credits",
+    "category": "developer-tools",
+    "plan": "limited-duration",
+    "free_limit": "100 one-time credits on account sign-up for the YouTube transcript REST API and hosted MCP server; 1 credit per successful transcript, search, channel or playlist request, and failed requests are not charged.",
+    "watch_out": "Not a recurring monthly allowance: once the 100 sign-up credits are used, API access needs a paid plan or top-up credits. Sign-up credits can be withheld from accounts flagged for repeated sign-ups. Reselling the API as a competing product or sharing API keys is not allowed under the terms.",
+    "pricing_url": "https://getyoutubetranscript.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "github-for-startups-credits",
     "name": "GitHub for Startups Platform Credits",
     "category": "ci-cd",
@@ -16233,6 +16246,19 @@
     "watch_out": "Official pricing page contains conflicting legacy promotional figures (10 monitors/5-minute checks); detailed Free comparison says 3/15 minutes. Single login/personal-use positioning; commercial use requires provider confirmation. Paid upgrades and extra monitoring features cost money.",
     "pricing_url": "https://www.statuscake.com/pricing/",
     "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "statusgator-free",
+    "name": "StatusGator Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "3 monitors, 1 board, 1 user, 100 status-page subscribers, 10 notifications per month, 1 month of history; API 15 requests/minute.",
+    "watch_out": "Free tier is separate from the 14-day paid-feature trial. Check whether free monitoring and status-page features meet production needs; paid tiers add capacity and integrations. Commercial-use eligibility and billing details require confirmation.",
+    "pricing_url": "https://statusgator.com/plans",
+    "credit_card": "check",
     "commercial_use": "check",
     "last_checked": "2026-11-15",
     "deployment_model": "cloud"
