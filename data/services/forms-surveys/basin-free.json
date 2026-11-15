@@ -1,0 +1,13 @@
+{
+  "id": "basin-free",
+  "name": "Basin Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "1 hosted form endpoint, 50 submissions per month, 1 project, 30-day submission retention, basic spam protection and AJAX support.",
+  "watch_out": "Free plan is intended for testing and light use; submissions above 50/month require a paid plan. Commercial-use permission and whether signup requires a payment card are not explicitly confirmed on official pricing. Paid tiers have different retention and features.",
+  "pricing_url": "https://usebasin.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
