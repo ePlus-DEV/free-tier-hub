@@ -1,0 +1,13 @@
+{
+  "id": "upstash-box-free",
+  "name": "Upstash Box Free",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Up to 10 concurrent hosted agent sandboxes; 5 CPU core-hours per month, with 2 vCPU, 4 GB RAM and up to 10 GB disk per free box. Supports Node.js, Python, Go, Ruby and Rust.",
+  "watch_out": "Free boxes pause after 1 hour idle; processes stop until resumed, so this is not an always-on VPS. Keep-alive requires a paid plan. AI agents require your own model-provider key and may incur separate model charges. Region is AWS us-east-1; commercial-use terms for the Free plan are not explicitly confirmed.",
+  "pricing_url": "https://upstash.com/pricing/box",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
