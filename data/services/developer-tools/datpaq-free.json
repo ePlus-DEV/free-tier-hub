@@ -4,7 +4,7 @@
   "category": "developer-tools",
   "plan": "ongoing",
   "free_limit": "250 API requests/month; full API catalog, CLI and MCP server",
-  "watch_out": "Free remains $0 without a card for 250 API requests/month. Official pricing FAQ says usage above the monthly limit receives an approximately five-day upgrade grace window; requests over the limit MAY be billed after that. Do not assume an automatic hard stop; confirm actual billing enforcement with DATPAQ before production use.",
+  "watch_out": "Free remains $0 without a card for 250 API requests/month. Official pricing FAQ says usage above the monthly limit receives an approximately five-day upgrade grace window; requests over the limit MAY be billed after that. Do not assume an automatic hard stop; confirm actual billing enforcement with DATPAQ before production use. IMPORTANT: The provider homepage currently advertises a different Free quota (10 calls per API/day and 100 calls per API/month), while its dedicated pricing page and agent documentation state 250 requests/month. Its security page says monthly ceilings throttle rather than bill open-ended overages, conflicting with the pricing FAQ's possible billing after a ~5-day grace period. Treat both quota and overage enforcement as UNRESOLVED; verify with DATPAQ before relying on either figure or a hard stop.",
   "pricing_url": "https://datpaq.com/pricing",
   "credit_card": "no",
   "commercial_use": "check",
