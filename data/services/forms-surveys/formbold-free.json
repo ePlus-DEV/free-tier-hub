@@ -1,0 +1,13 @@
+{
+  "id": "formbold-free",
+  "name": "Formbold Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "5 hosted forms, 100 submissions per month, 1 workspace and 1 team member; includes spam filtering, reCAPTCHA, file attachments, webhooks/API and CSV export.",
+  "watch_out": "Official free plan is marketed for personal projects and experiments; commercial use and free-signup credit card requirements are not explicitly confirmed. Paid Starter increases limits to 3,000 monthly submissions.",
+  "pricing_url": "https://formbold.com/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
