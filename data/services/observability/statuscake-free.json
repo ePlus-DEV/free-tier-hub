@@ -1,0 +1,13 @@
+{
+  "id": "statuscake-free",
+  "name": "StatusCake Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free hosted uptime monitoring: 3 HTTP(S) monitors with 15-minute checks, per the current detailed Free plan comparison.",
+  "watch_out": "Official pricing page contains conflicting legacy promotional figures (10 monitors/5-minute checks); detailed Free comparison says 3/15 minutes. Single login/personal-use positioning; commercial use requires provider confirmation. Paid upgrades and extra monitoring features cost money.",
+  "pricing_url": "https://www.statuscake.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
