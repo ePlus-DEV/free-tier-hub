@@ -1,0 +1,13 @@
+{
+  "id": "usesend-cloud-free",
+  "name": "useSend Cloud Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Hosted free plan: up to 3,000 emails per month and 100 per day; 1 contact book, 1 sending domain, and 1 team member.",
+  "watch_out": "Monthly and daily caps both apply. Paid plan has a $10 monthly minimum; verify upgrade behavior and any billing requirements before enabling paid usage. Free-plan credit-card requirement and commercial-use terms are not explicitly confirmed. Hosted email allowance is distinct from self-hosted AGPL-3.0 software, which requires separately funded infrastructure and email delivery.",
+  "pricing_url": "https://usesend.com/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
