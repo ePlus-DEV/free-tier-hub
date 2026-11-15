@@ -12393,6 +12393,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "basin-free",
+    "name": "Basin Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "1 hosted form endpoint, 50 submissions per month, 1 project, 30-day submission retention, basic spam protection and AJAX support.",
+    "watch_out": "Free plan is intended for testing and light use; submissions above 50/month require a paid plan. Commercial-use permission and whether signup requires a payment card are not explicitly confirmed on official pricing. Paid tiers have different retention and features.",
+    "pricing_url": "https://usebasin.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "berger-email-triage",
     "name": "Berger Email Triage",
     "category": "email-notifications",
@@ -14580,6 +14593,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
     "deployment_model": "local"
+  },
+  {
+    "id": "maileroo-free",
+    "name": "Maileroo Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "3,000 outbound emails/month, 1,000 inbound emails/month, 2 sending domains; 100 test emails/month, 3 SMTP sinks and 5 testing inboxes.",
+    "watch_out": "Free quotas reset monthly; higher sending/receiving/testing usage requires a paid plan. Maileroo Verify is separately priced per verification plus channel fees, not included in free email quotas. Commercial-use permission is not explicitly confirmed; review provider terms before production use.",
+    "pricing_url": "https://maileroo.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
   },
   {
     "id": "mailhog-local-smtp-testing",
