@@ -12510,6 +12510,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "browserless-cloud-free",
+    "name": "Browserless Cloud Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "1,000 browser units per month; up to 2 concurrent browsers and 2 minutes per session. One unit covers up to 30 seconds of browser time; proxy traffic and CAPTCHA solving also consume units.",
+    "watch_out": "Free Cloud usage is capped: requests are rejected after the monthly unit allowance, rather than billed as overages. Residential proxy traffic uses 6 units/MB, datacenter proxy 2 units/MB, and successful CAPTCHA solving 10 units. Do not confuse hosted Cloud Free with the separately licensed SSPL self-hosted edition; commercial-use permission for Cloud Free is not explicitly confirmed.",
+    "pricing_url": "https://cloud.browserless.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "bugtraceai-self-hosted",
     "name": "BugTraceAI Self-Hosted Security Testing Suite",
     "category": "testing-qa",
@@ -16628,6 +16641,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "upstash-box-free",
+    "name": "Upstash Box Free",
+    "category": "cloud-vps",
+    "plan": "ongoing",
+    "free_limit": "Up to 10 concurrent hosted agent sandboxes; 5 CPU core-hours per month, with 2 vCPU, 4 GB RAM and up to 10 GB disk per free box. Supports Node.js, Python, Go, Ruby and Rust.",
+    "watch_out": "Free boxes pause after 1 hour idle; processes stop until resumed, so this is not an always-on VPS. Keep-alive requires a paid plan. AI agents require your own model-provider key and may incur separate model charges. Region is AWS us-east-1; commercial-use terms for the Free plan are not explicitly confirmed.",
+    "pricing_url": "https://upstash.com/pricing/box",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "uptimestatus-self-hosted",
     "name": "uptimestatus Self-Hosted",
     "category": "observability",
@@ -16926,6 +16952,19 @@
     "commercial_use": "check",
     "deployment_model": "cloud",
     "last_checked": "2026-11-06"
+  },
+  {
+    "id": "zoho-survey-free",
+    "name": "Zoho Survey Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Unlimited surveys, up to 10 questions per survey and 100 responses per survey per month (also a 100-response annual limit per survey); 1 user.",
+    "watch_out": "The 100-response annual cap per survey applies alongside the monthly cap; this is not 100 additional responses every month for the same survey. More questions, higher response limits, advanced logic and team access require paid tiers. Credit-card requirement and specific commercial-use permission for the Free plan are not explicitly confirmed; check before business use.",
+    "pricing_url": "https://www.zoho.com/survey/pricing.html",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
   },
   {
     "id": "zorvik-local-api-testing",
