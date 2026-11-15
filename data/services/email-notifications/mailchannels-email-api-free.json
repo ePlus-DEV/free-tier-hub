@@ -1,0 +1,13 @@
+{
+  "id": "mailchannels-email-api-free",
+  "name": "MailChannels Email API Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Hosted transactional Email API free developer plan: up to 100 recipient sends per day and 3,000 per month, up to 3 sending domains, REST API/SMTP, and 30-day transaction log retention. Monthly allowance resets each billing cycle; unused sends do not roll over.",
+  "watch_out": "The free Email API is distinct from paid Outbound Filtering and the discontinued legacy Cloudflare Workers sending integration. Each recipient and attempted delivery counts; sending pauses at plan limits without overages. Free plan is described for testing, prototyping and small projects; commercial/production rights and credit-card requirements are not explicitly confirmed. Paid plans start at higher volumes.",
+  "pricing_url": "https://www.mailchannels.com/pricing/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
