@@ -1,0 +1,13 @@
+{
+  "id": "browserless-cloud-free",
+  "name": "Browserless Cloud Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "1,000 browser units per month; up to 2 concurrent browsers and 2 minutes per session. One unit covers up to 30 seconds of browser time; proxy traffic and CAPTCHA solving also consume units.",
+  "watch_out": "Free Cloud usage is capped: requests are rejected after the monthly unit allowance, rather than billed as overages. Residential proxy traffic uses 6 units/MB, datacenter proxy 2 units/MB, and successful CAPTCHA solving 10 units. Do not confuse hosted Cloud Free with the separately licensed SSPL self-hosted edition; commercial-use permission for Cloud Free is not explicitly confirmed.",
+  "pricing_url": "https://cloud.browserless.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
