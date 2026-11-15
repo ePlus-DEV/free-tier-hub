@@ -1,0 +1,13 @@
+{
+  "id": "statusgator-free",
+  "name": "StatusGator Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "3 monitors, 1 board, 1 user, 100 status-page subscribers, 10 notifications per month, 1 month of history; API 15 requests/minute.",
+  "watch_out": "Free tier is separate from the 14-day paid-feature trial. Check whether free monitoring and status-page features meet production needs; paid tiers add capacity and integrations. Commercial-use eligibility and billing details require confirmation.",
+  "pricing_url": "https://statusgator.com/plans",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
