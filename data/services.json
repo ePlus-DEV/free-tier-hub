@@ -15535,6 +15535,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "plunk-cloud-free",
+    "name": "Plunk Cloud Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "1,000 hosted emails per month across transactional, marketing, workflow and inbound messages; unlimited contacts, custom domains, API/SMTP and automations.",
+    "watch_out": "Free hosted tier includes Plunk branding in marketing emails; 1,000-email allowance also counts inbound messages. Exceeding the free allowance requires upgrading to paid usage at $0.001/email; self-hosting requires separately paid infrastructure and email delivery. Commercial use on the hosted free plan is not expressly confirmed in the reviewed pricing and billing pages.",
+    "pricing_url": "https://www.useplunk.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-14",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "polly-self-hosted-polling",
     "name": "Polly Self-Hosted Polling",
     "category": "forms-surveys",
