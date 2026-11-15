@@ -1,0 +1,13 @@
+{
+  "id": "getyoutubetranscript-api-signup-credits",
+  "name": "GetYouTubeTranscript API Sign-up Credits",
+  "category": "developer-tools",
+  "plan": "limited-duration",
+  "free_limit": "100 one-time credits on account sign-up for the YouTube transcript REST API and hosted MCP server; 1 credit per successful transcript, search, channel or playlist request, and failed requests are not charged.",
+  "watch_out": "Not a recurring monthly allowance: once the 100 sign-up credits are used, API access needs a paid plan or top-up credits. Sign-up credits can be withheld from accounts flagged for repeated sign-ups. Reselling the API as a competing product or sharing API keys is not allowed under the terms.",
+  "pricing_url": "https://getyoutubetranscript.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
