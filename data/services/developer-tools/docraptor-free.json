@@ -1,0 +1,13 @@
+{
+  "id": "docraptor-free",
+  "name": "DocRaptor Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "5 production PDF or Excel document conversions per month via hosted API; unlimited watermarked test documents do not consume the monthly allowance.",
+  "watch_out": "Free plan has no document-conversion overages. Watermarked test documents are unsuitable for production. Hosted-document storage is not included for free: hosting costs 1 cent per document per month, metered daily; avoid enabling it without reviewing billing. Paid upgrades require a card. Provider reserves the right to limit free access; review service terms before business use.",
+  "pricing_url": "https://docraptor.com/signup",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
