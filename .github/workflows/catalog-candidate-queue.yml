@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   deliver:
-    if: github.event_name == 'workflow_dispatch' || (startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || startsWith(github.event.comment.body, '{"deployment_model"')))
+    if: github.event_name == 'workflow_dispatch' || (startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || (startsWith(github.event.comment.body, '{"deployment_model"') || startsWith(github.event.comment.body, '<!-- free-tier-hub:deployment-evidence:v1:start -->'))))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -77,9 +77,9 @@ jobs:
           node-version-file: '.nvmrc'
           package-manager-cache: false
 
-      # A canonical candidate Issue contains exactly ten catalog fields.
-      # A trusted JSON Issue comment supplies independently sourced deployment
-      # evidence without changing that payload. Old eleven-field Issues still work.
+      # Canonical Issue JSON can be raw (legacy) or inside a readable Markdown body.
+      # Trusted deployment comments support legacy JSON or formatted evidence.
+      # The candidate JSON itself remains unchanged (including old 11-field Issues).
       - name: Resolve deployment evidence
         id: deployment
         env:
@@ -88,19 +88,20 @@ jobs:
           ISSUE_BODY: ${{ github.event_name == 'workflow_dispatch' && steps.queued_issue.outputs.body || github.event.issue.body }}
         run: |
           set -euo pipefail
-          printf '%s' "$ISSUE_BODY" > /tmp/issue-candidate.json
+          printf '%s' "$ISSUE_BODY" > /tmp/issue-candidate.txt
           gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments?per_page=100" > /tmp/candidate-comments.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { validateCandidate } from './scripts/catalog.mjs';
           import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
-          const original = JSON.parse(fs.readFileSync('/tmp/issue-candidate.json', 'utf8'));
+          import { parseCandidateIssue } from './scripts/catalog-issue-format.mjs';
+          const original = parseCandidateIssue(fs.readFileSync('/tmp/issue-candidate.txt', 'utf8'));
           validateCandidate(original);
           const comments = JSON.parse(fs.readFileSync('/tmp/candidate-comments.json', 'utf8')).flat();
           const candidate = resolveCandidateDeployment(original, comments);
           if (!candidate) {
             console.log('::notice::Waiting for trusted deployment evidence comment; no branch or PR created');
-            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'No Draft PR: missing valid trusted deployment evidence comment. Add the exact deployment JSON comment and retry.\n');
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'No Draft PR: missing valid trusted deployment evidence comment. Add a trusted JSON or formatted deployment evidence comment and retry.\n');
             if (process.env.GITHUB_EVENT_NAME === 'workflow_dispatch') {
               throw Error('Manual delivery blocked: missing valid trusted deployment evidence comment');
             }
