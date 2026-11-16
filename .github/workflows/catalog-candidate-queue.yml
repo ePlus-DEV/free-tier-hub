@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   deliver:
-    if: github.event_name == 'workflow_dispatch' || (startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || (startsWith(github.event.comment.body, '{"deployment_model"') || startsWith(github.event.comment.body, '<!-- free-tier-hub:deployment-evidence:v1:start -->'))))
+    if: github.event_name == 'workflow_dispatch' || (github.event.issue.state == 'open' && startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || (startsWith(github.event.comment.body, '{"deployment_model"') || startsWith(github.event.comment.body, '<!-- free-tier-hub:deployment-evidence:v1:start -->'))))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -76,6 +76,41 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           package-manager-cache: false
+
+      # A trusted direct/API submission may still use the legacy ten-field JSON body.
+      # Normalize only freshly opened Issues; leave historical Issues unchanged.
+      # GITHUB_TOKEN edits do not trigger a second issues.edited delivery run.
+      - name: Format new trusted candidate Issue
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER" > /tmp/new-candidate-issue.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import { validateCandidate } from './scripts/catalog.mjs';
+          import { parseCandidateIssue, renderCandidateIssue } from './scripts/catalog-issue-format.mjs';
+          const issue = JSON.parse(fs.readFileSync('/tmp/new-candidate-issue.json', 'utf8'));
+          if (issue.pull_request || issue.state !== 'open') throw Error('Expected an open candidate Issue');
+          if (!['OWNER', 'MEMBER', 'COLLABORATOR'].includes(issue.author_association)) {
+            throw Error('Untrusted candidate Issue author');
+          }
+          const candidate = validateCandidate(parseCandidateIssue(issue.body));
+          if (issue.title !== '[catalog-candidate] ' + candidate.id) {
+            throw Error('Candidate Issue title does not match its JSON ID');
+          }
+          if (issue.body.trim().startsWith('{')) {
+            const body = renderCandidateIssue(candidate);
+            fs.writeFileSync('/tmp/formatted-candidate-issue.json', JSON.stringify({ body }));
+          }
+          NODE
+          if test -f /tmp/formatted-candidate-issue.json; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER" \
+              --input /tmp/formatted-candidate-issue.json > /dev/null
+            echo "Converted new candidate Issue #$ISSUE_NUMBER to readable Markdown with unchanged canonical JSON"
+          fi
 
       # Canonical Issue JSON can be raw (legacy) or inside a readable Markdown body.
       # Trusted deployment comments support legacy JSON or formatted evidence.
