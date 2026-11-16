@@ -15,7 +15,7 @@ export function cataloguedIssueComment(id, delivery) {
     '**View service details:** [Open the service detail page](' + listing + ')',
     '',
     '### Embed the listing badge',
-    'Your service is now listed on Free Tier Hub! Share your listing using the HTML or Markdown badge snippet below. The embedded badge links visitors directly to your service's listing page.',
+    "Your service is now listed on Free Tier Hub! Share your listing using the HTML or Markdown badge snippet below. The embedded badge links visitors directly to your service's listing page.",
     '',
     '![Listed on Free Tier Hub](' + BADGE_URL + ')',
     '',
