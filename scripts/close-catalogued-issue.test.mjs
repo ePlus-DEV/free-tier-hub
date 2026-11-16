@@ -26,6 +26,9 @@ test('completion comment uses one shared SVG and a service-specific URL', () => 
   const badge = 'https://free-tier.eplus.dev/badges/listed.svg';
   assert.ok(example.includes('**Your Free Tier Hub listing:** ' + detail));
   assert.ok(example.includes('**View service details:** [Open the service detail page](' + detail + ')'));
+  assert.ok(example.includes('Your service is now listed on Free Tier Hub!'));
+  assert.ok(example.includes('The embedded badge links visitors directly to your service\'s listing page.'));
+  assert.ok(!example.includes('The badge image is the same for every service'));
   assert.ok(example.includes('<a href="' + detail + '" target="_blank"'));
   assert.ok(example.includes('<img src="' + badge + '"'));
   assert.ok(example.includes('[![Listed on Free Tier Hub](' + badge + ')](' + detail + ')'));
