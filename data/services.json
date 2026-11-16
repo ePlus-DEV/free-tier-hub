@@ -13085,6 +13085,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "emailit-cloud-free",
+    "name": "Emailit Cloud Free",
+    "category": "email-notifications",
+    "plan": "monthly-credit",
+    "free_limit": "3,000 included credits each month on a hosted Free workspace, resetting monthly; 1 credit per API/SMTP or inbound email, 2 per campaign email, 3 per automation run, and 5 per email verification. Before the first purchase: 100 outgoing emails/day and 3 sending domains.",
+    "watch_out": "Credits are shared across sending, inbound, campaigns, automations and verification; 3,000 credits do not always equal 3,000 outgoing emails. Free workspaces have a 100-email daily sending cap, 7-day logs and 30-day activity history. Purchased credits cost money, and optional auto-refill can charge for additional credits; do not enable purchases or auto-refill without reviewing billing. Commercial usage and acceptable-use restrictions require review.",
+    "pricing_url": "https://emailit.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "embrapa-openapi-tests-local",
     "name": "Embrapa OpenApiTests Local Contract Testing",
     "category": "testing-qa",
@@ -13238,6 +13251,19 @@
     "credit_card": "check",
     "commercial_use": "yes",
     "last_checked": "2026-11-14",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "formbackend-free",
+    "name": "FormBackend Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Hosted form submission backend: 1 form and 50 submissions per month, with up to 10 spam submissions per month, customizable thank-you page, data export and auto-delete scheduling up to 30 days. Free hosted form-builder offering is separately advertised and must not be confused with the standard endpoint-based Free plan.",
+    "watch_out": "Standard Free plan has no file uploads, webhooks, auto-responder or paid notification integrations. Monthly submission limits apply; provider says it warns before the limit and may require upgrading. The separate 'Free hosted' form-builder offering advertises different limits; do not combine allowances. Commercial-use permission for the Free plan is not explicitly confirmed on the pricing page; human review required.",
+    "pricing_url": "https://www.formbackend.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
     "deployment_model": "cloud"
   },
   {
@@ -15663,6 +15689,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-08",
     "deployment_model": "local"
+  },
+  {
+    "id": "pingram-cloud-free",
+    "name": "Pingram Cloud Free",
+    "category": "email-notifications",
+    "plan": "monthly-credit",
+    "free_limit": "Hosted email, SMS and voice notification service with a free monthly shared budget. Provider advertises US-equivalent examples of up to 3,000 emails or 100 US SMS or 100 voice minutes if allocated to one channel; allowance resets each billing cycle and does not roll over.",
+    "watch_out": "The monthly budget is shared across channels, so the headline 3,000 emails, 100 US SMS and 100 voice minutes are not three independently guaranteed quotas. SMS costs depend on destination country and segments; the advertised 100 SMS example assumes US rates. Managed A2P 10DLC is testing-only on Free. Paid tiers and optional add-ons cost money; paid-plan auto-upgrade may charge when 90% of the budget is spent. No guaranteed production SLA on Free. Commercial-use rights and production SMS restrictions need human review.",
+    "pricing_url": "https://www.pingram.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
   },
   {
     "id": "pingularity-local-internet-monitor",
