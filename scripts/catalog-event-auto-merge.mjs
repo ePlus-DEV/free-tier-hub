@@ -2,7 +2,7 @@
 // Trusted event-driven gate. Run ONLY from main on workflow_run completed.
 // Never checkout or execute code from a pull request.
 import { execFileSync } from 'node:child_process';
-import { eligibleForAutoMerge, successfulChecks, changedOnlyCandidate } from './catalog-gated-auto-merge.mjs';
+import { eligibleForAutoMerge, eligibleTrustedNewService, successfulChecks, changedOnlyCandidate } from './catalog-gated-auto-merge.mjs';
 import { validateCandidate } from './catalog.mjs';
 import { parseCandidateIssue } from './catalog-issue-format.mjs';
 import { resolveCandidateDeployment } from './candidate-deployment.mjs';
@@ -53,7 +53,7 @@ async function main() {
   const prs = paged('pulls?state=open&per_page=100')
     .filter(pr => pr.base.ref === 'main' &&
       pr.head.repo?.full_name === repo &&
-      pr.head.ref.startsWith('catalog/add-') &&
+      ['hoangsvit', 'eplus-bot'].includes(pr.user?.login) &&
       pr.head.sha === run.head_sha &&
       (!(run.pull_requests || []).length ||
        run.pull_requests.some(link => link.number === pr.number)));
@@ -67,42 +67,46 @@ async function main() {
     console.log('PR changed, already processed, or not Draft');
     return;
   }
-  const issueNumber = candidateIssueNumber(pr.body);
-  if (!issueNumber) {
-    console.log('Not a canonical bot-generated candidate PR; manual review retained');
-    return;
-  }
-  const issue = api('issues/' + issueNumber);
-  const original = parseCandidateIssue(issue.body || '');
-  validateCandidate(original);
-  if (!trustedIssue(issue, original.id) ||
-      pr.head.ref !== 'catalog/add-' + original.id) {
-    throw Error('Candidate Issue identity or author trust mismatch');
-  }
-  const evidence = paged('issues/' + issueNumber + '/comments?per_page=100');
-  const candidate = resolveCandidateDeployment(original, evidence);
-  if (!candidate) {
-    console.log('Missing verified deployment evidence; keep Draft');
-    return;
-  }
-  validateCandidate(candidate);
-  const overlaps = candidateCollisions(candidate, loadServices());
-  if (overlaps.length) {
-    console.log('Manual duplicate review retained: ' + dedupMessage(candidate, overlaps));
-    return;
-  }
-  if (!eligibleForAutoMerge(candidate)) {
-    console.log('Cloud/limited/restricted/unknown candidate requires review');
-    return;
-  }
+  const author = pr.user?.login;
+  if (!['hoangsvit', 'eplus-bot'].includes(author)) return;
   const changed = paged('pulls/' + pr.number + '/files?per_page=100');
-  if (!changedOnlyCandidate(changed, candidate)) throw Error('Unexpected PR diff');
-  // Read only the canonical JSON at the exact PR head. Do not execute it.
+  if (changed.length !== 1 || changed[0].status !== 'added' ||
+      !/^data\/services\/[a-z0-9-]+\/[a-z0-9-]+\.json$/.test(changed[0].filename)) {
+    console.log('Not a single new service shard; manual review retained');
+    return;
+  }
   const path = changed[0].filename;
   const blob = api('contents/' + path + '?ref=' + pr.head.sha);
   if (blob.type !== 'file' || blob.encoding !== 'base64') throw Error('Invalid PR blob');
   const actual = JSON.parse(Buffer.from(blob.content, 'base64').toString('utf8'));
-  if (!sameData(candidate, actual)) throw Error('PR contents diverge from trusted Issue');
+  validateCandidate(actual);
+  if (!changedOnlyCandidate(changed, actual)) throw Error('Unexpected PR diff');
+  const issueNumber = candidateIssueNumber(pr.body);
+  if (author === 'eplus-bot') {
+    // Bot PRs must be traceable to an independently verified trusted Issue.
+    if (!issueNumber || pr.head.ref !== 'catalog/add-' + actual.id) {
+      console.log('Bot PR missing canonical candidate Issue/branch; manual review');
+      return;
+    }
+    const issue = api('issues/' + issueNumber);
+    const original = parseCandidateIssue(issue.body || '');
+    validateCandidate(original);
+    if (!trustedIssue(issue, original.id)) throw Error('Candidate Issue trust mismatch');
+    const evidence = paged('issues/' + issueNumber + '/comments?per_page=100');
+    const candidate = resolveCandidateDeployment(original, evidence);
+    if (!candidate) { console.log('Missing trusted deployment evidence'); return; }
+    validateCandidate(candidate);
+    if (!sameData(candidate, actual)) throw Error('PR diverges from trusted Issue');
+  }
+  const overlaps = candidateCollisions(actual, loadServices());
+  if (overlaps.length) {
+    console.log('Manual duplicate review retained: ' + dedupMessage(actual, overlaps));
+    return;
+  }
+  if (!eligibleTrustedNewService(actual, author)) {
+    console.log('Unverified card/commercial permissions; manual review retained');
+    return;
+  }
   const latest = api('pulls/' + pr.number);
   if (latest.head.sha !== pr.head.sha || latest.state !== 'open' || !latest.draft) {
     throw Error('Head moved during verification');
