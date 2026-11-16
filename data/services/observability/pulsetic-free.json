@@ -1,0 +1,13 @@
+{
+  "id": "pulsetic-free",
+  "name": "Pulsetic Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Hosted uptime monitoring Free plan: 10 shared monitors/heartbeats/domains with checks every 5 minutes from 3 regions, 3 hosted status pages including custom domains, 1,000 real-user monitoring page views per month, email alerts and 3 months of uptime history.",
+  "watch_out": "The 10-monitor allowance is shared across monitor/heartbeat/domain resources, not 10 of each. RUM has a 1,000-page-view monthly allowance; 5-minute checks and 3-month retention apply. Faster checks, extra monitors, advanced status-page customization, API/MCP integrations and SMS/call/WhatsApp alerts require paid plans or paid add-ons. No free hosted compute or infrastructure is included.",
+  "pricing_url": "https://pulsetic.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
