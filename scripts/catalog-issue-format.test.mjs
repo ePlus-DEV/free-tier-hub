@@ -116,6 +116,7 @@ test('new trusted JSON Issues are normalized while historical Issues remain unch
   const workflow = fs.readFileSync(
     new URL('../.github/workflows/catalog-candidate-queue.yml', import.meta.url), 'utf8');
   assert.match(workflow, /github\.event_name == 'issues' && github\.event\.action == 'opened'/);
+  assert.match(workflow, /github\.event\.issue\.state == 'open'/);
   assert.match(workflow, /validateCandidate\(parseCandidateIssue\(issue\.body\)\)/);
   assert.match(workflow, /renderCandidateIssue\(candidate\)/);
   assert.match(workflow, /issue\.body\.trim\(\)\.startsWith\('\{'\)/);
