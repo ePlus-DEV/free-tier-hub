@@ -1,0 +1,13 @@
+{
+  "id": "formsubmit-free",
+  "name": "FormSubmit",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free hosted HTML form-to-email endpoints with unlimited forms and submissions; submission archive retained for 30 days and archive API access limited to 5 calls per day.",
+  "watch_out": "Requires email address confirmation before use. Submission archive is retained for only 30 days; uploaded files are not accessible through the archive API. Anti-spam restrictions can affect delivery; commercial-use permission and card requirement are not explicitly established by the reviewed documentation.",
+  "pricing_url": "https://formsubmit.co/documentation",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
