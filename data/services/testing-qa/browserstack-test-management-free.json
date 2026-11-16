@@ -1,0 +1,13 @@
+{
+  "id": "browserstack-test-management-free",
+  "name": "BrowserStack Test Management Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Hosted Test Management Free plan for up to 5 users, unlimited projects and test cases, unlimited manual test runs, 10 GB attachment storage, lifetime test-case retention and 30-day test-run history.",
+  "watch_out": "Test-run history is retained for 30 days; attachment storage is limited to 10 GB. Paid plans add customization and advanced capabilities. Free-plan card requirement, overage behavior and specific commercial-use permission are not explicitly confirmed; verify before production use. This is distinct from BrowserStack's student-only offers and paid cross-browser testing products.",
+  "pricing_url": "https://www.browserstack.com/test-management/free-tool",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
