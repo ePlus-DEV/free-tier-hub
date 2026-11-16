@@ -1,0 +1,13 @@
+{
+  "id": "postmark-developer-free",
+  "name": "Postmark Developer Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Hosted transactional email Developer plan with 100 emails per month, recurring indefinitely; supports API and SMTP sending and development/integration testing. Monthly unused sends do not roll over.",
+  "watch_out": "Free Developer plan is intended for integration testing and low-volume side projects; no overages allowed, so sending beyond 100 emails/month requires a paid upgrade. Free is not the same as a time-limited paid-plan trial. Paid plans start at $15/month and charge extra sends. Sender/domain approval and acceptable-use policies apply; verify suitability for production marketing before use.",
+  "pricing_url": "https://postmarkapp.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
