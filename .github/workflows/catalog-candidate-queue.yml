@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   deliver:
-    if: github.event_name == 'workflow_dispatch' || (startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || (startsWith(github.event.comment.body, '{"deployment_model"') || startsWith(github.event.comment.body, '<!-- free-tier-hub:deployment-evidence:v1:start -->'))))
+    if: github.event_name == 'workflow_dispatch' || (github.event.issue.state == 'open' && startsWith(github.event.issue.title, '[catalog-candidate] ') && (github.event_name != 'issue_comment' || (startsWith(github.event.comment.body, '{"deployment_model"') || startsWith(github.event.comment.body, '<!-- free-tier-hub:deployment-evidence:v1:start -->'))))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
