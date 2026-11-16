@@ -99,7 +99,7 @@ jobs:
           fi
           title="$(gh issue view "$issue" --repo "$GH_REPO" --json title --jq '.title')"
           candidate="$(gh issue view "$issue" --repo "$GH_REPO" --json body --jq '.body')"
-          # Use one strict parser for historic JSON and versioned Markdown.
+          # Use the same strict parser for historical JSON and readable Markdown.
           printf '%s' "$candidate" > /tmp/linked-catalog-issue.txt
           metadata="$(node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -110,7 +110,7 @@ jobs:
           process.stdout.write(parsed.id + '\t' + parsed.category);
           NODE
           )" || { echo "Invalid candidate Issue payload; skipping."; exit 0; }
-          IFS=
+          IFS=$'\t' read -r id category <<< "$metadata"
           if [[ ! "$id" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || ! "$category" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || "$title" != "[catalog-candidate] $id" ]]; then
             echo "Linked Issue does not match a canonical catalog candidate; skipping."
             exit 0
@@ -163,68 +163,6 @@ jobs:
               if (!match || !ids.has(match[1])) continue;
               let candidate;
               try { candidate = parseCandidateIssue(issue.body || ''); } catch { continue; }
-              if (candidate.id !== match[1]) continue;
-              const message = cataloguedIssueComment(match[1],
-                `Catalog entry \`${match[1]}\` is present on main at \`${catalogSha}\`. Closing this candidate as delivered.`);
-              const outcome = closeCataloguedIssue(repo, issue.number, message);
-              console.log(`${outcome === 'already-closed' ? 'Already closed' : 'Closed'} #${issue.number}: ${match[1]}`);
-            }
-            if (JSON.parse(raw).length < 100) break;
-            page++;
-          }
-          NODE
-\t' read -r id category <<< "$metadata"
-          if [[ ! "$id" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || ! "$category" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || "$title" != "[catalog-candidate] $id" ]]; then
-            echo "Linked Issue does not match a canonical catalog candidate; skipping."
-            exit 0
-          fi
-          # Confirm the merged candidate actually exists on main before informing its author.
-          if ! gh api "repos/$GH_REPO/contents/data/services/$category/$id.json?ref=main" >/dev/null 2>&1; then
-            echo "Canonical service not on main yet; reconciliation will handle it later."
-            exit 0
-          fi
-          ISSUE_NO="$issue" SERVICE_ID="$id" node --input-type=module <<'NODE'
-          import { cataloguedIssueComment, closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
-          const repo = process.env.GH_REPO;
-          const id = process.env.SERVICE_ID;
-          const message = cataloguedIssueComment(id, 'Completed by merged PR ' + process.env.PR_URL + '.');
-          console.log(closeCataloguedIssue(repo, Number(process.env.ISSUE_NO), message) + ': #' + process.env.ISSUE_NO);
-          NODE
-
-  close-delivered:
-    # Run the catalog reconciliation on real main updates or manual backfill
-    # without a PR number. Never execute an untrusted PR checkout.
-    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.pr_number) }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          ref: main
-          persist-credentials: false
-      - name: Close only catalogued candidate issues
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import { execFileSync } from 'node:child_process';
-          import { cataloguedIssueComment, closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
-          const repo = process.env.GITHUB_REPOSITORY;
-          const { loadServices } = await import('./scripts/catalog-source.mjs');
-          const catalog = loadServices();
-          const ids = new Set(catalog.map(item => item.id));
-          const catalogSha = execFileSync('git', ['rev-parse', 'HEAD'], {encoding:'utf8'}).trim();
-          let page = 1;
-          while (true) {
-            const raw = execFileSync('gh', ['api', '--method', 'GET', `repos/${repo}/issues`,
-              '-f', 'state=open', '-f', 'per_page=100', '-f', `page=${page}`], {encoding:'utf8'});
-            const issues = JSON.parse(raw).filter(issue => !issue.pull_request);
-            for (const issue of issues) {
-              const match = /^\[catalog-candidate\] ([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(issue.title);
-              if (!match || !ids.has(match[1])) continue;
-              let candidate;
-              try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
               if (candidate.id !== match[1]) continue;
               const message = cataloguedIssueComment(match[1],
                 `Catalog entry \`${match[1]}\` is present on main at \`${catalogSha}\`. Closing this candidate as delivered.`);
