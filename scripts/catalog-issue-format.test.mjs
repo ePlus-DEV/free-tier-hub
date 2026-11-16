@@ -29,7 +29,7 @@ test('a candidate Issue is readable, with canonical JSON in collapsed details', 
   assert.match(body, /\[Pricing \/ documentation\]\(https:\/\/bugbug\.io\/pricing\/\)/);
   assert.match(body, /<details>\n<summary>Machine-readable catalog data \(JSON\)<\/summary>/);
   assert.deepEqual(parseCandidateIssue(body), candidate);
-  assert.equal(validateCandidate(parseCandidateIssue(body)), parseCandidateIssue(body));
+  assert.deepEqual(validateCandidate(parseCandidateIssue(body)), candidate);
 });
 
 test('legacy JSON-only Issues (ten or eleven fields) continue to parse', () => {
