@@ -4,6 +4,7 @@
 import { execFileSync } from 'node:child_process';
 import { eligibleForAutoMerge, successfulChecks, changedOnlyCandidate } from './catalog-gated-auto-merge.mjs';
 import { validateCandidate } from './catalog.mjs';
+import { parseCandidateIssue } from './catalog-issue-format.mjs';
 import { resolveCandidateDeployment } from './candidate-deployment.mjs';
 import { candidateCollisions, dedupMessage } from './catalog-dedup.mjs';
 import { loadServices } from './catalog-source.mjs';
@@ -72,7 +73,7 @@ async function main() {
     return;
   }
   const issue = api('issues/' + issueNumber);
-  const original = JSON.parse(issue.body || '{}');
+  const original = parseCandidateIssue(issue.body || '');
   validateCandidate(original);
   if (!trustedIssue(issue, original.id) ||
       pr.head.ref !== 'catalog/add-' + original.id) {

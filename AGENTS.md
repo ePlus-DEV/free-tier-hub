@@ -59,6 +59,13 @@ offers; do not freeze a category's exact service count in CI tests.
 - **Unknowns:** use allowed `check` values when card/commercial permissions are unconfirmed; do not silently transform uncertainty into `no` or `yes`. Deployment evidence must describe the **specific** listed offer.
 - **Historical compatibility:** preserve stable service IDs, URLs, prior contributor branches and attribution. Modify the contributor's original PR rather than replacing it. Do not change unrelated service shards.
 
+## Candidate Issue presentation (automation compatibility)
+
+- Bot-created `[catalog-candidate] <id>` Issues should use `renderCandidateIssue(candidate)` from `scripts/catalog-issue-format.mjs`: a readable Markdown summary plus exactly one collapsed canonical JSON payload. Do not paste loose Markdown in place of the JSON.
+- Use `parseCandidateIssue(body)` everywhere an Issue's catalog data is consumed; historical raw JSON Issues are supported, but inconsistent or tampered Markdown summaries must fail closed.
+- Independent deployment evidence may be posted as the original trusted two-key JSON comment or via `renderDeploymentEvidence({deployment_model, source})` for readable Markdown. Only trusted authors, accepted modes and official HTTPS sources count. Never infer a mode from the category.
+- Keep Issue payload IDs, deduplication across categories, three-open-catalog-PR capacity, exact-head validation and guarded auto-merge unchanged. Do not bulk-edit existing Issues. See `docs/catalog-backlog-consumer.md`.
+
 ## Safe workflow
 
 1. Read the relevant instructions, locate existing service IDs and review the current `main` / active PRs before editing.

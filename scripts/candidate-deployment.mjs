@@ -1,3 +1,4 @@
+import { parseDeploymentEvidence } from './catalog-issue-format.mjs';
 // Resolve deployment mode for a canonical ten-field candidate Issue.
 // Metadata lives in a separate, trusted JSON Issue comment, not the Issue payload.
 // Legacy eleven-field candidates remain supported until their existing queue drains.
@@ -9,7 +10,7 @@ export function resolveCandidateDeployment(candidate, comments = []) {
   for (const comment of [...comments].reverse()) {
     if (!TRUSTED.has(comment?.author_association)) continue;
     let evidence;
-    try { evidence = JSON.parse(comment.body); } catch { continue; }
+    try { evidence = parseDeploymentEvidence(comment.body); } catch { continue; }
     if (!evidence || Array.isArray(evidence) ||
         Object.keys(evidence).sort().join(',') !== 'deployment_model,source' ||
         !MODELS.has(evidence.deployment_model)) continue;

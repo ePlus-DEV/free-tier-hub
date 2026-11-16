@@ -54,6 +54,7 @@ jobs:
           import { execFileSync } from 'node:child_process';
           import { loadCandidates, listCandidates, fresh } from './scripts/backlog.mjs';
           import { validateCandidate } from './scripts/catalog.mjs';
+          import { renderCandidateIssue, parseCandidateIssue } from './scripts/catalog-issue-format.mjs';
           import { resolveCandidateDeployment } from './scripts/candidate-deployment.mjs';
           import { proposedServiceIds } from './scripts/catalog-pr-coverage.mjs';
           import { candidateCollisions, dedupMessage } from './scripts/catalog-dedup.mjs';
@@ -118,7 +119,7 @@ jobs:
               { encoding: 'utf8' }).trim();
             if (existingBranch) continue;
             let candidate;
-            try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
+            try { candidate = parseCandidateIssue(issue.body || ''); } catch { continue; }
             if (candidate?.id !== id || catalogIds.has(id) || !fresh(candidate)) continue;
             const matches = candidateCollisions(candidate, loadServices());
             if (matches.length) {
@@ -183,8 +184,9 @@ jobs:
               console.log('Existing delivery branch needs inspection: ' + candidate.id);
               continue;
             }
-            const path = '/tmp/catalog-candidate-' + candidate.id + '.json';
-            fs.writeFileSync(path, JSON.stringify(candidate, null, 2) + '\n');
+            validateCandidate(candidate);
+            const path = '/tmp/catalog-candidate-' + candidate.id + '.md';
+            fs.writeFileSync(path, renderCandidateIssue(candidate) + '\n');
             const issueUrl = execFileSync(
               'gh', ['issue', 'create', '--repo', repo, '--title', title, '--body-file', path],
               { encoding: 'utf8' }
