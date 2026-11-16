@@ -15025,6 +15025,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mockapi-io-free",
+    "name": "MockAPI.io Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Hosted REST API mocking free plan includes 1 project and 2 resources, with generated fake data and RESTful CRUD endpoints; no stated expiration on the Free plan.",
+    "watch_out": "The Free plan is limited to one project and two resources; custom responses and collaboration are not included. The official pricing page does not clearly state request quotas, card requirements, or commercial-use permission; verify these before production use.",
+    "pricing_url": "https://mockapi.io/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "mockllm-local-llm-api-mock-server",
     "name": "mockllm Local LLM API Mock Server",
     "category": "testing-qa",
