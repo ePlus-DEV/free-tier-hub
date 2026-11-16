@@ -11,25 +11,26 @@ function mockedApi(initialState = 'open', existingMarker = false) {
   let state = initialState;
   const run = (command, args) => {
     calls.push([command, args]);
-    if (args[0] === 'api' && args[1] === 'repos/org/repo/issues/253')
-      return state + '\\n';
+    if (args[0] === 'api' && args[1] === 'repos/org/repo/issues/253') return state;
     if (args[0] === 'api' && args[1] === 'repos/org/repo/issues/253/comments')
-      return existingMarker ? '12345\\n' : '';
+      return existingMarker ? '12345' : '';
     if (args[0] === 'issue' && args[1] === 'close') state = 'closed';
     return '';
   };
-  return {calls, run, get state() { return state; }};
+  return { calls, run, get state() { return state; } };
 }
 
-test('completion message includes one shared SVG and listing-specific HTML/Markdown', () => {
+test('completion comment uses one shared SVG and a service-specific URL', () => {
   assert.ok(example.startsWith(marker));
-  assert.ok(example.includes('https://free-tier.eplus.dev/service/vercel/'));
-  assert.ok(example.includes('https://free-tier.eplus.dev/badges/listed.svg'));
-  assert.match(example, /<a href="https:\\/\\/free-tier\\.eplus\\.dev\\/service\\/vercel\\/"/);
-  assert.match(example, /\\[!\\[Listed on Free Tier Hub\\]\\(https:\\/\\/free-tier\\.eplus\\.dev\\/badges\\/listed\\.svg\\)\\]\\(https:\\/\\/free-tier\\.eplus\\.dev\\/service\\/vercel\\/\\)/);
-  const github = cataloguedIssueComment('github-pages', 'Completed.');
-  assert.ok(github.includes('/service/github-pages/'));
-  assert.ok(!github.includes('/service/vercel/'));
+  const detail = 'https://free-tier.eplus.dev/service/vercel/';
+  const badge = 'https://free-tier.eplus.dev/badges/listed.svg';
+  assert.ok(example.includes('**Your Free Tier Hub listing:** ' + detail));
+  assert.ok(example.includes('<a href="' + detail + '" target="_blank"'));
+  assert.ok(example.includes('<img src="' + badge + '"'));
+  assert.ok(example.includes('[![Listed on Free Tier Hub](' + badge + ')](' + detail + ')'));
+  const other = cataloguedIssueComment('github-pages', 'Completed.');
+  assert.ok(other.includes('/service/github-pages/'));
+  assert.ok(!other.includes('/service/vercel/'));
   assert.throws(() => cataloguedIssueComment('../escape', ''), /Invalid service ID/);
 });
 
@@ -64,7 +65,7 @@ test('concurrent closure is tolerated only after confirming closed via API', () 
   const run = (_command, args) => {
     calls.push(args);
     if (args[0] === 'api' && args[1].endsWith('/comments')) return '';
-    if (args[0] === 'api') return (++count === 1 ? 'open' : 'closed') + '\\n';
+    if (args[0] === 'api') return ++count === 1 ? 'open' : 'closed';
     if (args[0] === 'issue' && args[1] === 'close') throw Error('close failed');
     return '';
   };
@@ -75,7 +76,7 @@ test('concurrent closure is tolerated only after confirming closed via API', () 
 test('failed close while Issue remains open is fatal', () => {
   const run = (_command, args) => {
     if (args[0] === 'api' && args[1].endsWith('/comments')) return '';
-    if (args[0] === 'api') return 'open\\n';
+    if (args[0] === 'api') return 'open';
     if (args[0] === 'issue' && args[1] === 'close') throw Error('close failed');
     return '';
   };
@@ -87,7 +88,7 @@ test('comment failure leaves the Issue open', () => {
   const run = (_command, args) => {
     calls.push(args);
     if (args[0] === 'api' && args[1].endsWith('/comments')) return '';
-    if (args[0] === 'api') return 'open\\n';
+    if (args[0] === 'api') return 'open';
     if (args[0] === 'issue' && args[1] === 'comment') throw Error('comment denied');
     throw Error('Should not close Issue without badge comment');
   };
