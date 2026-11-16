@@ -12549,6 +12549,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "bugbug-free",
+    "name": "BugBug Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Free-forever browser-based web test automation for 1 user, 1 project, 4 suites and 15 active tests, with unlimited local test runs, test recording, screenshots and 7-day test-run history.",
+    "watch_out": "Free supports local runs only in Chromium-based browsers via the BugBug extension; no hosted cloud test execution, schedules, CI/CD, CLI or API access. The November 8, 2026 limits reduced the Free plan to 15 tests, 1 project and 1 user; tests beyond the cap may be deactivated. Paid plans offer cloud runs and integrations. Commercial use on the Free plan is not explicitly confirmed in current pricing terms and requires review.",
+    "pricing_url": "https://bugbug.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "local"
+  },
+  {
     "id": "bugtraceai-self-hosted",
     "name": "BugTraceAI Self-Hosted Security Testing Suite",
     "category": "testing-qa",
