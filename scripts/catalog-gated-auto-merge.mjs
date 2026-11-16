@@ -20,3 +20,10 @@ export function changedOnlyCandidate(files, item) {
     files[0].status === 'added' &&
     files[0].filename === 'data/services/' + item.category + '/' + item.id + '.json';
 }
+
+// Explicitly trusted authors may add a single new service, including cloud offers.
+// Unknown commercial permission or card requirements still require human review.
+export function eligibleTrustedNewService(item, author) {
+  return ['hoangsvit', 'eplus-bot'].includes(author) &&
+    item && item.commercial_use === 'yes' && item.credit_card !== 'check';
+}

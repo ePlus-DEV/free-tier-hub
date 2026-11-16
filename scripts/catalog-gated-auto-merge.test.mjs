@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { eligibleForAutoMerge, successfulChecks, changedOnlyCandidate }
+import { eligibleForAutoMerge, eligibleTrustedNewService, successfulChecks, changedOnlyCandidate }
   from './catalog-gated-auto-merge.mjs';
 
 const item = { id: 'example-local', category: 'search', plan: 'ongoing',
@@ -32,4 +32,13 @@ test('only one new canonical service shard is allowed', () => {
   assert.equal(changedOnlyCandidate([{ filename: path, status: 'modified' }], item), false);
   assert.equal(changedOnlyCandidate([{ filename: path, status: 'added' },
     { filename: 'README.md', status: 'modified' }], item), false);
+});
+
+test('trusted author policy permits verified new cloud service but not unknown rights', () => {
+  const cloud = { ...item, deployment_model: 'cloud', pricing_url: 'https://example.com/pricing' };
+  assert.ok(eligibleTrustedNewService(cloud, 'hoangsvit'));
+  assert.ok(eligibleTrustedNewService(cloud, 'eplus-bot'));
+  assert.equal(eligibleTrustedNewService(cloud, 'someone-else'), false);
+  assert.equal(eligibleTrustedNewService({ ...cloud, commercial_use: 'check' }, 'hoangsvit'), false);
+  assert.equal(eligibleTrustedNewService({ ...cloud, credit_card: 'check' }, 'eplus-bot'), false);
 });
