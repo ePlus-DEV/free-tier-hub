@@ -1,0 +1,13 @@
+{
+  "id": "testiny-free",
+  "name": "Testiny Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Hosted test management Free plan for up to 3 users; includes test cases, plans, runs, executions, reporting, issue-tracker integrations, API keys and 2FA.",
+  "watch_out": "Free plan has feature and history limitations versus paid tiers; advanced automation, custom fields, unlimited history and enterprise features require upgrades. A separate 21-day paid-feature trial is not the ongoing Free plan. Self-hosted Testiny Server is paid and is not included. No guaranteed support on Free.",
+  "pricing_url": "https://www.testiny.io/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
