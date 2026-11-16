@@ -118,14 +118,13 @@ test('merged catalog closure preserves both event-driven and catch-up pathways i
   assert.ok(workflow.includes("const message = cataloguedIssueComment(id, 'Completed by merged PR '"));
   assert.ok(workflow.includes('const message = cataloguedIssueComment(match[1]'));
   assert.equal((workflow.match(/closeCataloguedIssue\\(repo/g) || []).length, 2);
-  assert.ok(workflow.includes('ref: main\\n          persist-credentials: false'));
   assert.ok(workflow.includes('candidate.id') || workflow.includes('.id // empty'));
   assert.ok(!workflow.includes('gh issue close "$issue" --reason completed'));
 
   assert.ok(workflow.includes('close-delivered:'));
   assert.ok(workflow.includes("github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.pr_number)"));
   assert.ok(workflow.includes('ref: main\n          persist-credentials: false'));
-  assert.ok(workflow.includes("import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs'"));
+  assert.ok(workflow.includes("import { cataloguedIssueComment, closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs'"));
   assert.ok(workflow.includes("catalogSha = execFileSync('git', ['rev-parse', 'HEAD']"));
   assert.ok(workflow.includes("const { loadServices } = await import('./scripts/catalog-source.mjs')"));
   assert.ok(workflow.includes('const catalog = loadServices();'));
