@@ -12,6 +12,7 @@ export function cataloguedIssueComment(id, delivery) {
     delivery,
     '',
     '**Your Free Tier Hub listing:** ' + listing,
+    '**View service details:** [Open the service detail page](' + listing + ')',
     '',
     '### Embed the listing badge',
     'You can share this listing on your website or GitHub README. The badge image is the same for every service; only the link to your listing changes.',
