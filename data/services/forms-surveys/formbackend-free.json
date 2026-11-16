@@ -1,0 +1,13 @@
+{
+  "id": "formbackend-free",
+  "name": "FormBackend Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Hosted form submission backend: 1 form and 50 submissions per month, with up to 10 spam submissions per month, customizable thank-you page, data export and auto-delete scheduling up to 30 days. Free hosted form-builder offering is separately advertised and must not be confused with the standard endpoint-based Free plan.",
+  "watch_out": "Standard Free plan has no file uploads, webhooks, auto-responder or paid notification integrations. Monthly submission limits apply; provider says it warns before the limit and may require upgrading. The separate 'Free hosted' form-builder offering advertises different limits; do not combine allowances. Commercial-use permission for the Free plan is not explicitly confirmed on the pricing page; human review required.",
+  "pricing_url": "https://www.formbackend.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
