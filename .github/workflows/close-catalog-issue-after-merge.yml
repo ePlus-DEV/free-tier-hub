@@ -76,6 +76,11 @@ jobs:
     if: github.event_name == 'pull_request_target' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      # Pull-request-target is privileged: check out trusted main, never contributor code.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
       # External fork contributions often have no candidate Issue. That is expected.
       # Only close a verified, explicitly linked catalog-candidate Issue.
       - name: Close linked catalog issue (if any)
@@ -92,16 +97,26 @@ jobs:
             echo "No linked catalog candidate Issue (normal for external contributions); skipping cleanup."
             exit 0
           fi
-          title="$(gh issue view "$issue" --json title --jq '.title')"
-          if [[ "$title" != "[catalog-candidate] "* ]]; then
-            echo "Linked issue is not a catalog candidate; skipping."
+          title="$(gh issue view "$issue" --repo "$GH_REPO" --json title --jq '.title')"
+          candidate="$(gh issue view "$issue" --repo "$GH_REPO" --json body --jq '.body')"
+          id="$(jq -r '.id // empty' <<<"$candidate" 2>/dev/null)" || { echo "Invalid candidate JSON; skipping."; exit 0; }
+          category="$(jq -r '.category // empty' <<<"$candidate" 2>/dev/null)" || { echo "Invalid candidate category; skipping."; exit 0; }
+          if [[ ! "$id" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || ! "$category" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || "$title" != "[catalog-candidate] $id" ]]; then
+            echo "Linked Issue does not match a canonical catalog candidate; skipping."
             exit 0
           fi
-          state="$(gh issue view "$issue" --json state --jq '.state')"
-          if [[ "$state" == "OPEN" ]]; then
-            gh issue comment "$issue" --body "Completed by merged PR $PR_URL."
-            gh issue close "$issue" --reason completed
+          # Confirm the merged candidate actually exists on main before informing its author.
+          if ! gh api "repos/$GH_REPO/contents/data/services/$category/$id.json?ref=main" >/dev/null 2>&1; then
+            echo "Canonical service not on main yet; reconciliation will handle it later."
+            exit 0
           fi
+          ISSUE_NO="$issue" SERVICE_ID="$id" node --input-type=module <<'NODE'
+          import { cataloguedIssueComment, closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
+          const repo = process.env.GH_REPO;
+          const id = process.env.SERVICE_ID;
+          const message = cataloguedIssueComment(id, 'Completed by merged PR ' + process.env.PR_URL + '.');
+          console.log(closeCataloguedIssue(repo, Number(process.env.ISSUE_NO), message) + ': #' + process.env.ISSUE_NO);
+          NODE
 
   close-delivered:
     # Run the catalog reconciliation on real main updates or manual backfill
@@ -121,7 +136,7 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import { execFileSync } from 'node:child_process';
-          import { closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
+          import { cataloguedIssueComment, closeCataloguedIssue } from './scripts/close-catalogued-issue.mjs';
           const repo = process.env.GITHUB_REPOSITORY;
           const { loadServices } = await import('./scripts/catalog-source.mjs');
           const catalog = loadServices();
@@ -138,7 +153,8 @@ jobs:
               let candidate;
               try { candidate = JSON.parse(issue.body || ''); } catch { continue; }
               if (candidate.id !== match[1]) continue;
-              const message = `Catalog entry \`${match[1]}\` is present on main at \`${catalogSha}\`. Closing this candidate as delivered. Production visibility still depends on a successful GitHub Pages deployment.`;
+              const message = cataloguedIssueComment(match[1],
+                `Catalog entry \`${match[1]}\` is present on main at \`${catalogSha}\`. Closing this candidate as delivered.`);
               const outcome = closeCataloguedIssue(repo, issue.number, message);
               console.log(`${outcome === 'already-closed' ? 'Already closed' : 'Closed'} #${issue.number}: ${match[1]}`);
             }
