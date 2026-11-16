@@ -117,7 +117,7 @@ test('merged catalog closure preserves both event-driven and catch-up pathways i
   assert.ok(workflow.includes('close-linked-catalog-issue:'));
   assert.ok(workflow.includes("const message = cataloguedIssueComment(id, 'Completed by merged PR '"));
   assert.ok(workflow.includes('const message = cataloguedIssueComment(match[1]'));
-  assert.equal((workflow.match(/closeCataloguedIssue\\(repo/g) || []).length, 2);
+  assert.equal(workflow.split('closeCataloguedIssue(repo').length - 1, 2);
   assert.ok(workflow.includes('candidate.id') || workflow.includes('.id // empty'));
   assert.ok(!workflow.includes('gh issue close "$issue" --reason completed'));
 
