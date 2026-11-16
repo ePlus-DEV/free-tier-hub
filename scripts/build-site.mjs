@@ -907,7 +907,18 @@ function detailPage(item, absolute, related = []) {
       : 'Explore other ' + tag(category.toLowerCase()) + ' services with their free allowances.',
     '</p>',
     '<a class="text-link" href="', tag(listingURL),
-    '">', limited ? 'Browse limited offers' : 'Browse category', ' ', glyph('arrow'), '</a></aside></div>',
+    '">', limited ? 'Browse limited offers' : 'Browse category', ' ', glyph('arrow'), '</a>',
+    '<hr><h2>Share this listing</h2>',
+    '<p>Embed one Free Tier Hub badge that links back to this listing.</p>',
+    '<div class="listing-badge-share">',
+    '<img class="listing-badge-preview" src="', tag(DEFAULT_URL + 'badges/listed.svg'),
+    '" alt="Listed on Free Tier Hub" width="182" height="44" loading="lazy">',
+    '<button type="button" class="button secondary listing-badge-copy" data-copy-listing-badge',
+    ' data-listing-url="', tag(DEFAULT_URL + 'service/' + item.id + '/'),
+    '" data-badge-url="', tag(DEFAULT_URL + 'badges/listed.svg'),
+    '">Copy badge HTML</button>',
+    '<span class="listing-badge-status" role="status" aria-live="polite"></span></div>',
+    '</aside></div>',
     '<p class="back-link"><a href="', tag(listingURL),
     '">← Back to ', tag(listingName), '</a></p>',
   ].join('');
@@ -1307,6 +1318,8 @@ export function build(outputDir = path.join(ROOT, 'dist'), siteURL = DEFAULT_URL
     new_48h_window_hours: 48,
     generated_at_utc: generatedAt,
   }, null, 2) + '\n');
+  // One shared, static badge for every published service; only the embed link varies.
+  file(output, 'badges/listed.svg', fs.readFileSync(path.join(ROOT, 'site/assets/listed.svg'), 'utf8'));
   file(output, 'badges/services.svg', serviceCountSVG(items.length));
   file(output, 'badges/free-tiers.svg', serviceCountSVG(mainItems.length, 'free tiers'));
   file(output, 'badges/limited-offers.svg', serviceCountSVG(limitedItems.length, 'limited offers'));

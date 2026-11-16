@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="44" viewBox="0 0 182 44" role="img" aria-labelledby="badge-title">
+  <title id="badge-title">Listed on Free Tier Hub</title>
+  <rect x=".5" y=".5" width="181" height="43" rx="7" fill="#ffffff" stroke="#d6deeb"/>
+  <g transform="translate(9 8) scale(.44)">
+    <g fill="#3454ee">
+      <path d="M8 24v-8a8 8 0 0 1 8-8h32v6a10 10 0 0 1-10 10Z"/>
+      <path d="M8 42v-8a8 8 0 0 1 8-8h38v6a10 10 0 0 1-10 10Z"/>
+      <path d="M8 60v-8a8 8 0 0 1 8-8h23v6a10 10 0 0 1-10 10Z"/>
+    </g>
+    <rect x="53" y="2" width="10" height="10" rx="1.5" fill="#ed8058"/>
+  </g>
+  <text x="49" y="17" fill="#64748b" font-family="Arial,Helvetica,sans-serif" font-size="8" font-weight="700" letter-spacing=".6">LISTED ON</text>
+  <text x="49" y="32" fill="#172b4d" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700">Free Tier Hub</text>
+</svg>

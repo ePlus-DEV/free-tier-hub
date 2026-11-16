@@ -943,3 +943,9 @@ body:has(.compare-tray:not([hidden])) .support-widget{bottom:calc(130px + env(sa
 /* A navigation link must look identical to the adjacent category-chip buttons. */
 .category-shortcuts a.category-chip{display:inline-flex;align-items:center;text-decoration:none}
 .category-shortcuts a.category-chip:hover{color:var(--ink);background:var(--surface-muted)}
+
+/* One reusable listing SVG. Only its enclosing link changes by service. */
+.listing-badge-share{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.listing-badge-preview{display:block;width:182px;height:44px;max-width:100%;object-fit:contain}
+.detail-aside .listing-badge-copy{width:auto;max-width:100%;cursor:pointer}
+.listing-badge-status{display:block;min-height:1em;color:var(--muted);font-size:11px}

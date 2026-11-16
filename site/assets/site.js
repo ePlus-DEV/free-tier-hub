@@ -2,6 +2,37 @@
 (function () {
   "use strict";
   var doc = document.documentElement;
+  // Shared listing badge: the artwork never changes; the canonical service URL does.
+  document.querySelectorAll("[data-copy-listing-badge]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var serviceURL = button.getAttribute("data-listing-url");
+      var badgeURL = button.getAttribute("data-badge-url");
+      var status = button.parentNode.querySelector(".listing-badge-status");
+      var snippet = '<a href="' + serviceURL + '" target="_blank" rel="noopener noreferrer">' +
+        '<img src="' + badgeURL + '" alt="Listed on Free Tier Hub" width="182" height="44"></a>';
+      function report(ok) {
+        if (status) status.textContent = ok ? "Badge HTML copied." : "Copy failed. Please try again.";
+      }
+      function fallbackCopy() {
+        var input = document.createElement("textarea");
+        input.value = snippet;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+        var copied = false;
+        try { copied = document.execCommand("copy"); } catch (_error) { copied = false; }
+        input.remove();
+        button.focus();
+        report(copied);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(snippet).then(function () { report(true); }, fallbackCopy);
+      } else fallbackCopy();
+    });
+  });
+
   // Mirror the server's truncating compact count policy for dynamically
   // updated result labels. Preserve original counts in accessible labels.
   function compactUiCount(input) {
