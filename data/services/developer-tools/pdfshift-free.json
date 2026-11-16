@@ -1,0 +1,13 @@
+{
+  "id": "pdfshift-free",
+  "name": "PDFShift Free",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "50 HTML-to-PDF conversion credits per month; each 5 MB of generated PDF counts as one credit. Free plan allows PDFs up to 15 MB and a 30-second timeout.",
+  "watch_out": "Large PDFs consume multiple credits (for example, 14 MB uses 3). Free tier has no paid overage; paid-only features include AWS S3 delivery and parallel/asynchronous responses. Credit-card and commercial-use requirements need confirmation.",
+  "pricing_url": "https://pdfshift.io/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-15",
+  "deployment_model": "cloud"
+}
