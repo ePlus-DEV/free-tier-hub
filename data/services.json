@@ -15587,6 +15587,32 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "pdfmonkey-free",
+    "name": "PDFMonkey Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "20 PDF documents per month; unlimited templates; 1 team member; 30-second maximum generation time.",
+    "watch_out": "Generated documents retained for 1 day. Free plan cannot load external images, fonts, CSS or JavaScript, or use PDF share links. Unused monthly documents do not roll over; requests stop at quota. New accounts initially receive a separate 30-day Pro trial. Commercial-use terms require review.",
+    "pricing_url": "https://pdfmonkey.io/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "pdfshift-free",
+    "name": "PDFShift Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "50 HTML-to-PDF conversion credits per month; each 5 MB of generated PDF counts as one credit. Free plan allows PDFs up to 15 MB and a 30-second timeout.",
+    "watch_out": "Large PDFs consume multiple credits (for example, 14 MB uses 3). Free tier has no paid overage; paid-only features include AWS S3 delivery and parallel/asynchronous responses. Credit-card and commercial-use requirements need confirmation.",
+    "pricing_url": "https://pdfshift.io/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "perch-ai-starter",
     "name": "Perch AI Starter",
     "category": "ai-assistants",
@@ -15741,6 +15767,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "postmark-developer-free",
+    "name": "Postmark Developer Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Hosted transactional email Developer plan with 100 emails per month, recurring indefinitely; supports API and SMTP sending and development/integration testing. Monthly unused sends do not roll over.",
+    "watch_out": "Free Developer plan is intended for integration testing and low-volume side projects; no overages allowed, so sending beyond 100 emails/month requires a paid upgrade. Free is not the same as a time-limited paid-plan trial. Paid plans start at $15/month and charge extra sends. Sender/domain approval and acceptable-use policies apply; verify suitability for production marketing before use.",
+    "pricing_url": "https://postmarkapp.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
   },
   {
     "id": "predator-open-source-load-testing",
