@@ -12536,6 +12536,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "browserstack-test-management-free",
+    "name": "BrowserStack Test Management Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Hosted Test Management Free plan for up to 5 users, unlimited projects and test cases, unlimited manual test runs, 10 GB attachment storage, lifetime test-case retention and 30-day test-run history.",
+    "watch_out": "Test-run history is retained for 30 days; attachment storage is limited to 10 GB. Paid plans add customization and advanced capabilities. Free-plan card requirement, overage behavior and specific commercial-use permission are not explicitly confirmed; verify before production use. This is distinct from BrowserStack's student-only offers and paid cross-browser testing products.",
+    "pricing_url": "https://www.browserstack.com/test-management/free-tool",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "bugtraceai-self-hosted",
     "name": "BugTraceAI Self-Hosted Security Testing Suite",
     "category": "testing-qa",
@@ -12979,6 +12992,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-14",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "docraptor-free",
+    "name": "DocRaptor Free",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "5 production PDF or Excel document conversions per month via hosted API; unlimited watermarked test documents do not consume the monthly allowance.",
+    "watch_out": "Free plan has no document-conversion overages. Watermarked test documents are unsuitable for production. Hosted-document storage is not included for free: hosting costs 1 cent per document per month, metered daily; avoid enabling it without reviewing billing. Paid upgrades require a card. Provider reserves the right to limit free access; review service terms before business use.",
+    "pricing_url": "https://docraptor.com/signup",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
   },
   {
     "id": "docuhog-local-docusign-mock",
