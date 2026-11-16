@@ -16563,6 +16563,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "tabularis",
+    "name": "Tabularis",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free, open-source Apache 2.0 SQL desktop workspace for Windows, macOS and Linux; built-in PostgreSQL, MySQL/MariaDB and SQLite support, SQL notebooks, visual EXPLAIN and MCP server. No per-seat license fee.",
+    "watch_out": "Local database client, not free database hosting. Connections require your own database; optional AI features use separately configured providers that may charge for API usage. Third-party plugins and infrastructure may have separate terms.",
+    "pricing_url": "https://github.com/TabularisDB/tabularis",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-16",
+    "deployment_model": "local"
+  },
+  {
     "id": "taurus-load-testing",
     "name": "Taurus Open Source Load Testing",
     "category": "testing-qa",
