@@ -16628,6 +16628,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "timon-free",
+    "name": "Timon Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free local AI-agent orchestration workstation for one user on one machine, including agent missions, Kanban, git worktrees, code/review workflows, routines, local memory, built-in browser and plugins; works with separately provided agent CLI subscriptions, credentials or endpoints.",
+    "watch_out": "Timon Free is local software, not free hosted AI inference or compute. Claude Code, Codex, Copilot and other model CLI subscriptions/API usage must be separately provided and may cost money. Free is limited to one user and one machine, with no support; multi-user roles, premium plugins and server-based Cloud edition require a paid plan. Main Timon code is AGPL-3.0-only with a plugin exception; distributing modified software or providing a modified network service may trigger source-sharing obligations. Pro/Cloud pricing has not been announced.",
+    "pricing_url": "https://timon-ai.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-16",
+    "deployment_model": "local"
+  },
+  {
     "id": "tokajer-smtprelayd-self-hosted",
     "name": "smtprelayd Self-Hosted SMTP Relay",
     "category": "email-notifications",
