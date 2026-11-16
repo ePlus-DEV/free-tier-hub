@@ -1,0 +1,13 @@
+{
+  "id": "youform-free",
+  "name": "Youform Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Hosted form builder free forever: unlimited forms, questions and text submissions subject to fair use; one user, conditional logic, signatures, webhooks and integrations, uploads up to 10 MB per file, plus 25 video/audio responses per organization each month.",
+  "watch_out": "Fair-use restrictions apply and sustained excessive use can prompt an upgrade request. Free retains Youform branding; custom domains, payment collection, advanced analytics, partial submissions and additional team seats require paid plans. Video/audio recordings are capped at 25 responses per organization monthly; text submissions have no published monthly cap. Third-party integrations may have separate costs.",
+  "pricing_url": "https://youform.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
