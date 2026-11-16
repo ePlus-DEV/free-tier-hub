@@ -13475,6 +13475,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "formsort-free",
+    "name": "Formsort Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Hosted low-code form builder Free plan: 100 flow starts per month per workspace, unlimited users and forms, custom logo and colors, and Formsort branding. A flow start is counted when a respondent completes at least one step or restarts with new answers; non-production environment starts are excluded.",
+    "watch_out": "Free is intended for experimenting with initial forms. At the 100-flow-start monthly cap, additional responses are discarded rather than retained. Formsort branding is required; advanced design, returning responders and higher volumes require Pro. The provider explicitly specifies credit-card payments for Pro but does not clearly state whether Free signup requires a card. Its terms address business customers but do not explicitly confirm unrestricted commercial use of Free; verify before production use. Paid Pro overages can incur charges; do not assume Free has paid overages.",
+    "pricing_url": "https://formsort.com/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "formto-self-hosted-form-backend",
     "name": "FormTo (Self-Hosted Form Backend)",
     "category": "forms-surveys",
@@ -17095,6 +17108,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-13",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "youform-free",
+    "name": "Youform Free",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Hosted form builder free forever: unlimited forms, questions and text submissions subject to fair use; one user, conditional logic, signatures, webhooks and integrations, uploads up to 10 MB per file, plus 25 video/audio responses per organization each month.",
+    "watch_out": "Fair-use restrictions apply and sustained excessive use can prompt an upgrade request. Free retains Youform branding; custom domains, payment collection, advanced analytics, partial submissions and additional team seats require paid plans. Video/audio recordings are capped at 25 responses per organization monthly; text submissions have no published monthly cap. Third-party integrations may have separate costs.",
+    "pricing_url": "https://youform.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
   },
   {
     "id": "youneedgreg-notification-system",
