@@ -1,0 +1,13 @@
+{
+  "id": "formnx-free",
+  "name": "FormNX Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Hosted form builder free forever: unlimited forms and submissions with up to 100 fields per form, 1 workspace and 1 user; 100 MB total storage and file uploads up to 10 MB each.",
+  "watch_out": "Free plan includes FormNX branding and limited workspace/storage capacity; more users, branding removal, advanced integrations and higher storage require paid plans. Provider pages differ on whether payment features work on Free (pricing mentions Stripe Connect fees while feature descriptions place live payments in paid plans); do not assume payment processing is included, and review any processor fees before use. Form submissions themselves have no monthly cap, but uploads and storage remain limited.",
+  "pricing_url": "https://formnx.com/price",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
