@@ -1,0 +1,13 @@
+{
+  "id": "pingram-cloud-free",
+  "name": "Pingram Cloud Free",
+  "category": "email-notifications",
+  "plan": "monthly-credit",
+  "free_limit": "Hosted email, SMS and voice notification service with a free monthly shared budget. Provider advertises US-equivalent examples of up to 3,000 emails or 100 US SMS or 100 voice minutes if allocated to one channel; allowance resets each billing cycle and does not roll over.",
+  "watch_out": "The monthly budget is shared across channels, so the headline 3,000 emails, 100 US SMS and 100 voice minutes are not three independently guaranteed quotas. SMS costs depend on destination country and segments; the advertised 100 SMS example assumes US rates. Managed A2P 10DLC is testing-only on Free. Paid tiers and optional add-ons cost money; paid-plan auto-upgrade may charge when 90% of the budget is spent. No guaranteed production SLA on Free. Commercial-use rights and production SMS restrictions need human review.",
+  "pricing_url": "https://www.pingram.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
