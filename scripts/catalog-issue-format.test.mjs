@@ -111,3 +111,13 @@ test('every catalog workflow uses the same parser and preserves existing automat
   assert.match(merge, /--match-head-commit/);
   assert.match(consumer, /openCatalog\.length >= 3/);
 });
+
+test('new trusted JSON Issues are normalized while historical Issues remain unchanged', () => {
+  const workflow = fs.readFileSync(
+    new URL('../.github/workflows/catalog-candidate-queue.yml', import.meta.url), 'utf8');
+  assert.match(workflow, /github\.event_name == 'issues' && github\.event\.action == 'opened'/);
+  assert.match(workflow, /validateCandidate\(parseCandidateIssue\(issue\.body\)\)/);
+  assert.match(workflow, /renderCandidateIssue\(candidate\)/);
+  assert.match(workflow, /issue\.body\.trim\(\)\.startsWith\('\{'\)/);
+  assert.match(workflow, /gh api --method PATCH/);
+});
