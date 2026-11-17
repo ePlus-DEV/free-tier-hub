@@ -1,0 +1,13 @@
+{
+  "id": "testfully-developer",
+  "name": "Testfully Developer Edition",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "One offline workspace and one cloud workspace; up to 5 users per workspace; unlimited collection runner; Testfully CLI; 2,000 API-monitoring credits per month at 30-minute monitoring intervals.",
+  "watch_out": "Free tier has workspace and user limits; monitoring history is 2 days. Team/Enterprise features, faster monitoring intervals and additional monitoring credits require paid plans. Credit-card requirement for the free Developer Edition is not explicitly confirmed on the reviewed pricing page.",
+  "pricing_url": "https://testfully.io/pricing/",
+  "credit_card": "check",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-17",
+  "deployment_model": "hybrid"
+}
