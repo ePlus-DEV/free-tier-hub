@@ -1,0 +1,13 @@
+{
+  "id": "taxhacker-self-hosted",
+  "name": "TaxHacker Self-Hosted",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free MIT-licensed self-hosted accounting software for receipt/invoice analysis, transaction tracking, currency conversion, and invoice generation; no software subscription or usage quota.",
+  "watch_out": "Requires your own server, PostgreSQL and AI provider keys; infrastructure and external LLM API usage may cost money. Cloud Edition is paid and is not included.",
+  "pricing_url": "https://github.com/vas3k/TaxHacker",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-17",
+  "deployment_model": "self-hosted"
+}
