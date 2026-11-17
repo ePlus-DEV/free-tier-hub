@@ -1,0 +1,13 @@
+{
+  "id": "mailhooks-free",
+  "name": "Mailhooks Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "100 inbound emails/month, 1 webhook endpoint, 3 API keys, 24-hour retention, 100 MB storage.",
+  "watch_out": "Webhook delivery pauses after the free monthly limit until upgrade or next cycle; emails may continue being received. Commercial-use permission requires review.",
+  "pricing_url": "https://mailhooks.dev/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
