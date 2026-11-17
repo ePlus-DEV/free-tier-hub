@@ -14998,6 +14998,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "medusa-self-hosted",
+    "name": "Medusa Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted open-source commerce framework and admin dashboard for products, carts, orders, payments and custom storefronts; core MIT-licensed software has no subscription or GMV platform fee.",
+    "watch_out": "Self-hosting requires separately paid or operated compute, PostgreSQL, storage and maintenance; third-party integrations and payment processing may incur fees. Enterprise RBAC/SSO features are not MIT-licensed. Medusa Cloud hosting is paid from $29/month and is not a free hosted tier.",
+    "pricing_url": "https://medusajs.com/kb/build-vs-buy/medusa-cloud-vs-self-hosting",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-17",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "mensfeld-hookshot-webhook-relay",
     "name": "Hookshot Rails Self-Hosted Webhook Relay",
     "category": "webhooks-events",
