@@ -12627,6 +12627,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "buttondown-free",
+    "name": "Buttondown Free Newsletter",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Hosted newsletter sending for the first 100 active subscribers at $0, including rich-text/Markdown editor, custom sending domain and hosted newsletter archives.",
+    "watch_out": "Free allowance is capped at 100 active subscribers; paid features such as analytics, segmentation, automations, RSS-to-email, paid subscriptions and team access require monthly add-ons. Commercial-use terms need confirmation.",
+    "pricing_url": "https://buttondown.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "cacti-network-graphing-self-hosted",
     "name": "Cacti Open-Source Network Graphing (Self-Hosted)",
     "category": "observability",
@@ -15650,6 +15663,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-03",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "optery-free-basic",
+    "name": "Optery Free Basic",
+    "category": "auth-security",
+    "plan": "ongoing",
+    "free_limit": "Free personal-data exposure scan at signup and recurring Exposure Reports approximately every 3 months when the account was accessed within the previous 3 months; self-service data broker opt-out tools and profile visibility links.",
+    "watch_out": "No automated data-broker removal on Free Basic; removal requests must be submitted manually. Fresh on-demand Custom Scans cost extra. Availability is country-dependent; the pricing page lists US, Canada, Australia, New Zealand and South Africa. Business/commercial eligibility requires confirmation.",
+    "pricing_url": "https://www.optery.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
   },
   {
     "id": "orbeon-forms-community-edition",
