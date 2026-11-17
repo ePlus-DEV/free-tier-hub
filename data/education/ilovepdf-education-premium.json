@@ -1,0 +1,15 @@
+{
+  "id": "ilovepdf-education-premium",
+  "name": "iLovePDF Premium for Education",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of iLovePDF Premium features free under the student and teacher Education program, including PDF editing, conversions, organization and OCR tools.",
+  "eligibility": "Students and educators applying through the provider's official Education registration flow; approval and educational status requirements apply.",
+  "duration": "One year of promotional Premium access; continued entitlement after the first year is not specified on the official Education page.",
+  "restrictions": "Separate individual student/teacher registration from institutional Education licensing. The official page does not specify an automatic renewal entitlement or card requirement; verify billing terms at signup.",
+  "source_url": "https://www.ilovepdf.com/education",
+  "last_checked": "2026-11-17"
+}
