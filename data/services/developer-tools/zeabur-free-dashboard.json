@@ -1,0 +1,13 @@
+{
+  "id": "zeabur-free-dashboard",
+  "name": "Zeabur Free Dashboard",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free $0/month dashboard to manage one server you own or purchase elsewhere; includes community support, 2 vCPU/4 GB build CI specification, 48-hour log retention and single-file container uploads up to 50 MB.",
+  "watch_out": "Does NOT include a free VPS, runtime server, managed hosting or free infrastructure; bring and pay for your own server. Build CI specification is not runtime capacity. Free plan lacks SLA, automated database backups and Zeabur Email. Commercial-use eligibility is not explicitly confirmed.",
+  "pricing_url": "https://zeabur.com/en-US/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "hybrid"
+}
