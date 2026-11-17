@@ -1,0 +1,15 @@
+{
+  "id": "shapr3d-educational-license",
+  "name": "Shapr3D Educational License",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "One-year free Shapr3D educational 3D modeling license with advanced design features normally included in paid subscriptions.",
+  "eligibility": "Active students, teachers or faculty at accredited educational institutions in supported countries, with a valid school email, school ID and current supporting proof.",
+  "duration": "One year per approved grant; renewable while education status and regional eligibility remain valid.",
+  "restrictions": "Strictly non-commercial educational use; only available in select countries. Team collaboration and priority technical support are excluded. If a paid trial is already running, cancel it before applying for EDU access.",
+  "source_url": "https://support.shapr3d.com/hc/en-us/articles/7873125176220-Shapr3D-Educational-license",
+  "last_checked": "2026-11-17"
+}
