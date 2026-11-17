@@ -16550,6 +16550,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "statuspal-next-free",
+    "name": "StatusPal Next",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free forever: 2 team members, 5 monitoring checks, 1 public status page, 500 subscribers, and 1 monitoring region.",
+    "watch_out": "StatusPal Next is distinct from the legacy StatusPal pricing plans. Free tier has no custom domain, private status page, incident automation, or SMS notifications. Credit-card requirements, commercial-use terms, and overage behavior need provider confirmation.",
+    "pricing_url": "https://www.statuspal.io/next",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "step-ci-open-source-api-testing",
     "name": "Step CI Open-Source API Testing",
     "category": "testing-qa",
@@ -16704,6 +16717,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-07",
     "deployment_model": "local"
+  },
+  {
+    "id": "taxhacker-self-hosted",
+    "name": "TaxHacker Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted accounting software for receipt/invoice analysis, transaction tracking, currency conversion, and invoice generation; no software subscription or usage quota.",
+    "watch_out": "Requires your own server, PostgreSQL and AI provider keys; infrastructure and external LLM API usage may cost money. Cloud Edition is paid and is not included.",
+    "pricing_url": "https://github.com/vas3k/TaxHacker",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-17",
+    "deployment_model": "self-hosted"
   },
   {
     "id": "tech-sentinel-monitor",
