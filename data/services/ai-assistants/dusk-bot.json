@@ -1,0 +1,13 @@
+{
+  "id": "dusk-bot",
+  "name": "dusk bot Personal",
+  "category": "ai-assistants",
+  "plan": "ongoing",
+  "free_limit": "Free desktop and self-hosted AI bot workspace for personal noncommercial use without a stated time limit or bot-count cap. Includes multiple bots with individual memory and computer/browser access, scheduled and event-triggered routines, connected apps and MCP integrations on the user's own machine or server.",
+  "watch_out": "Licensed under PolyForm Noncommercial 1.0.0 (source-available, not an OSI-approved open-source license); commercial use requires a separate license. Free software does not include AI inference, an AI subscription, paid API usage, Dusk Cloud or server costs. Local routines stop when the computer sleeps; running continuously requires an always-on self-managed server or paid hosting.",
+  "pricing_url": "https://github.com/DuskBotAI/duskbot",
+  "credit_card": "no",
+  "commercial_use": "no",
+  "last_checked": "2026-11-17",
+  "deployment_model": "local"
+}
