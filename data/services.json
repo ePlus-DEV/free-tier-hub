@@ -16667,6 +16667,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "synara-free",
+    "name": "Synara Free",
+    "category": "ai-assistants",
+    "plan": "ongoing",
+    "free_limit": "Free, open-source MIT-licensed local-first desktop workspace for up to 10 supported coding-agent runtimes, with Git worktrees, diffs, browser verification, task handoffs and pull-request workflows on your own computer. No Synara account, payment card or fixed free-plan expiration is required for local use.",
+    "watch_out": "Synara Free is local software, not a hosted AI model or free inference service. Install and authenticate supported coding-agent CLIs separately; provider subscriptions, API charges, quotas and permissions are not included. Synara Alto remote control between computers, approvals/alerts and the online profile require a paid subscription; iPhone/iPad remote support is marked coming soon.",
+    "pricing_url": "https://www.trysynara.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-17",
+    "deployment_model": "local"
+  },
+  {
     "id": "tabularis",
     "name": "Tabularis",
     "category": "developer-tools",
