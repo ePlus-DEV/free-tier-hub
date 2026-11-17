@@ -1,0 +1,13 @@
+{
+  "id": "nevo-hobby",
+  "name": "Nevo Hobby",
+  "category": "webhooks-events",
+  "plan": "ongoing",
+  "free_limit": "1,000 webhook events/month; 1 project, 1 webhook channel, 1 endpoint, 1 API key, 1 filter rule; 5 requests/second per webhook; 7-day event replay.",
+  "watch_out": "Free Hobby tier supports webhooks only; inbound email, cron, Slack, additional capacity and longer replay require paid plans. Credit-card requirement, commercial-use rights and overage behavior are not explicitly confirmed by the reviewed provider documentation; verify before production use.",
+  "pricing_url": "https://www.nevo.sh/",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
