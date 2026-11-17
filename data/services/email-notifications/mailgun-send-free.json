@@ -1,0 +1,13 @@
+{
+  "id": "mailgun-send-free",
+  "name": "Mailgun Send Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "100 transactional emails per day on the hosted Free plan; REST email API and SMTP relay, 1 custom sending domain, 1 inbound route and 1-day log retention.",
+  "watch_out": "100-email daily cap; domain verification and deliverability setup required. Free plan does not include paid email validation or higher-volume sending; upgrades and overages on paid plans may incur charges. Official pricing and help pages differ on API key count (1 versus 2). Commercial-use terms not explicitly confirmed.",
+  "pricing_url": "https://www.mailgun.com/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
