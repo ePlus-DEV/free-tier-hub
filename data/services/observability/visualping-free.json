@@ -1,0 +1,13 @@
+{
+  "id": "visualping-free",
+  "name": "Visualping Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Free cloud website-change monitoring for up to 5 pages with 150 checks per month, minimum 60-minute check interval and 1 user; includes email alerts, AI change summaries, webhooks, REST API and MCP access within monthly check limits.",
+  "watch_out": "150 checks are shared across all pages; monitoring pauses after the monthly allowance is exhausted. Five pages checked daily can exceed 150 checks in a 31-day month. Paid Personal/Business plans unlock faster checks and more volume; commercial-use terms require confirmation.",
+  "pricing_url": "https://help.visualping.io/en/articles/14476033",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
