@@ -13945,6 +13945,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "hetrixtools-free",
+    "name": "HetrixTools Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free forever: 15 uptime monitors and 15 server monitoring agents, with 1-minute checks from 4 selected locations, status pages, and 15-day activity logs.",
+    "watch_out": "Must log in to the dashboard at least once every 90 days to retain the free plan. Additional monitors require a paid plan; phone and SMS notifications consume credits. Credit-card requirement and commercial-use conditions are not explicitly confirmed.",
+    "pricing_url": "https://hetrixtools.com/pricing/uptime-monitor/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "heyform-open-source-self-hosted",
     "name": "HeyForm Open Source Self-Hosted",
     "category": "forms-surveys",
