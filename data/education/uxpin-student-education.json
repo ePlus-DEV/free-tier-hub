@@ -1,0 +1,14 @@
+{
+  "id": "uxpin-student-education",
+  "name": "UXPin Free Access for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free UXPin access for eligible students to design interfaces and interactive prototypes.",
+  "eligibility": "Students enrolled in a degree program or diploma-granting course, verified through an uploaded photo or scan of a student ID.",
+  "duration": "No fixed duration for the verified-student offer is stated on the official pricing FAQ.",
+  "restrictions": "Students must first sign up for a trial, then contact UXPin through the editor's in-app chat to complete manual student-ID verification. The exact plan features and renewal rules are not specified.",
+  "source_url": "https://www.uxpin.com/pricing?type=standard",
+  "last_checked": "2026-11-17"
+}
