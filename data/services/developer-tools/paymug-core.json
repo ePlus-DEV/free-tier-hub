@@ -1,0 +1,13 @@
+{
+  "id": "paymug-core",
+  "name": "Paymug Core",
+  "category": "developer-tools",
+  "plan": "ongoing",
+  "free_limit": "Free self-hosted Apache-2.0 digital-commerce core with a storefront, one-time digital products and recurring subscriptions, PayPal/Stripe checkout using the seller's own accounts, customer/order management and digital-product delivery. The community core has no published license expiry or usage quota; operators supply their own Cloudflare Workers, D1 and R2 infrastructure.",
+  "watch_out": "Paymug Pro features (including email campaigns, affiliates, automations, multiple stores, CMS and private GitHub access) require a purchased commercial license and are not part of the free core. Cloudflare R2 activation includes a subscription/billing checkout and usage above free allowances may incur charges; Cloudflare Email Service sending to arbitrary customer recipients requires Workers Paid. PayPal/Stripe transaction fees and merchant tax/compliance obligations still apply. Card/payment method requirements for the complete Cloudflare/R2 setup need confirmation.",
+  "pricing_url": "https://paymug.co/",
+  "credit_card": "check",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-17",
+  "deployment_model": "self-hosted"
+}
