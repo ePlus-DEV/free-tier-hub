@@ -1,0 +1,14 @@
+{
+  "id": "frontendmasters-github-student",
+  "name": "Frontend Masters GitHub Student Access",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Six months of free access to Frontend Masters' complete course library and workshops for web development, JavaScript, frameworks and related engineering topics.",
+  "eligibility": "Current verified members of the GitHub Student Developer Pack who sign in or create a Frontend Masters account and redeem the education offer.",
+  "duration": "One six-month free course-access period starting at redemption.",
+  "restrictions": "No credit card is needed to register for the student offer. Free access ends after six months; further full-library access requires selecting a subscription. The offer does not make paid Frontend Masters plans permanently free.",
+  "source_url": "https://frontendmasters.com/welcome/github-student-developers/",
+  "last_checked": "2026-11-17"
+}
