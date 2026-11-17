@@ -1,0 +1,14 @@
+{
+  "id": "clerk-github-student-pro",
+  "name": "Clerk Pro for GitHub Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Clerk Pro-tier authentication and user management allowance at no charge for a verified GitHub student on one Clerk workspace, with the normal Pro usage limits.",
+  "eligibility": "GitHub Student Developer Pack verified students who keep the qualifying GitHub account connected to Clerk.",
+  "duration": "Valid during verified GitHub student tenure; benefits cease when student eligibility or the GitHub account connection ends.",
+  "restrictions": "One workspace per verified student; SMS authentication is excluded and may require a separate paid upgrade. Graduates lose student benefits and revert to Hobby; extra services and charges must be checked before upgrading.",
+  "source_url": "https://clerk.com/github-student-developer-pack",
+  "last_checked": "2026-11-17"
+}
