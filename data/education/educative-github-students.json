@@ -1,0 +1,14 @@
+{
+  "id": "educative-github-students",
+  "name": "Educative GitHub Student Courses",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Six months of free access to 70+ selected hands-on programming courses through GitHub Education, alongside a 30% discount on separate Educative paid subscriptions.",
+  "eligibility": "Verified members of GitHub Student Developer Pack who link their approved student GitHub account to Educative and claim the partner offer.",
+  "duration": "Free course bundle lasts six months from redemption; the standard paid-subscription discount is a separate benefit.",
+  "restrictions": "Offer covers a curated course bundle rather than every Premium feature or all paid Educative courses. No payment card is required for the free pack, but buying separate products may require payment.",
+  "source_url": "https://www.educative.io/github-students",
+  "last_checked": "2026-11-17"
+}
