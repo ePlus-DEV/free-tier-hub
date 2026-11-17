@@ -1,0 +1,14 @@
+{
+  "id": "wispr-flow-student",
+  "name": "Wispr Flow Pro for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Three free months of Wispr Flow Pro voice dictation and writing assistance for eligible new student subscribers, followed by access to discounted student pricing.",
+  "eligibility": "New subscribers who verify student status with an academic email; students without a .edu address may request manual verification with school documents.",
+  "duration": "Three-month promotional Pro period for eligible new subscribers only.",
+  "restrictions": "The promotional subscription auto-renews at a 50% student discount after the three free months unless cancelled. Displayed student pricing and payment cadence must be checked before starting the offer.",
+  "source_url": "https://wisprflow.ai/students",
+  "last_checked": "2026-11-17"
+}
