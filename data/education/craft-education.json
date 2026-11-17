@@ -1,0 +1,16 @@
+{
+  "id": "craft-education",
+  "name": "Craft for Education",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Craft Education plan with unlimited documents, up to 250 GB storage, larger file uploads, password-protected publishing, sharing analytics, and customized PDF exports.",
+  "eligibility": "Currently enrolled students and active academic faculty or staff verified through institution email; those without a school email may contact Craft support for manual verification.",
+  "duration": "Valid for 12 months with unlimited renewals while eligibility can be reverified.",
+  "restrictions": "Must verify academic status annually. Personal Free/Starter plan has different document and storage limits; Education entitlement is not automatically granted to an unverified personal email account.",
+  "source_url": "https://www.craft.do/education",
+  "last_checked": "2026-11-17"
+}
