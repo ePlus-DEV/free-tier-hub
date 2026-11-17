@@ -13488,6 +13488,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "formsubmit-free",
+    "name": "FormSubmit",
+    "category": "forms-surveys",
+    "plan": "ongoing",
+    "free_limit": "Free hosted HTML form-to-email endpoints with unlimited forms and submissions; submission archive retained for 30 days and archive API access limited to 5 calls per day.",
+    "watch_out": "Requires email address confirmation before use. Submission archive is retained for only 30 days; uploaded files are not accessible through the archive API. Anti-spam restrictions can affect delivery; commercial-use permission and card requirement are not explicitly established by the reviewed documentation.",
+    "pricing_url": "https://formsubmit.co/documentation",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "formto-self-hosted-form-backend",
     "name": "FormTo (Self-Hosted Form Backend)",
     "category": "forms-surveys",
@@ -14761,6 +14774,19 @@
     "credit_card": "no",
     "commercial_use": "check",
     "last_checked": "2026-11-15",
+    "deployment_model": "cloud"
+  },
+  {
+    "id": "mailgun-send-free",
+    "name": "Mailgun Send Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "100 transactional emails per day on the hosted Free plan; REST email API and SMTP relay, 1 custom sending domain, 1 inbound route and 1-day log retention.",
+    "watch_out": "100-email daily cap; domain verification and deliverability setup required. Free plan does not include paid email validation or higher-volume sending; upgrades and overages on paid plans may incur charges. Official pricing and help pages differ on API key count (1 versus 2). Commercial-use terms not explicitly confirmed.",
+    "pricing_url": "https://www.mailgun.com/pricing/",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
     "deployment_model": "cloud"
   },
   {
@@ -17173,6 +17199,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-05",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "zeabur-free-dashboard",
+    "name": "Zeabur Free Dashboard",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free $0/month dashboard to manage one server you own or purchase elsewhere; includes community support, 2 vCPU/4 GB build CI specification, 48-hour log retention and single-file container uploads up to 50 MB.",
+    "watch_out": "Does NOT include a free VPS, runtime server, managed hosting or free infrastructure; bring and pay for your own server. Build CI specification is not runtime capacity. Free plan lacks SLA, automated database backups and Zeabur Email. Commercial-use eligibility is not explicitly confirmed.",
+    "pricing_url": "https://zeabur.com/en-US/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "hybrid"
   },
   {
     "id": "zero-email-self-hosted",
