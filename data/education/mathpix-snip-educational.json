@@ -1,0 +1,15 @@
+{
+  "id": "mathpix-snip-educational",
+  "name": "Mathpix Snip Educational Free Plan",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "An educational-email upgrade that doubles the standard Free Snip usage allowances, whose listed baseline is 10 PDF pages and 10 images per month.",
+  "eligibility": "Academic users registering with an eligible educational email domain; an existing account may update its email in account settings.",
+  "duration": "Ongoing Free/Educational allowance subject to the provider's published limits and continued eligibility; no fixed promotional end date is stated.",
+  "restrictions": "This is extra usage on the Free plan, not a complimentary Pro subscription or unlimited OCR API access. Institutions seeking paid Pro licenses must arrange them separately.",
+  "source_url": "https://website.mathpix.com/pricing/snip",
+  "last_checked": "2026-11-17"
+}

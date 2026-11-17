@@ -1,0 +1,14 @@
+{
+  "id": "beautifulai-student-pro",
+  "name": "Beautiful.ai Pro for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of Beautiful.ai Pro presentation design and AI-supported slide creation at no charge for eligible university students.",
+  "eligibility": "Students affiliated with accredited universities, normally verified with a .edu email; those without .edu may contact support with official academic evidence.",
+  "duration": "A free 12-month Pro subscription for approved new student subscribers.",
+  "restrictions": "Create an account and request the EDU Pro upgrade through Beautiful.ai support. The provider's standard trials can auto-bill if left active, so confirm the academic entitlement and any post-year billing before adding a payment method.",
+  "source_url": "https://www.beautiful.ai/education",
+  "last_checked": "2026-11-17"
+}

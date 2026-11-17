@@ -1,0 +1,15 @@
+{
+  "id": "tella-education-pro",
+  "name": "Tella Pro for Education",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Six months of Tella Pro for approved academic users, including unlimited video recording, AI editing, transcription in 106 languages, up-to-4K exports, sharing and analytics.",
+  "eligibility": "Students, teachers and professors at accredited educational institutions with a Tella account registered to a school email address; apply using the institution website and school email.",
+  "duration": "One six-month free term starting from approval, available only once per workspace.",
+  "restrictions": "Limited to one user per workspace. No credit card is required for the free term and it ends without automatic paid renewal. Continued Pro access requires a separately selected paid plan; a 50% education discount may apply subject to verification.",
+  "source_url": "https://www.tella.com/for-education",
+  "last_checked": "2026-11-17"
+}

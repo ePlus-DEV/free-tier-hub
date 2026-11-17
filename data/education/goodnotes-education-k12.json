@@ -1,0 +1,16 @@
+{
+  "id": "goodnotes-education-k12",
+  "name": "Goodnotes Education for K-12 Schools",
+  "audiences": [
+    "school",
+    "teacher",
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Goodnotes Education teaching and classroom features for eligible K-12 schools, including document distribution, real-time student work monitoring, assessment, feedback and learning tools.",
+  "eligibility": "K-12 schools deploying Goodnotes Education to their teachers and students through the supported school setup; this is an institution-level offer, not a free personal Pro upgrade for every university student.",
+  "duration": "Ongoing free education offering for eligible K-12 schools, with no fixed trial expiry advertised.",
+  "restrictions": "Currently depends on supported Apple-device classroom setups; available management features differ by school configuration, including Apple School Manager and optional Admin Console. Consumer paid subscriptions are separate.",
+  "source_url": "https://www.goodnotes.com/learning/education",
+  "last_checked": "2026-11-17"
+}
