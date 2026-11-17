@@ -14829,6 +14829,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "mailhooks-free",
+    "name": "Mailhooks Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "100 inbound emails/month, 1 webhook endpoint, 3 API keys, 24-hour retention, 100 MB storage.",
+    "watch_out": "Webhook delivery pauses after the free monthly limit until upgrade or next cycle; emails may continue being received. Commercial-use permission requires review.",
+    "pricing_url": "https://mailhooks.dev/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-16",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "mailkite-self-hosted-programmable-mail-server",
     "name": "MailKite Self-Hosted Programmable Mail Server",
     "category": "email-notifications",
@@ -16717,6 +16730,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
     "deployment_model": "local"
+  },
+  {
+    "id": "testfully-developer",
+    "name": "Testfully Developer Edition",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "One offline workspace and one cloud workspace; up to 5 users per workspace; unlimited collection runner; Testfully CLI; 2,000 API-monitoring credits per month at 30-minute monitoring intervals.",
+    "watch_out": "Free tier has workspace and user limits; monitoring history is 2 days. Team/Enterprise features, faster monitoring intervals and additional monitoring credits require paid plans. Credit-card requirement for the free Developer Edition is not explicitly confirmed on the reviewed pricing page.",
+    "pricing_url": "https://testfully.io/pricing/",
+    "credit_card": "check",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-17",
+    "deployment_model": "hybrid"
   },
   {
     "id": "testiny-free",
