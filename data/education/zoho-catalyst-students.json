@@ -1,0 +1,14 @@
+{
+  "id": "zoho-catalyst-students",
+  "name": "Zoho Catalyst for Students",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "credit",
+  "benefit": "Up to US$250 of Catalyst cloud-platform usage at no charge during a six-month period for qualifying student applications.",
+  "eligibility": "Students using Catalyst to build legitimate non-commercial educational, experimental, or personal projects.",
+  "duration": "US$250 usage threshold over six months; further free usage requires case-by-case Catalyst Support review and approval, not guaranteed automatic renewal.",
+  "restrictions": "No subscription or credit card required for the student program. Apps temporarily stop at the US$250 threshold rather than automatically charging. Commercial projects are ineligible.",
+  "source_url": "https://catalyst.zoho.com/students/",
+  "last_checked": "2026-11-17"
+}

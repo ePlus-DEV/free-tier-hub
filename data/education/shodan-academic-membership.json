@@ -1,0 +1,15 @@
+{
+  "id": "shodan-academic-membership",
+  "name": "Shodan Academic Membership",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Shodan Membership upgrade, including monitoring for up to 16 IPs, 100 query credits and 100 scan credits per month, plus Shodan Maps and Images access.",
+  "eligibility": "Students, professors, and university IT staff with an institution-associated academic email; nonstandard academic domains can request manual verification.",
+  "duration": "No fixed promotional end date stated; Shodan requires an ongoing qualifying academic or research affiliation.",
+  "restrictions": "Academic access is limited to non-commercial research and educational use. Academic users cannot change their account email or download data through the website; the vuln filter is website-only.",
+  "source_url": "https://help.shodan.io/the-basics/academic-upgrade",
+  "last_checked": "2026-11-17"
+}

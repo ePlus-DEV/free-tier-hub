@@ -1,0 +1,15 @@
+{
+  "id": "lucidchart-education",
+  "name": "Lucidchart Education Account",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Lucidchart Education account with diagramming, visual collaboration, education templates, and classroom-oriented tools.",
+  "eligibility": "Eligible K-12 and higher-education students and educators with an appropriate school or academic email address.",
+  "duration": "Eligibility-based Education access; no fixed duration is stated on the official Education overview.",
+  "restrictions": "K-12 users with valid educational email addresses may receive automatic upgrades; higher-education users must complete applicable registration or verification steps. Education Premium is a separate offering.",
+  "source_url": "https://lucid.co/lucidchart/use-cases/education",
+  "last_checked": "2026-11-17"
+}
