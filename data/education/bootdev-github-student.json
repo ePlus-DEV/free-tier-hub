@@ -1,0 +1,14 @@
+{
+  "id": "bootdev-github-student",
+  "name": "Boot.dev GitHub Student Membership",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Three months of free interactive Boot.dev membership to study backend development, DevOps, Python, Go, TypeScript and data analysis.",
+  "eligibility": "Students verified for GitHub Student Developer Pack, redeeming the Boot.dev partner offer through the official GitHub Education directory.",
+  "duration": "Three-month promotional full-membership access; no recurring free-premium entitlement is stated.",
+  "restrictions": "This is a time-limited membership rather than permanent unrestricted course access. Review redemption and any subsequent billing terms during the official claim flow; ordinary Boot.dev plans are paid.",
+  "source_url": "https://education.github.com/pack",
+  "last_checked": "2026-11-17"
+}
