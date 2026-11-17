@@ -1,0 +1,14 @@
+{
+  "id": "ynab-college-program",
+  "name": "YNAB College Program",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "One free year (365 days) of YNAB budgeting software for approved college students.",
+  "eligibility": "Current college or university students, including graduate, part-time and international students, with enrollment proof such as dated student ID, transcript or tuition statement; verification through the program flow.",
+  "duration": "One free 365-day student period; a second free year is not provided even if still enrolled.",
+  "restrictions": "High-school students are ineligible. The student offer must be redeemed directly through YNAB rather than an active Apple App Store subscription. Continued access after the free year may require a paid subscription; review renewal terms before redeeming.",
+  "source_url": "https://www.ynab.com/college",
+  "last_checked": "2026-11-17"
+}
