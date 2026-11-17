@@ -1,0 +1,13 @@
+{
+  "id": "buttondown-free",
+  "name": "Buttondown Free Newsletter",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Hosted newsletter sending for the first 100 active subscribers at $0, including rich-text/Markdown editor, custom sending domain and hosted newsletter archives.",
+  "watch_out": "Free allowance is capped at 100 active subscribers; paid features such as analytics, segmentation, automations, RSS-to-email, paid subscriptions and team access require monthly add-ons. Commercial-use terms need confirmation.",
+  "pricing_url": "https://buttondown.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
