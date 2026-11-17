@@ -1,0 +1,15 @@
+{
+  "id": "axure-rp-education",
+  "name": "Axure RP Education Subscription",
+  "audiences": [
+    "student",
+    "teacher"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free Axure RP 11 subscriptions for prototyping and UX design: one year for eligible students and two years for eligible teachers.",
+  "eligibility": "Students in degree programs and teachers at accredited full-time primary/secondary schools, colleges, universities, or other Axure-approved educational organizations; apply with proof of enrollment or employment.",
+  "duration": "Students may reapply annually while enrolled; teachers may renew two-year subscriptions without a stated renewal cap, subject to approval.",
+  "restrictions": "Education licenses are only for teaching and learning, not commercial work. Freelance/agency training, short certificate or non-accredited programs generally do not qualify. Applications are reviewed manually.",
+  "source_url": "https://www.axure.com/edu",
+  "last_checked": "2026-11-17"
+}

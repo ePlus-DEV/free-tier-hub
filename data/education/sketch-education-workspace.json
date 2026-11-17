@@ -1,0 +1,16 @@
+{
+  "id": "sketch-education-workspace",
+  "name": "Sketch for Education Workspace",
+  "audiences": [
+    "student",
+    "teacher",
+    "school"
+  ],
+  "benefit_type": "free",
+  "benefit": "One year of free Sketch design and collaboration Workspace with 50 GB cloud storage; eligible individual students and teachers receive one Editor seat with Mac, web and iPhone access.",
+  "eligibility": "Students aged 16+ in qualifying secondary, college, university or sufficiently long formal courses; employed teachers; and accredited institutions using Sketch in their courses, with academic status documentation.",
+  "duration": "One-year education grant; renewal requests can be resubmitted and are individually reviewed while eligibility continues.",
+  "restrictions": "Mac design app needs macOS Sequoia 15 or newer; no payment card required to create a trial Workspace. Home/self-study, nonprofits, startups and school marketing teams are excluded from free Education Workspaces.",
+  "source_url": "https://www.sketch.com/education/",
+  "last_checked": "2026-11-17"
+}

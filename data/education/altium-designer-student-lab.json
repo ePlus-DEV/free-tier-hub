@@ -1,0 +1,14 @@
+{
+  "id": "altium-designer-student-lab",
+  "name": "Altium Designer Student Lab",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Free student license for Altium Designer PCB schematic and layout software, with Altium 365 cloud workspace, educational curriculum and certification resources.",
+  "eligibility": "Current students at educational institutions who complete the Altium Student Lab application using an eligible institution-issued academic email and student verification.",
+  "duration": "One-year license; may be renewed annually while student status remains valid by reapplying after expiration.",
+  "restrictions": "Altium Designer is supported on Windows. Student license delivery and eligibility review can take time; simultaneous logins on two computers are not allowed. Confirm license terms before commercial production use.",
+  "source_url": "https://www.altium.com/education/students",
+  "last_checked": "2026-11-17"
+}
