@@ -1,0 +1,14 @@
+{
+  "id": "elevenlabs-students-2026",
+  "name": "ElevenLabs for Students (2026)",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "Three months of free access to ElevenCreative, ElevenAgents and ElevenAPI, plus one year of ElevenReader Ultra.",
+  "eligibility": "University students aged 18 or older in the United States, Canada, the EU27, Australia or the United Kingdom, subject to student verification.",
+  "duration": "Three months for creative, agent and API products; twelve months for ElevenReader Ultra.",
+  "restrictions": "The launch offer is geographically restricted and not available to all academic email holders. Premium access ends when each promotional period expires; post-offer pricing and continuation must be checked separately.",
+  "source_url": "https://elevenlabs.io/blog/introducing-elevenlabs-for-students",
+  "last_checked": "2026-11-17"
+}
