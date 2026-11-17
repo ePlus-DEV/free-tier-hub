@@ -1,0 +1,13 @@
+{
+  "id": "agentmail-free",
+  "name": "AgentMail Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "Free hosted email API: 3 inboxes, 1 custom domain, 3,000 emails/month (maximum 100/day), and 3 GB storage; includes SMTP relay, SDKs, MCP and webhooks.",
+  "watch_out": "Free outgoing mail carries a 'Sent via AgentMail' footer; a second custom domain and additional capacity require paid plans. Free custom domain is automatic for accounts created November 4, 2026 or later; older accounts must request enablement. Respect daily and monthly send caps. Commercial-use terms require provider confirmation.",
+  "pricing_url": "https://www.agentmail.to/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-16",
+  "deployment_model": "cloud"
+}
