@@ -1,0 +1,14 @@
+{
+  "id": "interserver-student-hosting",
+  "name": "InterServer Free Student Web Hosting",
+  "audiences": [
+    "student"
+  ],
+  "benefit_type": "free",
+  "benefit": "First year of standard shared web hosting at no charge for qualifying students, with website/CMS installation, SSL, domain email and hosting for course projects and personal portfolios.",
+  "eligibility": "Students with qualifying school-issued email addresses (student registration page requests .edu); contact InterServer for manual eligibility review if a school domain is not automatically approved.",
+  "duration": "Free hosting for the first 12 months after approved educational signup; ordinary hosting prices may apply later.",
+  "restrictions": "This is shared web hosting, not a free VPS or dedicated cloud server. The provider grants hosting credits after student approval; check post-year renewal rates and any payment obligations before signup.",
+  "source_url": "https://www.interserver.net/webhosting/student-webhosting.html/",
+  "last_checked": "2026-11-17"
+}
