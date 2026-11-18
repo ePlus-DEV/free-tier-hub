@@ -115,7 +115,18 @@ jobs:
       # Canonical Issue JSON can be raw (legacy) or inside a readable Markdown body.
       # Trusted deployment comments support legacy JSON or formatted evidence.
       # The candidate JSON itself remains unchanged (including old 11-field Issues).
+      # Read the live trusted Issue and canonical main catalog BEFORE creating a
+      # branch. Close only deterministic same-offer duplicates; shared URLs and
+      # ambiguous names stay open with a single actionable review comment.
+      - name: Classify and close confirmed duplicates
+        id: identity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+        run: node scripts/catalog-duplicate-issue.mjs
+
       - name: Resolve deployment evidence
+        if: steps.identity.outputs.outcome == 'new'
         id: deployment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
