@@ -1,0 +1,13 @@
+{
+  "id": "uptimia-free",
+  "name": "Uptimia Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "After the 30-day trial, the ongoing free plan includes monitoring of one website and one API endpoint, each checked as frequently as every 5 minutes.",
+  "watch_out": "The initial 30-day trial exposes paid features; the continuing free plan excludes transaction, page-speed and real-user monitoring. No credit card is required for the trial; commercial-use terms and any free-plan alerting limits need independent confirmation.",
+  "pricing_url": "https://www.uptimia.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-18",
+  "deployment_model": "cloud"
+}
