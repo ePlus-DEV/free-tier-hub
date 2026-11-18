@@ -16432,6 +16432,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "sendune-free",
+    "name": "SENDUNE Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "SENDUNE dashboard free plan for up to 1,000 contacts and 3,000 emails per month, with no SENDUNE subscription fee and no card required by SENDUNE.",
+    "watch_out": "Requires connecting your own Amazon SES account. AWS bills SES sending directly, including during SENDUNE's free plan; this is NOT 3,000 emails of free AWS delivery. AWS account/payment setup may require a card. Verify AWS charges, SES sending limits and commercial terms before use.",
+    "pricing_url": "https://sendune.com/pricing",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "hybrid"
+  },
+  {
     "id": "sentry-for-startups-credits",
     "name": "Sentry for Startups Credits",
     "category": "observability",
