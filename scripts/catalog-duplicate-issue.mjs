@@ -10,21 +10,21 @@ import { candidateCollisions, confirmedCatalogDuplicate } from './catalog-dedup.
 import { loadServices } from './catalog-source.mjs';
 
 const TRUSTED = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
-const MARKER = '<!-- free-tier-hub:duplicate-candidate:v1:';
+const MARKER = '<!-- free-tier-hub:candidate-identity:v1:';
 
 function validTarget(repo, number) {
   if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo) ||
       !Number.isSafeInteger(number) || number < 1) throw Error('Invalid Issue target');
 }
 
-function notice(candidate, duplicate, collisions) {
-  const prefix = MARKER + candidate.id + ' -->';
+function notice(repo, candidate, duplicate, collisions) {
+  const prefix = MARKER + (duplicate ? 'duplicate:' : 'review:') + candidate.id + ' -->';
   if (duplicate) {
     const shard = 'data/services/' + duplicate.category + '/' + duplicate.id + '.json';
     return [prefix, '### Duplicate catalog candidate', '',
       '**No new PR is needed.** This free offer is already listed:',
       '- Existing service: [\x60' + duplicate.id + '\x60](https://github.com/' +
-        process.env.GITHUB_REPOSITORY + '/blob/main/' + shard + ')',
+        repo + '/blob/main/' + shard + ')',
       '- Official source: ' + duplicate.pricing_url,
       '- Existing category: \x60' + duplicate.category + '\x60',
       '- Plan: \x60' + duplicate.plan + '\x60', '',
@@ -60,6 +60,12 @@ export function processDuplicateCandidateIssue(repo, number, catalog, checkedOut
   }
   const duplicate = confirmedCatalogDuplicate(candidate, catalog);
   const collisions = candidateCollisions(candidate, catalog);
+  // Reusing an existing ID with changed terms is NOT a new offer; keep it
+  // reviewable rather than trying to create the same service shard again.
+  for (const existing of catalog.filter(item => item.id === candidate.id)) {
+    if (!duplicate) collisions.push({id:existing.id,category:existing.category,
+      reason:'existing-id',severity:'review'});
+  }
   if (!duplicate && !collisions.length) return 'new';
 
   // GitHub may merge another candidate while this workflow starts. A stale
@@ -67,16 +73,14 @@ export function processDuplicateCandidateIssue(repo, number, catalog, checkedOut
   if (checkedOutSha !== api('repos/' + repo + '/git/ref/heads/main').object.sha) {
     throw Error('main changed during duplicate inspection; retry on fresh main');
   }
-  const marker = MARKER + candidate.id + ' -->';
+  const marker = MARKER + (duplicate ? 'duplicate:' : 'review:') + candidate.id + ' -->';
   const existingComments = JSON.parse(gh(['api','--paginate','--slurp',
     endpoint + '/comments?per_page=100'])).flat();
   if (!existingComments.some(comment => typeof comment.body === 'string' &&
       comment.body.includes(marker))) {
     // Use only the validated repository, Issue number and catalog identity.
     // A failed comment MUST leave the Issue open.
-    const body = notice(candidate, duplicate, collisions).replace(
-      'https://github.com/' + process.env.GITHUB_REPOSITORY + '/',
-      'https://github.com/' + repo + '/');
+    const body = notice(repo, candidate, duplicate, collisions);
     gh(['api','--method','POST',endpoint + '/comments','-f','body=' + body]);
   }
 
