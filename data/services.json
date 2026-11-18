@@ -13007,6 +13007,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dockkeep-self-hosted",
+    "name": "Dockkeep Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free MIT-licensed self-hosted backup manager with a web UI and headless scheduler for Restic backups and Rclone syncs; supports cron schedules, retention, restore browsing and email/Pushover notifications, with no published software quota.",
+    "watch_out": "Requires your own amd64 Docker host, backup disks or separately billed remote storage, and configuration of Restic credentials. No built-in web UI authentication: expose only on a trusted network or behind VPN/authenticated proxy. ARM images are not provided; independent production reliability is not verified.",
+    "pricing_url": "https://github.com/DavidKrGH/Dockkeep",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-17",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "docklet-self-hosted",
     "name": "Docklet (Self-Hosted)",
     "category": "cloud-vps",
