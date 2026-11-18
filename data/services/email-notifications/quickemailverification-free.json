@@ -1,0 +1,13 @@
+{
+  "id": "quickemailverification-free",
+  "name": "QuickEmailVerification Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "100 free email verification credits per day, resetting daily; includes email validation API and bulk email verification.",
+  "watch_out": "Free signup requires a work email; usage beyond 100 daily credits requires purchased credits or a paid plan. Pay-as-you-go credits and optional auto-recharge are separate paid offerings. Check service terms and acceptable use for your workload.",
+  "pricing_url": "https://quickemailverification.com/plans",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
