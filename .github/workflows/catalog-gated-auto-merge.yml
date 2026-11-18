@@ -9,7 +9,7 @@ on:
   # Muse Invite Hub-style reconciliation catches a missed workflow_run event
   # and retries a verified PR left Ready after an interrupted merge.
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/20 * * * *"
   workflow_dispatch:
 
 permissions:
