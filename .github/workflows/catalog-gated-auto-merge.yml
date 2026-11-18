@@ -6,22 +6,28 @@ on:
       - Validate free tier catalog
       - Build and deploy GitHub Pages
     types: [completed]
+  # Muse Invite Hub-style reconciliation catches a missed workflow_run event
+  # and retries a verified PR left Ready after an interrupted merge.
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
   pull-requests: read
   actions: read
 
-# Two workflows finish independently. Serialize checks/merge per exact head.
+# All merges target main: serialize different PRs and periodic retries together.
 concurrency:
-  group: catalog-gated-merge-${{ github.event.workflow_run.head_sha }}
+  group: catalog-gated-merge-main
   cancel-in-progress: false
 
 jobs:
   gate:
     if: >-
-      ${{ github.event.workflow_run.event == 'pull_request' &&
-          github.event.workflow_run.conclusion == 'success' }}
+      ${{ github.event_name != 'workflow_run' ||
+          (github.event.workflow_run.event == 'pull_request' &&
+           github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -40,5 +46,5 @@ jobs:
       - name: Check exact-head CI and guarded merge
         env:
           GH_TOKEN: ${{ secrets.EPLUS_BOT_TOKEN }}
-          CI_RUN_ID: ${{ github.event.workflow_run.id }}
+          CI_RUN_ID: ${{ github.event.workflow_run.id || '' }}
         run: node scripts/catalog-event-auto-merge.mjs
