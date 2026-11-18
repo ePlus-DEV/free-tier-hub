@@ -12170,6 +12170,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "abasthan-free",
+    "name": "Abasthan Free",
+    "category": "app-hosting",
+    "plan": "ongoing",
+    "free_limit": "First web app free at $0/month with 512 MB RAM, 0.1 vCPU, an .abasthan.app subdomain, custom domains with SSL and Git auto-deploy; no fixed trial expiry stated.",
+    "watch_out": "Only the first app is free; additional apps and managed databases are paid. Paid plans use prepaid credits and per-second billing. Service is described as beta; verify production suitability and commercial terms before critical workloads.",
+    "pricing_url": "https://abasthan.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "acme-sh-local-client",
     "name": "acme.sh Open-Source Shell ACME Certificate Automation",
     "category": "dns-cdn",
@@ -17175,6 +17188,19 @@
     "program": "startup"
   },
   {
+    "id": "verimail-io-free",
+    "name": "Verimail Email Verification Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "100 email address verifications per month at no cost, using the same API and bulk file verification as paid accounts; unknown results, duplicate addresses within a file, and syntax errors do not consume credits.",
+    "watch_out": "Monthly free allowance is limited to 100 checks; the API returns HTTP 402 when credits are exhausted until paid credits are purchased or a plan is upgraded. Do not confuse verimail.io with similarly named verimail.co or verimails.com. Confirm account eligibility and data-processing terms before uploading personal information.",
+    "pricing_url": "https://verimail.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "vessel-local-vps-control-plane",
     "name": "Vessel Local VPS Control Plane",
     "category": "cloud-vps",
@@ -17212,6 +17238,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-10",
     "deployment_model": "local"
+  },
+  {
+    "id": "visualping-free",
+    "name": "Visualping Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Free cloud website-change monitoring for up to 5 pages with 150 checks per month, minimum 60-minute check interval and 1 user; includes email alerts, AI change summaries, webhooks, REST API and MCP access within monthly check limits.",
+    "watch_out": "150 checks are shared across all pages; monitoring pauses after the monthly allowance is exhausted. Five pages checked daily can exceed 150 checks in a 31-day month. Paid Personal/Business plans unlock faster checks and more volume; commercial-use terms require confirmation.",
+    "pricing_url": "https://help.visualping.io/en/articles/14476033",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
   },
   {
     "id": "vitest-open-source-local",
