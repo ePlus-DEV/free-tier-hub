@@ -12340,6 +12340,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "api-test-lab-free",
+    "name": "API Test Lab Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "100 manual API tests per month for GET, POST, PUT, DELETE and PATCH; last 10 requests in history. Includes one 30-second load-test trial with up to five workers.",
+    "watch_out": "Free tier has no saved requests, scheduled testing, API/CI integration, traffic monitoring or AI analysis. Tests stop at the monthly allowance until reset or upgrade; the single load-test trial is not recurring. Commercial-use permission not explicitly confirmed.",
+    "pricing_url": "https://www.apitestlab.org/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-18",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "apiflow-self-hosted",
     "name": "Apiflow Self-Hosted",
     "category": "testing-qa",
@@ -14177,6 +14190,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-04",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "imitate-email-free",
+    "name": "Imitate Email Free",
+    "category": "testing-qa",
+    "plan": "ongoing",
+    "free_limit": "Hosted fake SMTP email-testing service with 15 test emails per day on an ongoing free account (provider also describes this as 450 per month).",
+    "watch_out": "For development and testing, not production email delivery. Free web widget is branded; team features, longer retention and additional capacity require paid plans. Verify account-specific mailbox, forwarding and commercial-use conditions before relying on them.",
+    "pricing_url": "https://imitate.email/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
   },
   {
     "id": "inbucket-self-hosted-email-test-server",
@@ -17185,6 +17211,19 @@
     "commercial_use": "yes",
     "last_checked": "2026-11-13",
     "deployment_model": "self-hosted"
+  },
+  {
+    "id": "uptimia-free",
+    "name": "Uptimia Free",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "After the 30-day trial, the ongoing free plan includes monitoring of one website and one API endpoint, each checked as frequently as every 5 minutes.",
+    "watch_out": "The initial 30-day trial exposes paid features; the continuing free plan excludes transaction, page-speed and real-user monitoring. No credit card is required for the trial; commercial-use terms and any free-plan alerting limits need independent confirmation.",
+    "pricing_url": "https://www.uptimia.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-18",
+    "deployment_model": "cloud"
   },
   {
     "id": "uptop-self-hosted",
