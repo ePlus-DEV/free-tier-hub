@@ -1,0 +1,13 @@
+{
+  "id": "testmail-app-free",
+  "name": "testmail.app Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "100 received test emails/month, unlimited users, email addresses and mailboxes, one random namespace, and 1-day message retention.",
+  "watch_out": "New accounts begin with a 14-day trial and automatically downgrade to the ongoing Free plan; custom namespaces, longer retention and full API access are paid. Intended for side projects and email testing, not outbound transactional delivery.",
+  "pricing_url": "https://testmail.app/pricing/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
