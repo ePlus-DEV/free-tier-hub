@@ -1,0 +1,13 @@
+{
+  "id": "api-test-lab-free",
+  "name": "API Test Lab Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "100 manual API tests per month for GET, POST, PUT, DELETE and PATCH; last 10 requests in history. Includes one 30-second load-test trial with up to five workers.",
+  "watch_out": "Free tier has no saved requests, scheduled testing, API/CI integration, traffic monitoring or AI analysis. Tests stop at the monthly allowance until reset or upgrade; the single load-test trial is not recurring. Commercial-use permission not explicitly confirmed.",
+  "pricing_url": "https://www.apitestlab.org/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-18",
+  "deployment_model": "cloud"
+}
