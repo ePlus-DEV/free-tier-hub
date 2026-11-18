@@ -1,0 +1,13 @@
+{
+  "id": "verimail-io-free",
+  "name": "Verimail Email Verification Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "100 email address verifications per month at no cost, using the same API and bulk file verification as paid accounts; unknown results, duplicate addresses within a file, and syntax errors do not consume credits.",
+  "watch_out": "Monthly free allowance is limited to 100 checks; the API returns HTTP 402 when credits are exhausted until paid credits are purchased or a plan is upgraded. Do not confuse verimail.io with similarly named verimail.co or verimails.com. Confirm account eligibility and data-processing terms before uploading personal information.",
+  "pricing_url": "https://verimail.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
