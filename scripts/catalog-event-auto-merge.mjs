@@ -116,7 +116,7 @@ async function evaluateCandidate(listed, checkedOutMain) {
     return false;
   }
   if (!eligibleTrustedNewService(actual, author)) {
-    console.log('Unverified card/commercial permissions; manual review retained');
+    console.log('Unverified plan/card/commercial eligibility; manual review retained');
     return false;
   }
   const runs = api('actions/runs?head_sha=' + pr.head.sha +
