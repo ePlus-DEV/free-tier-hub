@@ -1,0 +1,13 @@
+{
+  "id": "imitate-email-free",
+  "name": "Imitate Email Free",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Hosted fake SMTP email-testing service with 15 test emails per day on an ongoing free account (provider also describes this as 450 per month).",
+  "watch_out": "For development and testing, not production email delivery. Free web widget is branded; team features, longer retention and additional capacity require paid plans. Verify account-specific mailbox, forwarding and commercial-use conditions before relying on them.",
+  "pricing_url": "https://imitate.email/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
