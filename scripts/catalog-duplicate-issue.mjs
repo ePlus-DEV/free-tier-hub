@@ -2,6 +2,7 @@
 // Trusted candidate Issue cleanup. Run only from checked-out main in the
 // catalog queue (never from an Issue/PR branch or with untrusted code).
 import fs from 'node:fs';
+import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { validateCandidate } from './catalog.mjs';
@@ -98,7 +99,7 @@ export function processDuplicateCandidateIssue(repo, number, catalog, checkedOut
   return 'duplicate';
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const repo = process.env.GITHUB_REPOSITORY;
   const number = Number(process.env.ISSUE_NUMBER);
   const sha = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
