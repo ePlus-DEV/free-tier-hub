@@ -14348,6 +14348,19 @@
     "deployment_model": "local"
   },
   {
+    "id": "kaimail-basic-free",
+    "name": "KaiMail Basic Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "Free hosted custom-domain email forwarding: 1 domain, 1 mailbox, up to 300 received emails/month, 1 MB maximum message size and 1-day log retention; ARC/DKIM signing.",
+    "watch_out": "Inbound forwarding only; no SMTP sending or webhook delivery on Basic. Requires control of a custom domain and DNS configuration. Credit-card requirement, over-limit handling and commercial-use permission are not explicitly confirmed; check provider before production use.",
+    "pricing_url": "https://kaimail.net/pricing/",
+    "credit_card": "check",
+    "commercial_use": "check",
+    "last_checked": "2026-11-17",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "kaioken-local-http-load-testing",
     "name": "Kaioken Local HTTP Load Testing",
     "category": "testing-qa",
