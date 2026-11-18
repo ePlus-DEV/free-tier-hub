@@ -32,6 +32,12 @@ The queue accepts both forms without weakening the trusted-author or HTTPS check
 Use a valid official HTTPS source for the **specific** listed offer.
 No existing Issues or comments need bulk migration.
 
+## Duplicate candidate Issue handling
+
+The catalog Issue queue checks an open trusted candidate against **all canonical service shards** before making a branch. When an existing service has the **same normalized official URL, offer plan, and demonstrably matching product identity** (same stable ID, same normalized name, or the same three-or-more name words in a different order), the workflow posts a linked, idempotent explanation and **closes the Issue as duplicate** using GitHub's `state_reason=duplicate`. This is independent of deployment-evidence comments, since no new offer will be published.
+
+A shared provider pricing URL by itself, a matching name with a different URL, a conflicting existing ID, or multiple possible matches is **not** sufficient for automatic closure. The queue posts one review note, leaves the Issue open, and skips Draft PR creation until a maintainer resolves the ambiguity. Invalid/untrusted Issue data, live Issue changes, comment failures, or changes to `main` during verification fail closed without silently closing the Issue. The queue's manual `workflow_dispatch` retry can re-evaluate an older open Issue.
+
 ## Deployment metadata through the queue
 
 New or updated candidates should include `deployment_model`: `cloud`, `self-hosted`,
