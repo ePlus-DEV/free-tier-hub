@@ -1,0 +1,13 @@
+{
+  "id": "formkeep-free",
+  "name": "FormKeep Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Free hosted form backend with unlimited forms, 50 submissions per month, spam protection, a form designer, branded thank-you page, daily email notifications and one-month submission retention.",
+  "watch_out": "Submissions beyond the monthly free limit are ignored; real-time notifications, custom redirects, webhooks, attachments and longer retention require paid plans. Free tier displays FormKeep branding. Confirm commercial-use terms before business-critical deployment.",
+  "pricing_url": "https://formkeep.com/features/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
