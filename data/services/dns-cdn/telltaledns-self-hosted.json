@@ -1,0 +1,13 @@
+{
+  "id": "telltaledns-self-hosted",
+  "name": "TelltaleDNS Self-Hosted",
+  "category": "dns-cdn",
+  "plan": "ongoing",
+  "free_limit": "Free self-hosted DNS resolver and ad blocker with per-device filtering, encrypted DNS and optional clustering; no software usage quota stated.",
+  "watch_out": "Self-hosted only: supply and pay for your own hardware, network and operations. Upstream is pre-1.0; configuration keys and APIs may change. Tagged releases are described as stable; validate deployment/security before production use.",
+  "pricing_url": "https://github.com/paimonsoror/telltaledns",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-18",
+  "deployment_model": "self-hosted"
+}
