@@ -1,0 +1,13 @@
+{
+  "id": "abasthan-free",
+  "name": "Abasthan Free",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "First web app free at $0/month with 512 MB RAM, 0.1 vCPU, an .abasthan.app subdomain, custom domains with SSL and Git auto-deploy; no fixed trial expiry stated.",
+  "watch_out": "Only the first app is free; additional apps and managed databases are paid. Paid plans use prepaid credits and per-second billing. Service is described as beta; verify production suitability and commercial terms before critical workloads.",
+  "pricing_url": "https://abasthan.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-17",
+  "deployment_model": "cloud"
+}
