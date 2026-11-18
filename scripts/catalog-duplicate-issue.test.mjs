@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import { processDuplicateCandidateIssue } from './catalog-duplicate-issue.mjs';
 import { renderCandidateIssue } from './catalog-issue-format.mjs';
 
@@ -146,4 +148,14 @@ test('queue classifies duplicates before deployment and never sends them to PR c
   assert.match(wf,/if: steps\.identity\.outputs\.outcome == 'new'/);
   assert.match(wf,/run: node scripts\/catalog-duplicate-issue\.mjs/);
   assert.match(wf,/GH_TOKEN: \$\{\{ secrets\.GITHUB_TOKEN \}\}/);
+});
+
+test('relative CLI entrypoint runs the handler instead of silently exiting',()=>{
+  const cwd=fileURLToPath(new URL('../',import.meta.url));
+  const run=spawnSync(process.execPath,['scripts/catalog-duplicate-issue.mjs'],{
+    cwd,encoding:'utf8',
+    env:{...process.env,GITHUB_REPOSITORY:'',ISSUE_NUMBER:'0'}
+  });
+  assert.notEqual(run.status,0);
+  assert.match(run.stderr,/Invalid Issue target/);
 });
