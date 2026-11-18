@@ -22,7 +22,7 @@ function mockGitHub({original=candidate,existing=[listed],closed=false,
   let state=closed?'closed':'open';
   let body=renderCandidateIssue(original);
   const comments=preexistingComment
-    ? [{body:'<!-- free-tier-hub:duplicate-candidate:v1:' + original.id + ' -->'}] : [];
+    ? [{body:'<!-- free-tier-hub:candidate-identity:v1:duplicate:' + original.id + ' -->'}] : [];
   const exec=(program,args)=>{
     assert.equal(program,'gh');
     calls.push([...args]);
@@ -90,6 +90,14 @@ test('same name with a different URL is review-only',()=>{
     pricing_url:'https://different.example/pricing'}});
   assert.equal(github.run(),'review');
   assert.equal(github.state,'open');
+});
+
+test('existing service ID with a changed pricing URL is review-only',()=>{
+  const github=mockGitHub({original:{...candidate,id:listed.id,
+    pricing_url:'https://fillout.com/new-offer'},existing:[listed]});
+  assert.equal(github.run(),'review');
+  assert.equal(github.state,'open');
+  assert.match(github.comments[0].body,/existing-id/);
 });
 
 test('unrelated new service is unaffected',()=>{
