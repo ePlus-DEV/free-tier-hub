@@ -56,3 +56,26 @@ export function assertNoExactDuplicate(candidate, catalog) {
   }
   return hits;
 }
+
+// Fail-safe identity gate for candidate Issue cleanup. A pricing URL alone is
+// not proof: one provider page can cover several distinct plans/products.
+// A name alone is also insufficient when an offer has changed.
+export function confirmedCatalogDuplicate(candidate, catalog) {
+  if (!candidate || !Array.isArray(catalog)) throw Error('Invalid duplicate inputs');
+  const url = normalizedURL(candidate.pricing_url);
+  const name = normalizedName(candidate.name);
+  const words = name.split(' ').filter(Boolean);
+  const signature = words.length >= 3 ? [...words].sort().join(' ') : null;
+  if (!url || !candidate.plan || !name) return null;
+  const matches = catalog.filter(existing => {
+    if (!existing || normalizedURL(existing.pricing_url) !== url ||
+        existing.plan !== candidate.plan) return false;
+    // Stable ID or a clearly identical normalized name, including safe word
+    // reordering such as "Fillout Forms Free" / "Fillout Free Forms".
+    if (existing.id === candidate.id || normalizedName(existing.name) === name) return true;
+    return signature !== null && [...normalizedName(existing.name).split(' ')]
+      .sort().join(' ') === signature;
+  });
+  // Multiple catalog matches are themselves ambiguous: human review only.
+  return matches.length === 1 ? matches[0] : null;
+}
