@@ -1,0 +1,13 @@
+{
+  "id": "formkoi-free",
+  "name": "Form Koi Free",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "250 form submissions per calendar month across unlimited forms in one workspace; searchable inbox, CSV export, spam protection, email delivery tracking, up to 5 verified recipients per form, consent-based auto-replies, signed webhooks and management API. Allowance resets on the first day of each month (UTC).",
+  "watch_out": "Cloud-hosted form backend. Free submissions pause when the shared monthly limit is reached; no automatic overage billing. File attachments require Pro. Free auto-replies are limited to 20/hour and 100/day per workspace; service-wide safeguards apply. Free plan is described for portfolios, side projects and a client site or two; broader commercial rights should be independently confirmed.",
+  "pricing_url": "https://www.formkoi.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-18",
+  "deployment_model": "cloud"
+}
