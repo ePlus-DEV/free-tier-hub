@@ -1,0 +1,13 @@
+{
+  "id": "testable-cloud-starter",
+  "name": "Testable Cloud Starter",
+  "category": "testing-qa",
+  "plan": "ongoing",
+  "free_limit": "Hosted Performance & API Testing Starter includes 100 virtual-user-hours per month, up to 50 concurrent virtual users, 2-hour maximum test duration, unlimited tests and team members, and 3 months of data retention. A separate hosted Functional Testing Starter offers 75 minutes per month of live and automated browser testing.",
+  "watch_out": "Free monthly quotas apply separately to the provider's testing products. Selenium virtual users are billed at 10x and Puppeteer/Playwright at 5x virtual-user equivalents. Paid pay-as-you-go and self-managed testing plans are distinct; card requirement and commercial-use terms for the free Starter are not explicitly confirmed on the pricing page and need human verification.",
+  "pricing_url": "https://testable.io/pricing",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-18",
+  "deployment_model": "cloud"
+}
