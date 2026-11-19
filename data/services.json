@@ -14907,6 +14907,19 @@
     "deployment_model": "cloud"
   },
   {
+    "id": "mailfully-free",
+    "name": "Mailfully Free",
+    "category": "email-notifications",
+    "plan": "ongoing",
+    "free_limit": "3,000 outbound emails per month, 100 inbound emails per month at a mailfully.app address, up to 100 recipients per day, up to 3 sending domains, and 30-day logs. Free sending stops at the monthly cap.",
+    "watch_out": "Cloud-hosted email API; no credit card required for the free plan. Custom-domain inbound receiving, higher quotas and overage billing require a paid plan. Sending a live email requires domain verification; larger sending volumes may require account review. Free plan is capped rather than automatically billed for extra sends.",
+    "pricing_url": "https://mailfully.com/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-18",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "mailgun-send-free",
     "name": "Mailgun Send Free",
     "category": "email-notifications",
