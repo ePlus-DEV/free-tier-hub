@@ -1,0 +1,13 @@
+{
+  "id": "portform",
+  "name": "PortForm",
+  "category": "forms-surveys",
+  "plan": "ongoing",
+  "free_limit": "Personal Free forever: unlimited forms, 300 submissions per rolling 30 days, 2 verified destination email addresses, spam protection, hCaptcha and custom redirects.",
+  "watch_out": "Hard cap: excess submissions are refused with an error, not charged; file uploads, autoresponders, team collaboration and higher limits require Pro. Commercial-use rights are not explicitly confirmed on the pricing page.",
+  "pricing_url": "https://www.portform.co/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-19",
+  "deployment_model": "cloud"
+}
