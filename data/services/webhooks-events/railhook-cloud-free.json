@@ -4,7 +4,7 @@
   "category": "webhooks-events",
   "plan": "ongoing",
   "free_limit": "10,000 events/month; 3 projects; 5 endpoints/project; 7-day history",
-  "watch_out": "Requests over monthly quota are rejected; hosted cloud commercial-use terms unconfirmed.",
+  "watch_out": "Railhook Cloud Free is hosted, distinct from the MIT-licensed self-hosted edition (which has no plan quotas but requires your own infrastructure). Cloud limits also include 10 event ingestions/second/project, 5 members/organization, 1 active tunnel and at most 100 deliveries per event. Requests beyond the monthly 10,000-event quota are rejected with quota_exceeded (HTTP 402); previously accepted events are still delivered/retried. Cloud commercial-use terms remain unconfirmed.",
   "pricing_url": "https://railhook.io/pricing",
   "credit_card": "no",
   "commercial_use": "check",
