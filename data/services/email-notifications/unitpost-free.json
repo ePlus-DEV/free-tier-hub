@@ -1,0 +1,13 @@
+{
+  "id": "unitpost-free",
+  "name": "Unitpost Free",
+  "category": "email-notifications",
+  "plan": "ongoing",
+  "free_limit": "5,000 emails/month, up to 200/day; 10,000 contacts, 5 verified domains, 2 webhook endpoints, API and SMTP.",
+  "watch_out": "Free sending stops at monthly or daily cap; 7-day event history, 1 team member, 3 API keys; SMS excluded. Paid tiers can charge overages; free tier has no overage. Domain verification required.",
+  "pricing_url": "https://www.unitpost.com/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "last_checked": "2026-11-23",
+  "deployment_model": "cloud"
+}
