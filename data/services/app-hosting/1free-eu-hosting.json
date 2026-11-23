@@ -1,0 +1,13 @@
+{
+  "id": "1free-eu-hosting",
+  "name": "1Free.eu Free Web Hosting",
+  "category": "app-hosting",
+  "plan": "ongoing",
+  "free_limit": "Free web hosting at 0 PLN forever: 1 GB disk, up to 5 MySQL databases (1 GB combined), 2 domains including the supplied subdomain, up to 10 email accounts per domain, and free SSL. Terms cap monthly transfer at 40 GB.",
+  "watch_out": "The landing page advertises unlimited transfer, but Terms section 3.1 specifies 40 GB/month and section 4.1 allows account blocking for exceeded limits. Accounts inactive for at least one month may be deleted. Free VPS is only a 30-day trial, not included. Commercial-use permission is not explicitly established in the terms.",
+  "pricing_url": "https://www.1free.eu/en",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-19",
+  "deployment_model": "cloud"
+}
