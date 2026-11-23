@@ -13059,6 +13059,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "dockmesh-self-hosted",
+    "name": "Dockmesh",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free AGPL-3.0 self-hosted Docker Compose fleet manager; all features included with no paid edition, node limit, or license key. Supports multi-host agents, backups, RBAC, SSO and audit logs; hosting resources are not included.",
+    "watch_out": "Requires user-provided Linux Docker hosts, storage and network. Project is pre-1.0 (v0.5.3 at verification); evaluate release maturity, security and backups before production. AGPL-3.0 network-use/source-sharing obligations apply to modifications; no free hosted VPS or managed service is included.",
+    "pricing_url": "https://www.dockmesh.dev/",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-23",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "docknest-self-hosted-backup",
     "name": "DockNest Self-Hosted Docker Backup",
     "category": "developer-tools",
