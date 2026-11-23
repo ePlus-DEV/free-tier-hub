@@ -16302,6 +16302,19 @@
     "deployment_model": "self-hosted"
   },
   {
+    "id": "qrdx-self-hosted",
+    "name": "QRdx Self-Hosted",
+    "category": "developer-tools",
+    "plan": "ongoing",
+    "free_limit": "Free self-hosted AGPL-3.0 web application for static and dynamic QR codes, hosted pages, scan analytics, and API; no software usage quota stated. Docker Compose deployment includes PostgreSQL; infrastructure and optional third-party services are user-provided.",
+    "watch_out": "Open-core: workspace SSO, audit log, client portal/reports, white-label pages/custom CSS, and conversion tracking in ee/ require a paid commercial agreement for production. AGPL source-sharing obligations apply to modified network deployments; QRdx trademarks are excluded. Docker setup is new; production hardening and infrastructure costs are the operator's responsibility.",
+    "pricing_url": "https://qrdx.dev/docs/self-hosting",
+    "credit_card": "no",
+    "commercial_use": "yes",
+    "last_checked": "2026-11-23",
+    "deployment_model": "self-hosted"
+  },
+  {
     "id": "quickemailverification-free",
     "name": "QuickEmailVerification Free",
     "category": "email-notifications",
