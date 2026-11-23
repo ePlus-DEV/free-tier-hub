@@ -16237,6 +16237,19 @@
     "last_checked": "2026-11-06"
   },
   {
+    "id": "pulseapi",
+    "name": "PulseAPI",
+    "category": "observability",
+    "plan": "ongoing",
+    "free_limit": "Forever-free hosted API monitoring: up to 20 HTTP/HTTPS endpoints, 1 team member, 1-minute checks, email alerts, and 7-day data retention.",
+    "watch_out": "Free plan uses one monitoring location and community support; Slack/webhook alerts, API access and longer retention require paid plans. Commercial-use terms require verification; no card or per-check overage on Free.",
+    "pricing_url": "https://www.pulseapi.io/pricing",
+    "credit_card": "no",
+    "commercial_use": "check",
+    "last_checked": "2026-11-19",
+    "deployment_model": "cloud"
+  },
+  {
     "id": "pulsetic-free",
     "name": "Pulsetic Free",
     "category": "observability",
