@@ -4,7 +4,7 @@
   "category": "testing-qa",
   "plan": "ongoing",
   "free_limit": "1 browser-hour per UTC calendar month and 1 running browser at a time, with a persistent desktop Chrome profile, CDP access and Live View.",
-  "watch_out": "Requires email verification. The browser pauses at the monthly limit, with no overage charges on Free. Budget is measured in total browser runtime. Cloudbrowser hosts desktop Chrome; bring your own test runner and assertions. Check the provider's terms for commercial use of Free.",
+  "watch_out": "Email verification required. The browser pauses at the monthly runtime limit, with no Free overage charges. By default, it also pauses after 5 minutes without a live CDP or desktop connection. You can turn off idle auto-pause in Settings. Pausing preserves the saved profile. Chrome restarts on resume. Bring your own test runner. Commercial use of Free is unconfirmed.",
   "pricing_url": "https://cloudbrowser.tv/pricing",
   "credit_card": "no",
   "commercial_use": "check",
