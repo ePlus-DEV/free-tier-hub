@@ -1,0 +1,13 @@
+{
+  "id": "nocert-free",
+  "name": "NoCert Free",
+  "category": "observability",
+  "plan": "ongoing",
+  "free_limit": "Monitor up to 50 active TLS certificates per organization, with expiry alerts, 2 Sentinel agents and 1 local account. The free plan has no time limit.",
+  "watch_out": "A NoCert account is required. Professional use only. You start with Business for 30 days, then continue on Free unless you choose a paid plan. There is no automatic paid subscription. Internal scans use Sentinel. If you stay above 50 certificates for seven days, expansion pauses while monitoring and alerts continue. Sentinels above your plan limit pause after a grace period of 30 days.",
+  "pricing_url": "https://nocert.io/pricing",
+  "credit_card": "no",
+  "commercial_use": "yes",
+  "deployment_model": "cloud",
+  "last_checked": "2026-11-23"
+}
