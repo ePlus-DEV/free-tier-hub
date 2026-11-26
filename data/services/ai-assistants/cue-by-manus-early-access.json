@@ -1,0 +1,13 @@
+{
+  "id": "cue-by-manus-early-access",
+  "name": "Cue by Manus — Free Early Access",
+  "category": "ai-assistants",
+  "plan": "limited-duration",
+  "free_limit": "Invite-approved accounts receive Cue Plus at no charge during early access for personal AI agent tasks. No public numeric usage allowance or reset period is specified.",
+  "watch_out": "A valid invite code is required. Manus announced MEETCUE for a limited first-come, first-served cohort; remaining redemptions are unverified. No end date, permanent free plan, credit quota, payment-card requirement or commercial-use entitlement is confirmed. Optional paid features and external purchases may incur charges.",
+  "pricing_url": "https://manus.im/blog/introducing-manus-2-0",
+  "credit_card": "check",
+  "commercial_use": "check",
+  "last_checked": "2026-11-26",
+  "deployment_model": "cloud"
+}
