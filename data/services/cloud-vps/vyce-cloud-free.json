@@ -1,0 +1,13 @@
+{
+  "id": "vyce-cloud-free",
+  "name": "Vyce Cloud",
+  "category": "cloud-vps",
+  "plan": "ongoing",
+  "free_limit": "Vps-Mini: 1 CPU core, 2 GB RAM, 6 GB disk, root SSH, public IPv6 and 20 ports; free with manual renewal.",
+  "watch_out": "Limited free slots; manual dashboard renewal required. Stopped free servers are deleted after 3 days. GitHub account must be at least 30 days old. Commercial use not verified.",
+  "pricing_url": "https://vyce.cloud/",
+  "credit_card": "no",
+  "commercial_use": "check",
+  "last_checked": "2026-11-26",
+  "deployment_model": "cloud"
+}
